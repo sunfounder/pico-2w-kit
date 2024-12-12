@@ -91,7 +91,7 @@ rst_epilog = """
 # component pic
 rst_epilog += """
 
-.. |compoents_list| image:: /img/component/compoents_list.jpg
+.. |compoents_list| image:: /img/compoents_list.jpg
     :width: 800
 .. |img_wire| image:: /img/component/wire.png
 .. |img_buzzer| image:: /img/component/buzzer.png
