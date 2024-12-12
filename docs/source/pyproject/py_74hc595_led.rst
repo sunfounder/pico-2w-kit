@@ -130,7 +130,7 @@ Now, let's write a MicroPython program to control the LEDs through the 74HC595 s
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2w-starter-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 

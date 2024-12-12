@@ -126,7 +126,7 @@ We'll write a MicroPython program that detects when the micro switch is pressed 
 
 .. note::
 
-  * Open the ``2.8_micro_switch.py`` from ``pico-2w-starter-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.8_micro_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 

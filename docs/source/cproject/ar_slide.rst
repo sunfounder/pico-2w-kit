@@ -126,7 +126,7 @@ When you toggle the switch, the mechanical contacts can cause rapid, noisy signa
 
 .. note::
 
-    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``pico-2w-starter-kit-main/arduino/2.7_toggle_left_right``. 
+    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``pico-2w-kit-main/arduino/2.7_toggle_left_right``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

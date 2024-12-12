@@ -95,7 +95,7 @@ Let's write a MicroPython script to receive and decode IR signals from the remot
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` from ``pico-2w-starter-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``6.4_ir_remote_control.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 

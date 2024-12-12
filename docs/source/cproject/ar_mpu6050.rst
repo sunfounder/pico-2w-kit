@@ -93,7 +93,7 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``pico-2w-starter-kit-main/arduino/6.3_6axis_motion_tracking``. 
+    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``pico-2w-kit-main/arduino/6.3_6axis_motion_tracking``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit MPU6050`` library is used here, you can install it from the **Library Manager**.

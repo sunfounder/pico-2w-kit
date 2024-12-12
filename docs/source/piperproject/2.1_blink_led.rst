@@ -90,7 +90,7 @@ You can also buy them separately from the links below.
 .. note::
 
     * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.1_blink_led.png`` from the path of ``pico-2w-starter-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Import ``2.1_blink_led.png`` from the path of ``pico-2w-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
 
 
 |blink1|

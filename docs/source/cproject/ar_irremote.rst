@@ -96,7 +96,7 @@ We'll write a program that initializes the IR receiver, listens for incoming IR 
 
 .. note::
 
-    * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``pico-2w-starter-kit-main/arduino/6.4_ir_remote_control``. 
+    * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``pico-2w-kit-main/arduino/6.4_ir_remote_control``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``IRremote`` library is used here, you can install it from the **Library Manager**.

@@ -131,7 +131,7 @@ This way you will find that by rotating the potentiometer, the brightness of the
 
 .. note::
 
-  * Open the ``2.11_turn_the_knob.py`` file under the path ``pico-2w-starter-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
+  * Open the ``2.11_turn_the_knob.py`` file under the path ``pico-2w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
   * Ensure that the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
   * For detailed instructions, refer to :ref:`open_run_code_py`.
 

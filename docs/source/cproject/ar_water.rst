@@ -93,7 +93,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``pico-2w-starter-kit-main/arduino/2.14_feel_the_water_level``. 
+    * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``pico-2w-kit-main/arduino/2.14_feel_the_water_level``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

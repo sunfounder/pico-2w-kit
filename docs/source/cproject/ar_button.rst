@@ -96,7 +96,7 @@ Until the button is pressed, the left and right pins are independent of each oth
 
 .. note::
 
-    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``pico-2w-starter-kit-main/arduino/2.5_reading_button_value``. 
+    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``pico-2w-kit-main/arduino/2.5_reading_button_value``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

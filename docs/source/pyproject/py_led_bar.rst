@@ -93,7 +93,7 @@ In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Ra
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2w-starter-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
+    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
 
     * Make sure the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
 

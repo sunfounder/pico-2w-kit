@@ -114,7 +114,7 @@ We'll write two scripts:
 
     Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
-#. Open the ``6.5_rfid_write.py`` file from ``pico-2w-starter-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. Open the ``6.5_rfid_write.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
    .. code-block:: python
 
@@ -137,7 +137,7 @@ We'll write two scripts:
 
 #. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the shell, then bring the RFID tag near the reader to store a score of "Ode to Joy". Wait for the confirmation message: "Data written successfully!"
 
-#. Open the ``7.8_rfid_music_player.py`` file from ``pico-2w-starter-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. Open the ``7.8_rfid_music_player.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
    .. code-block:: python
 

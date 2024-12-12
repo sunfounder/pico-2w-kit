@@ -98,7 +98,7 @@ We'll write a program that reads temperature and humidity data from the DHT11 se
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``pico-2w-starter-kit-main/arduino/6.2_dht11``. 
+    * You can open the file ``6.2_dht11.ino`` under the path of ``pico-2w-kit-main/arduino/6.2_dht11``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.

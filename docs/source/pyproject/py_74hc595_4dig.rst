@@ -124,7 +124,7 @@ Let's write a MicroPython program to create a time counter that increments every
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` from ``pico-2w-starter-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.3_time_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 

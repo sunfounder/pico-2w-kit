@@ -207,7 +207,7 @@ Please follow the steps below on IFTTT.
         'webhooks_key':'WEBHOOKS_API_KEY'
         }
 
-#. Open the ``3_ifttt_mail.py`` file under the path of ``pico-2w-starter-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
+#. Open the ``3_ifttt_mail.py`` file under the path of ``pico-2w-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
 
     .. image:: img/3_ifttt1.png
 

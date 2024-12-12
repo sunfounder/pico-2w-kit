@@ -95,7 +95,7 @@ Let's write a MicroPython script to read accelerometer and gyroscope data from t
 
 .. note::
 
-    * Open the ``6.3_6axis_motion_tracking.py`` from ``pico-2w-starter-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``6.3_6axis_motion_tracking.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
      
     * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.

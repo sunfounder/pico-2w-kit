@@ -109,7 +109,7 @@ To build the circuit, let's follow the current's direction!
 
 .. note::
 
-    * Open the ``2.1_hello_led.py`` file under the path of ``pico-2w-starter-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Open the ``2.1_hello_led.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 

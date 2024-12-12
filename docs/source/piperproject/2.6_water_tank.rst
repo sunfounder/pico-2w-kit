@@ -90,7 +90,7 @@ In addition, there is a fourth analog channel, which is connected to the built-i
 .. note::
 
     * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.6_water_tank.png`` from the path of ``pico-2w-starter-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Import ``2.6_water_tank.png`` from the path of ``pico-2w-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
 
 |water_tank|
 
