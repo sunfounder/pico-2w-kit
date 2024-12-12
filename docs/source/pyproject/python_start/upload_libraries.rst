@@ -23,7 +23,7 @@ In some projects, you will need additional libraries. So here we upload these li
 #. Download the relevant code from the link below.
 
 
-   * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+   * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
 
 #. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
@@ -34,7 +34,7 @@ In some projects, you will need additional libraries. So here we upload these li
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``pico-2w-starter-kit-main/libs`` folder.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``pico-2w-starter-kit-main/libs`` folder.
 
     .. image:: img/th_path.png
 

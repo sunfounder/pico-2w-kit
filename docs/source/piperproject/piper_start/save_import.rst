@@ -38,8 +38,8 @@ In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Proje
 |per_import|
 
 Select the ``.png`` file in the path ``pico-2w-starter-kit-main\piper`` and click **Import**. 
-Note that you need to download the `SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ package first.
-Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
+Note that you need to download the `SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ package first.
+Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_.
 
 |choose_file|
 

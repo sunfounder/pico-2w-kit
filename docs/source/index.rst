@@ -45,9 +45,9 @@ Here is the email: service@sunfounder.com.
 
 **Source Code**
 
-* :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+* :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_
 
 
 **Content**
