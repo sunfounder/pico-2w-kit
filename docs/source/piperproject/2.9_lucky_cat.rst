@@ -1,0 +1,120 @@
+.. note::
+
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+
+    **Why Join?**
+
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+
+.. _per_lucky_cat:
+
+2.9 Lucky Cat
+==========================
+
+In this project, we use pir and servo to make a lucky cat. The PIR Module is used to detect the visitors and servo is used to imitate the beckoning motion of the lucky cat.
+
+**Required Components**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Pico 2 W Starter Kit	
+        - 450+
+        - |link_pico2w_kit|
+
+You can also buy them separately from the links below.
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - :ref:`cpn_pico_w`
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - :ref:`cpn_breadboard`
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - :ref:`cpn_wire`
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - :ref:`cpn_servo`
+        - 1
+        - |link_servo_buy|
+    *   - 6
+        - :ref:`cpn_pir`
+        - 1
+        - |link_pir_buy|
+
+
+**Wiring**
+
+|lucky_cat0|
+
+
+* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
+* The middle pin of the PIR module is connected to the GP3.
+
+**Code**
+
+
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.9_lucky_cat.png`` from the path of ``pico-2w-starter-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+|lucky_cat|
+
+
+
+* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
+
+
+**How it Works?**
+
+
+|lucky_cat1|
+
+Set the rotation speed of pin15 (servo) to 15%.
+
+|lucky_cat2|
+
+If GP14 is low, set the variable [prestate] to 0. When the variable [prestate] is 0 and GP14 is high (human detected), set the variable [prestate] to 1.
+
+The purpose of this is to make the main code work only when the GP14 changes from low to high, and to respond only once if the PIR module keeps detecting people.
+
+|lucky_cat3|
+
+Make the servo cycle 5 times from 0 to 180 degrees rotation.
+
+* [repeat () times do]: Loop through the code inside the do block a finite number of times.
+
+
