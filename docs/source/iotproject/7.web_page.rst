@@ -102,14 +102,14 @@ You can also buy them separately from the links below.
 
 **3. Run the Code**
 
+    .. note::
+
+        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, if not please refer to :ref:`iot_access` to create them.
+
 #. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/iot``.
 #. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2W.
 
     .. image:: img/7_web_server.png
-
-    .. note::
-
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, if not please refer to :ref:`iot_access` to create them.
 
 #. Enter the IP address of the Pico 2W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
 
@@ -119,6 +119,17 @@ You can also buy them separately from the links below.
 #. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2W as ``main.py``.
 
 **How it works?**
+
+This project requires a network connection,  use the  :ref:`iot_access` method to connect to the network. 
+
+.. code-block:: python
+
+    from secrets import *
+    from do_connect import *
+    
+from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+
+from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
 
 The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
 A socket is the way a server can listen for a client that wants to connect to it. 
@@ -258,17 +269,9 @@ The page can be accessed through your browser if you combine the above parts. If
         machine.reset()
 
 
+
 When you run the code above, you will see that it displays only a web page, does not allow you to control RGB LEDs, nor does it show sensor readings.
 The web service needs to be refined further.
-
-.. code-block:: python
-
-    from secrets import *
-    from do_connect import *
-    
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
-
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
 
 The first thing we need to know is what information the server receives when the browser accesses the web page. Therefore, change ``serve()`` slightly to print ``request``.
 
