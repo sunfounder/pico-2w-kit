@@ -29,8 +29,8 @@ But the first step before moving on to this section is to complete **1. Get Star
     5.mqtt_pub
     6.mqtt_sub
     7.web_page
-    9.sunfounder_controller
-    10.plant_monitor
+    8.sunfounder_controller
+    9.plant_monitor
     .. 8.anvil
 
 
