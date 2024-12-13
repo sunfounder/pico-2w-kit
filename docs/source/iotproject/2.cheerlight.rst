@@ -182,5 +182,5 @@ Finally, use a loop to make the ws2812 work once per minute.
         colour = get_colour()
         if colour is not None:
             ws.write_all(colour)
-        time.sleep(60)
+        time.sleep(5)
 
