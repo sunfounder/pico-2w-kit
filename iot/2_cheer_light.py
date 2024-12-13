@@ -4,6 +4,7 @@ import time
 import machine
 from ws2812 import WS2812
 
+from secrets import *
 from do_connect import *
 do_connect()
 
