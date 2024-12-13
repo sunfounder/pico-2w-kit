@@ -17,7 +17,11 @@
 1. Access to the Network
 ===========================
 
-Raspberry Pi Pico 2W is very similar to Raspberry Pi Pico 2W, with the same GPIO, microUSB port, and size. The difference is the clock speed has been increased from 133 MHz to 160 MHz.
+    .. note::
+
+        If you are coming from another IoT project, please start from Step 3 to proceed with the creation ``do_connect.py`` and ``secrets.py`` .
+
+Raspberry Pi Pico 2W is very similar to Raspberry Pi Pico W, with the same GPIO, microUSB port, and size. The difference is the clock speed has been increased from 133 MHz to 160 MHz.
 Now let's see how it connects to our Wi-Fi network.
 
 **Required Components**

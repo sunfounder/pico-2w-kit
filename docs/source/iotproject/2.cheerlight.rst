@@ -100,17 +100,26 @@ You can also buy them separately from the links below.
 #. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``pico-2w-kit-main/iot``.
 
 #. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
-
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, if not please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
 
     .. image:: img/2_cheerlight1.png
 
 
-#. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
+#. Control global @CheerLights devices
 
-#. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico 2W as ``main.py``, as follows.
+   - Join the |link_discord_server| and utilize the CheerLights bot to set the color. Simply type ``/cheerlights`` in any of the channels on the **CheerLights Discord Server** to activate the bot.
+
+   .. image:: img/05_iot_cheerlights_1.png
+
+   - Follow the instructions provided by the bot to set the color. This will allow you to control CheerLights devices globally.
+
+   .. image:: img/05_iot_cheerlights_2.png
+    
+5. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
+
+6. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico 2W as ``main.py``, as follows.
 
     * Stop the script from running and click **File** -> **Save as**.
 
@@ -129,12 +138,18 @@ You can also buy them separately from the links below.
 
 **How it works?**
 
-This project requires a network connection,  use the  :ref:`iot_access` method to connect to the network. 
+This project requires a network connection,  use the  `network` module to connect to the network.
+You can learn how to use the network module by referring to  :ref:`iot_access`.
 
 .. code-block:: python
 
+    from secrets import *
     from do_connect import *
     do_connect()
+
+from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+
+from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
 
 Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details. 
 
@@ -174,7 +189,7 @@ The following code gets the latest @CheerLights color from the url and returns a
             print(e)
             return None
 
-Finally, use a loop to make the ws2812 work once per minute.
+Finally, use a loop to make the ws2812 work once every 5 seconds.
 
 .. code-block:: python
 

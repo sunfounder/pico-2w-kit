@@ -124,7 +124,7 @@ You can also buy them separately from the links below.
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
+        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, you need to create them in your Pico 2W, please refer to :ref:`iot_access` to create them.
 
     .. code-block:: python
         :emphasize-lines: 5
@@ -158,8 +158,13 @@ This project requires a network connection,  use the  :ref:`iot_access` method t
 
 .. code-block:: python
 
+    from secrets import *
     from do_connect import *
     do_connect()
+
+from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+
+from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
 
 After connecting to the Internet, these few lines of code will help synchronize your Pico 2W to Greenwich Mean Time.
 

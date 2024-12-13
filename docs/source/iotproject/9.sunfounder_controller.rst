@@ -273,7 +273,7 @@ Its message is shown below.
 
 .. code-block:: python
 
-    {'Check': 'SunFounder Controller', 'Name': 'PicoW', 'Type': 'Blank'}
+    {'Check': 'SunFounder Controller', 'Name': 'Pico2W', 'Type': 'Blank'}
 
 This is a blank message, to copy it to the widget on SunFounder Controller APP, we need to assign the value to the corresponding area in the dictionary. For example, assign the value ``50`` to the L area.
 
@@ -285,7 +285,7 @@ The data is shown below:
 
 .. code-block:: python
 
-    {'L': 50, 'Type': 'Blank', 'Name': 'PicoW', 'Check': 'SunFounder Controller'}
+    {'L': 50, 'Type': 'Blank', 'Name': 'Pico2W', 'Check': 'SunFounder Controller'}
 
 
 For more details on using SunFounder Controller, please see `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.

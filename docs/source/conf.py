@@ -801,6 +801,10 @@ rst_epilog += """
 
     <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank">Pulse-width modulation</a>
 
+.. |link_discord_server| raw:: html
+
+    <a href="https://discord.com/invite/G7Q5UjDT7K" target="_blank">Discord Server</a>
+    
 """
 
 # Purchase links of components

@@ -288,7 +288,7 @@ In order to simplify the connection of the Raspberry Pi Pico 2W to Anvil service
 
 If you want to share your made app to others, you can generate a sharing link by the following method.
 
-1. Go back to the **Anvil** page and click the **publish app** option in the** App Browser settings**.  
+1. Go back to the **Anvil** page and click the **publish app** option in the **App Browser settings** .  
 
     .. image:: img/anvil-s-1.png
 

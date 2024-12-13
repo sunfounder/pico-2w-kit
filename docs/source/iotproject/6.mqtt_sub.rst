@@ -115,7 +115,8 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
     .. image:: img/6_cloud_player.png
 
     .. note::
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, if not please refer to :ref:`iot_access` to create them.
+
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
 
 #. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico 2W will play the corresponding song.
 
@@ -138,7 +139,8 @@ As a result, you get the following code, which implements the most basic functio
     import time
     from umqtt.simple import MQTTClient
 
-    from do_connect import *
+    #This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+    from do_connect import * 
     do_connect()
 
     mqtt_server = 'broker.hivemq.com'
