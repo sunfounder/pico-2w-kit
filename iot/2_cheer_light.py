@@ -29,4 +29,4 @@ while True:
     colour = get_colour()
     if colour is not None:
         ws.write_all(colour)
-    time.sleep(60)
+    time.sleep(5)
