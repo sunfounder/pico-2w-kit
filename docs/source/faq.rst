@@ -30,17 +30,17 @@ MicroPython
 #. How to open and run the code?
     For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
-#. How to upload library to Raspberry Pi Pico 2W？
+#. How to upload library to Raspberry Pi Pico 2 W？
     For detailed tutorials, please refer to :ref:`add_libraries_py`.
 
-#. NO MicroPython(Raspberry Pi Pico 2W) Interpreter Option on Thonny IDE?
-    * Check that your Pico 2W is plugged into your computer via a USB cable.
-    * Check that you have installed MicroPython for Pico 2W (:ref:`install_micropython_on_pico`).
-    * The Raspberry Pi Pico 2W interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
-    * If the Li-po Charger module is plugged into the breadboard at this point, unplug it first and then re-plug the Pico 2W into the computer.
+#. NO MicroPython(Raspberry Pi Pico 2 W) Interpreter Option on Thonny IDE?
+    * Check that your Pico 2 W is plugged into your computer via a USB cable.
+    * Check that you have installed MicroPython for Pico 2 W (:ref:`install_micropython_on_pico`).
+    * The Raspberry Pi Pico 2 W interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
+    * If the Li-po Charger module is plugged into the breadboard at this point, unplug it first and then re-plug the Pico 2 W into the computer.
 
-#. Cannot open Pico 2W code or save code to Pico 2W via Thonny IDE?
-    * Check that your Pico 2W is plugged into your computer via a USB cable.
+#. Cannot open Pico 2 W code or save code to Pico 2 W via Thonny IDE?
+    * Check that your Pico 2 W is plugged into your computer via a USB cable.
     * Check that you have selected the Interpreter as **MicroPython (Raspberry Pi Pico)**.
 
 #. Can Raspberry Pi Pico2 W be used on Thonny and Arduino at the same time?
@@ -50,7 +50,7 @@ MicroPython
     * If you used it on Thonny first,  and now you want to use it on Arduino IDE, you need to :ref:`setup_pico2w_arduino`.
 
 
-.. #. If your computer is win7 and Pico 2W cannot be detected.
+.. #. If your computer is win7 and Pico 2 W cannot be detected.
     * Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
     * Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.
     * Change the name of ``amtel_devices_cdc.inf`` file to ``pico-serial.inf``.
@@ -86,13 +86,13 @@ MicroPython
 .. Piper Make
 .. ------------------
 
-.. #. How to set up the Pico 2W on Piper Make?
+.. #. How to set up the Pico 2 W on Piper Make?
     For detailed tutorials, please refer to :ref:`per_setup_pico`.
 
 .. #. How to download or import code?
     For detailed tutorials, please refer to :ref:`per_save_import`.
 
-.. #. How to connect to Pico 2W?
+.. #. How to connect to Pico 2 W?
     For detailed tutorials, please refer to :ref:`connect_pico_per`.
 
 

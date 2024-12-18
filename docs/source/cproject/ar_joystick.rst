@@ -17,7 +17,7 @@
 4.1 Reading Values from a Joystick
 ==================================
 
-In this lesson, we'll learn how to use a **joystick** with the Raspberry Pi Pico 2w to read analog values and detect button presses. A joystick is a common input device that allows you to control movement along two axes (X and Y) and often includes a button when pressed down (Z-axis).
+In this lesson, we'll learn how to use a **joystick** with the Raspberry Pi Pico 2 W to read analog values and detect button presses. A joystick is a common input device that allows you to control movement along two axes (X and Y) and often includes a button when pressed down (Z-axis).
 
 * :ref:`cpn_joystick`
 
@@ -99,7 +99,7 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
 
 .. note::
 
-    * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``pico-2w-kit-main/arduino/4.1_toggle_the_joyostick``. 
+    * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``pico-2 w-kit-main/arduino/4.1_toggle_the_joyostick``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

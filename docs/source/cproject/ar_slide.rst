@@ -17,7 +17,7 @@
 2.7 Toggle Left and Right
 ============================
 
-In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2w to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
+In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2 W to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
 
 **Required Components**
 
@@ -126,7 +126,7 @@ When you toggle the switch, the mechanical contacts can cause rapid, noisy signa
 
 .. note::
 
-    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``pico-2w-kit-main/arduino/2.7_toggle_left_right``. 
+    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``pico-2 w-kit-main/arduino/2.7_toggle_left_right``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

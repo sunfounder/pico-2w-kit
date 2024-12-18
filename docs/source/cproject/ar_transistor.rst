@@ -100,7 +100,7 @@ In this circuit, pressing the button sends a **high signal** to the GP14 pin. Wh
 
 |wiring_s8050|
 
-.. 1. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
 .. #. Connect the cathode lead of the LED to the **collector** lead of the transistor.
 .. #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
@@ -119,7 +119,7 @@ For the PNP transistor circuit, the button starts with a low signal on GP14 and 
 
 |wiring_s8550|
 
-.. 1. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
 .. #. Connect the cathode lead of the LED to the **emitter** lead of the transistor.
 .. #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
@@ -130,7 +130,7 @@ For the PNP transistor circuit, the button starts with a low signal on GP14 and 
 
 .. note::
 
-    * You can open the file ``2.15_transistor.ino`` under the path of ``pico-2w-kit-main/arduino/2.15_transistor``. 
+    * You can open the file ``2.15_transistor.ino`` under the path of ``pico-2 w-kit-main/arduino/2.15_transistor``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

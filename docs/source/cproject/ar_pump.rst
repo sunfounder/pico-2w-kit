@@ -17,7 +17,7 @@
 3.6 Controlling a Water Pump
 =============================
 
-In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2w and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic plant watering systems or creating miniature water features. Controlling the pump is similar to controlling a DC motor, as it uses the same principles.
+In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2 W and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic plant watering systems or creating miniature water features. Controlling the pump is similar to controlling a DC motor, as it uses the same principles.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
@@ -81,10 +81,6 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - Battery Holder
-        - 1
-        -  
-    *   - 9
         - :ref:`cpn_pump`
         - 1
         -  
@@ -109,7 +105,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2w-kit-main/arduino/3.6_pumping``. 
+    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2 w-kit-main/arduino/3.6_pumping``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

@@ -19,7 +19,7 @@
 
 |img_micro_switch|
 
-In this lesson, we'll learn how to use a **micro switch** (also known as a limit switch) with the Raspberry Pi Pico 2w to detect when it's pressed or released. Micro switches are commonly used in devices like microwave oven doors, printer covers, or as end stops in 3D printers because they are reliable and can handle frequent activation.
+In this lesson, we'll learn how to use a **micro switch** (also known as a limit switch) with the Raspberry Pi Pico 2 W to detect when it's pressed or released. Micro switches are commonly used in devices like microwave oven doors, printer covers, or as end stops in 3D printers because they are reliable and can handle frequent activation.
 
 * :ref:`cpn_micro_switch`
 
@@ -125,7 +125,7 @@ We'll write a simple program that detects when the micro switch is pressed and p
 
 .. note::
 
-    * You can open the file ``2.8_press_gently.ino`` under the path of ``pico-2w-kit-main/arduino/2.8_press_gently``. 
+    * You can open the file ``2.8_press_gently.ino`` under the path of ``pico-2 w-kit-main/arduino/2.8_press_gently``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

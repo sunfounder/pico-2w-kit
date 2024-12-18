@@ -17,7 +17,7 @@
 5.3 Creating a Time Counter with a 4-Digit 7-Segment Display
 ==============================================================
 
-In this lesson, we'll learn how to use a **4-digit 7-segment display** with the Raspberry Pi Pico 2w to create a simple time counter. The display will count up every second, showing the elapsed time in seconds.
+In this lesson, we'll learn how to use a **4-digit 7-segment display** with the Raspberry Pi Pico 2 W to create a simple time counter. The display will count up every second, showing the elapsed time in seconds.
 
 
 **Required Components**
@@ -121,7 +121,7 @@ Then G10 ~ G13 will select which 7-segment display to work.
 
 .. note::
 
-    * You can open the file ``5.3_time_counter.ino`` under the path of ``pico-2w-kit-main/arduino/5.3_time_counter``. 
+    * You can open the file ``5.3_time_counter.ino`` under the path of ``pico-2 w-kit-main/arduino/5.3_time_counter``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

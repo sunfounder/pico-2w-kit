@@ -21,7 +21,7 @@
 
         If you are coming from another IoT project, please start from Step 3 to proceed with the creation ``do_connect.py`` and ``secrets.py`` .
 
-Raspberry Pi Pico 2W is very similar to Raspberry Pi Pico W, with the same GPIO, microUSB port, and size. The difference is the clock speed has been increased from 133 MHz to 160 MHz.
+Raspberry Pi Pico 2 W is very similar to Raspberry Pi Pico W, with the same GPIO, microUSB port, and size. The difference is the clock speed has been increased from 133 MHz to 160 MHz.
 Now let's see how it connects to our Wi-Fi network.
 
 **Required Components**
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
 1. Connect to the Internet
 ------------------------------------
 
-With just five lines of MicroPython, our Raspberry Pi Pico 2W is happily connected to the Internet.
+With just five lines of MicroPython, our Raspberry Pi Pico 2 W is happily connected to the Internet.
 
 These 5 lines of code can be run directly from the Shell, pressing the ``Enter`` after you typing.
 Or refer to the following method and create a new ``.py`` file to run it.
@@ -87,7 +87,7 @@ Or refer to the following method and create a new ``.py`` file to run it.
 
     .. note::
 
-        Make sure the Raspberry Pi Pico 2W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
+        Make sure the Raspberry Pi Pico 2 W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
 
     .. image:: img/access2.png
 
@@ -98,7 +98,7 @@ Or refer to the following method and create a new ``.py`` file to run it.
 
 Considering some poor network conditions, let's add some timeout judgment to the code.
 
-If the connection is successful, the IP of Pico 2W will be displayed after copying and running the script.
+If the connection is successful, the IP of Pico 2 W will be displayed after copying and running the script.
 
 .. code-block:: python
 
@@ -164,7 +164,7 @@ If the connection is successful, the IP of Pico 2W will be displayed after copyi
 3. Save private information to ``secrets.py``
 ----------------------------------------------------------
 
-When you share your Pico 2W project, you should not want others to see your Wi-Fi password or API key.
+When you share your Pico 2 W project, you should not want others to see your Wi-Fi password or API key.
 For good security, we can create a ``secrets.py`` file to store your private information.
 
 #. Copy the following code into a new script file on Thonny. Note to change ``SSID`` and ``PASSWORD`` to yours.
@@ -184,7 +184,7 @@ For good security, we can create a ``secrets.py`` file to store your private inf
 
     .. image:: img/access5.png
 
-#. Now you can see this script in your Raspberry Pi Pico 2W.
+#. Now you can see this script in your Raspberry Pi Pico 2 W.
 
     .. image:: img/access6.png
 
@@ -259,7 +259,7 @@ Considering that each of our next projects will require a network connection, wh
 
     .. image:: img/access7.png
 
-#. Calling it in other scripts by the following will allow the Raspberry Pi Pico 2W to connect to the network.
+#. Calling it in other scripts by the following will allow the Raspberry Pi Pico 2 W to connect to the network.
 
     .. code-block:: python
 

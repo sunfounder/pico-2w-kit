@@ -17,7 +17,7 @@
 7.1 Creating a Light Theremin
 ====================================================
 
-In this exciting project, we'll build a **Light Theremin** using a Raspberry Pi Pico 2w, a photoresistor, and a passive buzzer. A theremin is a unique musical instrument that is played without physical contact, producing different tones based on the position of the player's hands. While we can't replicate a traditional theremin entirely, we can simulate its functionality by using light intensity to control sound frequency.
+In this exciting project, we'll build a **Light Theremin** using a Raspberry Pi Pico 2 W, a photoresistor, and a passive buzzer. A theremin is a unique musical instrument that is played without physical contact, producing different tones based on the position of the player's hands. While we can't replicate a traditional theremin entirely, we can simulate its functionality by using light intensity to control sound frequency.
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
@@ -116,7 +116,7 @@ Let's write a MicroPython program that reads the light intensity from the photor
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.1_light_theremin.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 
@@ -321,5 +321,5 @@ When the code is running, the LED will light up, indicating the calibration peri
 
 **Conclusion**
 
-You've successfully created a Light Theremin using the Raspberry Pi Pico 2w! This project demonstrates how sensors and actuators can be combined to create interactive and fun experiments. Keep exploring and modifying the project to enhance your understanding and creativity.
+You've successfully created a Light Theremin using the Raspberry Pi Pico 2 W! This project demonstrates how sensors and actuators can be combined to create interactive and fun experiments. Keep exploring and modifying the project to enhance your understanding and creativity.
 

@@ -18,7 +18,7 @@
 2.16 Control Another Circuit with a Relay
 ==========================================
 
-In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2w. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
+In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2 W. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
 
 .. warning::
     Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
@@ -110,7 +110,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.16_relay.ino`` under the path of ``pico-2w-kit-main/arduino/2.16_relay``. 
+    * You can open the file ``2.16_relay.ino`` under the path of ``pico-2 w-kit-main/arduino/2.16_relay``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
@@ -226,7 +226,7 @@ This example uses an LED and a 5V power source to demonstrate relay control. If 
 * **Fuse Protection**: Consider adding fuses or circuit breakers to protect against short circuits or overloads.
 * **Professional Guidance**: When working with high-voltage circuits, always seek professional guidance to ensure safe operation.
 
-This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2w.
+This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2 W.
 
 **Using the NC Terminal**
 

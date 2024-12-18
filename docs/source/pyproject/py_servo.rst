@@ -17,7 +17,7 @@
 3.7 Swinging Servo
 ===================
 
-In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2w. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
+In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2 W. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
 
 Let's get started and make the servo swing back and forth!
 
@@ -94,7 +94,7 @@ Servos can draw significant current, especially under load. Since we're using a 
 
 
 .. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico 2W to the power bus of the breadboard.
+.. #. Connect **VBUS** (not 3V3) and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect the red lead of the servo to the positive power bus with a jumper.
 .. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
 .. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
@@ -105,7 +105,7 @@ We'll write a MicroPython program to make the servo sweep back and forth between
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.7_swinging_servo.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -228,5 +228,5 @@ For example, for a 0.5ms pulse width:
 
 **Conclusion**
 
-In this lesson, you've learned how to control a servo motor using the Raspberry Pi Pico 2w. You now understand how to generate PWM signals to set the servo's angle and make it move smoothly. This skill is fundamental for robotics and automation projects where precise movement is required.
+In this lesson, you've learned how to control a servo motor using the Raspberry Pi Pico 2 W. You now understand how to generate PWM signals to set the servo's angle and make it move smoothly. This skill is fundamental for robotics and automation projects where precise movement is required.
 

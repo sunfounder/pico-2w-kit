@@ -25,7 +25,7 @@ They are event-driven and interconnected using the Pub/Sub model.
 The sender (Publisher) and the receiver (Subscriber) communicate via Topics.
 A device publishes a message on a specific topic, and all devices subscribed to that topic receive the message.
 
-In this section, a service bell system will be made using Pico 2W, HiveMQ (a free public MQTT broker service), and four buttons.
+In this section, a service bell system will be made using Pico 2 W, HiveMQ (a free public MQTT broker service), and four buttons.
 The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
 
 **1. Required Components**
@@ -89,10 +89,6 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 9
-        - Battery Holder
-        - 1
-        -  
 
 **2. Build the Circuit**
 
@@ -127,13 +123,13 @@ HiveMQ is an MQTT broker and client-based messaging platform that enables fast, 
 
 **4. Install the MQTT Module**
 
-Before we can start the project, we need to install the MQTT module for Pico 2W.
+Before we can start the project, we need to install the MQTT module for Pico 2 W.
 
 1. Connect to the network by running ``do_connect()`` in the Shell, which we wrote earlier.
 
     .. note::
         * Type the following commands into the Shell and press ``Enter`` to run them.
-        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
+        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
 
     .. code-block:: python
 
@@ -147,13 +143,13 @@ Before we can start the project, we need to install the MQTT module for Pico 2W.
         import mip
         mip.install('umqtt.simple')
 
-3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico 2W after completion.
+3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico 2 W after completion.
 
     .. image:: img/5_calling_system1.png
 
 **5. Run the Script**
 
-#. Open the ``5_mqtt_publish.py`` file under the path of ``pico-2w-kit-main/iot``.
+#. Open the ``5_mqtt_publish.py`` file under the path of ``pico-2 w-kit-main/iot``.
 
 #. Click the **Run current script** button or press F5 to run it.
 
@@ -164,7 +160,7 @@ Before we can start the project, we need to install the MQTT module for Pico 2W.
     .. image:: img/mqtt-4.png
   
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2W as ``main.py``.
+#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
 
 **How it works?**
 
@@ -197,7 +193,7 @@ Since we are using a public broker, our ``client ID`` will not be used, even if 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico 2W.
+Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico 2 W.
 
 .. code-block:: python
 

@@ -19,7 +19,7 @@
 
 |img_micro_switch|
 
-In this lesson, we'll learn how to use a **micro switch** (also known as a limit switch) with the Raspberry Pi Pico 2w to detect when it's pressed or released. Micro switches are commonly used in devices like microwave oven doors, printer covers, or as end stops in 3D printers because they are reliable and can handle frequent activation.
+In this lesson, we'll learn how to use a **micro switch** (also known as a limit switch) with the Raspberry Pi Pico 2 W to detect when it's pressed or released. Micro switches are commonly used in devices like microwave oven doors, printer covers, or as end stops in 3D printers because they are reliable and can handle frequent activation.
 
 * :ref:`cpn_micro_switch`
 
@@ -126,7 +126,7 @@ We'll write a MicroPython program that detects when the micro switch is pressed 
 
 .. note::
 
-  * Open the ``2.8_micro_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.8_micro_switch.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -248,5 +248,5 @@ If you prefer to simplify the wiring even further, you can rely solely on the in
 
 **Conclusion**
 
-Using a micro switch with the Raspberry Pi Pico 2w allows you to detect physical interactions reliably. Understanding how to wire the switch and read its state in your code is essential for creating responsive and interactive projects.
+Using a micro switch with the Raspberry Pi Pico 2 W allows you to detect physical interactions reliably. Understanding how to wire the switch and read its state in your code is essential for creating responsive and interactive projects.
 

@@ -17,7 +17,7 @@
 4.1 Toggle the Joystick
 ================================
 
-In this lesson, we'll learn how to use a **joystick** with the Raspberry Pi Pico 2w to read analog values and detect button presses. A joystick is a common input device that allows you to control movement along two axes (X and Y) and often includes a button when pressed down (Z-axis).
+In this lesson, we'll learn how to use a **joystick** with the Raspberry Pi Pico 2 W to read analog values and detect button presses. A joystick is a common input device that allows you to control movement along two axes (X and Y) and often includes a button when pressed down (Z-axis).
 
 * :ref:`cpn_joystick`
 
@@ -102,7 +102,7 @@ Let's write a MicroPython program to read the joystick's X and Y positions and d
 
 .. note::
 
-    * Open the ``4.1_toggle_the_joystick.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``4.1_toggle_the_joystick.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -246,6 +246,6 @@ After running the program, open the Shell or REPL window in Thonny.
 
 **Conclusion**
 
-In this lesson, you've learned how to read analog and digital inputs from a joystick using the Raspberry Pi Pico 2w. This knowledge allows you to incorporate joystick controls into your projects, enabling interactive applications like robots, games, or remote controls.
+In this lesson, you've learned how to read analog and digital inputs from a joystick using the Raspberry Pi Pico 2 W. This knowledge allows you to incorporate joystick controls into your projects, enabling interactive applications like robots, games, or remote controls.
 
 

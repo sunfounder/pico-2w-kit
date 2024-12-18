@@ -119,7 +119,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.6_traffic_light.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -353,6 +353,6 @@ The cycle repeats indefinitely.
 
 **Conclusion**
 
-You've successfully built a Traffic Light Controller using the Raspberry Pi Pico 2w! This project demonstrates how microcontrollers can be used to control hardware components like LEDs and displays, and how timers and interrupts can create real-time applications.
+You've successfully built a Traffic Light Controller using the Raspberry Pi Pico 2 W! This project demonstrates how microcontrollers can be used to control hardware components like LEDs and displays, and how timers and interrupts can create real-time applications.
 
 Feel free to expand upon this project, adding new features or integrating it into a larger system.

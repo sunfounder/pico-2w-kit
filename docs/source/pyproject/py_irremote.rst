@@ -18,7 +18,7 @@
 6.4 Using an Infrared Remote Control
 ==========================================================
 
-In this lesson, we'll learn how to use an **infrared (IR) remote control** and an **IR receiver module** with the Raspberry Pi Pico 2w. This will allow us to receive and decode signals from an IR remote, enabling us to control our projects wirelessly.
+In this lesson, we'll learn how to use an **infrared (IR) remote control** and an **IR receiver module** with the Raspberry Pi Pico 2 W. This will allow us to receive and decode signals from an IR remote, enabling us to control our projects wirelessly.
 
 * :ref:`cpn_ir_receiver`
 
@@ -95,7 +95,7 @@ Let's write a MicroPython script to receive and decode IR signals from the remot
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``6.4_ir_remote_control.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -256,7 +256,7 @@ When you run this code and press buttons on your infrared remote control, the Th
 
 **Conclusion**
 
-In this lesson, you've learned how to use an IR receiver with the Raspberry Pi Pico 2w to decode signals from an infrared remote control. This enables you to add wireless control to your projects using common household remotes.
+In this lesson, you've learned how to use an IR receiver with the Raspberry Pi Pico 2 W to decode signals from an infrared remote control. This enables you to add wireless control to your projects using common household remotes.
 
 * `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
 

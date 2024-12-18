@@ -18,7 +18,7 @@
 6.2 Measuring Temperature and Humidity with DHT11
 =======================================================
 
-In this lesson, we'll learn how to use a **DHT11 temperature and humidity sensor** with the Raspberry Pi Pico 2w. The DHT11 is a basic, low-cost digital sensor that can measure ambient temperature and humidity, providing a calibrated digital output.
+In this lesson, we'll learn how to use a **DHT11 temperature and humidity sensor** with the Raspberry Pi Pico 2 W. The DHT11 is a basic, low-cost digital sensor that can measure ambient temperature and humidity, providing a calibrated digital output.
 
 |img_Dht11|
 
@@ -98,7 +98,7 @@ We'll write a program that reads temperature and humidity data from the DHT11 se
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``pico-2w-kit-main/arduino/6.2_dht11``. 
+    * You can open the file ``6.2_dht11.ino`` under the path of ``pico-2 w-kit-main/arduino/6.2_dht11``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.

@@ -17,7 +17,7 @@
 2.6 Tilt It!
 =======================
 
-In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2w to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
+In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2 W to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
 
 
 **Required Components**
@@ -98,7 +98,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.6_tilt_it.ino`` under the path of ``pico-2w-kit-main/arduino/2.4_colorful_light``. 
+    * You can open the file ``2.6_tilt_it.ino`` under the path of ``pico-2 w-kit-main/arduino/2.4_colorful_light``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

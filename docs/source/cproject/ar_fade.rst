@@ -17,7 +17,7 @@
 2.3 Fading LED
 ========================
 
-In this lesson, we'll learn how to control the brightness of an LED using Pulse Width Modulation (PWM) on the Raspberry Pi Pico 2w. This is a fundamental technique in electronics that allows us to control devices like LEDs and motors with varying intensities.
+In this lesson, we'll learn how to control the brightness of an LED using Pulse Width Modulation (PWM) on the Raspberry Pi Pico 2 W. This is a fundamental technique in electronics that allows us to control devices like LEDs and motors with varying intensities.
 
 **What is PWM?**
 
@@ -36,9 +36,9 @@ By adjusting the duty cycle, we can simulate analog output using digital signals
 * **Motor Speed Control**: Control the speed of DC motors.
 * **Efficiency**: PWM is more efficient than using variable resistors because it reduces energy loss in the form of heat.
 
-**Understanding PWM on the Raspberry Pi Pico 2w**
+**Understanding PWM on the Raspberry Pi Pico 2 W**
 
-The Raspberry Pi Pico 2w has PWM capabilities on all its GPIO pins, but it actually has 8 PWM slices (from PWM0 to PWM7), each with two channels (A and B), giving a total of 16 independent PWM outputs.
+The Raspberry Pi Pico 2 W has PWM capabilities on all its GPIO pins, but it actually has 8 PWM slices (from PWM0 to PWM7), each with two channels (A and B), giving a total of 16 independent PWM outputs.
 
 |pin_pwm|
 
@@ -118,7 +118,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.3_fading_led.ino`` under the path of ``pico-2w-kit-main/arduino/2.3_fading_led``. 
+    * You can open the file ``2.3_fading_led.ino`` under the path of ``pico-2 w-kit-main/arduino/2.3_fading_led``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
@@ -203,4 +203,4 @@ After uploading the code, you should see the LED gradually increase in brightnes
 
 **Conclusion**
 
-You've successfully created a fading LED effect using PWM on the Raspberry Pi Pico 2w. This project demonstrates how PWM can be used to simulate analog behavior with digital signals, a fundamental concept in electronics and programming microcontrollers.
+You've successfully created a fading LED effect using PWM on the Raspberry Pi Pico 2 W. This project demonstrates how PWM can be used to simulate analog behavior with digital signals, a fundamental concept in electronics and programming microcontrollers.

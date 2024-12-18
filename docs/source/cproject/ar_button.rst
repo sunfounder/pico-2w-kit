@@ -17,7 +17,7 @@
 2.5 Reading Button Value
 =============================
 
-In this lesson, we'll learn how to read input from a pushbutton using the Raspberry Pi Pico 2w. So far, we've used the GPIO pins mainly for output, like lighting up LEDs. Now, we'll use a GPIO pin as an input to detect when a button is pressed. This is a fundamental skill for creating interactive projects.
+In this lesson, we'll learn how to read input from a pushbutton using the Raspberry Pi Pico 2 W. So far, we've used the GPIO pins mainly for output, like lighting up LEDs. Now, we'll use a GPIO pin as an input to detect when a button is pressed. This is a fundamental skill for creating interactive projects.
 
 * :ref:`cpn_button`
 
@@ -96,7 +96,7 @@ Until the button is pressed, the left and right pins are independent of each oth
 
 .. note::
 
-    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``pico-2w-kit-main/arduino/2.5_reading_button_value``. 
+    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``pico-2 w-kit-main/arduino/2.5_reading_button_value``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

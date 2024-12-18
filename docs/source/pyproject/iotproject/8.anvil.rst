@@ -15,8 +15,8 @@
 8. Building Web APP with @Anvil
 ===================================
 
-We will write a project to communicate bi-directionally between the Raspberry Pi Pico 2W and Anvil's servers.
-The temperature and humidity transmitted from the Pico 2W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico 2W's I2C LCD1602.
+We will write a project to communicate bi-directionally between the Raspberry Pi Pico 2 W and Anvil's servers.
+The temperature and humidity transmitted from the Pico 2 W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico 2 W's I2C LCD1602.
 
 |anvil|
 
@@ -80,10 +80,6 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 9
-        - Battery Holder
-        - 1
-        -  
 
 **2. Build the Circuit**
 
@@ -136,22 +132,22 @@ You can also buy them separately from the links below.
 
     .. image:: img/anvil-17.png
 
-9. Drag a **button** to the far right and you can modify the **text** field. This button will be used to "send" a message to the Raspberry Pi Pico 2W.
+9. Drag a **button** to the far right and you can modify the **text** field. This button will be used to "send" a message to the Raspberry Pi Pico 2 W.
 
     .. image:: img/anvil-14.png
 
-10. After double clicking the **SHOW** button, the form will switch from the Design page to the Code page and highlight the code for the **button**. You need to fill in the following code, which functions to call a function inside the server (in this case, Pico 2W). 
+10. After double clicking the **SHOW** button, the form will switch from the Design page to the Code page and highlight the code for the **button**. You need to fill in the following code, which functions to call a function inside the server (in this case, Pico 2 W). 
 
     .. code-block:: python
     
         anvil.server.call_s("show_message",self.text_box_1.text)
 
-    * ``show_message`` is the function that will be defined when Pico 2W is programmed.
+    * ``show_message`` is the function that will be defined when Pico 2 W is programmed.
     * ``self.text_box_1.text`` is the message you type on the text box, which will be sent as a pass-through to ``show_message()``.
 
     .. image:: img/anvil-15.png
 
-11. Go back to the Design page, drag another label and place it under the previous elements. This label will show the DHT11 sensor data from the Pico 2W.
+11. Go back to the Design page, drag another label and place it under the previous elements. This label will show the DHT11 sensor data from the Pico 2 W.
 
     .. image:: img/anvil-9.png
 
@@ -177,25 +173,25 @@ You can also buy them separately from the links below.
 15. At this point, the part that needs to be programmed on Anvil is done. You can see more details on using Anvil from |link_anvil_docs|.
 
 
-**4. Setup Pico 2W**
+**4. Setup Pico 2 W**
 
-In order to simplify the connection of the Raspberry Pi Pico 2W to Anvil services, Anvil uses a custom firmware image. Pico 2W's firmware is written in MicroPython and appears as a USB drive with two files (boot.py and main.py). The Pico 2W must be flashed with custom firmware and connected to our Wi-Fi before we can begin writing code.
+In order to simplify the connection of the Raspberry Pi Pico 2 W to Anvil services, Anvil uses a custom firmware image. Pico 2 W's firmware is written in MicroPython and appears as a USB drive with two files (boot.py and main.py). The Pico 2 W must be flashed with custom firmware and connected to our Wi-Fi before we can begin writing code.
 
-1. Download the custom Raspberry Pi Pico 2W |link_anvil_firmware|, it is recommended to download the complete version.
+1. Download the custom Raspberry Pi Pico 2 W |link_anvil_firmware|, it is recommended to download the complete version.
 
     .. image:: img/anvil-p-1.png
 
 
-2. Push and hold the **BOOTSEL** button on the Pico 2W, then connect to your computer using a micro USB cable. Release BOOTSEL once the drive RPI-RP2 appears on your computer.
+2. Push and hold the **BOOTSEL** button on the Pico 2 W, then connect to your computer using a micro USB cable. Release BOOTSEL once the drive RPI-RP2 appears on your computer.
 
     .. image:: img/anvil-p-2.png
         :width: 300
 
 
-3. Drag and drop the ``.uf2`` file you just downloaded into it and Pico 2W will install the firmware at this point. When it is done, Pico 2W will reload the disk drive and you will see the ``main.py`` and ``boot.py`` files.
+3. Drag and drop the ``.uf2`` file you just downloaded into it and Pico 2 W will install the firmware at this point. When it is done, Pico 2 W will reload the disk drive and you will see the ``main.py`` and ``boot.py`` files.
 
     .. note:: 
-        Before reinstalling the firmware, make a backup of all your important files stored in Pico 2W.
+        Before reinstalling the firmware, make a backup of all your important files stored in Pico 2 W.
 
 
     .. image:: img/anvil-p-3.png
@@ -212,7 +208,7 @@ In order to simplify the connection of the Raspberry Pi Pico 2W to Anvil service
 **5. Finish the Code**
 
 
-#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``pico-2w-kit-main/libs`` to the Raspberry Pi Pico 2W.
+#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``pico-2 w-kit-main/libs`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/anvil-22.png
 
@@ -250,7 +246,7 @@ In order to simplify the connection of the Raspberry Pi Pico 2W to Anvil service
         anvil.pico.connect(UPLINK_KEY)
 
 
-        # There's lots more you can do with Anvil on your Pico 2W.
+        # There's lots more you can do with Anvil on your Pico 2 W.
         #
         # See https://anvil.works/pico for more information
 
@@ -265,7 +261,7 @@ In order to simplify the connection of the Raspberry Pi Pico 2W to Anvil service
     .. image:: img/anvil-p-7.png
 
 
-#. Copy it and replace ``<uplink_key_goes_here>`` in ``main.py``, which makes your Pico 2W can connect to the Anvil APP you created.
+#. Copy it and replace ``<uplink_key_goes_here>`` in ``main.py``, which makes your Pico 2 W can connect to the Anvil APP you created.
 
     .. image:: img/anvil-p-8.png
 
@@ -310,7 +306,7 @@ If you want to share your made app to others, you can generate a sharing link by
 
 **How it works?**
 
-Here is the basic framework of ``main.py``, which forms the basis of the communication between Pico 2W and Anvil APP.
+Here is the basic framework of ``main.py``, which forms the basis of the communication between Pico 2 W and Anvil APP.
 
 .. code-block:: python
 
@@ -325,7 +321,7 @@ Here is the basic framework of ``main.py``, which forms the basis of the communi
     anvil.pico.connect(UPLINK_KEY)
 
 
-    # There's lots more you can do with Anvil on your Pico 2W.
+    # There's lots more you can do with Anvil on your Pico 2 W.
     #
     # See https://anvil.works/pico for more information
 
@@ -343,7 +339,7 @@ Set up dht11 and lcd1602. Details of the use of these two components can be foun
     sensor = DHT11(Pin(16, Pin.OUT, Pin.PULL_DOWN))
 
 
-In Anvil's code, we have called two internal functions of the server (Pico 2W). 
+In Anvil's code, we have called two internal functions of the server (Pico 2 W). 
 
 The first is ``show_message()``, whose function is to make the LCD display the message typed by Anvil.
 The decorator ``@anvil.pico.callable(is_async=True)`` makes this function callable by Anvil.

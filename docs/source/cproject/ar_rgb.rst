@@ -18,7 +18,7 @@
 2.4 Colorful Light
 ====================
 
-In this lesson, we'll explore how to create various colors using an RGB LED and the Raspberry Pi Pico 2w. By adjusting the intensity of the red, green, and blue components, we can mix light to produce a wide range of colors. This concept is based on the additive method of color mixing.
+In this lesson, we'll explore how to create various colors using an RGB LED and the Raspberry Pi Pico 2 W. By adjusting the intensity of the red, green, and blue components, we can mix light to produce a wide range of colors. This concept is based on the additive method of color mixing.
 
 **What is Additive Color Mixing?**
 
@@ -113,7 +113,7 @@ Here, we can choose our favorite color in drawing software (such as paint) and d
 
 .. note::
 
-    * You can open the file ``2.4_colorful_light.ino`` under the path of ``pico-2w-kit-main/arduino/2.4_colorful_light``. 
+    * You can open the file ``2.4_colorful_light.ino`` under the path of ``pico-2 w-kit-main/arduino/2.4_colorful_light``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

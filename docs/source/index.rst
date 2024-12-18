@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Pico 2 W Starter Kit
+Pico 2 W Kit - A Versatile Hardware Programming Kit
 ======================================================================
 
 |link_pico2w_starter_Kit|
@@ -29,21 +29,23 @@ Thanks for choosing our |link_pico2w_kit|.
 
 Thank you for choosing the SunFounder Pico 2 W Starter Kit
 
-This is an learning kit based on the Raspberry Pi Pico 2W. 
+The Pico 2 W Kit is a comprehensive learning and development kit built around the Raspberry Pi Pico 2 W microcontroller. 
+It comes equipped with a variety of modules, including sensors (ultrasonic, RFID, MPU6050, water level), display components 
+(LEDs, dot matrix, 7-segment display, I2C LCD1602), and actuators like motors, servos, and pumps. This kit is designed to 
+enable users to explore hardware programming, interactive projects, and creative designs.
+This documentation is divided into two sections based on the programming environment:
 
-Raspberry Pi Pico 2W adds on-board single-band 2.4GHz wireless interfaces (802.11n) using the Infineon CYW43439 while retaining the Pico form factor, so in addition to the basic GPIO function, it can also connect to the network so we can use it for some IoT projects.
-For example, using IFTTT for a security system, building a cloud player and a cloud service bell system using MQTT and so on.
+* :ref:`projects_micropython`: Learn to program and control the kit using MicroPython, focusing on hands-on examples and hardware interaction.
+* :ref:`projects_arduino`: Utilize the Arduino IDE and C/C++ programming to achieve the same hardware functionality through structured exercises and projects.
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
-
-Additionally, we offer two programming languages. MicroPython, C/C++ (Arduino) are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+Whether you are a beginner or an experienced programmer, the Pico 2 W Kit provides all the tools and guidance you need to start building exciting projects.
 
 Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
 
 Here is the email: service@sunfounder.com.
 
 
-**Source Code**
+**Source Code download**
 
 * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
@@ -57,10 +59,7 @@ Here is the email: service@sunfounder.com.
 
     About This Kit <self>
     introduction_to_pico_2w
-    download_the_code
-    bc_basic_circuit
     pyproject/for_micropython_user
-    iotproject/for_iot
     cproject/for_arduino_user
     component/what_is_included_in_this_kit
     faq

@@ -17,7 +17,7 @@
 2.2 - Display the Level
 =============================
 
-In this lesson, we'll learn how to control an LED Bar Graph using the Raspberry Pi Pico 2w. An LED Bar Graph consists of 10 LEDs arranged in a line, typically used to display levels such as volume, signal strength, or other measurements. We'll light up the LEDs sequentially to create a level display effect.
+In this lesson, we'll learn how to control an LED Bar Graph using the Raspberry Pi Pico 2 W. An LED Bar Graph consists of 10 LEDs arranged in a line, typically used to display levels such as volume, signal strength, or other measurements. We'll light up the LEDs sequentially to create a level display effect.
 
 |img_led_bar_pin|
 
@@ -92,7 +92,7 @@ The LED Bar Graph contains 10 LEDs, each of which is individually controllable. 
 
 .. note::
 
-    * You can open the file ``2.2_display_the_level.ino`` under the path of ``pico-2w-kit-main/arduino/2.2_display_the_level``. 
+    * You can open the file ``2.2_display_the_level.ino`` under the path of ``pico-2 w-kit-main/arduino/2.2_display_the_level``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

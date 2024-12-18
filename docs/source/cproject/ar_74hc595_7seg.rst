@@ -17,7 +17,7 @@
 5.2 Displaying Numbers
 ===========================================================
 
-In this lesson, we'll learn how to use a **7-segment display** to show numbers using the Raspberry Pi Pico 2w and a **74HC595 shift register**. The 7-segment display is a common electronic component used in devices like digital clocks, calculators, and appliances to display numerical information.
+In this lesson, we'll learn how to use a **7-segment display** to show numbers using the Raspberry Pi Pico 2 W and a **74HC595 shift register**. The 7-segment display is a common electronic component used in devices like digital clocks, calculators, and appliances to display numerical information.
 
 By combining the 74HC595 shift register with the 7-segment display, we can control all the segments using only a few GPIO pins on the Pico, saving valuable I/O resources for other components.
 * :ref:`cpn_7_segment`
@@ -131,7 +131,7 @@ We'll write a program that controls the 7-segment display by sending serial data
 
 .. note::
 
-    * You can open the file ``5.2_number_display.ino`` under the path of ``pico-2w-kit-main/arduino/5.2_number_display``. 
+    * You can open the file ``5.2_number_display.ino`` under the path of ``pico-2 w-kit-main/arduino/5.2_number_display``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

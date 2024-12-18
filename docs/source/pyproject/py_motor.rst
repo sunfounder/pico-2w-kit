@@ -19,7 +19,7 @@
 
 
 In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the 
-Raspberry Pi Pico 2w and an **TA6586 motor driver**. The TA6586 allows us to control the 
+Raspberry Pi Pico 2 W and an **TA6586 motor driver**. The TA6586 allows us to control the 
 direction of the motor rotation—both clockwise and counterclockwise. 
 Since the DC motor requires a relatively large current, for safety reasons, 
 here we use a power module to supply power to the motor.
@@ -87,11 +87,7 @@ You can also buy them separately from the links below.
     *   - 8
         - 18650 Battery
         - 1
-        -  
-    *   - 9
-        - Battery Holder
-        - 1
-        -  
+        -   
 
 
 
@@ -116,7 +112,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``3.5_small_fan.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.5_small_fan.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -201,7 +197,7 @@ Once the program is running, the motor will rotate back and forth in a regular p
 
 **Conclusion**
 
-In this lesson, you've learned how to control a DC motor using the TA6586 motor driver and the Raspberry Pi Pico 2w. You can now control the motor's direction and create projects like a small fan or a motorized device.
+In this lesson, you've learned how to control a DC motor using the TA6586 motor driver and the Raspberry Pi Pico 2 W. You can now control the motor's direction and create projects like a small fan or a motorized device.
 
 **Next Steps**
 

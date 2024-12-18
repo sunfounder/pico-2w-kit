@@ -17,7 +17,7 @@
 2.9 Feel the Magnetism
 ===============================
 
-In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2w to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
+In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2 W to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
 
 * :ref:`cpn_reed`
 
@@ -114,7 +114,7 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 
 .. note::
 
-    * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``pico-2w-kit-main/arduino/2.9_feel_the_magnetism``. 
+    * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``pico-2 w-kit-main/arduino/2.9_feel_the_magnetism``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

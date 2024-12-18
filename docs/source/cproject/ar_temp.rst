@@ -17,7 +17,7 @@
 2.13 Thermometer
 ===========================
 
-In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2w to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
+In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2 W to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
 
 * :ref:`cpn_thermistor`
 
@@ -79,7 +79,7 @@ You can also buy them separately from the links below.
 
 **Understanding the Thermistor**
 
-An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2w's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
+An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
 
 **Schematic**
 
@@ -99,7 +99,7 @@ The 10K resistor ensures 3.3V and GND are not directly connected, preventing a s
 
 |wiring_temp|
  
-.. #. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. #. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
 .. #. Connect another lead of thermistor to the negative power bus.
 
@@ -108,7 +108,7 @@ The 10K resistor ensures 3.3V and GND are not directly connected, preventing a s
 
 .. note::
 
-    * You can open the file ``2.13_thermometer.ino`` under the path of ``pico-2w-kit-main/arduino/2.13_thermometer``. 
+    * You can open the file ``2.13_thermometer.ino`` under the path of ``pico-2 w-kit-main/arduino/2.13_thermometer``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

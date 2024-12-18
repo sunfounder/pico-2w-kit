@@ -109,7 +109,7 @@ You can also buy them separately from the links below.
 
 |service_bell|
 
-After connecting Pico 2W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+After connecting Pico 2 W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
 
 .. note::
     This project code is exactly the same as the previous project :ref:`per_button`.

@@ -111,7 +111,7 @@ You can also buy them separately from the links below.
 |button_race|
 
 
-* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* After connecting Pico 2 W, click the **Start** button and the code starts to run.
 * Press the referee button and the buzzer starts to sound (continuously), representing the start of the game.
 * At this point, press the **player** buttons separately and quickly, and the corresponding LEDs will light up.
 * When the **referee** button is pressed again, the buzzer stops, which means the game is over.

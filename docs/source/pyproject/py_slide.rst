@@ -19,7 +19,7 @@
 
 |img_slide|
 
-In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2w to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
+In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2 W to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
 
 **Required Components**
 
@@ -129,7 +129,7 @@ We'll write a MicroPython program that detects the position of the slide switch 
 
 .. note::
 
-  * Open the ``2.7_slide_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.7_slide_switch.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -181,7 +181,7 @@ When the code is running, you will observe the following phenomenon:
 
 **Alternative: Using an internal pull-down resistor**
 
-The Raspberry Pi Pico 2w allows us to enable internal pull-down resistors, eliminating the need for an external resistor.
+The Raspberry Pi Pico 2 W allows us to enable internal pull-down resistors, eliminating the need for an external resistor.
 
 * Modify the Circuit:
 
@@ -238,5 +238,5 @@ The Raspberry Pi Pico 2w allows us to enable internal pull-down resistors, elimi
 
 **Conclusion**
 
-Using a slide switch with the Raspberry Pi Pico 2w allows you to add physical input controls to your projects. By understanding how to read the switch's state and handle potential issues like switch bounce, you can create more interactive and user-friendly applications.
+Using a slide switch with the Raspberry Pi Pico 2 W allows you to add physical input controls to your projects. By understanding how to read the switch's state and handle potential issues like switch bounce, you can create more interactive and user-friendly applications.
 

@@ -77,10 +77,7 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 8
-        - Battery Holder
-        - 1
-        -  
+ 
 
 **Steps**
 
@@ -97,12 +94,12 @@ You can also buy them separately from the links below.
 
 
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``pico-2w-kit-main/iot``.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``pico-2 w-kit-main/iot``.
 
 #. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
 
     .. image:: img/2_cheerlight1.png
 
@@ -119,7 +116,7 @@ You can also buy them separately from the links below.
     
 5. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
 
-6. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico 2W as ``main.py``, as follows.
+6. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico 2 W as ``main.py``, as follows.
 
     * Stop the script from running and click **File** -> **Save as**.
 
@@ -129,11 +126,11 @@ You can also buy them separately from the links below.
 
         .. image:: img/2_cheerlight3.png
 
-    * Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico 2W.
+    * Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico 2 W.
 
         .. image:: img/2_cheerlight4.png
     
-    * You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico 2W. Put it in a corner and it will work automatically.
+    * You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico 2 W. Put it in a corner and it will work automatically.
 
 
 **How it works?**

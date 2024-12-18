@@ -17,13 +17,13 @@
 3.4 Liquid Crystal Display (LCD1602)
 =====================================
 
-In this lesson, we will learn how to use a **1602 LCD** with the Raspberry Pi Pico 2w to display text. The LCD1602 is a character-based liquid crystal display that can show 16 characters on 2 lines, making it ideal for projects that need to display information like messages, sensor readings, or status updates.
+In this lesson, we will learn how to use a **1602 LCD** with the Raspberry Pi Pico 2 W to display text. The LCD1602 is a character-based liquid crystal display that can show 16 characters on 2 lines, making it ideal for projects that need to display information like messages, sensor readings, or status updates.
 
 Connecting an LCD directly to a microcontroller typically requires many GPIO pins, which can limit the functionality of your project. To solve this problem, we can use an LCD1602 module that has an **I2C interface**. The I2C protocol uses only two data lines (SDA and SCL), allowing you to control the LCD with just two GPIO pins, freeing up other pins for additional sensors or devices.
 
 **Understanding I2C on the Raspberry Pi Pico 2**
 
-The Raspberry Pi Pico 2w supports I2C communication through multiple GPIO pins, providing flexibility for your projects. It has two I2C buses, I2C0 and I2C1, and each can be mapped to several sets of pins.
+The Raspberry Pi Pico 2 W supports I2C communication through multiple GPIO pins, providing flexibility for your projects. It has two I2C buses, I2C0 and I2C1, and each can be mapped to several sets of pins.
 
 Here's a breakdown of the I2C-capable pins on the Pico 2:
 
@@ -93,7 +93,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``pico-2w-kit-main/arduino/3.4_liquid_crystal_display``. 
+    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``pico-2 w-kit-main/arduino/3.4_liquid_crystal_display``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.

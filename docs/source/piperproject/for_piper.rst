@@ -15,11 +15,11 @@
 For Piper Make
 ===================
 
-This chapter contains an introduction to Piper Make, how to connect and program Pico 2W win Piper Make, and several interesting projects to help you get up and running with Piper quickly.
+This chapter contains an introduction to Piper Make, how to connect and program Pico 2 W win Piper Make, and several interesting projects to help you get up and running with Piper quickly.
 
 We recommend that you read this chapter in order.
 
-Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico 2W. It uses blocks like Scratch, so you don't need any programming experience to use it.
+Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico 2 W. It uses blocks like Scratch, so you don't need any programming experience to use it.
 The underlying principle is to use CircuitPython with auxiliary libraries.
 
 

@@ -17,7 +17,7 @@
 7.5 Creating a "10 Second" Game
 ======================================================
 
-In this engaging project, we'll build a fun game called **"10 Second"** using the Raspberry Pi Pico 2w, a tilt switch, and a 4-digit 7-segment display. The objective of the game is to shake a magic wand (simulated using the tilt switch attached to a stick) to start a timer, and then shake it again to stop the timer as close to **10.00 seconds** as possible. It's a great way to test your timing skills and challenge friends to see who is the true time wizard!
+In this engaging project, we'll build a fun game called **"10 Second"** using the Raspberry Pi Pico 2 W, a tilt switch, and a 4-digit 7-segment display. The objective of the game is to shake a magic wand (simulated using the tilt switch attached to a stick) to start a timer, and then shake it again to stop the timer as close to **10.00 seconds** as possible. It's a great way to test your timing skills and challenge friends to see who is the true time wizard!
 
 **Required Components**
 
@@ -422,6 +422,6 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
 
 **Conclusion**
 
-You've successfully built a "10 Second" Game using the Raspberry Pi Pico 2w! This project combines sensor input, timing functions, and display control to create an interactive and entertaining game. It's an excellent example of how microcontrollers can be used to create fun and engaging experiences.
+You've successfully built a "10 Second" Game using the Raspberry Pi Pico 2 W! This project combines sensor input, timing functions, and display control to create an interactive and entertaining game. It's an excellent example of how microcontrollers can be used to create fun and engaging experiences.
 
 Feel free to customize and expand upon this project. Whether it's adding new features, improving the design, or integrating additional components, the possibilities are endless.

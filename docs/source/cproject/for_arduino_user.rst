@@ -12,7 +12,9 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-For Arduino User
+.. _projects_arduino:
+
+Arduino Projects
 ======================
 This chapter includes installing Arduino IDE, 
 uploading code to Raspberry Pi with Arduino IDE and a dozen interesting and practical projects to help you learn Arduino code quickly.
@@ -20,7 +22,8 @@ uploading code to Raspberry Pi with Arduino IDE and a dozen interesting and prac
 We recommend that you read the chapters in order.
 
 
-**1. Get Started**
+1. Get Started
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -30,7 +33,8 @@ We recommend that you read the chapters in order.
     arduino_start/install_pico_2w
     arduino_start/add_libraries_ar 
 
-**2. Output & input**
+2. Output & input
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -52,7 +56,8 @@ We recommend that you read the chapters in order.
     ar_transistor
     ar_relay
 
-**3. Sound & Display & Movement**
+3. Sound & Display & Movement
+--------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -66,7 +71,8 @@ We recommend that you read the chapters in order.
     ar_servo
 
 
-**4. Controller**
+4. Controller
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -75,7 +81,8 @@ We recommend that you read the chapters in order.
     ar_keypad
     ar_mpr121
 
-**5. Microchip**
+5. Microchip
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -85,7 +92,8 @@ We recommend that you read the chapters in order.
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-**6. Advanced**
+6. Advanced
+------------------------
 
 .. toctree::
     :maxdepth: 1

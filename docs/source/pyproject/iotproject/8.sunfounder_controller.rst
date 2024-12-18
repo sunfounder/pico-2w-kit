@@ -18,8 +18,8 @@
 ====================================
 
 In this project, you will learn how to build a remote project using Sunfounder Controller APP.
-In a LAN environment, you can control your Pico 2W circuit with your phone/tablet.
-You will find this app very useful if you want to build a simple robot with Pico 2W.
+In a LAN environment, you can control your Pico 2 W circuit with your phone/tablet.
+You will find this app very useful if you want to build a simple robot with Pico 2 W.
 
 Here, we will use the slider bar on the APP to control the servo angle and the gauge on the APP to show the distance detected by ultrasonic.
 
@@ -81,10 +81,6 @@ You can also buy them separately from the links below.
         -  
     *   - 8
         - 18650 Battery
-        - 1
-        -  
-    *   - 9
-        - Battery Holder
         - 1
         -  
 
@@ -152,10 +148,10 @@ You can also buy them separately from the links below.
 **4. Run the Code**
 
 .. note:: 
-    If your Pico 2W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
+    If your Pico 2 W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
 
 
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``pico-2w-kit-main/libs`` to the Raspberry Pi Pico 2W.
+1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``pico-2 w-kit-main/libs`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/9_sc3.png
 
@@ -163,12 +159,12 @@ You can also buy them separately from the links below.
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``pico-2w-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2W.
+3. Open the ``9_sunfounder_controller.py`` under the path of ``pico-2 w-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
 
     .. image:: img/9_sc2.png
 
     .. note::
-        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2W as ``main.py``.
+        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
 
 4. Back to SunFounder Controller APP, click the **Connect** button.
 
@@ -228,7 +224,7 @@ Star it.
     ws.start()
 
 
-Next, a ``while True`` loop is used to perform the data transfer between Pico 2W and the SunFounder Controller APP.
+Next, a ``while True`` loop is used to perform the data transfer between Pico 2 W and the SunFounder Controller APP.
 
 .. code-block:: python
 
@@ -250,7 +246,7 @@ Next, a ``while True`` loop is used to perform the data transfer between Pico 2W
 
 ``status`` is ``False`` if it fails to get data from the SunFounder Controller APP.
 
-And ``result`` is the data that Pico 2W fetched from the SunFounder Controller APP.
+And ``result`` is the data that Pico 2 W fetched from the SunFounder Controller APP.
 Print it out and you will see something like the following. This is the value of all Widget areas.
 
 .. code-block:: 
@@ -267,7 +263,7 @@ As in this case, we print the values of the H area separately and use them to op
             print(result['H'])
 
 
-And the ``ws.send_dict`` dictionary is the data that Pico 2W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
+And the ``ws.send_dict`` dictionary is the data that Pico 2 W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
 
 Its message is shown below.
 

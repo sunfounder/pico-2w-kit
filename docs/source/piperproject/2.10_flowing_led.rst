@@ -97,7 +97,7 @@ You can also buy them separately from the links below.
 
 |neopixel|
 
-After connecting Pico 2W, click the **Start** button and the code starts to run.
+After connecting Pico 2 W, click the **Start** button and the code starts to run.
 
 When the tilt switch is placed vertically, it makes the LEDs on the WS2812 RGB LED Strip light up one by one in green, and when the tilt switch is placed horizontally, the LEDs light up one by one in the opposite direction in green.
 

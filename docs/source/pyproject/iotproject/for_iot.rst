@@ -15,9 +15,9 @@
 IoT Projects
 ============================
 
-This section will walk you through how to get the Pico 2W connected to the network and complete some interesting IoT projects.
+This section will walk you through how to get the Pico 2 W connected to the network and complete some interesting IoT projects.
 
-But the first step before moving on to this section is to complete **1. Get Started** inside :ref:`micropython_user` to complete the installation of the Thonny IDE, install the Micropython firmware for the Raspberry Pi Pico 2W and upload the libraries.
+But the first step before moving on to this section is to complete **1. Get Started** inside :ref:`projects_micropython` to complete the installation of the Thonny IDE, install the Micropython firmware for the Raspberry Pi Pico 2 W and upload the libraries.
 
 .. toctree::
     :maxdepth: 1

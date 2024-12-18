@@ -19,8 +19,8 @@
 
 It is recommended that you do the :ref:`nt_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.
 
-In this project, Pico 2W will act as a subscriber and receive the song name under the topic.
-If the song name is already in the code, Pico 2W will make the buzzer play the song.
+In this project, Pico 2 W will act as a subscriber and receive the song name under the topic.
+If the song name is already in the code, Pico 2 W will make the buzzer play the song.
 
 **1. Required Components**
 
@@ -87,10 +87,6 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 10
-        - Battery Holder
-        - 1
-        -  
 
 **2. Build the Circuit**
 
@@ -106,19 +102,19 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
 
 **3. Run the Code**
 
-#. Upload the ``play_music.py`` file under the path of ``pico-2w-kit-main/iot`` to the Raspberry Pi Pico 2W.
+#. Upload the ``play_music.py`` file under the path of ``pico-2 w-kit-main/iot`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/mqtt-A-1.png
 
-#. Open the ``6_mqtt_subscribe_music.py`` file under the path of ``pico-2w-kit-main/iot`` and click the **Run current script** button or press F5 to run it.
+#. Open the ``6_mqtt_subscribe_music.py`` file under the path of ``pico-2 w-kit-main/iot`` and click the **Run current script** button or press F5 to run it.
 
     .. image:: img/6_cloud_player.png
 
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
 
-#. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico 2W will play the corresponding song.
+#. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico 2 W will play the corresponding song.
 
     .. note::
         Included in play_music.py are ``nokia``, ``starwars``, ``nevergonnagiveyouup``, ``gameofthrone``, ``songofstorms``, ``zeldatheme``, ``harrypotter``.
@@ -126,7 +122,7 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
     .. image:: img/mqtt-5.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2W as ``main.py``.
+#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
 
 **How it works?**
 

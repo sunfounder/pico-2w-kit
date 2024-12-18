@@ -100,7 +100,7 @@ You can also buy them separately from the links below.
 
 |reversing_system|
 
-* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* After connecting Pico 2 W, click the **Start** button and the code starts to run.
 * When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
 * When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
 * When the detection distance is greater than 10cm, there is a sound prompt every 1 second.

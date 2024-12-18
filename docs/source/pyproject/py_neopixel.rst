@@ -18,7 +18,7 @@
 ======================
 
 In this lesson, we'll learn how to control an **RGB LED strip** (specifically the WS2812 type) 
-using the Raspberry Pi Pico 2w and MicroPython.
+using the Raspberry Pi Pico 2 W and MicroPython.
 
 The WS2812 is a smart LED that integrates a control circuit and an RGB chip into a 5050-sized LED package. Each LED has its own built-in controller, which allows us to control each LED individually using a single data line. This means we can change the color and brightness of each LED on the strip independently.
 
@@ -94,7 +94,7 @@ Be cautious with the current draw. While the Pico's VBUS pin can supply power fo
 
 .. note::
 
-    * Open the ``3.3_rgb_led_strip.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.3_rgb_led_strip.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -217,7 +217,7 @@ When the code runs, the LED strip displays a flowing dynamic effect with random 
 
 **Conclusion**
 
-You've successfully learned how to control an RGB LED strip using the Raspberry Pi Pico 2w and MicroPython! This opens up a world of possibilities for creating stunning light displays, mood lighting, or even interactive art projects.
+You've successfully learned how to control an RGB LED strip using the Raspberry Pi Pico 2 W and MicroPython! This opens up a world of possibilities for creating stunning light displays, mood lighting, or even interactive art projects.
 
 
 

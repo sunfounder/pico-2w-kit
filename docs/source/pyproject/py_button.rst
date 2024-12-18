@@ -17,7 +17,7 @@
 2.5 Reading Button Value
 ==============================================
 
-In this lesson, we'll learn how to read input from a pushbutton using the Raspberry Pi Pico 2w. So far, we've used the GPIO pins mainly for output, like lighting up LEDs. Now, we'll use a GPIO pin as an input to detect when a button is pressed. This is a fundamental skill for creating interactive projects.
+In this lesson, we'll learn how to read input from a pushbutton using the Raspberry Pi Pico 2 W. So far, we've used the GPIO pins mainly for output, like lighting up LEDs. Now, we'll use a GPIO pin as an input to detect when a button is pressed. This is a fundamental skill for creating interactive projects.
 
 * :ref:`cpn_button`
 
@@ -92,7 +92,7 @@ As long as one side of the button pin is connected to 3.3v, and the other side p
 
 .. Let's follow the direction of the circuit to build the circuit!
 
-.. 1. Connect the 3V3 pin of Pico 2W to the positive power bus of the breadboard.
+.. 1. Connect the 3V3 pin of Pico 2 W to the positive power bus of the breadboard.
 .. #. Insert the button into the breadboard and straddle the central dividing line.
 
 .. note::
@@ -113,7 +113,7 @@ We'll write a simple program that prints a message when the button is pressed.
 
 .. note::
 
-  * Open the ``2.5_read_button_value.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.5_read_button_value.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -185,7 +185,7 @@ You can also wire the button using a pull-up resistor configuration.
 
 **Using Internal Pull-Up/Pull-Down Resistors**
 
-The Raspberry Pi Pico 2w allows you to enable internal pull-up or pull-down resistors, eliminating the need for external resistors.
+The Raspberry Pi Pico 2 W allows you to enable internal pull-up or pull-down resistors, eliminating the need for external resistors.
 
 Using internal resistors simplifies wiring and saves space by eliminating the need for additional external resistors on the breadboard.
 

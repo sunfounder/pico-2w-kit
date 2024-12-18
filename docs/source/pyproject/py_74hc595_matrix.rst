@@ -17,7 +17,7 @@
 5.4 8x8 Pixel Graphics
 =============================
 
-In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2w and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
+In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2 W and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
@@ -88,9 +88,9 @@ The Pico outputs a 16-bit binary number at a time. The first 8 bits are sent to 
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two **74HC595** chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico 2W board. 
+The 8x8 dot matrix is controlled by two **74HC595** chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico 2 W board. 
 
-Pico 2W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Pico 2 W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
 
 Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
 
@@ -98,9 +98,9 @@ Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 7
 
 Building the circuit can be complex, so let's proceed step by step.
 
-**Step 1:**  First, insert the Pico 2W, the LED dot matrix
+**Step 1:**  First, insert the Pico 2 W, the LED dot matrix
 and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico 2W to holes on the two sides of the board, then hook up pin16 and
+Pico 2 W to holes on the two sides of the board, then hook up pin16 and
 10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
 
 .. note::
@@ -147,7 +147,7 @@ We'll write a MicroPython program to display a pattern on the LED matrix.
 
 .. note::
 
-    * Open the ``5.4_8x8_pixel_graphics.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.4_8x8_pixel_graphics.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -378,4 +378,4 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
 
 **Conclusion**
 
-In this lesson, you've learned how to control an 8x8 LED matrix using the Raspberry Pi Pico 2w and two 74HC595 shift registers. By understanding how to manipulate bits and use shift registers, you can display patterns and graphics on the LED matrix.
+In this lesson, you've learned how to control an 8x8 LED matrix using the Raspberry Pi Pico 2 W and two 74HC595 shift registers. By understanding how to manipulate bits and use shift registers, you can display patterns and graphics on the LED matrix.

@@ -17,7 +17,7 @@
 4.2 Using a 4x4 Keypad
 =================================================
 
-In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2w to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
+In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2 W to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
 
 * :ref:`cpn_keypad`
 
@@ -107,7 +107,7 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``pico-2w-kit-main/arduino/4.2_4x4_keypad``. 
+    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``pico-2 w-kit-main/arduino/4.2_4x4_keypad``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit Keypad`` library is used here, you can install it from the **Library Manager**.

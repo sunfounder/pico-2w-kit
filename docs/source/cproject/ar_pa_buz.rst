@@ -18,7 +18,7 @@
 3.2 Play Custom Tones with a Passive Buzzer
 ===========================================
 
-In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2w to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
+In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
 
 * :ref:`Buzzer`
 
@@ -112,7 +112,7 @@ Make sure you are using the **passive buzzer**. You can tell it's the correct on
 
 .. note::
 
-    * You can open the file ``3.2_custom_tone.ino`` under the path of ``pico-2w-kit-main/arduino/3.2_custom_tone``. 
+    * You can open the file ``3.2_custom_tone.ino`` under the path of ``pico-2 w-kit-main/arduino/3.2_custom_tone``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

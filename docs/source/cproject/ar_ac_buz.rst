@@ -17,7 +17,7 @@
 3.1 Make the Buzzer Beep!
 ==========================
 
-In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2w. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
+In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2 W. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
 
 **What is an Active Buzzer?**
 
@@ -111,7 +111,7 @@ Make sure you are using the **active buzzer**. You can tell it's the correct one
 
 .. note::
 
-    * You can open the file ``3.1_beep.ino`` under the path of ``pico-2w-kit-main/arduino/3.1_beep``. 
+    * You can open the file ``3.1_beep.ino`` under the path of ``pico-2 w-kit-main/arduino/3.1_beep``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

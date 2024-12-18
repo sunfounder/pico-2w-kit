@@ -26,8 +26,8 @@ For current to flow, a conductive path must connect the positive terminal of the
 |bc1|
 
 
-A Pico 2W has some power output pins (positive) and some ground pins (negative).
-You can use these pins as the positive and negative sides of the power supply by plugging the Pico 2W into a power source.
+A Pico 2 W has some power output pins (positive) and some ground pins (negative).
+You can use these pins as the positive and negative sides of the power supply by plugging the Pico 2 W into a power source.
 
 |bc2| 
 
@@ -76,7 +76,7 @@ Here are some things you should know about breadboards.
 
 Let us follow the direction of the current to build the circuit!
 
-1. In this circuit, we use the 3V3 pin of the Pico 2W board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
+1. In this circuit, we use the 3V3 pin of the Pico 2 W board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
 #. To protect the LED, the current must pass through a 220 ohm resistor. Connect one end (either end) of the resistor to the red power bus, and the other end to the free row of the breadboard (row 24 in my circuit).
 
     .. note::
@@ -90,7 +90,7 @@ Let us follow the direction of the current to build the circuit!
         The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
 
 #. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico 2W to the negative power bus using a jumper.
+#. Connect the GND pin of Pico 2 W to the negative power bus using a jumper.
 
 Beware of short circuits
 ------------------------------
@@ -132,7 +132,7 @@ About Ohm's law we can do a simple experiment.
 
 |bc3| 
 
-By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico 2W), the LED will become brighter.
+By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico 2 W), the LED will become brighter.
 If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
 
 .. note::

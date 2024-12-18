@@ -17,7 +17,7 @@
 2.11 Turn the Knob
 ==========================
 
-In this lesson, we'll explore how to read analog input using the Raspberry Pi Pico 2w's built-in Analog-to-Digital Converter (ADC) and use that input to control the brightness of an LED. Specifically, we'll use a potentiometer—a variable resistor—as an analog input device. By turning the knob of the potentiometer, we'll adjust the voltage level read by the Pico, which we'll then use to control the LED's brightness via Pulse Width Modulation (PWM).
+In this lesson, we'll explore how to read analog input using the Raspberry Pi Pico 2 W's built-in Analog-to-Digital Converter (ADC) and use that input to control the brightness of an LED. Specifically, we'll use a potentiometer—a variable resistor—as an analog input device. By turning the knob of the potentiometer, we'll adjust the voltage level read by the Pico, which we'll then use to control the LED's brightness via Pulse Width Modulation (PWM).
 
 
 **Understanding Analog Input**
@@ -118,7 +118,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``pico-2w-kit-main/arduino/2.11_turn_the_knob``. 
+    * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``pico-2 w-kit-main/arduino/2.11_turn_the_knob``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

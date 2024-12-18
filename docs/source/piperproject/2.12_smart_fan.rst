@@ -77,15 +77,11 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 9
-        - Battery Holder
-        - 1
-        - 
-    *   - 10
+    *   - 19
         - :ref:`cpn_resistor`
         - 1(10KΩ)
         - |link_resistor_buy|
-    *   - 11
+    *   - 10
         - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
@@ -105,14 +101,14 @@ You can also buy them separately from the links below.
 |temperature_controlled_fan|
 
 
-* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* After connecting Pico 2 W, click the **Start** button and the code starts to run.
 * Click CONSLE, you will see the current temperature in Celsius.
 * The fan starts spinning when it is above 25 degrees, and stops spinning when it is below 25 degrees.
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico 2W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico 2W to disconnect from the computer. 
+    * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico 2 W with a wire to GND at this time, and then unplug this wire to run the code again.
+    * This is because the motor is operating with too much current, which may cause the Pico 2 W to disconnect from the computer. 
 
     |wiring_run_reset|
 

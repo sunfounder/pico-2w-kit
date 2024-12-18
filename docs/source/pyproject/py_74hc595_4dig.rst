@@ -19,7 +19,7 @@
 
 
 In this lesson, we'll learn how to use a **4-digit 7-segment display** 
-with the Raspberry Pi Pico 2w to create a simple time counter. The display 
+with the Raspberry Pi Pico 2 W to create a simple time counter. The display 
 will count up every second, showing the elapsed time in seconds.
 
 **Required Components**
@@ -124,7 +124,7 @@ Let's write a MicroPython program to create a time counter that increments every
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.3_time_counter.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -363,4 +363,4 @@ When you run this code, the 4-digit 7-segment display will function as a counter
 
 **Conclusion**
 
-In this lesson, you've learned how to use a 4-digit 7-segment display with a 74HC595 shift register to create a time counter using the Raspberry Pi Pico 2w. By understanding multiplexing and efficient timing, you can display dynamic information on multi-digit displays using minimal GPIO pins.
+In this lesson, you've learned how to use a 4-digit 7-segment display with a 74HC595 shift register to create a time counter using the Raspberry Pi Pico 2 W. By understanding multiplexing and efficient timing, you can display dynamic information on multi-digit displays using minimal GPIO pins.

@@ -18,7 +18,7 @@
 ==================
 
 
-In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2w. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
+In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2 W. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
 
 * :ref:`cpn_buzzer`
 
@@ -117,7 +117,7 @@ Let's write a simple MicroPython program to control the buzzer.
 
 .. note::
 
-    * Open the ``3.1_beep.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.1_beep.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -164,4 +164,4 @@ When the code is running, you should hear:
 
 **Conclusion**
 
-In this lesson, you learned how to control an active buzzer using a transistor and the Raspberry Pi Pico 2w. You now have a basic understanding of how to use a digital output device to create sound in your projects. The same principles can be applied to other output devices, like LEDs, motors, and more.
+In this lesson, you learned how to control an active buzzer using a transistor and the Raspberry Pi Pico 2 W. You now have a basic understanding of how to use a digital output device to create sound in your projects. The same principles can be applied to other output devices, like LEDs, motors, and more.

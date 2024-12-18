@@ -81,7 +81,7 @@ You can also buy them separately from the links below.
 
 |sch_ledbar|
 
-In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Raspberry Pi Pico 2w. The anodes (positive terminals) of the LEDs are connected to GPIO pins GP6 through GP15. The cathodes (negative terminals) are connected through 220Ω resistors to the GND (ground) pin.
+In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Raspberry Pi Pico 2 W. The anodes (positive terminals) of the LEDs are connected to GPIO pins GP6 through GP15. The cathodes (negative terminals) are connected through 220Ω resistors to the GND (ground) pin.
 
 
 
@@ -93,7 +93,7 @@ In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Ra
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
+    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
 
     * Make sure the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
 
@@ -131,7 +131,7 @@ Let's break down the key parts of the code:
 
 1. Importing Modules:
 
-   * ``import machine``: Provides access to the Raspberry Pi Pico 2w's hardware functionalities.
+   * ``import machine``: Provides access to the Raspberry Pi Pico 2 W's hardware functionalities.
    * ``import utime``: Allows us to use time-related functions like delays.
 
 2. Defining Pins and Initializing LEDs:
@@ -212,7 +212,7 @@ Feel free to experiment with the code:
     
 **Conclusion**
 
-By controlling each LED individually, we've created a simple yet effective level display using the Raspberry Pi Pico 2w. This project demonstrates the power of lists and loops in Python, allowing us to manage multiple outputs efficiently.
+By controlling each LED individually, we've created a simple yet effective level display using the Raspberry Pi Pico 2 W. This project demonstrates the power of lists and loops in Python, allowing us to manage multiple outputs efficiently.
 
 Understanding how to work with multiple GPIO pins and using programming structures like lists and loops is essential for more complex projects, such as creating animations, controlling multiple sensors, or building interactive devices.
 

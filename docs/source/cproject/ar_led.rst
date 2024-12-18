@@ -19,7 +19,7 @@
 2.1 - Hello, LED! 
 =======================================
 
-Welcome to your first hardware project with the Raspberry Pi Pico 2w! In this lesson, we'll learn how to make an LED blink using MicroPython. This simple project is a great way to get started with physical computing and understand how to control hardware with code.
+Welcome to your first hardware project with the Raspberry Pi Pico 2 W! In this lesson, we'll learn how to make an LED blink using MicroPython. This simple project is a great way to get started with physical computing and understand how to control hardware with code.
 
 
 * :ref:`cpn_led`
@@ -93,7 +93,7 @@ By setting the GPIO pin high or low, you're controlling the voltage output of th
 
 .. note::
 
-    * You can open the file ``2.1_hello_led.ino`` under the path of ``pico-2w-kit-main/arduino/2.1_hello_led``. 
+    * You can open the file ``2.1_hello_led.ino`` under the path of ``pico-2 w-kit-main/arduino/2.1_hello_led``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
@@ -159,4 +159,4 @@ After uploading the code, you should see the LED turn on for 1 second and turn o
 
 **Conclusion**
 
-Congratulations! You've built your first hardware project with the Raspberry Pi Pico 2w. This simple LED blinking project is a fundamental step into the world of physical computing. From here, you can explore more complex projects by adding buttons, sensors, and other components.
+Congratulations! You've built your first hardware project with the Raspberry Pi Pico 2 W. This simple LED blinking project is a fundamental step into the world of physical computing. From here, you can explore more complex projects by adding buttons, sensors, and other components.

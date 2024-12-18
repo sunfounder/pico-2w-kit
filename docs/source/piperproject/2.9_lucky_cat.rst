@@ -94,7 +94,7 @@ You can also buy them separately from the links below.
 
 
 
-* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* After connecting Pico 2 W, click the **Start** button and the code starts to run.
 * When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
 
 

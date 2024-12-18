@@ -18,7 +18,7 @@
 =====================================
 
 
-In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2w. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
+In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2 W. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
 
 * :ref:`cpn_mpu6050`
 
@@ -95,7 +95,7 @@ Let's write a MicroPython script to read accelerometer and gyroscope data from t
 
 .. note::
 
-    * Open the ``6.3_6axis_motion_tracking.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``6.3_6axis_motion_tracking.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
      
     * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
@@ -284,4 +284,4 @@ The script prints accelerometer and gyroscope readings alternately every 0.5 sec
 
 **Conclusion**
 
-In this lesson, you've learned how to interface the MPU-6050 accelerometer and gyroscope sensor with the Raspberry Pi Pico 2w. By reading the raw sensor data, you can explore a wide range of applications involving motion detection, orientation tracking, and more.
+In this lesson, you've learned how to interface the MPU-6050 accelerometer and gyroscope sensor with the Raspberry Pi Pico 2 W. By reading the raw sensor data, you can explore a wide range of applications involving motion detection, orientation tracking, and more.

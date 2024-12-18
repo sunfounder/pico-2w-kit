@@ -100,7 +100,7 @@ We'll write a MicroPython program that reads the temperature from the thermistor
 
 .. note::
 
-    * Open the ``7.2_room_temperature_meter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.2_room_temperature_meter.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -292,6 +292,6 @@ The console in Thonny will also print the temperature readings.
 
 **Conclusion**
 
-Congratulations! You've built a functional Room Temperature Meter using the Raspberry Pi Pico 2w. This project not only demonstrates how to interface analog sensors and I2C devices but also provides practical experience with temperature measurement and display technologies.
+Congratulations! You've built a functional Room Temperature Meter using the Raspberry Pi Pico 2 W. This project not only demonstrates how to interface analog sensors and I2C devices but also provides practical experience with temperature measurement and display technologies.
 
 Feel free to enhance and customize your temperature meter by adding new features or integrating other sensors. This project serves as a solid foundation for exploring environmental monitoring and control systems.

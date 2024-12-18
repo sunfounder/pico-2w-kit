@@ -17,7 +17,7 @@
 3.5 Controlling a Small Fan (DC Motor)
 =========================================
 
-In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the Raspberry Pi Pico 2w and an **TA6586 motor driver**. The TA6586 allows us to control the direction of the motor rotation—both clockwise and counterclockwise. Since DC motors require more current than the Pico can provide directly, we'll use an external power supply to safely power the motor.
+In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the Raspberry Pi Pico 2 W and an **TA6586 motor driver**. The TA6586 allows us to control the direction of the motor rotation—both clockwise and counterclockwise. Since DC motors require more current than the Pico can provide directly, we'll use an external power supply to safely power the motor.
 
 
 * :ref:`cpn_motor`
@@ -84,10 +84,6 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 9
-        - Battery Holder
-        - 1
-        - 
 
 **Schematic**
 
@@ -104,7 +100,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.5_small_fan.ino`` under the path of ``pico-2w-kit-main/arduino/3.5_small_fan``. 
+    * You can open the file ``3.5_small_fan.ino`` under the path of ``pico-2 w-kit-main/arduino/3.5_small_fan``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

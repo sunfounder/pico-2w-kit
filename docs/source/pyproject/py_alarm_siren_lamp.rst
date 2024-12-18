@@ -17,7 +17,7 @@
 7.3 Building an Alarm Siren Lamp
 =======================================================
 
-In this project, we'll create an **Alarm Siren Lamp** using the Raspberry Pi Pico 2w. This device simulates the flashing lights and siren sound of a police car or emergency vehicle. It's a fun way to learn about PWM (Pulse Width Modulation), interrupts, and controlling multiple components like LEDs and buzzers.
+In this project, we'll create an **Alarm Siren Lamp** using the Raspberry Pi Pico 2 W. This device simulates the flashing lights and siren sound of a police car or emergency vehicle. It's a fun way to learn about PWM (Pulse Width Modulation), interrupts, and controlling multiple components like LEDs and buzzers.
 
 
 
@@ -120,7 +120,7 @@ We'll write a MicroPython script to control the buzzer and LED based on the posi
 
 .. note::
 
-    * Open the ``7.3_alarm_siren_lamp.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.3_alarm_siren_lamp.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -277,4 +277,4 @@ Toggle the switch to OFF to stop the alarm.
 
 **Conclusion**
 
-You've successfully built an Alarm Siren Lamp using the Raspberry Pi Pico 2w! This project demonstrates how to control multiple components and create interactive effects. It's a great foundation for more complex projects like security systems, emergency signals, or creative art installations.
+You've successfully built an Alarm Siren Lamp using the Raspberry Pi Pico 2 W! This project demonstrates how to control multiple components and create interactive effects. It's a great foundation for more complex projects like security systems, emergency signals, or creative art installations.

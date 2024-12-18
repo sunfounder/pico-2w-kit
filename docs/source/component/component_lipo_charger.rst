@@ -20,17 +20,17 @@ Li-po Charger Module
 
 |lipo_module|
 
-This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico 2W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
+This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico 2 W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
 
-When you plug in the Pico 2W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico 2W will be powered by the battery, so you can keep your project running.
+When you plug in the Pico 2 W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico 2 W will be powered by the battery, so you can keep your project running.
 
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico 2W to your computer with this charging module attached, it may cause the computer not to recognize your Pico 2W.
+    For some computers with poor performance, sometimes if you plug in your Pico 2 W to your computer with this charging module attached, it may cause the computer not to recognize your Pico 2 W.
 
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico 2W power supply is insufficient to be recognized by the computer.
+    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico 2 W power supply is insufficient to be recognized by the computer.
     
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico 2W again.
+    In this case, you need to pull out the Li-Po charging module and then plug in the Pico 2 W again.
 
 |lipo_wire|
 
@@ -40,7 +40,7 @@ When you plug in the Pico 2W with a USB cable connected to a computer or socket,
 * Output voltage: 3.3V
 * Size: 20mmx7mm
 * Interface model: PH2.0
-* There is a matching 1A battery holder as well as an 800mAh 18650 used together.
+
 
 
 **Schematic**

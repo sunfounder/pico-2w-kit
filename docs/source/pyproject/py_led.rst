@@ -86,30 +86,11 @@ By setting the GPIO pin high or low, you're controlling the voltage output of th
 
 |wiring_led|
 
-To build the circuit, let's follow the current's direction!
-
-1. The LED is powered by the GP15 pin of the Pico  board, and the circuit begins here.
-#. To protect the LED, the current must pass through a 220 ohm resistor. One end of the resistor should be inserted into the same row as the Pico 2W GP15 pin (row 20 in my circuit), and the other end should be inserted into the free row of the breadboard (row 24).
-
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
-
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
-
-    .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
-
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
-
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico 2W to the negative power bus using a jumper.
-
-
 **Writing the Code**
 
 .. note::
 
-    * Open the ``2.1_hello_led.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Open the ``2.1_hello_led.py`` file under the path of ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 

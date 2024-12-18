@@ -16,7 +16,7 @@
 ====================================
 
 
-In this article, you will learn how to make Pico 2W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
+In this article, you will learn how to make Pico 2 W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
 
 |setup_web|
 
@@ -85,10 +85,6 @@ You can also buy them separately from the links below.
         - 18650 Battery
         - 1
         -  
-    *   - 10
-        - Battery Holder
-        - 1
-        -  
 
 **2. Build the Circuit**
 
@@ -104,19 +100,19 @@ You can also buy them separately from the links below.
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, if not please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`iot_access` to create them.
 
-#. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/iot``.
-#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2W.
+#. Open the ``7_web_page.py`` file under the path of ``pico-2 w-kit-main/iot``.
+#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
 
     .. image:: img/7_web_server.png
 
-#. Enter the IP address of the Pico 2W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
+#. Enter the IP address of the Pico 2 W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
 
     .. image:: img/web-1.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2W as ``main.py``.
+#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
 
 **How it works?**
 
@@ -134,7 +130,7 @@ from secrets import * :  The `secrets.py` file is typically a separate file used
 The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
 A socket is the way a server can listen for a client that wants to connect to it. 
 
-In this project, Pico 2W is your server, and your computer is accessing the web page hosted on Pico 2W through a browser.
+In this project, Pico 2 W is your server, and your computer is accessing the web page hosted on Pico 2 W through a browser.
 
 First we create a socket, which requires an IP address and a |link_port|.
 The network connection and the way to get the IP are described in :ref:`iot_access`. And for port, we use 80.
@@ -156,7 +152,7 @@ After setting up the socket, return it and use it for the next step.
         return(connection)
 
 Then, set up your web service where the socket you set up earlier will be used.
-The following code will allow your Pico 2W to receive access requests from your browser.
+The following code will allow your Pico 2 W to receive access requests from your browser.
 
 .. code-block:: python
 

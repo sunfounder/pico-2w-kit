@@ -17,7 +17,7 @@
 5.1 Using the 74HC595 Shift Register
 =======================================
 
-In this lesson, we'll learn how to use the **74HC595 shift register** to control multiple LEDs with just a few GPIO pins on the Raspberry Pi Pico 2w. The 74HC595 is an integrated circuit (IC) that allows you to expand the number of digital outputs using a serial input. This is incredibly useful when you want to control many outputs but have limited GPIO pins available.
+In this lesson, we'll learn how to use the **74HC595 shift register** to control multiple LEDs with just a few GPIO pins on the Raspberry Pi Pico 2 W. The 74HC595 is an integrated circuit (IC) that allows you to expand the number of digital outputs using a serial input. This is incredibly useful when you want to control many outputs but have limited GPIO pins available.
 
 * :ref:`74HC595`
 
@@ -112,11 +112,11 @@ The **74HC595** is an 8-bit serial-in, parallel-out shift register with output l
 
 |wiring_74hc_led|
 
-.. 1. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico 2W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico 2W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico 2W to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the GP0 pin of Pico 2 W to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico 2 W to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico 2 W to the SHcp pin (pin 11) of 74HC595.
 .. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
 .. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
 .. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
@@ -130,7 +130,7 @@ Now, let's write a MicroPython program to control the LEDs through the 74HC595 s
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -292,5 +292,5 @@ This results in an eye-catching display of lights moving back and forth and a ba
 
 **Conclusion**
 
-In this lesson, you've learned how to use the 74HC595 shift register to expand the output capabilities of your Raspberry Pi Pico 2w. This technique is invaluable when working with projects that require controlling many outputs with limited GPIO pins.
+In this lesson, you've learned how to use the 74HC595 shift register to expand the output capabilities of your Raspberry Pi Pico 2 W. This technique is invaluable when working with projects that require controlling many outputs with limited GPIO pins.
 

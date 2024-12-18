@@ -17,7 +17,7 @@
 4.3 Electrode Keyboard with MPR121
 ========================================================
 
-In this lesson, we'll learn how to use the **MPR121 capacitive touch sensor** to create a touch-sensitive keyboard with the Raspberry Pi Pico 2w. The MPR121 allows you to detect touch inputs on up to 12 electrodes, which can be connected to conductive materials like wires, foil, or even fruits like bananas!
+In this lesson, we'll learn how to use the **MPR121 capacitive touch sensor** to create a touch-sensitive keyboard with the Raspberry Pi Pico 2 W. The MPR121 allows you to detect touch inputs on up to 12 electrodes, which can be connected to conductive materials like wires, foil, or even fruits like bananas!
 
 * :ref:`cpn_mpr121`
 
@@ -94,7 +94,7 @@ The MPR121 sensor detects changes in capacitance on its electrodes. When you tou
 
 .. note::
 
-    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``pico-2w-kit-main/arduino/4.3_electrode_keyboard``. 
+    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``pico-2 w-kit-main/arduino/4.3_electrode_keyboard``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit MPR121`` library is used here, you can install it from the **Library Manager**.

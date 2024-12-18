@@ -17,7 +17,7 @@
 3.7 Swinging Servo
 ===================
 
-In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2w. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
+In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2 W. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
 
 Let's get started and make the servo swing back and forth!
 
@@ -96,7 +96,7 @@ Servos can draw significant current, especially under load. Since we're using a 
 
 .. note::
 
-    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``pico-2w-kit-main/arduino/3.7_swinging_servo``. 
+    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``pico-2 w-kit-main/arduino/3.7_swinging_servo``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

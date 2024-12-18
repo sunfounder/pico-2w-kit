@@ -17,7 +17,7 @@
 6.1 Measuring Distance with an Ultrasonic Sensor
 ================================================
 
-In this lesson, we'll learn how to use an **ultrasonic sensor module** with the Raspberry Pi Pico 2w to measure the distance to an object. Ultrasonic sensors are commonly used in robotics and automation systems for object detection and distance measurement.
+In this lesson, we'll learn how to use an **ultrasonic sensor module** with the Raspberry Pi Pico 2 W to measure the distance to an object. Ultrasonic sensors are commonly used in robotics and automation systems for object detection and distance measurement.
 
 * :ref:`cpn_ultrasonic`
 
@@ -96,7 +96,7 @@ We'll write a program that triggers the ultrasonic sensor, measures the echo tim
 
 .. note::
 
-    * You can open the file ``6.1_ultrasonic.ino`` under the path of ``pico-2w-kit-main/arduino/6.1_ultrasonic``. 
+    * You can open the file ``6.1_ultrasonic.ino`` under the path of ``pico-2 w-kit-main/arduino/6.1_ultrasonic``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

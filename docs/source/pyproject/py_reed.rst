@@ -17,7 +17,7 @@
 2.9 Feel the Magnetism
 ================================
 
-In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2w to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
+In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2 W to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
 * :ref:`cpn_reed`
 
 **Required Components**
@@ -114,7 +114,7 @@ We'll write a MicroPython program that detects when a magnet is near the reed sw
 
 .. note::
 
-  * Open the ``2.9_feel_the_magnetism.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.9_feel_the_magnetism.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
   
 .. code-block:: python
@@ -229,7 +229,7 @@ Modified code using interrupts. When you bring a magnet close to the reed switch
 
 **Conclusion**
 
-Using a reed switch with the Raspberry Pi Pico 2w allows you to detect the presence of a magnetic field, enabling a wide range of applications from security systems to interactive projects. Understanding how to wire the reed switch and utilize interrupts enhances your ability to create efficient and responsive programs.
+Using a reed switch with the Raspberry Pi Pico 2 W allows you to detect the presence of a magnetic field, enabling a wide range of applications from security systems to interactive projects. Understanding how to wire the reed switch and utilize interrupts enhances your ability to create efficient and responsive programs.
 
 **References**
 

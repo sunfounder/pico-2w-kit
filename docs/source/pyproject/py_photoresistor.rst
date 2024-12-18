@@ -17,7 +17,7 @@
 2.12 Feel the Light
 =============================
 
-In this lesson, we'll learn how to use a **photoresistor** (also known as a light-dependent resistor or LDR) with the Raspberry Pi Pico 2w to measure light intensity. A photoresistor changes its resistance based on the amount of light it receives: the brighter the light, the lower the resistance. This makes it ideal for detecting changes in ambient light.
+In this lesson, we'll learn how to use a **photoresistor** (also known as a light-dependent resistor or LDR) with the Raspberry Pi Pico 2 W to measure light intensity. A photoresistor changes its resistance based on the amount of light it receives: the brighter the light, the lower the resistance. This makes it ideal for detecting changes in ambient light.
 
 
 * :ref:`cpn_photoresistor`
@@ -104,7 +104,7 @@ We'll write a MicroPython program to read the analog value from the photoresisto
 
 .. note::
 
-  * Open the ``2.12_feel_the_light.py`` file under the path ``pico-2w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
+  * Open the ``2.12_feel_the_light.py`` file under the path ``pico-2 w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
   * Ensure that the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
   * For detailed instructions, refer to :ref:`open_run_code_py`.
 
@@ -189,6 +189,6 @@ When the code is running, observe the values printed in the console.
 
 **Conclusion**
 
-By using a photoresistor with the Raspberry Pi Pico 2w, you've learned how to read analog inputs and respond to changes in environmental light. This knowledge can be applied to various projects, such as automatic lighting systems, light-following robots, or security devices that react to changes in lighting.
+By using a photoresistor with the Raspberry Pi Pico 2 W, you've learned how to read analog inputs and respond to changes in environmental light. This knowledge can be applied to various projects, such as automatic lighting systems, light-following robots, or security devices that react to changes in lighting.
 
 

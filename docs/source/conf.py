@@ -19,7 +19,7 @@ import time
 
 # -- Project information -----------------------------------------------------
 
-project = 'SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2W'
+project = 'SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
@@ -91,7 +91,7 @@ rst_epilog = """
 # component pic
 rst_epilog += """
 
-.. |compoents_list| image:: /img/compoents_list.jpg
+.. |compoents_list| image:: /img/component/compoents_list1.jpg
     :width: 800
 .. |img_wire| image:: /img/component/wire.png
 .. |img_buzzer| image:: /img/component/buzzer.png
@@ -265,13 +265,13 @@ rst_epilog += """
     :width: 800    
 .. |wiring_button| image:: /img/wiring/wiring_read_button_value.png
     :width: 600
-.. |wiring_button_pullup| image:: /img/wiring/wiring_read_button_value_2.png
+.. |wiring_button_pullup| image:: /img/wiring/wiring_read_button_value2.png
 .. |wiring_tilt| image:: /img/wiring/wiring_read_button_value_4.png
 .. |wiring_slide| image:: /img/wiring/wiring_read_button_value_3.png   
 .. |wiring_limit_sw| image:: /img/wiring/wiring_read_button_value_5.png 
 .. |wiring_led| image:: /img/wiring/wiring_led.png   
     :width: 800
-.. |wiring_lcd| image:: /img/wiring/wiring_lcd.png
+.. |wiring_lcd| image:: /img/wiring/wiring_lcd_ar.png
     :width: 800
 .. |wiring_lcd_ar| image:: /img/wiring/wiring_lcd_ar.png
     :width: 800
@@ -494,7 +494,8 @@ rst_epilog += """
 # pico pin
 rst_epilog += """
 .. |pico_w_side| image:: /img/pico_w_side.png
-.. |pico_2w_side| image:: /img/pico_2w_side.jpg
+.. |pico_2w_side| image:: /img/pico_2w_side.png
+    :width: 600
 .. |pico_pin| image:: /img/pico_pin.jpg
     :width: 800
 .. |pico2w_pin| image:: /img/pico-2-w-pinout.png
@@ -650,6 +651,10 @@ rst_epilog += """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_raspberrypi_documention| raw:: html
+
+    <a href="https://www.raspberrypi.com/documentation/microcontrollers/micropython.html" target="_blank">Raspberry Pi official website documentation</a>
 
 .. |link_heat_index| raw:: html
 
@@ -817,7 +822,7 @@ rst_epilog += """
 
 .. |link_pico2w_starter_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Pico 2W Starter Kit</a>
+    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Pico 2 W Starter Kit</a>
 
 .. |link_kepler_kit| raw:: html
 

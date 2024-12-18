@@ -14,13 +14,13 @@
 
 .. _setup_pico2w_arduino:
 
-1.3 Setting Up the Raspberry Pi Pico 2W (Important)
+1.3 Setting Up the Raspberry Pi Pico 2 W (Important)
 =====================================================
 
 1. Installing the Board Package
 --------------------------------------
 
-To program the Raspberry Pi Pico 2W, you need to install the appropriate board package in the Arduino IDE. Follow these steps to get started:
+To program the Raspberry Pi Pico 2 W, you need to install the appropriate board package in the Arduino IDE. Follow these steps to get started:
 
 #. Open the Arduino IDE and navigate to **File** -> **Preferences**.
 
@@ -30,7 +30,7 @@ To program the Raspberry Pi Pico 2W, you need to install the appropriate board p
 
    .. image:: img/arduino_pico_link.png
 
-#. Open the **Boards Manager** from the menu and search for **pico**. Click the **INSTALL** button to begin the installation. This will install the **Raspberry Pi Pico /RP2040/PR2350** package, including support for Raspberry Pi Pico 2W.
+#. Open the **Boards Manager** from the menu and search for **pico**. Click the **INSTALL** button to begin the installation. This will install the **Raspberry Pi Pico /RP2040/PR2350** package, including support for Raspberry Pi Pico 2 W.
 
    .. image:: img/arduino_pico_install.png
 
@@ -43,7 +43,7 @@ To program the Raspberry Pi Pico 2W, you need to install the appropriate board p
 2. Selecting the Board and Port
 ------------------------------------------
 
-#. Hold down the **BOOTSEL** button, then unplug your Raspberry Pi Pico 2W and quickly plug it back in.
+#. Hold down the **BOOTSEL** button, then unplug your Raspberry Pi Pico 2 W and quickly plug it back in.
 
    .. image:: img/led_onboard.png
         :width: 500
@@ -54,10 +54,10 @@ To program the Raspberry Pi Pico 2W, you need to install the appropriate board p
       * This step is crucial, especially for first-time users on the Arduino IDE. Skipping this step will result in a failed upload.
       * Once you've successfully uploaded the code, your Pico will be recognized by the computer. For future uploads, simply plug it into the computer without holding the button.
 
-#. To select the appropriate board, go to **Tools** -> **Board** -> **Raspberry Pi Pico /RP2040/PR2350** -> **Raspberry Pi Pico 2W**.
+#. To select the appropriate board, go to **Tools** -> **Board** -> **Raspberry Pi Pico /RP2040/PR2350** -> **Raspberry Pi Pico 2 W**.
 
    .. image:: img/arduino_pico_board2.jpg
-      :width: 800
+      :width: 600
       :align: center
 
 2. Next, select the correct port by navigating to **Tools** -> **Port** -> **UF2 Board**.
@@ -65,7 +65,7 @@ To program the Raspberry Pi Pico 2W, you need to install the appropriate board p
    .. note::
      
      * For the first connection or when holding the **BOOTSEL** button, choose **UF2 Board**.
-     * After successfully uploading the code, your Pico 2W will be recognized by the computer. For future uses, select the corresponding **COMxx (Raspberry Pi Pico 2)**.
+     * After successfully uploading the code, your Pico 2 W will be recognized by the computer. For future uses, select the corresponding **COMxx (Raspberry Pi Pico 2)**.
 
    .. image:: img/arduino_pico_port.jpg
 
@@ -73,17 +73,17 @@ To program the Raspberry Pi Pico 2W, you need to install the appropriate board p
 3. Uploading Code
 --------------------------
 
-Now, let's move on to uploading code to your Raspberry Pi Pico 2w.
+Now, let's move on to uploading code to your Raspberry Pi Pico 2 W.
 
 #. Open any ``.ino`` file, or use the blank sketch that appears by default. Then, click the **Upload** button.
 
-   .. image:: img/install_pico_upload.jpg
+   .. image:: img/install_pico_upload1.png
 
 #. Once the upload is complete, a confirmation prompt will appear.
 
    .. image:: img/install_pico_upload_done2.png
 
-#. Your computer should now recognize the Pico 2w successfully.
+#. Your computer should now recognize the Pico 2 W successfully.
 
    .. image:: img/arduino_pico_port_com2.png
 

@@ -18,7 +18,7 @@
 5.4 Displaying Graphics on an 8x8 LED Matrix
 ===================================================================
 
-In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2w and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
+In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2 W and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
@@ -98,9 +98,9 @@ The Pico outputs a 16-bit binary number at a time. The first 8 bits are sent to 
 
 Building the circuit can be complex, so let's proceed step by step.
 
-**Step 1:**  First, insert the Pico 2W, the LED dot matrix
+**Step 1:**  First, insert the Pico 2 W, the LED dot matrix
 and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico 2W to holes on the two sides of the board, then hook up pin16 and
+Pico 2 W to holes on the two sides of the board, then hook up pin16 and
 10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
 
 .. note::
@@ -145,7 +145,7 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 .. note::
 
-    * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``pico-2w-kit-main/arduino/5.4_8x8_pixel_graphics``. 
+    * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``pico-2 w-kit-main/arduino/5.4_8x8_pixel_graphics``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

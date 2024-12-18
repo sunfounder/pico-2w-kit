@@ -20,7 +20,7 @@
 
 |img_tilt|
 
-In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2w to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
+In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2 W to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
 
 **Required Components**
 
@@ -106,7 +106,7 @@ We'll write a simple MicroPython program that detects the state of the tilt swit
 
 .. note::
 
-    * Open the ``2.6_tilt_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``2.6_tilt_switch.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -148,7 +148,7 @@ When the code is running, you will observe the following phenomenon:
 
 **Alternative Wiring: Using Internal Pull-Down Resistor**
 
-The Raspberry Pi Pico 2w allows us to enable internal pull-up or pull-down resistors, eliminating the need for an external resistor.
+The Raspberry Pi Pico 2 W allows us to enable internal pull-up or pull-down resistors, eliminating the need for an external resistor.
 
 .. code-block:: python
 
@@ -200,4 +200,4 @@ Connect an LED to another GPIO pin (e.g., GP15) with a suitable resistor. Modify
 
 **Conclusion**
 
-By incorporating a tilt switch into your Raspberry Pi Pico 2w projects, you can add a new dimension of interactivity based on orientation and movement. Understanding how to read digital inputs from sensors like the tilt switch expands your ability to create dynamic and responsive electronics.
+By incorporating a tilt switch into your Raspberry Pi Pico 2 W projects, you can add a new dimension of interactivity based on orientation and movement. Understanding how to read digital inputs from sensors like the tilt switch expands your ability to create dynamic and responsive electronics.

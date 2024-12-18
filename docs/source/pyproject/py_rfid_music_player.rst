@@ -17,7 +17,7 @@
 7.8 RFID Music Player
 ==========================
 
-In this project, we'll create an **RFID Music Player** using the Raspberry Pi Pico 2w, an MFRC522 RFID reader, a passive buzzer, and WS2812 RGB LEDs. By writing musical notes to RFID tags, we'll read them back and have the Pico play the corresponding melody while displaying colorful LED effects. This project combines RFID technology with music generation, allowing you to store and share melodies on RFID cards or key fobs.
+In this project, we'll create an **RFID Music Player** using the Raspberry Pi Pico 2 W, an MFRC522 RFID reader, a passive buzzer, and WS2812 RGB LEDs. By writing musical notes to RFID tags, we'll read them back and have the Pico play the corresponding melody while displaying colorful LED effects. This project combines RFID technology with music generation, allowing you to store and share melodies on RFID cards or key fobs.
 
 
 **Required Components**
@@ -114,7 +114,7 @@ We'll write two scripts:
 
     Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
-#. Open the ``6.5_rfid_write.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. Open the ``6.5_rfid_write.py`` file from ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
    .. code-block:: python
 
@@ -137,7 +137,7 @@ We'll write two scripts:
 
 #. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the shell, then bring the RFID tag near the reader to store a score of "Ode to Joy". Wait for the confirmation message: "Data written successfully!"
 
-#. Open the ``7.8_rfid_music_player.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. Open the ``7.8_rfid_music_player.py`` file from ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
    .. code-block:: python
 
@@ -281,4 +281,4 @@ We'll write two scripts:
 
 **Conclusion**
 
-You've successfully created an RFID Music Player using the Raspberry Pi Pico 2w! This project combines RFID technology, music generation, and LED control to create an interactive and enjoyable experience. By storing melodies on RFID tags, you can easily share and play different tunes.
+You've successfully created an RFID Music Player using the Raspberry Pi Pico 2 W! This project combines RFID technology, music generation, and LED control to create an interactive and enjoyable experience. By storing melodies on RFID tags, you can easily share and play different tunes.

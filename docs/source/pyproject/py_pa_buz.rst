@@ -18,7 +18,7 @@
 ==============================================
 
 
-In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2w to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
+In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
 
 
 * :ref:`cpn_buzzer`
@@ -109,7 +109,7 @@ Make sure you are using the **passive buzzer**. You can tell it's the correct on
 |wiring_buzzer|
 
 
-.. 1. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect the positive pin of the buzzer to the positive power bus.
 .. #. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
 .. #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
@@ -122,7 +122,7 @@ Now, let's write some code to make the buzzer play different tones.
 
 .. note::
 
-    * Open the ``3.2_custom_tone.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.2_custom_tone.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -242,4 +242,4 @@ When you run this code, the buzzer will play a simple melody by sounding each no
 
 **Conclusion**
 
-In this lesson, you've learned how to use a passive buzzer to play tones and melodies with the Raspberry Pi Pico 2w. By controlling the frequency of the PWM signal, you can create a variety of sounds and even play simple songs. This is a great way to add audio feedback or fun musical elements to your projects.
+In this lesson, you've learned how to use a passive buzzer to play tones and melodies with the Raspberry Pi Pico 2 W. By controlling the frequency of the PWM signal, you can create a variety of sounds and even play simple songs. This is a great way to add audio feedback or fun musical elements to your projects.

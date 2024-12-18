@@ -17,7 +17,7 @@
 7.12 Building a Digital Bubble Level
 ==========================================
 
-In this project, we'll create a **Digital Bubble Level** using the Raspberry Pi Pico 2w, an MPU6050 accelerometer and gyroscope module, and an 8x8 LED matrix display controlled by two 74HC595 shift registers. This device functions similarly to a traditional spirit level, indicating the tilt of a surface. As you tilt the MPU6050, a "bubble" represented by LEDs on the matrix will move accordingly, allowing you to visualize the levelness of a surface.
+In this project, we'll create a **Digital Bubble Level** using the Raspberry Pi Pico 2 W, an MPU6050 accelerometer and gyroscope module, and an 8x8 LED matrix display controlled by two 74HC595 shift registers. This device functions similarly to a traditional spirit level, indicating the tilt of a surface. As you tilt the MPU6050, a "bubble" represented by LEDs on the matrix will move accordingly, allowing you to visualize the levelness of a surface.
 
 **Required Components**
 
@@ -110,7 +110,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.12_digital_bubble_level.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.12_digital_bubble_level.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -380,7 +380,7 @@ This code reads data from an MPU6050 accelerometer and gyroscope sensor to deter
 
 **Conclusion**
 
-You've successfully built a Digital Bubble Level using the Raspberry Pi Pico 2w! This project demonstrates how accelerometer data can be used to visualize orientation and tilt, and how to control an LED matrix display using shift registers.
+You've successfully built a Digital Bubble Level using the Raspberry Pi Pico 2 W! This project demonstrates how accelerometer data can be used to visualize orientation and tilt, and how to control an LED matrix display using shift registers.
 
 Feel free to expand upon this project by adding new features or integrating it into larger systems.
 

@@ -17,11 +17,11 @@
 2.14 Feel the Water Level
 =====================================
 
-In this lesson, we will learn how to use a **water sensor** with the Raspberry Pi Pico 2w to detect the presence of water or measure the water level. This sensor is commonly used in projects related to rainfall detection, water level monitoring, and liquid leakage alerts.
+In this lesson, we will learn how to use a **water sensor** with the Raspberry Pi Pico 2 W to detect the presence of water or measure the water level. This sensor is commonly used in projects related to rainfall detection, water level monitoring, and liquid leakage alerts.
 
 **How the Water Sensor Works**
 
-The water sensor has a series of exposed parallel wire traces that detect water droplets or measure the volume of water. As water comes into contact with these traces, the sensor outputs an analog signal. The more water that comes into contact with the sensor, the higher the output value, which can be read by the Raspberry Pi Pico 2w's analog-to-digital converter (ADC).
+The water sensor has a series of exposed parallel wire traces that detect water droplets or measure the volume of water. As water comes into contact with these traces, the sensor outputs an analog signal. The more water that comes into contact with the sensor, the higher the output value, which can be read by the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC).
 
 |img_water_sensor|
 
@@ -98,7 +98,7 @@ We'll write a simple MicroPython program to read the analog value from the water
 
 .. note::
 
-    * Open the ``2.14_feel_the_water_level.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``2.14_feel_the_water_level.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -163,5 +163,5 @@ We can also use the water sensor to detect liquid leakage by treating it like a 
 
 **Conclusion**
 
-The water sensor is a simple yet powerful tool for detecting water levels or potential liquid leakage. By integrating it with the Raspberry Pi Pico 2w, you can create responsive and useful water detection systems for a variety of applications.
+The water sensor is a simple yet powerful tool for detecting water levels or potential liquid leakage. By integrating it with the Raspberry Pi Pico 2 W, you can create responsive and useful water detection systems for a variety of applications.
 

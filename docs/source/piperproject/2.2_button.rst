@@ -97,7 +97,7 @@ You can also buy them separately from the links below.
 
 |2.2_button|
 
-After connecting Pico 2W, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
+After connecting Pico 2 W, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
 
 
 **How it Works?**

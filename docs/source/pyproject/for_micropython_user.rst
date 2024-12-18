@@ -12,16 +12,17 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _micropython_user:
+.. _projects_micropython:
 
-For MicroPython User
-======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico 2W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
+MicroPython Projects
+=======================
+In this section, you will learn the history of MicroPython, how to install MicroPython in Pico 2 W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
 
 We recommend that you read the chapters in order.
 
 
-**1. Get Started**
+1. Get Started
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -36,7 +37,8 @@ We recommend that you read the chapters in order.
 
 
 
-**2. Output & Input**
+2. Output & Input
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -58,7 +60,8 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-**3. Sound & Display & Movement**
+3. Sound & Display & Movement
+---------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -71,7 +74,8 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-**4. Controller**
+4. Controller
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -80,7 +84,8 @@ We recommend that you read the chapters in order.
     py_keypad
     py_mpr121
 
-**5. Microchip**
+5. Microchip
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -90,7 +95,8 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. Advanced**
+6. Advanced
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -101,7 +107,8 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-**7. Funny Project**
+7. Funny Project
+------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -118,5 +125,21 @@ We recommend that you read the chapters in order.
     py_reversing_aid
     py_somatosensory_controller
     py_digital_bubble_level
+
+8. IoT Project
+------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    iotproject/1.access
+    iotproject/2.cheerlight
+    iotproject/3.ifttt_mail
+    iotproject/4.openweather
+    iotproject/5.mqtt_pub
+    iotproject/6.mqtt_sub
+    iotproject/7.web_page
+    iotproject/8.sunfounder_controller
+    iotproject/9.plant_monitor
 
 

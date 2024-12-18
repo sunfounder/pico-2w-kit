@@ -17,7 +17,7 @@
 2.14 Water Level Detection
 ============================
 
-In this lesson, we will learn how to use a **water sensor** with the Raspberry Pi Pico 2w to detect the presence of water or measure the water level. This sensor is commonly used in projects related to rainfall detection, water level monitoring, and liquid leakage alerts.
+In this lesson, we will learn how to use a **water sensor** with the Raspberry Pi Pico 2 W to detect the presence of water or measure the water level. This sensor is commonly used in projects related to rainfall detection, water level monitoring, and liquid leakage alerts.
 
 **How the Water Sensor Works**
 
@@ -93,7 +93,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``pico-2w-kit-main/arduino/2.14_feel_the_water_level``. 
+    * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``pico-2 w-kit-main/arduino/2.14_feel_the_water_level``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

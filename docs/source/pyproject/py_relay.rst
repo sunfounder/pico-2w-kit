@@ -17,7 +17,7 @@
 2.16 Control Another Circuit
 =================================
 
-In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2w. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
+In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2 W. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
 
 .. warning::
     Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
@@ -114,7 +114,7 @@ The following code will control the relay, switching the connected circuit on an
 
 .. note::
 
-    * Open the ``2.16_control_another_circuit.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``2.16_control_another_circuit.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python

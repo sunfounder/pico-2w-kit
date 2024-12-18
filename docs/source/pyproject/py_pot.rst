@@ -17,13 +17,13 @@
 2.11 Turn the Knob
 ===========================
 
-In this lesson, we'll explore how to read analog input using the Raspberry Pi Pico 2w's built-in Analog-to-Digital Converter (ADC) and use that input to control the brightness of an LED. Specifically, we'll use a potentiometer—a variable resistor—as an analog input device. By turning the knob of the potentiometer, we'll adjust the voltage level read by the Pico, which we'll then use to control the LED's brightness via Pulse Width Modulation (PWM).
+In this lesson, we'll explore how to read analog input using the Raspberry Pi Pico 2 W's built-in Analog-to-Digital Converter (ADC) and use that input to control the brightness of an LED. Specifically, we'll use a potentiometer—a variable resistor—as an analog input device. By turning the knob of the potentiometer, we'll adjust the voltage level read by the Pico, which we'll then use to control the LED's brightness via Pulse Width Modulation (PWM).
 
 **Understanding Analog Input**
 
 So far, we've worked with digital inputs and outputs, which are either ON (high voltage) or OFF (low voltage). However, many real-world signals are analog, meaning they can vary continuously over a range of values. Examples include light intensity, temperature, and sound levels.
 
-The Raspberry Pi Pico 2w has a built-in ADC that allows it to read analog voltages and convert them into digital values that can be processed in code.
+The Raspberry Pi Pico 2 W has a built-in ADC that allows it to read analog voltages and convert them into digital values that can be processed in code.
 
 The ADC converts the analog voltage from the potentiometer into a digital value using the formula:
 
@@ -111,7 +111,7 @@ You can also buy them separately from the links below.
 
 The potentiometer is an analog device and when you turn it in 2 different directions.
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico 2W wcontains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico 2 W wcontains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
 
 The calculation formula is shown below.
 
@@ -131,7 +131,7 @@ This way you will find that by rotating the potentiometer, the brightness of the
 
 .. note::
 
-  * Open the ``2.11_turn_the_knob.py`` file under the path ``pico-2w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
+  * Open the ``2.11_turn_the_knob.py`` file under the path ``pico-2 w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
   * Ensure that the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
   * For detailed instructions, refer to :ref:`open_run_code_py`.
 

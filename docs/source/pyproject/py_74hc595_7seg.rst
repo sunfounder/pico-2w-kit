@@ -17,7 +17,7 @@
 5.2 Displaying Numbers
 ========================
 
-In this lesson, we'll learn how to use a **7-segment display** to show numbers using the Raspberry Pi Pico 2w and a **74HC595 shift register**. The 7-segment display is a common electronic component used in devices like digital clocks, calculators, and appliances to display numerical information.
+In this lesson, we'll learn how to use a **7-segment display** to show numbers using the Raspberry Pi Pico 2 W and a **74HC595 shift register**. The 7-segment display is a common electronic component used in devices like digital clocks, calculators, and appliances to display numerical information.
 
 By combining the 74HC595 shift register with the 7-segment display, we can control all the segments using only a few GPIO pins on the Pico, saving valuable I/O resources for other components.
 
@@ -123,11 +123,11 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
 
 **Wiring**
 
-.. 1. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico 2W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico 2W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico 2W to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the GP0 pin of Pico 2 W to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico 2 W to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico 2 W to the SHcp pin (pin 11) of 74HC595.
 .. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
 .. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
 .. #. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
@@ -143,7 +143,7 @@ Let's write a MicroPython program to display digits from 0 to 9 on the 7-segment
 
 .. note::
 
-    * Open the ``5.2_number_display.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.2_number_display.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -294,5 +294,5 @@ Each segment code corresponds to the segments that need to be illuminated to dis
 
 **Conclusion**
 
-In this lesson, you've learned how to use a 7-segment display with a 74HC595 shift register to display numbers using the Raspberry Pi Pico 2w. By understanding how to control each segment through binary codes and utilizing the shift register, you can efficiently manage multiple outputs with limited GPIO pins.
+In this lesson, you've learned how to use a 7-segment display with a 74HC595 shift register to display numbers using the Raspberry Pi Pico 2 W. By understanding how to control each segment through binary codes and utilizing the shift register, you can efficiently manage multiple outputs with limited GPIO pins.
 

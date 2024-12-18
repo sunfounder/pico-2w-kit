@@ -95,7 +95,7 @@ You can also buy them separately from the links below.
 
 |blink1|
 
-After connecting Pico 2W, click the **Start** button and you will see the LED blinking. For more details, you can refer to :ref:`quick_guide_piper`.
+After connecting Pico 2 W, click the **Start** button and you will see the LED blinking. For more details, you can refer to :ref:`quick_guide_piper`.
 
 **How it Works?**
 

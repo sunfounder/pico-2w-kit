@@ -18,7 +18,7 @@
 7.4 Building a Passenger Counter
 =======================================================
 
-In this lesson, we'll create a **Passenger Counter** using a Raspberry Pi Pico 2w, a PIR (Passive Infrared) motion sensor, and a 4-digit 7-segment display. This device will count the number of times motion is detected by the PIR sensor and display the count on the 7-segment display. This simulates how such counters are used in public places to monitor foot traffic.
+In this lesson, we'll create a **Passenger Counter** using a Raspberry Pi Pico 2 W, a PIR (Passive Infrared) motion sensor, and a 4-digit 7-segment display. This device will count the number of times motion is detected by the PIR sensor and display the count on the 7-segment display. This simulates how such counters are used in public places to monitor foot traffic.
 
 
 **Required Components**
@@ -117,7 +117,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.4_passager_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.4_passager_counter.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
@@ -376,7 +376,7 @@ If the count reaches 9999, it will reset to 0000.
 
 **Conclusion**
 
-In this lesson, you've learned how to create a practical Passenger Counter using the Raspberry Pi Pico 2w, a PIR motion sensor, and a 4-digit 7-segment display. This project demonstrates how microcontrollers can interact with sensors and output devices to collect and display data in real-time.
+In this lesson, you've learned how to create a practical Passenger Counter using the Raspberry Pi Pico 2 W, a PIR motion sensor, and a 4-digit 7-segment display. This project demonstrates how microcontrollers can interact with sensors and output devices to collect and display data in real-time.
 
 Feel free to experiment with the code and hardware to add new features or improve functionality. This project can serve as a foundation for more complex systems involving data analysis, remote monitoring, or integration with other sensors and devices.
 

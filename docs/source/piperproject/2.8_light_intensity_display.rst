@@ -97,7 +97,7 @@ You can also buy them separately from the links below.
 
 |light_intensity_display|
 
-* After connecting Pico 2W, click the **Start** button and the code starts to run.
+* After connecting Pico 2 W, click the **Start** button and the code starts to run.
 * When the light is stronger, more LEDs are lit on the LED Bar Graph. 
 * If running the code does not light up properly, you can try flipping the led bar.
 

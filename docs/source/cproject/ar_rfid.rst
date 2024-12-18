@@ -18,7 +18,7 @@
 6.5 Interfacing RFID
 ===========================================
 
-In this lesson, we'll explore how to use **Radio Frequency Identification (RFID)** technology with the Raspberry Pi Pico 2w. RFID allows for wireless communication between a reader and tags, which can be used for identification, authentication, and data storage.
+In this lesson, we'll explore how to use **Radio Frequency Identification (RFID)** technology with the Raspberry Pi Pico 2 W. RFID allows for wireless communication between a reader and tags, which can be used for identification, authentication, and data storage.
 
 * :ref:`cpn_mfrc522`
 
@@ -105,9 +105,9 @@ We'll write two programs that initializes the MFRC522 RFID reader, listens for R
 
    .. note::
    
-      * You can open the file ``6.5_rfid_read.ino`` from ``pico-2w-kit-main/arduino/6.5_rfid_read``. 
+      * You can open the file ``6.5_rfid_read.ino`` from ``pico-2 w-kit-main/arduino/6.5_rfid_read``. 
       * Or copy this code into **Arduino IDE**.
-      * Select the **Raspberry Pi Pico 2w** board and the correct port, then click "Upload".
+      * Select the **Raspberry Pi Pico 2 W** board and the correct port, then click "Upload".
    
    .. code-block:: arduino
    
@@ -211,9 +211,9 @@ We'll write two programs that initializes the MFRC522 RFID reader, listens for R
 
    .. note::
    
-      * You can open the file ``6.5_rfid_read.ino`` from ``pico-2w-kit-main/arduino/6.5_rfid_read``. 
+      * You can open the file ``6.5_rfid_read.ino`` from ``pico-2 w-kit-main/arduino/6.5_rfid_read``. 
       * Or copy this code into **Arduino IDE**.
-      * Select the **Raspberry Pi Pico 2w** board and the correct port, then click "Upload".
+      * Select the **Raspberry Pi Pico 2 W** board and the correct port, then click "Upload".
    
    .. code-block:: arduino
 

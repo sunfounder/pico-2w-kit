@@ -18,7 +18,7 @@
 7.11 Building a Somatosensory Controller
 ============================================
 
-In this exciting project, we'll create a **Somatosensory Controller** using the Raspberry Pi Pico 2w, an MPU6050 accelerometer and gyroscope module, and a servo motor. This device captures human motion—specifically the tilt of your hand—and translates it into movement of the servo motor. This technology is similar to that used in robotics and remote operation systems, such as surgical robots or robotic arms.
+In this exciting project, we'll create a **Somatosensory Controller** using the Raspberry Pi Pico 2 W, an MPU6050 accelerometer and gyroscope module, and a servo motor. This device captures human motion—specifically the tilt of your hand—and translates it into movement of the servo motor. This technology is similar to that used in robotics and remote operation systems, such as surgical robots or robotic arms.
 
 **Required Components**
 
@@ -102,7 +102,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.11_somatosensory_controller.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 

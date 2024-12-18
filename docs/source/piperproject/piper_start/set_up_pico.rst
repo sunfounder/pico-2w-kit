@@ -21,30 +21,30 @@ Find the ``SETUP MY PICO`` button, click it, and follow the prompts to configure
 |media2-s|
 
 
-Click **Next** to start configuring your Pico 2W, even if you have set it up before, these are the same steps you will use to update your Pico 2W firmware.
+Click **Next** to start configuring your Pico 2 W, even if you have set it up before, these are the same steps you will use to update your Pico 2 W firmware.
 
 |media3|
 
-In this step, you need to make sure that your Pico 2W is unplugged from your computer, as it needs to be plugged in in a specific way in the next step. Make sure your cable can handle power and data, as many micro USB cables only have power.
+In this step, you need to make sure that your Pico 2 W is unplugged from your computer, as it needs to be plugged in in a specific way in the next step. Make sure your cable can handle power and data, as many micro USB cables only have power.
 
 |media4|
 
-Now, press and hold the RST (white) button on the Pico 2W and plug the Pico 2W into your computer. Once plugged in, you can release the button.
+Now, press and hold the RST (white) button on the Pico 2 W and plug the Pico 2 W into your computer. Once plugged in, you can release the button.
 
 |media5|
 
-Your Pico 2W will appear as a USB drive, click **Next** after that select **RPI-RP2** drive.
+Your Pico 2 W will appear as a USB drive, click **Next** after that select **RPI-RP2** drive.
 
 .. note::
     After select **RPI-RP2** drive, there will be a pop up window at the top that you need to allow the web page to view files.
 
 |media6|
 
-Now Piper Make will load the firmware to your Pico 2W, again you need to allow save changes to the hard drive where the Pico 2W is located.
+Now Piper Make will load the firmware to your Pico 2 W, again you need to allow save changes to the hard drive where the Pico 2 W is located.
 
 |media7|
 
-When this prompt appears, it means your Pico 2W is set up and you can start using it.
+When this prompt appears, it means your Pico 2 W is set up and you can start using it.
 
 
 |media8|

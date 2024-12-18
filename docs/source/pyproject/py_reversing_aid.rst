@@ -19,7 +19,7 @@
 7.10 Building a Reversing Aid
 =================================
 
-In this project, we'll create a **Reversing Aid System** using the Raspberry Pi Pico 2w, an ultrasonic sensor, an LED, and a buzzer. 
+In this project, we'll create a **Reversing Aid System** using the Raspberry Pi Pico 2 W, an ultrasonic sensor, an LED, and a buzzer. 
 This system simulates how real-world parking sensors work by detecting the distance to an obstacle and providing audio and visual 
 feedback that changes based on proximity. You can attach this setup to a remote-controlled car to mimic the experience of reversing into a garage.
 
@@ -115,7 +115,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.10_reversing_aid.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.10_reversing_aid.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -290,7 +290,7 @@ The console will display the measured distance.
 
 **Conclusion**
 
-You've successfully built a Reversing Aid System using the Raspberry Pi Pico 2w! This project demonstrates how sensors can be used to provide real-time feedback, a fundamental concept in robotics and automation.
+You've successfully built a Reversing Aid System using the Raspberry Pi Pico 2 W! This project demonstrates how sensors can be used to provide real-time feedback, a fundamental concept in robotics and automation.
 
 
 

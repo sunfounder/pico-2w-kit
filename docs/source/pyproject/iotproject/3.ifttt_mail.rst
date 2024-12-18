@@ -17,7 +17,7 @@
 With this project, we make a security device that uses a PIR Sensor to detect when a burglar or stray animal breaks into your home. You will receive an email alert if this is the case.
 
 Webhook will be used as the most basic service.
-A POST request is sent to IFTTT's service from Raspberry Pi Pico 2W.
+A POST request is sent to IFTTT's service from Raspberry Pi Pico 2 W.
 Using IFTTT, we will create an Applet to intercept the webhook and send an email.
 
 **1. Required Components**
@@ -90,10 +90,6 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 11
-        - Battery Holder
-        - 1
-        -  
-    *   - 12
         - :ref:`cpn_pir`
         - 1
         - |link_pir_buy|
@@ -185,18 +181,18 @@ Please follow the steps below on IFTTT.
 
 **4. Run the Script**
 
-#. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico 2W to access IFTTT.
+#. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico 2 W to access IFTTT.
 
     .. image:: img/ifttt-14.png
         :width: 500
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico 2W.
+#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico 2 W.
 
     .. image:: img/3_ifttt4.png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2W, you need to create them in your Pico 2W, please refer to :ref:`iot_access` to create them.
+        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, you need to create them in your Pico 2 W, please refer to :ref:`iot_access` to create them.
 
     .. code-block:: python
         :emphasize-lines: 4
@@ -207,7 +203,7 @@ Please follow the steps below on IFTTT.
         'webhooks_key':'WEBHOOKS_API_KEY'
         }
 
-#. Open the ``3_ifttt_mail.py`` file under the path of ``pico-2w-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
+#. Open the ``3_ifttt_mail.py`` file under the path of ``pico-2 w-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
 
     .. image:: img/3_ifttt1.png
 
@@ -215,11 +211,11 @@ Please follow the steps below on IFTTT.
 
     .. image:: img/3_ifttt2.png
 
-#. Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico 2W.
+#. Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico 2 W.
 
     .. image:: img/3_ifttt3.png
 
-#. You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico 2W. You will hear a buzzer tick when the script is running. The buzzer will keep sounding if the PIR module detects a person/creature passing by, and an email alert will be sent to you. The script can be restarted by pressing the button.
+#. You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico 2 W. You will hear a buzzer tick when the script is running. The buzzer will keep sounding if the PIR module detects a person/creature passing by, and an email alert will be sent to you. The script can be restarted by pressing the button.
 
 **How it works?**
 
@@ -245,7 +241,7 @@ Reads data from the PIR module and calls the ``motion_detected()`` function if i
 
     sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-Next the Pico 2W sends data to IFTTT. As you can see, the ``message`` that you send to IFTTT is a url string.
+Next the Pico 2 W sends data to IFTTT. As you can see, the ``message`` that you send to IFTTT is a url string.
 IFTTT identifies the sender by ``secrets['webhooks_key']``, the triggered event is identified by ``event``.
 So, make sure they are correct.
 

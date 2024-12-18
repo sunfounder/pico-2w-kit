@@ -18,7 +18,7 @@
 2.13 Thermometer
 ===========================
 
-In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2w to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
+In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2 W to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
 
 
 * :ref:`cpn_thermistor`
@@ -80,7 +80,7 @@ You can also buy them separately from the links below.
 
 **Understanding the Thermistor**
 
-An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2w's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
+An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
 
 **Circuit Diagram**
 
@@ -97,7 +97,7 @@ The 10K resistor ensures 3.3V and GND are not directly connected, preventing a s
 
 |wiring_temp|
  
-.. #. Connect 3V3 and GND of Pico 2W to the power bus of the breadboard.
+.. #. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
 .. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
 .. #. Connect another lead of thermistor to the negative power bus.
 
@@ -111,7 +111,7 @@ We'll write a MicroPython program to read the analog value from the thermistor, 
 
 .. note::
 
-    * Open the ``2.13_thermometer.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``2.13_thermometer.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
@@ -220,7 +220,7 @@ Be careful when applying heat to the thermistor. Do not expose it to high temper
 
 **Conclusion**
 
-By using a thermistor with the Raspberry Pi Pico 2w, you've created a basic thermometer capable of measuring temperature changes. This project demonstrates how to read analog inputs, perform calculations, and interpret sensor data to derive meaningful information.
+By using a thermistor with the Raspberry Pi Pico 2 W, you've created a basic thermometer capable of measuring temperature changes. This project demonstrates how to read analog inputs, perform calculations, and interpret sensor data to derive meaningful information.
 
 
 

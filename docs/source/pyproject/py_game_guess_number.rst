@@ -109,7 +109,7 @@ We'll write a MicroPython program that:
 
 .. note::
 
-    * Open the ``7.7_game_guess_number.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.7_game_guess_number.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -374,6 +374,6 @@ After the code runs, follow these steps to play the game:
 
 **Conclusion**
 
-You've successfully built an interactive Guess the Number game using the Raspberry Pi Pico 2w! This project combines user input, random number generation, and display output to create a fun and engaging game. It's an excellent way to practice working with keypads, LCD displays, and game logic in MicroPython.
+You've successfully built an interactive Guess the Number game using the Raspberry Pi Pico 2 W! This project combines user input, random number generation, and display output to create a fun and engaging game. It's an excellent way to practice working with keypads, LCD displays, and game logic in MicroPython.
 
 Feel free to enhance the game further by adding new features or improving the interface. This project can serve as a foundation for more complex interactive applications.

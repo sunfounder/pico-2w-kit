@@ -76,7 +76,7 @@ You can also buy them separately from the links below.
 
 |pin_adc|
 
-Pico 2W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
+Pico 2 W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
 In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
 
 
@@ -96,7 +96,7 @@ In addition, there is a fourth analog channel, which is connected to the built-i
 
 
 
-After connecting Pico 2W, click the **Start** button and the code starts to run. When the water level is lower than 1/3 of the water level sensor, the servo rotates to 180 degrees to simulate the inlet opening; when the water level is higher than 1/3 of the water level sensor, the servo rotates to 0 degrees to imitate the inlet closing.
+After connecting Pico 2 W, click the **Start** button and the code starts to run. When the water level is lower than 1/3 of the water level sensor, the servo rotates to 180 degrees to simulate the inlet opening; when the water level is higher than 1/3 of the water level sensor, the servo rotates to 0 degrees to imitate the inlet closing.
 
 **How it Works?**
 

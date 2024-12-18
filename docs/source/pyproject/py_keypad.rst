@@ -113,7 +113,7 @@ Let's write a MicroPython program to read which key is pressed.
 
 .. note::
 
-    * Open the ``4.2_4x4_keypad.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``4.2_4x4_keypad.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
@@ -257,4 +257,4 @@ After running the program, Press different keys on the keypad. The corresponding
 
 **Conclusion**
 
-In this lesson, you've learned how to connect and program a 4x4 matrix keypad with the Raspberry Pi Pico 2w. You can now detect key presses and use them to interact with your projects, opening up possibilities for creating interactive devices like locks, calculators, and control interfaces.
+In this lesson, you've learned how to connect and program a 4x4 matrix keypad with the Raspberry Pi Pico 2 W. You can now detect key presses and use them to interact with your projects, opening up possibilities for creating interactive devices like locks, calculators, and control interfaces.

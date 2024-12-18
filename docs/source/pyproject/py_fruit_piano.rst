@@ -17,7 +17,7 @@
 7.9 Building a Fruit Piano
 =================================================
 
-In this project, we'll create a **Fruit Piano** using the Raspberry Pi Pico 2w, an MPR121 capacitive touch sensor, a buzzer, and an RGB LED. By connecting fruits (or any conductive objects) to the capacitive touch sensor, we'll transform them into piano keys that play musical notes and display colorful lights when touched.
+In this project, we'll create a **Fruit Piano** using the Raspberry Pi Pico 2 W, an MPR121 capacitive touch sensor, a buzzer, and an RGB LED. By connecting fruits (or any conductive objects) to the capacitive touch sensor, we'll transform them into piano keys that play musical notes and display colorful lights when touched.
 
 **Required Components**
 
@@ -120,7 +120,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.9_fruit_piano.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.9_fruit_piano.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -300,6 +300,6 @@ After the program starts, gently touch the fruits.
 
 **Conclusion**
 
-You've successfully built a Fruit Piano using the Raspberry Pi Pico 2w! This project demonstrates how capacitive touch sensing can be combined with sound and light to create interactive experiences. It's a fun way to explore the principles of conductivity, touch sensing, and creative coding.
+You've successfully built a Fruit Piano using the Raspberry Pi Pico 2 W! This project demonstrates how capacitive touch sensing can be combined with sound and light to create interactive experiences. It's a fun way to explore the principles of conductivity, touch sensing, and creative coding.
 
 Feel free to expand upon this project by adding new features, experimenting with different materials, or integrating additional components.

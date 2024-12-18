@@ -99,7 +99,7 @@ You can also buy them separately from the links below.
 
 |drum_kit|
 
-After connecting Pico 2W, click the **Start** button and the code starts to run. Pressing different buttons or toggling the slide switch will produce different drum sounds, just like a drum kit.
+After connecting Pico 2 W, click the **Start** button and the code starts to run. Pressing different buttons or toggling the slide switch will produce different drum sounds, just like a drum kit.
 
 .. note::
     If you are using a computer, you will need to plug in headphones or audio to your computer to hear the sound emitted.

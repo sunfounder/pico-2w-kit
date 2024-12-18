@@ -17,7 +17,7 @@
 4.3 Electrode Keyboard
 ================================
 
-In this lesson, we'll learn how to use the **MPR121 capacitive touch sensor** to create a touch-sensitive keyboard with the Raspberry Pi Pico 2w. The MPR121 allows you to detect touch inputs on up to 12 electrodes, which can be connected to conductive materials like wires, foil, or even fruits like bananas!
+In this lesson, we'll learn how to use the **MPR121 capacitive touch sensor** to create a touch-sensitive keyboard with the Raspberry Pi Pico 2 W. The MPR121 allows you to detect touch inputs on up to 12 electrodes, which can be connected to conductive materials like wires, foil, or even fruits like bananas!
 
 * :ref:`cpn_mpr121`
 
@@ -74,7 +74,7 @@ You can also buy them separately from the links below.
 
 The **MPR121** is a capacitive touch sensor controller that communicates via the I2C interface. It can handle up to 12 touch inputs, making it ideal for creating interactive projects with multiple touch points.
 
-The MPR121 sensor detects changes in capacitance on its electrodes. When you touch an electrode, the capacitance changes, and the sensor registers a touch.The sensor communicates this information over I2C to the Raspberry Pi Pico 2w.
+The MPR121 sensor detects changes in capacitance on its electrodes. When you touch an electrode, the capacitance changes, and the sensor registers a touch.The sensor communicates this information over I2C to the Raspberry Pi Pico 2 W.
 
 **Schematic**
 
@@ -90,8 +90,6 @@ The MPR121 sensor detects changes in capacitance on its electrodes. When you tou
 
 **Wiring Diagram**
 
-|wiring_mpr121_ar|
-
 * Connect wires or conductive materials to the electrode pins (labeled **E0** to **E11**) on the MPR121.
 * You can attach the other ends of the wires to conductive objects like fruits, aluminum foil shapes, or touchpads.
 
@@ -101,7 +99,7 @@ Let's write a MicroPython program to detect touch inputs on the electrodes and p
 
 .. note::
 
-    * Open the ``4.3_electrode_keyboard.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``4.3_electrode_keyboard.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
@@ -194,6 +192,6 @@ You can enhance your project by connecting the electrodes to various conductive 
 
 **Conclusion**
 
-In this lesson, you've learned how to use the MPR121 capacitive touch sensor with the Raspberry Pi Pico 2w to create a touch-sensitive electrode keyboard. This opens up possibilities for interactive projects that respond to touch inputs in creative ways.
+In this lesson, you've learned how to use the MPR121 capacitive touch sensor with the Raspberry Pi Pico 2 W to create a touch-sensitive electrode keyboard. This opens up possibilities for interactive projects that respond to touch inputs in creative ways.
 
 

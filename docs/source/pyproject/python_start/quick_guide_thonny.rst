@@ -20,7 +20,7 @@
 Open and Run Code Directly
 ---------------------------------------------
 
-The code section in the projects tells you exactly which code is used, so double-click on the ``.py`` file with the serial number in the ``pico-2w-kit-main/micropython/`` path to open it. 
+The code section in the projects tells you exactly which code is used, so double-click on the ``.py`` file with the serial number in the ``pico-2 w-kit-main/micropython/`` path to open it. 
 
 However, you must first download the package and upload the library, as described in :ref:`add_libraries_py`.
 
@@ -34,7 +34,7 @@ However, you must first download the package and upload the library, as describe
 
 #. Select correct interpreter
 
-    Use a micro USB cable to connect the Pico 2W to your computer and select the "MicroPython (Raspberry Pi Pico)" interpreter.
+    Use a micro USB cable to connect the Pico 2 W to your computer and select the "MicroPython (Raspberry Pi Pico)" interpreter.
 
     |sec_inter|
 
@@ -50,14 +50,14 @@ However, you must first download the package and upload the library, as describe
 
         .. code-block::
 
-            MicroPython vx.xx on xxxx-xx-xx; Raspberry Pi Pico 2W  With RP2350
+            MicroPython vx.xx on xxxx-xx-xx; Raspberry Pi Pico 2 W  With RP2350
 
             Type "help()" for more information.
             >>> %Run -c $EDITOR_CONTENT
 
     * The first line shows the version of MicroPython, the date, and your device information.
     * The second line prompts you to enter "help()" to get some help.
-    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico 2W to run the contents of the script area - "EDITOR_CONTENT".
+    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico 2 W to run the contents of the script area - "EDITOR_CONTENT".
     * If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.
 
 
@@ -71,7 +71,7 @@ However, you must first download the package and upload the library, as describe
 
     You can save changes made to the open example by pressing **Ctrl+S** or clicking the **Save** button on Thonny.
 
-    The code can be saved as a separate file within the Raspberry Pi Pico 2W by clicking on **File** -> **Save As**.
+    The code can be saved as a separate file within the Raspberry Pi Pico 2 W by clicking on **File** -> **Save As**.
 
     |save_as|
 
@@ -79,7 +79,7 @@ However, you must first download the package and upload the library, as describe
 
     |sec_pico|
 
-    Then click **OK** after entering the file name and extension **.py**. On the Raspberry Pi Pico 2W drive, you will see your saved file.
+    Then click **OK** after entering the file name and extension **.py**. On the Raspberry Pi Pico 2 W drive, you will see your saved file.
 
     |sec_name|
 
@@ -108,7 +108,7 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
 #. Select correct interpreter
 
-    Plug the Pico 2W into your computer with a micro USB cable and select the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    Plug the Pico 2 W into your computer with a micro USB cable and select the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
     |sec_inter|
 
@@ -119,7 +119,7 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
     |where_save|
 
     .. note::
-        Thonny saves your program on the Raspberry Pi Pico 2W hen you tell him to, so if you unplug the Pico 2W and plug it into someone else's computer, your program remains intact.
+        Thonny saves your program on the Raspberry Pi Pico 2 W hen you tell him to, so if you unplug the Pico 2 W and plug it into someone else's computer, your program remains intact.
 
     Click OK after selecting the location, naming the file and adding the extension **.py**.
 
@@ -136,7 +136,7 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
     .. code-block::
 
-        MicroPython vx.xx.x on xxxx-xx-xx; Raspberry Pi Pico 2W With RP2350
+        MicroPython vx.xx.x on xxxx-xx-xx; Raspberry Pi Pico 2 W With RP2350
 
         Type "help()" for more information.
         >>> %Run -c $EDITOR_CONTENT
@@ -144,7 +144,7 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
     * The first line shows the version of MicroPython, the date, and your device information.
     * The second line prompts you to enter "help()" to get some help.
-    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico 2W to run the contents of the script area - "EDITOR_CONTENT".
+    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico 2 W to run the contents of the script area - "EDITOR_CONTENT".
     * If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.
 
 
@@ -158,6 +158,6 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
     Here are two ways to open a saved code file.
 
-    * The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from **this computer** or **Raspberry Pi Pico**, for example, click **Raspberry Pi Pico** and you will see a list of all the programs you have saved on the Pico 2W.
+    * The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from **this computer** or **Raspberry Pi Pico**, for example, click **Raspberry Pi Pico** and you will see a list of all the programs you have saved on the Pico 2 W.
     * The second is to open the file preview directly by clicking **View**-> **File**-> and then double-clicking on the corresponding ``.py`` file to open it.
 

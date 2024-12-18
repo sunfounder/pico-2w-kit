@@ -17,7 +17,7 @@
 6.3 Read from the MPU-6050
 ===============================
 
-In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2w. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
+In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2 W. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
 
 * :ref:`cpn_mpu6050`
 
@@ -93,7 +93,7 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``pico-2w-kit-main/arduino/6.3_6axis_motion_tracking``. 
+    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``pico-2 w-kit-main/arduino/6.3_6axis_motion_tracking``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit MPU6050`` library is used here, you can install it from the **Library Manager**.
