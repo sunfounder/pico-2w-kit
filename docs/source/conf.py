@@ -24,10 +24,6 @@ copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
 
-# The full version, including alpha/beta/rc tags
-release = '1.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -42,6 +38,14 @@ extensions = [
 # -- sphinx_rtd_theme Theme options -----------------------------------------------------
 html_theme_options = {
     'flyout_display': 'attached'
+}
+
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "sunfounder", # Username
+    "github_repo": "pico-2w-kit", # Repo name
+    "github_version": "docs-en", # Version
+    "conf_py_path": "/docs/source/", # Path in the checkout to the docs root
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,7 +63,6 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
