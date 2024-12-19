@@ -193,7 +193,7 @@ Comparison operators are used to compare two values.
 False
 >>> 
 
-Return **False**, beause the **a** is less than the **b**.
+Return **False**, because the **a** is less than the **b**.
 
 Logical Operators
 -----------------------

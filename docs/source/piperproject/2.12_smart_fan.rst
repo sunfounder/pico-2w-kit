@@ -102,7 +102,7 @@ You can also buy them separately from the links below.
 
 
 * After connecting Pico 2 W, click the **Start** button and the code starts to run.
-* Click CONSLE, you will see the current temperature in Celsius.
+* Click CONSOLE, you will see the current temperature in Celsius.
 * The fan starts spinning when it is above 25 degrees, and stops spinning when it is below 25 degrees.
 
 .. note::

@@ -75,7 +75,7 @@ Pico's Pins
         - 0 volts ground
         - Several GND pins around Pico W to make wiring easier.
     *   - RUN
-        - Enables or diables your Pico
+        - Enables or disables your Pico
         - Start and stop your Pico W from another microcontroller.
     *   - GPxx_ADCx
         - General-purpose input/output or analog input

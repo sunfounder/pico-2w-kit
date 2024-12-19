@@ -242,7 +242,7 @@ This code reads data from an MPU6050 accelerometer and gyroscope sensor to deter
 
 #. Mathematical Functions:
 
-   * ``dist(a, b)`` Funtion:
+   * ``dist(a, b)`` Function:
 
      * Calculates the Euclidean distance between two values.
      * Used to compute the magnitude component in angle calculations.
@@ -284,14 +284,14 @@ This code reads data from an MPU6050 accelerometer and gyroscope sensor to deter
 
 #. LED Matrix Display Functions:
 
-   * ``display(glyph)`` Funtion:
+   * ``display(glyph)`` Function:
 
      * Displays an 8x8 glyph on the LED matrix.
      * Iterates through each row of the glyph.
      * Shifts in the row data and the corresponding column selector.
      * Calls ``hc595_out()`` to update the display.
 
-   * ``matrix_2_glyph(matrix)`` Funtion:
+   * ``matrix_2_glyph(matrix)`` Function:
 
      * Converts an 8x8 2D matrix of 0s and 1s into an 8-byte glyph.
      * Each byte in the glyph represents a row in the LED matrix.
@@ -299,12 +299,12 @@ This code reads data from an MPU6050 accelerometer and gyroscope sensor to deter
 
 #. Utility Functions:
 
-   * ``clamp_number(val, min_val, max_val)`` Funtion:
+   * ``clamp_number(val, min_val, max_val)`` Function:
 
      * Ensures that ``val`` stays within the specified ``min_val`` and ``max_val`` range.
      * Prevents the bubble from moving outside the LED matrix boundaries.
 
-   * ``interval_mapping(x, in_min, in_max, out_min, out_max)`` Funtion:
+   * ``interval_mapping(x, in_min, in_max, out_min, out_max)`` Function:
 
      * Maps a value ``x`` from one numerical range to another.
      * Used to translate angle measurements to matrix positions.
@@ -317,7 +317,7 @@ This code reads data from an MPU6050 accelerometer and gyroscope sensor to deter
      * ``matrix_range = 7``: The maximum index for the 8x8 matrix (0 to 7).
      * ``point_range = matrix_range - 1``: Adjusted range to keep the bubble within bounds (0 to 6).
 
-   * ``bubble_position()`` Funtion:
+   * ``bubble_position()`` Function:
 
      * Retrieves the current X and Y rotation angles.
      * Maps the angles to positions on the LED matrix using ``interval_mapping``.
