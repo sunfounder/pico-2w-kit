@@ -143,7 +143,7 @@ Let's write a MicroPython program to display digits from 0 to 9 on the 7-segment
 
 .. note::
 
-    * Open the ``5.2_number_display.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.2_number_display.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python

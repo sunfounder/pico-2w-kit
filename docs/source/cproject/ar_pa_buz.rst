@@ -112,7 +112,7 @@ Make sure you are using the **passive buzzer**. You can tell it's the correct on
 
 .. note::
 
-    * You can open the file ``3.2_custom_tone.ino`` under the path of ``pico-2 w-kit-main/arduino/3.2_custom_tone``. 
+    * You can open the file ``3.2_custom_tone.ino`` under the path of ``pico-2w-kit-main/arduino/3.2_custom_tone``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

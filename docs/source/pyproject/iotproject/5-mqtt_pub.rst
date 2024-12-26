@@ -143,13 +143,13 @@ Before we can start the project, we need to install the MQTT module for Pico 2 W
         import mip
         mip.install('umqtt.simple')
 
-3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico 2 W after completion.
+3. You will see that the ``umqtt`` module is installed under the ``/micropython/libs/`` path of Pico 2 W after completion.
 
     .. image:: img/5_calling_system1.png
 
 **5. Run the Script**
 
-#. Open the ``5_mqtt_publish.py`` file under the path of ``pico-2 w-kit-main/iot``.
+#. Open the ``8.5_mqtt_publish.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
 
 #. Click the **Run current script** button or press F5 to run it.
 

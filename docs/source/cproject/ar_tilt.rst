@@ -98,7 +98,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.6_tilt_it.ino`` under the path of ``pico-2 w-kit-main/arduino/2.4_colorful_light``. 
+    * You can open the file ``2.6_tilt_it.ino`` under the path of ``pico-2w-kit-main/arduino/2.4_colorful_light``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

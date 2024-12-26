@@ -121,7 +121,7 @@ Then G10 ~ G13 will select which 7-segment display to work.
 
 .. note::
 
-    * You can open the file ``5.3_time_counter.ino`` under the path of ``pico-2 w-kit-main/arduino/5.3_time_counter``. 
+    * You can open the file ``5.3_time_counter.ino`` under the path of ``pico-2w-kit-main/arduino/5.3_time_counter``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

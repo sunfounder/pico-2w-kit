@@ -117,7 +117,7 @@ We'll write a MicroPython script that:
 
 .. note::
 
-    * Open the ``7.4_passager_counter.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``7.4_passager_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python

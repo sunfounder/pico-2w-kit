@@ -147,7 +147,7 @@ We'll write a MicroPython program to display a pattern on the LED matrix.
 
 .. note::
 
-    * Open the ``5.4_8x8_pixel_graphics.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``5.4_8x8_pixel_graphics.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 

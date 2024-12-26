@@ -94,7 +94,7 @@ You can also buy them separately from the links below.
 
 
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``pico-2 w-kit-main/iot``.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``8.2_cheer_light.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
 
 #. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
     .. note::

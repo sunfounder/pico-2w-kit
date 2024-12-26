@@ -102,11 +102,11 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
 
 **3. Run the Code**
 
-#. Upload the ``play_music.py`` file under the path of ``pico-2 w-kit-main/iot`` to the Raspberry Pi Pico 2 W.
+#. Upload the ``play_music.py`` file under the path of ``pico-2w-kit-main/micropython/iot`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/mqtt-A-1.png
 
-#. Open the ``6_mqtt_subscribe_music.py`` file under the path of ``pico-2 w-kit-main/iot`` and click the **Run current script** button or press F5 to run it.
+#. Open the ``8.6_mqtt_subscribe_music.py`` file under the path of ``pico-2w-kit-main/micropython/iot`` and click the **Run current script** button or press F5 to run it.
 
     .. image:: img/6_cloud_player.png
 

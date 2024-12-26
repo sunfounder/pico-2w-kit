@@ -132,7 +132,7 @@ You can also buy them separately from the links below.
 
 **4. Run the Script**
 
-#. Open the ``4_weather.py`` file under the path of ``pico-2 w-kit-main/iot``, click the **Run current script** button or press F5 to run it.
+#. Open the ``8.4_weather.py`` file under the path of ``pico-2w-kit-main/micropython/iot``, click the **Run current script** button or press F5 to run it.
 
     .. image:: img/4_openweather2.png
 

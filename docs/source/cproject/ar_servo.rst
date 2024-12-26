@@ -96,7 +96,7 @@ Servos can draw significant current, especially under load. Since we're using a 
 
 .. note::
 
-    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``pico-2 w-kit-main/arduino/3.7_swinging_servo``. 
+    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``pico-2w-kit-main/arduino/3.7_swinging_servo``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

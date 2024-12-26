@@ -105,7 +105,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2 w-kit-main/arduino/3.6_pumping``. 
+    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2w-kit-main/arduino/3.6_pumping``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

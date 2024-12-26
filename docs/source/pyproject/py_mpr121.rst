@@ -99,7 +99,7 @@ Let's write a MicroPython program to detect touch inputs on the electrodes and p
 
 .. note::
 
-    * Open the ``4.3_electrode_keyboard.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``4.3_electrode_keyboard.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 

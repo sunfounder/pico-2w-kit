@@ -114,7 +114,7 @@ We'll write a MicroPython program that detects when a magnet is near the reed sw
 
 .. note::
 
-  * Open the ``2.9_feel_the_magnetism.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Open the ``2.9_feel_the_magnetism.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
   
 .. code-block:: python

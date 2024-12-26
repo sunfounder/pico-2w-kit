@@ -113,7 +113,7 @@ Let's write a MicroPython program to read which key is pressed.
 
 .. note::
 
-    * Open the ``4.2_4x4_keypad.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``4.2_4x4_keypad.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
     
 

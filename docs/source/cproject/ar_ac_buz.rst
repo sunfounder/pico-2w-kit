@@ -111,7 +111,7 @@ Make sure you are using the **active buzzer**. You can tell it's the correct one
 
 .. note::
 
-    * You can open the file ``3.1_beep.ino`` under the path of ``pico-2 w-kit-main/arduino/3.1_beep``. 
+    * You can open the file ``3.1_beep.ino`` under the path of ``pico-2w-kit-main/arduino/3.1_beep``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

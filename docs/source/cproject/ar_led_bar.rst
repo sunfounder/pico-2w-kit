@@ -92,7 +92,7 @@ The LED Bar Graph contains 10 LEDs, each of which is individually controllable. 
 
 .. note::
 
-    * You can open the file ``2.2_display_the_level.ino`` under the path of ``pico-2 w-kit-main/arduino/2.2_display_the_level``. 
+    * You can open the file ``2.2_display_the_level.ino`` under the path of ``pico-2w-kit-main/arduino/2.2_display_the_level``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

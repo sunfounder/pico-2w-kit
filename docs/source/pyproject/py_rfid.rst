@@ -105,7 +105,7 @@ We'll write two separate scripts:
 
    .. note::
 
-       Open the ``6.5_rfid_write.py`` file from ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+       Open the ``6.5_rfid_write.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
    .. code-block:: python
 
@@ -156,7 +156,7 @@ We'll write two separate scripts:
 
    .. note::
 
-       Open the ``6.5_rfid_read.py`` file from ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+       Open the ``6.5_rfid_read.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
 
 
    .. code-block:: python

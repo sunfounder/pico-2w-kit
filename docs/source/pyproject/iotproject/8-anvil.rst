@@ -208,7 +208,7 @@ In order to simplify the connection of the Raspberry Pi Pico 2 W to Anvil servic
 **5. Finish the Code**
 
 
-#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``pico-2 w-kit-main/libs`` to the Raspberry Pi Pico 2 W.
+#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``pico-2w-kit-main/micropython/libs`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/anvil-22.png
 

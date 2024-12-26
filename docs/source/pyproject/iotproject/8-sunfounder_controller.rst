@@ -151,7 +151,7 @@ You can also buy them separately from the links below.
     If your Pico 2 W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
 
 
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``pico-2 w-kit-main/libs`` to the Raspberry Pi Pico 2 W.
+1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``pico-2w-kit-main/micropython/libs`` to the Raspberry Pi Pico 2 W.
 
     .. image:: img/9_sc3.png
 
@@ -159,7 +159,7 @@ You can also buy them separately from the links below.
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``pico-2 w-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
+3. Open the ``9_sunfounder_controller.py`` under the path of ``pico-2w-kit-main/micropython/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
 
     .. image:: img/9_sc2.png
 

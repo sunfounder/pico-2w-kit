@@ -98,7 +98,7 @@ We'll write a simple MicroPython program to read the analog value from the water
 
 .. note::
 
-    * Open the ``2.14_feel_the_water_level.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``2.14_feel_the_water_level.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python

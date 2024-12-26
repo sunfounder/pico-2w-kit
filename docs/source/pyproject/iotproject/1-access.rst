@@ -17,11 +17,10 @@
 8.1 Access to the Network
 ===========================
 
-    .. note::
+.. note::
 
-        If you are coming from another IoT project, please start from Step 3 to proceed with the creation ``do_connect.py`` and ``secrets.py`` .
+    If you are coming from another IoT project, please start from Step 3 to proceed with the creation ``do_connect.py`` and ``secrets.py`` .
 
-Raspberry Pi Pico 2 W is very similar to Raspberry Pi Pico W, with the same GPIO, microUSB port, and size. The difference is the clock speed has been increased from 133 MHz to 160 MHz.
 Now let's see how it connects to our Wi-Fi network.
 
 **Required Components**
@@ -81,15 +80,15 @@ Or refer to the following method and create a new ``.py`` file to run it.
 
 #. Create a new script by clicking the **New** button on Thonny, and copy and paste the above code, changing the ``SSID`` and ``PASSWORD`` to your own.
 
-    .. image:: img/access1.png
+   .. image:: img/access1.png
 
 #. To run the script, click the **Run current script** button or press F5. If the connection is successful, ``true`` will be printed. 
 
-    .. note::
+   .. note::
 
-        Make sure the Raspberry Pi Pico 2 W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
+       Make sure the Raspberry Pi Pico 2 W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
 
-    .. image:: img/access2.png
+   .. image:: img/access2.png
 
 
 2. Timeout Judgment and Show IP

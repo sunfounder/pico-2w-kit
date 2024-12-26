@@ -108,7 +108,7 @@ The 10K resistor ensures 3.3V and GND are not directly connected, preventing a s
 
 .. note::
 
-    * You can open the file ``2.13_thermometer.ino`` under the path of ``pico-2 w-kit-main/arduino/2.13_thermometer``. 
+    * You can open the file ``2.13_thermometer.ino`` under the path of ``pico-2w-kit-main/arduino/2.13_thermometer``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

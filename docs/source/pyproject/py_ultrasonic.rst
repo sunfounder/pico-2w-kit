@@ -96,7 +96,7 @@ Let's write a MicroPython program to measure distance using the ultrasonic senso
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``6.1_measuring_distance.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
      
 

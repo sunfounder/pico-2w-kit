@@ -102,7 +102,7 @@ You can also buy them separately from the links below.
 
         Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`iot_access` to create them.
 
-#. Open the ``7_web_page.py`` file under the path of ``pico-2 w-kit-main/iot``.
+#. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
 #. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
 
     .. image:: img/7_web_server.png

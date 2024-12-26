@@ -122,7 +122,7 @@ In this circuit, you will see that the button is connected to the RUN pin. This 
 
 .. note::
 
-    * Open the ``3.6_pumping.py`` file under the path of ``pico-2 w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Open the ``3.6_pumping.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
     * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
 

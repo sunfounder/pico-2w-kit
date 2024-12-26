@@ -20,7 +20,7 @@
 Open and Run Code Directly
 ---------------------------------------------
 
-The code section in the projects tells you exactly which code is used, so double-click on the ``.py`` file with the serial number in the ``pico-2 w-kit-main/micropython/`` path to open it. 
+The code section in the projects tells you exactly which code is used, so double-click on the ``.py`` file with the serial number in the ``pico-2w-kit-main/micropython/`` path to open it. 
 
 However, you must first download the package and upload the library, as described in :ref:`add_libraries_py`.
 

@@ -112,7 +112,7 @@ We'll write a program that controls the LEDs connected to the 74HC595 shift regi
 
 .. note::
 
-    * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``pico-2 w-kit-main/arduino/5.1_microchip_74hc595``. 
+    * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``pico-2w-kit-main/arduino/5.1_microchip_74hc595``. 
     * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 

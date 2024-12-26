@@ -94,7 +94,7 @@ Be cautious with the current draw. While the Pico's VBUS pin can supply power fo
 
 .. note::
 
-    * Open the ``3.3_rgb_led_strip.py`` from ``pico-2 w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Open the ``3.3_rgb_led_strip.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
 
     * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
