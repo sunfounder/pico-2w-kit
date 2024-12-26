@@ -129,17 +129,32 @@ We recommend that you read the chapters in order.
 8. IoT Project
 ------------------------
 
+**Wi-Fi**
+
 .. toctree::
     :maxdepth: 1
+    
+    iotproject/1-access
+    iotproject/2-cheerlight
+    iotproject/3-ifttt_mail
+    iotproject/4-openweather
+    iotproject/5-mqtt_pub
+    iotproject/6-mqtt_sub
+    iotproject/7-web_page
+    iotproject/8-sunfounder_controller
+    iotproject/9-plant_monitor
 
-    iotproject/1.access
-    iotproject/2.cheerlight
-    iotproject/3.ifttt_mail
-    iotproject/4.openweather
-    iotproject/5.mqtt_pub
-    iotproject/6.mqtt_sub
-    iotproject/7.web_page
-    iotproject/8.sunfounder_controller
-    iotproject/9.plant_monitor
+**Bluetooth**
+
+.. toctree::
+    :maxdepth: 1
+    
+    iotproject/10-bluetooth
+    iotproject/11-write_to_ble
+    iotproject/12-read_form_ble
+    iotproject/13-ble_home
+    iotproject/14-ble_piano
+    iotproject/15-ble_relay
+    iotproject/16-ble_lock
 
 

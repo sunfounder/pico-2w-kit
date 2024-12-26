@@ -14,7 +14,7 @@
 
 .. _iot_access:
 
-1. Access to the Network
+8.1 Access to the Network
 ===========================
 
     .. note::

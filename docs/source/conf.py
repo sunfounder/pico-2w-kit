@@ -812,6 +812,27 @@ rst_epilog += """
 .. |link_discord_server| raw:: html
 
     <a href="https://discord.com/invite/G7Q5UjDT7K" target="_blank">Discord Server</a>
+
+.. |link_lightblue_apple| raw:: html
+
+    <a href="https://apps.apple.com/us/app/lightblue/id557428110" target="_blank">App Store</a>
+
+.. |link_lightblue_google| raw:: html
+
+    <a href="https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer" target="_blank">Google Play</a>
+
+.. |link_appinventor| raw:: html
+
+    <a href="http://appinventor.mit.edu/" target="_blank">MIT App Inventor</a>
+
+.. |link_appinventor_login| raw:: html
+    
+    <a href="http://appinventor.mit.edu/explore/get-started" target="_blank">Get Started with MIT App Inventor</a>
+
+.. |link_standard_service_uuids|  raw:: html
+    
+    <a href="https://bitbucket.org/bluetooth-SIG/public/src/main/assigned_numbers/uuids/service_uuids.yaml" target="_blank">Standard service uuids</a>
+    
     
 """
 
