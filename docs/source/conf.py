@@ -37,7 +37,9 @@ extensions = [
 
 # -- sphinx_rtd_theme Theme options -----------------------------------------------------
 html_theme_options = {
-    'flyout_display': 'attached'
+    'flyout_display': 'attached',
+    'version_selector': False,
+    'language_selector': False,
 }
 
 html_context = {
