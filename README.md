@@ -1,4 +1,5 @@
 # SunFounder Pico 2 W Starter Kit
+
 This repository is for Pico 2 W Starter Kit. you can buy it on [our website](https://www.sunfounder.com/), or search sunfounder in Amazon.
 
 Quick Links:
@@ -13,24 +14,16 @@ Quick Links:
 <a id="about_this_kit"></a>
 ## About this kit:
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+This kit includes a variety of components, such as displays, audio modules, motor drivers, controllers, and sensors, providing a comprehensive foundation for understanding electronic devices.
 
-Additionally, we offer weo programming languages. MicroPython, C/C++ (Arduino) are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+We support multiple programming languages, including MicroPython and C/C++ (Arduino). To help you get started quickly, each language features dedicated and engaging projects, allowing you to choose the one that best suits your interests and goals.
 
 
 <a id="update"></a>
 ## Update:
-2024-09-10:
-- Update Arduino and Micropython project images and code related to DHT11, Keypad, IR receiver, MFRC522.
-- Modify other minor details
 
-2023-09-01:
-    - Add introduction links for all components used in all projects.
-
-2023-08-31:
-    - Optimized the installation of Arduino IDE, configuration of Pico W, and tutorial for adding libraries.
-    - Removed all references in Arduino projects that directed to the quick guide.
-    - Revised the introduction of the ultrasonic sensor module.
+2024-12-26:
+- First release in English.
 
 <a id="trouble"></a>
 ## Trouble Shootings:
@@ -44,7 +37,7 @@ SunFounder is a company focused on STEAM education with products like open sourc
 This is the code for Pico 2 W Starter Kit.
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied wa rranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
