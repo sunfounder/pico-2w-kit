@@ -143,10 +143,6 @@ rst_epilog += """
     :width: 600
 .. |img_joystick| image:: /img/component/joystick318.png
 .. |img_keypad| image:: /img/component/keypad314.png
-.. |img_l293d0| image:: /img/component/l293d.png
-    :width: 400
-.. |img_l293d1| image:: /img/component/l293d111.png
-.. |img_l293d2| image:: /img/component/l293d334.png
 .. |img_mpr121| image:: /img/component/mpr121.png
     :width: 400
 .. |img_mpu6050| image:: /img/component/mpu6050.png   
