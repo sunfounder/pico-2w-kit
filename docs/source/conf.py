@@ -834,6 +834,10 @@ rst_epilog += """
 .. |link_standard_service_uuids|  raw:: html
     
     <a href="https://bitbucket.org/bluetooth-SIG/public/src/main/assigned_numbers/uuids/service_uuids.yaml" target="_blank">Standard service uuids</a>
+
+.. |link_adafruit_io| raw:: html
+
+    <a href="https://io.adafruit.com/" target="_blank">Adafruit IO</a>
     
     
 """

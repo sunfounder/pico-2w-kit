@@ -136,7 +136,7 @@ We recommend that you read the chapters in order.
     
     iotproject/1-access
     iotproject/2-cheerlight
-    iotproject/3-ifttt_mail
+    iotproject/3-adafruitio
     iotproject/4-openweather
     iotproject/5-mqtt_pub
     iotproject/6-mqtt_sub
