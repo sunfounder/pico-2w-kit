@@ -15,9 +15,7 @@
 Pico 2 W Kit - A Versatile Hardware Programming Kit
 ======================================================================
 
-|link_pico2w_starter_Kit|
-
-Thanks for choosing our |link_pico2w_kit|.
+Thanks for choosing our Pico 2 W Kit.
 
 .. note::
     This document is available in the following languages.
