@@ -70,4 +70,5 @@ of a load circuit.
 **Example**
 
 * :ref:`py_relay` (For MicroPython User)
+* :ref:`py_iot_ble_relay` (For MicroPython User)
 * :ref:`ar_relay` (For Arduino User)

@@ -72,5 +72,6 @@ Formula:
 
 * :ref:`py_ultrasonic` (For MicroPython User)
 * :ref:`py_reversing_aid` (For MicroPython User)
+* :ref:`py_iot_sunfounder_controller` (For MicroPython User)
 * :ref:`ar_ultrasonic` (For Arduino User)
 .. * :ref:`per_reversing_system` (For Piper Make User)

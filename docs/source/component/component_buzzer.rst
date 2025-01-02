@@ -53,6 +53,8 @@ You can check the pins of the buzzer, the longer one is the anode and the shorte
 * :ref:`py_music_player` (For MicroPython User)
 * :ref:`py_fruit_piano` (For MicroPython User)
 * :ref:`py_reversing_aid` (For MicroPython User)
+* :ref:`py_iot_mqtt_subscribe` (For MicroPython User)
+* :ref:`py_iot_ble_piano` (For MicroPython User)
 * :ref:`ar_ac_buz` (For Arduino User)
 * :ref:`ar_pa_buz` (For Arduino User)
 .. * :ref:`per_service_bell` (For Piper Make User)

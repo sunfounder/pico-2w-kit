@@ -58,5 +58,6 @@ The LED offers several advantages, including low driving voltage, energy efficie
 
 * :ref:`py_neopixel` (For MicroPython User)
 * :ref:`py_music_player` (For MicroPython User)
+* :ref:`py_iot_cheerlights` (For MicroPython User)
 * :ref:`ar_neopixel` (For Arduino User)
 .. * :ref:`per_flowing_leds` (For Piper Make User)

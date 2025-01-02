@@ -55,5 +55,6 @@ An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usual
 
 * :ref:`py_rgb` (For MicroPython User)
 * :ref:`py_fruit_piano` (For MicroPython User)
+* :ref:`py_iot_web_server` (For MicroPython User)
 * :ref:`ar_rgb` (For Arduino User)
 .. * :ref:`per_rainbow_light` (For Piper Make User)

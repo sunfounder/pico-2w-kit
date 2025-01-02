@@ -12,6 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _py_iot_cheerlights:
+
 8.2 Follow the @CheerLights
 =======================================
 
@@ -99,7 +101,7 @@ You can also buy them separately from the links below.
 #. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
 
     .. image:: img/2_cheerlight1.png
 
@@ -136,7 +138,7 @@ You can also buy them separately from the links below.
 **How it works?**
 
 This project requires a network connection,  use the  `network` module to connect to the network.
-You can learn how to use the network module by referring to  :ref:`iot_access`.
+You can learn how to use the network module by referring to  :ref:`py_iot_access`.
 
 .. code-block:: python
 

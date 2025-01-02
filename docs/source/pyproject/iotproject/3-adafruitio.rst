@@ -1,3 +1,5 @@
+.. _py_iot_adafruitio:
+
 8.3 Temperature and Humidity Monitoring via @AdafruitIO
 ==========================================================
 

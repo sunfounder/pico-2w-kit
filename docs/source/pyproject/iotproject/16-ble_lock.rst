@@ -1,4 +1,4 @@
-.. _iot_Bluetooth_lock_controller:
+.. _py_iot_ble_lock:
 
 8.16 Bluetooth Lock Controller
 ==========================================

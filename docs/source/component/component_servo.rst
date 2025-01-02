@@ -40,6 +40,8 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
 
 * :ref:`py_servo` (For MicroPython User)
 * :ref:`py_somato_controller` (For MicroPython User)
+* :ref:`py_iot_sunfounder_controller` (For MicroPython User)
+* :ref:`py_iot_ble_lock` (For MicroPython User)
 * :ref:`ar_servo` (For Arduino User)
 .. * :ref:`per_water_tank` (For Piper Make User)
 .. * :ref:`per_swing_servo` (For Piper Make User)

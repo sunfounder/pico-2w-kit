@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _iot_access:
+.. _py_iot_access:
 
 8.1 Access to the Network
 ===========================

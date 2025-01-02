@@ -1,4 +1,4 @@
-.. _iot_ble_home:
+.. _py_iot_ble_home:
 
 8.13 Bluetooth Environmental Monitor
 ==========================================

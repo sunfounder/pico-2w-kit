@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _nt_mqtt_publish:
+.. _py_iot_mqtt_publish:
 
 8.5 Cloud Calling System with @MQTT
 ============================================
@@ -129,7 +129,7 @@ Before we can start the project, we need to install the MQTT module for Pico 2 W
 
     .. note::
         * Type the following commands into the Shell and press ``Enter`` to run them.
-        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
+        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
 
     .. code-block:: python
 
@@ -164,7 +164,7 @@ Before we can start the project, we need to install the MQTT module for Pico 2 W
 
 **How it works?**
 
-This project requires a network connection,  use the  :ref:`iot_access` method to connect to the network. 
+This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
 
 .. code-block:: python
 

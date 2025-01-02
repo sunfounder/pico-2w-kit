@@ -50,6 +50,8 @@ Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wiki
 * :ref:`py_alarm_lamp` (For MicroPython User)
 * :ref:`py_traffic_light` (For MicroPython User)
 * :ref:`py_reversing_aid` (For MicroPython User)
+* :ref:`py_iot_read_ble` (For MicroPython User)
+* :ref:`py_iot_ble_relay` (For MicroPython User)
 * :ref:`ar_led` (For Arduino User)
 * :ref:`ar_fade` (For Arduino User)
 .. * :ref:`per_blink` (For Piper Make User)

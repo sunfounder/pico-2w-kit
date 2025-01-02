@@ -44,4 +44,5 @@ It's highly suitable for beginners to create a fountain or plant watering projec
 **Example**
 
 * :ref:`py_pump` (For MicroPython User)
+* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
 * :ref:`ar_pump` (For Arduino User)

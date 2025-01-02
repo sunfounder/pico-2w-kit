@@ -12,12 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _nt_mqtt_Subscribe:
+.. _py_iot_mqtt_subscribe:
 
 8.6 Cloud Player with @MQTT
 =========================================
 
-It is recommended that you do the :ref:`nt_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.
+It is recommended that you do the :ref:`py_iot_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.
 
 In this project, Pico 2 W will act as a subscriber and receive the song name under the topic.
 If the song name is already in the code, Pico 2 W will make the buzzer play the song.
@@ -112,7 +112,7 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
 
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
 
 #. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico 2 W will play the corresponding song.
 

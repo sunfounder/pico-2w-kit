@@ -56,4 +56,5 @@ Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the ba
 * :ref:`py_lcd` (For MicroPython User)
 * :ref:`py_room_temp` (For MicroPython User)
 * :ref:`py_guess_number` (For MicroPython User)
+* :ref:`py_iot_openweather` (For MicroPython User)
 * :ref:`ar_lcd` (For Arduino User)

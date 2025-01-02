@@ -1,4 +1,4 @@
-.. _iot_ble_piano:
+.. _py_iot_ble_piano:
 
 8.14 Bluetooth Piano
 ==========================================

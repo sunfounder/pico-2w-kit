@@ -53,4 +53,5 @@ valve motor, electromagnetic lock drive, precision instruments and other circuit
 * :ref:`ar_motor` (For Arduino User)
 * :ref:`py_pump` (For MicroPython User)
 * :ref:`ar_pump` (For Arduino User)
+* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
 .. * :ref:`per_smart_fan` (For Piper Make User)

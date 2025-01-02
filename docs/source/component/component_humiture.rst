@@ -45,4 +45,7 @@ Then the host receives the answer signal and begins to receive 40-bit humiture d
 **Example**
 
 * :ref:`py_dht11` (For MicroPython User)
+* :ref:`py_iot_adafruitio` (For MicroPython User)
+* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
+* :ref:`py_iot_ble_home` (For MicroPython User)
 * :ref:`ar_dht11` (For Arduino User)

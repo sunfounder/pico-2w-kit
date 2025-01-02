@@ -1,4 +1,4 @@
-.. _iot_Bluetooth_voice_control_relay:
+.. _py_iot_ble_relay:
 
 8.15 Bluetooth Voice-control Relay
 ==========================================

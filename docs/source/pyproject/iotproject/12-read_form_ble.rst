@@ -1,3 +1,5 @@
+.. _py_iot_read_ble:
+
 8.12 Read data from bluetooth
 =================================
 

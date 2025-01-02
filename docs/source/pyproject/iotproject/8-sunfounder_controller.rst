@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _play_sc:
+.. _py_iot_sunfounder_controller:
 
 8.8 Play in @SunFounder Controller
 ====================================

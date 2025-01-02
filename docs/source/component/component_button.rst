@@ -38,6 +38,7 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 **Example**
 
 * :ref:`py_button` (For MicroPython User)
+* :ref:`py_iot_mqtt_publish` (For MicroPython User)
 * :ref:`ar_button` (For Arduino User)
 .. * :ref:`per_button` (For Piper Make User)
 .. * :ref:`per_rainbow_light` (For Piper Make User)

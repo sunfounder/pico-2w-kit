@@ -12,6 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _py_iot_openweather:
+
 8.4 Real-time Weather From @OpenWeatherMap 
 ===========================================
 
@@ -119,7 +121,7 @@ You can also buy them separately from the links below.
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, you need to create them in your Pico 2 W, please refer to :ref:`iot_access` to create them.
+        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, you need to create them in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
 
     .. code-block:: python
         :emphasize-lines: 5
@@ -149,7 +151,7 @@ You can also buy them separately from the links below.
 
 **How it works?**
 
-This project requires a network connection,  use the  :ref:`iot_access` method to connect to the network. 
+This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
 
 .. code-block:: python
 

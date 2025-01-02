@@ -12,6 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _py_iot_sunfounder_controller_plant:
+
 8.9 Plant Monitor in @SunFounder Controller
 ================================================
 
@@ -93,7 +95,7 @@ You can also buy them separately from the links below.
 **Steps**
 
 .. note::
-    It is recommended that you complete the previous project :ref:`play_sc`, as that will help you get to grips with the basic use of the SunFounder Controller.
+    It is recommended that you complete the previous project :ref:`py_iot_sunfounder_controller`, as that will help you get to grips with the basic use of the SunFounder Controller.
 
 #. Build the circuit.
 
@@ -118,6 +120,6 @@ You can also buy them separately from the links below.
 
 **How it works?**
 
-This project works basically the same way as :ref:`play_sc`.
+This project works basically the same way as :ref:`py_iot_sunfounder_controller`.
 
 In addition the project also uses DHT11, pump and water level module, you can see the details of using these components in :ref:`py_dht11` , :ref:`py_pump`, :ref:`py_water`.

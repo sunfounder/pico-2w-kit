@@ -12,6 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _py_iot_web_server:
+
 8.7 Setup a Web Server
 ====================================
 
@@ -100,7 +102,7 @@ You can also buy them separately from the links below.
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`iot_access` to create them.
+        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`py_iot_access` to create them.
 
 #. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
 #. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
@@ -116,7 +118,7 @@ You can also buy them separately from the links below.
 
 **How it works?**
 
-This project requires a network connection,  use the  :ref:`iot_access` method to connect to the network. 
+This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
 
 .. code-block:: python
 
@@ -133,7 +135,7 @@ A socket is the way a server can listen for a client that wants to connect to it
 In this project, Pico 2 W is your server, and your computer is accessing the web page hosted on Pico 2 W through a browser.
 
 First we create a socket, which requires an IP address and a |link_port|.
-The network connection and the way to get the IP are described in :ref:`iot_access`. And for port, we use 80.
+The network connection and the way to get the IP are described in :ref:`py_iot_access`. And for port, we use 80.
 After setting up the socket, return it and use it for the next step.
 
 `socket library - Python Docs <https://docs.python.org/3/library/socket.html>`_ 
