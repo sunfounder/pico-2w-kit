@@ -38,25 +38,15 @@ It is flexible, can be docked, bent, and cut at will, and the back is equipped w
 * Light Strip Thickness: 2mm
 * Each LED can be controlled individually
 
-**WS2812B Introdction**
+**WS2812B Introduction**
 
 * `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
-WS2812B is a intelligent control LED light source that the control circuit and RGB chip are integrated in
-a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping ampli
-fication drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant curr
-e-nt control part, effectively ensuring the pixel point light color height consistent.
+The WS2812B is an intelligent LED light source that integrates a control circuit and an RGB chip within a 5050 package. It includes an intelligent digital port data latch, a signal reshaping amplification drive circuit, a precision internal oscillator, and a programmable constant-current control component for 12V voltage. These features ensure consistent and accurate color rendering across pixel points.
 
-The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
-port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
-the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade
-pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. pixel adopt auto resha
--ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
-on the speed of signal transmission.
+The data transfer protocol uses a single NZR communication mode. After a power-on reset, the DIN port receives data from the controller. The first pixel processes the initial 24-bit data and stores it in its internal data latch. Remaining data is reshaped by the internal signal reshaping amplification circuit and transmitted to the next pixel via the DO port. With each pixel, the signal is reduced by 24 bits. The pixel employs auto-reshaping transmission technology, which allows an unlimited number of pixels to be cascaded. The only limitation is the speed of signal transmission.
 
-LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angl
-e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
-above becoming more simple circuit, small volume, convenient installation.
+The LED offers several advantages, including low driving voltage, energy efficiency, environmental friendliness, high brightness, a wide light-scattering angle, excellent consistency, low power consumption, and long lifespan. The integration of the control chip within the LED simplifies circuit design, reduces size, and facilitates convenient installation.
 
 .. Example
 .. -------------------
