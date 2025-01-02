@@ -22,6 +22,44 @@ The onboard LED shows the connection status: it lights up when a central device 
 1. Build the circuit
 +++++++++++++++++++++++++++++++++
 
+**Required Components**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Pico 2 W Starter Kit	
+        - 450+
+        - |link_pico2w_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - :ref:`cpn_pico_2w`
+        - 1
+        - |link_pico2w_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+
 This project does not require building any additional circuits. Simply use a USB data cable to connect the Raspberry Pi Pico 2 W to your computer.
 
 2. Run the code

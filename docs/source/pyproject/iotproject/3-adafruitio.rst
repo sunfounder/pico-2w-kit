@@ -12,6 +12,55 @@ By combining MQTT for real-time data exchange and REST APIs for setup synchroniz
 1. Build the circuit
 +++++++++++++++++++++++++++++++++
 
+**Required Components**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Pico 2 W Starter Kit	
+        - 450+
+        - |link_pico2w_kit|
+
+You can also buy them separately from the links below.
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - :ref:`cpn_pico_2w`
+        - 1
+        - |link_pico2w_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - :ref:`cpn_breadboard`
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - :ref:`cpn_wire`
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - :ref:`cpn_dht11`
+        - 1
+        - \-
+
 .. image:: img/wiring/8.13_bb.png
    :width: 90%
 

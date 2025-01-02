@@ -24,6 +24,76 @@ This project is ideal for those exploring BLE communication and IoT applications
 1. Build the Circuit
 +++++++++++++++++++++++++++++++++
 
+**Required Components**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Pico 2 W Starter Kit	
+        - 450+
+        - |link_pico2w_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - :ref:`cpn_pico_2w`
+        - 1
+        - |link_pico2w_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - :ref:`cpn_breadboard`
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - :ref:`cpn_wire`
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - :ref:`cpn_transistor`
+        - 1(S8050)
+        - |link_transistor_buy|
+    *   - 6
+        - :ref:`cpn_diode`
+        - 1
+        - 
+    *   - 7
+        - :ref:`cpn_resistor`
+        - 1(1KΩ) 1(220Ω)
+        - |link_resistor_buy|
+    *   - 8
+        - :ref:`cpn_relay`
+        - 1
+        - |link_relay_buy|
+    *   - 9
+        - :ref:`cpn_lipo_charger`
+        - 1
+        -  
+    *   - 10
+        - 18650 Battery
+        - 1
+        - 
+  
 .. warning ::
 
    This example demonstrates how to use a relay to control an LED. While the relay can connect to other appliances in practical applications, exercise extreme caution when working with high AC voltage. Improper or incorrect use may result in serious injury or death. Always prioritize safety.
@@ -35,7 +105,7 @@ This project is ideal for those exploring BLE communication and IoT applications
 
    <br/>
 
-2. Create the Android App
+1. Create the Android App
 +++++++++++++++++++++++++++++++++
 
 You will develop the Android application using |link_appinventor|, a free web application ideal for beginners in Android development. It offers intuitive drag-and-drop features for creating functional applications.
