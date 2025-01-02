@@ -856,7 +856,7 @@ rst_epilog += """
 
 .. |link_pico2w_kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Pico 2 W Starter Kit</a>
+    <a href="https://www.sunfounder.com" target="_blank">Pico 2 W Starter Kit(Coming Soon...)</a>
 
 .. |link_picow_buy| raw:: html
 
