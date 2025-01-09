@@ -60,6 +60,7 @@ Here is the email: service@sunfounder.com.
     pyproject/for_micropython_user
     cproject/for_arduino_user
     component/what_is_included_in_this_kit
+    video_course/video_course
     faq
 
 

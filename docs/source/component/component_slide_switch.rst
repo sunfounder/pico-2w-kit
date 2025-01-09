@@ -19,8 +19,11 @@ Slide Switch
 
 |img_slide|
 
-A slide switch, just as its name implies, is to slide the switch bar to connect or break the circuit, and further switch circuits. The common-used types are SPDT, SPTT, DPDT, DPTT etc. The slide switch is commonly used in low-voltage circuit. It has the features of flexibility and stability, and  applies in electric instruments and electric toys widely.
-How it works: Set the middle pin as the fixed one. When you pull the slide to the left, the  two pins on the left are connected; when you pull it to the right, the two pins on the right are connected. Thus, it works as a switch connecting or disconnecting circuits. See the figure below:
+A slide switch, as the name suggests, operates by sliding a switch bar to open or close a circuit, allowing it to toggle between different circuits. Common types include SPDT, SPTT, DPDT, and DPTT. Slide switches are often used in low-voltage circuits due to their flexibility, stability, and wide application in electronic instruments and toys.
+
+**How It Works**
+
+The middle pin serves as the fixed connection point. When the slide bar is moved to the left, the two pins on the left become connected. Similarly, moving the slide bar to the right connects the two pins on the right. This mechanism enables the switch to establish or break connections between circuits. Refer to the diagram below for a visual representation.
 
 |img_slide_prin|
 

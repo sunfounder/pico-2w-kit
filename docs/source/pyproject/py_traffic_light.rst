@@ -18,7 +18,7 @@
 7.6 Building a Traffic Light Controller
 ==============================================================
 
-In this project, we'll create a **Traffic Light Controller** using the Raspberry Pi Pico 2, three LEDs (red, yellow, green), and a 4-digit 7-segment display. This system will simulate a real traffic light sequence, displaying the remaining time for each light on the 7-segment display.
+In this project, we'll create a **Traffic Light Controller** using the Raspberry Pi Pico 2 W, three LEDs (red, yellow, green), and a 4-digit 7-segment display. This system will simulate a real traffic light sequence, displaying the remaining time for each light on the 7-segment display.
 
 * **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
 * **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).

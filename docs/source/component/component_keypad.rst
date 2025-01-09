@@ -18,13 +18,12 @@
 ========================
 
 
-Microcontroller system, if the use of more keys such as electronic code lock, telephone keypad, etc. generally have at least 12 to 16 keys, usually using a matrix keyboard.
+In microcontroller systems, devices requiring multiple keys—such as electronic locks or telephone keypads—often use a matrix keypad, especially when 12 to 16 keys are needed.
 
+A matrix keypad, also known as a row-column keypad, is designed with four I/O lines serving as rows and another four as columns. Each intersection of a row and a column corresponds to a key, resulting in a total of 4×4 keys. This structure efficiently optimizes the use of I/O ports in a microcontroller system.
 
-Matrix keypad is also called row keypad, it is a keypad with four I/O lines as row lines and four I/O lines as column lines. One key is set at each intersection of the row and column lines. Thus the number of keys on the keyboard is 4*4. This row and column keyboard structure can effectively improve the utilization of I/O ports in a microcontroller system.
+The keypad's contacts are typically accessible via a header, which can connect to a ribbon cable or be directly inserted into a printed circuit board. In some keypads, each button connects to an individual contact in the header, while all buttons share a common ground connection.
 
-Their contacts are accessed via a header suitable for connection with a ribbon cable or insertion into a printed circuit board. 
-In some keypads, each button connects with a separate contact in the header, while all the buttons share a common ground.
 
 |img_keypad|
 

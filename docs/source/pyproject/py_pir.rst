@@ -16,6 +16,7 @@
 
 2.10 Detect Human Movement
 ========================================
+
 In this lesson, we'll learn how to use a Passive Infrared (PIR) sensor with the Raspberry Pi Pico 2 W to detect human movement. PIR sensors are commonly used in security systems, automatic lighting, and other applications where motion detection is required. They detect infrared radiation emitted by warm objects, such as humans or animals, in their field of view.
 
 :ref:`cpn_pir`

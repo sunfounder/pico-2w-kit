@@ -19,30 +19,17 @@ Relay
 
 |img_relay|
 
-As we may know, relay is a device which is used to provide connection
-between two or more points or devices in response to the input signal
-applied. In other words, relays provide isolation between the controller
-and the device as devices may work on AC as well as on DC. However, they
-receive signals from a microcontroller which works on DC hence requiring
-a relay to bridge the gap. Relay is extremely useful when you need to
-control a large amount of current or voltage with small electrical
-signal.
+A relay is a device that connects two or more points or devices in response to an input signal. Essentially, relays provide isolation between the controller and the device, as the device may operate on either AC or DC power. Relays are necessary because microcontrollers, which typically operate on DC, require a mechanism to interface with and control devices operating on different electrical standards.
 
-There are 5 parts in every relay:
+Relays are particularly useful for controlling large currents or voltages with small electrical signals, making them invaluable in many applications.
 
-**Electromagnet** - It consists of an iron core wounded by coil of
-wires. When electricity is passed through, it becomes magnetic.
-Therefore, it is called electromagnet.
+Every relay consists of five main components:
 
-**Armature** - The movable magnetic strip is known as armature. When
-current flows through them, the coil is it energized thus producing a
-magnetic field which is used to make or break the normally open (N/O) or
-normally close (N/C) points. And the armature can be moved with direct
-current (DC) as well as alternating current (AC).
+**Electromagnet** - It consists of an iron core wrapped with a coil of wire. When electricity flows through the coil, it generates a magnetic field, turning the core into an electromagnet.
 
-**Spring** - When no currents flow through the coil on the
-electromagnet, the spring pulls the armature away so the circuit cannot
-be completed.
+**Armature** - The movable magnetic strip, known as the armature, interacts with the coil when current flows through it. The energized coil generates a magnetic field, enabling the armature to make or break connections at the normally open (N/O) or normally closed (N/C) contact points. The armature can operate with both direct current (DC) and alternating current (AC).
+
+**Spring** - When no current flows through the electromagnet's coil, the spring pulls the armature away, preventing the circuit from being completed.
 
 Set of electrical **contacts** - There are two contact points:
 
@@ -52,15 +39,9 @@ Set of electrical **contacts** - There are two contact points:
 
 **Molded frame** - Relays are covered with plastic for protection.
 
-The working principle of relay is simple. When power is supplied to the
-relay, currents start flowing through the control coil; as a result, the
-electromagnet starts energizing. Then the armature is attracted to the
-coil, pulling down the moving contact together thus connecting with the
-normally open contacts. So the circuit with the load is energized. Then
-breaking the circuit would a similar case, as the moving contact will be
-pulled up to the normally closed contacts under the force of the spring.
-In this way, the switching on and off of the relay can control the state
-of a load circuit.
+The working principle of a relay is straightforward. When power is supplied to the relay, current flows through the control coil, energizing the electromagnet. This causes the armature to be attracted to the coil, pulling the moving contact down to connect with the normally open (N/O) contact, thereby energizing the load circuit.
+
+To break the circuit, the process is reversed. When the power is removed, the spring pulls the moving contact back to its original position, reconnecting it with the normally closed (N/C) contact. This mechanism enables the relay to control the on/off state of a load circuit efficiently.
 
 |img_relay_sche|
 

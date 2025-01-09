@@ -19,14 +19,9 @@ LED Dot Matrix
 
 |img_led_matrix|
 
-Generally, LED dot matrix can be categorized into two types: common
-cathode (CC) and common anode (CA). They look much alike, but internally
-the difference lies. You can tell by test. A CA one is used in this kit.
-You can see 788BS labeled at the side.
+LED dot matrices are generally classified into two types: Common Cathode (CC) and Common Anode (CA). While they appear similar externally, their internal configurations differ. The type can be identified through testing. In this kit, a CA dot matrix is used, as indicated by the "788BS" label on the side.
 
-See the figure below. The pins are arranged at the two ends at the back.
-Take the label side for reference: pins on this end are pin 1-8, and oh
-the other are pin 9-16.
+Refer to the figure below for the pin arrangement. The pins are positioned at both ends on the back of the dot matrix. Using the label side as a reference, the pins on this end are numbered 1 to 8, while those on the opposite end are numbered 9 to 16.
 
 The external view:
 

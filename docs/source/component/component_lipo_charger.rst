@@ -20,10 +20,9 @@ Li-po Charger Module
 
 |lipo_module|
 
-This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico 2 W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
+This Li-Po charger module is designed specifically for the Raspberry Pi Pico, Pico H, Pico W and Pico 2 W. To use it, simply plug the module and the Pico into a breadboard as shown below, connect a Li-Po battery to the module, and it's ready to go.
 
-When you plug in the Pico 2 W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico 2 W will be powered by the battery, so you can keep your project running.
-
+When the Pico 2 W is connected to a computer or power socket via a USB cable, the indicator light on the Li-Po charger module will turn on, indicating that the battery is charging. Once the USB cable is disconnected, the Pico 2 W will automatically switch to battery power, allowing your project to continue running seamlessly.
 
 .. note::
     For some computers with poor performance, sometimes if you plug in your Pico 2 W to your computer with this charging module attached, it may cause the computer not to recognize your Pico 2 W.

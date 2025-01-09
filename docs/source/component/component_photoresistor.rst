@@ -19,12 +19,11 @@ Photoresistor
 
 |img_photoresistor|
 
-A photoresistor or photocell is a light-controlled variable resistor. 
-The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photo conductivity. 
+A photoresistor, also known as a photocell, is a light-sensitive variable resistor. Its resistance decreases as the intensity of incident light increases, a phenomenon known as photoconductivity.
 
-A photoresistor can be applied in light-sensitive detector circuits and light-activated and dark-activated switching circuits acting as a resistance semiconductor. In the dark, a photoresistor can have a resistance as high as several megaohms (MΩ), while in the light, a photoresistor can have a resistance as low as a few hundred ohms.
+Photoresistors are commonly used in light-sensitive detection circuits and light- or dark-activated switching circuits, functioning as semiconductor resistors. In darkness, a photoresistor's resistance can reach several megaohms (MΩ), whereas under bright light, its resistance can drop to just a few hundred ohms.
 
-Here is the electronic symbol of photoresistor.
+Below is the electronic symbol for a photoresistor.
 
 |img_photoresistor_symbol|
 

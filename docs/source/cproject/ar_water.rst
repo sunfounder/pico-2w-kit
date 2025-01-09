@@ -21,7 +21,7 @@ In this lesson, we will learn how to use a **water sensor** with the Raspberry P
 
 **How the Water Sensor Works**
 
-The water sensor has a series of exposed parallel wire traces that detect water droplets or measure the volume of water. As water comes into contact with these traces, the sensor outputs an analog signal. The more water that comes into contact with the sensor, the higher the output value, which can be read by the Raspberry Pi Pico 2's analog-to-digital converter (ADC).
+The water sensor has a series of exposed parallel wire traces that detect water droplets or measure the volume of water. As water comes into contact with these traces, the sensor outputs an analog signal. The more water that comes into contact with the sensor, the higher the output value, which can be read by the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC).
 
 |img_water_sensor|
 

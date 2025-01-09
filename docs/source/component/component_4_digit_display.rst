@@ -22,17 +22,9 @@ together.
 
 |img_4-digit-sche|
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+The 4-digit 7-segment display operates independently. It leverages the principle of visual persistence to rapidly cycle through each digit, creating the appearance of a continuous sequence of characters.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+For example, when "1234" is displayed, the first 7-segment digit lights up to show "1" while the other three remain off. Shortly after, the second digit lights up to display "2," with the first, third, and fourth digits turned off. This process continues in sequence until all four digits are displayed. The entire cycle happens very quickly (typically within 5 milliseconds). Due to the phenomenon of optical afterglow and visual persistence, the human eye perceives all four characters as being displayed simultaneously.
 
 |img_4-digit-sche-ca| 
 

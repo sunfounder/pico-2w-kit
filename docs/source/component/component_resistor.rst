@@ -22,7 +22,7 @@ Resistor
 Resistor is an electronic element that can limit the branch current. 
 A fixed resistor is a kind of resistor whose resistance cannot be changed, while that of a potentiometer or a variable resistor can be adjusted. 
 
-Two generally used circuit symbols for resistor. Normally, the resistance is marked on it. So if you see these symbols in a circuit, it stands for a resistor. 
+There are two commonly used circuit symbols for resistors, and the resistance value is typically indicated on the component. When you encounter these symbols in a circuit diagram, they represent a resistor.
 
 |img_res_symbol|
 

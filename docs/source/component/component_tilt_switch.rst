@@ -19,10 +19,15 @@ Tilt Switch
 
 |img_tilt| 
 
-The tilt switch used here is a ball one with a metal ball inside. It is used to detect inclinations of a small angle.
+The tilt switch used here is a ball-type switch containing a metal ball inside. It is designed to detect small angular inclinations.
 
-The principle is very simple. When the switch is tilted in a certain angle, the ball inside rolls down and touches the two contacts connected to the pins outside, thus triggering circuits. Otherwise the ball will stay away from the contacts, thus breaking the circuits.
+**Working Principle**
 
+The operation of the tilt switch is straightforward:
+- When the switch is tilted at a certain angle, the metal ball inside rolls and makes contact with two terminals, completing the circuit and triggering the connected system.
+- When the switch is not tilted, the ball remains away from the contacts, breaking the circuit and leaving it inactive.
+
+This simple yet effective mechanism makes the tilt switch ideal for detecting changes in orientation or inclination.
 |img_tilt_symbol|
 
 * `SW520D Tilt Switch Datasheet <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_

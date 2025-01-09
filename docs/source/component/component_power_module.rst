@@ -17,9 +17,11 @@
 Power Supply Module
 ===================
 
-A 3.3V and 5V breadboard power module with series diode and reverse polarity protection.
-The module can accept 6.5V to 12V input, and can generate 3.3V and +5V.
-For experimenters who must test/prototype electronic circuits on breadboards or perforated/veroboards, this is a must-have power supply module.
+This breadboard power module provides 3.3V and 5V outputs and features a series diode for reverse polarity protection.
+
+It accepts input voltages ranging from 6.5V to 12V and efficiently generates both 3.3V and 5V outputs.
+
+This module is an essential tool for experimenters and prototypers working with electronic circuits on breadboards or perforated/veroboards, offering a reliable and convenient power supply solution.
 
 
 |img_power_module|

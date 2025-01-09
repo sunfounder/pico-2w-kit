@@ -19,10 +19,9 @@ DC Water Pump
 
 |img_pump|
 
-This pump essentially functions as a DC motor, operating at a voltage of 3V and a current of 100mA. Upon powering, the pump draws water in from the bottom of its plastic casing and expels it from the outlet pipe. It must always be kept immersed in water to function properly. Reversing the polarity won't turn it into a water intake device; it will only pump water out!
+This pump operates as a DC motor, running at 3V and drawing a current of 100mA. When powered, it pulls water in through the bottom of its plastic casing and expels it through the outlet pipe. To function correctly, the pump must always remain submerged in water. Note that reversing the polarity will not turn it into an intake pump; it will continue to pump water outward.
 
-It's highly suitable for beginners to create a fountain or plant watering project using this submersible pump, as it is incredibly user-friendly!
-
+This submersible pump is highly user-friendly, making it an excellent choice for beginners to create projects such as fountains or automated plant watering systems!
 
 **Features**
 

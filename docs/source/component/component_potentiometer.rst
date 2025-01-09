@@ -19,9 +19,9 @@ Potentiometer
 
 |img_pot|
 
-Potentiometer is also a resistance component with 3 terminals and its resistance value can be adjusted according to some regular variation. 
+A potentiometer is a variable resistor with three terminals, allowing its resistance value to be adjusted according to a specific pattern or mechanism.
 
-Potentiometers come in various shapes, sizes, and values, but they all have the following things in common:
+Potentiometers come in various shapes, sizes, and resistance values, but they share these common characteristics:
 
 * They have three terminals (or connection points).
 * They have a knob, screw, or slider that can be moved to vary the resistance between the middle terminal and either one of the outer terminals.

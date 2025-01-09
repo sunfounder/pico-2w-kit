@@ -19,9 +19,16 @@ Servo
 
 |img_servo|
 
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.  
+A servo motor typically consists of the following components: a case, shaft, gear system, potentiometer, DC motor, and an embedded control board.
 
-It works like this: The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. As a result, the motor drives the gear system and then motivates the shaft after deceleration. The shaft and potentiometer of the servo are connected together. When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
+**How It Works**
+- The microcontroller sends PWM signals to the servo through its signal pin.
+- The embedded control board inside the servo interprets these signals and adjusts the motor's operation accordingly.
+- The motor drives the gear system, which reduces speed and increases torque, ultimately rotating the shaft.
+- The shaft is mechanically linked to the potentiometer. As the shaft rotates, it moves the potentiometer, generating a voltage signal proportional to the shaft's position.
+- This feedback signal is sent to the embedded control board, which compares the current position to the target position.
+- Based on this comparison, the board adjusts the motor's direction and speed, allowing the servo to accurately stop and hold at the desired position.
+- This closed-loop feedback system ensures precision and stability in the servo's movement.
 
 |img_servo_i|
 

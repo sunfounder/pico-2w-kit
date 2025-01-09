@@ -19,9 +19,9 @@ PIR Motion Sensor Module
 
 |img_pir|
 
-The PIR sensor detects infrared heat radiation that can be used to detect the presence of organisms that emit infrared heat radiation.
+The PIR (Passive Infrared) sensor detects infrared radiation, enabling it to sense the presence of organisms that emit heat.
 
-The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.
+The sensor is divided into two slots connected to a differential amplifier. When a stationary object is in front of the sensor, both slots receive an equal amount of infrared radiation, resulting in zero output. However, when a moving object passes in front of the sensor, one slot detects more radiation than the other. This imbalance causes the output to fluctuate between high and low. These fluctuations in output voltage indicate motion detection.
 
 |img_PIR_working_principle|
 

@@ -138,7 +138,7 @@ When the code is running, you should hear a "click" sound from the relay every t
 * **Set a Timer**: Modify the code to turn the relay on for 10 minutes and then automatically turn it off.
 * **Control Home Appliances**: With appropriate guidance, you can connect high-voltage devices to the relay for automation tasks such as turning lights or fans on and off.
 
-  * The circuit should look like this: To demonstrate controlling an external circuit safely, we'll add an external 5V power supply (through a breadboard power module) to power an LED. This simulates how you could control higher voltage devices (like home appliances) using the relay. Here's how to modify the circuit:
+  * The circuit should look like this: To demonstrate controlling an external circuit safely, we'll add an Li-po Charger Module to power an LED. This simulates how you could control higher voltage devices (like home appliances) . Here's how to modify the circuit:
 
     |sch_relay_2|
   
@@ -160,20 +160,20 @@ When the code is running, you should hear a "click" sound from the relay every t
             relay.value(0)  # Turn the relay off
             utime.sleep(2)  # Wait for 2 seconds
 
-    When the relay is activated (GP15 outputs high), the Normally Open (NO) and Common (C) pins of the relay connect, allowing the external 5V power to flow through the LED. The LED will light up, simulating how a relay can control an external appliance.
+    When the relay is activated (GP15 outputs high), the Normally Open (NO) and Common (C) pins of the relay connect, allowing the external Li-po Charger Module to flow through the LED. The LED will light up, simulating how a relay can control an external appliance.
 
     When the relay is deactivated (GP15 outputs low), the Normally Open (NO) pin disconnects from the Common (C) pin, cutting off the external power, and the LED turns off.
 
 **Safety Considerations for Controlling Real Appliances**
 
-This example uses an LED and a 5V power source to demonstrate relay control. If you are controlling higher voltage devices (like household appliances), ensure:
+This example uses an LED and Li-po Charger Module to demonstrate relay control. If you are controlling higher voltage devices (like household appliances), ensure:
 
 * **Proper Voltage Rating**: Use a relay rated for the appropriate voltage and current for your appliance.
 * **Isolation**: For safety, ensure proper isolation between the low-voltage control circuit (like the Pico) and the high-voltage appliance circuit.
 * **Fuse Protection**: Consider adding fuses or circuit breakers to protect against short circuits or overloads.
 * **Professional Guidance**: When working with high-voltage circuits, always seek professional guidance to ensure safe operation.
 
-This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2.
+This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2 W.
 
 **Using the NC Terminal**
 

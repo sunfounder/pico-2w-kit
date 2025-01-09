@@ -21,7 +21,7 @@ In this lesson, we will learn how to use a **1602 LCD** with the Raspberry Pi Pi
 
 Connecting an LCD directly to a microcontroller typically requires many GPIO pins, which can limit the functionality of your project. To solve this problem, we can use an LCD1602 module that has an **I2C interface**. The I2C protocol uses only two data lines (SDA and SCL), allowing you to control the LCD with just two GPIO pins, freeing up other pins for additional sensors or devices.
 
-**Understanding I2C on the Raspberry Pi Pico 2**
+**Understanding I2C on the Raspberry Pi Pico 2 W**
 
 The Raspberry Pi Pico 2 W supports I2C communication through multiple GPIO pins, providing flexibility for your projects. It has two I2C buses, I2C0 and I2C1, and each can be mapped to several sets of pins.
 

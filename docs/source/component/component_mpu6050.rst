@@ -21,16 +21,14 @@ MPU6050 Module
 
 |img_mpu6050|
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis
-Accelerometer) motion tracking devices.
+The MPU-6050 is a 6-axis motion tracking device that integrates a 3-axis gyroscope and a 3-axis accelerometer.
 
-Its three coordinate systems are defined as follows:
+The coordinate system of the MPU-6050 is defined as follows:
 
-Put MPU6050 flat on the table, assure that the face with label is upward
-and a dot on this surface is on the top left corner. Then the upright
-direction upward is the z-axis of the chip. The direction from left to
-right is regarded as the X-axis. Accordingly the direction from back to
-front is defined as the Y-axis.
+Place the MPU-6050 flat on a table with the labeled surface facing upward, ensuring the dot on this surface is in the top-left corner. In this orientation:
+- The upward vertical direction is the Z-axis.
+- The left-to-right direction is the X-axis.
+- The back-to-front direction is the Y-axis.
 
 |img_mpu6050_a| 
 

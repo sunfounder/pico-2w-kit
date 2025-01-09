@@ -26,9 +26,9 @@ IR Receiver
 * +: VCC
 * -: GND
 
-An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.
+An infrared receiver is a component designed to receive infrared signals and output TTL-compatible signals. It resembles a standard plastic-packaged transistor in size and is ideal for various infrared remote control and transmission applications.
 
-Infrared, or IR, communication is a popular, low-cost, easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, so it is imperceptible to the human eye - ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+Infrared (IR) communication is a widely used, cost-effective, and user-friendly wireless communication technology. Infrared light, with a slightly longer wavelength than visible light, is invisible to the human eye, making it perfect for wireless communication. A common modulation method used in IR communication is 38 kHz modulation.
 
 * Adopted HX1838 IR Receiver Sensor, high sensitivity
 * Can be used for remote control

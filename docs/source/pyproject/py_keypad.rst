@@ -17,7 +17,7 @@
 4.2 4x4 Keypad
 ========================
 
-In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2 to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
+In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2 W to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_

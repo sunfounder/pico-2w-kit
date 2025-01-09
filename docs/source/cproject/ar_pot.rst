@@ -24,7 +24,7 @@ In this lesson, we'll explore how to read analog input using the Raspberry Pi Pi
 
 So far, we've worked with digital inputs and outputs, which are either ON (high voltage) or OFF (low voltage). However, many real-world signals are analog, meaning they can vary continuously over a range of values. Examples include light intensity, temperature, and sound levels.
 
-The Raspberry Pi Pico 2 has a built-in ADC that allows it to read analog voltages and convert them into digital values that can be processed in code.
+The Raspberry Pi Pico 2 W has a built-in ADC that allows it to read analog voltages and convert them into digital values that can be processed in code.
 
 The ADC converts the analog voltage from the potentiometer into a digital value using the formula:
 

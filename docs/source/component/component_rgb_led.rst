@@ -19,7 +19,7 @@ RGB LED
 
 |img_rgb|
     
-RGB LEDs emit light in various colors. An RGB LED packages three LEDs of red, green, and blue into a transparent or semitransparent plastic shell. It can display various colors by changing the input voltage of the three pins and superimpose them, which, according to statistics, can create 16,777,216 different colors. 
+RGB LEDs can emit light in a wide range of colors. Each RGB LED combines three individual LEDs—red, green, and blue—encased in a transparent or semi-transparent plastic shell. By adjusting the input voltage to each of the three pins, different colors are produced through color mixing. In fact, this allows the RGB LED to generate up to 16,777,216 unique color combinations.
 
 |img_rgb_light|
 

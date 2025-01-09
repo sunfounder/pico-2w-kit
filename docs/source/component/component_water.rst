@@ -19,16 +19,17 @@ Water Level Sensor Module
 
 |img_water_sensor|
 
-The water level sensor transmits the sensed water level signal to the controller, and the computer in the controller compares the measured water level signal with the set signal to derive the deviation, and then issues "on" and "off" commands to the feedwater electric valve according to the nature of the deviation to ensure that the vessel reaches the set water level.
+The water level sensor detects the water level and transmits the signal to a controller. The controller’s computer compares the measured water level with the preset value to calculate the deviation. Based on this deviation, it sends "on" or "off" commands to the feedwater valve, ensuring the water level in the vessel reaches the desired setting.
 
+**Design and Functionality**
+The sensor features ten exposed copper traces: five power traces and five sensor traces arranged in an interleaved pattern. When submerged in water, the traces are bridged, allowing current to flow. The circuit board also includes a power indicator LED, which lights up when the sensor is powered.
 
-The water level sensor has ten exposed copper traces, five for the Power traces and five for the Sensor traces, which are crossed and bridged by water when flooded.
-The circuit board has a power LED that lights up when the board is energized.
+The traces function as a variable resistor, with resistance changing based on water immersion:
 
-The combination of these traces acts like a variable resistor, changing the resistance value according to the water level.
-To be more precise, the more water the sensor is immersed in, the better the conductivity and the lower the resistance. Conversely, the less conductive it is, the higher the resistance.
-Next, the sensor will process the output signal voltage which will be sent to the microcontroller, thus helping us to determine the water level.
+- More Water: Increased conductivity lowers the resistance.
+- Less Water: Reduced conductivity raises the resistance.
 
+The sensor processes this varying resistance into an output voltage signal, which is sent to a microcontroller. The microcontroller uses this signal to determine the water level accurately.
 
 .. warning:: 
     The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.

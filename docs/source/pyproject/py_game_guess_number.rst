@@ -17,7 +17,7 @@
 7.7 Creating a "Guess the Number" Game
 =============================================================
 
-In this project, we'll build an interactive **Guess the Number** game using the Raspberry Pi Pico 2, a 4x4 matrix keypad, and an I2C LCD1602 display. The game generates a random number between 0 and 99, and players take turns guessing the number. After each guess, the game narrows down the range based on whether the guess was too high or too low, until someone guesses the correct number.
+In this project, we'll build an interactive **Guess the Number** game using the Raspberry Pi Pico 2 W, a 4x4 matrix keypad, and an I2C LCD1602 display. The game generates a random number between 0 and 99, and players take turns guessing the number. After each guess, the game narrows down the range based on whether the guess was too high or too low, until someone guesses the correct number.
 
 
 **Required Components**

@@ -17,10 +17,9 @@
 DHT11 Humiture Sensor
 =============================
 
-The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity. 
-The technology of a dedicated digital modules collection and the temperature and humidity sensing technology are applied to ensure that the product has high reliability and excellent long-term stability.
+The DHT11 digital temperature and humidity sensor is a composite sensor that provides calibrated digital output for both temperature and humidity. It combines advanced digital signal processing with reliable temperature and humidity sensing technologies to deliver high reliability and excellent long-term stability.
 
-The sensor includes a resistive sense of wet component and an NTC temperature measurement device, and is connected with a high-performance 8-bit microcontroller. 
+The sensor integrates a resistive humidity sensing component and an NTC thermistor for temperature measurement, paired with a high-performance 8-bit microcontroller for precise data processing.
 
 .. The schematic diagram of the Humiture Sensor Module is as shown following: |img_Hum-sch| 
 

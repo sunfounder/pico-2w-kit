@@ -19,16 +19,13 @@ Joystick Module
 
 |img_joystick_pic|
 
-The basic idea of a joystick is to translate the movement of a stick into electronic information that a computer can process.
+A joystick works by converting the movement of its stick into electronic signals that a computer can interpret.
 
-In order to communicate a full range of motion to the computer, 
-a joystick needs to measure the stick's position on two axes – the X-axis (left to right) and the Y-axis (up and down). 
-Just as in basic geometry, the X-Y coordinates pinpoint the stick's position exactly.
+To convey the full range of motion, the joystick measures the stick's position along two axes: the X-axis (left to right) and the Y-axis (up to down). These X-Y coordinates precisely define the stick's position, much like in geometry.
 
-To determine the location of the stick, the joystick control system simply monitors the position of each shaft. 
-The conventional analog joystick design does this with two potentiometers, or variable resistors.
+The joystick determines the stick's position by tracking the movement of its shafts. In a traditional analog joystick, this is achieved using two potentiometers (variable resistors), which adjust resistance based on the stick's position.
 
-The joystick also has a digital input that is actuated when the joystick is pressed down.
+Additionally, the joystick includes a digital input that is triggered when the stick is pressed down.
 
 |img_joystick|
 

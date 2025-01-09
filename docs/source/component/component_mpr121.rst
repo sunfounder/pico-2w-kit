@@ -30,14 +30,14 @@ MPR121 Module
 
 **MPR121 OVERVIEW**
 
-The MPR121 is the second generation capacitive touch sensor controller after
-the initial release of the MPR03x series devices. The MPR121 features
-increased internal intelligence, some of the major additions include an
-increased electrode count, a hardware configurable I2C address, an
-expanded filtering system with debounce, and completely independent
-electrodes with auto-configuration built in. The device also features a 13th
-simulated sensing channel dedicated for near proximity detection using the
-multiplexed sensing inputs.
+The MPR121 is a second-generation capacitive touch sensor controller, succeeding the MPR03x series. It offers enhanced internal functionality and significant new features, including:
+
+- Support for a higher number of electrodes
+- A hardware-configurable I2C address
+- An improved filtering system with built-in debounce functionality
+- Fully independent electrodes with automatic configuration capabilities
+
+Additionally, the MPR121 includes a 13th simulated sensing channel specifically designed for near-proximity detection, utilizing the multiplexed sensing inputs.
 
 * `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
 

@@ -24,9 +24,9 @@ I2C LCD1602
 * **SDA**: Serial data line. Connect to VCC through a pullup resistor.
 * **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. 
+As we know, LCDs and other displays greatly enhance human-machine interaction. However, they share a common drawback: connecting them to a controller requires multiple I/O pins, which can quickly consume the available ports and limit the controller's ability to perform other functions.
 
-Therefore, LCD1602 with an I2C module is developed to solve the problem. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+To address this issue, the LCD1602 with an I2C module was developed. The I2C module features a built-in PCF8574 chip that converts I2C serial data into parallel data, allowing the LCD to operate while significantly reducing the number of I/O pins required.
 
 * `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 

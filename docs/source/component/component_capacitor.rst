@@ -20,12 +20,18 @@ Capacitor
 
 |img_capacitor|
 
-Capacitance, refers to the amount of charge storage under a given potential difference, denoted as C, and the international unit is farad (F). 
-Generally speaking, electric charges move under force in an electric field. When there is a medium between conductors, the movement of electric charges is hindered and the electric charges accumulate on the conductors, resulting in accumulation of electric charges. 
+Capacitance refers to the ability of a system to store electric charge under a given potential difference. It is denoted by C, and its unit in the International System of Units (SI) is the farad (F).
 
-The amount of stored electric charges is called capacitance. Because capacitors are one of the most widely used electronic components in electronic equipment, they are widely used in direct current isolation, coupling, bypass, filtering, tuning loops, energy conversion, and control circuits. Capacitors are divided into electrolytic capacitors, solid capacitors, etc.
+In general, electric charges move under the influence of an electric field. When a dielectric medium is placed between conductors, it impedes the movement of charges, causing them to accumulate on the conductor surfaces. This accumulation of electric charge is quantified as capacitance.
 
-According to material characteristics, capacitors can be divided into: aluminum electrolytic capacitors, film capacitors, tantalum capacitors, ceramic capacitors, super capacitors, etc.
+Capacitors, one of the most widely used electronic components, have diverse applications in electronic equipment. They are commonly employed in DC isolation, coupling, bypassing, filtering, tuning circuits, energy conversion, and control circuits. Capacitors can be categorized into various types, including electrolytic capacitors and solid capacitors.
+
+Based on material characteristics, capacitors can be further classified into:
+- Aluminum electrolytic capacitors
+- Film capacitors
+- Tantalum capacitors
+- Ceramic capacitors
+- Super capacitors
 
 In this kit, ceramic capacitors and electrolytic capacitors are used. 
 

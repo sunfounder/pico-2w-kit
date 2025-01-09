@@ -20,11 +20,11 @@
 |img_7seg|
 
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+A 7-segment display is an 8-shaped component that houses 7 LEDs, each referred to as a segment. When powered, each segment lights up to form part of a numeral.
 
-There are two types of pin connection: Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected when a CA display has all the anodes of the 7 segments connected.
+There are two types of pin configurations: Common Cathode (CC) and Common Anode (CA). As the names suggest, a CC display connects all the cathodes of the 7 LEDs, while a CA display connects all the anodes of the 7 segments.
 
-In this kit, we use the Common Cathode 7-segment display, here is the electronic symbol.
+In this kit, we use a Common Cathode 7-segment display. Below is its electronic symbol.
 
 |img_7seg_cathode|
 

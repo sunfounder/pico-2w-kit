@@ -19,7 +19,7 @@ DC Motor
 
 |img_dc_motor|
 
-This is a 3V DC motor. When you give a high level and a low level to each of the 2 terminals, it will rotate.
+This is a 3V DC motor. It operates when a high voltage level is applied to one terminal and a low voltage level to the other, causing the motor to rotate.
 
 * **Size**: 25*20*15MM
 * **Operation Voltage**: 1-6V

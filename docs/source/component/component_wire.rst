@@ -16,12 +16,19 @@
 
 Jumper Wires
 ==================
-Wires that connect two terminals are called jumper wires. There are various kinds of jumper wires. Here we focus on those used in breadboard. Among others, they are used to transfer electrical signals from anywhere on the breadboard to the input/output pins of a microcontroller.
+Jumper wires are used to connect two terminals and are essential for prototyping circuits. While jumper wires come in various types, this explanation focuses on those designed for use with breadboards. These wires are commonly used to transfer electrical signals between different points on a breadboard and the input/output pins of a microcontroller.
 
-Jump wires are fitted by inserting their “end connectors” into the slots provided in the breadboard, beneath whose surface there are a few sets of parallel plates that connect the slots in groups of rows or columns depending on the area. The “end connectors” are inserted into the breadboard, without soldering, in the particular slots that need to be connected in the specific prototype.
+**How They Work**
 
-There are three types of jumper wire: Female-to-Female, Male-to-Male, and Male-to-Female. The reason we call it Male-to-Female is because it has the outstanding tip in one end as well as a sunk female end. Male-to-Male means both side are male and Female-to-Female means both ends are female.
+Jumper wires are connected by inserting their "end connectors" into the slots on the breadboard. Beneath the breadboard's surface, parallel metal plates connect the slots in grouped rows or columns, depending on the section. The "end connectors" are inserted into specific slots to establish connections in the desired prototype, all without requiring soldering.
 
+Types of Jumper Wires
+Jumper wires come in three main types:
+- Female-to-Female: Both ends have female connectors.
+- Male-to-Male: Both ends have male connectors.
+- Male-to-Female: One end has a male connector (a protruding pin), while the other end has a female connector (a recessed socket).
+
+These variations make jumper wires versatile and suitable for connecting components with different pin configurations.
 |img_wire|
 
 .. note::

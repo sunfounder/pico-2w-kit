@@ -19,9 +19,9 @@ LED Bar Graph
 
 |img_led_bar|
 
-LED Bar Graph is an LED array, which is used to connect with electronic circuit or microcontroller. It's easy to connect LED bar graph with the circuit like as connecting 10 individual LEDs with 10 output pins. Generally we can use the LED bar graph as a Battery level Indicator, Audio equipment, and Industrial Control panels. There are many other applications of LED bar graphs.
+An LED bar graph is an array of LEDs designed to interface with electronic circuits or microcontrollers. Connecting an LED bar graph to a circuit is as straightforward as connecting 10 individual LEDs to 10 output pins. LED bar graphs are commonly used in applications such as battery level indicators, audio equipment, and industrial control panels, among others.
 
-The following is the internal schematic diagram of LED Bar Graph. Generally speaking, the side with the label is the anode and the other side is the cathode.
+The diagram below illustrates the internal schematic of an LED bar graph. Typically, the side marked with a label represents the anode, while the opposite side corresponds to the cathode.
 
 |img_led_bar_pin|
 

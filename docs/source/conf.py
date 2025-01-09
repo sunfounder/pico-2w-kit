@@ -318,7 +318,7 @@ rst_epilog += """
 .. |wiring_s8050| image:: /img/wiring/wiring_transistor_s8050.png
 .. |wiring_s8550| image:: /img/wiring/wiring_transistor_s8550.png
 .. |wiring_relay_1| image:: /img/wiring/wiring_relay_1.png
-.. |wiring_relay_2| image:: /img/wiring/wiring_relay_2.png
+.. |wiring_relay_2| image:: /img/wiring/wiring_relay_22.png
     :width: 800
 .. |wiring_light_theremin| image:: /img/wiring/wiring_light_theremin.png
 .. |wiring_room_temp|  image:: /img/wiring/wiring_room_temp.png

@@ -24,7 +24,7 @@ Ultrasonic Module
 * **GND**: Ground
 * **VCC**: 5V Supply
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+The HC-SR04 ultrasonic distance sensor offers non-contact distance measurement ranging from 2 cm to 400 cm with an accuracy of up to 3 mm. The module integrates an ultrasonic transmitter, a receiver, and a control circuit for seamless operation.
 
 You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
 

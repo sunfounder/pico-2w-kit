@@ -19,9 +19,9 @@ LED
 
 |img_led|
 
-Semiconductor light-emitting diode is a type of component which can turn electric energy into light energy via PN junctions. By wavelength, it can be categorized into laser diode, infrared light-emitting diode and visible light-emitting diode which is usually known as light-emitting diode (LED). 
-                    
-Diode has unidirectional conductivity, so the current flow will be as the arrow indicates in figure circuit symbol. You can only provide the anode with a positive power and the cathode with a negative. Thus the LED will light up. 
+A semiconductor light-emitting diode is a component that converts electrical energy into light energy through a PN junction. Based on wavelength, these diodes can be classified into laser diodes, infrared light-emitting diodes, and visible light-emitting diodes, commonly referred to as LEDs.
+
+Due to the diode's unidirectional conductivity, current flows in the direction indicated by the arrow in its circuit symbol. To operate an LED, the anode must be connected to a positive power source and the cathode to a negative one, allowing the LED to emit light.
 
 |img_led_symbol|
 

@@ -18,18 +18,17 @@ Buzzer
 =======
 
 
-As a type of electronic buzzer with an integrated structure, buzzers, which are supplied by DC power, are widely used in computers, printers, photocopiers, alarms, electronic toys, automotive electronic devices, telephones, timers and other electronic products or voice devices. 
+Buzzers are electronic components with an integrated structure, commonly powered by DC. They are widely used in a variety of devices, including computers, printers, photocopiers, alarms, electronic toys, automotive electronics, telephones, timers, and other electronic products or audio signaling devices.
 
-Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one.
-
+Buzzers are categorized into two types: active and passive (as shown in the image below). To identify the type, turn the buzzer so that its pins face upward. A passive buzzer features a green circuit board, while an active buzzer is enclosed with black tape.
 
 |img_buzzer|
 
-The difference between an active buzzer and a passive buzzer: 
+Difference Between an Active Buzzer and a Passive Buzzer:
 
-An active buzzer has a built-in oscillating source, so it will make sounds when electrified. But a passive buzzer does not have such source, so it will not beep if DC signals are used; instead, you need to use square waves whose frequency is between 2K and 5K to drive it. The active buzzer is often more expensive than the passive one because of multiple built-in oscillating circuits.
+An active buzzer has a built-in oscillating source, allowing it to produce sound as soon as it is powered. In contrast, a passive buzzer lacks an internal oscillating source and will not emit sound if powered by a DC signal. Instead, it requires a square wave with a frequency between 2 kHz and 5 kHz to function. Due to the additional internal circuitry, active buzzers are typically more expensive than passive buzzers.
 
-The following is the electrical symbol of a buzzer. It has two pins with positive and negative poles. With a + in the surface represents the anode and the other is the cathode. 
+The electrical symbol for a buzzer is shown below. It features two pins, one positive and one negative. The pin marked with a "+" on the surface indicates the anode, while the other pin represents the cathode.
 
 |img_buzzer_symbol|
 
