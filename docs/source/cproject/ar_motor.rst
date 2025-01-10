@@ -53,9 +53,9 @@ You can also buy them separately from the links below.
         - PURCHASE LINK
 
     *   - 1
-        - :ref:`cpn_pico_w`
+        - :ref:`cpn_pico_2w`
         - 1
-        - |link_picow_buy|
+        - |link_pico2w_buy|
     *   - 2
         - Micro USB Cable
         - 1
