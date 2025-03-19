@@ -966,6 +966,6 @@ rst_epilog += """
 
 .. |link_pico2w_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w?_pos=4&_sid=c010c8418&_ss=r" target="_blank">買う</a>
+    </a>
 
 """
