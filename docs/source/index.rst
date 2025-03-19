@@ -12,16 +12,21 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Pico 2 W Kit - A Versatile Hardware Programming Kit
+|link_pico2w_kit| - A Versatile Hardware Programming Kit
 ======================================================================
 
-Thanks for choosing our Pico 2 W Kit.
+* |link_pico2w_starter_Kit|
+
+Thanks for choosing our |link_pico2w_kit|.
 
 .. note::
     This document is available in the following languages.
 
         * |link_en_tutorials|
-   
+        * |link_jp_tutorials|
+        * |link_german_tutorials|
+
+
     Please click on the respective links to access the document in your preferred language.
 
 

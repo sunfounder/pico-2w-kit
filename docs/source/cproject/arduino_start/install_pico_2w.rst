@@ -65,7 +65,7 @@ To program the Raspberry Pi Pico 2 W, you need to install the appropriate board 
    .. note::
      
      * For the first connection or when holding the **BOOTSEL** button, choose **UF2 Board**.
-     * After successfully uploading the code, your Pico 2 W will be recognized by the computer. For future uses, select the corresponding **COMxx (Raspberry Pi Pico 2)**.
+     * After successfully uploading the code, your Pico 2 W will be recognized by the computer. For future uses, select the corresponding **COMxx (Raspberry Pi Pico 2 W)**.
 
    .. image:: img/arduino_pico_port.jpg
 

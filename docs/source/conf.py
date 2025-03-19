@@ -667,27 +667,27 @@ rst_epilog += """
 
 .. |link_german_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
 .. |link_jp_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/ja/latest/" target="_blank">日本語オンライン教材</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/ja/latest/" target="_blank">日本語オンライン教材</a>
 
 .. |link_en_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/en/latest/" target="_blank">English Online-tutorials</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/" target="_blank">English Online-tutorials</a>
 
 .. |link_fr_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
 
 .. |link_es_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
 
 .. |link_it_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
     
 .. |link_download_arduino|  raw:: html
 
@@ -848,7 +848,7 @@ rst_epilog += """
 
 .. |link_pico2w_starter_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Pico 2 W Starter Kit</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-raspberry-pi-pico-2-w-ultimate-starter-kit-with-110-video-courses-online-tutorials-96-projects-16-iot-projects-micropython-c-compatible-with-arduino-ide?_pos=2&_sid=560affa05&_ss=r" target="_blank">Purchase Link for Pico 2 W Starter Kit</a>
 
 .. |link_kepler_kit| raw:: html
 
@@ -856,7 +856,7 @@ rst_epilog += """
 
 .. |link_pico2w_kit| raw:: html
 
-    <a href="https://www.sunfounder.com" target="_blank">Pico 2 W Starter Kit(Coming Soon...)</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-raspberry-pi-pico-2-w-ultimate-starter-kit-with-110-video-courses-online-tutorials-96-projects-16-iot-projects-micropython-c-compatible-with-arduino-ide?_pos=2&_sid=560affa05&_ss=r" target="_blank">Pico 2 W Kit</a>
 
 .. |link_picow_buy| raw:: html
 
@@ -966,6 +966,7 @@ rst_epilog += """
 
 .. |link_pico2w_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w?_pos=4&_sid=c010c8418&_ss=r" target="_blank">BUY</a>
+    </a>
 
 """
+
