@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Lesson 1:  Write Your First Program for Absolute Beginners
+レッスン1：完全初心者向けの最初のプログラムを書く
 =================================================================
 
-* **Setup**: Unbox and connect the Pico W to the PC via USB.
-* **MicroPython**: Install MicroPython on the Pico W.
-* **Thonny IDE**: Install and set up Thonny IDE.
-* **First Program**: Run a "Hello, World!" program in Thonny.
-* **GPIO**: Control the onboard LED with a simple blink program.
+* **セットアップ**: Pico Wを開封し、USB経由でPCに接続します。
+* **MicroPython**: Pico WにMicroPythonをインストールします。
+* **Thonny IDE**: Thonny IDEをインストールし、設定します。
+* **最初のプログラム**: Thonnyで「Hello, World!」プログラムを実行します。
+* **GPIO**: シンプルな点滅プログラムで、オンボードLEDを制御します。
 
-**Video**
+**動画**
 
 .. raw:: html
 

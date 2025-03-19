@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 42: Measuring Tilt With an MPU6050 Accelerometer
+レッスン42：MPU6050加速度センサーを使用した傾斜測定
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure and calculate tilt angles:
+このチュートリアルでは、Raspberry Pi Pico WにMPU6050センサーを使用して傾斜角を測定し計算する方法について説明します：
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes with MPU6050, and setting up hardware and software.
-* **Previous Lesson Recap**: Recap of measuring accelerations and homework on tilt calculation.
-* **Z-Axis Acceleration**: Explains 1G acceleration in the Z-axis due to gravity and tilt effects on readings.
-* **Calculating Tilt Angles**: Uses trigonometry to derive tilt equations (pitch and roll) and implements in Python.
-* **Practical Application**: Tests code for tilt accuracy and homework to refine pitch and roll measurements.
-* **Conclusion**: Emphasizes understanding concepts over using libraries, and encourages support via Patreon.
-
-
+* **はじめに**: MPU6050でX、Y、Z軸の加速度を測定し、ハードウェアとソフトウェアの設定を行います。
+* **前回のレッスンの復習**: 加速度の測定と傾斜計算の宿題についての復習。
+* **Z軸の加速度**: 重力によるZ軸の1G加速度と傾読の影響について説明します。
+* **傾斜角の計算**: 三角法を使用して傾斜方程式（ピッチとロール）を導き出し、Pythonで実装します。
+* **実用的な応用**: 傾斜精度のコードをテストし、ピッチとロールの測定を精緻化する宿題。
+* **結論**: ライブラリの使用よりも概念の理解を重視し、Patreonを通じたサポートを奨励します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

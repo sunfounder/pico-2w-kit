@@ -1,41 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く入手できます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？Click [|link_sf_facebook|] and join today!
 
 Comments
 =============
 
-The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
+コードにおけるコメントは、コードを理解しやすくし、可読性を高めたり、テスト時に特定の部分を実行しないよう一時的に無効化する目的で使用されます。
 
 Single-line Comment
 ----------------------------
 
-Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
+MicroPythonにおける単一行コメントは「#」で始まり、その行の終わりまでがコメントとして扱われます。コメントはコードの前後に置くことができます。
 
 .. code-block:: python
 
-    print("hello world") #This is a annotationhello world
+    print("hello world") #これはアノテーションです
 
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
-
+コメントは必ずしもコードを説明するテキストだけではありません。実行を防ぎたいコードをコメントアウトして、MicroPythonに認識させない方法としても使えます。
 
 .. code-block:: python
 
     #print("Can't run it！")
-    print("hello world") #This is a annotationhello world
+    print("hello world") #これはアノテーションです
 
 >>> %Run -c $EDITOR_CONTENT
 hello world
@@ -43,21 +42,21 @@ hello world
 Multi-line comment
 ------------------------------
 
-If you want to comment on multiple lines, you can use multiple # signs.
+複数行にわたるコメントを記述したい場合は、複数の「#」を使う方法があります。
 
 .. code-block:: python
 
-    #This is a comment
-    #written in
-    #more than just one line
+    #これはコメントです
+    #複数行に
+    #わたって書かれています
     print("Hello, World!")
 
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-Or, you can use multi-line strings instead of expected.
+もしくは、複数行の文字列を使う方法があります。
 
-Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
+MicroPythonは、変数に代入されていない文字列リテラルを無視するため、トリプルクォートを使って複数行の文字列をコード内に書き、その中にコメントを含めることができます。
 
 .. code-block:: python
 
@@ -71,4 +70,4 @@ Since MicroPython ignores string literals that are not assigned to variables, yo
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.
+変数に代入されていない限り、この文字列はMicroPythonがコードを読み込んだ後に無視するため、実質的に複数行コメントのように扱えます。

@@ -1,64 +1,64 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学んでみましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートで解決できます。
+    - **Learn & Share**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **Exclusive Previews**: 新製品の発表に早期アクセスできます。
+    - **Special Discounts**: 最新製品に特別割引を提供します。
+    - **Festive Promotions and Giveaways**: プレゼント企画や祝日プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _install_micropython_on_pico:
 
-1.3 Install MicroPython on Your Pico
+1.3 MicroPythonをPicoにインストール
 ==========================================
 
 
-Now come to install MicroPython into Raspberry Pi Pico.
+ここでは、Raspberry Pi PicoにMicroPythonをインストールする方法を紹介します。
 
-.. Thonny IDE provides a very convenient way for you to install it with one click.
+.. Thonny IDEは、ワンクリックでインストールできる非常に便利な方法を提供します。
 
-   .. note::
-       you can use the Raspberry Pi official |link_micropython_pi| by dragging and dropping an firmware file into Raspberry Pi Pico.
+   .. note:: 
+       Raspberry Pi公式の |link_micropython_pi| を使って、ファームウェアファイルをRaspberry Pi Picoにドラッグアンドドロップすることでもインストールできます。
          
-#. Open the |link_raspberrypi_documention| and download the firmware file 
+#. |link_raspberrypi_documention| を開き、ファームウェアファイルをダウンロードします。
 
    .. image:: img/download_pico2w_file.jpg
 
-#. Press and hold the **BOOTSEL** button and then connect the Pico to computer via a Micro USB cable. Release the **BOOTSEL** button after your Pico is mount as a Mass Storage Device called **RPI-RP2350**.
+#. **BOOTSEL** ボタンを押し続け、Micro USBケーブルでPicoをコンピュータに接続します。Picoが **RPI-RP2350** というMass Storage Deviceとしてマウントされたら、 **BOOTSEL** ボタンを放します。
 
    .. image:: img/bootsel_onboard.png
 
-#. Drag and drop the firmware file into Raspberry Pi Pico 2 W . Afterward, your Pico 2 W will restart.
+#. ファームウェアファイルをRaspberry Pi Pico 2 Wにドラッグアンドドロップします。その後、Pico 2 Wが再起動します。
 
    .. image:: img/drag_and_drop.jpg
 
-.. #. Open Thonny IDE.
+.. #. Thonny IDEを開きます。
 
 ..    .. image:: img/set_pico1.png
 
-.. #. Press and hold the **BOOTSEL** button and then connect the Pico to computer via a Micro USB cable. Release the **BOOTSEL** button after your Pico is mount as a Mass Storage Device called **RPI-RP2350**.
+.. #. **BOOTSEL**ボタンを押し続け、Micro USBケーブルでPicoをコンピュータに接続します。Picoが**RPI-RP2350**というMass Storage Deviceとしてマウントされたら、**BOOTSEL**ボタンを放します。
 
 ..    .. image:: img/bootsel_onboard.png
 
-.. #. In the bottom right corner, click the interpreter selection button and select **Install Micropython**.
-..
-    .. note::
-        If your Thonny does not have this option, please update to the latest version.
+.. #. 画面右下のインタープリタ選択ボタンをクリックし、**Install Micropython**を選択します。
+
+..    
+    .. note:: 
+        Thonnyにこのオプションが表示されない場合は、最新バージョンに更新してください。
 
     .. image:: img/set_pico2.png
 
-.. #. In the **Target volume**, the volume of the Pico you just plugged in will automatically appear, and in the **Micropython variant**, select **Raspberry Pi.Pico 2 W/Pico 2 WH**.
+.. #. **Target volume**に、先ほど接続したPicoのボリュームが自動的に表示され、**Micropython variant**には、**Raspberry Pi.Pico 2 W/Pico 2 WH**を選択します。
 
 ..    .. image:: img/set_pico3.png
 
-.. #. Click the **Install** button, wait for the installation to complete and then close this page.
+.. #. **Install**ボタンをクリックし、インストールが完了するのを待ち、このページを閉じます。
 
 ..    .. image:: img/set_pico4.png
 
-
-Congratulations, now your Raspberry Pi Pico is ready to go.
+おめでとうございます！これで、Raspberry Pi Picoが準備完了です。

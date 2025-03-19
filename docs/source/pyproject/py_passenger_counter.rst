@@ -1,44 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を深く学び、仲間たちと一緒に探求していきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **独占的な先行公開**: 新製品の発表や先取り情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_passage_counter:
 
-
-7.4 Building a Passenger Counter
+7.4 乗客カウンターの作成
 =======================================================
 
-In this lesson, we'll create a **Passenger Counter** using a Raspberry Pi Pico 2 W, a PIR (Passive Infrared) motion sensor, and a 4-digit 7-segment display. This device will count the number of times motion is detected by the PIR sensor and display the count on the 7-segment display. This simulates how such counters are used in public places to monitor foot traffic.
+このレッスンでは、Raspberry Pi Pico 2 W、PIR（受動型赤外線）モーションセンサー、および4桁の7セグメントディスプレイを使用して **乗客カウンター** を作成します。このデバイスは、PIRセンサーで動きを検出するたびにカウントを増加させ、7セグメントディスプレイにそのカウントを表示します。これは、公共の場所で人の流れを監視するために使用されるカウンターの動作を模倣します。
 
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトに必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご参照ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -46,16 +45,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -83,55 +82,54 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Understanding the Components**
+**コンポーネントの理解**
 
-* **PIR Motion Sensor**: Detects motion by measuring infrared (IR) light radiating from objects in its field of view. When motion is detected, it outputs a HIGH signal.
-* **4-Digit 7-Segment Display**: Allows us to display numbers from 0000 to 9999. We'll use shift registers to control the display using fewer GPIO pins.
-* **74HC595 Shift Register**: This is a 8-bit serial-in, parallel-out shift register with output latche. It allows us to control multiple outputs using just a few GPIO pins.
+* **PIRモーションセンサー**: センサーの視野内の物体から放射される赤外線（IR）を測定して動きを検出します。動きを検出すると、HIGH信号を出力します。
+* **4桁7セグメントディスプレイ**: 0000から9999までの数字を表示できます。シフトレジスタを使用して、GPIOピンを少なくしてディスプレイを制御します。
+* **74HC595シフトレジスタ**: 8ビットのシリアルイン・パラレルアウトシフトレジスタで、出力ラッチを備えています。これにより、少ないGPIOピンで複数の出力を制御できます。
 
-**Schematic**
+**回路図**
 
 |sch_passager_counter| 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* この回路は :ref:`py_74hc_4dig` を基に、PIRモジュールを追加したものです。
+* PIRは、誰かが通過すると約2.8秒間の高信号を送ります。
+* PIRモジュールには2つのポテンショメーターがあります：1つは感度を調整し、もう1つは検出距離を調整します。PIRモジュールがより良く動作するように、両方のポテンショメーターを反時計回りに最大まで回してください。
 
     |img_PIR_TTE|
 
 
-**Wiring**
+**配線**
 
 
-|wiring_passager_counter| 
+|wiring_passager_counter|
 
+**コードの記述**
 
-**Writing the Code**
+MicroPythonスクリプトを作成し、以下の機能を実装します：
 
-We'll write a MicroPython script that:
-
-* Detects motion using the PIR sensor.
-* Increments a counter each time motion is detected.
-* Updates the 4-digit 7-segment display with the current count.
-* Uses multiplexing to control the display.
+* PIRセンサーを使用して動きを検出します。
+* 動きが検出されるたびにカウントを増加させます。
+* 現在のカウントを4桁の7セグメントディスプレイに更新します。
+* マルチプレクシングを使用してディスプレイを制御します。
 
 .. note::
 
-    * Open the ``7.4_passager_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * ``pico-2w-kit-main/micropython`` から ``7.4_passager_counter.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押します。
+    * 正しいインタープリターが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）.COMxx。 
 
 .. code-block:: python
 
     from machine import Pin
     import utime
 
-    # Define the PIR sensor pin
+    # PIRセンサーのピンを定義
     pir_sensor = Pin(16, Pin.IN)
 
-    # Initialize the counter
+    # カウントの初期化
     count = 0
 
-    # Define the binary codes for each digit (0-9)
+    # 各桁（0-9）の2進コードを定義
     SEGMENT_CODES = [
         0x3F,  # 0
         0x06,  # 1
@@ -145,20 +143,20 @@ We'll write a MicroPython script that:
         0x6F   # 9
     ]
 
-    # Initialize the control pins for 74HC595
-    SDI = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input (DS)
-    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register Clock (STCP)
-    SRCLK = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock (SHCP)
+    # 74HC595の制御ピンを初期化
+    SDI = machine.Pin(18, machine.Pin.OUT)   # シリアルデータ入力（DS）
+    RCLK = machine.Pin(19, machine.Pin.OUT)  # レジスタクロック（STCP）
+    SRCLK = machine.Pin(20, machine.Pin.OUT) # シフトレジスタクロック（SHCP）
 
-    # Initialize digit select pins (common cathodes)
+    # 7セグメントディスプレイの桁選択ピン（共通カソード）
     digit_pins = [
-        machine.Pin(10, machine.Pin.OUT),  # Digit 1
-        machine.Pin(11, machine.Pin.OUT),  # Digit 2
-        machine.Pin(12, machine.Pin.OUT),  # Digit 3
-        machine.Pin(13, machine.Pin.OUT)   # Digit 4
+        machine.Pin(10, machine.Pin.OUT),  # 桁1
+        machine.Pin(11, machine.Pin.OUT),  # 桁2
+        machine.Pin(12, machine.Pin.OUT),  # 桁3
+        machine.Pin(13, machine.Pin.OUT)   # 桁4
     ]
 
-    # Function to send data to 74HC595
+    # 74HC595にデータを送信する関数
     def shift_out(data):
         RCLK.low()
         for bit in range(7, -1, -1):
@@ -168,69 +166,69 @@ We'll write a MicroPython script that:
             SRCLK.high()
         RCLK.high()
 
-    # Function to display a digit at a specific position
+    # 特定の位置に数字を表示する関数
     def display_digit(position, digit):
-        # Turn off all digits
+        # すべての桁をオフにする
         for dp in digit_pins:
             dp.high()
-        # Send segment data
+        # セグメントデータを送信
         shift_out(SEGMENT_CODES[digit])
-        # Activate the selected digit (common cathode is active low)
+        # 選択した桁をアクティブにする（共通カソードはアクティブロー）
         digit_pins[position].low()
-        # Small delay to allow the digit to be visible
+        # 桁が見えるように小さな遅延
         utime.sleep_ms(5)
-        # Turn off the digit
+        # 桁をオフにする
         digit_pins[position].high()
 
-    # Function to display a number on the 4-digit display
+    # 4桁のディスプレイに番号を表示する関数
     def display_number(number):
-        # Extract individual digits
+        # 各桁を抽出
         digits = [
             (number // 1000) % 10,
             (number // 100) % 10,
             (number // 10) % 10,
             number % 10
         ]
-        # Display each digit rapidly
+        # 各桁を迅速に表示
         for i in range(4):
             display_digit(i, digits[i])
 
-    # Interrupt handler for PIR sensor
+    # PIRセンサーの割り込みハンドラ
     def pir_handler(pin):
         global count
         count += 1
         if count > 9999:
             count = 0
 
-    # Set up PIR sensor interrupt
+    # PIRセンサーの割り込み設定
     pir_sensor.irq(trigger=Pin.IRQ_RISING, handler=pir_handler)
 
-    # Main loop
+    # メインループ
     while True:
-        # Continuously refresh the display
+        # ディスプレイを継続的に更新
         display_number(count)
 
-When the code is running, the 7-segment display should initialize and show 0000.
-Move in front of the PIR sensor.
-The count displayed should increment by one each time motion is detected.
-If the count reaches 9999, it will reset to 0000.
+このコードが実行されると、7セグメントディスプレイは初期化され、0000が表示されます。
+PIRセンサーの前で動くと、カウントが1ずつ増加し、9999に達すると0000にリセットされます。
 
-**Understanding the Code**
 
-#. Imports and Pin Definitions:
 
-   * ``machine.Pin``: For controlling GPIO pins.
-   * ``utime``: For timing functions.
-   * Define SDI, SRCLK, and RCLK pins for controlling the shift register.
-   * Define ``pir_sensor`` on GP16 as an input pin for the PIR sensor.
+**コードの理解**
 
-#. Segment Codes:
+#. インポートとピン定義：
 
-   * ``SEGMENT_CODES``: A list containing the binary codes for displaying digits 0-9 on a 7-segment display. Each byte represents which segments should be lit.
+   * ``machine.Pin``: GPIOピンを制御するためのモジュール。
+   * ``utime``: 時間関連の関数。
+   * 74HC595を制御するためにSDI、SRCLK、RCLKピンを定義。
+   * ``pir_sensor`` をGP16に設定してPIRセンサーの入力ピンとして使用。
+
+#. セグメントコード：
+
+   * ``SEGMENT_CODES``: 7セグメントディスプレイに数字0-9を表示するための2進コードを格納したリストです。各バイトは点灯すべきセグメントを表します。
 
    .. code-block:: python
 
-        # 7-segment display segment codes for digits 0-9 (common cathode)
+        # 7セグメントディスプレイのセグメントコード（共通カソード）
         SEGMENT_CODES = [
             0x3F,  # 0
             0x06,  # 1
@@ -244,15 +242,15 @@ If the count reaches 9999, it will reset to 0000.
             0x6F   # 9
         ]
 
-#. Counter Initialization:
+#. カウントの初期化：
 
-   * ``count``: A global variable that keeps track of the number of times motion has been detected.
+   * ``count``: 動きが検出されるたびに増加するカウントを追跡するグローバル変数です。
 
-#. Define the ``shift_out`` Function:
+#. ``shift_out`` 関数の定義：
 
-   * Sends 8 bits of data to the 74HC595.
-   * Shifts out the data starting from the most significant bit (MSB).
-   * Pulses the shift and register clocks appropriately.
+   * 8ビットのデータを74HC595に送信します。
+   * 最上位ビット（MSB）からデータをシフトします。
+   * シフトクロックとレジスタクロックを適切にパルスさせます。
 
    .. code-block:: python
 
@@ -265,13 +263,13 @@ If the count reaches 9999, it will reset to 0000.
                 SRCLK.high()
             RCLK.high()
 
-#. Define the ``display_digit`` Function:
+#. ``display_digit`` 関数の定義：
 
-   * Turns off all digits.
-   * Sends the segment code for the digit.
-   * Activates the specified digit by setting its pin low.
-   * Adds a small delay to make the digit visible.
-   * Turns off the digit after displaying.
+   * すべての桁をオフにします。
+   * 数字のセグメントコードを送信します。
+   * 選択した桁をアクティブにして表示します。
+   * 小さな遅延を追加して、桁が見えるようにします。
+   * 表示後に桁をオフにします。
 
    .. code-block:: python
 
@@ -283,11 +281,10 @@ If the count reaches 9999, it will reset to 0000.
             utime.sleep_ms(5)
             digit_pins[position].high()
 
+#. ``display_number`` 関数の定義：
 
-#. Define the ``display_number`` Function:
-
-   * Extracts each digit from the number.
-   * Calls ``display_digit`` for each digit rapidly to create the multiplexing effect.
+   * 数字から各桁を抽出します。
+   * 各桁を迅速に表示するために ``display_digit`` を呼び出します。
 
    .. code-block:: python
 
@@ -303,11 +300,11 @@ If the count reaches 9999, it will reset to 0000.
             for i in range(4):
                 display_digit(i, digits[i])
 
-#. PIR Interrupt Handler:
+#. PIR割り込みハンドラ：
 
-   * ``pir_handler``: This function is called automatically when the PIR sensor detects motion.
-   * Increments the count variable.
-   * Resets the count to 0 if it exceeds 9999.
+   * ``pir_handler``: PIRセンサーが動きを検出すると自動的に呼び出されます。
+   * カウント変数をインクリメントします。
+   * カウントが9999を超えると、カウントを0にリセットします。
 
    .. code-block:: python
 
@@ -317,67 +314,65 @@ If the count reaches 9999, it will reset to 0000.
             if count > 9999:
                 count = 0
 
-#. PIR Sensor Interrupt Setup:
+#. PIRセンサー割り込みの設定：
 
-   ``pir_sensor.irq``: Sets up an interrupt to call ``pir_handler`` on a rising edge signal from the PIR sensor (i.e., when motion is detected).
+   ``pir_sensor.irq``: PIRセンサーからの立ち上がりエッジ信号（動きを検出したとき）で ``pir_handler`` を呼び出すように設定します。
 
    .. code-block:: python
 
         pir_sensor.irq(trigger=Pin.IRQ_RISING, handler=pir_handler)
 
-#. Main Loop:
+#. メインループ：
 
-   Continuously calls ``display_number(count)`` to refresh the display with the current count.
+   ``display_number(count)`` を継続的に呼び出して、現在のカウントをディスプレイに表示します。
 
    .. code-block:: python
 
         while True:
             display_number(count)
 
-**Troubleshooting**
+**トラブルシューティング**
 
-* Display Issues:
+* 表示の問題：
 
-  * If the display is not showing numbers correctly, verify the segment codes and wiring connections.
-  * Ensure that the shift register is connected properly and that data is being shifted out in the correct order.
+  * 表示が正しくない場合、セグメントコードや配線接続を確認してください。
+  * シフトレジスタが正しく接続され、データが正しい順序でシフトアウトされているか確認してください。
 
-* PIR Sensor Sensitivity:
+* PIRセンサーの感度：
 
-  * The PIR sensor may have adjustable potentiometers for sensitivity and delay.
-  * Adjust these to fine-tune motion detection for your environment.
-  * Note that the PIR sensor may have a short delay after detecting motion before it can detect again.
+  * PIRセンサーには感度や遅延を調整するためのポテンショメーターがあるかもしれません。
+  * これらを調整して、環境に最適な動作を得てください。
+  * PIRセンサーは動きを検出した後、再度検出するまで短い遅延があります。
 
-* Counting Accuracy:
+* カウントの精度：
 
-  * In environments with a lot of movement, the counter may increment rapidly.
-  * Consider adding logic to debounce the PIR sensor or limit counting frequency if necessary.
+  * 動きが多い環境では、カウントが急激に増加することがあります。
+  * 必要に応じて、PIRセンサーのデバウンスやカウント頻度の制限を追加することを検討してください。
 
-**Extensions and Enhancements**
+**拡張と改善**
 
-* Reset Button:
+* リセットボタン：
 
-  Add a push button connected to another GPIO pin to reset the count to zero when pressed.
+  別のGPIOピンに接続されたプッシュボタンを追加し、ボタンを押すとカウントがゼロにリセットされるようにします。
 
-* Bidirectional Counting:
+* 双方向カウント：
 
-  Use two PIR sensors placed strategically to detect the direction of movement (entering or exiting) and increment or decrement the count accordingly.
+  2つのPIRセンサーを戦略的に配置し、動きの方向（入退室）を検出して、カウントを増減させます。
 
-* Data Logging:
+* データログ：
 
-  Extend the program to log counts over time, either by storing data on the Pico or sending it to a computer for analysis.
+  時間ごとにカウントを記録するプログラムを拡張し、Picoにデータを保存するか、コンピュータに送信して分析します。
 
-* Display Improvements:
+* 表示の改善：
 
-  Use an LCD display to show additional information such as timestamps, total counts, or messages.
+  LCDディスプレイを使用して、タイムスタンプ、総カウント、メッセージなどの追加情報を表示します。
 
-* Network Connectivity:
+* ネットワーク接続：
 
-  Connect the Pico to a network (using Wi-Fi modules like ESP8266) to send data to a server or cloud service for remote monitoring.
+  Picoをネットワークに接続（ESP8266のようなWi-Fiモジュールを使用）し、データをサーバーやクラウドサービスに送信してリモート監視を行います。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to create a practical Passenger Counter using the Raspberry Pi Pico 2 W, a PIR motion sensor, and a 4-digit 7-segment display. This project demonstrates how microcontrollers can interact with sensors and output devices to collect and display data in real-time.
+このレッスンでは、Raspberry Pi Pico 2 W、PIRモーションセンサー、および4桁の7セグメントディスプレイを使用して実用的な乗客カウンターを作成する方法を学びました。このプロジェクトは、マイクロコントローラーがセンサーや出力デバイスと連携して、リアルタイムでデータを収集・表示する方法を示しています。
 
-Feel free to experiment with the code and hardware to add new features or improve functionality. This project can serve as a foundation for more complex systems involving data analysis, remote monitoring, or integration with other sensors and devices.
-
-
+コードとハードウェアを使って新しい機能を追加したり、機能を改善したりして、実験を楽しんでください。このプロジェクトは、データ分析、リモート監視、他のセンサーやデバイスとの統合を含む、より複雑なシステムの基盤として活用できます。

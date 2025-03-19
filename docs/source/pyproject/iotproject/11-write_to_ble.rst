@@ -1,73 +1,73 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-8.11 Write data to bluetooth
+8.11 Bluetoothへのデータ書き込み
 =================================
 
-In this project, the Raspberry Pi Pico 2 W acts as a peripheral device in a Bluetooth Low Energy (BLE) network. It provides a custom BLE service with a characteristic that supports both reading and notification. A central device, such as a phone, can connect to the Pico W to receive text messages sent via BLE.
+このプロジェクトでは、Raspberry Pi Pico 2 WがBluetooth Low Energy（BLE）ネットワークの周辺機器として機能します。カスタムBLEサービスを提供し、読み取りおよび通知の両方をサポートする特徴を持っています。スマートフォンなどの中央機器がPico Wに接続し、BLE経由で送信されたテキストメッセージを受信できます。
 
-The onboard LED shows the connection status: it lights up when a central device connects and turns off when the device disconnects. You can customize the device name or let the system generate it automatically based on its MAC address. The script continuously advertises the BLE service and lets users input text through the terminal, which it then sends to all connected central devices.
+オンボードLEDは接続状況を示します：中央機器が接続すると点灯し、デバイスが切断されると消灯します。デバイス名はカスタマイズ可能で、MACアドレスに基づいてシステムが自動的に生成することもできます。このスクリプトはBLEサービスを継続的に広告し、ターミナルからテキストを入力することで、接続されているすべての中央機器に送信します。
 
-1. Build the circuit
+1. 回路を作成する
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入するのが便利です。こちらのリンクを参照してください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名称  
+        - このキットに含まれているアイテム  
+        - リンク  
+    *   - Pico 2 W スターターキット  
+        - 450+  
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - SN  
+        - コンポーネント  
+        - 数量  
+        - リンク  
 
-    *   - 1
-        - :ref:`cpn_pico_2w`
-        - 1
-        - |link_pico2w_buy|
-    *   - 2
-        - Micro USB Cable
-        - 1
-        - 
+    *   - 1  
+        - :ref:`cpn_pico_2w`  
+        - 1  
+        - |link_pico2w_buy|  
+    *   - 2  
+        - マイクロUSBケーブル  
+        - 1  
+        -  
 
-This project does not require building any additional circuits. Simply use a USB data cable to connect the Raspberry Pi Pico 2 W to your computer.
+このプロジェクトでは、追加の回路を構築する必要はありません。USBデータケーブルを使用してRaspberry Pi Pico 2 Wをコンピュータに接続するだけです。
 
-2. Run the code
+2. コードを実行する
 +++++++++++++++++++++++++++++++++
 
-Copy the following code into your IDE. Alternatively, you can find it in our repository at the path: ``pico-2w-kit/micropython/iot/8.11-write_to_ble/8.11-write_to_ble.py``.
+以下のコードをIDEにコピーしてください。別途、リポジトリのパス「 ``pico-2w-kit/micropython/iot/8.11-write_to_ble/8.11-write_to_ble.py`` 」にもあります。
 
-Note: This code depends on the ``ble_advertising.py`` file. Make sure to upload it to the Pico board before running the script.
+注：このコードは、 ``ble_advertising.py`` ファイルに依存しています。実行前にPicoボードにアップロードしてください。
 
 .. code-block:: python
 
@@ -87,8 +87,8 @@ Note: This code depends on the ``ble_advertising.py`` file. Make sure to upload 
    _FLAG_READ = const(0x0002)
    _FLAG_NOTIFY = const(0x0010)
    
-   # Custom Service and Characteristic UUIDs
-   # Modify these as needed.
+   # カスタムサービスおよび特徴のUUID
+   # 必要に応じてこれらを変更してください。
    _SERVICE_UUID = bluetooth.UUID("3ec837af-b0c6-4e7e-a8c5-4b31311d98cf")
    _CHAR_UUID = (
        bluetooth.UUID("945c4d90-825d-452f-820a-0d8b0cc74a12"),
@@ -104,65 +104,65 @@ Note: This code depends on the ``ble_advertising.py`` file. Make sure to upload 
    
    class BLEText:
        def __init__(self, ble, name=""):
-           # Initialize the BLE interface and register the custom service
+           # BLEインターフェースを初期化し、カスタムサービスを登録
            self._ble = ble
            self._ble.active(True)
            self._ble.irq(self._irq)
            ((self._handle,),) = self._ble.gatts_register_services((_SERVICE,))
            self._connections = set()
    
-           # If no name is provided, generate one based on the MAC address
+           # 名前が提供されていない場合、MACアドレスに基づいて名前を生成
            if len(name) == 0:
                name = 'Pico %s' % ubinascii.hexlify(self._ble.config('mac')[1], ':').decode().upper()
            print('Device name: %s' % name)
    
-           # Create the advertising payload with the custom service
+           # 広告ペイロードを作成
            self._payload = advertising_payload(
                name=name, services=[_SERVICE_UUID]
            )
            self._advertise()
    
        def _irq(self, event, data):
-           # Handle BLE events
+           # BLEイベントを処理
            if event == _IRQ_CENTRAL_CONNECT:
-               # A central has connected
+               # セントラルが接続
                conn_handle, _, _ = data
                self._connections.add(conn_handle)
                print("New connection", conn_handle)
                led.value(1)
            elif event == _IRQ_CENTRAL_DISCONNECT:
-               # A central has disconnected
+               # セントラルが切断
                conn_handle, _, _ = data
                self._connections.remove(conn_handle)
                print("Disconnected", conn_handle)
                led.value(0)
-               # Start advertising again to allow a new connection
+               # 再度広告を開始して新しい接続を許可
                self._advertise()
            elif event == _IRQ_GATTS_INDICATE_DONE:
-               # Indication confirmation received (not used here)
+               # インディケーション確認を受け取った（ここでは使用しません）
                conn_handle, value_handle, status = data
    
        def send_text(self, text):
-           # Write the given text to the characteristic value
+           # 特徴値にテキストを設定
            self._ble.gatts_write(self._handle, text.encode('utf-8'))
-           # Notify all connected centrals about the new value
+           # すべての接続されているセントラルに通知
            for conn_handle in self._connections:
                self._ble.gatts_notify(conn_handle, self._handle)
    
        def _advertise(self, interval_us=500000):
            print("Starting advertising")
-           # Start BLE advertising with the given interval
+           # BLE広告を開始
            self._ble.gap_advertise(interval_us, adv_data=self._payload)
        
        def is_connected(self):
            return len(self._connections) > 0
    
    def demo():
-       # Create a BLE instance and a BLEText peripheral
+       # BLEインスタンスとBLEText周辺機器を作成
        ble = bluetooth.BLE()
        ble_text = BLEText(ble,"pico2w")
    
-       # Continuously read input from the terminal and send it via BLE
+       # ターミナルからの入力を読み取り、BLE経由で送信
        while True:
            if ble_text.is_connected():
                line = input("Enter text to send via BLE (Ctrl+C to exit): ")
@@ -172,43 +172,43 @@ Note: This code depends on the ``ble_advertising.py`` file. Make sure to upload 
    if __name__ == "__main__":
        demo()
 
-3. Read data from bluetooth
+3. Bluetoothからデータを読み取る
 +++++++++++++++++++++++++++++++++
 
-To interact with the services and characteristics defined in this code, use a generic Bluetooth® Low Energy central app, such as LightBlue (available for iOS and Android) or nRF Connect (for Android).
+このコードで定義されたサービスと特徴を操作するには、LightBlueなどの一般的なBluetooth® Low Energyセントラルアプリを使用します（iOSおよびAndroidで利用可能）。
 
-This section uses LightBlue as an example to demonstrate how to control the Pico 2 W’s features via Bluetooth. 
+このセクションでは、LightBlueを使って、Bluetooth経由でPico 2 Wの機能を制御する方法を示します。
 
-a. Install LightBlue
+a. LightBlueのインストール
 
-   Download the LightBlue app from the |link_lightblue_apple| (for iOS) or |link_lightblue_google| (for Android).
+   LightBlueアプリを |link_lightblue_apple| （iOS）または |link_lightblue_google| （Android）からダウンロードします。
 
    .. image:: img/lightblue.png
       :width: 90%
 
-b. Connect to Pico 2 W
+b. Pico 2 Wに接続
 
-   Launch LightBlue and enable location and Bluetooth permissions if prompted. On the **Peripherals** page, search for “pico” in the search bar, and tap to connect to the Pico 2 W device.
+   LightBlueを起動し、位置情報とBluetoothの権限を有効にします。 **Peripherals** ページで検索バーに「pico」と入力し、Pico 2 Wデバイスに接続します。
 
    .. image:: img/11-1-connect-pico.png
       :width: 60%
       :align: center
 
-c. Read data form BLE
+c. BLEからデータを読み取る
 
-   After connecting, LightBlue displays detailed information about the Pico 2 W Bluetooth device. Scroll down to locate the **Service (3ec837af-b0c6-4e7e-a8c5-4b31311d98cf)** and **Characteristic (945c4d90-825d-452f-820a-0d8b0cc74a12)**.
+   接続後、LightBlueはPico 2 WのBluetoothデバイスに関する詳細情報を表示します。スクロールして **サービス（3ec837af-b0c6-4e7e-a8c5-4b31311d98cf）** と **特徴（945c4d90-825d-452f-820a-0d8b0cc74a12）** を見つけます。
 
-   Tap the characteristic 945c4d90-825d-452f-820a-0d8b0cc74a12. The app shows the properties of this characteristic: it supports reading and notifications.
+   特徴945c4d90-825d-452f-820a-0d8b0cc74a12をタップします。この特徴のプロパティが表示され、読み取りと通知をサポートしていることが確認できます。
 
    .. image:: img/11-2-new.png
       :width: 100%
 
-   In the top-right corner, select **"UTF-8 String"** as the data type.
+   右上隅で **"UTF-8 String"** を選択します。
 
    .. image:: img/11-4-new.png
       :width: 100%
     
-   Tap Read to retrieve the current value. Since no data is defined yet, the value displays as “No Value”. Next, return to the computer and enter "hello" in the terminal. Switch back to LightBlue and tap **"Read"** again. The message "hello" now appears, sent from the Pico 2 W to the phone.
+   「読み取り」をタップして現在の値を取得します。まだデータが定義されていないため、「No Value」と表示されます。次に、コンピュータに戻り、ターミナルに「hello」と入力します。再度LightBlueに戻り、 **"読み取り"** をタップします。今度は「hello」と表示され、Pico 2 Wからスマートフォンに送信されたメッセージが表示されます。
 
    .. image:: img/11-6-new.png
       :width: 100%
@@ -217,9 +217,8 @@ c. Read data form BLE
       :align: center
       :width: 80%
 
-   To continuously monitor updates, you can also tap **"Subscribe"** to subscribe to this characteristic. When you send new characters from the terminal, they will automatically update and display on your phone.
+   更新を継続的に監視するには、 **"購読"** をタップして、この特徴を購読することもできます。ターミナルから新しい文字を送信すると、それが自動的に更新され、スマートフォンに表示されます。
 
    .. image:: img/11-8-new.png
       :width: 100%
 
-   

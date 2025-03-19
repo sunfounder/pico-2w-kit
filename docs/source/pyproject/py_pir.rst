@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を深く学び、仲間たちと一緒に探求していきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **独占的な先行公開**: 新製品の発表や先取り情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_pir:
 
-2.10 Detect Human Movement
+2.10 人間の動きを検出する
 ========================================
 
-In this lesson, we'll learn how to use a Passive Infrared (PIR) sensor with the Raspberry Pi Pico 2 W to detect human movement. PIR sensors are commonly used in security systems, automatic lighting, and other applications where motion detection is required. They detect infrared radiation emitted by warm objects, such as humans or animals, in their field of view.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して **パッシブ赤外線（PIR）センサー** を使い、人間の動きを検出する方法を学びます。PIRセンサーは、セキュリティシステム、オートマチックライティング、その他動きの検出が必要な用途でよく使用されます。これらのセンサーは、暖かい物体（人間や動物など）から放射される赤外線を検出します。
 
 :ref:`cpn_pir`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
@@ -72,90 +72,89 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Schematic**
+**回路図**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+PIRモジュールが人が通り過ぎるのを検出すると、GP14がHIGHになります。それ以外の場合はLOWになります。
 
 .. note::
 
-    The PIR sensor have two potentiometers:
+    PIRセンサーには2つのポテンショメーターがあります：
 
-    * **Sensitivity Adjustment**: Controls the range of detection.
-    * **Time Delay Adjustment**: Controls how long the output remains HIGH after motion is detected.
+    * **感度調整**: 検出範囲を制御します。
+    * **時間遅延調整**: 動きが検出された後、出力がHIGHのままでいる時間を制御します。
 
-    For initial testing, turn both potentiometers counterclockwise to their minimum positions. This sets the sensor to its most sensitive and shortest delay settings, allowing you to observe immediate responses.
+    初期テストでは、両方のポテンショメーターを反時計回りに最小位置に設定してください。これにより、センサーは最も感度が高く、最短の遅延設定になります。これで、すぐに反応を観察できます。
 
     |img_PIR_TTE|
 
-**Wiring**
+**配線**
 
 |wiring_pir|
 
-**Writing the Code**
+**コードの記述**
 
-We'll write a MicroPython program that uses an interrupt to detect motion and prints a message when motion is detected.
+動きを検出するために割り込みを使用し、動きが検出されるとメッセージを表示するMicroPythonプログラムを作成します。
 
 .. note::
 
-    * Open the ``2.10_detect_human_movement.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * ``pico-2w-kit-main/micropython`` の ``2.10_detect_human_movement.py`` ファイルを開くか、以下のコードをThonnyにコピーします。次に「実行」をクリックするか、F5を押して実行します。
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
-    
+    * Thonnyの右下に「MicroPython（Raspberry Pi Pico）.COMxx」のインタープリタが選択されていることを確認してください。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize GP14 as an input pin
+    # GP14を入力ピンとして初期化
     pir_sensor = machine.Pin(14, machine.Pin.IN)
 
     def motion_detected(pin):
         print("Motion detected!")
 
-    # Set up an interrupt on the rising edge
+    # 立ち上がりエッジで割り込みを設定
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-    # Main loop does nothing, interrupt handles motion detection
+    # メインループは何もしません。割り込みが動作を処理します。
     while True:
         utime.sleep(1)
 
-When the code is running, you will observe the following phenomenon:
+コードを実行すると、次の現象が観察されます：
 
-* Move in front of the PIR sensor.
-* When motion is detected, "Motion detected!" should appear in the console.
+* PIRセンサーの前で動きます。
+* 動きが検出されると、「Motion detected!」というメッセージがコンソールに表示されます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート：
 
-   * ``import machine``: Access to hardware functions.
-   * ``import utime``: Time-related functions.
+   * ``import machine``: ハードウェア関連の関数にアクセスします。
+   * ``import utime``: 時間関連の関数を使用します。
 
-#. Initialize the PIR Sensor Pin:
+#. PIRセンサーピンの初期化：
 
-   * ``pir_sensor = machine.Pin(14, machine.Pin.IN)``: Sets up GP14 as an input pin.
+   * ``pir_sensor = machine.Pin(14, machine.Pin.IN)``: GP14を入力ピンとして設定します。
 
-#. Define the Interrupt Handler:
+#. 割り込みハンドラの定義：
 
-   * ``def motion_detected(pin)``: Function that gets called when motion is detected.
-   * ``print("Motion detected!")``: Prints a message to the console.
+   * ``def motion_detected(pin)``: 動きが検出されたときに呼ばれる関数。
+   * ``print("Motion detected!")``: コンソールにメッセージを出力します。
 
-#. Set Up the Interrupt:
+#. 割り込みの設定：
 
-   * ``pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)``: Configures an interrupt that triggers on the rising edge of the signal from the PIR sensor.
+   * ``pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)``: PIRセンサーの信号の立ち上がりエッジで割り込みを設定します。
 
-#. Main Loop:
+#. メインループ：
 
-   * ``while True``: An infinite loop.
-   * ``utime.sleep(1)``: The loop sleeps for 1 second in each iteration. The main loop doesn't need to do anything because the interrupt handles the motion detection.
+   * ``while True``: 無限ループを開始します。
+   * ``utime.sleep(1)``: ループは1秒間スリープし、割り込みが動作を処理します。
 
-**Example Code for Measuring Duration**
+**動作時間を測定するためのコード例**
 
-You can modify the code to measure the duration of motion detection and the intervals between detections.
+コードを変更して、動作検出の時間と検出間隔を測定することができます。
 
 .. code-block:: python
 
@@ -177,42 +176,42 @@ You can modify the code to measure the duration of motion detection and the inte
         else:
             print("Motion ended. Duration of motion: {} ms".format(duration))
 
-    # Set up interrupts for both rising and falling edges
+    # 立ち上がりエッジと下降エッジの両方で割り込みを設定
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING | machine.Pin.IRQ_FALLING, handler=pir_triggered)
 
     while True:
         utime.sleep(1)
 
-* Interrupts for Both Edges: set up the interrupt to trigger on both rising and falling edges using ``machine.Pin.IRQ_RISING`` | ``machine.Pin.IRQ_FALLING``.
-* Tracking Time:
+* 両方のエッジでの割り込み： ``machine.Pin.IRQ_RISING`` | ``machine.Pin.IRQ_FALLING`` を使用して、立ち上がりエッジと下降エッジで割り込みを設定します。
+* 時間の追跡：
 
-  * Use ``utime.ticks_ms()`` to get the current time in milliseconds.
-  * Calculate the duration between triggers to measure how long the PIR sensor output remains ``HIGH`` or ``LOW``.
+  * ``utime.ticks_ms()`` を使用して、現在の時間をミリ秒単位で取得します。
+  * トリガー間の時間を計算して、PIRセンサー出力が ``HIGH`` または ``LOW`` の状態でいる時間を測定します。
 
-**Practical Applications**
+**実用的な応用**
 
-* **Security Systems**: Detect intruders or unauthorized movement.
-* **Automatic Lighting**: Turn lights on when motion is detected.
-* **Energy Saving**: Power down devices when no movement is detected for a period.
+* **セキュリティシステム**: 不正侵入者や許可されていない動きを検出します。
+* **自動照明**: 動きが検出されたときにライトをオンにします。
+* **省エネルギー**: 一定時間動きが検出されない場合にデバイスをオフにします。
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* False Triggers:
+* 誤動作：
 
-  * PIR sensors can be sensitive to environmental factors like temperature changes or sunlight.
-  * Avoid pointing the sensor directly at heat sources or windows.
+  * PIRセンサーは温度変化や日光などの環境要因に敏感です。
+  * センサーを熱源や窓に向けて設置しないようにしましょう。
 
-* Sensor Not Detecting Motion:
+* センサーが動きを検出しない：
 
-  * Ensure the sensor has had time to initialize (some sensors require up to 60 seconds).
-  * Adjust the sensitivity potentiometer.
+  * センサーが初期化するまでに時間がかかる場合があります（一部のセンサーでは最大60秒かかることがあります）。
+  * 感度ポテンショメーターを調整します。
 
-* Interference: 
+* 干渉：
 
-  * Keep the sensor away from electronics that may cause electromagnetic interference.
+  * センサーを電子機器から離して設置し、電磁干渉を避けます。
 
-**Conclusion**
+**結論**
 
-By integrating a PIR sensor with the Raspberry Pi Pico 2 W, you've added motion detection capabilities to your projects. Understanding how to read sensor inputs and handle interrupts allows you to create responsive and efficient programs.
+PIRセンサーをRaspberry Pi Pico 2 Wに統合することで、プロジェクトに動作検出機能を追加する方法を学びました。センサー入力を読み取り、割り込みを処理する方法を理解することで、反応的で効率的なプログラムを作成できます。
 
 

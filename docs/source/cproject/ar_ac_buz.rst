@@ -1,50 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深掘りしていきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートで解決できます。
+    - **学びと共有**: 技術の向上に役立つヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表前に先行情報を手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **季節限定プロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しよう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、作成する準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ar_ac_buz:
 
-3.1 Make the Buzzer Beep!
-==========================
+3.1 ブザーを鳴らしてみよう！
+=============================
 
-In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2 W. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
+このレッスンでは、Raspberry Pi Pico 2 Wを使って **ブザー** を鳴らす方法を学びます。ブザーはLEDのようなデジタル出力デバイスで、非常に簡単に制御できます。このプロジェクトでは、 **アクティブブザー** を使用します。このブザーは、信号を受け取ると音を発生させます。
 
-**What is an Active Buzzer?**
+**アクティブブザーとは？**
 
-An **active buzzer** has an internal oscillator that makes it easier to use. You only need to send a signal to the buzzer to make it beep—no complex frequency control is required. This is different from a **passive buzzer**, which requires an external signal to generate sound.
+**アクティブブザー** は内部にオシレーターを備えており、使いやすくなっています。信号をブザーに送るだけで音を鳴らせるため、複雑な周波数制御は不要です。これに対して、 **パッシブブザー** は音を出すために外部信号が必要です。
 
 |img_buzzer|
 
 * :ref:`cpn_buzzer`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、次の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品をまとめて購入するのが便利です。こちらから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットに含まれる部品
+        - 購入リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -52,16 +52,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - 部品の紹介    
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -70,85 +70,84 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1（S8050）
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1（1KΩ）
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_buzzer|
 
-In this circuit, the buzzer is powered through a transistor (**S8050** NPN). The transistor amplifies the current, making the buzzer sound louder than if it were connected directly to the Pico. 
+この回路では、トランジスタ（ **S8050** NPN）を介してブザーに電源が供給されます。トランジスタは電流を増幅し、Picoに直接接続した場合よりもブザーの音が大きくなります。
 
-Here's what happens:
-* **GP15** outputs a high signal to control the transistor.
-* When the transistor is activated, it allows current to flow through the buzzer, making it beep.
+動作の流れは次の通りです：
+* **GP15** が高い信号を出力してトランジスタを制御します。
+* トランジスタが作動すると、電流がブザーを通過し、音を発生させます。
 
-A **1kΩ resistor** is used to limit the current to protect the transistor.
+**1kΩの抵抗** は、トランジスタを保護するために電流を制限する役割を果たします。
 
-**Wiring**
+**配線**
 
-Make sure you are using the **active buzzer**. You can tell it's the correct one by looking for the sealed back (as opposed to the exposed PCB, which is a passive buzzer).
+必ず **アクティブブザー** を使用してください。正しいブザーかどうかは、裏面が密封されているか（パッシブブザーは基板が露出しています）で確認できます。
 
 |img_buzzer|
 
 |wiring_beep|
 
 
-**Writing the Code**
+**コードの記述**
 
 
 .. note::
 
-    * You can open the file ``3.1_beep.ino`` under the path of ``pico-2w-kit-main/arduino/3.1_beep``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * ファイル ``3.1_beep.ino`` を ``pico-2w-kit-main/arduino/3.1_beep`` のパスにある場所で開くことができます。
+    * または、このコードを **Arduino IDE** にコピーして使用してください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択するのを忘れないでください。
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 15;  // GPIO pin connected to the transistor base
+    const int buzzerPin = 15;  // トランジスタのベースに接続されたGPIOピン
 
     void setup() {
       pinMode(buzzerPin, OUTPUT);
     }
 
     void loop() {
-      digitalWrite(buzzerPin, HIGH);  // Turn the buzzer on
-      delay(1000);                    // Wait for 1 second
-      digitalWrite(buzzerPin, LOW);   // Turn the buzzer off
-      delay(1000);                    // Wait for 1 second
+      digitalWrite(buzzerPin, HIGH);  // ブザーをオンにする
+      delay(1000);                    // 1秒間待つ
+      digitalWrite(buzzerPin, LOW);   // ブザーをオフにする
+      delay(1000);                    // 1秒間待つ
     }
 
-After uploading the code:
-The buzzer should beep for 1 second, then stay silent for 1 second, and repeat this pattern continuously.
-If you do not hear the buzzer, check the wiring to ensure all connections are correct.
-Make sure you are using an active buzzer.
+コードをアップロードした後：
+ブザーは1秒間鳴り、その後1秒間静かになり、このパターンが繰り返されます。
+もしブザーの音が聞こえない場合は、配線を確認して接続が正しいか確認してください。
+アクティブブザーを使用していることを確認してください。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Defining the Buzzer Pin:
+#. ブザーピンの定義：
 
-   Assigns buzzerPin to GPIO 15, which controls the transistor and thus the buzzer.
+   buzzer PinにGPIO 15を割り当て、これがトランジスタを制御してブザーを動作させます。
 
    .. code-block:: Arduino
 
-        const int buzzerPin = 15;  // GPIO pin connected to the transistor base
+        const int buzzerPin = 15;  // トランジスタのベースに接続されたGPIOピン
 
-#. Setting Up the Pin Mode:
+#. ピンモードの設定：
 
-   Configures buzzerPin as an output.
+   buzzerPinを出力ピンとして設定します。
 
    .. code-block:: Arduino
 
@@ -156,41 +155,38 @@ Make sure you are using an active buzzer.
           pinMode(buzzerPin, OUTPUT);
         }
 
-#. Controlling the Buzzer: The ``loop()`` function repeats this process indefinitely, making the buzzer beep every second.
+#. ブザーの制御： ``loop()`` 関数はこの処理を無限に繰り返し、1秒ごとにブザーを鳴らします。
 
-
-   * ``digitalWrite(buzzerPin, HIGH)``: Sets ``buzzerPin`` ``HIGH``, turning on the transistor, which allows current to flow through the buzzer, making it beep.
-   * ``delay(1000)``: Pauses the program for 1000 milliseconds (1 second).
-   * ``digitalWrite(buzzerPin, LOW)``: Sets ``buzzerPin`` ``LOW``, turning off the transistor, stopping the current flow, and silencing the buzzer.
+   * ``digitalWrite(buzzerPin, HIGH)``: ``buzzerPin`` を ``HIGH`` に設定し、トランジスタをオンにして、電流がブザーを通過し、音を鳴らします。
+   * ``delay(1000)`` : プログラムを1000ミリ秒（1秒）停止します。
+   * ``digitalWrite(buzzerPin, LOW)``: ``buzzerPin`` を ``LOW`` に設定し、トランジスタをオフにして、電流の流れを停止し、ブザーの音を止めます。
 
    .. code-block:: Arduino
 
         void loop() {
-          digitalWrite(buzzerPin, HIGH);  // Turn the buzzer on
-          delay(1000);                    // Wait for 1 second
-          digitalWrite(buzzerPin, LOW);   // Turn the buzzer off
-          delay(1000);                    // Wait for 1 second
+          digitalWrite(buzzerPin, HIGH);  // ブザーをオンにする
+          delay(1000);                    // 1秒間待つ
+          digitalWrite(buzzerPin, LOW);   // ブザーをオフにする
+          delay(1000);                    // 1秒間待つ
         }
 
+**さらなる探求**
 
-**Further Exploration**
+* ビープ音の長さを変える：
 
-* Varying the Beep Duration:
+  * ``delay()`` の値を変更して、ブザーがオンおよびオフになる時間を調整できます。
+  * より短いまたは長い期間を試してみてください。
 
-  * Modify the ``delay()`` values to change how long the buzzer stays on and off.
-  * Experiment with shorter or longer durations.
+* パターンの作成：
 
-* Creating Patterns:
+  * ``loop()`` 関数でタイミングを調整して、より複雑なパターンを作成できます。
+  * 例えば、モールス信号でSOS信号を作成してみましょう。
 
-  * Create more complex patterns by adjusting the timing in the ``loop()`` function.
-  * For example, create an SOS signal in Morse code.
+* パッシブブザーの使用：
 
-* Using a Passive Buzzer:
+  * パッシブブザーを使用し、 ``tone()`` 関数を使って異なる周波数を生成してみてください。
+  * パッシブブザーの場合、配線やコードは異なるので注意してください。
 
-  * Try using a passive buzzer and the ``tone()`` function to generate different frequencies.
-  * Note that the wiring and code will be different for a passive buzzer.
+**結論**
 
-**Conclusion**
-
-In this lesson, you've learned how to make an active buzzer beep using the Raspberry Pi Pico and a transistor. By controlling the transistor with a GPIO pin, you can safely switch the buzzer on and off without overloading the Pico's GPIO pins. This basic concept can be expanded upon to create more complex sounds or to use buzzers in alarms, notifications, and interactive projects.
-
+このレッスンでは、Raspberry Pi Picoとトランジスタを使ってアクティブブザーを鳴らす方法を学びました。GPIOピンでトランジスタを制御することにより、PicoのGPIOピンを過負荷にすることなく、ブザーを安全にオン・オフできます。この基本的な概念を拡張して、より複雑な音を作成したり、アラームや通知、インタラクティブなプロジェクトにブザーを使用したりすることができます。

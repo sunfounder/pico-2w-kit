@@ -1,54 +1,54 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_resistor:
 
-Resistor
+抵抗器
 ============
 
 |img_res|
 
-Resistor is an electronic element that can limit the branch current. 
-A fixed resistor is a kind of resistor whose resistance cannot be changed, while that of a potentiometer or a variable resistor can be adjusted. 
+抵抗器は、回路内の分岐電流を制限するための電子部品です。  
+固定抵抗器はその抵抗値が変更できない抵抗器で、可変抵抗器やポテンショメータは抵抗値を調整できるものです。
 
-There are two commonly used circuit symbols for resistors, and the resistance value is typically indicated on the component. When you encounter these symbols in a circuit diagram, they represent a resistor.
+抵抗器には2つの一般的な回路記号があり、通常は部品に抵抗値が記載されています。回路図でこれらの記号に出会った場合、それは抵抗器を示しています。
 
 |img_res_symbol|
 
-**Ω** is the unit of resistance and the larger units include KΩ, MΩ, etc. 
-Their relationship can be shown as follows: 1 MΩ=1000 KΩ, 1 KΩ = 1000 Ω. Normally, the value of resistance is marked on it. 
+**Ω** は抵抗の単位で、より大きな単位としてKΩやMΩがあります。  
+これらの関係は次のように示されます：1 MΩ = 1000 KΩ、1 KΩ = 1000 Ω。通常、抵抗値は部品に記載されています。
 
-When using a resistor, we need to know its resistance first. Here are two methods: you can observe the bands on the resistor, or use a multimeter to measure the resistance. You are recommended to use the first method as it is more convenient and faster. 
+抵抗器を使用する際、まずその抵抗値を知る必要があります。以下の2つの方法があります：抵抗器のバンドを観察するか、マルチメーターで抵抗値を測定する方法です。最初の方法がより便利で速いため、こちらをお勧めします。
 
 |img_res_card|
 
-As shown in the card, each color stands for a number. 
+カードに示されているように、各色は数字を表しています。
 
 .. list-table::
 
-   * - Black
-     - Brown
-     - Red
-     - Orange
-     - Yellow
-     - Green
-     - Blue
-     - Violet
-     - Grey
-     - White
-     - Gold
-     - Silver
+   * - 黒
+     - 茶
+     - 赤
+     - 橙
+     - 黄
+     - 緑
+     - 青
+     - 紫
+     - 灰
+     - 白
+     - 金
+     - 銀
    * - 0
      - 1
      - 2
@@ -62,48 +62,45 @@ As shown in the card, each color stands for a number.
      - 0.1
      - 0.01
 
-The 4- and 5-band resistors are frequently used, on which there are 4 and 5 chromatic bands. 
+4本および5本のバンドがある抵抗器はよく使用され、これらには4本または5本の色帯があります。
 
-Normally, when you get a resistor, you may find it hard to decide which end to start for reading the color. 
-The tip is that the gap between the 4th and 5th band will be comparatively larger.
+通常、抵抗器を手に入れたとき、どちらの端から色を読み始めるかが分かりづらいことがあります。  
+コツとしては、4番目と5番目のバンドの間の隙間が比較的大きいことを覚えておくと良いです。
 
-Therefore, you can observe the gap between the two chromatic bands at one end of the resistor; 
-if it's larger than any other band gaps, then you can read from the opposite side. 
+そのため、抵抗器の一端にある2つの色帯の間の隙間を観察し、もしその隙間が他のバンドの隙間より大きい場合は、反対側から読み取ることができます。
 
-Let's see how to read the resistance value of a 5-band resistor as shown below.
+以下に示すように、5バンドの抵抗器の抵抗値の読み方を見てみましょう。
 
 |img_220ohm|
 
-So for this resistor, the resistance should be read from left to right. 
-The value should be in this format: 1st Band 2nd Band 3rd Band x 10^Multiplier (Ω) and the permissible error is ±Tolerance%. 
-So the resistance value of this resistor is 2(red) 2(red) 0(black) x 10^0(black) Ω = 220 Ω, 
-and the permissible error is ± 1% (brown). 
+この抵抗器の場合、抵抗値は左から右に向かって読み取ります。  
+値の形式は次のようになります：1番目のバンド、2番目のバンド、3番目のバンド × 10^乗数（Ω）で、許容誤差は±公差％です。  
+この抵抗器の抵抗値は、2（赤） 2（赤） 0（黒） × 10^0（黒）Ω = 220Ωで、許容誤差は±1%（茶色）です。
 
 .. list-table:: Common resistor color band
     :header-rows: 1
 
     * - :ref:`cpn_resistor` 
-      - Color Band  
+      - 色帯  
     * - 10Ω   
-      - brown black black silver brown
+      - 茶 黒 黒 銀 茶
     * - 100Ω   
-      - brown black black black brown
+      - 茶 黒 黒 黒 茶
     * - 220Ω 
-      - red red black black brown
+      - 赤 赤 黒 黒 茶
     * - 330Ω 
-      - orange orange black black brown
+      - 橙 橙 黒 黒 茶
     * - 1kΩ 
-      - brown black black brown brown
+      - 茶 黒 黒 茶 茶
     * - 2kΩ 
-      - red black black brown brown
+      - 赤 黒 黒 茶 茶
     * - 5.1kΩ 
-      - green brown black brown brown
+      - 緑 茶 黒 茶 茶
     * - 10kΩ 
-      - brown black black red brown 
+      - 茶 黒 黒 赤 茶 
     * - 100kΩ 
-      - brown black black orange brown 
+      - 茶 黒 黒 オレンジ 茶 
     * - 1MΩ 
-      - brown black black green brown 
+      - 茶 黒 黒 緑 茶
 
-You can learn more about resistor from Wiki: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.
-
+抵抗器についてさらに学ぶには、Wikiをご覧ください: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.

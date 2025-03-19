@@ -1,47 +1,47 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_lipo_charger:
 
-Li-po Charger Module
+Li-Po充電モジュール
 =================================================
 
 
 |lipo_module|
 
-This Li-Po charger module is designed specifically for the Raspberry Pi Pico, Pico H, Pico W and Pico 2 W. To use it, simply plug the module and the Pico into a breadboard as shown below, connect a Li-Po battery to the module, and it's ready to go.
+このLi-Po充電モジュールは、Raspberry Pi Pico、Pico H、Pico W、Pico 2 W専用に設計されています。使用するには、下記のようにモジュールとPicoをブレッドボードに挿入し、Li-Poバッテリーをモジュールに接続するだけで準備完了です。
 
-When the Pico 2 W is connected to a computer or power socket via a USB cable, the indicator light on the Li-Po charger module will turn on, indicating that the battery is charging. Once the USB cable is disconnected, the Pico 2 W will automatically switch to battery power, allowing your project to continue running seamlessly.
+Pico 2 WがUSBケーブルを介してコンピューターまたは電源ソケットに接続されている場合、Li-Po充電モジュールのインジケーターライトが点灯し、バッテリーが充電中であることを示します。USBケーブルが切断されると、Pico 2 Wは自動的にバッテリー電源に切り替わり、プロジェクトをシームレスに続行できます。
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico 2 W to your computer with this charging module attached, it may cause the computer not to recognize your Pico 2 W.
+    性能の低い一部のコンピューターでは、この充電モジュールが取り付けられたPico 2 Wをコンピューターに接続すると、コンピューターがPico 2 Wを認識しない場合があります。
 
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico 2 W power supply is insufficient to be recognized by the computer.
+    その理由は、接続後にバッテリーを充電しながらUSBポートの電圧が下がり、Pico 2 Wの電源が不足してコンピューターに認識されなくなるからです。
     
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico 2 W again.
+    この場合、Li-Po充電モジュールを抜いてからPico 2 Wを再度接続する必要があります。
 
 |lipo_wire|
 
-**Features**
+**特長**
 
-* Input voltage: 5V
-* Output voltage: 3.3V
-* Size: 20mmx7mm
-* Interface model: PH2.0
+* 入力電圧：5V
+* 出力電圧：3.3V
+* サイズ：20mmx7mm
+* インターフェースモデル：PH2.0
 
 
 
-**Schematic**
+**回路図**
 
 |sch_lipo_charger|

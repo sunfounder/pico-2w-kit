@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を使って、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームのサポートを受けて、販売後の問題や技術的な課題を解決できます。
+    - **学びとシェア**：スキルを高めるために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新しい製品の発表やスニークピークに早期アクセスできます。
+    - **特別割引**：最新製品に対する限定割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _py_keypad:
 
-4.2 4x4 Keypad
+4.2 4x4 キーパッド
 ========================
 
-In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2 W to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して **4x4マトリックスキーパッド** をインターフェースし、どのキーが押されたかを検出する方法を学びます。マトリックスキーパッドは、計算機、電話、販売機、セキュリティシステムなどで数値入力として一般的に使用されています。
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクからも個別に購入できます。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -76,53 +76,53 @@ You can also buy them separately from the links below.
         - 1
         - |link_keypad_buy|
 
-**Understanding the 4x4 Keypad**
+**4x4マトリックスキーパッドの理解**
 
-A 4x4 keypad consists of:
+4x4キーパッドは以下で構成されています：
 
-* **16 keys** arranged in 4 rows and 4 columns.
-* **8 pins**: 4 connected to rows and 4 connected to columns.
+* **16個のキー** が4行4列のマトリックスに配置されています。
+* **8本のピン**：4本は行に接続され、4本は列に接続されています。
 
-When you press a key, it connects a specific row and column, allowing us to identify the key based on the row and column numbers.
+キーを押すと、特定の行と列が接続され、その行番号と列番号に基づいて押されたキーを識別することができます。
 
-Here's how the keys are arranged:
+キーの配置は以下のようになっています：
 
 |img_keypad|
 
-**Schematic**
+**回路図**
 
 |sch_keypad|
 
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+4つのプルダウン抵抗がキーパッドの各列に接続されており、キーが押されていないときにG6～G9は安定した低レベルを取得します。
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+キーパッドの行（G2～G5）は高レベルに設定され、G6～G9のいずれかが高レベルを読み取ると、どのキーが押されたかがわかります。
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+例えば、G6が高レベルを読み取ると、数字の「1」が押されたことになります。これは、数字キー「1」の制御ピンがG2とG6であり、数字キー「1」が押されるとG2とG6が接続され、G6も高レベルになるためです。
 
 
-**Wiring**
+**配線**
 
 |wiring_keypad|
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+配線を簡単にするために、上記の図では、マトリックスキーパッドの列行と10K抵抗が、G6～G9がある穴に同時に挿入されています。
 
 
-**Writing the Code**
+**コードの作成**
 
-Let's write a MicroPython program to read which key is pressed.
+どのキーが押されたかを読み取るMicroPythonプログラムを作成します。
 
 .. note::
 
-    * Open the ``4.2_4x4_keypad.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * ``4.2_4x4_keypad.py`` を ``pico-2w-kit-main/micropython`` から開くか、コードをThonnyにコピーして、「実行」ボタンをクリックするか、F5を押してください。
+    * 正しいインタープリタが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。
+
 
 .. code-block:: python
 
     import machine
     import time
 
-    # Define the characters on the keypad
+    # キーパッド上の文字を定義
     keys = [
         ['1', '2', '3', 'A'],
         ['4', '5', '6', 'B'],
@@ -130,27 +130,27 @@ Let's write a MicroPython program to read which key is pressed.
         ['*', '0', '#', 'D']
     ]
 
-    # Define the GPIO pins connected to the rows and columns
+    # 行と列に接続されているGPIOピンを定義
     row_pins = [2, 3, 4, 5]   # GP2-GP5
     col_pins = [6, 7, 8, 9]   # GP6-GP9
 
-    # Initialize row pins as outputs
+    # 行ピンを出力として初期化
     rows = [machine.Pin(pin_num, machine.Pin.OUT) for pin_num in row_pins]
 
-    # Initialize column pins as inputs with pull-down resistors
+    # 列ピンを入力として初期化（プルダウン抵抗付き）
     cols = [machine.Pin(pin_num, machine.Pin.IN, machine.Pin.PULL_DOWN) for pin_num in col_pins]
 
     def scan_keypad():
         for i, row in enumerate(rows):
-            # Set all rows low
+            # 全ての行を低レベルに設定
             for r in rows:
                 r.value(0)
-            # Set the current row high
+            # 現在の行を高レベルに設定
             row.value(1)
-            # Check columns for a high signal
+            # 列が高レベルを検出
             for j, col in enumerate(cols):
                 if col.value() == 1:
-                    # Key detected
+                    # キーが検出されました
                     return keys[i][j]
         return None
 
@@ -164,97 +164,96 @@ Let's write a MicroPython program to read which key is pressed.
             last_key = key
         time.sleep(0.1)
 
-**Understanding the Code**
+**コードの理解**
 
-#. Define Keypad Characters
+#. キーパッドの文字の定義
 
-   This 2D list represents the keypad layout, matching the physical arrangement.
+この2Dリストは、物理的な配置に一致するキーパッドのレイアウトを表しています。
 
-   .. code-block:: python
+.. code-block:: python
 
-        keys = [
-            ['1', '2', '3', 'A'],
-            ['4', '5', '6', 'B'],
-            ['7', '8', '9', 'C'],
-            ['*', '0', '#', 'D']
-        ]
+    keys = [
+        ['1', '2', '3', 'A'],
+        ['4', '5', '6', 'B'],
+        ['7', '8', '9', 'C'],
+        ['*', '0', '#', 'D']
+    ]
 
+#. ピンの初期化：
 
-#. Initialize Pins:
+.. code-block:: python
 
-   .. code-block:: python
+    row_pins = [2, 3, 4, 5]   # 行用のGPIOピン
+    col_pins = [6, 7, 8, 9]   # 列用のGPIOピン
 
-        row_pins = [2, 3, 4, 5]   # GPIO pins for rows
-        col_pins = [6, 7, 8, 9]   # GPIO pins for columns
+    # 行を出力として初期化
+    rows = [machine.Pin(pin_num, machine.Pin.OUT) for pin_num in row_pins]
 
-        # Initialize rows as outputs
-        rows = [machine.Pin(pin_num, machine.Pin.OUT) for pin_num in row_pins]
+    # 列を入力として初期化（プルダウン抵抗付き）
+    cols = [machine.Pin(pin_num, machine.Pin.IN, machine.Pin.PULL_DOWN) for pin_num in col_pins]
 
-        # Initialize columns as inputs with pull-down resistors
-        cols = [machine.Pin(pin_num, machine.Pin.IN, machine.Pin.PULL_DOWN) for pin_num in col_pins]
+#. キーパッドスキャン関数の定義：
 
-#. Define the Keypad Scanning Function:
+この関数は各行をスキャンし、それを高レベルに設定して、どの列が高レベルを示すかを確認し、どの行と列でキーが押されたかを示します。
 
-    The function scans each row by setting it high and checking if any column reads high, indicating a key press at that row and column.
+.. code-block:: python
 
-   .. code-block:: python
+    def scan_keypad():
+        for i, row in enumerate(rows):
+            # 全ての行を低レベルに設定
+            for r in rows:
+                r.value(0)
+            # 現在の行を高レベルに設定
+            row.value(1)
+            # 列でキー押下を確認
+            for j, col in enumerate(cols):
+                if col.value() == 1:
+                    # キーが押された
+                    return keys[i][j]
+        return None
 
-        def scan_keypad():
-            for i, row in enumerate(rows):
-                # Set all rows low
-                for r in rows:
-                    r.value(0)
-                # Set the current row high
-                row.value(1)
-                # Check columns for a key press
-                for j, col in enumerate(cols):
-                    if col.value() == 1:
-                        # Key is pressed
-                        return keys[i][j]
-            return None
+#. メインループでのキー押下の検出：
 
-#. Main Loop to Detect Key Presses
+* ループはキー押下を継続的にスキャンします。
+* 現在のキーが前回のキーと異なるかを確認して、同じキーが複数回検出されないように（デバウンシング）します。
+* 新しいキー押下が検出されると、そのキーを表示します。
 
-   * The loop continuously scans for key presses.
-   * It checks if the current key is different from the last key to prevent multiple detections of the same key press (debouncing).
-   * Prints the key when a new key press is detected.
+.. code-block:: python
 
-   .. code-block:: python
+    last_key = None
 
-        last_key = None
+    while True:
+        key = scan_keypad()
+        if key != last_key:
+            if key is not None:
+                print("Key pressed:", key)
+            last_key = key
+        time.sleep(0.1)
 
-        while True:
-            key = scan_keypad()
-            if key != last_key:
-                if key is not None:
-                    print("Key pressed:", key)
-                last_key = key
-            time.sleep(0.1)
+プログラムを実行後、キーパッドで異なるキーを押してみてください。対応するキー文字がThonnyシェルに表示されるはずです。
 
-After running the program, Press different keys on the keypad. The corresponding key character should be printed in the Thonny Shell.
+**トラブルシューティングのヒント**
 
-**Troubleshooting Tips**
+* キーを押しても出力がない：
 
-* No Output When Pressing Keys:
+  * 全ての接続が正しいか確認してください。
+  * プルダウン抵抗が列ピンとGNDの間に適切に接続されているか確認してください。
 
-  * Ensure all connections are correct.
-  * Verify that the pull-down resistors are properly connected between the column pins and GND.
+* 正しくないキーが検出される：
 
-* Incorrect Key Detected:
+  * keys配列がキーパッドのレイアウトに一致しているか再確認してください。
+  * コード内の行と列のピンが物理的な接続と一致しているか確認してください。
 
-  * Double-check the keys array to ensure it matches your keypad's layout.
-  * Make sure the row and column pins in the code match the physical connections.
+* 複数のキーが検出される：
 
-* Multiple Keys Detected:
+  機械的なキーパッドでは、複数のキーが同時に押されるとゴースティング（誤ったキー押下）が発生することがあります。この基本的なセットアップでは、同時に複数のキーを押さないようにしましょう。
 
-  Mechanical keypads may sometimes detect ghosting (false key presses) if multiple keys are pressed simultaneously. For this basic setup, avoid pressing multiple keys at once.
+**さらに試してみる**
 
-**Experimenting Further**
+* **簡単なパスワードロックの実装**：キーの入力シーケンスを保存し、事前設定されたパスワードと比較します。
+* **LCDディスプレイの追加**：押されたキーをLCDスクリーンに表示します。
+* **計算機の作成**：キーパッドを使用して数字を入力し、基本的な算術演算を行います。
 
-* **Implement a Simple Password Lock**: Store a sequence of key presses and compare them to a preset password.
-* **Add an LCD Display**: Display the keys pressed on an LCD screen.
-* **Create a Calculator**: Use the keypad to input numbers and perform basic arithmetic operations.
+**結論**
 
-**Conclusion**
-
-In this lesson, you've learned how to connect and program a 4x4 matrix keypad with the Raspberry Pi Pico 2 W. You can now detect key presses and use them to interact with your projects, opening up possibilities for creating interactive devices like locks, calculators, and control interfaces.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して4x4マトリックスキーパッドを接続およびプログラムする方法を学びました。これでキー押下を検出し、プロジェクトと対話できるようになります。ロック、計算機、制御インターフェースのようなインタラクティブなデバイスを作成するための可能性が広がります。

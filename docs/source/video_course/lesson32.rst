@@ -1,33 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 32: Mobile Weather Station Project
+レッスン32：モバイル気象ステーションプロジェクト
 =============================================================================
 
-This tutorial covers creating a portable weather station using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用して携帯型気象ステーションを作成する方法について説明します：
 
-* **Connecting to WiFi**: Import libraries, create a WLAN object, and connect to WiFi.
-* **Fetching Weather Data**: Use OpenWeatherMap API to retrieve real-time weather data, requiring an API key.
-* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
-* **Displaying Data on OLED**: Set up and connect an OLED display, use the ``ssd1306`` library, and update weather data on the screen in a loop.
-* **Powering the Device**: Power the Raspberry Pi Pico W with a battery for portability.
-* **Code Explanation**: Initialize the OLED, connect to WiFi, fetch and display weather data, and set a loop for periodic updates.
-* **Homework Assignment**: Add an RGB LED to indicate weather conditions based on temperature, humidity, or wind speed.
+* **WiFiへの接続**: ライブラリをインポートし、WLANオブジェクトを作成してWiFiに接続します。
+* **天気データの取得**: OpenWeatherMap APIを使用してリアルタイムの天気データを取得し、APIキーが必要です。
+* **JSONデータの解析**: JSONレスポンスから気温、湿度、気圧、日の出と日の入りの時間を抽出します。
+* **OLEDでのデータ表示**: OLEDディスプレイを設定し接続し、「ssd1306」ライブラリを使用して、画面に天気データをループで更新します。
+* **デバイスの電源供給**: Raspberry Pi Pico Wをバッテリーで駆動し、携帯性を確保します。
+* **コード説明**: OLEDを初期化し、WiFiに接続して天気データを取得・表示し、定期的な更新のためのループを設定します。
+* **宿題**: 温度、湿度、風速に基づいて天気条件を示すためのRGB LEDを追加します。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

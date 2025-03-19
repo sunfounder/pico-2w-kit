@@ -1,46 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_access:
 
-8.1 Access to the Network
+8.1 ネットワークへの接続
 ===========================
 
 .. note::
 
-    If you are coming from another IoT project, please start from Step 3 to proceed with the creation ``do_connect.py`` and ``secrets.py`` .
+    他のIoTプロジェクトから来た場合は、ステップ3から始めて、 ``do_connect.py`` と ``secrets.py`` の作成を進めてください。
 
-Now let's see how it connects to our Wi-Fi network.
+それでは、Wi-Fiネットワークへの接続方法を見ていきましょう。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 
 .. list-table::
@@ -48,27 +48,27 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
 
 
-1. Connect to the Internet
+1. インターネットへの接続
 ------------------------------------
 
-With just five lines of MicroPython, our Raspberry Pi Pico 2 W is happily connected to the Internet.
+わずか5行のMicroPythonコードで、Raspberry Pi Pico 2 Wはインターネットに接続されます。
 
-These 5 lines of code can be run directly from the Shell, pressing the ``Enter`` after you typing.
-Or refer to the following method and create a new ``.py`` file to run it.
+これらの5行のコードは、シェルから直接実行できます。入力後に ``Enter`` を押してください。
+または、以下の方法で新しい ``.py`` ファイルを作成して実行することもできます。
 
 .. code-block:: python
 
@@ -78,26 +78,26 @@ Or refer to the following method and create a new ``.py`` file to run it.
     wlan.connect("SSID","PASSWORD")
     print(wlan.isconnected())
 
-#. Create a new script by clicking the **New** button on Thonny, and copy and paste the above code, changing the ``SSID`` and ``PASSWORD`` to your own.
+#. Thonnyで **新規作成** ボタンをクリックし、上記のコードをコピー＆ペーストして、 ``SSID`` と ``PASSWORD`` を自分のものに変更してください。
 
    .. image:: img/access1.png
 
-#. To run the script, click the **Run current script** button or press F5. If the connection is successful, ``true`` will be printed. 
+#. スクリプトを実行するには、 **現在のスクリプトを実行** ボタンをクリックするか、F5を押してください。接続が成功すれば、 ``true`` が表示されます。
 
    .. note::
 
-       Make sure the Raspberry Pi Pico 2 W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
+       Raspberry Pi Pico 2 WがUSBケーブルでコンピュータに接続されていることを確認し、右下隅をクリックして、MicroPython (Raspberry Pi Pico).COMXxxをインタープリタとして選択してください。
 
    .. image:: img/access2.png
 
 
-2. Timeout Judgment and Show IP
+2. タイムアウト判定とIP表示
 -----------------------------------------------
 
 
-Considering some poor network conditions, let's add some timeout judgment to the code.
+ネットワーク環境が悪い場合を考慮して、コードにタイムアウト判定を追加しましょう。
 
-If the connection is successful, the IP of Pico 2 W will be displayed after copying and running the script.
+接続が成功した場合、Pico 2 WのIPが表示されます。以下のスクリプトをコピーして実行してください。
 
 .. code-block:: python
 
@@ -108,7 +108,7 @@ If the connection is successful, the IP of Pico 2 W will be displayed after copy
     wlan.active(True)
     wlan.connect("SSID","PASSWORD")
 
-    # Wait for connect or fail
+    # 接続待機または失敗
     wait = 10
     while wait > 0:
         if wlan.status() < 0 or wlan.status() >= 3:
@@ -117,7 +117,7 @@ If the connection is successful, the IP of Pico 2 W will be displayed after copy
         print('waiting for connection...')
         time.sleep(1)
 
-    # Handle connection error
+    # 接続エラーの処理
     if wlan.status() != 3:
         raise RuntimeError('wifi connection failed')
     else:
@@ -126,47 +126,47 @@ If the connection is successful, the IP of Pico 2 W will be displayed after copy
 
 .. image:: img/access3.png
 
-* ``wlan.status()`` function: Returns the current status of the wireless connection, the return value is shown in the table below.
+* ``wlan.status()`` 関数: 無線接続の現在の状態を返します。戻り値は以下の表に示されています。
 
 
     .. list-table::
         :widths: 40 10 50
 
-        * - Status
-          - Value
-          - Description
+        * - 状態
+          - 値
+          - 説明
         * - STAT_IDLE 
           - 0 
-          - no connection and no activity,
+          - 接続なし、アクティビティなし、
         * - STAT_CONNECTING 
           - 1 
-          - connecting in progress,
+          - 接続中、
         * - STAT_WRONG_PASSWORD 
           - -3 
-          - failed due to incorrect password,
+          - パスワード間違いで接続失敗、
         * - STAT_NO_AP_FOUND 
           - -2 
-          - failed because no access point replied,
+          - アクセスポイントが見つからなかったため接続失敗、
         * - STAT_CONNECT_FAIL 
           - -1 
-          - failed due to other problems,
+          - その他の問題で接続失敗、
         * - STAT_GOT_IP 
           - 3 
-          - connection successful.
+          - 接続成功。
 
-* ``wlan.ifconfig()`` function: Obtains IP addresses, subnet masks, gateways, and DNS servers. This method will return a 4-tuple containing the above information when called directly. In this case, we only print the IP address.
+* ``wlan.ifconfig()`` 関数: IPアドレス、サブネットマスク、ゲートウェイ、DNSサーバーを取得します。このメソッドを呼び出すと、上記の情報を含む4つのタプルが返されます。この場合、IPアドレスのみを表示しています。
 
 *  `class WLAN – MicroPython Docs <https://docs.micropython.org/en/latest/library/network.WLAN.html>`_
 
 .. _create_secrets:
 
-3. Save private information to ``secrets.py``
+3. ``secrets.py`` に個人情報を保存
 ----------------------------------------------------------
 
-When you share your Pico 2 W project, you should not want others to see your Wi-Fi password or API key.
-For good security, we can create a ``secrets.py`` file to store your private information.
+Pico 2 Wプロジェクトを共有する際に、他の人にWi-FiパスワードやAPIキーを見られたくない場合があります。
+セキュリティを確保するために、 ``secrets.py`` ファイルを作成して個人情報を保存することができます。
 
-#. Copy the following code into a new script file on Thonny. Note to change ``SSID`` and ``PASSWORD`` to yours.
+#. 以下のコードを新しいスクリプトファイルにコピーします。 ``SSID`` と ``PASSWORD`` は自分のものに変更してください。
 
     .. code-block:: python
 
@@ -175,19 +175,19 @@ For good security, we can create a ``secrets.py`` file to store your private inf
         'password': 'PASSWORD',
         }
 
-#. Choose Raspberry Pi Pico in the pop-up window that appears when you click the Save button or press ``Ctrl+S``.
+#. 保存ボタンをクリックするか、 ``Ctrl+S`` を押すと、ポップアップウィンドウが表示されます。そこでRaspberry Pi Picoを選択します。
 
     .. image:: img/access4.png
 
-#. Set the name to ``secrets.py``.
+#. 名前を ``secrets.py`` に設定します。
 
     .. image:: img/access5.png
 
-#. Now you can see this script in your Raspberry Pi Pico 2 W.
+#. Raspberry Pi Pico 2 Wでこのスクリプトが表示されるようになります。
 
     .. image:: img/access6.png
 
-#. In other scripts, you can call it as follows. If you run it, you will see a successful Wi-Fi connection. The ``secrets.py`` file is imported as a library, so we need not worry about leakage of information.
+#. 他のスクリプトで以下のように呼び出すことができます。実行すると、Wi-Fi接続が成功します。 ``secrets.py`` ファイルはライブラリとしてインポートされるため、情報漏洩を心配する必要はありません。
 
     .. code-block:: python
         :emphasize-lines: 3,7
@@ -200,7 +200,7 @@ For good security, we can create a ``secrets.py`` file to store your private inf
         wlan.active(True)
         wlan.connect(secrets['ssid'], secrets['password'])
 
-        # Wait for connect or fail
+        # 接続待機または失敗
         wait = 10
         while wait > 0:
             if wlan.status() < 0 or wlan.status() >= 3:
@@ -209,7 +209,7 @@ For good security, we can create a ``secrets.py`` file to store your private inf
             print('waiting for connection...')
             time.sleep(1)
 
-        # Handle connection error
+        # 接続エラーの処理
         if wlan.status() != 3:
             raise RuntimeError('wifi connection failed')
         else:
@@ -220,12 +220,12 @@ For good security, we can create a ``secrets.py`` file to store your private inf
 
 .. _do_connect:
 
-4. Connect to the Internet via ``do_connect.py``
+4. ``do_connect.py`` を使ってインターネットに接続
 --------------------------------------------------------------
 
-Considering that each of our next projects will require a network connection, why don't we create a new ``do_connect.py`` file and write the relevant functions into it for reuse, which can greatly streamline the code of complex projects.
+次のプロジェクトでネットワーク接続が必要になることを考慮し、 ``do_connect.py`` ファイルを新たに作成し、再利用可能な関数をその中に書き込むと、複雑なプロジェクトのコードが大幅に簡素化されます。
 
-#. Copy the following code into a new script file, and save it to Raspberry Pi Pico as ``do_connect.py``.
+#. 以下のコードを新しいスクリプトファイルにコピーし、Raspberry Pi Picoに ``do_connect.py`` として保存します。
 
     .. code-block:: python
 
@@ -238,7 +238,7 @@ Considering that each of our next projects will require a network connection, wh
             wlan.active(True)
             wlan.connect(ssid, psk)
 
-            # Wait for connect or fail
+            # 接続待機または失敗
             wait = 10
             while wait > 0:
                 if wlan.status() < 0 or wlan.status() >= 3:
@@ -247,7 +247,7 @@ Considering that each of our next projects will require a network connection, wh
                 print('waiting for connection...')
                 time.sleep(1)
 
-            # Handle connection error
+            # 接続エラーの処理
             if wlan.status() != 3:
                 raise RuntimeError('wifi connection failed')
             else:
@@ -258,7 +258,7 @@ Considering that each of our next projects will require a network connection, wh
 
     .. image:: img/access7.png
 
-#. Calling it in other scripts by the following will allow the Raspberry Pi Pico 2 W to connect to the network.
+#. 他のスクリプトで以下のように呼び出すことで、Raspberry Pi Pico 2 Wがネットワークに接続されます。
 
     .. code-block:: python
 

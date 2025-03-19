@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 当コミュニティとチームの助けを借りて、販売後の問題や技術的な課題を解決できます。
+    - **学び・共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **特別なプレビュー**: 新製品の発表やプレビューに早期アクセスできます。
+    - **特別割引**: 最新製品の独占的な割引を楽しめます。
+    - **フェスティブなプロモーションとプレゼント企画**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_room_temp:
 
-7.2 Building a Room Temperature Meter
+7.2 室温メーターの作成
 ============================================================
 
-In this project, we'll create a **Room Temperature Meter** using a thermistor and an I2C LCD1602 display. This simple yet practical device will measure the ambient temperature and display it on the LCD screen, providing real-time temperature readings of your environment.
+このプロジェクトでは、サーミスターとI2C LCD1602ディスプレイを使用して **室温メーター** を作成します。このシンプルで実用的なデバイスは、周囲の温度を測定し、その値をLCD画面に表示します。リアルタイムで環境の温度を測定できるようになります。
 
 :ref:`py_temp`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名称
+        - このキットに含まれる部品
+        - リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -79,31 +79,29 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-**Understanding the Components**
+**部品の理解**
 
-* **Thermistor:** A type of resistor whose resistance varies significantly with temperature. We'll use a Negative Temperature Coefficient (NTC) thermistor, meaning its resistance decreases as temperature increases.
-* **Voltage Divider:** By combining the thermistor with a fixed resistor, we create a voltage divider circuit, allowing us to measure changes in voltage corresponding to temperature changes.
-* **I2C LCD1602 Display:** A 16x2 character LCD display with an I2C interface, which simplifies wiring and code by using only two data lines (SDA and SCL).
+* **サーミスター**: 温度に応じて抵抗が大きく変化する抵抗器の一種です。ここでは、負の温度係数（NTC）サーミスターを使用します。つまり、温度が上がると抵抗が減少します。
+* **電圧分割回路**: サーミスターと固定抵抗を組み合わせて電圧分割回路を作り、温度の変化に応じて電圧の変化を測定します。
+* **I2C LCD1602ディスプレイ**: I2Cインターフェースを持つ16x2のキャラクタLCDディスプレイで、2本のデータ線（SDAとSCL）のみで接続でき、配線やコードが簡単になります。
 
-**Schematic**
+**回路図**
 
 |sch_room_temp|
 
-
-**Wiring**
+**配線**
 
 |wiring_room_temp|
 
-**Writing the Code**
+**コードの作成**
 
-We'll write a MicroPython program that reads the temperature from the thermistor and displays it on the LCD.
+サーミスターから温度を読み取り、LCDに表示するMicroPythonプログラムを作成します。
 
 .. note::
 
-    * Open the ``7.2_room_temperature_meter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * ``7.2_room_temperature_meter.py`` を ``pico-2w-kit-main/micropython`` から開くか、このコードをThonnyにコピーして「Run」をクリックするか、F5キーを押して実行します。
+    * 正しいインタープリターが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。
+    * このプロジェクトでは ``lcd1602.py`` というライブラリを使用しますので、Picoにアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -112,34 +110,34 @@ We'll write a MicroPython program that reads the temperature from the thermistor
     import utime
     import math
 
-    # Initialize the thermistor (ADC on pin 28)
-    thermistor = ADC(28)  # Analog input from the thermistor
+    # サーミスターの初期化（ピン28のADC）
+    thermistor = ADC(28)  # サーミスターからのアナログ入力
 
-    # Initialize I2C communication for the LCD1602 display
+    # LCD1602ディスプレイのI2C通信の初期化
     i2c = I2C(1, scl=Pin(7), sda=Pin(6), freq=400000)
 
-    # Create an LCD object for controlling the LCD1602 display
+    # LCD1602ディスプレイを操作するためのLCDオブジェクトの作成
     lcd = LCD(i2c)
 
-    # Constants for the Steinhart-Hart equation
-    BETA = 3950  # Beta coefficient of the thermistor
-    R0 = 10000   # Resistance at 25 degrees Celsius
-    T0 = 298.15  # Reference temperature in Kelvin (25°C)
+    # スタインハート・ハート方程式の定数
+    BETA = 3950  # サーミスターのベータ係数
+    R0 = 10000   # 25度Cでの抵抗
+    T0 = 298.15  # 参考温度（ケルビン）
 
     def read_temperature():
-        # Read raw ADC value from the thermistor
+        # サーミスターからの生のADC値を読み取る
         adc_value = thermistor.read_u16()
 
-        # Convert the raw ADC value to voltage
+        # 生のADC値を電圧に変換
         voltage = adc_value * 3.3 / 65535
 
-        # Calculate the resistance of the thermistor
+        # サーミスターの抵抗を計算
         Rt = (voltage * R0) / (3.3 - voltage)
 
-        # Apply the Steinhart-Hart equation to calculate temperature in Kelvin
+        # スタインハート・ハート方程式を適用して温度をケルビンで計算
         tempK = 1 / ((1 / T0) + (1 / BETA) * math.log(Rt / R0))
 
-        # Convert temperature from Kelvin to Celsius
+        # ケルビンから摂氏に変換
         tempC = tempK - 273.15
 
         return tempC
@@ -147,15 +145,15 @@ We'll write a MicroPython program that reads the temperature from the thermistor
     def main():
         while True:
             temperature = read_temperature()
-            # Format the temperature to two decimal places
+            # 温度を小数点以下2桁にフォーマット
             temp_str = "{:.2f} C".format(temperature)
 
-            # Display the temperature on the LCD
+            # LCDに温度を表示
             lcd.clear()
             lcd.write(0, 0, "Room Temp:")
             lcd.write(4, 1, temp_str)
 
-            # Optional: Print the temperature to the console
+            # コンソールに温度を表示（オプション）
             print("Temperature:", temp_str)
 
             utime.sleep(1)
@@ -163,135 +161,135 @@ We'll write a MicroPython program that reads the temperature from the thermistor
     if __name__ == "__main__":
         main()
 
-Once the code is running, the LCD should display the current room temperature in Celsius.
-If the LCD is blank, adjust the contrast using the potentiometer on the back.
-The console in Thonny will also print the temperature readings.
+コードが実行されると、LCDに現在の室温（摂氏）が表示されます。
+LCDが表示されない場合は、背面のポテンショメーターでコントラストを調整してください。
+Thonnyのコンソールにも温度読み取り値が表示されます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Imports and Initialization:
+#. インポートと初期化：
 
-   * ``lcd1602.LCD``: For controlling the LCD display.
-   * ``machine.ADC``: To read analog values from the thermistor.
-   * ``math``: For logarithmic calculations needed in the temperature conversion.
+   * ``lcd1602.LCD``: LCDディスプレイを操作するためのライブラリ。
+   * ``machine.ADC``: サーミスターからアナログ値を読み取るためのライブラリ。
+   * ``math``: 温度変換に必要な対数計算を行うためのライブラリ。
 
-#. Variables:
+#. 変数：
 
-   * **BETA**: The beta coefficient specific to your thermistor (commonly 3950).
-   * **R0**: The resistance of the thermistor at the reference temperature (usually 10kΩ at 25°C).
-   * **T0**: The reference temperature in Kelvin (25°C + 273.15).
+   * **BETA**: サーミスター特有のベータ係数（通常3950）。
+   * **R0**: 参考温度でのサーミスターの抵抗（通常25°Cで10kΩ）。
+   * **T0**: 参考温度（ケルビン単位、25°C + 273.15）。
 
    .. code-block:: python
 
-        BETA = 3950  # Beta coefficient of the thermistor
-        R0 = 10000   # Resistance at 25 degrees Celsius
-        T0 = 298.15  # Reference temperature in Kelvin (25°C)
-    
-#. Reading Temperature (``read_temperature Function``):
+        BETA = 3950  # サーミスターのベータ係数
+        R0 = 10000   # 25度Cでの抵抗
+        T0 = 298.15  # 参考温度（ケルビン）
 
-   * **ADC Reading**: Captures the analog value from the thermistor.
-   * **Voltage Calculation**: Converts the ADC value to an actual voltage.
-   * **Resistance Calculation (Rt)**: Calculates the thermistor's resistance using the voltage divider formula.
-   * **Steinhart-Hart Equation**: A mathematical model that relates the resistance of a thermistor to its temperature.
-   * **Conversion to Celsius**: Adjusts the temperature from Kelvin to Celsius.
+#. 温度の読み取り（ ``read_temperature`` 関数）：
+
+   * **ADC読み取り**: サーミスターからアナログ値を読み取ります。
+   * **電圧計算**: ADC値を実際の電圧に変換します。
+   * **抵抗計算（Rt）**: 電圧分割式を使用してサーミスターの抵抗を計算します。
+   * **スタインハート・ハート方程式**: サーミスターの抵抗と温度の関係を示す数学的モデル。
+   * **摂氏への変換**: 温度をケルビンから摂氏に変換します。
 
    .. code-block:: python
 
         def read_temperature():
-                # Read raw ADC value from the thermistor
+                # サーミスターからの生のADC値を読み取る
                 adc_value = thermistor.read_u16()
 
-                # Convert the raw ADC value to voltage
+                # 生のADC値を電圧に変換
                 voltage = adc_value * 3.3 / 65535
 
-                # Calculate the resistance of the thermistor
+                # サーミスターの抵抗を計算
                 Rt = (voltage * R0) / (3.3 - voltage)
 
-                # Apply the Steinhart-Hart equation to calculate temperature in Kelvin
+                # スタインハート・ハート方程式を適用して温度をケルビンで計算
                 tempK = 1 / ((1 / T0) + (1 / BETA) * math.log(Rt / R0))
 
-                # Convert temperature from Kelvin to Celsius
+                # ケルビンから摂氏に変換
                 tempC = tempK - 273.15
 
                 return tempC
 
-#. Main Loop (main Function):
+#. メインループ（ ``main`` 関数）：
 
-   * Continuously reads the temperature.
-   * Formats and displays the temperature on the LCD.
-   * Prints the temperature to the console (optional for debugging).
-   * Waits for 1 second before repeating.
+   * 温度を継続的に読み取り、表示します。
+   * LCDに温度をフォーマットして表示します。
+   * コンソールに温度を表示（デバッグ用オプション）。
+   * 1秒ごとに待機します。
 
    .. code-block:: python
 
         def main():
             while True:
                 temperature = read_temperature()
-                # Format the temperature to two decimal places
+                # 温度を小数点以下2桁にフォーマット
                 temp_str = "{:.2f} C".format(temperature)
 
-                # Display the temperature on the LCD
+                # LCDに温度を表示
                 lcd.clear()
                 lcd.write(0, 0, "Room Temp:")
                 lcd.write(4, 1, temp_str)
 
-                # Optional: Print the temperature to the console
+                # コンソールに温度を表示（オプション）
                 print("Temperature:", temp_str)
 
                 utime.sleep(1)
 
 
-**Troubleshooting**
+**トラブルシューティング**
 
-* LCD Not Displaying Text:
+* LCDに表示されない場合：
 
-  * Verify SDA and SCL connections (GP6 and GP7).
-  * Check that the LCD is powered correctly.
-  * Adjust the contrast potentiometer on the LCD module.
+  * SDAおよびSCLの接続（GP6およびGP7）を確認します。
+  * LCDが正しく電源供給されているか確認します。
+  * LCDモジュールのコントラストポテンショメーターを調整します。
 
-* Incorrect Temperature Readings:
+* 温度が正しく表示されない場合：
 
-  * Ensure the thermistor and resistor are connected properly.
-  * Double-check the resistor values.
-  * Confirm that the BETA value matches your thermistor's specifications.
+  * サーミスターと抵抗が正しく接続されているか確認します。
+  * 抵抗値が正しいか確認します。
+  * BETA値がサーミスターの仕様に合っているか確認します。
 
-* Program Errors:
+* プログラムエラー：
 
-  * Make sure all necessary libraries are correctly uploaded to the Pico.
-  * Check for typos or indentation errors in the code.
+  * 必要なライブラリが正しくPicoにアップロードされているか確認します。
+  * コードにタイプミスやインデントエラーがないか確認します。
 
-**Experimenting Further**
+**さらに実験する**
 
-* Display Temperature in Fahrenheit:
+* 摂氏から華氏に変換：
 
-  Modify the read_temperature function to convert Celsius to Fahrenheit: ``tempF = (tempC * 9 / 5) + 32``.
+  ``read_temperature`` 関数を変更して、摂氏から華氏に変換します: ``tempF = (tempC * 9 / 5) + 32``。
 
-* Add Humidity Measurement:
+* 湿度測定を追加：
 
-  Integrate a DHT11 or DHT22 sensor to display humidity alongside temperature.
+  DHT11またはDHT22センサーを統合して、温度と一緒に湿度も表示します。
 
-* Data Logging:
+* データロギング：
 
-  Store temperature readings over time in a file on the Pico. Plot the data using a computer for analysis.
+  時間経過に伴う温度データをPicoのファイルに保存し、コンピュータで解析のためにプロットします。
 
-* Visual Alerts:
+* 視覚的な警告：
 
-  Add LEDs or a buzzer to alert when the temperature exceeds certain thresholds.
+  LEDやブザーを追加して、温度が特定の閾値を超えたときに警告を出します。
 
-**Understanding the Science**
+**科学的背景の理解**
 
-* Thermistors and Temperature Measurement:
+* サーミスターと温度測定：
 
-  * Thermistors are sensitive to temperature changes, making them ideal for precise measurements.
-  * The voltage divider circuit converts resistance changes into voltage changes that can be read by the Pico's ADC.
+  * サーミスターは温度変化に敏感で、精密な測定に最適です。
+  * 電圧分割回路は、サーミスターの抵抗変化を電圧変化に変換し、PicoのADCで読み取ることができます。
 
-* Steinhart-Hart Equation:
+* スタインハート・ハート方程式：
 
-  * Provides a more accurate temperature calculation than a simple linear approximation.
-  * Essential for applications requiring precise temperature readings.
+  * 簡単な線形近似よりも精度の高い温度計算が可能です。
+  * 正確な温度測定が必要なアプリケーションに不可欠です。
 
-**Conclusion**
+**結論**
 
-Congratulations! You've built a functional Room Temperature Meter using the Raspberry Pi Pico 2 W. This project not only demonstrates how to interface analog sensors and I2C devices but also provides practical experience with temperature measurement and display technologies.
+おめでとうございます！Raspberry Pi Pico 2 Wを使用して、実用的な室温メーターを作成しました。このプロジェクトは、アナログセンサーとI2Cデバイスをインターフェースする方法を示すだけでなく、温度測定と表示技術に関する実務経験を提供します。
 
-Feel free to enhance and customize your temperature meter by adding new features or integrating other sensors. This project serves as a solid foundation for exploring environmental monitoring and control systems.
+新しい機能を追加したり、他のセンサーと統合したりして、温度メーターをさらに拡張してみてください。このプロジェクトは、環境モニタリングや制御システムを探索するための堅実な基盤となります。

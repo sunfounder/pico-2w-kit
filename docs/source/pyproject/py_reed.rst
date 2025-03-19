@@ -1,61 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームからのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **独占的な先行公開**: 新製品の発表や先取り情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_reed:
 
-2.9 Feel the Magnetism
+2.9 磁場を感じる
 ================================
 
-In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2 W to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
+このレッスンでは、Raspberry Pi Pico 2 Wを使って **リードスイッチ** を使用し、磁場の存在を検出する方法を学びます。リードスイッチは、磁場を利用して動作する単純な電気的スイッチです。磁石がスイッチに近づくと、その内部の接点が閉じ、電気回路が完成します。
+
 * :ref:`cpn_reed`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-
-You can also buy them separately from the links below.
-
+また、以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -75,127 +74,128 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Understanding the Reed Switch**
+**リードスイッチの理解**
 
-A reed switch consists of two thin metal reeds sealed within a glass capsule. These reeds are made of ferromagnetic material and are positioned slightly apart. In the absence of a magnetic field, the reeds are separated, and the switch is **open**. When a magnet comes near the switch, the reeds become magnetized, attract each other, and close the circuit.
+リードスイッチは、ガラスのカプセル内に密閉された2本の細い金属のリードで構成されています。これらのリードは強磁性の素材でできており、わずかに離れた位置に配置されています。磁場がない場合、リードは離れており、スイッチは **オープン** の状態です。磁石がスイッチに近づくと、リードが磁化され、互いに引き寄せられて回路を閉じます。
 
-* **No Magnet Nearby**: Switch is **open**; the circuit is incomplete.
-* **Magnet Nearby**: Switch is **closed**; the circuit is complete.
+* **近くに磁石がない場合**: スイッチは **オープン** で、回路は未完成です。
+* **磁石が近くにある場合**: スイッチは **クローズド** で、回路は完成します。
 
 |img_reed_sche|
 
-**Schematic**
+**回路図**
 
 |sch_reed|
 
-By default, GP14 is low; and will go high when the magnet is near the reed switch.
+デフォルトでは、GP14は低い状態で、磁石がリードスイッチの近くにあるとGP14は高い状態に変わります。
 
-The purpose of the 10K resistor is to keep the GP14 at a steady low level when no magnet is near.
+10KΩの抵抗は、磁石が近くにない場合にGP14を一定の低レベルに保つ役割を果たします。
 
-* **No Magnet Nearby**:
+* **近くに磁石がない場合**:
 
-  * The reed switch is **open**.
-  * **GP14** is connected to **GND** through the pull-down resistor.
-  * The GPIO pin reads **LOW** (0).
+  * リードスイッチは **オープン** です。
+  * **GP14** はプルダウン抵抗を通じて **GND** に接続されます。
+  * GPIOピンは **LOW** （0）を読み取ります。
 
-* **Magnet Nearby**:
+* **磁石が近くにある場合**:
 
-  * The reed switch is **closed**.
-  * **GP14** is connected to **3.3V** through the reed switch.
-  * The GPIO pin reads **HIGH** (1).
+  * リードスイッチは **クローズド** です。
+  * **GP14** はリードスイッチを通じて **3.3V** に接続されます。
+  * GPIOピンは **HIGH** （1）を読み取ります。
 
-**Wiring**
+**配線**
 
 |wiring_reed|
 
-**Writing the Code**
+**コードの記述**
 
-We'll write a MicroPython program that detects when a magnet is near the reed switch and prints a message accordingly.
+磁石がリードスイッチの近くにあると検出し、それに応じてメッセージを表示するMicroPythonプログラムを記述します。
 
 .. note::
 
-  * Open the ``2.9_feel_the_magnetism.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-  * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-  
+  * ``pico-2w-kit-main/micropython`` から ``2.9_feel_the_magnetism.py`` ファイルを開くか、以下のコードをThonnyにコピーして、「実行」をクリックするか、F5を押して実行します。
+  * 正しいインタープリター「MicroPython（Raspberry Pi Pico）」が右下に選択されていることを確認してください。 
+
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize GP14 as an input pin
+    # GP14を入力ピンとして初期化
     reed_switch = machine.Pin(14, machine.Pin.IN)
 
     while True:
         if reed_switch.value() == 1:
             print("Magnet detected!")
-            utime.sleep(1)  # Delay to avoid multiple detections
+            utime.sleep(1)  # 複数回検出されないように遅延を挿入
 
-When the code is running, you will observe the following phenomenon:
+コードを実行すると、次の現象が観察されます。
 
-* **No Magnet Nearby**: No message should appear.
-* **Bring a Magnet Close**: "Magnet detected!" should appear in the console.
-* **Move Magnet Away**: The message stops appearing.
+* **磁石が近くにない場合**: メッセージは表示されません。
+* **磁石を近づけると**: 「磁石が検出されました！」というメッセージがコンソールに表示されます。
+* **磁石を遠ざけると**: メッセージは表示されなくなります。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート：
 
-   * ``import machine``: Access to hardware functions.
-   * ``import utime``: Time-related functions.
+   * ``import machine``: ハードウェア関連の関数にアクセスします。
+   * ``import utime``: 時間関連の関数を提供します。
 
-#. Initialize the Reed Switch Pin:
+#. リードスイッチのピンの初期化：
 
-   * ``reed_switch = machine.Pin(14, machine.Pin.IN)``: Sets up GP14 as an input pin.
+   * ``reed_switch = machine.Pin(14, machine.Pin.IN)``: GP14を入力ピンとして設定します。
 
-#. Main Loop:
+#. メインループ：
 
-   * ``while True``: Starts an infinite loop.
-   * ``if reed_switch.value() == 1``: Checks if a magnet is near (GPIO pin reads HIGH).
-   * ``print("Magnet detected!")``: Outputs a message.
-   * ``utime.sleep(1)``: Adds a delay to prevent rapid repeated messages.
+   * ``while True``: 無限ループを開始します。
+   * ``if reed_switch.value() == 1``: 磁石が近くにあるかどうかを確認します（GPIOピンがHIGHを読み取る）。
+   * ``print("Magnet detected!")``: メッセージを表示します。
+   * ``utime.sleep(1)``: メッセージが連続して表示されないように遅延を追加します。
 
-**Using Interrupts for Efficient Detection**
+**効率的な検出のための割り込みの使用**
 
-Instead of constantly polling the reed switch in a loop, we can use an interrupt to detect changes in the reed switch state more efficiently.
+リードスイッチをループで常にポーリングする代わりに、割り込みを使用してリードスイッチの状態の変化をより効率的に検出できます。
 
-Using interrupts enhances efficiency by eliminating the need for continuous checking of the reed switch state and improves responsiveness by immediately calling the handler function when the event occurs.
+割り込みを使用すると、リードスイッチの状態を継続的にチェックする必要がなくなり、イベントが発生したときにすぐにハンドラ関数を呼び出すことで、応答性が向上します。
 
-Modified code using interrupts. When you bring a magnet close to the reed switch, "Magnet detected!" will appear. The main program remains free to perform other tasks.
+割り込みを使用したコードの修正。磁石をリードスイッチに近づけると、「磁石が検出されました！」というメッセージが表示されます。メインプログラムは他のタスクを実行し続けます。
 
 .. code-block:: python
 
     import machine
 
-    # Initialize GP14 as an input pin with internal pull-down resistor
+    # GP14を入力ピンとして内部プルダウン抵抗を使用して初期化
     reed_switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 
     def magnet_detected(pin):
         print("Magnet detected!")
 
-    # Set up an interrupt on the rising edge (LOW to HIGH transition)
+    # 上昇エッジ（LOWからHIGHへの遷移）で割り込みを設定
     reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=magnet_detected)
 
-* ``def magnet_detected(pin)``: This function is called automatically when the interrupt is triggered.
-    
-  * ``print("Magnet detected!")``: Outputs a message when a magnet is detected.
+* ``def magnet_detected(pin)``: この関数は、割り込みがトリガーされたときに自動的に呼び出されます。
 
-* ``reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=magnet_detected)``: Configures an interrupt on the reed switch pin.
-     
-  * ``trigger=machine.Pin.IRQ_RISING``: The interrupt triggers on a rising edge (when the pin value goes from LOW to HIGH).
-  * ``handler=magnet_detected``: Specifies the function to call when the interrupt occurs.
 
-**Practical Applications**
+  * ``print("Magnet detected!")``: 磁石が検出された時にメッセージを表示します。
 
-* **Security Systems**: Detect when a door or window is opened.
-* **Position Sensing**: Determine the position of moving parts in machinery.
-* **Proximity Detection**: Trigger events when a magnetic object comes near.
-
-**Experimenting Further**
-
-* Control an LED:
-
-  Connect an LED to another GPIO pin (e.g., GP15) with a suitable resistor. Modify the interrupt handler to turn the LED on when a magnet is detected.
+* ``reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=magnet_detected)``: リードスイッチピンに割り込みを設定します。
   
+  * ``trigger=machine.Pin.IRQ_RISING``: 上昇エッジで割り込みがトリガーされます（ピンの値がLOWからHIGHに変わるとき）。
+  * ``handler=magnet_detected``: 割り込みが発生したときに呼び出す関数を指定します。
+
+**実践的な応用**
+
+* **セキュリティシステム**: ドアや窓が開いたときの検出。
+* **位置検出**: 機械の移動部品の位置を判定する。
+* **近接検出**: 磁性の物体が近づいたときにイベントをトリガーする。
+
+**さらなる実験**
+
+* LEDを制御する：
+
+  他のGPIOピン（例：GP15）にLEDを接続し、適切な抵抗を使用します。割り込みハンドラを変更して、磁石が検出されたときにLEDを点灯させます。
+
   .. code-block:: python
   
       import machine
@@ -204,21 +204,21 @@ Modified code using interrupts. When you bring a magnet close to the reed switch
       led = machine.Pin(15, machine.Pin.OUT)
   
       def magnet_detected(pin):
-          led.value(1)  # Turn on the LED
+          led.value(1)  # LEDを点灯
   
-      # Set up an interrupt on the rising edge
+      # 上昇エッジで割り込みを設定
       reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=magnet_detected)
   
-      # Main loop
+      # メインループ
       while True:
-          # Turn off the LED when the magnet is not present
+          # 磁石がないときにLEDを消灯
           if reed_switch.value() == 0:
               led.value(0)
           machine.sleep(100)
-        
-* Detect Magnet Removal:
 
-  Set up another interrupt for the falling edge (when the magnet is moved away).
+* 磁石の取り外しを検出：
+
+  磁石が離れたときに割り込みを設定します。
 
   .. code-block:: python
 
@@ -227,10 +227,10 @@ Modified code using interrupts. When you bring a magnet close to the reed switch
 
     reed_switch.irq(trigger=machine.Pin.IRQ_FALLING, handler=magnet_removed)
 
-**Conclusion**
+**結論**
 
-Using a reed switch with the Raspberry Pi Pico 2 W allows you to detect the presence of a magnetic field, enabling a wide range of applications from security systems to interactive projects. Understanding how to wire the reed switch and utilize interrupts enhances your ability to create efficient and responsive programs.
+Raspberry Pi Pico 2 Wでリードスイッチを使用することにより、磁場の存在を検出できるようになり、セキュリティシステムやインタラクティブなプロジェクトなど、幅広い用途に活用できます。リードスイッチを接続し、割り込みを活用する方法を理解することで、効率的で反応の速いプログラムを作成できるようになります。
 
-**References**
+**参考文献**
 
 * |link_mpython_irq|

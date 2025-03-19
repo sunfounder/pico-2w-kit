@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 11:  Understanding and Controlling an RGB LED in MicroPython
+レッスン11：MicroPythonでRGB LEDを理解し制御する
 ==========================================================================
 
-This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:
+このチュートリアルでは、SunFounder KeplerキットとRaspberry Pi Pico Wを使用してRGB LEDを制御する方法について説明します：
 
-* **RGB LED Control**: Explains controlling RGB LED colors with PWM, emphasizing the use of separate resistors for each color channel.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting the RGB LED and resistors to GPIO pins 13, 14, and 15 on the Pico W.
-* **Code Explanation**: Code setup for PWM control of red, green, and blue channels, adjusting brightness and colors.
-* **Practical Demonstration**: Shows how to change RGB LED colors by controlling each color channel.
-* **Homework Assignment**: Create a program that prompts for a color and adjusts the RGB LED to display it using PWM.
+* **RGB LEDの制御**: PWMを使用してRGB LEDの色を制御する方法を説明し、各色チャネルに個別の抵抗を使用する重要性を強調します。
+* **配線図とセットアップ**: RGB LEDと抵抗をPico WのGPIOピン13、14、15に接続する詳細な配線図を提供します。
+* **コードの説明**: 赤、緑、青のチャネルに対するPWM制御のコード設定を行い、明るさと色を調整します。
+* **実践的なデモンストレーション**: 各色チャネルを制御することでRGB LEDの色を変更する方法を示します。
+* **宿題**: 色を入力させ、PWMを使用してその色を表示するRGB LEDを制御するプログラムを作成します。
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

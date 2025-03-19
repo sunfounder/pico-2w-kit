@@ -1,33 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
+レッスン24：LiPo充電式バッテリーでポータブルプロジェクトに電力を供給
 =============================================================================
 
-This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable LiPo battery, making the project portable:
+このチュートリアルでは、充電式LiPoバッテリーを使ってRaspberry Pi Pico Wプロジェクトに電力を供給し、プロジェクトをポータブル化する方法について説明します：
 
-* **Introduction**: Introduces the tutorial and goal of making the DHT-11 sensor project portable.
-* **Library Installation**: Guides on installing the LCD 1602 library.
-* **Code Explanation**: Saves the program as ``main.py`` for automatic startup.
-* **Powering the Project with a Battery**: Connects the LiPo battery and adjusts LCD power to 3.7V.
-* **Adjustments and Demonstration**: Adjusts LCD contrast and verifies the project on battery power.
-* **Conclusion and Next Steps**: Prepares for future Lessons with OLED display.
-* **Homework and Final Notes**: Encourages ordering the OLED display and sharing the video.
+* **はじめに**: チュートリアルとDHT-11センサープロジェクトをポータブル化する目標を紹介します。
+* **ライブラリのインストール**: LCD 1602ライブラリのインストールを案内します。
+* **コード説明**: プログラムを「main.py」として保存し、自動起動を設定します。
+* **バッテリーでプロジェクトに電力を供給**: LiPoバッテリーを接続し、LCDの電源を3.7Vに調整します。
+* **調整とデモンストレーション**: LCDのコントラストを調整し、バッテリー駆動でプロジェクトが動作することを確認します。
+* **結論と次のステップ**: OLEDディスプレイを使った将来のレッスンの準備をします。
+* **宿題と最終ノート**: OLEDディスプレイの注文とビデオの共有を奨励します。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

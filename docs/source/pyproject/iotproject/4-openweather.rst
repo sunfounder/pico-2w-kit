@@ -1,60 +1,60 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_openweather:
 
-8.4 Real-time Weather From @OpenWeatherMap 
-===========================================
+8.4 @OpenWeatherMapからリアルタイムの天気情報を取得
+======================================================
 
 
-This project involves making a smart clock that prints the weather in your city along with the time on the LCD.
+このプロジェクトでは、LCDに都市の天気と時刻を表示するスマート時計を作成します。
 
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで使用するコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
@@ -74,54 +74,50 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組み立てる**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po充電モジュールが図のように接続されていることを確認してください。そうしないと、短絡が原因でバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/4.owm_bb.png
 
 
-**3. Get OpenWeather API keys**
+**3. OpenWeather APIキーを取得する**
 
-|link_openweather| is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.
+|link_openweather| は、OpenWeather Ltdが提供するオンラインサービスで、APIを通じて世界中の天気データを提供します。これには、現在の天気データ、予報、今後の天気、そして任意の地理的場所の履歴データが含まれます。
 
-#. Visit |link_openweather| to log in/create an account.
+#. |link_openweather| にアクセスして、ログインまたはアカウントを作成します。
 
     .. image:: img/OWM-1.png
 
-
-#. Click into the API page from the navigation bar.
+#. ナビゲーションバーからAPIページにアクセスします。
 
     .. image:: img/OWM-2.png
 
-
-#. Find **Current Weather Data** and click Subscribe.
+#. **現在の天気データ** を見つけて、 **購読する** をクリックします。
 
     .. image:: img/OWM-3.png
 
-
-#. Under **Current weather and forecasts collection**, subscribe to the appropriate service. In our project, Free is good enough.
+#. **現在の天気および予報のコレクション** の下で、適切なサービスを購読します。プロジェクトでは、無料プランで十分です。
 
    .. image:: img/OWM-4.png
 
-
-#. Copy the Key from the **API keys** page.
+#. **APIキー** ページからキーをコピーします。
 
    .. image:: img/OWM-5.png
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico 2 W.
+#. コピーしたキーを、Raspberry Pi Pico 2 Wの ``secrets.py`` スクリプトに貼り付けます。
 
     .. image:: img/4_openweather1(1).png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, you need to create them in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
+        Pico 2 Wに ``do_connect.py`` と ``secrets.py`` のスクリプトがない場合は、これらを作成する必要があります。作成方法については :ref:`py_iot_access` を参照してください。
 
     .. code-block:: python
         :emphasize-lines: 5
@@ -132,26 +128,26 @@ You can also buy them separately from the links below.
         'openweather_api_key':'OPENWEATHERMAP_API_KEY'
         }
 
-**4. Run the Script**
+**4. スクリプトを実行する**
 
-#. Open the ``8.4_weather.py`` file under the path of ``pico-2w-kit-main/micropython/iot``, click the **Run current script** button or press F5 to run it.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``8.4_weather.py`` ファイルを開き、 **現在のスクリプトを実行** ボタンをクリックするか、F5を押して実行します。
 
     .. image:: img/4_openweather2.png
 
 
-#. After the script runs, you will see the time and weather information of your location on the I2C LCD1602.
+#. スクリプトが実行されると、I2C LCD1602にあなたの場所の時刻と天気情報が表示されます。
 
 
     .. note:: 
 
-        When the code is running, if the screen is blank, you can turn the potentiometer on the back of the module to increase the contrast.
+        コードが実行中に画面が空白の場合、モジュールの背面にあるポテンショメーターを調整してコントラストを上げることができます。
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. このスクリプトを起動時に実行したい場合は、Raspberry Pi Pico 2 Wに ``main.py`` として保存できます。
 
 
-**How it works?**
+**仕組みは？**
 
-This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
+このプロジェクトはネットワーク接続を必要とし、 :ref:`py_iot_access` メソッドを使用してネットワークに接続します。
 
 .. code-block:: python
 
@@ -159,11 +155,11 @@ This project requires a network connection,  use the  :ref:`py_iot_access` metho
     from do_connect import *
     do_connect()
 
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : これは `do_connect()` 関数をインポートし、この関数によりWi-Fi接続のロジックが含まれています。 `do_connect()` 関数が呼び出されると、 `secrets.py` で指定されたWi-Fiネットワークに接続します。接続に失敗した場合は例外が発生し、成功すれば次のステップに進みます。
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets import * : `secrets.py` ファイルは通常、Wi-FiのSSID、パスワード、その他の機密情報（APIキーなど）を格納するために使われます。これにより、機密情報をメインコードファイルに直接埋め込まないようにします。
 
-After connecting to the Internet, these few lines of code will help synchronize your Pico 2 W to Greenwich Mean Time.
+インターネットに接続した後、次の数行のコードでPico 2 Wをグリニッチ標準時に同期させます。
 
 .. code-block:: python
 
@@ -177,7 +173,7 @@ After connecting to the Internet, these few lines of code will help synchronize 
          print('Time Setting...')
          continue   
 
-Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
+LCDを初期化します。使用方法の詳細については :ref:`py_lcd` を参照してください。
 
 .. code-block:: python
 
@@ -187,7 +183,7 @@ Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
    string = 'Loading...'
    lcd.message(string)
 
-We need to select the unit for some weather data (e.g. temperature, wind speed) before we get the weather data. In this case, the unit is ``metric``.
+次に、いくつかの天気データ（例：温度、風速）の単位を選択する必要があります。この場合、単位は ``metric`` です。
 
 .. code-block:: python
 
@@ -206,9 +202,9 @@ We need to select the unit for some weather data (e.g. temperature, wind speed) 
 
    units = "metric"
 
-Next, this function gets the weather data from ``openweathermap.org``.
-We will post a URL message to it with your city, API keys, and a set unit.
-As a result, you will receive a ``JSON`` file with weather data.
+次に、この関数を使って天気データを ``openweathermap.org`` から取得します。
+この関数は、都市、APIキー、設定された単位を含むURLメッセージを送信します。
+その結果、天気データを含む ``JSON`` ファイルを受け取ります。
 
 .. code-block:: python
 
@@ -225,7 +221,7 @@ As a result, you will receive a ``JSON`` file with weather data.
       res = urequests.post(url)
       return res.json()
 
-If you print out this set of raw data, you will be able to see information similar to that shown below.
+この生データを出力すると、次のような情報が表示されます。
 
 .. code-block:: python
 
@@ -275,9 +271,9 @@ If you print out this set of raw data, you will be able to see information simil
        }
    }
 
-We used the ``print_weather(weather_data)`` function to convert these raw data into easy-to-read data format and print them.
+``print_weather(weather_data)`` 関数を使って、この生データを読みやすい形式に変換し、表示します。
 
-But this function is not called, and you can uncomment this line in ``while True`` as needed.
+この関数は呼び出されていないため、必要に応じて ``while True`` 内のこの行のコメントを解除してください。
 
 .. image:: img/4_openweather3.png
 
@@ -287,7 +283,7 @@ But this function is not called, and you can uncomment this line in ``while True
    # shell print
    print_weather(weather_data)
 
-In the ``while True`` loop, the ``get_weather()`` function is called first to retrieve the ``weather``, ``temperature`` and ``humidity`` information needed for this project.
+``while True`` ループ内で、最初に ``get_weather()`` 関数を呼び出して、プロジェクトに必要な ``weather`` 、 ``temperature`` 、および ``humidity`` の情報を取得します。
 
 .. code-block:: python
 
@@ -296,9 +292,9 @@ In the ``while True`` loop, the ``get_weather()`` function is called first to re
    t=weather_data["main"]["temp"]
    rh=weather_data["main"]["humidity"]
 
-Get the local time. The ``time.localtime()`` function is called here to return a set of tuples (year, month, mday, hour, minute, second, weekday, yearday). We have taken ``hour`` and ``minute`` out of it.
+ローカル時間を取得します。 ``time.localtime()`` 関数は、タプル（年、月、日、時、分、秒、曜日、年の日数）を返します。ここでは ``hour`` と ``minute`` を取り出します。
 
-Note that we have already synchronized Pico 2 W to Greenwich Mean Time, so we need to add the time zone of your location.
+Pico 2 Wはすでにグリニッチ標準時に同期されているので、現在地のタイムゾーンを加算する必要があります。
 
 .. code-block:: python
     
@@ -309,7 +305,7 @@ Note that we have already synchronized Pico 2 W to Greenwich Mean Time, so we ne
     hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
     mins=time.localtime()[4]
 
-Finally, the weather information and time are just displayed in the LCD1602.
+最後に、天気情報と時間がLCD1602に表示されます。
 
 .. code-block:: python
 
@@ -320,7 +316,7 @@ Finally, the weather information and time are just displayed in the LCD1602.
    string = f'{t}{TEMPERATURE_UNITS[units]} {rh}%rh'
    lcd.message(string)
 
-Your LCD1602 will become a clock that refreshes every 30 seconds when the main loop runs every 30 seconds.
+メインループが30秒ごとに実行されると、LCD1602は30秒ごとに更新される時計になります。
 
 
 

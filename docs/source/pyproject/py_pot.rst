@@ -1,86 +1,85 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を深く学び、仲間たちと一緒に探求していきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **独占的な先行公開**: 新製品の発表や先取り情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_pot:
 
-2.11 Turn the Knob
+2.11 ノブを回す
 ===========================
 
-In this lesson, we'll explore how to read analog input using the Raspberry Pi Pico 2 W's built-in Analog-to-Digital Converter (ADC) and use that input to control the brightness of an LED. Specifically, we'll use a potentiometer—a variable resistor—as an analog input device. By turning the knob of the potentiometer, we'll adjust the voltage level read by the Pico, which we'll then use to control the LED's brightness via Pulse Width Modulation (PWM).
+このレッスンでは、Raspberry Pi Pico 2 Wの内蔵アナログ-デジタルコンバータ（ADC）を使用してアナログ入力を読み取り、その入力を使ってLEDの明るさを制御する方法を学びます。具体的には、可変抵抗器（ポテンショメーター）をアナログ入力デバイスとして使用します。ポテンショメーターのノブを回すことで、Picoが読み取る電圧レベルを調整し、その値を使ってPWM（パルス幅変調）を通じてLEDの明るさを制御します。
 
-**Understanding Analog Input**
+**アナログ入力の理解**
 
-So far, we've worked with digital inputs and outputs, which are either ON (high voltage) or OFF (low voltage). However, many real-world signals are analog, meaning they can vary continuously over a range of values. Examples include light intensity, temperature, and sound levels.
+これまで、デジタル入力と出力を扱ってきました。デジタル入力はON（高電圧）かOFF（低電圧）のいずれかです。しかし、実際の多くの信号はアナログで、値が連続的に変化します。例えば、光の強さ、温度、音のレベルなどです。
 
-The Raspberry Pi Pico 2 W has a built-in ADC that allows it to read analog voltages and convert them into digital values that can be processed in code.
+Raspberry Pi Pico 2 Wには、アナログ電圧を読み取り、それをデジタル値に変換してコード内で処理できる内蔵のADCがあります。
 
-The ADC converts the analog voltage from the potentiometer into a digital value using the formula:
+ADCは、ポテンショメーターからのアナログ電圧を以下の式を使ってデジタル値に変換します：
 
 .. code-block::
 
   Digital Value = (Analog Voltage/3.3V) * 65535
 
 
-**Pico's ADC Pins**
+**PicoのADCピン**
 
 |pin_adc|
 
-The Pico has three GPIO pins that can be used for analog input:
+Picoにはアナログ入力として使用できる3つのGPIOピンがあります：
 
 * **GP26** (ADC0)
 * **GP27** (ADC1)
 * **GP28** (ADC2)
 
-In addition, there's a fourth ADC channel connected internally to a temperature sensor (ADC4), which we'll explore in later lessons.
+さらに、内部で温度センサーに接続されている4番目のADCチャネル（ADC4）もあり、これについては後のレッスンで学びます。
 
 * :ref:`cpn_potentiometer`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
-
+また、以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -89,7 +88,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -105,110 +104,110 @@ You can also buy them separately from the links below.
         - |link_potentiometer_buy|
 
 
-**Schematic**
+**回路図**
 
 |sch_pot|
 
-The potentiometer is an analog device and when you turn it in 2 different directions.
+ポテンショメーターはアナログデバイスで、ノブを2方向に回すことで電圧が変化します。
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico 2 W wcontains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+ポテンショメーターの中央ピンをアナログピンGP28に接続します。Raspberry Pi Pico 2 Wは、16ビットのマルチチャネルアナログ-デジタルコンバータ（ADC）を内蔵しています。これにより、入力電圧（0Vから動作電圧3.3Vまで）を0から65535の整数値にマッピングできます。このため、GP28の値は0から65535の範囲で変動します。
 
-The calculation formula is shown below.
+計算式は以下の通りです：
 
     (Vp/3.3V) x 65535 = Ap
 
-Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
-This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.
+次に、GP28（ポテンショメーター）の値をGP15（LED）のPWM値として設定します。
+これにより、ポテンショメーターを回すことでLEDの明るさが同時に変化します。
 
-**Wiring**
+**配線**
 
 
 
 |wiring_pot|
 
 
-**Writing the Code**
+**コードの記述**
 
 .. note::
 
-  * Open the ``2.11_turn_the_knob.py`` file under the path ``pico-2w-kit-main/micropython`` or copy the code below into Thonny. Then click "Run Current Script" or press **F5** to run it.
-  * Ensure that the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
-  * For detailed instructions, refer to :ref:`open_run_code_py`.
+  * ``pico-2w-kit-main/micropython`` の ``2.11_turn_the_knob.py`` ファイルを開くか、以下のコードをThonnyにコピーします。次に「実行」をクリックするか、F5を押して実行します。
+  * Thonnyの右下に「MicroPython（Raspberry Pi Pico）.COMxx」のインタープリタが選択されていることを確認してください。
+  * 詳細な手順については :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
   import machine
   import utime
 
-  # Initialize ADC on GP28
+  # GP28でADCを初期化
   potentiometer = machine.ADC(28)
 
-  # Initialize PWM on GP15
+  # GP15でPWMを初期化
   led = machine.PWM(machine.Pin(15))
-  led.freq(1000)  # Set PWM frequency to 1000Hz
+  led.freq(1000)  # PWM周波数を1000Hzに設定
 
   while True:
-      # Read the analog value (0-65535)
+      # アナログ値（0-65535）を読み取る
       value = potentiometer.read_u16()
       print("Potentiometer value:", value)
 
-      # Set the LED brightness
+      # LEDの明るさを設定
       led.duty_u16(value)
 
-      # Small delay to stabilize readings
+      # 読み取りを安定させるために小さな遅延
       utime.sleep_ms(200)
 
-When you run the program, the LED's brightness will change as you turn the potentiometer knob. Additionally, the console will display the current analog value read from the potentiometer.
+コードを実行すると、ポテンショメーターのノブを回すことでLEDの明るさが変化し、コンソールにはポテンショメーターから読み取った現在のアナログ値が表示されます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Analog Reading:
+#. アナログの読み取り：
 
-   * ``potentiometer = machine.ADC(28)`` initializes the ADC on pin GP28.
-   * ``value = potentiometer.read_u16()`` reads the analog voltage from the potentiometer and returns a 16-bit integer between **0** and **65535**.
+   * ``potentiometer = machine.ADC(28)`` は、GP28でADCを初期化します。
+   * ``value = potentiometer.read_u16()`` は、ポテンショメーターからアナログ電圧を読み取り、16ビット整数（0から65535の範囲）を返します。
      
-     * **0** corresponds to **0V**.
-     * **65535** corresponds to **3.3V** (the Pico's operating voltage).
+     * **0** は **0V** に対応。
+     * **65535** は **3.3V** （Picoの動作電圧）に対応します。
 
-#. Controlling the LED with PWM:
+#. PWMでLEDを制御：
 
-   * ``led = machine.PWM(machine.Pin(15))`` sets up PWM on pin GP15.
-   * ``led.freq(1000)`` sets the PWM frequency to 1000Hz.
-   * ``led.duty_u16(value)`` sets the duty cycle of the PWM signal based on the potentiometer's reading.
+   * ``led = machine.PWM(machine.Pin(15))`` は、GP15でPWMを設定します。
+   * ``led.freq(1000)`` は、PWM周波数を1000Hzに設定します。
+   * ``led.duty_u16(value)`` は、ポテンショメーターの読み取りに基づいてPWM信号のデューティサイクルを設定します。
 
-     * A higher ``value`` increases the duty cycle, making the LED brighter.
-     * A lower ``value`` decreases the duty cycle, dimming the LED.
+     * 高い ``value`` はデューティサイクルを増加させ、LEDが明るくなります。
+     * 低い ``value`` はデューティサイクルを減少させ、LEDが暗くなります。
 
-#. Printing the Value:
+#. 値を表示：
 
-   * ``print("Potentiometer value:", value)`` outputs the current analog value to the console for monitoring.
+   * ``print("Potentiometer value:", value)`` は、現在のアナログ値をコンソールに表示し、モニタリングします。
 
 
-**Experimenting Further**
+**さらに実験する**
 
-* **Change the PWM Frequency**: Try different frequencies with ``led.freq()`` and observe the effect on the LED.
+* **PWM周波数の変更**: ``led.freq()`` で異なる周波数を試し、LEDへの影響を観察します。
   
-* **Map the ADC Value**: Introduce a scaling factor or map the ADC value to a different range to see how it affects LED brightness.
+* **ADC値のマッピング**: ADC値を別の範囲にスケーリングまたはマッピングし、LEDの明るさへの影響を確認します。
 
-* **Use Other ADC Pins**: Connect the potentiometer to GP26 or GP27 and adjust the code accordingly.
+* **他のADCピンの使用**: ポテンショメーターをGP26やGP27に接続し、コードを調整します。
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* LED Not Changing Brightness:
+* LEDの明るさが変わらない場合：
 
-  * Ensure the LED and resistor are connected correctly.
-  * Verify that the potentiometer is wired properly.
+  * LEDと抵抗が正しく接続されているか確認してください。
+  * ポテンショメーターが適切に配線されているか確認してください。
 
-* Incorrect ADC Values:
+* ADC値が不正確な場合：
 
-  * Check the connections to GP28.
-  * Make sure the potentiometer's outer pins are connected to 3.3V and GND.
+  * GP28への接続を確認してください。
+  * ポテンショメーターの外側のピンが3.3VとGNDに接続されていることを確認してください。
 
-**Conclusion**
+**結論**
 
-By integrating analog input with PWM output, we've created a simple yet powerful way to control the brightness of an LED using a potentiometer. This project demonstrates how to read analog signals and use them to control other components, a fundamental skill in electronics and microcontroller programming.
+アナログ入力とPWM出力を統合することで、ポテンショメーターを使用してLEDの明るさを簡単かつ効果的に制御する方法を作り出しました。このプロジェクトは、アナログ信号を読み取り、それを使って他のコンポーネントを制御する方法を示しており、電子工学およびマイクロコントローラープログラミングの基本的なスキルです。
 
-**References**
+**参照資料**
 
 * |link_wiki_pwm|
 * |link_mpython_adc|

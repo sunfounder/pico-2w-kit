@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 73:  Control a RGB LED Using a Dictionary in MicroPython
+レッスン73: MicroPythonで辞書を使用してRGB LEDを制御する
 ===================================================================================
 
-This tutorial covers controlling an RGB LED with the Raspberry Pi Pico W using dictionaries:
+このチュートリアルでは、辞書を使用してRaspberry Pi Pico WでRGB LEDを制御する方法について説明します：
 
-* **Concept Overview**: Control an RGB LED with user input using dictionaries for color values.
-* **Example Implementation**: Connect RGB LED to GPIO pins, create a dictionary for color names and RGB values, and use PWM to adjust LED brightness based on user input.
-* **Homework Assignment**: Move the ``make_color`` function into a library and import it into the main program.
-* **Key Takeaways**: Learn to use dictionaries for color mapping and PWM for RGB LED control in MicroPython.
+* **コンセプトの概要**: ユーザー入力を使用して辞書で色の値を持つRGB LEDを制御します。
+* **実装例**: GPIOピンにRGB LEDを接続し、色名とRGB値の辞書を作成し、PWMを使用してユーザー入力に基づいてLEDの明るさを調整します。
+* **宿題課題**: ``make_color`` 関数をライブラリに移動し、それをメインプログラムにインポートします。
+* **キーポイント**: MicroPythonで色のマッピングのための辞書の使用方法とRGB LED制御のためのPWMの使用方法を学びます。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

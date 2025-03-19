@@ -1,30 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Lesson 2:  Understanding and Using Breadboards
+レッスン2：ブレッドボードの理解と使用方法
 =================================================================
 
-This tutorial covers using a breadboard and controlling an external LED with the Raspberry Pi Pico W from the SunFounder kit:
+このチュートリアルでは、SunFounderキットのRaspberry Pi Pico Wを使って、ブレッドボードを使用し、外部LEDを制御する方法を解説します。
 
-* **Introduction**: Overview of the tutorial series and sponsor shoutout to SunFounder.
-* **Review of Previous Lesson**: Recap of installing MicroPython, setting up Thonny, and writing basic programs to control GPIO pins.
-* **Breadboard Basics**: Explanation of how a breadboard works, including understanding rows, columns, and connections.
-* **Building an LED Circuit**: Guide to build an external LED circuit using the breadboard, GPIO pins, and a 220 Ohm resistor.
-* **Programming the LED**: Writing a Python program in Thonny to control the external LED by turning it on, off, and making it blink.
+* **イントロダクション**: チュートリアルシリーズの概要と、スポンサーであるSunFounderの紹介。
+* **前回のレッスンの復習**: MicroPythonのインストール、Thonnyの設定、GPIOピンを制御する基本的なプログラムの作成について。
+* **ブレッドボードの基本**: ブレッドボードの仕組みについて、行や列、接続方法を理解します。
+* **LED回路の構築**: ブレッドボード、GPIOピン、220Ωの抵抗を使用して外部LED回路を作成する手順。
+* **LEDのプログラミング**: ThonnyでPythonプログラムを書き、外部LEDをオン・オフにしたり、点滅させたりする方法。
 
-
-**Video**
+**動画**
 
 .. raw:: html
 

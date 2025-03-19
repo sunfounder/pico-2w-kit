@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 70:  Example of Cleanly Exiting Dual Core Program in MicroPython
+レッスン70: MicroPythonでデュアルコアプログラムをきれいに終了する例
 ===================================================================================
 
-This tutorial covers using threading to control a servo and a button with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してサーボとボタンを制御するためのスレッド使用について説明します：
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch to control the servo's position. Use threading for servo movement and clean program exits.
-* **Homework Assignment**: Modify the program to exit cleanly, even if interrupted during servo movement.
+* **配線セットアップ**: サーボコントロールをGPIO 17に接続し、電源をピン40、グランドをピン38に接続します。ボタンをGPIO 16とグランドに接続します。
+* **コード実装**: ``machine``, ``time``, ``_thread``, ``Servo`` をインポートします。ボタンとサーボのピンを設定します。サーボの位置を制御するトグルスイッチを実装します。サーボの動きとプログラムのきれいな終了のためにスレッドを使用します。
+* **宿題課題**: サーボの動き中に中断された場合でも、プログラムがきれいに終了するように修正してください。
 
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

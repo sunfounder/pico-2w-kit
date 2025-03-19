@@ -1,57 +1,56 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_ta6586:
 
-TA6586 - Motor Driver Chip
+TA6586 - モータードライバーチップ
 =================================
 
 |img_ta6586|
 
-TA6586 is a monolithic IC designed for driving bi-directional DC motor. It has
-two pins of logic inputs for controlling the direction, forward and backward.
-The circuit feature good anti-interference performance, small standby current and
-low output saturation pressure drop. It has a built-in clamp diode to reverse the impact
-of the release of inductive load current, making it in the drive relays, DC motors,
-stepper motors or control the use of switching power safe and reliable.
-TA6586 is suitable for toy vehicles, remote-controlled aircraft motor drive, automatic
-valve motor, electromagnetic lock drive, precision instruments and other circuits.
+TA6586は双方向DCモーターを駆動するために設計されたモノリシックICです。
+このチップには方向を制御するためのロジック入力ピンが2つあり、前進および後退の制御が可能です。
+回路は優れた耐干渉性能を持ち、待機時の消費電流が小さく、出力の飽和圧力降下が低い特徴があります。
+また、インダクティブ負荷の放電時の衝撃を逆転させるためのクランプダイオードを内蔵しており、
+リレー、DCモーター、ステッピングモーター、スイッチング電源の安全で信頼性の高い制御に使用できます。
+TA6586はおもちゃの車両、リモートコントロール航空機のモータードライブ、オートマチックバルブモーター、
+電磁ロック駆動、精密機器などの回路に適しています。
 
-**Features**
+**特徴**
 
-* Low stand-by current: ≦2uA
-* Wide supply voltage range
-* Built-in Brake Function
-* Thermal Shutdown protection
-* Over Current Limit and Short Circuit Protect Function
-* DIP8 Pb-Free package.
+* 低待機電流：≦2uA
+* 広い供給電圧範囲
+* 内蔵ブレーキ機能
+* 熱シャットダウン保護
+* 過電流制限および短絡保護機能
+* DIP8 Pb-Freeパッケージ
 
-**Pin Function**
+**ピン機能**
 
 |img_ta6586_pin|
 
 
-**Input Truth Table**
+**入力真理値表**
 
 |img_ta6586_priciple|
 
 
-**Example**
+**例**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-.. * :ref:`per_smart_fan` (For Piper Make User)
+* :ref:`py_motor` (MicroPythonユーザー向け)
+* :ref:`ar_motor` (Arduinoユーザー向け)
+* :ref:`py_pump` (MicroPythonユーザー向け)
+* :ref:`ar_pump` (Arduinoユーザー向け)
+* :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
+.. * :ref:`per_smart_fan` (Piper Makeユーザー向け)

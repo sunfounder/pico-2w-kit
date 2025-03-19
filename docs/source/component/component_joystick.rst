@@ -1,39 +1,38 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_joystick:
 
-Joystick Module
-=======================
+ジョイスティックモジュール
+===========================
 
 |img_joystick_pic|
 
-A joystick works by converting the movement of its stick into electronic signals that a computer can interpret.
+ジョイスティックは、スティックの動きを電子信号に変換し、コンピュータが解釈できるようにします。
 
-To convey the full range of motion, the joystick measures the stick's position along two axes: the X-axis (left to right) and the Y-axis (up to down). These X-Y coordinates precisely define the stick's position, much like in geometry.
+動きの全範囲を伝えるために、ジョイスティックはスティックの位置を2つの軸で測定します：X軸（左右）とY軸（上下）。これらのX-Y座標は、スティックの位置を正確に定義します。これは、幾何学のように、位置を指定するものです。
 
-The joystick determines the stick's position by tracking the movement of its shafts. In a traditional analog joystick, this is achieved using two potentiometers (variable resistors), which adjust resistance based on the stick's position.
+ジョイスティックは、スティックのシャフトの動きを追跡することで位置を決定します。伝統的なアナログジョイスティックでは、2つのポテンショメーター（可変抵抗器）を使用して、スティックの位置に応じて抵抗を調整します。
 
-Additionally, the joystick includes a digital input that is triggered when the stick is pressed down.
+さらに、ジョイスティックには、スティックが押されたときにトリガーされるデジタル入力が含まれています。
 
 |img_joystick|
 
 
 *  `Joystick - Wikipedia <https://en.wikipedia.org/wiki/Analog_stick>`_
 
+**例**
 
-**Example**
-
-* :ref:`py_joystick` (For MicroPython User)
-* :ref:`ar_joystick` (For Arduino User)
+* :ref:`py_joystick` (MicroPythonユーザー向け)
+* :ref:`ar_joystick` (Arduinoユーザー向け)

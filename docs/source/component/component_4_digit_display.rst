@@ -1,44 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_4_dit_7_segment:
 
-4-Digit 7-Segment Display
+4桁7セグメントディスプレイ
 ==================================
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+4桁の7セグメントディスプレイは、4つの7セグメントディスプレイが連携して動作する構成です。
 
 |img_4-digit-sche|
 
-The 4-digit 7-segment display operates independently. It leverages the principle of visual persistence to rapidly cycle through each digit, creating the appearance of a continuous sequence of characters.
+4桁の7セグメントディスプレイは独立して動作します。視覚的持続性の原理を利用して、各桁を高速で切り替えることで、連続した文字列が表示されているように見せかけます。
 
-For example, when "1234" is displayed, the first 7-segment digit lights up to show "1" while the other three remain off. Shortly after, the second digit lights up to display "2," with the first, third, and fourth digits turned off. This process continues in sequence until all four digits are displayed. The entire cycle happens very quickly (typically within 5 milliseconds). Due to the phenomenon of optical afterglow and visual persistence, the human eye perceives all four characters as being displayed simultaneously.
+例えば、「1234」が表示されると、最初の7セグメントが「1」を表示し、他の3つは消灯します。すぐ後に、2番目の桁が点灯して「2」を表示し、最初、3番目、4番目の桁は消灯します。このプロセスは順次続き、すべての桁が表示されるまで繰り返されます。全サイクルは非常に速く行われます（通常、5ミリ秒以内）。視覚的残像と視覚的持続性の現象により、人間の目にはすべての4つの文字が同時に表示されているように見えます。
 
 |img_4-digit-sche-ca| 
 
-**Display Codes** 
+**ディスプレイコード**
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+7セグメントディスプレイ（共通カソード）がどのように数字を表示するかを理解するために、以下の表を作成しました。数字は7セグメントディスプレイに表示される0〜Fの数字です。 (DP) GFEDCBAは、各LEDが0または1に設定された状態を示します。例えば、00111111はDPとGが0に設定され、他のセグメントが1に設定されていることを意味します。したがって、数字「0」が7セグメントディスプレイに表示され、HEXコードは16進数の数字に対応します。
 
 .. list-table:: Glyph Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - 数字	
+        - バイナリコード
+        - HEXコード  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -89,10 +88,10 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
         - 0x71
 
 
-**Example**
+**例**
 
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
+* :ref:`py_74hc_4dig` (MicroPythonユーザー向け)
+* :ref:`py_passage_counter` (MicroPythonユーザー向け)
+* :ref:`py_10_second` (MicroPythonユーザー向け)
+* :ref:`py_traffic_light` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_4dig` (Arduinoユーザー向け)

@@ -1,41 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_keypad:
 
-4x4 Keypad
+4x4キーパッド
 ========================
 
 
-In microcontroller systems, devices requiring multiple keys—such as electronic locks or telephone keypads—often use a matrix keypad, especially when 12 to 16 keys are needed.
+マイクロコントローラシステムでは、電子ロックや電話キーパッドなど、多数のキーが必要なデバイスはしばしばマトリックスキーパッドを使用します。特に12から16のキーが必要な場合がこれに該当します。
 
-A matrix keypad, also known as a row-column keypad, is designed with four I/O lines serving as rows and another four as columns. Each intersection of a row and a column corresponds to a key, resulting in a total of 4×4 keys. This structure efficiently optimizes the use of I/O ports in a microcontroller system.
+マトリックスキーパッド、別名行列キーパッドは、4つのI/Oラインを行として、さらに4つを列として使用して設計されています。行と列の各交差点がキーに対応し、合計で4×4のキーがあります。この構造は、マイクロコントローラシステムのI/Oポートの使用を効率的に最適化します。
 
-The keypad's contacts are typically accessible via a header, which can connect to a ribbon cable or be directly inserted into a printed circuit board. In some keypads, each button connects to an individual contact in the header, while all buttons share a common ground connection.
-
+キーパッドの接点は通常、リボンケーブルに接続されるヘッダー経由でアクセスできるか、直接プリント基板に挿入されます。一部のキーパッドでは、各ボタンがヘッダーの個別の接点に接続され、すべてのボタンが共通のグラウンド接続を共有します。
 
 |img_keypad|
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+ボタンは一般的にマトリックスエンコードされ、各ボタンがマトリックス
+内の一意の導体ペアを橋渡しするように配置されます。この設定は、マイ
+クロコントローラによるポーリングに適しており、マイクロコントローラ
+は4本の水平線に順番に出力パルスを送信するようにプログラムされます。
+各パルス中に、残りの4本の垂直線を順番にチェックし、どれが信号を運ん
+でいるか、あるいはどれが信号を運んでいないかを判定します。入力信号が
+存在しないときにマイクロコントローラの入力が不確実な動作をしないように、
+プルアップ抵抗またはプルダウン抵抗を入力線に追加するべきです。
 
 * `Keypad - Wikipedia <https://en.wikipedia.org/wiki/Keypad>`_
 
-**Example**
+**例**
 
-* :ref:`py_keypad` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`ar_keypad` (For Arduino User)
+* :ref:`py_keypad` (MicroPythonユーザー向け)
+* :ref:`py_guess_number` (MicroPythonユーザー向け)
+* :ref:`ar_keypad` (Arduinoユーザー向け)

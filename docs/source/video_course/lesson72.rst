@@ -1,33 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 72:  Understanding Using Dictionaries in MicroPython
+レッスン72: MicroPythonで辞書を使用する方法の理解
 ===================================================================================
 
-This tutorial covers using dictionaries in Python with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WでPythonの辞書を使用する方法について説明します：
 
-* **Task Overview**: Learn to use dictionaries in Python for storing and managing data.
-* **Key Steps**: 
+* **タスクの概要**: データを保存し管理するためにPythonの辞書の使用方法を学びます。
+* **主なステップ**: 
 
-  - Create dictionaries with key-value pairs.
-  - Access, modify, and delete dictionary elements.
-  - Use dictionary methods like ``keys()``, ``values()``, and check keys using ``in``.
-  - Implement a practical example to store personal information.
+  - キーと値のペアを持つ辞書を作成します。
+  - 辞書要素にアクセスし、変更し、削除します。
+  - ``keys()``, ``values()`` などの辞書メソッドを使用し、 ``in`` を使ってキーを確認します。
+  - 個人情報を保存する実用的な例を実装します。
 
-* **Homework Assignment**: Write a program to control an RGB LED by mapping color names to RGB values using a dictionary and allowing user input to change the LED color.
+* **宿題課題**: 色の名前をRGB値にマッピングする辞書を使用してRGB LEDを制御するプログラムを書き、ユーザー入力でLEDの色を変更できるようにします。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

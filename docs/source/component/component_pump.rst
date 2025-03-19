@@ -1,47 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_pump:
 
-DC Water Pump
+DC水中ポンプ
 ================
 
 |img_pump|
 
-This pump operates as a DC motor, running at 3V and drawing a current of 100mA. When powered, it pulls water in through the bottom of its plastic casing and expels it through the outlet pipe. To function correctly, the pump must always remain submerged in water. Note that reversing the polarity will not turn it into an intake pump; it will continue to pump water outward.
+このポンプはDCモーターとして動作し、3Vで運転し、100mAの電流を引きます。動力を供給すると、プラスチック製のケーシングの底から水を吸い上げ、出口パイプから排出します。正しく機能するためには、ポンプは常に水中に沈めておく必要があります。極性を逆にしても吸入ポンプにはならず、引き続き水を外に排出します。
 
-This submersible pump is highly user-friendly, making it an excellent choice for beginners to create projects such as fountains or automated plant watering systems!
+この水中ポンプは非常にユーザーフレンドリーで、初心者が噴水や自動植物水やりシステムなどのプロジェクトを作成するのに最適な選択です！
 
-**Features**
+**特徴**
 
-* **Voltage Scope**: DC 3 ~ 4.5V
-* **Operating Current**: 120 ~ 180mA
-* **Power**: 0.36 ~ 0.91W
-* **Max Water Head**: 0.35 ~ 0.55M
-* **Max Flow Rate**: 80 ~ 100 L/H
-* **Continuous Working Life**: 100 hours
-* **Water Fing Grade**: IP68
-* **Driving Mode**: DC, Magnetic Driving
-* **Material**: Engineering Plastic
-* **Outlet Outside Diameter**: 7.8 mm
-* **Outlet Inside Diameter**: 6.5 mm
-* It is a submersible pump and should be used that way. It tends to heat too much that there's a risk of overheating if you turn it on unsubmerged.
-* It comes with a 25cm male wire, allowing for easy insertion into a breadboard.
+* **電圧範囲**: DC 3 ~ 4.5V
+* **動作電流**: 120 ~ 180mA
+* **消費電力**: 0.36 ~ 0.91W
+* **最大揚水高**: 0.35 ~ 0.55M
+* **最大流量**: 80 ~ 100 L/H
+* **連続稼働時間**: 100時間
+* **防水等級**: IP68
+* **駆動方式**: DC, 磁気駆動
+* **材質**: エンジニアリングプラスチック
+* **出口外径**: 7.8 mm
+* **出口内径**: 6.5 mm
+* 水中ポンプとして使用することを想定しており、水中に沈めずに使用すると過熱のリスクがあります。
+* 25cmのオス線が付属しており、ブレッドボードに簡単に挿入できます。
 
+**例**
 
-**Example**
-
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
+* :ref:`py_pump` (MicroPythonユーザー向け)
+* :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
+* :ref:`ar_pump` (Arduinoユーザー向け)

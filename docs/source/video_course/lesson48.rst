@@ -1,32 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 48: Measuring Rotation Using the Gyros on the MPU6050
+レッスン48: MPU6050を使って回転を測定する
 =============================================================================
 
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable tilt meter by combining accelerometer and gyroscope data:
+このチュートリアルでは、MPU6050センサーとRaspberry Pi Pico Wを使用して、加速度計とジャイロスコープのデータを組み合わせて安定した傾斜計を作成する方法について説明します：
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Concept**: Measure tilt using accelerometer and gyroscope data, addressing noise and drift.
-* **Low-Pass Filter**: Apply to smooth accelerometer data and reduce noise.
-* **Gyroscope Integration**: Use rotational velocity to calculate and update pitch, roll, and yaw.
-* **Combining Data**: Fuse accelerometer and gyroscope data to minimize errors.
-* **Homework**: Implement and fine-tune the method for stable tilt measurement.
+* **セットアップ**: MPU6050をRaspberry Pi Pico Wに接続します。
+* **コンセプト**: 加速度計とジャイロスコープのデータを使用して傾斜を測定し、ノイズとドリフトに対処します。
+* **ローパスフィルター**: 加速度計のデータを滑らかにし、ノイズを減らすために適用します。
+* **ジャイロスコープ統合**: 回転速度を使用してピッチ、ロール、ヨーを計算し更新します。
+* **データの統合**: エラーを最小限に抑えるために、加速度計とジャイロスコープのデータを融合します。
+* **宿題**: 安定した傾斜測定のための方法を実装し、微調整します。
 
-
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

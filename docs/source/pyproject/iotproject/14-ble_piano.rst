@@ -1,50 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く入手できます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_ble_piano:
 
-8.14 Bluetooth Piano
+8.14 Bluetoothピアノ
 ==========================================
 
-The project uses a custom-built application to transform a Raspberry Pi Pico 2 W into a Bluetooth-enabled piano. The Pico 2 W runs a MicroPython script that sets up a BLE peripheral, enabling it to receive note data from a connected device. Upon receiving a note, the board processes the data and plays the corresponding frequency using a passive buzzer.
+このプロジェクトでは、カスタムアプリケーションを使ってRaspberry Pi Pico 2 WをBluetooth対応のピアノに変身させます。Pico 2 Wでは、BLE周辺機器として動作するMicroPythonスクリプトを実行し、接続されたデバイスから受け取ったノートデータを処理します。データを受信すると、パッシブブザーを使って対応する周波数を再生します。
 
-This project is a great way to explore the basics of Bluetooth Low Energy (BLE) communication, sound generation with PWM, and how to create interactive applications using Raspberry Pi Pico 2 W.
+本プロジェクトを通じて、Bluetooth Low Energy (BLE)通信の基礎、PWMを用いたサウンド生成、およびRaspberry Pi Pico 2 Wを使ったインタラクティブなアプリケーション作成を学ぶことができます。
 
-The app used in this project was developed with |link_appinventor|.
+このプロジェクトで使用するアプリは、 |link_appinventor| を利用して開発されています。
 
 
-1. Build the Circuit
+1. 回路を作成する
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 
 .. list-table::
@@ -52,16 +52,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -70,7 +70,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -81,7 +81,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
@@ -93,62 +93,62 @@ You can also buy them separately from the links below.
 
    <br/>
 
-2. Create the Android App
+2. Androidアプリを作成する
 +++++++++++++++++++++++++++++++++
 
-You will develop the Android application using |link_appinventor|, a free web application ideal for beginners in Android development. It offers intuitive drag-and-drop features for creating functional applications.
+|link_appinventor| という無料のウェブアプリを使用してAndroidアプリケーションを開発します。初心者にも優しいドラッグ＆ドロップ操作で、機能的なアプリを簡単に作成可能です。
 
-Follow these steps to get started:
+以下の手順に従ってください：
 
-#. Go to |link_appinventor_login|, and click "online tool" to login. You will need a Google account to register with MIT App Inventor.
+#. |link_appinventor_login| へアクセスし、"online tool"をクリックしてログインします。GoogleアカウントでMIT App Inventorに登録が必要です。
 
    .. image:: img/13-ai-signup.png
        :width: 90%
        :align: center
 
-#. After logging in, navigate to **Projects** -> **Import project (.aia) from my computer**. Subsequently, upload the ``ble_piano_picow.aia`` file located in the following path: ``pico-2w-kit/micropython/iot/8.14-ble_piano``.
+#. ログイン後、 **Projects** -> **Import project (.aia) from my computer** を選択し、 ``pico-2w-kit/micropython/iot/8.14-ble_piano`` にある ``ble_piano_picow.aia`` ファイルをアップロードします。
 
-   Alternatively, you can download the file directly: :download:`ble_piano_picow.aia</_static/other/ble_piano_picow.aia>`
+   または、こちらから直接ファイルをダウンロード可能です：:download:`ble_piano_picow.aia</_static/other/ble_piano_picow.aia>`
 
    .. image:: img/13-ai-import.png
         :align: center
 
-#. Once uploaded, the app template will appear in the MIT App Inventor interface. This pre-configured template can be customized after you become familiar with the platform.
-
-#. MIT App Inventor has two main sections: **Designer** and **Blocks**. You can switch between these two sections in the upper right corner of the page.
+#. アップロードが完了すると、MIT App Inventorのインターフェイスにあらかじめ設定されたアプリのテンプレートが表示されます。プラットフォームに慣れてきたら、さらに自由にカスタマイズできます。
+ 
+#. MIT App Inventorには、 **Designer** と **Blocks** という2つのメインセクションがあります。ページ右上のタブで切り替えが可能です。
 
    .. image:: img/13-ai-intro-1.png
 
-#. The **Designer** allows you to add buttons, text, screens, and modify the overall aesthetic of your app.
+#. **Designer** では、ボタンやテキスト、画面の配置など、アプリの見た目やレイアウトを変更できます。
 
    .. image:: img/14-ai-intro-2.png
       :width: 100%
    
-#. Next, there's the **Blocks** section. This section lets you craft custom functionalities for your app, allowing you to program each component on the app's GUI to achieve desired features.
+#. **Blocks** セクションでは、アプリの各コンポーネントに対して、どのような機能を実装するかをブロックを組み合わせる形でプログラミングできます。
 
    .. image:: img/14-ai-intro-3.png
       :width: 100%
 
-#. To install the app on a phone, navigate to the **Build** tab.
+#. スマートフォンにアプリをインストールするには、 **Build** タブをクリックします。
 
    .. image:: img/13-ai-intro-4.png
       :width: 60%
       :align: center
 
-   * Generate a ``.apk`` file. After selecting this option, a page will appear allowing you to choose between downloading a ``.apk`` file or scanning a QR code for installation. Follow the installation guide to complete the application installation. 
+   * ``.apk`` ファイルを生成します。選択後、 ``.apk`` ファイルをダウンロードするか、QRコードをスキャンしてインストールするかが選べます。インストールガイドに従ってアプリをインストールしてください。
 
-     Alternatively, download our pre-compiled APK file here: :download:`ble_piano_picow.apk</_static/other/ble_piano_picow.apk>`
+     または、事前コンパイル済みのAPKファイルを以下からダウンロードできます： :download:`ble_piano_picow.apk</_static/other/ble_piano_picow.apk>`
 
-   * If you wish to publish this app to Google Play or another app marketplace, you can generate a ``.aab`` file.
+   * Google Playなどのアプリマーケットに公開したい場合は、 ``.aab`` ファイルを生成できます。
 
 
-3. Run the Code
+3. コードを実行する
 +++++++++++++++++++++++++++++++++
 
-Open the ``8.14-ble_piano.py`` file under the path of ``pico-2w-kit/micropython/iot/8.14-ble_piano``, or copy this code into your IDE.
+``pico-2w-kit/micropython/iot/8.14-ble_piano`` のパスにある ``8.14-ble_piano.py`` ファイルを開くか、下記のコードをIDEにコピーしてください。
    
 .. note:: 
-   This code depends on the ``ble_advertising.py`` file. Make sure to upload it to the Pico board before running the script.
+   このコードは ``ble_advertising.py`` ファイルに依存しています。実行前にPicoボードにアップロードしてください。
 
 .. code-block:: python
 
@@ -223,7 +223,7 @@ Open the ``8.14-ble_piano.py`` file under the path of ``pico-2w-kit/micropython/
                conn_handle, _, _ = data
                print("Disconnected", conn_handle)
                self._connections.remove(conn_handle)
-               # Start advertising again to allow a new connection.
+               # 新しい接続を許可するため、再度広告を開始
                self._advertise()
            elif event == _IRQ_GATTS_WRITE:
                conn_handle, value_handle = data
@@ -265,40 +265,40 @@ Open the ``8.14-ble_piano.py`` file under the path of ``pico-2w-kit/micropython/
    if __name__ == "__main__":
        demo()
 
-4. App and Bluetooth Connection
+4. アプリとBluetoothの接続
 ++++++++++++++++++++++++++++++++++++++++++
 
-Ensure that the "BLE Piano" app created earlier is installed on your phone.
+先ほど作成した「BLE Piano」アプリがスマートフォンにインストールされていることを確認してください。
 
-#. Enable Bluetooth on your phone.
+#. スマートフォンのBluetoothを有効にします。
 
-#. Open the **BLE Piano** app.
+#. **BLE Piano** アプリを開きます。
 
    .. image:: img/14_app_2.png
       :width: 25%
       :align: center
 
-#. When you open the app for the first time, you will see two consecutive prompts requesting permissions. These permissions are required for Bluetooth functionality.
+#. 初回起動時に、連続する2つのダイアログが表示され、権限を求められます。これはBluetooth機能を使用するために必要です。
 
    .. image:: img/14_app_3.png
       :width: 90%
       :align: center
 
-#. In the APP, click on **Connect** button to establish a connection between the APP and Pico 2 W via bluetooth.
+#. アプリ内で **Connect** ボタンを押し、Pico 2 WとBluetoothで接続します。
 
    .. image:: img/14_app_4.png
       :width: 90%
       :align: center
 
-#. This page displays a list of all Bluetooth devices. Choose the ``xx.xx.xx.xx.xx.xx pico2w`` option from the list. Each device name is displayed alongside its MAC address.
+#. このページには、すべてのBluetoothデバイスが表示されます。 ``xx.xx.xx.xx.xx.xx pico2w`` のように表示されるデバイスを選択します。各デバイス名の横にはMACアドレスが表示されます。
 
    .. image:: img/13_app_5.png
       :width: 60%
       :align: center
 
-#. If no devices appear in the list, try enabling the location feature on your phone. (On some Android versions, the location setting is linked to Bluetooth functionality.)
+#. リストにデバイスが表示されない場合は、スマートフォンで位置情報を有効にしてみてください。（Androidの一部バージョンでは、位置情報設定がBluetooth機能と連動しています。）
 
-#. Once connected, the system will redirect you to the main screen. You can tap the music note button to play the corresponding note. The app sends the note data to the Pico board, which drives the buzzer to play the specified note based on the data.
+#. 接続が完了すると、メイン画面に遷移します。音符のボタンをタップすると対応するノートが再生されます。アプリがノートデータをPicoボードに送信し、Pico側でブザーを鳴らして指定したノートを演奏します。
 
    .. image:: img/14_app_7.png
       :width: 90%

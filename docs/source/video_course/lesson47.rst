@@ -1,28 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い探求を一緒に楽しみましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 当コミュニティやチームからのサポートで販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させます。
+    - **独占的なプレビュー**: 新製品の発表や先取り情報に早期アクセス。
+    - **特別割引**: 最新製品を独占的な割引価格で。
+    - **お祭りプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造してみませんか？[|link_sf_facebook|]をクリックして今日から参加しましょう！
 
-Lesson 47: Improving Sensor Data With a Low Pass Filter
+レッスン47: ローパスフィルターを使用してセンサーデータを改善
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable two-axis tilt meter by implementing a low-pass filter:
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Concept**: Measure tilt using accelerometer data, addressing errors from acceleration.
-* **Low-Pass Filter**: Implement to smooth data using the equation: ``\(\text{new value} = \text{confidence} \times \text{measurement} + (1 - \text{confidence}) \times \text{old value}\)``.
-* **Code**: Measure X, Y, Z, filter pitch and roll angles, and display results.
-* **Homework**: Test the low-pass filter and experiment with confidence values.
+このチュートリアルでは、MPU6050センサーをRaspberry Pi Pico Wに接続し、ローパスフィルターを実装することで安定した二軸傾斜計を作成します：
 
-**Video**
+* **セットアップ**: MPU6050をRaspberry Pi Pico Wに接続します。
+* **コンセプト**: 加速度計のデータを使用して傾斜を測定し、加速度による誤差に対処します。
+* **ローパスフィルター**: データを滑らかにするために以下の式を実装します:  ``\(\text{new value} = \text{confidence} \times \text{measurement} + (1 - \text{confidence}) \times \text{old value}\)``。
+* **コード**: X、Y、Zを測定し、ピッチとロールの角度をフィルター処理して結果を表示します。
+* **宿題**: ローパスフィルターをテストし、信頼度の値を実験してみてください。
+
+**ビデオ**
 
 .. raw:: html
 

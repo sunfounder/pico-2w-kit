@@ -1,16 +1,15 @@
-.. _projects_micropython:
+.. _projects_micropython: 
 
-MicroPython Projects
-=======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico 2 W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
+MicroPythonプロジェクト
+=========================
+このセクションでは、MicroPythonの歴史、Pico 2 WにMicroPythonをインストールする方法、基本的な構文、そしてMicroPythonを迅速に学ぶための興味深く実用的な12のプロジェクトを学びます。
 
-We recommend that you read the chapters in order.
+順番に章を読むことをお勧めします。
 
-
-1. Get Started
+1. はじめに
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
 
@@ -23,10 +22,10 @@ We recommend that you read the chapters in order.
 
 
 
-2. Output & Input
+2. 入出力
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_led
@@ -46,10 +45,10 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-3. Sound & Display & Movement
+3. 音声、ディスプレイ、動作
 ---------------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_ac_buz
@@ -60,20 +59,20 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-4. Controller
+4. コントローラー
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_joystick
     py_keypad
     py_mpr121
 
-5. Microchip
+5. マイクロチップ
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_74hc595_led
@@ -81,10 +80,10 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-6. Advanced
+6. 上級
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_ultrasonic
@@ -93,10 +92,10 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-7. Funny Project
+7. 面白いプロジェクト
 ------------------------
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
 
     py_light_theremin
@@ -112,12 +111,12 @@ We recommend that you read the chapters in order.
     py_somatosensory_controller
     py_digital_bubble_level
 
-8. IoT Project
+8. IoTプロジェクト
 ------------------------
 
 **Wi-Fi**
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
     
     iotproject/1-access
@@ -132,7 +131,7 @@ We recommend that you read the chapters in order.
 
 **Bluetooth**
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 1
     
     iotproject/10-bluetooth

@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒に、Raspberry Pi、Arduino、ESP32を深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**：販売後の問題や技術的な課題を、コミュニティやチームからのサポートで解決できます。
+    - **学び＆共有**：スキル向上のために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行情報をいち早く確認できます。
+    - **特別割引**：最新製品に対して、専用の割引を楽しめます。
+    - **祝祭キャンペーンとプレゼント**：プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造しましょう！[|link_sf_facebook|]をクリックして、今すぐ参加！
 
 .. _py_74hc_788bs:
 
-5.4 8x8 Pixel Graphics
-=============================
+5.4 8x8 ピクセルグラフィックス
+================================
 
-In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2 W and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
+このレッスンでは、Raspberry Pi Pico 2 Wと2つの **74HC595シフトレジスタ** を使用して、 **8x8 LEDマトリックス** を制御する方法を学びます。個々のLEDを制御してパターンやシンプルなグラフィックスを表示します。
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 W スターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクからも個別に購入できます。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -76,49 +76,45 @@ You can also buy them separately from the links below.
         - 2
         - |link_74hc595_buy|
 
-**Understanding the 8x8 LED Matrix**
+**8x8 LEDマトリックスの理解**
 
-The 8x8 LED dot matrix is controlled by two **74HC595** shift registers: one controls the rows, and the other controls the columns. These two chips share the Pico's GPIO pins **GP18**, **GP19**, and **GP20**, greatly conserving the Pico's I/O ports.
+8x8 LEDドットマトリックスは、2つの **74HC595** シフトレジスタによって制御されます。1つは行を制御し、もう1つは列を制御します。これら2つのチップは、PicoのGPIOピン **GP18** 、 **GP19** 、 **GP20** を共有しており、PicoのI/Oポートを大幅に節約できます。
 
-The Pico outputs a 16-bit binary number at a time. The first 8 bits are sent to the 74HC595 controlling the rows, and the last 8 bits are sent to the 74HC595 controlling the columns. This allows the dot matrix to display specific patterns.
+Picoは1回で16ビットの2進数を出力します。最初の8ビットは行を制御する74HC595に送信され、最後の8ビットは列を制御する74HC595に送信されます。これにより、ドットマトリックスに特定のパターンを表示できます。
 
-**Q7' (Pin 9)**: This serial data output pin of the first 74HC595 connects to the **DS (Pin 14)** of the second 74HC595, enabling you to chain multiple 74HC595 chips together.
+**Q7' (ピン9)**: 最初の74HC595のこのシリアルデータ出力ピンは、2番目の74HC595の **DS (ピン14)** に接続されており、複数の74HC595チップを直列に接続できます。
 
-**Schematic**
+**回路図**
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two **74HC595** chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico 2 W board. 
+8x8ドットマトリックスは2つの **74HC595** チップで制御され、1つは行を、もう1つは列を制御します。これら2つのチップは、G18〜G20を共有しており、Pico 2 WのI/Oポートを大幅に節約できます。
 
-Pico 2 W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Pico 2 Wは1回で16ビットの2進数を出力し、最初の8ビットは行を制御する74HC595に、最後の8ビットは列を制御する75HC595に送信され、ドットマトリックスに特定のパターンを表示します。
 
-Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
+Q7': シリアル出力ピン、次の74HC595のDSに接続して複数の74HC595を直列に接続します。
 
-**Wiring**
+**配線**
 
-Building the circuit can be complex, so let's proceed step by step.
+回路を構築するのは複雑なので、順を追って説明します。
 
-**Step 1:**  First, insert the Pico 2 W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico 2 W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+**ステップ1:** 最初にPico 2 W、LEDドットマトリックス、および2つの74HC595チップをブレッドボードに挿入します。
+Pico 2 Wの3.3VとGNDをブレッドボードの両側の穴に接続し、2つの74HC595チップのピン16と10をVCCに、ピン13とピン8をGNDに接続します。
 
-.. note::
-   In the Fritzing image above, the side with label is at the bottom.
+.. note::  
+   上のFritzing画像では、ラベルが下向きに配置されています。
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**ステップ2:** 2つの74HC595のピン11を接続し、その後GP20に接続します。
+次に、2つのチップのピン12をGP19に接続し、左側の74HC595のピン14をGP18に、
+ピン9を2番目の74HC595のピン14に接続します。
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
+**ステップ3:** 右側の74HC595はLEDドットマトリックスの列を制御します。
+以下の表でマッピングを確認してください。したがって、74HC595のQ0〜Q7ピンは、
+それぞれピン13、3、4、10、6、11、15、16にマッピングされます。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -128,10 +124,10 @@ respectively.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**ステップ4:** 次に、LEDドットマトリックスのROWを接続します。
+左側の74HC595はLEDドットマトリックスのROWを制御します。
+以下の表でマッピングを確認してください。
+左側の74HC595のQ0〜Q7ピンは、それぞれピン9、14、8、12、1、7、2、5にマッピングされます。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -141,27 +137,26 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 |wiring_ledmatrix_1|
 
-**Writing the Code**
+**コードの作成**
 
-We'll write a MicroPython program to display a pattern on the LED matrix.
+MicroPythonプログラムを作成して、LEDマトリックスにパターンを表示します。
 
 .. note::
 
-    * Open the ``5.4_8x8_pixel_graphics.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * ``pico-2w-kit-main/micropython`` から ``5.4_8x8_pixel_graphics.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押してください。
+    * 正しいインタープリタが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。
 
 .. code-block:: python
 
     import machine
     import time
 
-    # Define the pins connected to the 74HC595 shift register
-    sdi = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input
-    rclk = machine.Pin(19, machine.Pin.OUT)  # Storage Register Clock (RCLK)
-    srclk = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock (SRCLK)
+    # 74HC595シフトレジスタに接続されたピンを定義
+    sdi = machine.Pin(18, machine.Pin.OUT)   # シリアルデータ入力
+    rclk = machine.Pin(19, machine.Pin.OUT)  # ストレージレジスタクロック（RCLK）
+    srclk = machine.Pin(20, machine.Pin.OUT) # シフトレジスタクロック（SRCLK）
 
-    # Define the glyph data for the letter 'X' with lit pixels and background off
+    # 'X'の文字を表すグリフデータ（点灯するピクセルと背景が消灯）
     glyph = [0x7E, 0xBD, 0xDB, 0xE7, 0xE7, 0xDB, 0xBD, 0x7E]
 
     def hc595_in(dat):
@@ -170,9 +165,9 @@ We'll write a MicroPython program to display a pattern on the LED matrix.
         """
         for bit in range(7, -1, -1):
             srclk.low()
-            sdi.value((dat >> bit) & 1)  # Output data bit by bit
+            sdi.value((dat >> bit) & 1)  # ビットごとにデータを出力
             srclk.high()
-            time.sleep_us(1)  # Short delay to ensure proper timing
+            time.sleep_us(1)  # 適切なタイミングを確保するための短い遅延
 
     def hc595_out():
         """
@@ -184,45 +179,43 @@ We'll write a MicroPython program to display a pattern on the LED matrix.
 
     while True:
         for i in range(8):
-            hc595_in(glyph[i])       # Send the column data for the current row
-            hc595_in(1 << i)         # Activate the current row
-            hc595_out()              # Update the display
-            time.sleep_ms(1)         # Delay for visual persistence
+            hc595_in(glyph[i])       # 現在の行の列データを送信
+            hc595_in(1 << i)         # 現在の行をアクティブに
+            hc595_out()              # ディスプレイを更新
+            time.sleep_ms(1)         # 視覚的な持続性のために遅延
 
 
+このコードを実行すると、8x8のLEDマトリックスに「X」の形が表示され、LEDが点灯して「X」のパターンを形成します。
 
-When you run this code, the 8x8 LED matrix will display an 'X' shape, with the LEDs lighting up to form the pattern of the letter 'X' across the matrix.
+**コードの理解**
 
-**Understanding the Code**
+#. モジュールのインポート:
 
-#. Importing Modules:
+   * ``machine``: GPIOピンを制御するなどのハードウェア関連の機能にアクセスできます。
+   * ``time``: タイミングを制御するための遅延を追加するために使用します。
 
-   * ``machine``: Provides access to hardware-related functions, such as controlling GPIO pins.
-   * ``time``: Used for adding delays to control timing.
+#. ピンの定義:
 
-#. Defining Pins:
+   * ``sdi``: シフトレジスタにシリアルデータを送信します。
+   * ``rclk``: シフトされたデータを出力ピンにラッチします。
+   * ``srclk``: 各立ち上がりエッジでデータをレジスタにシフトします。
 
-   * ``sdi``: Sends serial data into the shift register.
-   * ``rclk``: Latches the shifted data to the output pins.
-   * ``srclk``: Shifts the data into the register on each rising edge.
+#. 'X' のグリフの定義:
 
-#. Defining the Glyph for 'X':
-
-   * Each element represents a row in the LED matrix.
-   * The hex values correspond to the LEDs that should be lit (0) or off (1) in each row.
-   * This pattern forms a symmetrical 'X' shape across the matrix.
+   * 各要素はLEDマトリックスの1行を表します。
+   * 16進数の値は、各行で点灯するべきLED（0）または消灯するLED（1）に対応します。
+   * このパターンは、マトリックス全体に対して対称的な「X」の形を形成します。
 
    .. code-block:: python
     
         glyph = [0x7E, 0xBD, 0xDB, 0xE7, 0xE7, 0xDB, 0xBD, 0x7E]
 
-#. Function ``hc595_in(dat)``:
+#. 関数 ``hc595_in(dat)``:
 
-   * This function sends 8 bits of data (``dat``) into the shift register serially.
-   * It iterates from the most significant bit to the least significant bit.
-   * The ``srclk`` pin is toggled to shift each bit into the register.
-   * The ``sdi`` pin sets the data line high or low depending on the current bit.
-
+   * この関数は、8ビットのデータ（ ``dat`` ）をシフトレジスタにシリアルで送信します。
+   * 最上位ビットから最下位ビットへと繰り返します。
+   * ``srclk`` ピンをトグルして各ビットをレジスタにシフトします。
+   * ``sdi`` ピンは、現在のビットに応じてデータラインを高または低に設定します。
 
    .. code-block:: python
     
@@ -232,15 +225,14 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
             """
             for bit in range(7, -1, -1):
                 srclk.low()
-                sdi.value((dat >> bit) & 1)  # Output data bit by bit
+                sdi.value((dat >> bit) & 1)  # ビットごとにデータを出力
                 srclk.high()
-                time.sleep_us(1)  # Short delay to ensure proper timing
+                time.sleep_us(1)  # 適切なタイミングを確保するための短い遅延
 
+#. 関数 ``hc595_out()``:
 
-#. Function ``hc595_out()``:
-
-   * This function latches the shifted data from the shift register to the output register.
-   * A rising edge on the ``rclk`` pin transfers the data to the output pins, updating the LEDs.
+   * この関数は、シフトレジスタからストレージレジスタにデータをラッチします。
+   * ``rclk`` ピンの立ち上がりエッジでデータを出力ピンに転送し、LEDを更新します。
 
    .. code-block:: python
     
@@ -249,35 +241,34 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
             rclk.high()
             rclk.low()
 
-#. Main Loop:
+#. メインループ:
 
-   * The loop continuously refreshes the display to create a persistent image of the letter 'X'.
-   * The ``for`` loop iterates over each row index from 0 to 7.
-   * ``hc595_in(1 << i)`` activates one row at a time by setting a single bit high.
-   * ``hc595_in(glyph[i])`` sends the column data for the current row, determining which LEDs in that row should be lit.
-   * ``hc595_out()`` latches the data, updating the LED matrix display.
-   * ``time.sleep_ms(1)`` provides a short delay to ensure that each row is displayed long enough to be perceived by the human eye.
-   * This rapid scanning creates the illusion of the entire 'X' being displayed simultaneously.
+   * ループは、'X' の文字を持続的に表示するためにディスプレイを更新し続けます。
+   * ``for`` ループは、0から7までの各行のインデックスを繰り返します。
+   * ``hc595_in(1 << i)`` は1行をアクティブにし、単一のビットを高に設定します。
+   * ``hc595_in(glyph[i])`` は現在の行の列データを送信し、その行で点灯するべきLEDを決定します。
+   * ``hc595_out()`` はデータをラッチし、LEDマトリックスディスプレイを更新します。
+   * ``time.sleep_ms(1)`` は、各行が人間の目で見えるくらい十分な時間ディスプレイに表示されるように短い遅延を提供します。
+   * この高速スキャンにより、'X' が同時に表示されているかのような錯覚が生まれます。
 
    .. code-block:: python
     
         while True:
             for i in range(8):
-                hc595_in(glyph[i])       # Send the column data for the current row
-                hc595_in(1 << i)         # Activate the current row
-                hc595_out()              # Update the display
-                time.sleep_ms(1)         # Delay for visual persistence
+                hc595_in(glyph[i])       # 現在の行の列データを送信
+                hc595_in(1 << i)         # 現在の行をアクティブに
+                hc595_out()              # ディスプレイを更新
+                time.sleep_ms(1)         # 視覚的な持続性のために遅延
 
+**さらに実験してみる**
 
-**Experimenting Further**
+* パターンの変更
 
-* Changing the Pattern
-
-  Try replacing the pattern list with the following arrays to display different graphics. Replace pattern in your code with ``pattern_heart`` or ``pattern_smile`` to see different images.
+  以下の配列を使用してパターンリストを置き換えると、異なるグラフィックを表示できます。コード内で ``pattern_heart`` や ``pattern_smile`` に置き換えて、さまざまな画像を表示してみましょう。
 
   .. code-block:: python
 
-        # Heart shape
+        # ハートの形
         pattern_heart = [
             0b11111111,
             0b10011001,
@@ -289,34 +280,34 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
             0b11100111
         ]
 
-        # Smile face
+        # スマイルの顔
         pattern_smile = [
-            0b11000011,  # Row 0
-            0b10111101,  # Row 1
-            0b01011010,  # Row 2
-            0b01111110,  # Row 3
-            0b01011010,  # Row 4
-            0b01100110,  # Row 5
-            0b10111101,  # Row 6
-            0b11000011   # Row 7
+            0b11000011,  # 行 0
+            0b10111101,  # 行 1
+            0b01011010,  # 行 2
+            0b01111110,  # 行 3
+            0b01011010,  # 行 4
+            0b01100110,  # 行 5
+            0b10111101,  # 行 6
+            0b11000011   # 行 7
         ]
 
 
-* Animating the Display
+* ディスプレイのアニメーション
 
-  Create multiple patterns and cycle through them to create animations:
+  複数のパターンを作成し、それらを循環させてアニメーションを作成します。
 
   .. code-block:: python
 
         import machine
         import time
         
-        # Define pins connected to the 74HC595 shift registers
-        sdi = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input
-        rclk = machine.Pin(19, machine.Pin.OUT)  # Register Clock (Latch)
-        srclk = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock
+        # 74HC595シフトレジスタに接続されたピンを定義
+        sdi = machine.Pin(18, machine.Pin.OUT)   # シリアルデータ入力
+        rclk = machine.Pin(19, machine.Pin.OUT)  # レジスタクロック（ラッチ）
+        srclk = machine.Pin(20, machine.Pin.OUT) # シフトレジスタクロック
         
-        # Heart shape
+        # ハートの形
         pattern_heart = [
             0b11111111,
             0b10011001,
@@ -328,16 +319,16 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
             0b11100111
         ]
         
-        # Smile face
+        # スマイルの顔
         pattern_smile = [
-            0b11000011,  # Row 0
-            0b10111101,  # Row 1
-            0b01011010,  # Row 2
-            0b01111110,  # Row 3
-            0b01011010,  # Row 4
-            0b01100110,  # Row 5
-            0b10111101,  # Row 6
-            0b11000011   # Row 7
+            0b11000011,  # 行 0
+            0b10111101,  # 行 1
+            0b01011010,  # 行 2
+            0b01111110,  # 行 3
+            0b01011010,  # 行 4
+            0b01100110,  # 行 5
+            0b10111101,  # 行 6
+            0b11000011   # 行 7
         ]
         
         def hc595_in(dat):
@@ -345,37 +336,37 @@ When you run this code, the 8x8 LED matrix will display an 'X' shape, with the L
             Shift 8 bits of data into the 74HC595 shift register.
             """
             for bit in range(7, -1, -1):
-                srclk.low()                            # Prepare to shift data
-                sdi.value((dat >> bit) & 1)            # Set data bit
-                srclk.high()                           # Shift data bit into register
-                time.sleep_us(1)                       # Short delay for timing
+                srclk.low()                            # データをシフトする準備
+                sdi.value((dat >> bit) & 1)            # データビットを設定
+                srclk.high()                           # データビットをレジスタにシフト
+                time.sleep_us(1)                       # タイミングのための短い遅延
         
         def hc595_out():
             """
             Latch the shifted data to the output pins of the 74HC595.
             """
-            rclk.high()                               # Latch data (rising edge)
-            rclk.low()                                # Prepare for next data
+            rclk.high()                               # データをラッチ（立ち上がりエッジ）
+            rclk.low()                                # 次のデータの準備
         
         def display_pattern(pattern):
             """
             Display a given 8x8 pattern on the LED matrix.
             """
-            for _ in range(500):                      # Display the pattern for a certain duration
+            for _ in range(500):                      # パターンを一定期間表示
                 for i in range(8):
-                    hc595_in(pattern[i])              # Send column data for current row
-                    hc595_in(1 << i)                  # Activate current row
-                    hc595_out()                       # Update the output
-                    time.sleep_ms(1)                  # Short delay for persistence
+                    hc595_in(pattern[i])              # 現在の行の列データを送信
+                    hc595_in(1 << i)                  # 現在の行をアクティブに
+                    hc595_out()                       # 出力を更新
+                    time.sleep_ms(1)                  # 持続性のための短い遅延
         
         while True:
-            display_pattern(pattern_heart)            # Display the heart shape
-            display_pattern(pattern_smile)            # Display the smiley face
+            display_pattern(pattern_heart)            # ハートの形を表示
+            display_pattern(pattern_smile)            # スマイルの顔を表示
 
-* Design Your Own Patterns
+* オリジナルパターンのデザイン
 
-  Each byte represents a row; bits set to 0 turn on the LED in that column. Create custom patterns by defining your own pattern list.
+  各バイトは1行を表します。0に設定されたビットは、その列のLEDを点灯させます。パターンリストを定義することでカスタムパターンを作成できます。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to control an 8x8 LED matrix using the Raspberry Pi Pico 2 W and two 74HC595 shift registers. By understanding how to manipulate bits and use shift registers, you can display patterns and graphics on the LED matrix.
+このレッスンでは、Raspberry Pi Pico 2 Wと2つの74HC595シフトレジスタを使用して、8x8 LEDマトリックスを制御する方法を学びました。ビット操作とシフトレジスタの使用方法を理解することで、LEDマトリックスにパターンやグラフィックを表示できるようになります。

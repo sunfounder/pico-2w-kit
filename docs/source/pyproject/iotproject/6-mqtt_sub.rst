@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_mqtt_subscribe:
 
-8.6 Cloud Player with @MQTT
+8.6 @MQTTを使ったクラウドプレイヤー
 =========================================
 
-It is recommended that you do the :ref:`py_iot_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.
+まず、 :ref:`py_iot_mqtt_publish` プロジェクトを先に実施して、いくつかのモジュールをインストールし、HiveMQプラットフォームの設定を完了することをお勧めします。
 
-In this project, Pico 2 W will act as a subscriber and receive the song name under the topic.
-If the song name is already in the code, Pico 2 W will make the buzzer play the song.
+このプロジェクトでは、Pico 2 Wはサブスクライバーとして機能し、トピックの下で曲名を受信します。
+もし曲名がすでにコード内に含まれていれば、Pico 2 Wはブザーでその曲を再生します。
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -76,7 +76,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -84,50 +84,50 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組み立てる**
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back). The buzzer needs a transistor to work, here we use S8050.
+キットには2つのブザーが含まれていますが、ここではパッシブブザー（背面にPCBが露出しているタイプ）を使用します。ブザーは動作させるためにトランジスタが必要で、ここではS8050を使用します。
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po充電モジュールが図のように接続されていることを確認してください。そうしないと、短絡が原因でバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/6.mqtt_sub_bb.png
 
 
 
-**3. Run the Code**
+**3. コードを実行する**
 
-#. Upload the ``play_music.py`` file under the path of ``pico-2w-kit-main/micropython/iot`` to the Raspberry Pi Pico 2 W.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``play_music.py`` ファイルをRaspberry Pi Pico 2 Wにアップロードします。
 
     .. image:: img/mqtt-A-1.png
 
-#. Open the ``8.6_mqtt_subscribe_music.py`` file under the path of ``pico-2w-kit-main/micropython/iot`` and click the **Run current script** button or press F5 to run it.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``8.6_mqtt_subscribe_music.py`` ファイルを開き、 **現在のスクリプトを実行** ボタンをクリックするか、F5を押して実行します。
 
     .. image:: img/6_cloud_player.png
 
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
+        コードを実行する前に、Pico 2 Wに ``do_connect.py`` および ``secrets.py`` スクリプトを作成する必要があります。作成方法については :ref:`py_iot_access` を参照してください。
 
-#. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico 2 W will play the corresponding song.
+#. ブラウザで|link_hivemq|を開き、トピックを ``SunFounder MQTT Music`` として、曲名を **Message** として入力します。 **Publish** ボタンをクリックすると、Pico 2 Wに接続されたブザーが対応する曲を再生します。
 
     .. note::
-        Included in play_music.py are ``nokia``, ``starwars``, ``nevergonnagiveyouup``, ``gameofthrone``, ``songofstorms``, ``zeldatheme``, ``harrypotter``.
+        ``play_music.py`` には、 ``nokia`` 、 ``starwars`` 、 ``nevergonnagiveyouup`` 、 ``gameofthrone`` 、 ``songofstorms`` 、 ``zeldatheme`` 、 ``harrypotter`` が含まれています。
 
     .. image:: img/mqtt-5.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. このスクリプトを起動時に実行できるようにしたい場合は、Raspberry Pi Pico 2 Wに ``main.py`` として保存できます。
 
-**How it works?**
+**仕組みは？**
 
-In order to make it easier to understand, we separated the MQTT code from the rest.
-As a result, you get the following code, which implements the most basic functionality of MQTT subscriptions in three places.
+理解を容易にするため、MQTTのコードを他の部分から分けました。
+その結果、以下のコードが得られ、MQTTサブスクリプションの最も基本的な機能が3つの場所で実装されています。
 
 .. code-block:: python
     :emphasize-lines: 13,14,15,16,20,28,29,30
@@ -135,14 +135,14 @@ As a result, you get the following code, which implements the most basic functio
     import time
     from umqtt.simple import MQTTClient
 
-    #This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+    # `do_connect()`関数をインポートします。この関数には、`network`モジュールを使ってWi-Fiに接続するロジックが含まれています。`do_connect()`関数が呼び出されると、`secrets.py`で指定されたWi-Fiネットワークに接続します。接続に失敗した場合は例外が発生し、成功すれば次のステップに進みます。
     from do_connect import * 
     do_connect()
 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-    # to subscribe the message
+    # メッセージをサブスクライブする
     topic = b'SunFounder MQTT Music'
 
     def callback(topic, message):
@@ -165,7 +165,7 @@ As a result, you get the following code, which implements the most basic functio
         time.sleep(1)
 
 
-When connecting to the MQTT broker, we call the ``client.set_callback(callback)`` function, which serves as a callback for the received subscription messages.
+MQTTブローカーに接続する際、 ``client.set_callback(callback)`` 関数を呼び出し、これが受信したサブスクリプションメッセージのコールバックとして機能します。
 
 .. code-block:: python
     :emphasize-lines: 3
@@ -180,8 +180,8 @@ When connecting to the MQTT broker, we call the ``client.set_callback(callback)`
         time.sleep(5)
         machine.reset()
 
-Next is the callback function, which prints out the message from the topic that was fetched.
-MQTT is a binary based protocol were the control elements are binary bytes and not text strings, so these messages need to be decoded using ``message.decode('utf-8')``.
+次に、コールバック関数では、取得したトピックからメッセージを出力します。
+MQTTはバイナリベースのプロトコルであり、制御要素はバイナリバイトであって、テキスト文字列ではないため、これらのメッセージは ``message.decode('utf-8')`` を使ってデコードする必要があります。
 
 .. code-block:: python
 
@@ -190,7 +190,7 @@ MQTT is a binary based protocol were the control elements are binary bytes and n
         message = message.decode('utf-8')
         print(message)
 
-Use a ``While True`` loop to get messages under this topic at regular intervals.
+``While True`` ループを使用して、このトピックのメッセージを定期的に取得します。
 
 .. code-block:: python
 
@@ -198,10 +198,10 @@ Use a ``While True`` loop to get messages under this topic at regular intervals.
         client.subscribe(topic)
         time.sleep(1)
 
-        
-Next, music will be played. This function is placed in the ``play_music.py`` script, which consists of three main parts.
 
-   * ``Tone``: Simulates a specific tone based on the fundamental |link_piano_frequency| , which is used to play it.
+次に、音楽が再生されます。この関数は ``play_music.py`` スクリプトに配置されており、3つの主要な部分から構成されています。
+
+   * ``Tone``: 基本的な |link_piano_frequency| を基にした特定の音色をシミュレートし、それを再生します。
 
         .. code-block:: python
 
@@ -211,14 +211,14 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
             NOTE_DS8 = 4978
             REST =      0
 
-   * ``Score``: Edit the music into a format that the program can use. These scores are from `Robson Couto's free sharing <https://github.com/robsoncouto/arduino-songs>`_, you can also add your favorite music in the following format.
+   * ``Score`` : 音楽をプログラムが使用できる形式に編集します。これらのスコアは `Robson Coutoの無料共有 <https://github.com/robsoncouto/arduino-songs>`_ から取得したもので、以下の形式でお気に入りの曲を追加することもできます。
 
     .. code-block:: python
 
-        # notes of the moledy followed by the duration.
-        # a 4 means a quarter note, 8 an eighteenth , 16 sixteenth, so on
-        # !!negative numbers are used to represent dotted notes,
-        # so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
+        # メロディのノートとその長さ
+        # 4は4分音符、8は8分音符、16は16分音符などを意味します
+        # !!負の数は付点音符を表すため、-4は付点4分音符、すなわち4分音符＋8分音符！！
+
         song = {
             "nokia":[NOTE_E5, 8, NOTE_D5, 8, NOTE_FS4, 4, NOTE_GS4, 4, NOTE_CS5, 8, NOTE_B4, 8, NOTE_D4, 4, 
                         NOTE_E4, 4,NOTE_B4, 8, NOTE_A4, 8, NOTE_CS4, 4, NOTE_E4, 4, NOTE_A4, 2],
@@ -230,17 +230,17 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
             "harrypotter":[,,,],
         }
 
-    * ``Play``: This part is basically the same as :ref:`py_pa_buz`, but slightly optimized to fit the above score.
+   * ``Play``: この部分は基本的に :ref:`py_pa_buz` と同じですが、上記のスコアに合わせて少し最適化されています。
 
    .. code-block:: python
 
        import time
        import machine
 
-       # change this to make the song slower or faster
+       # 曲を遅くまたは速くするために調整
        tempo = 220
 
-       # this calculates the duration of a whole note in ms
+       # 4分音符の長さをミリ秒単位で計算
        wholenote = (60000 * 4) / tempo
 
        def tone(pin,frequency,duration):
@@ -257,10 +257,10 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
 
        def play(pin,melody):
 
-           # iterate over the notes of the melody.
-           # Remember, the array is twice the number of notes (notes + durations)
+           # メロディのノートを反復
+           # 配列はノートとその長さで2倍の数になります
            for thisNote in range(0,len(melody),2):
-               # calculates the duration of each note
+               # 各ノートの長さを計算
                divider = melody[thisNote+1]
                if divider > 0:
                    noteDuration = wholenote/divider
@@ -268,19 +268,19 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
                    noteDuration = wholenote/-(divider)
                    noteDuration *= 1.5
 
-               # we only play the note for 90% of the duration, leaving 10% as a pause
+               # ノートの90％の時間だけ再生し、残りの10％はポーズ
                tone(pin,melody[thisNote],int(noteDuration*0.9))
 
-               # Wait for the specief duration before playing the next note.
+               # 次のノートの前に指定された時間だけ待機
                time.sleep_ms(int(noteDuration))
 
-               # stop the waveform generation before the next note.
+               # 次のノートの前に波形生成を停止
                noTone(pin)
 
 
-Go back to the main function and let MQTT trigger music playback.
-In the callback function, determine if the message sent is the name of a song that has been included.
-If it is, assign the song name to the variable ``melody`` and set ``play_flag`` to ``True``.
+メイン関数に戻り、MQTTで音楽の再生をトリガーします。
+コールバック関数内で、送信されたメッセージがすでに含まれている曲名であるかを確認します。
+そうであれば、曲名を ``melody`` 変数に割り当て、 ``play_flag`` を ``True`` に設定します。
 
 .. code-block:: python
     :emphasize-lines: 5,6,7,8
@@ -294,7 +294,7 @@ If it is, assign the song name to the variable ``melody`` and set ``play_flag`` 
             melody = song[message]
             play_flag = True
 
-In the main loop, if ``play_flag`` is ``True``, play ``melody``.
+メインループ内で、 ``play_flag`` が ``True`` の場合、 ``melody`` を再生します。
 
 .. code-block:: python
     :emphasize-lines: 4,5,6

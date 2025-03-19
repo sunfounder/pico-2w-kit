@@ -1,67 +1,64 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32をさらに深く学び、仲間たちと一緒に楽しんでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させましょう。
+    - **特別な先行公開**: 新製品の発表や先取り情報をいち早くゲットできます。
+    - **特別割引**: 最新製品をお得に購入できる割引があります。
+    - **季節ごとのプロモーションとプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 さあ、私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _py_motor:
 
-3.5 Controlling a Small Fan (DC Motor)
+3.5 小型ファン（DCモーター）の制御
 =========================================
 
-
-In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the 
-Raspberry Pi Pico 2 W and an **TA6586 motor driver**. The TA6586 allows us to control the 
-direction of the motor rotation—both clockwise and counterclockwise. 
-Since the DC motor requires a relatively large current, for safety reasons, 
-here we use a power module to supply power to the motor.
+このレッスンでは、Raspberry Pi Pico 2 Wと **TA6586モータードライバ** を使って、 **DCモーター** （小型ファンなど）の制御方法を学びます。
+TA6586を使用すると、モーターの回転方向（時計回りおよび反時計回り）を制御できます。
+DCモーターは比較的大きな電流を必要とするため、安全のためにモーターに電力を供給するための電源モジュールを使用します。
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご参照ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -70,7 +67,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -85,36 +82,35 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -   
 
 
 
-**Schematic**
+**回路図**
 
 |sch_motor|
 
 
 
-**Wiring**
+**配線**
 
 .. note::
 
-    * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * DCモーターは高い電流を必要とするため、安全のためにここではモーターに電力を供給するためにLi-po充電モジュールを使用します。
+    * Li-po充電モジュールが回路図通りに接続されていることを確認してください。正しく接続されていない場合、ショートサーキットが発生し、バッテリーや回路が損傷する可能性があります。
 
 |wiring_motor|
 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``3.5_small_fan.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * ``pico-2w-kit-main/micropython`` から ``3.5_small_fan.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押します。
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * 正しいインタープリターが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）.COMxx。 
 
 .. code-block:: python
 
@@ -147,29 +143,29 @@ You can also buy them separately from the links below.
         utime.sleep(1)
 
 
-Once the program is running, the motor will rotate back and forth in a regular pattern.
+プログラムが実行されると、モーターは規則的なパターンで前後に回転します。
 
 
-**Understanding the Code**
+**コードの理解**
 
-#. Initialize the Pins:
+#. ピンの初期化：
 
-   ``motor1A`` and ``motor2A`` are connected to GP14 and GP15, controlling the direction of the motor.
+   ``motor1A`` と ``motor2A`` は、GP14とGP15に接続されており、モーターの回転方向を制御します。
 
    .. code-block:: python
 
      motor1A = machine.Pin(14, machine.Pin.OUT)
      motor2A = machine.Pin(15, machine.Pin.OUT)
 
-#. Define Functions:
+#. 関数の定義：
 
-   * ``rotate_clockwise()``: Sets ``motor1A`` high and ``motor2A`` low to rotate the motor clockwise.
-   * ``rotate_counterclockwise()``: Sets ``motor1A`` low and ``motor2A`` high to rotate counterclockwise.
-   * ``stop_motor()``: Sets both ``motor1A`` and ``motor2A`` low to stop the motor.
+   * ``clockwise()``: ``motor1A`` を高、 ``motor2A`` を低に設定し、モーターを時計回りに回転させます。
+   * ``anticlockwise()``: ``motor1A`` を低、 ``motor2A`` を高に設定し、反時計回りに回転させます。
+   * ``stopMotor()``: ``motor1A`` と ``motor2A`` を両方とも低に設定し、モーターを停止させます。
 
-#. Main Loop:
+#. メインループ：
 
-   The motor rotates clockwise, stops, rotates counterclockwise, and stops again, each for one second, repeatedly.
+   モーターは時計回りに回転し、停止し、反時計回りに回転し、再び停止します。それぞれ1秒間の動作を繰り返します。
 
    .. code-block:: python
 
@@ -183,24 +179,24 @@ Once the program is running, the motor will rotate back and forth in a regular p
         stopMotor()
         utime.sleep(1)
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* Motor Keeps Spinning After Stopping the Script:
+* スクリプトを停止した後もモーターが回り続ける場合：
 
-  If the motor continues to run after stopping the program, you may need to reset the Pico. Use a wire or a button to momentarily connect the RUN pin to GND, which resets the Pico.
+  プログラム停止後もモーターが回り続ける場合、Picoをリセットする必要があるかもしれません。RUNピンとGNDを一時的に接続するために、ワイヤーやボタンを使用してください。これによりPicoがリセットされます。
 
   |wiring_run_reset|
 
-* Pico Disconnects or Becomes Unresponsive:
+* Picoが切断される、または反応しなくなる場合：
 
-  The motor may draw too much current, causing voltage fluctuations. Ensure you're using a separate power supply for the motor and that all grounds are connected.
+  モーターが過剰な電流を消費していると、電圧の変動が発生することがあります。モーターに別の電源を使用し、すべてのグラウンドが接続されていることを確認してください。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to control a DC motor using the TA6586 motor driver and the Raspberry Pi Pico 2 W. You can now control the motor's direction and create projects like a small fan or a motorized device.
+このレッスンでは、TA6586モータードライバとRaspberry Pi Pico 2 Wを使ってDCモーターを制御する方法を学びました。これで、モーターの回転方向を制御でき、小型ファンやモーター駆動のデバイスなどのプロジェクトを作成できるようになりました。
 
-**Next Steps**
+**次のステップ**
 
-* **Speed Control**: Try using PWM (Pulse Width Modulation) to control the speed of the motor by connecting the EN1 pin to a PWM-capable GPIO pin.
-* **Control Multiple Motors**: Use the other channels of the TA6586 to control additional motors.
-* **Sensor Integration**: Incorporate sensors to control the motor based on input (e.g., temperature, light).
+* **速度制御**: PWM（パルス幅変調）を使用してモーターの速度を制御してみましょう。EN1ピンをPWM対応のGPIOピンに接続します。
+* **複数のモーターの制御**: TA6586の他のチャネルを使用して追加のモーターを制御します。
+* **センサーの統合**: 入力（例：温度、光）に基づいてモーターを制御するためにセンサーを組み込みます。

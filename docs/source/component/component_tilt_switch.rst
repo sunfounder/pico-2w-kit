@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_tilt:
 
-Tilt Switch
+傾斜スイッチ
 =============================
 
-|img_tilt| 
+|img_tilt|
 
-The tilt switch used here is a ball-type switch containing a metal ball inside. It is designed to detect small angular inclinations.
+ここで使用する傾斜スイッチは、内部に金属製のボールを含むボール型のスイッチです。小さな角度の傾斜を検出するように設計されています。
 
-**Working Principle**
+**動作原理**
 
-The operation of the tilt switch is straightforward:
-- When the switch is tilted at a certain angle, the metal ball inside rolls and makes contact with two terminals, completing the circuit and triggering the connected system.
-- When the switch is not tilted, the ball remains away from the contacts, breaking the circuit and leaving it inactive.
+傾斜スイッチの動作は簡単です：
+- スイッチが一定の角度で傾くと、内部の金属ボールが転がり、2つの端子に接触して回路を閉じ、接続されたシステムを作動させます。
+- スイッチが傾いていない場合、ボールは端子から離れており、回路が開いたままになり、スイッチは非アクティブな状態です。
 
-This simple yet effective mechanism makes the tilt switch ideal for detecting changes in orientation or inclination.
+このシンプルで効果的な仕組みにより、傾斜スイッチは姿勢や傾きの変化を検出するのに最適です。
 |img_tilt_symbol|
 
 * `SW520D Tilt Switch Datasheet <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_
@@ -35,9 +35,10 @@ This simple yet effective mechanism makes the tilt switch ideal for detecting ch
 .. * :ref:`Reading Button Value`
 
 
-**Example**
+**例**
 
-* :ref:`py_tilt` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`ar_tilt` (For Arduino User)
-.. * :ref:`per_flowing_leds` (For Piper Make User)
+
+* :ref:`py_tilt` (MicroPythonユーザー向け)
+* :ref:`py_10_second` (MicroPythonユーザー向け)
+* :ref:`ar_tilt` (Arduinoユーザー向け)
+.. * :ref:`per_flowing_leds` (Piper Makeユーザー向け)

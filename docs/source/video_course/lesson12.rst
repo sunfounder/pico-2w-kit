@@ -1,28 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 12:  Create a Dimmable LED in Micropython
+レッスン12：MicroPythonで調光可能なLEDを作成
 ==========================================================================
-This tutorial covers controlling LED brightness using a potentiometer and PWM on the Raspberry Pi Pico W:
 
-* **LED Brightness Control**: Explains controlling brightness with PWM and introduces exponential scaling for smoother brightness perception.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting a potentiometer and LED with a 220 Ohm resistor to the Pico W.
-* **Code Explanation**: Code setup for PWM, reading analog values from the potentiometer, and converting them to PWM duty cycles.
-* **Practical Demonstration**: Shows how to visualize PWM signals with an oscilloscope and demonstrates the effect of exponential scaling on brightness transitions.
+このチュートリアルでは、Raspberry Pi Pico Wを使ってポテンショメーターとPWMを使用し、LEDの明るさを制御する方法について説明します：
+
+* **LED明るさの制御**: PWMを使用して明るさを制御し、より滑らかな明るさの変化を実現するために指数スケーリングを導入する方法を説明します。
+* **配線図とセットアップ**: ポテンショメーターとLEDを220オームの抵抗とともにPico Wに接続する詳細な配線図を提供します。
+* **コードの説明**: PWMのセットアップ、ポテンショメーターからアナログ値を読み取ってPWMのデューティサイクルに変換するコードを紹介します。
+* **実践的なデモンストレーション**: オシロスコープを使ってPWM信号を視覚化し、明るさの遷移における指数スケーリングの効果をデモンストレーションします。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

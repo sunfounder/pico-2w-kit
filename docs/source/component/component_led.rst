@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_led:
 
@@ -19,43 +19,42 @@ LED
 
 |img_led|
 
-A semiconductor light-emitting diode is a component that converts electrical energy into light energy through a PN junction. Based on wavelength, these diodes can be classified into laser diodes, infrared light-emitting diodes, and visible light-emitting diodes, commonly referred to as LEDs.
+LED（発光ダイオード）は、PN接合を通じて電気エネルギーを光エネルギーに変換する半導体素子です。波長に基づいて、これらのダイオードはレーザーダイオード、赤外線発光ダイオード、および一般的にLEDとして知られる可視光発光ダイオードに分類されます。
 
-Due to the diode's unidirectional conductivity, current flows in the direction indicated by the arrow in its circuit symbol. To operate an LED, the anode must be connected to a positive power source and the cathode to a negative one, allowing the LED to emit light.
+ダイオードの一方向性導電性により、回路記号の矢印の方向に電流が流れます。LEDを動作させるには、アノードを正の電源に、カソードを負の電源に接続し、LEDが光を放出するようにします。
 
 |img_led_symbol|
 
-An LED has two pins. The longer one is the anode, and shorter one, the cathode. Pay attention not to connect them inversely. There is fixed forward voltage drop in the LED, so it cannot be connected with the circuit directly because the supply voltage can outweigh this drop and cause the LED to be burnt. The forward voltage of the red, yellow, and green LED is 1.8 V and that of the white one is 2.6 V. Most LEDs can withstand a maximum current of 20 mA, so we need to connect a current limiting resistor in series.                   
+LEDには2本のピンがあります。長い方がアノードで、短い方がカソードです。逆接続しないよう注意してください。LEDには固定された順方向電圧降下があり、電源電圧がこの降下を超えるとLEDが焼損する恐れがあるため、直接回路に接続することはできません。赤、黄、緑のLEDの順方向電圧は1.8Vで、白色LEDのそれは2.6Vです。ほとんどのLEDは最大20mAの電流に耐えることができるため、直列に電流制限抵抗を接続する必要があります。
 
-The formula of the resistance value is as follows:
+抵抗値の式は次のとおりです：
 
     R = (Vsupply – VD)/I
 
-**R** stands for the resistance value of the current limiting resistor, **Vsupply** for voltage supply, **VD** for voltage drop and **I** for the working current of the LED.
+ここで、 **R** は電流制限抵抗の抵抗値、 **Vsupply** は電源電圧、 **VD** は電圧降下、 **I** はLEDの動作電流を表します。
 
-Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
+LEDについての詳細はこちらを参照してください: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
 
-.. **Example**
+.. **例**
 
-.. * :ref:`Hello, Breadboard!` (For MicroPython User)
-.. * :ref:`fading_led_micropython` (For MicroPython User)
-.. * :ref:`fading_led_arduino` (For C/C++(Arduino) User)
-.. * :ref:`hello_led_arduino` (For C/C++(Arduino) User)
+.. * :ref:`Hello, Breadboard!` (MicroPythonユーザー向け)
+.. * :ref:`fading_led_micropython` (MicroPythonユーザー向け)
+.. * :ref:`fading_led_arduino` (C/C++(Arduino)ユーザー向け)
+.. * :ref:`hello_led_arduino` (C/C++(Arduino)ユーザー向け)
 
+**例**
 
-**Example**
-
-* :ref:`py_led` (For MicroPython User)
-* :ref:`py_fade` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`py_iot_read_ble` (For MicroPython User)
-* :ref:`py_iot_ble_relay` (For MicroPython User)
-* :ref:`ar_led` (For Arduino User)
-* :ref:`ar_fade` (For Arduino User)
-.. * :ref:`per_blink` (For Piper Make User)
-.. * :ref:`per_button` (For Piper Make User)
-.. * :ref:`per_service_bell` (For Piper Make User)
-.. * :ref:`per_reversing_system` (For Piper Make User)
-.. * :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_led` (MicroPythonユーザー向け)
+* :ref:`py_fade` (MicroPythonユーザー向け)
+* :ref:`py_alarm_lamp` (MicroPythonユーザー向け)
+* :ref:`py_traffic_light` (MicroPythonユーザー向け)
+* :ref:`py_reversing_aid` (MicroPythonユーザー向け)
+* :ref:`py_iot_read_ble` (MicroPythonユーザー向け)
+* :ref:`py_iot_ble_relay` (MicroPythonユーザー向け)
+* :ref:`ar_led` (Arduinoユーザー向け)
+* :ref:`ar_fade` (Arduinoユーザー向け)
+.. * :ref:`per_blink` (Piper Makeユーザー向け)
+.. * :ref:`per_button` (Piper Makeユーザー向け)
+.. * :ref:`per_service_bell` (Piper Makeユーザー向け)
+.. * :ref:`per_reversing_system` (Piper Makeユーザー向け)
+.. * :ref:`per_reaction_game` (Piper Makeユーザー向け)

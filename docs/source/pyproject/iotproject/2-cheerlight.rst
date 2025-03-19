@@ -1,62 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_cheerlights:
 
-8.2 Follow the @CheerLights
+8.2 @CheerLightsに従う
 =======================================
 
-This is a romantic project, join the |link_cheerlights| LED color-changing community, which allows LEDs all over the world to change colors simultaneously.
+このプロジェクトはロマンチックなものです。 |link_cheerlights| LEDの色が世界中のLEDを同時に変えるコミュニティに参加しましょう。
 
-You can place it in a corner of your office to remind yourself that you are not alone.
+オフィスの一角に置いて、あなたが一人ではないことを思い出させてくれます。
 
-You can tweeting @cheerlights and including the color name in the tweet. This will change the LEDs around the world to the color you specify.
+Twitterで@cheerlightsをつぶやき、色の名前を含めることで、世界中のLEDの色を指定した色に変更できます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
@@ -76,69 +76,67 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
- 
 
-**Steps**
 
-#. Build the circuit.
+**手順**
 
-    The Li-po Charger Module used here will power your circuit so you can disconnect the USB cable and take your project somewhere else to play!
+#. 回路を組み立てます。
+
+    ここで使用するLi-po充電モジュールは回路に電力を供給するため、USBケーブルを外してプロジェクトを別の場所に持っていって楽しむことができます！
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po充電モジュールが図のように接続されていることを確認してください。そうしないと、短絡が原因でバッテリーや回路が損傷する可能性があります。
 
     .. image:: img/wiring/2.cheerlights_bb.png
         :width: 800
 
+#. 前にダウンロードした`コードパッケージ `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ のフォルダに移動し、 ``8.2_cheer_light.py`` ファイルを開きます。
+
+#. スクリプトを実行するには、 **現在のスクリプトを実行** ボタンをクリックするか、F5を押してください。その後、接続のプロンプト、IPアドレス、色（0xff0000は赤）がシェルに表示されます。
 
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before and open the ``8.2_cheer_light.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
-
-#. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
     .. note::
 
-        Before running the code, you need to create ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
+        コードを実行する前に、Pico 2 Wに ``do_connect.py`` と ``secrets.py`` スクリプトを作成する必要があります。作成方法については :ref:`py_iot_access` を参照してください。
 
     .. image:: img/2_cheerlight1.png
 
+#. グローバルな@CheerLightsデバイスを制御
 
-#. Control global @CheerLights devices
-
-   - Join the |link_discord_server| and utilize the CheerLights bot to set the color. Simply type ``/cheerlights`` in any of the channels on the **CheerLights Discord Server** to activate the bot.
+   - |link_discord_server| に参加し、CheerLightsボットを使用して色を設定します。 **CheerLights Discordサーバー** のいずれかのチャンネルで ``/cheerlights`` と入力すると、ボットが起動します。
 
    .. image:: img/05_iot_cheerlights_1.png
 
-   - Follow the instructions provided by the bot to set the color. This will allow you to control CheerLights devices globally.
+   - ボットの指示に従って色を設定します。これにより、CheerLightsデバイスを世界中で制御できます。
 
    .. image:: img/05_iot_cheerlights_2.png
-    
-5. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
 
-6. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico 2 W as ``main.py``, as follows.
+5. スクリプトが実行された後、WS2812 RGBストリップは色を表示し、時々色が変わります。
 
-    * Stop the script from running and click **File** -> **Save as**.
+6. このスクリプトを起動時に実行したい場合は、 ``main.py`` としてRaspberry Pi Pico 2 Wに保存する必要があります。次の手順に従ってください。
+
+    * スクリプトの実行を停止し、 **ファイル**  -> **名前を付けて保存** をクリックします。
 
         .. image:: img/2_cheerlight2.png
 
-    * Select **Raspberry Pi Pico** in the popup window that appears.
+    * ポップアップウィンドウで **Raspberry Pi Pico** を選択します。
 
         .. image:: img/2_cheerlight3.png
 
-    * Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico 2 W.
+    * ファイル名を ``main.py`` に設定します。同じファイルがPico 2 Wに既に存在している場合、確認のプロンプトが表示されます。
 
         .. image:: img/2_cheerlight4.png
     
-    * You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico 2 W. Put it in a corner and it will work automatically.
+    * USBケーブルを外し、Li-po充電モジュールを使ってRaspberry Pi Pico 2 Wに電力を供給できます。これを一角に置けば、Picoは自動的に動作します。
 
+**仕組みは？**
 
-**How it works?**
-
-This project requires a network connection,  use the  `network` module to connect to the network.
-You can learn how to use the network module by referring to  :ref:`py_iot_access`.
+このプロジェクトはネットワーク接続を必要とし、 `network` モジュールを使用してネットワークに接続します。
+`network` モジュールの使用方法については :ref:`py_iot_access` を参照してください。
 
 .. code-block:: python
 
@@ -146,11 +144,11 @@ You can learn how to use the network module by referring to  :ref:`py_iot_access
     from do_connect import *
     do_connect()
 
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : これは `do_connect()` 関数をインポートし、その中にWi-Fi接続を管理するロジックが含まれています。 `do_connect()` 関数が呼び出されると、 `secrets.py` に指定されたWi-Fiネットワークに接続します。接続に失敗した場合は例外を発生させ、成功すれば次のステップに進みます。
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets import * : これは通常、Wi-FiのSSID、パスワード、およびその他の機密情報（APIキーなど）を格納するために使われる独立したファイルであり、機密情報をメインのコードファイルに直接埋め込まないようにします。
 
-Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details. 
+WS2812 RGBストリップを設定する方法については、 :ref:`py_neopixel` を参照してください。
 
 .. code-block:: python
 
@@ -158,17 +156,16 @@ Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details.
     from ws2812 import WS2812
     ws = WS2812(machine.Pin(18), 8)
 
-Now, we need a way to get the color of @CheerLights. There is a back-end system that takes the color changes from Twitter
-and posts them in JSON format to the URL: http://api.thingspeak.com/channels/1417/field/2/last.json.
+次に、@CheerLightsの色を取得する方法を説明します。Twitterからの色変更を受け取るバックエンドシステムがあり、その変更をJSON形式でURL: http://api.thingspeak.com/channels/1417/field/2/last.json に投稿します。
 
-If you open this URL directly in your browser, you will see something like the following. All we need is the ``field2`` data, which is a hexadecimal color-coded string.
+このURLを直接ブラウザで開くと、次のような内容が表示されます。必要なのは ``field2`` データで、これは16進数の色コード文字列です。
 
 .. code-block:: 
 
     {"created_at":"2022-08-16T06:12:44Z","entry_id":870488,"field2":"#ff00ff"}
 
-We need to use the ``urequests`` module to get this data and the ``json`` module to convert this character into a python dictionary.
-The following code gets the latest @CheerLights color from the url and returns a color value that can be used by WS2812.
+``urequests`` モジュールを使用してこのデータを取得し、 ``json`` モジュールを使用してPythonの辞書に変換します。
+以下のコードは最新の@CheerLights色をURLから取得し、WS2812で使用できる色値を返します。
 
 .. code-block:: python
 
@@ -179,7 +176,7 @@ The following code gets the latest @CheerLights color from the url and returns a
             if r.status_code > 199 and r.status_code < 300:
                 cheerlights = json.loads(r.content.decode('utf-8'))
                 print(cheerlights['field2'])
-                colour = int('0x'+cheerlights['field2'][1:7])#Convert from String to Integer
+                colour = int('0x'+cheerlights['field2'][1:7])#文字列から整数に変換
                 r.close()
                 return colour
             else:
@@ -188,7 +185,7 @@ The following code gets the latest @CheerLights color from the url and returns a
             print(e)
             return None
 
-Finally, use a loop to make the ws2812 work once every 5 seconds.
+最後に、5秒ごとにWS2812を動作させるループを作成します。
 
 .. code-block:: python
 

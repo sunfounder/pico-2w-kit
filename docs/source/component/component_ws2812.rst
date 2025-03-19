@@ -1,63 +1,61 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの支援を受け、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**：スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報にいち早くアクセスできます。
+    - **特別割引**：最新製品の特別割引をお楽しみいただけます。
+    - **季節のプロモーションやプレゼント企画**：プレゼント企画やイベントに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_ws2812:
 
-WS2812 RGB 8 LEDs Strip
+WS2812 RGB 8LEDストリップ
 ============================
 
 |img_ws2812|
 
-The WS2812 RGB 8 LEDs Strip is composed of 8 RGB LEDs. 
-Only one pin is required to control all the LEDs. Each RGB LED has a WS2812 chip, which can be controlled independently. 
-It can realize 256-level brightness display and complete true color display of 16,777,216 colors. 
-At the same time, the pixel contains an intelligent digital interface data latch signal shaping amplifier drive circuit, 
-and a signal shaping circuit is built in to effectively ensure the color height of the pixel point light Consistent.
+WS2812 RGB 8LEDストリップは、8個のRGB LEDで構成されています。
+すべてのLEDを制御するのに1本のピンだけで十分です。各RGB LEDにはWS2812チップが搭載されており、個別に制御可能です。
+256階調の明るさ表示が可能で、1677万色の真の色表示を実現できます。
+さらに、ピクセルにはインテリジェントなデジタルインターフェースデータラッチ信号整形アンプドライブ回路が組み込まれており、信号整形回路を内蔵することで、ピクセル点灯の色の高さが一定に保たれます。
 
-It is flexible, can be docked, bent, and cut at will, and the back is equipped with adhesive tape, which can be fixed on the uneven surface at will, and can be installed in a narrow space.
+柔軟で、接続、曲げ、切断が自由にでき、背面には粘着テープが貼られており、不均一な面にも簡単に固定でき、狭いスペースにも取り付け可能です。
 
-**Features**
+**特徴**
 
-* Work Voltage: DC5V
-* IC: One IC drives one RGB LED
-* Consumption: 0.3w each LED
-* Working Temperature: -15-50
-* Color: Full color RGB
-* RGB Type: 5050RGB(Built-in IC WS2812B)
-* Light Strip Thickness: 2mm
-* Each LED can be controlled individually
+* 動作電圧：DC5V
+* IC：1つのICで1つのRGB LEDを駆動
+* 消費電力：各LED 0.3w
+* 動作温度：-15～50℃
+* 色：フルカラーRGB
+* RGBタイプ：5050RGB（内蔵IC WS2812B）
+* ライトストリップの厚さ：2mm
+* 各LEDは個別に制御可能
 
-**WS2812B Introduction**
+**WS2812Bについて**
 
 * `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
-The WS2812B is an intelligent LED light source that integrates a control circuit and an RGB chip within a 5050 package. It includes an intelligent digital port data latch, a signal reshaping amplification drive circuit, a precision internal oscillator, and a programmable constant-current control component for 12V voltage. These features ensure consistent and accurate color rendering across pixel points.
+WS2812Bは、5050パッケージ内に制御回路とRGBチップを統合したインテリジェントLED光源です。これには、インテリジェントデジタルポートデータラッチ、信号再整形増幅ドライブ回路、精密な内部オシレーター、および12V電圧用のプログラム可能な定電流制御コンポーネントが含まれています。これらの機能により、ピクセルポイントでの色の再現性が一定で正確に保たれます。
 
-The data transfer protocol uses a single NZR communication mode. After a power-on reset, the DIN port receives data from the controller. The first pixel processes the initial 24-bit data and stores it in its internal data latch. Remaining data is reshaped by the internal signal reshaping amplification circuit and transmitted to the next pixel via the DO port. With each pixel, the signal is reduced by 24 bits. The pixel employs auto-reshaping transmission technology, which allows an unlimited number of pixels to be cascaded. The only limitation is the speed of signal transmission.
+データ転送プロトコルは、単一のNZR通信モードを使用します。電源投入後、DINポートはコントローラからデータを受信します。最初のピクセルは初期の24ビットデータを処理し、内部データラッチに格納します。残りのデータは内部信号再整形増幅回路で再整形され、DOポートを通じて次のピクセルに伝送されます。各ピクセルごとに、信号は24ビット減少します。このピクセルは自動再整形伝送技術を採用しており、ピクセルを無限にカスケード接続できます。唯一の制限は信号伝送速度です。
 
-The LED offers several advantages, including low driving voltage, energy efficiency, environmental friendliness, high brightness, a wide light-scattering angle, excellent consistency, low power consumption, and long lifespan. The integration of the control chip within the LED simplifies circuit design, reduces size, and facilitates convenient installation.
+LEDには、低駆動電圧、エネルギー効率、環境に優しい、高い輝度、広い光散乱角度、優れた一貫性、低消費電力、長寿命などの利点があります。制御チップがLED内に統合されているため、回路設計が簡素化され、サイズが小さくなり、取り付けが便利になります。
 
-.. Example
+.. 例
 .. -------------------
 
-.. :ref:`RGB LED Strip`
+.. :ref:`RGB LEDストリップ`
 
+**例**
 
-**Example**
-
-* :ref:`py_neopixel` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_iot_cheerlights` (For MicroPython User)
-* :ref:`ar_neopixel` (For Arduino User)
-.. * :ref:`per_flowing_leds` (For Piper Make User)
+* :ref:`py_neopixel` (MicroPythonユーザー向け)
+* :ref:`py_music_player` (MicroPythonユーザー向け)
+* :ref:`py_iot_cheerlights` (MicroPythonユーザー向け)
+* :ref:`ar_neopixel` (Arduinoユーザー向け)
+.. * :ref:`per_flowing_leds` (Piper Makeユーザー向け)

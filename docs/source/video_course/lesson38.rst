@@ -1,29 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 38: Learn Trigonometry Fundamentals in One Session (EASY)
+レッスン38：たった一回のセッションで三角法の基礎を学ぶ（簡単）
 =============================================================================
-This tutorial covers the basics of trigonometry and its applications using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用して三角法の基本とその応用について説明します：
 
-* **Introduction to Trigonometry**: Addresses common issues in learning trigonometry and focuses on using circles to simplify concepts.
-* **Understanding Circles**: Explains unit circles and how rotating a vector traces a circle, introducing radians and degrees.
-* **Basic Trigonometric Functions**: Demonstrates sine, cosine, and tangent using circles, and introduces inverse functions to find angles.
-* **Programming Examples**: Shows how to calculate sine and cosine in MicroPython, with example code for degrees to radians conversion.
-* **Homework Assignment**: Find sine and cosine for key angles (0°, 90°, 180°, 270°, 360°) without a calculator, emphasizing visual understanding.
+* **三角法入門**: 三角法の学習における一般的な問題に対処し、円を使用して概念を簡略化することに焦点を当てます。
+* **円の理解**: 単位円とベクトルが円を描くように回転する様子を説明し、ラジアンと度を導入します。
+* **基本的な三角関数**: 円を使用して正弦、余弦、正接を示し、角度を求めるための逆関数を紹介します。
+* **プログラミング例**: MicroPythonで正弦と余弦を計算する方法を示し、度からラジアンへの変換の例示コードを提供します。
+* **宿題**: 計算機を使わずに主要な角度（0°、90°、180°、270°、360°）の正弦と余弦を求め、視覚的な理解を強調します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

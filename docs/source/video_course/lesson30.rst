@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 30: Project to Connect Your Raspberry Pi Pico W to the Internet
+レッスン30：Raspberry Pi Pico Wをインターネットに接続するプロジェクト
 =============================================================================
 
-This tutorial covers connecting the Raspberry Pi Pico W to the internet and fetching data from APIs:
+このチュートリアルでは、Raspberry Pi Pico Wをインターネットに接続し、APIからデータを取得する方法について説明します：
 
-* **Fetching Data from APIs**: Use ``urequests.get()`` to fetch JSON data and parse it to extract relevant information.
-* **Code Example**: Fetch data about astronauts in space, list their names and spacecraft.
-* **Homework**: Find a real-time data set (e.g., weather), fetch and display it using the Raspberry Pi Pico W.
+* **APIからのデータ取得**: ``urequests.get()`` を使用してJSONデータを取得し、関連情報を抽出するために解析します。
+* **コード例**: 宇宙にいる宇宙飛行士のデータを取得し、彼らの名前と宇宙船をリストアップします。
+* **宿題**: リアルタイムのデータセット（例えば、天気）を見つけ、Raspberry Pi Pico Wを使用して取得し表示します。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

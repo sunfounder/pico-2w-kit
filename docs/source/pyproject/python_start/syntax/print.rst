@@ -1,24 +1,25 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れることができます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **季節限定プロモーションやプレゼント企画**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
-Print()
+
+print()
 =====================
 
-The ``print()`` function prints the specified message to the screen, or other standard output device.
-The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+``print()`` 関数は、指定したメッセージを画面やその他の標準出力装置に表示します。
+メッセージは文字列である必要がありますが、他のオブジェクトも文字列に変換されてから画面に表示されます。
 
-Print multiple objects:
+複数のオブジェクトを表示する場合：
 
 
 
@@ -41,9 +42,7 @@ Print tuples:
 >>> %Run -c $EDITOR_CONTENT
 ('pear', 'apple', 'grape')
 
-Print two messages and specify the separator:
-
-
+2つのメッセージを表示し、区切り文字を指定する場合：
 
 .. code-block:: python
 

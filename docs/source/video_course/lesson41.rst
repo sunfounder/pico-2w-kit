@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 41: Inferring Tilt From a 3 Axis Accelerometer
+レッスン41：3軸加速度センサーから傾斜を推測
 =============================================================================
-This tutorial covers measuring acceleration in three axes using the MPU6050 sensor with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WにMPU6050センサーを使用して三軸の加速度を測定する方法について説明します：
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes, focusing on Z-axis due to gravity.
-* **Review of Previous Lesson**: Recap of X and Y axes acceleration and homework on Z-axis prediction.
-* **Z-Axis Acceleration**: Explains 1G acceleration in Z-axis when stationary and how tilting affects sensor readings.
-* **Practical Application**: Using the sensor for tilt measurement (pitch and roll) in carpentry, off-roading, and aviation.
-* **Homework Assignment**: Calculate tilt angles (pitch and roll) using sensor data and apply previous math concepts.
+* **はじめに**: X、Y、Z軸の加速度を測定し、重力の影響が大きいZ軸に焦点を当てます。
+* **前回のレッスンの復習**: XおよびY軸の加速度測定とZ軸予測に関する宿題の復習。
+* **Z軸の加速度**: 静止時のZ軸の1G加速度と傾斜がセンサーの読み取りにどのように影響するかを説明します。
+* **実用的な応用**: センサーを使用して大工仕事、オフロード、航空での傾斜測定（ピッチとロール）を行います。
+* **宿題**: センサーデータを使用して傾斜角（ピッチとロール）を計算し、以前の数学の概念を応用してください。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

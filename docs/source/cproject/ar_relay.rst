@@ -1,52 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行公開をいち早くチェックできます。
+    - **特別割引**: 新しい製品に対して独占的な割引を楽しめます。
+    - **祭典のプロモーションやプレゼント**: プレゼントや祝日プロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _ar_relay:
 
 
-2.16 Control Another Circuit with a Relay
+2.16 リレーで別の回路を制御する
 ==========================================
 
-In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2 W. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
+このレッスンでは、 **リレー** とRaspberry Pi Pico 2 Wを使用して別の回路を制御する方法を学びます。リレーは、低電圧回路（例えばPico）で制御されて、高電圧回路を操作するスイッチのように動作します。例えば、リレーを使用してランプやその他のデバイスをオンにしたり、オフにしたりすることができ、家電製品の自動化を実現できます。
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    家電製品の改造には大きな危険が伴いますので、軽率に試すことは避け、専門家の指導の下で行ってください。
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+ここでは、ブレッドボード電源モジュールで動作するシンプルな回路を使用して、リレーを使った制御方法を示します。
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利なので、こちらのリンクをチェックしてください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットのアイテム
+        - 購入リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから、コンポーネントを個別に購入することもできます。
 
 
 .. list-table::
@@ -54,16 +54,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -72,11 +72,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1（S8050）
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_diode`
@@ -87,164 +87,162 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
-**Circuit Diagram**
+**回路図**
 
 |sch_relay_1|
 
-* Relay Activation:
+* リレーの動作:
 
-  * The relay's coil is energized by the transistor when the Pico outputs a **high signal** (3.3V) to GP15.
-  * The transistor allows current to flow through the relay, activating the switch inside.
-  * The relay makes a "click" sound when switching, indicating the control of the load circuit.
+  * Picoが **高信号** （3.3V）をGP15に出力すると、トランジスタがリレーのコイルを通電させます。
+  * トランジスタが電流をリレーに流し、内部のスイッチを作動させます。
+  * リレーがスイッチを切り替えると「クリック」音がし、負荷回路を制御していることが分かります。
 
-* Flyback Diode:
+* フライバックダイオード:
 
-  * The diode is placed across the relay coil to protect the transistor from voltage spikes that occur when the relay is turned off.
+  * ダイオードはリレーコイルに逆接続され、リレーがオフになるときに発生する電圧スパイクからトランジスタを保護します。
 
-**Wiring Diagram**
+**配線図**
 
 |wiring_relay_1|
 
-**Code**
-
+**コード**
 
 .. note::
 
-    * You can open the file ``2.16_relay.ino`` under the path of ``pico-2w-kit-main/arduino/2.16_relay``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * ``pico-2w-kit-main/arduino/2.16_relay`` 内の ``2.16_relay.ino`` ファイルを開きます。
+    * または、このコードを **Arduino IDE** にコピーします。
+    * アップロードボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択するのを忘れないでください。
 
 .. code-block:: arduino
 
-   const int relayPin = 15;  // GPIO pin connected to the transistor base
+   const int relayPin = 15;  // トランジスタのベースに接続されたGPIOピン
 
    void setup() {
      pinMode(relayPin, OUTPUT);
-     digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+     digitalWrite(relayPin, LOW);  // 起動時にリレーをオフにしておく
    }
 
    void loop() {
-     // Turn the relay on
+     // リレーをオンにする
      digitalWrite(relayPin, HIGH);
      Serial.println("Relay ON");
-     delay(2000);  // Wait for 2 seconds
+     delay(2000);  // 2秒待機
 
-     // Turn the relay off
+     // リレーをオフにする
      digitalWrite(relayPin, LOW);
      Serial.println("Relay OFF");
-     delay(2000);  // Wait for 2 seconds
+     delay(2000);  // 2秒待機
    }
 
-After uploading the code, you should hear a "click" sound from the relay every 2 seconds as it switches on and off.
+コードをアップロード後、リレーがオンとオフに切り替わるたびに「クリック」という音が2秒ごとに聞こえるはずです。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Defining the Relay Pin:
+#. リレーピンの定義:
 
-   Assigns ``relayPin`` to GPIO 15, which controls the transistor and thus the relay.
+   ``relayPin`` をGPIO 15に割り当て、トランジスタを制御し、リレーを操作します。
 
    .. code-block:: arduino
 
-        const int relayPin = 15;  // GPIO pin connected to the transistor base
+        const int relayPin = 15;  // トランジスタのベースに接続されたGPIOピン
 
-#. Setting Up the Pin Modes:
+#. ピンモードの設定:
 
-   Sets ``relayPin`` as an output. Initializes the relay in the OFF state.
+   ``relayPin`` を出力モードに設定し、リレーをオフの状態で初期化します。
 
    .. code-block:: arduino
 
         void setup() {
           pinMode(relayPin, OUTPUT);
-          digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+          digitalWrite(relayPin, LOW);  // 起動時にリレーをオフにしておく
         }
 
-#. Controlling the Relay:
+#. リレーの制御:
 
-   * Sets ``relayPin`` ``HIGH`` to turn on the transistor, energizing the relay coil.
-   * Waits for 2 seconds.
-   * Sets ``relayPin`` ``LOW`` to turn off the transistor, de-energizing the relay coil.
-   * Waits for another 2 seconds.
-   * Repeats the cycle indefinitely.
+   * ``relayPin`` を ``HIGH`` に設定し、トランジスタをオンにしてリレーのコイルに通電させます。
+   * 2秒待機します。
+   * ``relayPin`` を ``LOW`` に設定し、トランジスタをオフにしてリレーのコイルへの通電を停止させます。
+   * さらに2秒待機します。
+   * このサイクルを無限に繰り返します。
 
    .. code-block:: arduino
 
-        // Turn the relay on
+        // リレーをオンにする
         digitalWrite(relayPin, HIGH);
         Serial.println("Relay ON");
-        delay(2000);  // Wait for 2 seconds
+        delay(2000);  // 2秒待機
 
-        // Turn the relay off
+        // リレーをオフにする
         digitalWrite(relayPin, LOW);
         Serial.println("Relay OFF");
-        delay(2000);  // Wait for 2 seconds
+        delay(2000);  // 2秒待機
 
-**Experimenting Further**
+**さらなる実験**
 
-* **Set a Timer**: Modify the code to turn the relay on for 10 minutes and then automatically turn it off.
-* **Control Home Appliances**: With appropriate guidance, you can connect high-voltage devices to the relay for automation tasks such as turning lights or fans on and off.
+* **タイマーを設定する**: コードを変更して、リレーを10分間オンにしてから自動的にオフにするようにします。
+* **家庭用機器の制御**: 適切な指導を受けた上で、リレーを使って高電圧デバイス（例えば照明やファン）をオン・オフする自動化タスクを行うことができます。
 
-  * The circuit should look like this: To demonstrate controlling an external circuit safely, we'll add an external 5V power supply (through a breadboard power module) to power an LED. This simulates how you could control higher voltage devices (like home appliances) using the relay. Here's how to modify the circuit:
+  * 回路は次のようになります: 外部5V電源（ブレッドボード電源モジュール経由）を使ってLEDを駆動し、リレーがどのように高電圧デバイス（家庭用機器）を制御するかを示します。回路の変更方法は次の通りです：
 
     |sch_relay_2|
-  
+
     |wiring_relay_2|
 
-  * Code to Control the Relay:
+  * リレーを制御するコード：
 
     .. code-block:: arduino
     
-       const int relayPin = 15;  // GPIO pin connected to the transistor base
+       const int relayPin = 15;  // トランジスタのベースに接続されたGPIOピン
 
        void setup() {
          pinMode(relayPin, OUTPUT);
-         digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+         digitalWrite(relayPin, LOW);  // 起動時にリレーをオフにしておく
        }
 
        void loop() {
-         // Turn the relay on
+         // リレーをオンにする
          digitalWrite(relayPin, HIGH);
          Serial.println("Relay ON");
-         delay(2000);  // Wait for 2 seconds
+         delay(2000);  // 2秒待機
 
-         // Turn the relay off
+         // リレーをオフにする
          digitalWrite(relayPin, LOW);
          Serial.println("Relay OFF");
-         delay(2000);  // Wait for 2 seconds
+         delay(2000);  // 2秒待機
        }
 
-    When the relay is activated (GP15 outputs high), the Normally Open (NO) and Common (C) pins of the relay connect, allowing the external 5V power to flow through the LED. The LED will light up, simulating how a relay can control an external appliance.
+    リレーが作動すると（GP15が高信号を出力）、リレーの常に開いている端子（NO）と共通端子（C）が接続され、外部5V電源がLEDを通って流れます。LEDが点灯し、リレーが外部機器を制御する様子をシミュレートできます。
 
-    When the relay is deactivated (GP15 outputs low), the Normally Open (NO) pin disconnects from the Common (C) pin, cutting off the external power, and the LED turns off.
+    リレーが非作動状態になると（GP15が低信号を出力）、NO端子がC端子から切り離され、外部電源が遮断され、LEDが消えます。
 
 
-**Safety Considerations for Controlling Real Appliances**
+**実際の家電製品を制御する際の安全対策**
 
-This example uses an LED and a 5V power source to demonstrate relay control. If you are controlling higher voltage devices (like household appliances), ensure:
+この例では、LEDと5V電源を使用してリレー制御を示しました。もし高電圧デバイス（家庭用機器）を制御する場合は、以下に注意してください：
 
-* **Proper Voltage Rating**: Use a relay rated for the appropriate voltage and current for your appliance.
-* **Isolation**: For safety, ensure proper isolation between the low-voltage control circuit (like the Pico) and the high-voltage appliance circuit.
-* **Fuse Protection**: Consider adding fuses or circuit breakers to protect against short circuits or overloads.
-* **Professional Guidance**: When working with high-voltage circuits, always seek professional guidance to ensure safe operation.
+* **適切な電圧定格**: 使用するリレーは、機器の適切な電圧と電流に対応したものを使用してください。
+* **絶縁**: 安全のため、低電圧制御回路（Picoなど）と高電圧機器回路の間には適切な絶縁を施してください。
+* **ヒューズ保護**: 短絡や過負荷から保護するために、ヒューズや回路ブレーカーを追加することを検討してください。
+* **専門家の指導**: 高電圧回路を取り扱う場合は、安全な運用のために必ず専門家の指導を受けてください。
 
-This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2 W.
+このプロジェクトは、Raspberry Pi Pico 2 Wを使って家電製品（ランプ、ファン、その他のデバイス）をタイマーやセンサーに基づいて制御するためのホームオートメーションの基礎となります。
 
-**Using the NC Terminal**
+**NC端子の使用**
 
-* If you connect your controlled circuit between COM and NC:
+* コントロール回路をCOMとNC端子の間に接続した場合：
 
-  * The circuit will be closed (ON) when the relay is not energized.
-  * The circuit will be open (OFF) when the relay is energized.
-  * Example: Controlling an External Device
-  * Warning: Do not attempt to control high-voltage devices without proper knowledge and safety precautions.
+  * リレーが作動しないとき、回路は閉じ（ON）状態になります。
+  * リレーが作動すると、回路は開き（OFF）状態になります。
+  * 例: 外部デバイスの制御
+  * 警告: 適切な知識と安全対策なしで高電圧デバイスを制御しないでください。
 
-* If you want to control a small DC motor or another device:
+* 小型DCモーターや他のデバイスを制御したい場合：
 
-  * Replace the LED with the device you want to control.
-  * Ensure the device's voltage and current requirements are compatible.
-  * Provide an appropriate power supply for the device.
-  * Connect the device in series with the relay's COM and NO (or NC) terminals.
+  * LEDの代わりに制御したいデバイスを接続します。
+  * デバイスの電圧と電流の要件がリレーと互換性があることを確認してください。
+  * デバイスに適切な電源を供給します。
+  * デバイスをリレーのCOMとNO（またはNC）端子の間に直列に接続します。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to control another circuit using a relay and the Raspberry Pi Pico. By using a transistor to switch the relay coil, you've safely controlled a higher-current circuit without overloading the Pico's GPIO pins. Understanding how to use relays opens up many possibilities for controlling various devices and appliances in your projects.
-
+このレッスンでは、リレーとRaspberry Pi Picoを使用して別の回路を制御する方法を学びました。トランジスタを使ってリレーコイルを切り替えることで、PicoのGPIOピンを過負荷にすることなく、より高い電流を流す回路を安全に制御できるようになりました。リレーを使いこなすことで、さまざまなデバイスや家電をプロジェクトで制御できる可能性が広がります。

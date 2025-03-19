@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 23:  Temperature and Humidity Sensor with LCD Display
+レッスン23：LCDディスプレイ付き温湿度センサー
 =============================================================================
 
-This tutorial covers creating a temperature and humidity project using the Raspberry Pi Pico W and DHT-11 sensor with an LCD display:
+このチュートリアルでは、Raspberry Pi Pico WとDHT-11センサーを使用して、LCDディスプレイ付きの温湿度計測プロジェクトを作成する方法について説明します：
 
-* **Introduction**: Introduces the project to create a temperature and humidity sensor with an LCD display.
-* **Component Setup**: Connects the Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD.
-* **Library Installation**: Installs the LCD 1602 library from toptechboy.com.
-* **Code Explanation**: Sets up DHT-11, toggle for Celsius/Fahrenheit, and displays readings on the LCD.
-* **Practical Demonstration**: Shows readings on the LCD and toggle functionality, addressing text overlap issues.
+* **はじめに**: LCDディスプレイ付きの温湿度センサーを作成するプロジェクトを紹介します。
+* **コンポーネントのセットアップ**: Raspberry Pi Pico W、DHT-11センサー、プッシュボタン、LCDを接続します。
+* **ライブラリのインストール**: toptechboy.comからLCD 1602ライブラリをインストールします。
+* **コード説明**: DHT-11の設定、摂氏/華氏の切り替え、LCDへの読み取り値の表示を行います。
+* **実践デモンストレーション**: LCDでの読み取り値と切り替え機能を示し、テキストの重なり問題に対処します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

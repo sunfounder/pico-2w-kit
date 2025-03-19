@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 63: Object Oriented Programming in MicroPython with Classes and Methods
+レッスン63: MicroPythonでのクラスとメソッドを使ったオブジェクト指向プログラミング
 ===================================================================================
 
-This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用したオブジェクト指向プログラミング（OOP）について説明します：
 
-* **Task Overview**: Introduce modular programming and transition to object-oriented programming with classes. Create a ``Rectangle`` class to calculate area, perimeter, and diagonal.
-* **Key Steps**: Define the ``Rectangle`` class, use ``__init__`` to initialize attributes, implement methods, create and modify objects.
-* **Homework Assignment**: Write a program using the ``Rectangle`` class to create, modify, and recalculate multiple rectangle objects.
+* **タスクの概要**: モジュラープログラミングを紹介し、クラスを使ってオブジェクト指向プログラミングへの移行を行います。面積、周囲の長さ、対角線を計算する ``Rectangle`` クラスを作成します。
+* **主なステップ**: ``Rectangle`` クラスを定義し、 ``__init__`` で属性を初期化し、メソッドを実装し、オブジェクトを作成して変更します。
+* **宿題課題**: ``Rectangle`` クラスを使用して、複数の四角形オブジェクトを作成、変更、再計算するプログラムを書いてください。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

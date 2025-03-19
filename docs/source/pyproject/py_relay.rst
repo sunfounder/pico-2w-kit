@@ -1,51 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的サポート**: コミュニティやチームからのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **独占的先行公開**: 新製品の発表や先取り情報を早期に手に入れましょう。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_relay:
 
-2.16 Control Another Circuit
+2.16 別の回路を制御する
 =================================
 
-In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2 W. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
+このレッスンでは、Raspberry Pi Pico 2 Wと **リレー** を使用して、別の回路を制御する方法を学びます。リレーは低電圧回路（例えばPico）で制御され、高電圧回路を操作するスイッチのような役割を果たします。例えば、リレーを使ってランプや他のデバイスをオンにすることができ、電化製品の自動化が可能になります。
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    電化製品の改造には大きな危険が伴いますので、安易に試さず、専門家の指導のもとで行ってください。
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+ここでは、リレーを使って回路を制御する簡単な回路を例として、ブレッドボード電源モジュールを使ってその方法を示します。
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -53,16 +53,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -71,7 +71,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -86,112 +86,110 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
+**配線**
 
-**Wiring**
-
-First, build a low-voltage circuit for controlling a relay.
-Driving the relay requires a high current, so a transistor is needed, and here we use the S8050.
+まず、リレーを制御するための低電圧回路を作成します。
+リレーを駆動するには高電流が必要なので、トランジスタが必要で、ここではS8050を使用します。
 
 |sch_relay_1|
 
-* Relay Activation:
+* リレーの作動：
 
-  * The relay's coil is energized by the transistor when the Pico outputs a **high signal** (3.3V) to GP15.
-  * The transistor allows current to flow through the relay, activating the switch inside.
-  * The relay makes a "click" sound when switching, indicating the control of the load circuit.
+  * Picoが **高い信号** （3.3V）をGP15に出力すると、トランジスタがリレーのコイルを励起します。
+  * トランジスタはリレーを通じて電流が流れることを許可し、その内部のスイッチを作動させます。
+  * リレーが切り替わる際に「カチッ」という音が鳴り、負荷回路が制御されていることを示します。
 
-* Flyback Diode:
+* フライバックダイオード：
 
-  * The diode is placed across the relay coil to protect the transistor from voltage spikes that occur when the relay is turned off.
+  * ダイオードはリレーのコイルに並列に配置され、リレーがオフになったときに発生する電圧スパイクからトランジスタを保護します。
 
-**Wiring Diagram**
+**回路図**
 
 |wiring_relay_1|
 
 
 
-The following code will control the relay, switching the connected circuit on and off every two seconds.
+次のコードはリレーを制御し、接続された回路を2秒ごとにオンとオフに切り替えます。
 
 .. note::
 
-    * Open the ``2.16_control_another_circuit.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * ``pico-2w-kit-main/micropython`` から ``2.16_control_another_circuit.py`` ファイルを開くか、このコードをThonnyにコピーして、「実行」をクリックするか、F5を押して実行します。
+    * 正しいインタープリター「MicroPython（Raspberry Pi Pico）」が右下に選択されていることを確認してください。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize the relay pin on GP15
+    # GP15に接続されたリレーピンを初期化
     relay = machine.Pin(15, machine.Pin.OUT)
 
     while True:
-        relay.value(1)  # Turn the relay on
-        utime.sleep(2)  # Wait for 2 seconds
-        relay.value(0)  # Turn the relay off
-        utime.sleep(2)  # Wait for 2 seconds
+        relay.value(1)  # リレーをオンにする
+        utime.sleep(2)  # 2秒待つ
+        relay.value(0)  # リレーをオフにする
+        utime.sleep(2)  # 2秒待つ
 
-When the code is running, you should hear a "click" sound from the relay every two seconds, indicating the circuit is being switched on and off.
+コードが実行されていると、リレーから「カチッ」という音が2秒ごとに聞こえ、回路がオンとオフに切り替わることがわかります。
 
-**Experimenting Further**
+**実験してみよう**
 
-* **Set a Timer**: Modify the code to turn the relay on for 10 minutes and then automatically turn it off.
-* **Control Home Appliances**: With appropriate guidance, you can connect high-voltage devices to the relay for automation tasks such as turning lights or fans on and off.
+* **タイマーを設定する**: コードを修正して、リレーを10分間オンにした後、自動的にオフにするようにしてみましょう。
+* **家庭用電化製品を制御する**: 適切なガイドラインのもとで、リレーを使って高電圧デバイスを接続し、照明やファンのオン・オフなどの自動化タスクを試してみましょう。
 
-  * The circuit should look like this: To demonstrate controlling an external circuit safely, we'll add an Li-po Charger Module to power an LED. This simulates how you could control higher voltage devices (like home appliances) . Here's how to modify the circuit:
+  * 回路は次のようになります。外部回路の制御を安全にデモンストレーションするために、Li-poチャージャーモジュールを追加し、LEDを駆動します。これにより、リレーを使って高電圧デバイス（家庭用電化製品）を制御する方法がシミュレートされます。回路を次のように修正します：
 
     |sch_relay_2|
-  
+
     |wiring_relay_2|
 
-  * Code to Control the Relay:
+  * リレーを制御するコード：
 
     .. code-block:: python
 
         import machine
         import utime
 
-        # Initialize the relay pin on GP15
+        # GP15に接続されたリレーピンを初期化
         relay = machine.Pin(15, machine.Pin.OUT)
 
         while True:
-            relay.value(1)  # Turn the relay on
-            utime.sleep(2)  # Wait for 2 seconds
-            relay.value(0)  # Turn the relay off
-            utime.sleep(2)  # Wait for 2 seconds
+            relay.value(1)  # リレーをオンにする
+            utime.sleep(2)  # 2秒待つ
+            relay.value(0)  # リレーをオフにする
+            utime.sleep(2)  # 2秒待つ
 
-    When the relay is activated (GP15 outputs high), the Normally Open (NO) and Common (C) pins of the relay connect, allowing the external Li-po Charger Module to flow through the LED. The LED will light up, simulating how a relay can control an external appliance.
+    リレーが作動すると（GP15が高い信号を出力する）、リレーの通常開（NO）ピンと共通（C）ピンが接続され、外部のLi-poチャージャーモジュールがLEDを通じて流れます。LEDが点灯し、リレーがどのように外部の電化製品を制御できるかをシミュレートします。
 
-    When the relay is deactivated (GP15 outputs low), the Normally Open (NO) pin disconnects from the Common (C) pin, cutting off the external power, and the LED turns off.
+    リレーが非作動状態になると（GP15が低い信号を出力する）、通常開（NO）ピンが共通（C）ピンから切り離され、外部電力が遮断され、LEDが消灯します。
 
-**Safety Considerations for Controlling Real Appliances**
+**家庭用電化製品を制御する際の安全上の考慮事項**
 
-This example uses an LED and Li-po Charger Module to demonstrate relay control. If you are controlling higher voltage devices (like household appliances), ensure:
+この例では、LEDとLi-poチャージャーモジュールを使用してリレー制御を示しています。高電圧デバイス（家庭用電化製品）を制御する場合は、以下の点に留意してください：
 
-* **Proper Voltage Rating**: Use a relay rated for the appropriate voltage and current for your appliance.
-* **Isolation**: For safety, ensure proper isolation between the low-voltage control circuit (like the Pico) and the high-voltage appliance circuit.
-* **Fuse Protection**: Consider adding fuses or circuit breakers to protect against short circuits or overloads.
-* **Professional Guidance**: When working with high-voltage circuits, always seek professional guidance to ensure safe operation.
+* **適切な電圧定格**: 使用する電化製品に適した電圧と電流に対応したリレーを使用してください。
+* **絶縁**: 安全のため、低電圧制御回路（Picoのような）と高電圧回路（電化製品）との間に適切な絶縁を確保してください。
+* **ヒューズ保護**: 短絡や過負荷から保護するために、ヒューズや回路ブレーカーを追加することを検討してください。
+* **専門家の指導**: 高電圧回路を扱う際は、常に専門家の指導を受け、安全な操作を確保してください。
 
-This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2 W.
+このプロジェクトは、家庭用自動化の基盤として、照明やファンなどのデバイスをタイマーやセンサーを使用して制御するシステムを構築するための出発点になります。
 
-**Using the NC Terminal**
+**NC端子の使用**
 
-* If you connect your controlled circuit between COM and NC:
+* COMとNCの間に制御回路を接続すると：
 
-  * The circuit will be closed (ON) when the relay is not energized.
-  * The circuit will be open (OFF) when the relay is energized.
-  * Example: Controlling an External Device
-  * Warning: Do not attempt to control high-voltage devices without proper knowledge and safety precautions.
+  * リレーが励起されていないときは回路が閉じ（ON）ます。
+  * リレーが励起されると回路が開き（OFF）ます。
+  * 例：外部デバイスの制御
+  * 警告：適切な知識と安全対策なしで高電圧デバイスを制御しないでください。
 
-* If you want to control a small DC motor or another device:
+* 小型DCモーターや他のデバイスを制御したい場合：
 
-  * Replace the LED with the device you want to control.
-  * Ensure the device's voltage and current requirements are compatible.
-  * Provide an appropriate power supply for the device.
-  * Connect the device in series with the relay's COM and NO (or NC) terminals.
+  * LEDを制御したいデバイスに置き換えます。
+  * デバイスの電圧と電流の要件が適合することを確認してください。
+  * デバイスに適切な電源を提供してください。
+  * リレーのCOMとNO（またはNC）端子にデバイスを直列に接続します。
 
+**結論**
 
-**Conclusion**
-
-By using the relay to control an external circuit, you've learned how to switch on and off external devices, such as LEDs or even higher voltage appliances. This opens the door to creating automated smart devices that can be controlled through code, offering endless possibilities for home automation and other projects.
+リレーを使って外部回路を制御することにより、LEDや高電圧の電化製品をオン・オフする方法を学びました。これにより、コードを使って制御可能な自動化されたスマートデバイスを作成でき、家庭用自動化や他のプロジェクトに無限の可能性が広がります。

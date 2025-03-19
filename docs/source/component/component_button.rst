@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_button:
 
-Button
+ボタン
 ==========
 
 |img_button|
 
-Buttons are commonly used components for controlling electronic devices, typically functioning as switches to open or close circuits. While buttons come in various sizes and shapes, the one used here is a 6mm mini push-button, as shown in the images below.
+ボタンは、電子機器を制御するために一般的に使用される部品で、通常は回路を開閉するスイッチとして機能します。ボタンにはさまざまなサイズと形状がありますが、ここで使用されているのは6mmのミニプッシュボタンで、下記の画像に示されています。
 
-In this button, pin 1 is internally connected to pin 2, and pin 3 is connected to pin 4. To complete a circuit, you only need to connect either pin 1 or pin 2 to either pin 3 or pin 4.
+このボタンでは、ピン1がピン2に内部接続されており、ピン3がピン4に接続されています。回路を完成させるためには、ピン1またはピン2をピン3またはピン4のいずれかに接続するだけです。
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits. 
+以下は、ボタンの内部構造です。右側に示された記号は、回路図でボタンを表すために通常使用されます。
 
 |img_button_symbol|
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+ピン1がピン2に接続され、ピン3がピン4に接続されているため、ボタンが押されると4つのピンが接続され、回路が閉じます。
 
 |img_button2|
 
@@ -36,12 +36,12 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 
 .. :ref:`Reading Button Value`
 
-**Example**
+**例**
 
-* :ref:`py_button` (For MicroPython User)
-* :ref:`py_iot_mqtt_publish` (For MicroPython User)
-* :ref:`ar_button` (For Arduino User)
-.. * :ref:`per_button` (For Piper Make User)
-.. * :ref:`per_rainbow_light` (For Piper Make User)
-.. * :ref:`per_drum_kit` (For Piper Make User)
-.. * :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_button` (MicroPythonユーザー向け)
+* :ref:`py_iot_mqtt_publish` (MicroPythonユーザー向け)
+* :ref:`ar_button` (Arduinoユーザー向け)
+.. * :ref:`per_button` (Piper Makeユーザー向け)
+.. * :ref:`per_rainbow_light` (Piper Makeユーザー向け)
+.. * :ref:`per_drum_kit` (Piper Makeユーザー向け)
+.. * :ref:`per_reaction_game` (Piper Makeユーザー向け)

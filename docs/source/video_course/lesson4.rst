@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32について深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援で、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキル向上のために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Lesson 4:  Create a Binary Counter Using the Pico W
+レッスン4：Pico Wを使った2進カウンターの作成
 =================================================================
 
-This tutorial covers creating a 4-bit digital counter using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+このチュートリアルでは、SunFounder Kepler Kitを使って、Raspberry Pi Pico Wで4ビットデジタルカウンターを作成する方法を説明します：
 
-* **Homework Review**: Review of the 4-bit counter using LEDs.
-* **Schematic Setup**: Connect four LEDs with 220 Ohm resistors to the Pico W.
-* **Code**: Write Python code to create a 4-bit counter from 0 to 15 using LEDs.
-* **Demonstration**: Test the counter and verify functionality.
+* **宿題の復習**: LEDを使用した4ビットカウンターの復習。
+* **回路図の設定**: 220Ωの抵抗を使って4つのLEDをPico Wに接続します。
+* **コード**: Pythonコードを書いて、0から15までの4ビットカウンターをLEDで作成します。
+* **デモンストレーション**: カウンターをテストして、機能が正常であることを確認します。
 
-
-**Video**
+**動画**
 
 .. raw:: html
 

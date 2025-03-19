@@ -1,12 +1,11 @@
-Download the Code
+コードのダウンロード
 ===========================
 
-Here is the complete code package for this Kit. You can click on the following link to download it:
+こちらはこのキットの完全なコードパッケージです。以下のリンクをクリックしてダウンロードしてください：
 
-   * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
+   * :download:`SunFounder Pico 2 Wスターターキット <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_
+* または `Pico 2 Wスターターキット - GitHub <https://github.com/sunfounder/pico-2w-kit>`_ でコードをチェックしてください。
 
-Once the download is complete, unzip the file and open the relevant example code or project files in the corresponding software. This will allow you to browse and utilize all the code and resources provided by the kit.
-
+ダウンロードが完了したら、ファイルを解凍して、対応するソフトウェアで関連する例示コードまたはプロジェクトファイルを開いてください。これにより、キットが提供するすべてのコードとリソースを閲覧し、利用することができます。
 

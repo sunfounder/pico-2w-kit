@@ -1,35 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する特別割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_led_bar:
 
-LED Bar Graph
-=============
+LEDバーグラフ
+===============
 
 |img_led_bar|
 
-An LED bar graph is an array of LEDs designed to interface with electronic circuits or microcontrollers. Connecting an LED bar graph to a circuit is as straightforward as connecting 10 individual LEDs to 10 output pins. LED bar graphs are commonly used in applications such as battery level indicators, audio equipment, and industrial control panels, among others.
+LEDバーグラフは、電子回路やマイクロコントローラと接続するために設計されたLEDの配列です。LEDバーグラフを回路に接続するのは、10個の個別のLEDを10個の出力ピンに接続するのと同じくらい簡単です。LEDバーグラフは、バッテリーレベルインジケーター、オーディオ機器、産業用制御パネルなど、さまざまなアプリケーションで一般的に使用されています。
 
-The diagram below illustrates the internal schematic of an LED bar graph. Typically, the side marked with a label represents the anode, while the opposite side corresponds to the cathode.
+下の図は、LEDバーグラフの内部回路図を示しています。通常、ラベルが付けられている側がアノードを示し、反対側がカソードに対応しています。
 
 |img_led_bar_pin|
 
 |img_led_bar_sche1|
 
 
-**Example**
+**例**
 
-* :ref:`py_led_bar` (For MicroPython User)
-* :ref:`ar_led_bar` (For Arduino User)
-.. * :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_led_bar` (MicroPythonユーザー向け)
+* :ref:`ar_led_bar` (Arduinoユーザー向け)
+.. * :ref:`per_light_display` (Piper Makeユーザー向け)

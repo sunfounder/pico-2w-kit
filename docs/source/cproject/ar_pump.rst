@@ -1,63 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**：ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**：新製品の発表や先行公開をいち早くチェックできます。
+    - **特別割引**：新しい製品に対して独占的な割引を楽しめます。
+    - **祭典のプロモーションやプレゼント**：プレゼントや祝日プロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _ar_pump:
 
-3.6 Controlling a Water Pump
+3.6 水ポンプの制御
 =============================
 
-In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2 W and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic plant watering systems or creating miniature water features. Controlling the pump is similar to controlling a DC motor, as it uses the same principles.
+このレッスンでは、 **Raspberry Pi Pico 2 W** と **TA6586モータードライバー** を使用して、 **小型水ポンプ** を制御する方法を学びます。小型の遠心ポンプは、自動植物水やりシステムやミニチュアの水景作りなどのプロジェクトに使用できます。ポンプの制御は、同じ原理を使用するDCモーターの制御と似ています。
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利なので、こちらのリンクをチェックしてください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットのアイテム
+        - 購入リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから、コンポーネントを個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -77,7 +77,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 8
@@ -86,93 +86,90 @@ You can also buy them separately from the links below.
         -  
 
 
-**Schematic**
+**回路図**
 
 |sch_pump|
 
 
-**Wiring**
+**配線**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * ポンプは高電流を必要とするため、安全のためにLi-po充電モジュールを使用してモーターに電力を供給します。
+    * Li-po充電モジュールが図に示された通りに接続されていることを確認してください。さもなければ、短絡が発生し、バッテリーや回路が損傷する可能性があります。
 
 |wiring_pump|
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2w-kit-main/arduino/3.6_pumping``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * ``pico-2w-kit-main/arduino/3.6_pumping`` 内の ``3.6_pumping.ino`` ファイルを開きます。
+    * または、このコードを **Arduino IDE** にコピーします。
+    * アップロードボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択するのを忘れないでください。
 
-    
 .. code-block:: Arduino
 
-    const int motor1A = 14; // Motor control pin 1
-    const int motor2A = 15; // Motor control pin 2
+    const int motor1A = 14; // モーター制御ピン1
+    const int motor2A = 15; // モーター制御ピン2
 
     void setup() {
-      // Set motor control pins as OUTPUT
-      pinMode(motor1A, OUTPUT); // Configure motor1A as an output pin
-      pinMode(motor2A, OUTPUT); // Configure motor2A as an output pin
+      // モーター制御ピンを出力に設定
+      pinMode(motor1A, OUTPUT); // motor1Aを出力ピンとして設定
+      pinMode(motor2A, OUTPUT); // motor2Aを出力ピンとして設定
     }
 
     void loop() {
-      // Rotate the motor in a clockwise direction
-      digitalWrite(motor1A, HIGH); // Set motor1A to HIGH (activates one side of the motor)
-      digitalWrite(motor2A, LOW);  // Set motor2A to LOW (deactivates the opposite side of the motor)
+      // モーターを時計回りに回転させる
+      digitalWrite(motor1A, HIGH); // motor1AをHIGHに設定（モーターの片側を作動させる）
+      digitalWrite(motor2A, LOW);  // motor2AをLOWに設定（反対側を停止させる）
     }
 
 
 
 
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
-* This cycle repeats indefinitely.
-* If water doesn't flow initially, make sure the pump is submerged, and there are no air bubbles in the tubing.
+コードを実行すると、ポンプが動作し、チューブから水が流れ出すのが確認できます。
+* このサイクルは無限に繰り返されます。
+* 初めて水が流れない場合は、ポンプが水に浸かっており、チューブ内に気泡がないことを確認してください。
 
 
-**Safety Precautions**
+**安全上の注意**
 
-* Water and Electricity:
+* 水と電気：
 
-  * Be extremely careful to keep water away from the Pico and other electronic components.
-  * Ensure all connections are secure and insulated if necessary.
+  * Picoや他の電子部品には水をかけないように非常に注意してください。
+  * 必要に応じてすべての接続が安全で絶縁されていることを確認してください。
 
-* Power Supply:
+* 電源：
 
-  * Use a power supply that matches the pump's voltage requirements (typically 3V-6V).
-  * Do not power the pump directly from the Pico's 3.3V pin.
+  * ポンプの電圧要件に合った電源を使用してください（通常は3V〜6V）。
+  * Picoの3.3Vピンから直接ポンプに電力を供給しないでください。
 
-* Current Draw:
+* 電流の消費：
 
-  * Pumps can draw significant current.
-  * Ensure your power source can handle the pump's current requirements.
+  * ポンプはかなりの電流を消費する可能性があります。
+  * 電源がポンプの電流要件に対応できることを確認してください。
 
-* Resetting the Pico:
+* Picoのリセット：
 
-  If you encounter issues uploading code after running the pump, you can manually reset the Pico by connecting the RUN pin to GND momentarily.
+  ポンプを動かした後にコードのアップロードに問題が生じた場合は、RUNピンを一時的にGNDに接続してPicoを手動でリセットできます。
 
   |wiring_run_reset|
 
-**Further Exploration**
+**さらなる探求**
 
-* Automated Plant Watering:
+* 自動植物水やり：
 
-  Incorporate soil moisture sensors to automate the watering process based on soil dryness.
+  土壌の湿度センサーを組み合わせて、土壌の乾燥状態に基づいて水やりを自動化します。
 
-* PWM Speed Control:
+* PWM速度制御：
 
-  Use Pulse Width Modulation (PWM) to control the pump's speed by varying the voltage.
+  パルス幅変調（PWM）を使用して、ポンプの速度を電圧を調整して制御します。
 
-* Timing and Scheduling:
+* タイミングとスケジューリング：
 
-  Implement more complex timing using real-time clocks or schedulers.
+  実時間時計やスケジューラーを使用して、より複雑なタイミングを実装します。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to control a small water pump using the Raspberry Pi Pico and the TA6586 motor driver. This technique can be used in various projects like automated plant watering systems, fountains, or hydroponic setups.
-
+このレッスンでは、Raspberry Pi PicoとTA6586モータードライバーを使用して小型水ポンプを制御する方法を学びました。この技術は、自動植物水やりシステム、噴水、または水耕栽培システムなど、さまざまなプロジェクトに利用できます。

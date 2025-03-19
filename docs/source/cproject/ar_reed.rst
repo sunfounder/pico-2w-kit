@@ -1,62 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行公開をいち早くチェックできます。
+    - **特別割引**: 新しい製品に対して独占的な割引を楽しめます。
+    - **祭典のプロモーションやプレゼント**: プレゼントや祝日プロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _ar_reed:
 
-2.9 Feel the Magnetism
+2.9 磁気を感じる
 ===============================
 
-In this lesson, we'll explore how to use a **reed switch** with the Raspberry Pi Pico 2 W to detect the presence of a magnetic field. A reed switch is a simple electrical switch that operates using a magnetic field. When a magnet comes near the switch, its internal contacts close, completing an electrical circuit.
+このレッスンでは、 **reedスイッチ** を使用してRaspberry Pi Pico 2 Wで磁場の存在を検出する方法を学びます。reedスイッチは、磁場を利用して動作するシンプルな電気スイッチです。磁石がスイッチの近くに来ると、その内部の接点が閉じ、電気回路が完成します。
 
 * :ref:`cpn_reed`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利なので、こちらのリンクをチェックしてください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットのアイテム
+        - 購入リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
 
-You can also buy them separately from the links below.
 
+以下のリンクから、コンポーネントを個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,115 +65,114 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1（10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_reed`
         - 1
         - 
 
-**Understanding the Reed Switch**
+**reedスイッチの理解**
 
-A reed switch consists of two thin metal reeds sealed within a glass capsule. These reeds are made of ferromagnetic material and are positioned slightly apart. In the absence of a magnetic field, the reeds are separated, and the switch is **open**. When a magnet comes near the switch, the reeds become magnetized, attract each other, and close the circuit.
+reedスイッチは、2本の細い金属のリードがガラスのカプセル内に密閉されている構造をしています。これらのリードはフェロ磁性材料でできており、少し離れて配置されています。磁場がない場合、リードは分離されており、スイッチは **開いています** 。磁石が近づくと、リードが磁化され、互いに引き寄せられて回路を閉じます。
 
-* **No Magnet Nearby**: Switch is **open**; the circuit is incomplete.
-* **Magnet Nearby**: Switch is **closed**; the circuit is complete.
+* **磁石が近くにない場合**: スイッチは **開いています** 。回路は不完全です。
+* **磁石が近くにある場合**: スイッチは **閉じています** 。回路は完了しています。
 
 |img_reed_sche|
 
-**Schematic**
+**回路図**
 
 |sch_reed|
 
-By default, GP14 is low; and will go high when the magnet is near the reed switch.
+デフォルトでは、GP14は低く、reedスイッチの近くに磁石があると高くなります。
 
-The purpose of the 10K resistor is to keep the GP14 at a steady low level when no magnet is near.
+10KΩの抵抗の目的は、磁石が近くにない場合でもGP14を安定して低い状態に保つことです。
 
-* **No Magnet Nearby**:
+* **磁石が近くにない場合**:
 
-  * The reed switch is **open**.
-  * **GP14** is connected to **GND** through the pull-down resistor.
-  * The GPIO pin reads **LOW** (0).
+  * reedスイッチは **開いています** 。
+  * **GP14** はプルダウン抵抗を介して **GND** に接続されています。
+  * GPIOピンは **LOW** （0）を読み取ります。
 
-* **Magnet Nearby**:
+* **磁石が近くにある場合**:
 
-  * The reed switch is **closed**.
-  * **GP14** is connected to **3.3V** through the reed switch.
-  * The GPIO pin reads **HIGH** (1).
+  * reedスイッチは **閉じています** 。
+  * **GP14** はreedスイッチを介して **3.3V** に接続されています。
+  * GPIOピンは **HIGH** （1）を読み取ります。
 
-**Wiring**
-
+**配線**
 
 |wiring_reed|
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``pico-2w-kit-main/arduino/2.9_feel_the_magnetism``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * ``pico-2w-kit-main/arduino/2.9_feel_the_magnetism`` 内の ``2.9_feel_the_magnetism.ino`` ファイルを開きます。
+    * または、このコードを **Arduino IDE** にコピーします。
+    * アップロードボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択するのを忘れないでください。
 
 .. code-block:: Arduino
 
 
-   const int reedPin = 14;    // GPIO pin connected to the reed switch
+   const int reedPin = 14;    // reedスイッチに接続されているGPIOピン
    int reedState = 0;
 
    void setup() {
-     Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-     pinMode(reedPin, INPUT);    // Set the reed pin as input
+     Serial.begin(115200);       // シリアルモニタを115200ボーレートで初期化
+     pinMode(reedPin, INPUT);    // reedピンを入力モードに設定
    }
 
    void loop() {
-     reedState = digitalRead(reedPin);  // Read the state of the reed switch
+     reedState = digitalRead(reedPin);  // reedスイッチの状態を読み取る
 
      if (reedState == HIGH) {
        Serial.println("Magnet Detected!");
      } else {
        Serial.println("No Magnet.");
      }
-     delay(500);  // Delay to avoid flooding the Serial Monitor
+     delay(500);  // シリアルモニタが溢れないように遅延
    }
 
-When the code is running and the Serial Monitor is open:
+コードが実行され、シリアルモニタが開いているとき：
 
-* **No Magnet Nearby**: The Serial Monitor will display "No Magnet."
-* **Magnet Nearby**: Bring a magnet close to the reed switch. The Serial Monitor will display "Magnet Detected!"
+* **磁石が近くにない場合**: シリアルモニタに「磁石はありません。」と表示されます。
+* **磁石が近くにある場合**: reedスイッチの近くに磁石を持っていくと、シリアルモニタに「磁石が検出されました！」と表示されます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Initializing Serial Communication:
+#. シリアル通信の初期化:
 
-   Starts serial communication at a baud rate of 115200. This allows us to print messages to the Serial Monitor.
+   115200のボーレートでシリアル通信を開始します。これにより、シリアルモニタにメッセージを表示できます。
 
    .. code-block:: Arduino
 
         Serial.begin(115200);
 
-#. Setting Up the Reed Pin:
+#. reedピンの設定:
  
-   Configures reedPin (GP14) as an input to read the reed switch state.
+   reedPin（GP14）を入力として設定し、reedスイッチの状態を読み取ります。
 
    .. code-block:: Arduino
 
         pinMode(reedPin, INPUT);
 
-#. Reading the Reed Switch State:
+#. reedスイッチの状態を読み取る:
 
-   Reads the current state of the reed switch. It will be HIGH when the magnet is near (switch closed) and LOW when no magnet is near (switch open).
+   reedスイッチの現在の状態を読み取ります。磁石が近いとHIGH、磁石がないとLOWになります。
 
    .. code-block:: Arduino
 
         reedState = digitalRead(reedPin);
 
-#. Responding to Magnet Presence:
+#. 磁石の存在に応じた反応:
 
-   Prints a message based on whether the magnet is near the reed switch.
+   磁石が近くにあるかどうかに応じてメッセージを表示します。
 
    .. code-block:: Arduino
 
@@ -184,31 +183,31 @@ When the code is running and the Serial Monitor is open:
         }
 
 
-**Learn More: Using Interrupts with the Reed Switch**
+**学ぶ：reedスイッチと割り込みの使用**
 
-* **Introduction to Interrupts**
+* **割り込みの紹介**
 
-  Imagine you're reading a book, fully immersed in the story. Suddenly, someone taps you on the shoulder to ask a question. You pause your reading, address the question, and then return to your book. This interruption is similar to how interrupts work in microcontrollers.
+  本を読んでいるとき、誰かが肩を叩いて質問をしてきたとしましょう。あなたは一時的に本を中断し、その質問に答えてから本に戻ります。この中断のように、割り込みはマイクロコントローラで重要なイベントが発生したときに即座に反応できるようにするものです。
   
-  An interrupt allows a program to respond immediately to important events, pausing the main program flow to execute a special function called an Interrupt Service Routine (ISR). After handling the interrupt, the program resumes where it left off.
-  
-* **Why Use Interrupts?**
+  割り込みを使用すると、プログラムのメインの流れを一時停止して、割り込みサービスルーチン（ISR）という特別な関数を実行できます。その後、プログラムは中断したところから再開します。
 
-  Using interrupts with the reed switch allows the microcontroller to respond instantly when a magnet is detected, rather than continuously polling (checking) the reed switch in the ``loop()`` function. This is more efficient and can save power in battery-powered applications.
+* **割り込みを使用する理由**
 
-* **Writing the Code with Interrupts**
+  reedスイッチに割り込みを使うことで、マグネットが検出されたときにマイクロコントローラが即座に反応し、 ``loop()`` 関数で reedスイッチを繰り返し確認する必要がなくなります。これにより効率が良くなり、バッテリー駆動のアプリケーションでは省電力にもなります。
 
-  Let's modify our program to use an interrupt to detect the magnet.
+* **割り込みを使用したコードの記述**
+
+  プログラムを変更して、磁石の検出に割り込みを使用するようにします。
 
   .. code-block:: Arduino
 
-        const int reedPin = 14;            // GPIO pin connected to the reed switch
-        volatile bool magnetDetected = false;  // Flag to indicate if the magnet is detected
+        const int reedPin = 14;            // reedスイッチに接続されているGPIOピン
+        volatile bool magnetDetected = false;  // 磁石が検出されたかを示すフラグ
 
         void setup() {
-          Serial.begin(115200);               // Initialize Serial Monitor
-          pinMode(reedPin, INPUT);            // Set the reed pin as input
-          attachInterrupt(digitalPinToInterrupt(reedPin), onMagnetChange, CHANGE);  // Attach interrupt on any change
+          Serial.begin(115200);               // シリアルモニタを初期化
+          pinMode(reedPin, INPUT);            // reedピンを入力モードに設定
+          attachInterrupt(digitalPinToInterrupt(reedPin), onMagnetChange, CHANGE);  // 変更があった時に割り込みを設定
         }
 
         void loop() {
@@ -217,12 +216,12 @@ When the code is running and the Serial Monitor is open:
           } else {
             Serial.println("Waiting for magnet...");
           }
-          delay(1000);                         // Delay to avoid flooding the serial monitor
+          delay(1000);                         // シリアルモニタが溢れないように遅延
         }
 
         void onMagnetChange() {
-          // Update the flag based on the current state of the reed pin
-          magnetDetected = digitalRead(reedPin) == HIGH;  // If HIGH, magnet is present; if LOW, magnet is absent
+          // reedピンの現在の状態に基づいてフラグを更新
+          magnetDetected = digitalRead(reedPin) == HIGH;  // HIGHなら磁石が存在、LOWなら磁石がない
         }
 
 
@@ -230,22 +229,21 @@ When the code is running and the Serial Monitor is open:
 
         attachInterrupt(digitalPinToInterrupt(reedPin), onMagnetChange, CHANGE);
     
-  * ``digitalPinToInterrupt(reedPin)``: Converts the pin number to the appropriate interrupt number.
-  * ``onMagnetChange``: The name of the ISR function to call when the interrupt occurs.
-  * ``CHANGE``: The interrupt will trigger when the pin has any change.
+  * ``digitalPinToInterrupt(reedPin)``: ピン番号を適切な割り込み番号に変換します。
+  * ``onMagnetChange``: 割り込みが発生したときに呼び出されるISR関数の名前です。
+  * ``CHANGE``: ピンの状態が変化したときに割り込みがトリガーされます。
 
+**結論**
 
-**Conclusion**
+このレッスンでは、Raspberry Pi Picoでreedスイッチを使用して磁場の存在を検出する方法を学びました。また、割り込みを使用してプログラムを効率的にし、センサーをメインループで常にチェックすることなく即座に反応する方法を学びました。割り込みを使用する技術は組み込みプログラミングにおいて非常に価値のあるスキルであり、より応答性の高い効率的なアプリケーションを作成することができます。
 
-In this lesson, you've learned how to use a reed switch with the Raspberry Pi Pico to detect the presence of a magnetic field. You've also explored how interrupts can make your program more efficient by responding immediately to events without constantly checking the sensor in the main loop. Understanding how to use interrupts is a valuable skill in embedded programming, allowing you to create more responsive and efficient applications.
+**さらなる探求**
 
-**Further Exploration**
+* **ドアセンサー**: reedスイッチを使って、ドアが開いたときにトリガーされるシンプルなドアアラームを作成します。
+* **回転数のカウント**: 回転する物体に磁石を取り付け、reedスイッチで回転数（RPM）をカウントします。
+* **セキュリティシステム**: 複数のreedスイッチを組み合わせて、セキュリティシステムで窓やドアを監視します。
 
-* **Door Sensor**: Use the reed switch to create a simple door alarm that triggers when the door is opened.
-* **Counting Revolutions**: Attach a magnet to a rotating object and use the reed switch to count revolutions per minute (RPM).
-* **Security Systems**: Incorporate multiple reed switches to monitor windows and doors in a security system.
-
-**Additional Resources**
+**追加リソース**
 
 * `attachInterrupt() - Arduino Reference <https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/>`_
 

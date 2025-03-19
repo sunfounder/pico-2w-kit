@@ -1,32 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32のさらなる探求を共に楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートのサポート**: 当コミュニティやチームの支援で、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させます。
+    - **独占プレビュー**: 新製品の発表や先取り情報を早期に入手。
+    - **特別割引**: 最新製品を独占的な割引価格で提供。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索して創造しませんか？[|link_sf_facebook|]をクリックして今日から参加しましょう！
 
-Lesson 46: Build a 2 Axis Tilt Meter with Display Using the MPU6050
+レッスン46: MPU6050を使用して2軸傾斜計をディスプレイ付きで構築
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a two-axis tilt meter:
 
-* **Setup**: Connect MPU6050 and OLED 1306 to Raspberry Pi Pico W.
-* **Concept**: Measure tilt using pitch and roll angles, display bubble level on OLED.
-* **Equation**: 
-   - Pitch: \(\arctan\left(\frac{Y}{Z}\right)\)
-   - Roll: \(\arctan\left(\frac{X}{Z}\right)\)
-   - Convert radians to degrees.
-* **Code**: Set up libraries, measure X, Y, Z acceleration, calculate angles, and display on OLED.
-* **Demonstration**: Test tilt, adjust bubble movement for responsiveness.
-* **Advanced**: Stabilize tilt readings to avoid errors from acceleration or vibrations.
+このチュートリアルでは、MPU6050センサーをRaspberry Pi Pico Wと組み合わせて2軸傾斜計を作成します：
 
-**Video**
+* **設定**: MPU6050とOLED 1306をRaspberry Pi Pico Wに接続します。
+* **コンセプト**: ピッチとロールの角度を使用して傾斜を測定し、OLEDにバブルレベルを表示します。
+* **計算式**: 
+   - ピッチ: \(\arctan\left(\frac{Y}{Z}\right)\)
+   - ロール: \(\arctan\left(\frac{X}{Z}\right)\)
+   - ラジアンを度に変換。
+* **コード**: ライブラリを設定し、X、Y、Zの加速度を測定、角度を計算し、OLEDに表示。
+* **デモンストレーション**: 傾斜をテストし、反応性のためのバブルの動きを調整します。
+* **応用**: 加速や振動からの誤差を避けるために傾斜読み取りを安定させます。
+
+**ビデオ**
 
 .. raw:: html
 

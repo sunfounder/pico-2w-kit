@@ -1,28 +1,31 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れることができます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **季節限定プロモーションやプレゼント企画**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして、今すぐ参加してください！
+
 
 Indentation
 =============
 
-Indentation refers to the spaces at the beginning of a code line.
-Like standard Python programs, MicroPython programs usually run from top to bottom:
-It traverses each line in turn, runs it in the interpreter, and then continues to the next line,
-Just like you type them line by line in the Shell.
-A program that just browses the instruction list line by line is not very smart, though – so MicroPython, just like Python, has its own method to control the sequence of its program execution: indentation.
+インデントとは、コード行の先頭にある空白のことを指します。
+標準的なPythonプログラムと同様に、MicroPythonプログラムも通常は上から下へと実行されます。
+それぞれの行を順に解釈して実行し、次の行に進んでいきます。
+これはシェルで1行ずつ入力するのと同じような動きですが、
+単に行を順番に読み込むだけでは、プログラムとしてはあまり賢くありません。
+そこで、Pythonと同様にMicroPythonでも、インデントを使ってプログラムの実行順序を制御します。
 
-You must put at least one space before print(), otherwise an error message "Invalid syntax" will appear. It is usually recommended to standardise spaces by pressing the Tab key uniformly.
-
+少なくとも1つのスペースをprint()の前に入れないと、
+「Invalid syntax」というエラーメッセージが表示されます。
+通常はTabキーを使って空白を統一するようにするとよいでしょう。
 
 
 .. code-block:: python
@@ -35,7 +38,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 
-You must use the same number of spaces in the same block of code, or Python will give you an error.
+同じコードブロック内では、スペースの数を統一して使わないと、Pythonはエラーを起こします。
 
 
 .. code-block:: python
@@ -43,7 +46,7 @@ You must use the same number of spaces in the same block of code, or Python will
     if 8 > 5:
     print("Eight is greater than Five!")
             print("Eight is greater than Five")
-            
+
 >>> %Run -c $EDITOR_CONTENT
 Traceback (most recent call last):
   File "<stdin>", line 2

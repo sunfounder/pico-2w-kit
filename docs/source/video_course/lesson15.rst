@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 15:  For Loops in Micropython
+レッスン15：MicroPythonでのforループ
 ==========================================================================
-This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W:
 
-* **Introduction to For Loops**: Explains the difference between for and while loops, highlighting when to use each.
-* **Basic For Loop Syntax**: Demonstrates looping through a range of numbers and explains the start, stop, and step values.
-* **Looping Through Arrays**: Shows how to iterate through arrays with different data types like numbers and strings.
-* **Nested Loops**: Introduces nested loops and their use in multi-dimensional arrays or complex operations.
-* **Practical Example with Hardware**: Uses a for loop to control LED blinking based on user input.
-* **Combining Loops and User Input**: Combines user input with loops for dynamic programs, converting strings to integers.
-* **Homework Assignment**: Replace the LED with an RGB LED, ask for a sequence of colors, and display them using a for loop.
+このチュートリアルでは、Raspberry Pi Pico Wを使用してMicroPythonでforループを利用する方法について説明します：
 
-**Video**
+* **forループの紹介**: forループとwhileループの違いを説明し、それぞれの適切な使用タイミングを解説します。
+* **基本的なforループ構文**: 数値の範囲を使ってループする方法を示し、開始値、終了値、ステップ値の設定方法を説明します。
+* **配列のループ処理**: 数値や文字列など、異なるデータ型の配列をループする方法を紹介します。
+* **入れ子のループ**: 複数の次元を持つ配列や複雑な処理に使用する入れ子のループを紹介します。
+* **ハードウェアを使用した実践例**: ユーザー入力に基づいてLEDを点滅させるためのforループの使用例を示します。
+* **ループとユーザー入力の組み合わせ**: ループとユーザー入力を組み合わせて動的なプログラムを作成し、文字列を整数に変換します。
+* **宿題**: LEDをRGB LEDに置き換え、色のシーケンスを入力させ、forループを使用して表示する課題。
+
+**ビデオ**
 
 .. raw:: html
 

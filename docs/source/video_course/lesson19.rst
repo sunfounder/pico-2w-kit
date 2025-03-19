@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 19:  Button Control of RGB LED in Micropython
+レッスン19：MicroPythonでRGB LEDをボタンで制御
 =============================================================================
 
-This tutorial covers using multiple push buttons to control the RGB channels of an LED on the Raspberry Pi Pico W:
+このチュートリアルでは、複数のプッシュボタンを使用して、Raspberry Pi Pico W上のRGB LEDチャンネルを制御する方法について説明します：
 
-* **Introduction**: Overview of using three push buttons to control RGB LED channels.
-* **Homework Solution**: Solution for creating toggle switches for RGB LED using push buttons.
-* **Circuit Setup**: Wiring three push buttons and RGB LED to the Pico W, connecting through GPIO pins and resistors.
-* **Code Explanation**: Initializes GPIO, creates objects for LED channels and buttons, and implements toggle logic for each channel.
-* **Practical Demonstration**: Demonstrates code execution, testing button functionality, and debugging techniques.
+* **はじめに**: RGB LEDの各チャンネルを制御するために3つのプッシュボタンを使用する概要。
+* **宿題の解決法**: プッシュボタンを使ってRGB LEDのトグルスイッチを作成する方法を解説します。
+* **回路設定**: 3つのプッシュボタンとRGB LEDをPico Wに接続し、GPIOピンと抵抗を通じて配線します。
+* **コードの説明**: GPIOを初期化し、LEDチャンネルとボタンのオブジェクトを作成し、各チャンネルのトグルロジックを実装します。
+* **実践デモンストレーション**: コードの実行をデモンストレーションし、ボタンの機能をテストし、デバッグ技術を紹介します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

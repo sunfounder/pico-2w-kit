@@ -1,31 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 50: Removing Long Term Steady State Error from Sensor Data
+レッスン50: センサーデータから長期的な定常状態誤差を除去する
 =============================================================================
-This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometers are noisy, and gyroscopes drift over time.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with a low-pass filter and error correction.
-* **Results**: Achieve accurate, fast, and low-noise tilt measurements.
-* **Homework**: Implement the filter and error correction, and display tilt data on an OLED screen.
+このチュートリアルでは、MPU6050センサーとRaspberry Pi Pico Wを使用して傾斜測定の精度を向上させる方法について説明します：
 
+* **セットアップ**: MPU6050をRaspberry Pi Pico Wに接続します。
+* **課題**: 加速度計はノイズが多く、ジャイロスコープは時間とともにドリフトします。
+* **解決策**: 加速度計とジャイロスコープのデータを組み合わせる補完フィルターを使用し、ローパスフィルターとエラー修正を行います。
+* **結果**: 正確で迅速、かつ低ノイズの傾斜測定を実現します。
+* **宿題**: フィルターとエラー修正を実装し、OLEDスクリーンに傾斜データを表示します。
 
-
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

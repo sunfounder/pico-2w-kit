@@ -1,31 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 39: Practical Trigonometry for Easy Problem Solving
+レッスン39：実用的な三角法で簡単に問題解決
 =============================================================================
-This tutorial covers practical trigonometry necessary for real-life applications using the Raspberry Pi Pico W:
+このチュートリアルでは、実生活での応用に必要な実用的な三角法をRaspberry Pi Pico Wを使って学びます：
 
-* **Introduction**: Recap of trigonometry basics, focusing on applying it to the MPU 6050 sensor for tilt measurement.
-* **Key Concepts**: Explains sine, cosine, and converting between degrees and radians, plus calculating angles using arc functions.
-* **Applying Trigonometry**: Uses trigonometry to solve vector and inclined plane problems.
-* **Summary and Homework**: Practice finding sine and cosine values for angles without a calculator.
-* **Next Steps**: Preview of Lessons on using the MPU 6050 for tilt measurements.
-
-
+* **はじめに**: 三角法の基本をおさらいし、MPU 6050センサーを使用した傾斜測定に応用することに焦点を当てます。
+* **重要な概念**: 正弦、余弦の説明、度とラジアンの間での変換、および逆関数を使った角度の計算。
+* **三角法の応用**: ベクトルや傾斜面の問題解決に三角法を使用します。
+* **まとめと宿題**: 電卓なしで角度の正弦と余弦の値を見つける練習をします。
+* **次のステップ**: MPU 6050を使用した傾斜測定に関するレッスンのプレビュー。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

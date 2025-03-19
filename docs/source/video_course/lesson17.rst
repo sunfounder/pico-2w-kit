@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 17:  Buttons and Pull Up Resistors in Micropython
+レッスン17：MicroPythonでのボタンとプルアップ抵抗
 =============================================================================
 
-This tutorial covers using push buttons in MicroPython with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WでMicroPythonを使用してプッシュボタンを制御する方法について説明します：
 
-* **Introduction**: Overview of using push buttons to control components like LEDs.
-* **Types of Push Buttons**: Describes various push buttons in the SunFounder kit.
-* **Circuit Setup**: Wiring a push button to GPIO pin 14 with internal pull-up resistors.
-* **How Push Buttons Work**: Explains open and closed states in circuits.
-* **Internal Pull-Up Resistors**: Activating pull-up resistors in MicroPython to simplify wiring.
+* **はじめに**: LEDなどのコンポーネントを制御するためにプッシュボタンを使用する概要。
+* **プッシュボタンの種類**: SunFounderキットに含まれるさまざまなプッシュボタンについて説明します。
+* **回路設定**: プッシュボタンをGPIOピン14に接続し、内部プルアップ抵抗を使用する方法。
+* **プッシュボタンの動作原理**: 回路におけるオープンとクローズ状態について説明します。
+* **内部プルアップ抵抗**: MicroPythonでプルアップ抵抗を有効にして、配線を簡素化する方法を解説します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

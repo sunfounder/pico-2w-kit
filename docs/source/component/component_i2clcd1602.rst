@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_i2c_lcd:
 
@@ -19,42 +19,42 @@ I2C LCD1602
 
 |i2c_lcd1602|
 
-* **GND**: Ground
-* **VCC**: Voltage supply, 5V.
-* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
-* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+* **GND**: グラウンド
+* **VCC**: 電圧供給、5V
+* **SDA**: シリアルデータライン。プルアップ抵抗を介してVCCに接続します。
+* **SCL**: シリアルクロックライン。プルアップ抵抗を介してVCCに接続します。
 
-As we know, LCDs and other displays greatly enhance human-machine interaction. However, they share a common drawback: connecting them to a controller requires multiple I/O pins, which can quickly consume the available ports and limit the controller's ability to perform other functions.
+LCDや他のディスプレイは、ヒューマンマシンインタラクションを大幅に向上させます。しかし、これらには共通の欠点があります。それは、コントローラーに接続するために複数のI/Oピンを必要とし、これがすぐに利用可能なポートを消費し、コントローラーの他の機能の実行能力を制限してしまうことです。
 
-To address this issue, the LCD1602 with an I2C module was developed. The I2C module features a built-in PCF8574 chip that converts I2C serial data into parallel data, allowing the LCD to operate while significantly reducing the number of I/O pins required.
+この問題を解決するために、I2Cモジュールを搭載したLCD1602が開発されました。このI2Cモジュールは、内蔵のPCF8574チップを使用してI2Cシリアルデータを並列データに変換し、LCDが動作するために必要なI/Oピンの数を大幅に削減します。
 
 * `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 
-**I2C Address**
+**I2Cアドレス**
 
-The default address is basically 0x27, in a few cases it may be 0x3F.
+デフォルトのアドレスは基本的に0x27ですが、場合によっては0x3Fの場合もあります。
 
-Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+デフォルトのアドレス0x27を例に取ると、デバイスアドレスはA0/A1/A2のパッドをショートさせることによって変更できます。デフォルト状態ではA0/A1/A2は1であり、パッドをショートさせるとA0/A1/A2は0になります。
 
 |i2c_address|
 
-**Backlight/Contrast**
+**バックライト/コントラスト**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
+ジャンパーキャップを使ってバックライトを有効にできます。ジャンパーキャップを外すとバックライトが無効になります。背面の青いポテンショメーターはコントラストを調整するために使用されます（最も明るい白と最も暗い黒の明るさの比率）。
 
 
 |back_lcd1602|
 
-* **Shorting Cap**: Backlight can be enabled by this cap, unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **ショートキャップ**: このキャップでバックライトを有効にできます。このキャップを外すとバックライトが無効になります。
+* **ポテンショメーター**: 表示されるテキストのコントラスト（明瞭さ）を調整します。時計回りに回すとコントラストが増加し、反時計回りに回すと減少します。
 
 
 
 
-**Example**
+**例**
 
-* :ref:`py_lcd` (For MicroPython User)
-* :ref:`py_room_temp` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`py_iot_openweather` (For MicroPython User)
-* :ref:`ar_lcd` (For Arduino User)
+* :ref:`py_lcd` (MicroPythonユーザー向け)
+* :ref:`py_room_temp` (MicroPythonユーザー向け)
+* :ref:`py_guess_number` (MicroPythonユーザー向け)
+* :ref:`py_iot_openweather` (MicroPythonユーザー向け)
+* :ref:`ar_lcd` (Arduinoユーザー向け)

@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 7:  Controlling 3 LED with a Potentiometer in Micropython
+レッスン7：MicroPythonでポテンショメーターを使って3つのLEDを制御
 ====================================================================
 
-This tutorial covers using a potentiometer to control three LEDs (green, yellow, and red) with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用して、ポテンショメーターで3つのLED（緑、黄、赤）を制御する方法について説明します：
 
-* **Homework Solution Review**: Recap of connecting a potentiometer and three LEDs, mapping readings from 0 to 100.
-* **Circuit Setup**: Wiring diagram for connecting the potentiometer and LEDs to the Raspberry Pi Pico W.
-* **Reading and Mapping Values**: Reading analog values and mapping them from 432-65,535 to a 0-100 scale.
-* **LED Control**: Using if statements to control LEDs based on the potentiometer's position (green for 0-79, yellow for 80-94, red for 95-100).
-* **Practical Demonstration**: Showcasing the circuit and code in action.
+* **宿題の解決方法レビュー**: ポテンショメーターと3つのLEDを接続し、0から100までの読み取り値をマッピングする方法を復習します。
+* **回路設定**: ポテンショメーターとLEDをRaspberry Pi Pico Wに接続するための配線図を提供します。
+* **値の読み取りとマッピング**: アナログ値を読み取り、432から65,535を0から100のスケールにマッピングする方法を示します。
+* **LED制御**: ポテンショメーターの位置に基づいてLEDを制御するif文の使い方（0-79で緑、80-94で黄、95-100で赤）。
+* **実践的なデモンストレーション**: 回路とコードが動作する様子を示します。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/YqvcSnGd_HQ?si=igsP6I-k3FhYA7Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    

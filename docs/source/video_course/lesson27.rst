@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 27:  Creating Lissajous Patterns on an OLED Display
+レッスン27：OLEDディスプレイでリサジュー図形を生成
 =============================================================================
 
-This tutorial covers generating Lissajous patterns on an OLED display using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してOLEDディスプレイ上でリサジュー図形を生成する方法について説明します：
 
-* **Introduction**: Goal is to generate a floating "potato chip" Lissajous pattern on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**: Reviews drawing circles and introduces the math for Lissajous patterns using sine and cosine functions.
-* **Generating the Pattern**: Provides code to draw a circle, then modifies it to create the Lissajous pattern using trigonometric functions.
-* **Enhancing the Pattern**: Adjusts parameters and adds phase shift for a rotating effect.
-* **Practical Demonstration**: Shows the Lissajous pattern on the OLED, optimizing speed for smooth animations.
-* **Homework Assignment**: Task to create a Lissajous pattern and post results on YouTube, experimenting with parameters.
+* **はじめに**: 目標は、Raspberry Pi Pico Wを使用してOLEDディスプレイ上で「ポテトチップ」のようなリサジュー図形を生成することです。
+* **復習とセットアップ**: 円を描くレビューを行い、リサジュー図形を正弦と余弦の関数を使用して数学的に紹介します。
+* **図形の生成**: 円を描くコードを提供し、それを修正して三角関数を使用してリサジュー図形を生成します。
+* **図形の強化**: パラメータを調整し、回転効果のために位相シフトを追加します。
+* **実践デモンストレーション**: OLEDでリサジュー図形を表示し、滑らかなアニメーションのために速度を最適化します。
+* **宿題**: パラメータを実験しながら、リサジュー図形を作成し、YouTubeに結果を投稿する課題。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

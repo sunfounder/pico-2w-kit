@@ -1,51 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_mqtt_publish:
 
-8.5 Cloud Calling System with @MQTT
+8.5 @MQTTを使ったクラウド呼び出しシステム
 ============================================
 
-Message Queuing Telemetry Transport (MQTT) is a simple messaging protocol.
-It is also the most common messaging protocol for the Internet of Things (IoT).
+Message Queuing Telemetry Transport (MQTT)はシンプルなメッセージングプロトコルであり、モノのインターネット（IoT）において最も一般的なメッセージングプロトコルでもあります。
 
-MQTT protocols define the way IoT devices transfer data.
-They are event-driven and interconnected using the Pub/Sub model.
-The sender (Publisher) and the receiver (Subscriber) communicate via Topics.
-A device publishes a message on a specific topic, and all devices subscribed to that topic receive the message.
+MQTTプロトコルは、IoTデバイスがデータを転送する方法を定義しています。
+これらはイベント駆動型で、Pub/Subモデルを使用して相互接続されています。
+送信者（Publisher）と受信者（Subscriber）は、トピックを通じて通信します。
+デバイスが特定のトピックでメッセージを公開し、そのトピックを購読しているすべてのデバイスがそのメッセージを受け取ります。
 
-In this section, a service bell system will be made using Pico 2 W, HiveMQ (a free public MQTT broker service), and four buttons.
-The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
+このセクションでは、Pico 2 W、HiveMQ（無料の公開MQTTブローカーサービス）、および4つのボタンを使用してサービスベルシステムを作成します。
+4つのボタンはレストラン内の4つのテーブルを意味しており、顧客がボタンを押すと、HiveMQでどのテーブルのゲストがサービスを必要としているかを確認できます。
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 
 .. list-table::
@@ -53,16 +52,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -71,7 +70,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -86,85 +85,81 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組み立てる**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po充電モジュールが図のように接続されていることを確認してください。そうしないと、短絡が原因でバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/5.mqtt_pub.png
     :width: 800
 
-**3. Visit HiveMQ**
+**3. HiveMQにアクセスする**
 
-HiveMQ is an MQTT broker and client-based messaging platform that enables fast, efficient and reliable data transfer to IoT devices.。
+HiveMQは、IoTデバイスへの迅速で効率的、かつ信頼性の高いデータ転送を可能にするMQTTブローカーおよびクライアントベースのメッセージングプラットフォームです。
 
-1. Open |link_hivemq| in your browser.
+1. |link_hivemq| をブラウザで開きます。
 
-2. Connects the client to the default public proxy.
+2. クライアントがデフォルトの公開プロキシに接続します。
 
    .. image:: img/mqtt-1.png
 
-
-3. Click on **Add New Topic Subscription**.
+3. **Add New Topic Subscription** をクリックします。
 
    .. image:: img/mqtt-2.png
 
-
-4. Fill in the topics you want to follow and click **Subscribe**. The topics set here should be more personal to avoid getting messages from other users, and pay attention to case sensitive.
+4. 購読したいトピックを入力し、 **Subscribe** をクリックします。ここで設定するトピックは、他のユーザーからのメッセージを避けるため、個別に設定し、大文字小文字の違いに注意してください。
 
    .. image:: img/mqtt-3.png
 
+**4. MQTTモジュールをインストールする**
 
+プロジェクトを開始する前に、Pico 2 WにMQTTモジュールをインストールする必要があります。
 
-**4. Install the MQTT Module**
-
-Before we can start the project, we need to install the MQTT module for Pico 2 W.
-
-1. Connect to the network by running ``do_connect()`` in the Shell, which we wrote earlier.
+1. 以前に記述した ``do_connect()`` をShellで実行してネットワークに接続します。
 
     .. note::
-        * Type the following commands into the Shell and press ``Enter`` to run them.
-        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
+        * 以下のコマンドをShellに入力し、 ``Enter`` を押して実行します。
+        * ``do_connect.py`` および ``secrets.py`` スクリプトがPico 2 Wにない場合は、 :ref:`py_iot_access` を参照して作成してください。
 
     .. code-block:: python
 
         from do_connect import *
         do_connect()
 
-2. After a successful network connection, import the ``mip`` module in the shell and use ``mip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
+2. ネットワーク接続が成功したら、Shellで ``mip`` モジュールをインポートし、 ``mip`` を使用して ``umqtt.simple`` モジュールをインストールします。これはMicroPython用の簡略化されたMQTTクライアントです。
 
     .. code-block:: python
 
         import mip
         mip.install('umqtt.simple')
 
-3. You will see that the ``umqtt`` module is installed under the ``/micropython/libs/`` path of Pico 2 W after completion.
+3. インストールが完了したら、 ``umqtt`` モジュールはPico 2 Wの ``/micropython/libs/`` パスにインストールされます。
 
     .. image:: img/5_calling_system1.png
 
-**5. Run the Script**
+**5. スクリプトを実行する**
 
-#. Open the ``8.5_mqtt_publish.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``8.5_mqtt_publish.py`` ファイルを開きます。
 
-#. Click the **Run current script** button or press F5 to run it.
+#. **現在のスクリプトを実行** ボタンをクリックするか、F5を押して実行します。
 
     .. image:: img/5_calling_system2.png
 
-#. Go back to |link_hivemq| again and when you press one of the buttons on the breadboard, you will be able to see the Messages prompt on HiveMQ.
+#. 再度 |link_hivemq| に戻り、ブレッドボードのボタンの1つを押すと、HiveMQのメッセージプロンプトに表示されるのが確認できます。
 
     .. image:: img/mqtt-4.png
-  
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. このスクリプトを起動時に実行したい場合は、Raspberry Pi Pico 2 Wに ``main.py`` として保存できます。
 
-**How it works?**
 
-This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
+**仕組みは？**
+
+このプロジェクトはネットワーク接続を必要とし、 :ref:`py_iot_access` メソッドを使用してネットワークに接続します。
 
 .. code-block:: python
 
@@ -172,11 +167,11 @@ This project requires a network connection,  use the  :ref:`py_iot_access` metho
     from do_connect import *
     do_connect()
     
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : これは `do_connect()` 関数をインポートし、この関数にはWi-Fi接続のロジックが含まれています。 `do_connect()` 関数が呼び出されると、 `secrets.py` で指定されたWi-Fiネットワークに接続します。接続に失敗した場合は例外が発生し、成功すれば次のステップに進みます。
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets import * : `secrets.py` ファイルは通常、Wi-FiのSSID、パスワード、その他の機密情報（APIキーなど）を格納するために使われます。これにより、機密情報をメインコードファイルに直接埋め込まないようにします。
 
-Initialize 4 button pins.
+4つのボタンピンを初期化します。
 
 .. code-block:: python
 
@@ -185,15 +180,15 @@ Initialize 4 button pins.
     sensor3 = Pin(18, Pin.IN)
     sensor4 = Pin(19, Pin.IN)
 
-Create two variables to store the ``URL`` and ``client ID`` of the MQTT broker we will use to connect to it.
-Since we are using a public broker, our ``client ID`` will not be used, even if one is required.
+MQTTブローカーへの接続に使用する ``URL`` と ``client ID`` を保存する変数を作成します。
+公開ブローカーを使用するため、 ``client ID`` は要求されても使用されません。
 
 .. code-block:: python
 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico 2 W.
+MQTTエージェントに接続し、1時間保持します。接続に失敗した場合、Pico 2 Wをリセットします。
 
 .. code-block:: python
 
@@ -206,14 +201,14 @@ Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico 2 W
         time.sleep(5)
         machine.reset()
 
-Create a variable ``topic``, which is the topic that the subscriber needs to follow. It should be the same as the topic filled in **step 4** of **2. Visit HiveMQ** above.
-Incidentally, ``b`` here converts string to byte, because MQTT is a binary based protocol were the control elements are binary bytes and not text strings.
+``topic`` という変数を作成します。これは購読者が追跡する必要があるトピックで、上記の **ステップ4** の **2. HiveMQを訪れる** で入力したトピックと同じにする必要があります。
+ちなみに、ここでの ``b`` は文字列をバイトに変換します。MQTTはバイナリベースのプロトコルであり、制御要素はバイナリバイトであって、テキスト文字列ではありません。
 
 .. code-block:: python
 
     topic = b'SunFounder MQTT Test'
 
-Set interrupts for each button. When a button is pressed, a message is posted under ``topic``.
+各ボタンに対して割り込みを設定します。ボタンが押されると、 ``topic`` にメッセージが投稿されます。
 
 .. code-block:: python
 

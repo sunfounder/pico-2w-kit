@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：販売後の問題や技術的な課題を、コミュニティとチームのサポートを受けて解決できます。
+    - **学びと共有**：スキルを高めるために、ヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表を早期に知り、先行して情報を得ることができます。
+    - **特別割引**：最新製品の独占割引をお楽しみいただけます。
+    - **フェスティブプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_alarm_lamp:
 
-7.3 Building an Alarm Siren Lamp
+7.3 警報サイレンランプの作成
 =======================================================
 
-In this project, we'll create an **Alarm Siren Lamp** using the Raspberry Pi Pico 2 W. This device simulates the flashing lights and siren sound of a police car or emergency vehicle. It's a fun way to learn about PWM (Pulse Width Modulation), interrupts, and controlling multiple components like LEDs and buzzers.
+このプロジェクトでは、Raspberry Pi Pico 2 Wを使用して **警報サイレンランプ** を作成します。このデバイスは、警察車両や緊急車両のフラッシングライトとサイレン音をシミュレートします。PWM（パルス幅変調）、割り込み、およびLEDやブザーなどの複数のコンポーネントを制御する方法を学ぶための楽しい方法です。
 
 
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入するのが非常に便利です。こちらからリンクを確認してください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットに含まれる部品
+        - リンク
+    *   - Pico 2 W スターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -79,7 +79,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 9
@@ -91,79 +91,79 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Understanding the Components**
+**コンポーネントの理解**
 
-* **Passive Buzzer**: Requires an external signal to produce sound. We'll use PWM to generate varying frequencies, creating a siren effect.
-* **LED**: Will simulate the flashing light of a siren by changing brightness.
-* **Slide Switch**: Acts as an on/off switch to control the alarm.
-* **NPN Transistor (S8050)**: Used to drive the buzzer, as the Pico's GPIO pins cannot supply enough current directly.
-* **Resistor and Capacitor**: Used to debounce the slide switch, ensuring stable readings.
+* **パッシブブザー**：音を鳴らすためには外部信号が必要です。PWMを使って周波数を変化させ、サイレン効果を作ります。
+* **LED**：サイレンのフラッシュライトをシミュレートするために明るさを変更します。
+* **スライドスイッチ**：アラームのオン/オフを制御するためのスイッチとして使用します。
+* **NPNトランジスタ（S8050）**：PicoのGPIOピンでは十分な電流を供給できないため、ブザーを駆動するために使用します。
+* **抵抗とコンデンサ**：スライドスイッチのデバウンスを行い、安定した読み取りを確保します。
 
-**Schematic**
+**回路図**
 
 |sch_alarm_siren_lamp|
 
-* GP17 is connected to the middle pin of the slider, along with a 10K resistor and a capacitor (filter) in parallel to GND, which allows the slider to output a steady high or low level when toggled to the left or right.
-* As soon as GP15 is high, the NPN transistor conducts, causing the passive buzzer to start sounding. This passive buzzer is programmed to gradually increase in frequency to produce a siren sound.
-* An LED is connected to GP16 and is programmed to periodically change its brightness in order to simulate a siren.
+* GP17はスライドスイッチの中央ピンに接続され、10Kの抵抗とコンデンサ（フィルタ）が並列にGNDに接続されており、スライドスイッチを左または右に切り替えたときに、安定した高または低レベルの出力を得ることができます。
+* GP15が高信号になると、NPNトランジスタが導通し、パッシブブザーが鳴り始めます。このパッシブブザーは周波数を徐々に上げて、サイレン音を発生させます。
+* LEDはGP16に接続され、サイレンをシミュレートするために、周期的に明るさを変化させるようにプログラムされています。
 
 
 
-**Wiring**
+**配線**
 
 |wiring_alarm_siren_lamp|
 
 
-**Writing the Code**
+**コードの作成**
 
-We'll write a MicroPython script to control the buzzer and LED based on the position of the slide switch.
+スライドスイッチの位置に基づいて、ブザーとLEDを制御するMicroPythonスクリプトを作成します。
 
 .. note::
 
-    * Open the ``7.3_alarm_siren_lamp.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * ``pico-2w-kit-main/micropython`` の ``7.3_alarm_siren_lamp.py`` を開くか、コードをThonnyにコピーして、「Run」をクリックするか、F5を押してください。
+    * 正しいインタープリタが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize PWM for buzzer and LED
+    # ブザーとLEDのPWM初期化
     buzzer = machine.PWM(machine.Pin(15))
     led = machine.PWM(machine.Pin(16))
-    led.freq(1000)  # Set LED PWM frequency
+    led.freq(1000)  # LEDのPWM周波数を設定
 
-    # Initialize the slide switch
+    # スライドスイッチの初期化
     switch = machine.Pin(17, machine.Pin.IN, machine.Pin.PULL_DOWN)
 
-    # Function to map values from one range to another
+    # 値を別の範囲にマッピングする関数
     def interval_mapping(x, in_min, in_max, out_min, out_max):
-        # Ensure in_min != in_max to avoid division by zero
+        # in_min != in_max を確保してゼロ除算を防ぐ
         if in_max - in_min == 0:
             return out_min
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-    # Main loop
+    # メインループ
     try:
         while True:
             if switch.value() == 1:
-                # Alarm is ON
-                # Increase frequency and brightness
+                # アラームがON
+                # 周波数と明るさを増加
                 for i in range(0, 100, 2):
-                    # Map 'i' to LED brightness and buzzer frequency
+                    # 'i'をLEDの明るさとブザーの周波数にマッピング
                     brightness = interval_mapping(i, 0, 100, 0, 65535)
                     frequency = interval_mapping(i, 0, 100, 500, 2000)
                     
-                    # Set LED brightness
+                    # LEDの明るさを設定
                     led.duty_u16(brightness)
                     
-                    # Set buzzer frequency and duty cycle
+                    # ブザーの周波数とデューティサイクルを設定
                     buzzer.freq(frequency)
-                    buzzer.duty_u16(32768)  # 50% duty cycle
+                    buzzer.duty_u16(32768)  # 50%デューティサイクル
                     
                     utime.sleep(0.01)
                     
-                # Decrease frequency and brightness
+                # 周波数と明るさを減少
                 for i in range(100, 0, -2):
                     brightness = interval_mapping(i, 0, 100, 0, 65535)
                     frequency = interval_mapping(i, 0, 100, 500, 2000)
@@ -174,107 +174,107 @@ We'll write a MicroPython script to control the buzzer and LED based on the posi
                     
                     utime.sleep(0.01)
             else:
-                # Alarm is OFF
-                # Turn off LED and buzzer
+                # アラームがOFF
+                # LEDとブザーをオフ
                 led.duty_u16(0)
                 buzzer.duty_u16(0)
                 utime.sleep(0.1)
     except KeyboardInterrupt:
-        # Clean up
+        # クリーンアップ
         buzzer.deinit()
         led.deinit()
         print("Program stopped.")
 
-Once the code is running, toggle the slide switch to the ON position.
-The buzzer should emit a siren sound, and the LED should flash accordingly.
-Toggle the switch to OFF to stop the alarm.
+コードが実行されると、スライドスイッチをONにすると、ブザーがサイレン音を発し、
+LEDがそれに合わせてフラッシュします。OFFにすると、アラームが停止します。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Initialization:
+#. 初期化：
 
-   * **buzzer**: PWM object on GP15.
-   * **led**: PWM object on GP16, frequency set to 1kHz for smooth brightness control.
-   * **switch**: Input pin on GP17 with an internal pull-down resistor.
+   * **buzzer**：GP15のPWMオブジェクト。
+   * **led**：GP16のPWMオブジェクト、明るさを滑らかに制御するために周波数を1kHzに設定。
+   * **switch**：GP17の入力ピン、内部プルダウン抵抗を使用。
 
-#. Interval Mapping Function:
+#. インターバルマッピング関数：
 
-   Maps a value from one range to another, useful for scaling the loop variable to desired frequency and brightness ranges.
+   ある範囲から別の範囲へ値をマッピングする関数。ループ変数を目的の周波数や明るさの範囲にスケーリングするのに便利です。
 
    .. code-block:: python
 
-        # Function to map values from one range to another
+        # 値を別の範囲にマッピングする関数
         def interval_mapping(x, in_min, in_max, out_min, out_max):
-            # Ensure in_min != in_max to avoid division by zero
+            # in_min != in_max を確保してゼロ除算を防ぐ
             if in_max - in_min == 0:
                 return out_min
             return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-#. Main Loop:
+#. メインループ：
 
-   * Checks the state of the switch.
-   * If the switch is ON (``switch.value() == 1``):
+   * スイッチの状態を確認。
+   * スイッチがONの場合（ ``switch.value() == 1`` ）：
 
-     * Runs two loops to simulate the siren effect:
-     * Increasing frequency and brightness.
-     * Decreasing frequency and brightness.
-     * The buzzer frequency varies between 500 Hz and 2000 Hz.
-     * The LED brightness varies from off to full brightness and back.
+     * サイレン効果をシミュレートするために2つのループを実行：
+     * 周波数と明るさを増加。
+     * 周波数と明るさを減少。
+     * ブザーの周波数は500Hzから2000Hzに変化します。
+     * LEDの明るさはオフから最大明るさまで変化します。
 
      .. code-block:: python
 
         if switch.value() == 1:
-            # Alarm is ON
-            # Increase frequency and brightness
+            # アラームがON
+            # 周波数と明るさを増加
             for i in range(0, 100, 2):
-                # Map 'i' to LED brightness and buzzer frequency
+                # 'i'をLEDの明るさとブザーの周波数にマッピング
                 brightness = interval_mapping(i, 0, 100, 0, 65535)
             ...
                 
                 utime.sleep(0.01)
 
-   * If the switch is OFF: Turns off the LED and buzzer.
+   * スイッチがOFFの場合：LEDとブザーをオフにします。
 
      .. code-block:: python
 
             else:
-                # Alarm is OFF
-                # Turn off LED and buzzer
+                # アラームがOFF
+                # LEDとブザーをオフ
                 led.duty_u16(0)
                 buzzer.duty_u16(0)
                 utime.sleep(0.1)
 
-   * Exception Handling: Captures a keyboard interrupt (Ctrl+C) to cleanly deinitialize the PWM objects.
+   * 例外処理：キーボード割り込み（Ctrl+C）をキャッチして、PWMオブジェクトをクリーンに終了します。
 
      .. code-block:: python
     
         except KeyboardInterrupt:
-            # Clean up
+            # クリーンアップ
             buzzer.deinit()
             led.deinit()
             print("Program stopped.")
 
-**Experimenting Further**
+**さらに実験してみましょう**
 
-* Adjusting the Siren Effect:
+* サイレン効果の調整：
 
-  * Modify the frequency range in the ``interval_mapping`` function to change the pitch.
-  * Adjust the delay in the loops (``utime.sleep(0.01)``) to speed up or slow down the siren cycle.
+  * ``interval_mapping`` 関数の周波数範囲を変更して、音の高さを変更します。
+  * ループの遅延（ ``utime.sleep(0.01)`` ）を調整して、サイレンのサイクルの速度を速くしたり遅くしたりします。
 
-* Add More LEDs:
+* 追加のLEDを加える：
 
-  * Incorporate additional LEDs of different colors to create a more dynamic light show.
-  * Use multiple GPIO pins and PWM channels.
+  * 複数の色のLEDを追加して、よりダイナミックな光のショーを作成します。
+  * 複数のGPIOピンとPWMチャネルを使用します。
 
-* Motion Activation:
+* 動作検出でのアクティベーション：
 
-  Replace the slide switch with a motion sensor (e.g., PIR sensor) to trigger the alarm when movement is detected.
+  * スライドスイッチを動きセンサー（例：PIRセンサー）に置き換えて、動きが検出されたときにアラームをトリガーします。
 
-* Remote Control:
+* リモコン操作：
 
-  Integrate an IR receiver to control the alarm using a remote control.
+  * 赤外線受信機を統合して、リモコンを使ってアラームを操作します。
 
 
-**Conclusion**
+**結論**
 
-You've successfully built an Alarm Siren Lamp using the Raspberry Pi Pico 2 W! This project demonstrates how to control multiple components and create interactive effects. It's a great foundation for more complex projects like security systems, emergency signals, or creative art installations.
+
+Raspberry Pi Pico 2 Wを使用して警報サイレンランプを成功裏に作成しました！このプロジェクトでは、複数のコンポーネントを制御し、インタラクティブな効果を作成する方法を学びました。セキュリティシステムや緊急信号、創造的なアートインスタレーションなど、より複雑なプロジェクトのための優れた基盤となります。

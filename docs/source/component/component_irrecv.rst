@@ -1,23 +1,23 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_ir_receiver:
 
-Infrared Receiver
+赤外線受信機
 =================================
 
-IR Receiver
+IR受信機
 ----------------------------
 
 |img_irrecv|
@@ -26,33 +26,33 @@ IR Receiver
 * +: VCC
 * -: GND
 
-An infrared receiver is a component designed to receive infrared signals and output TTL-compatible signals. It resembles a standard plastic-packaged transistor in size and is ideal for various infrared remote control and transmission applications.
+赤外線受信機は、赤外線信号を受信し、TTL互換の信号を出力するように設計されたコンポーネントです。サイズは標準的なプラスチックパッケージトランジスタに似ており、赤外線リモコンや伝送アプリケーションに最適です。
 
-Infrared (IR) communication is a widely used, cost-effective, and user-friendly wireless communication technology. Infrared light, with a slightly longer wavelength than visible light, is invisible to the human eye, making it perfect for wireless communication. A common modulation method used in IR communication is 38 kHz modulation.
+赤外線（IR）通信は、広く使われている、コスト効果が高く、ユーザーフレンドリーなワイヤレス通信技術です。赤外線は、可視光よりも少し長い波長を持ち、目には見えないため、ワイヤレス通信に最適です。IR通信でよく使用される変調方法は38 kHz変調です。
 
-* Adopted HX1838 IR Receiver Sensor, high sensitivity
-* Can be used for remote control
-* Power Supply: 3.3~5V
-* Interface: Digital
-* Modulate Frequency: 38Khz
+* HX1838 IR受信機センサー採用、高感度
+* リモコンに使用可能
+* 電源: 3.3〜5V
+* インターフェース: デジタル
+* 変調周波数: 38kHz
 
 
-Remote Control
+リモコン
 -------------------------
 
 |img_controller|
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
+これは、21の機能ボタンを持ち、最大8メートルの送信距離を持つ薄型の赤外線ワイヤレスリモコンで、子供部屋などで多くのデバイスを操作するのに適しています。
 
-* Size: 85x39x6mm
-* Remote control range: 8-10m
-* Battery: 3V button type lithium manganese battery
-* Infrared carrier frequency: 38KHz
-* Surface paste material: 0.125mm PET
-* Effective life: more than 20,000 times
+* サイズ: 85x39x6mm
+* リモコン範囲: 8〜10m
+* バッテリー: 3Vボタン型リチウムマンガン電池
+* 赤外線キャリア周波数: 38KHz
+* 表面素材: 0.125mm PET
+* 有効寿命: 20,000回以上
 
 
-**Example**
+**例**
 
-* :ref:`py_irremote` (For MicroPython User)
-* :ref:`ar_irremote` (For Arduino User)
+* :ref:`py_irremote` (MicroPythonユーザー向け)
+* :ref:`ar_irremote` (Arduinoユーザー向け)

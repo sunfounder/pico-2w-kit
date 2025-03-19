@@ -1,73 +1,73 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで他の愛好者と一緒に、Raspberry Pi、Arduino、ESP32をさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームのサポートで、販売後の問題や技術的な課題を解決できます。
+    - **学びとシェア**：スキルを高めるために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新しい製品発表や先行情報に早期アクセスできます。
+    - **特別割引**：最新製品に対する限定割引をお楽しみいただけます。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_lcd:
 
-3.4 Liquid Crystal Display
+3.4 液晶ディスプレイ
 ===============================
 
-LIn this lesson, we will learn how to use a **1602 LCD** with the Raspberry Pi Pico 2 W to display text. The LCD1602 is a character-based liquid crystal display that can show 16 characters on 2 lines, making it ideal for projects that need to display information like messages, sensor readings, or status updates.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して **1602 LCD** を操作し、テキストを表示する方法を学びます。LCD1602は16文字×2行で表示できるキャラクターベースの液晶ディスプレイで、メッセージ、センサーデータ、またはステータス更新など、情報を表示する必要があるプロジェクトに最適です。
 
-Connecting an LCD directly to a microcontroller typically requires many GPIO pins, which can limit the functionality of your project. To solve this problem, we can use an LCD1602 module that has an **I2C interface**. The I2C protocol uses only two data lines (SDA and SCL), allowing you to control the LCD with just two GPIO pins, freeing up other pins for additional sensors or devices.
+液晶ディスプレイをマイクロコントローラに直接接続するには、多くのGPIOピンが必要ですが、これがプロジェクトの機能を制限することがあります。この問題を解決するために、 **I2Cインターフェース** を持つLCD1602モジュールを使用することができます。I2Cプロトコルでは、2本のデータライン（SDAおよびSCL）だけを使用するため、LCDの制御にGPIOピンを2本だけ使用でき、他のピンを追加のセンサーやデバイス用に解放できます。
 
 * :ref:`cpn_i2c_lcd`
 
 
-**Understanding I2C on the Raspberry Pi Pico 2 W**
+**Raspberry Pi Pico 2 WでのI2Cの理解**
 
-The Raspberry Pi Pico 2 W supports I2C communication through multiple GPIO pins, providing flexibility for your projects. It has two I2C buses, I2C0 and I2C1, and each can be mapped to several sets of pins.
+Raspberry Pi Pico 2 Wは、複数のGPIOピンを通じてI2C通信をサポートしており、プロジェクトに柔軟性を提供します。I2C0とI2C1という2つのI2Cバスがあり、それぞれ複数のピンセットにマッピングできます。
 
-Here's a breakdown of the I2C-capable pins on the Pico cpn_pico_2w:
+PicoのI2C対応ピンの詳細は以下の通りです：cpn_pico_2w
 
 |pin_i2c|
 
-You can choose any matching pair of SDA and SCL pins for either I2C0 or I2C1. This flexibility allows you to avoid pin conflicts with other peripherals in your project.
+SDAとSCLのピンペアをI2C0またはI2C1のどちらにも選択できるため、他の周辺機器とのピンの競合を避けることができます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクからも個別に購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -76,30 +76,30 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**回路図**
 
 |sch_lcd|
 
-**Wiring**
+**配線**
 
 |wiring_lcd|
 
-**Writing the Code**
+**コードの作成**
 
-Let's write a MicroPython program to display messages on the LCD1602.
+LCD1602にメッセージを表示するためのMicroPythonプログラムを作成しましょう。
 
 .. note::
 
-   * Open the ``3.4_liquid_crystal_display.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-   * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx.  
-   * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+   * ``3.4_liquid_crystal_display.py`` を ``pico-2w-kit-main/micropython`` から開くか、コードをThonnyにコピーして、「実行」ボタンをクリックするか、F5を押してください。
+   * 正しいインタープリタが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。  
+   * ここで使用するライブラリは ``lcd1602.py`` です。このライブラリがPicoにアップロードされていることを確認し、詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
 
 
 .. code-block:: python
@@ -108,73 +108,73 @@ Let's write a MicroPython program to display messages on the LCD1602.
    from lcd1602 import LCD
    import utime
 
-   # Initialize I2C communication (I2C0)
+   # I2C通信の初期化（I2C0）
    i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
 
-   # Create an LCD object
+   # LCDオブジェクトの作成
    lcd = LCD(i2c)
 
-   # Display the first message
+   # 最初のメッセージを表示
    lcd.clear()
    lcd.message("Hello, World!")
    utime.sleep(2)
 
-   # Move to the second line and display another message
-   lcd.write(0, 1,"LCD1602 with I2C")  # Column 0, Line 1
+   # 2行目に移動して別のメッセージを表示
+   lcd.write(0, 1,"LCD1602 with I2C")  # 列0、行1
    utime.sleep(5)
 
-   # Clear the display
+   # ディスプレイをクリア
    lcd.clear()
 
-When the code is running, you will see:
+プログラムを実行すると、次のことが表示されます：
 
-* The LCD should display "Hello, World!" on the first line.
-* After 2 seconds, the second line will display "LCD1602 with I2C".
-* After 5 more seconds, the display will clear.
+* LCDには最初の行に「Hello, World!」が表示されます。
+* 2秒後、2行目に「LCD1602 with I2C」が表示されます。
+* さらに5秒後、ディスプレイがクリアされます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート：
 
-   * ``machine``: Provides access to the hardware.
-   * ``lcd1602``: Custom library to control the LCD.
-   * ``utime``: Time-related functions for delays.
+   * ``machine``: ハードウェアへのアクセスを提供します。
+   * ``lcd1602``: LCD制御用のカスタムライブラリ。
+   * ``utime``: 遅延に関連する時間関数。
 
-#. Initialize I2C Communication:
+#. I2C通信の初期化：
 
    .. code-block:: python
    
-      i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
+   i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
    
-   * ``I2C(0, ...)``: Uses I2C0 bus.
-   * ``sda=Pin(4)``: Sets GP4 as SDA.
-   * ``scl=Pin(5)``: Sets GP5 as SCL.
-   * ``freq=400000``: Sets the I2C frequency to 400kHz.
+   * ``I2C(0, ...)``: I2C0バスを使用。
+   * ``sda=Pin(4)``: GP4をSDAとして設定。
+   * ``scl=Pin(5)``: GP5をSCLとして設定。
+   * ``freq=400000``: I2Cの周波数を400kHzに設定。
 
-#. Create an LCD Object:
+#. LCDオブジェクトの作成：
 
-   * ``lcd = LCD(i2c)``: Creates an instance of the LCD class, passing the I2C object.
+   * ``lcd = LCD(i2c)``: I2Cオブジェクトを渡してLCDクラスのインスタンスを作成。
 
-#. Display Messages:
+#. メッセージの表示：
 
-   * ``lcd.clear()``: Clears any existing text on the display.
-   * ``lcd.message("Hello, World!")``: Displays the string "Hello, World!" on the LCD.
-   * ``utime.sleep(2)``: Waits for 2 seconds before executing the next command.
+   * ``lcd.clear()``: 画面上のテキストをクリアします。
+   * ``lcd.message("Hello, World!")``: LCDに「Hello, World!」を表示します。
+   * ``utime.sleep(2)``: 次のコマンドを実行する前に2秒待機。
 
-#. Move Cursor and Display More Text:
+#. カーソルの移動と追加のテキストの表示：
 
-   * ``lcd.write(0, 1,"LCD1602 with I2C")``: Moves the cursor to the first column of the second line and displays the string on the second line.
+   * ``lcd.write(0, 1,"LCD1602 with I2C")``: カーソルを2行目の最初の列に移動し、メッセージを表示します。
 
-#. Final Delay and Clear:
+#. 最後の遅延とクリア：
 
-   * ``utime.sleep(5)``: Waits for 5 seconds
-   * ``lcd.clear()``: Clears the display.
+   * ``utime.sleep(5)``: 5秒待機。
+   * ``lcd.clear()``: 画面をクリアします。
 
-**Experimenting Further**
+**さらに試してみる**
 
-* **Display Custom Messages**: Modify the strings in ``lcd.message()`` to display your own messages.
-* **Use Line Breaks**: Since the LCD1602 has two lines, you can move the cursor to the second line using ``(0, 1, message[i:i+16])``.
-* **Create Scrolling Text**: You can create a scrolling effect by updating the display within a loop.
+* **カスタムメッセージの表示**: ``lcd.message()`` 内の文字列を変更して、自分のメッセージを表示します。
+* **改行を使用**: LCD1602は2行なので、カーソルを2行目に移動して ``(0, 1, message[i:i+16])`` を使用できます。
+* **スクロールテキストを作成**: ループ内でディスプレイを更新することでスクロール効果を作成できます。
 
   .. code-block:: python
 
@@ -182,37 +182,37 @@ When the code is running, you will see:
       from lcd1602 import LCD
       import utime
 
-      # Initialize I2C communication (I2C0)
+      # I2C通信の初期化（I2C0）
       i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
 
-      # Create an LCD object
+      # LCDオブジェクトの作成
       lcd = LCD(i2c)
 
       message = "Scrolling Text Demo "
       lcd.clear()
       while True:
          for i in range(len(message)):
-            lcd.write(0, 0, message[i:i+16])  # Display 16 characters at a time
+            lcd.write(0, 0, message[i:i+16])  # 16文字ずつ表示
             utime.sleep(0.3)
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* Incorrect Characters or No Display:
+* 正しい文字が表示されない、または表示されない：
 
-  * Ensure that the wiring is correct, especially the SDA and SCL connections.
-  * Make sure the I2C address in the lcd1602 library matches your LCD's address. The default is often 0x27 or 0x3F.
+  * 配線が正しいか確認してください、特にSDAおよびSCLの接続。
+  * lcd1602ライブラリ内のI2CアドレスがLCDのアドレスと一致していることを確認してください。デフォルトでは0x27または0x3Fです。
 
-* Adjust Contrast:
+* コントラストの調整：
 
-  Some LCD modules have a contrast adjustment potentiometer. If nothing appears on the screen, try adjusting it.
+  一部のLCDモジュールにはコントラスト調整用のポテンショメータがあります。画面に何も表示されない場合は、それを調整してみてください。
 
-* Power Supply:
+* 電源供給：
 
-  Ensure the LCD is receiving adequate power. If using 5V, connect to the Pico's VSYS pin (if powered via USB) or an external 5V supply.
+  LCDが十分な電力を受けていることを確認してください。5Vを使用する場合は、PicoのVSYSピン（USB経由で電源供給されている場合）または外部の5V電源に接続してください。
 
-* Understanding I2C Addresses
+* I2Cアドレスの理解：
 
-  If your LCD does not display text, it's possible that it uses a different I2C address. You can scan for devices on the I2C bus:
+  LCDがテキストを表示しない場合、異なるI2Cアドレスを使用している可能性があります。I2Cバス上のデバイスをスキャンすることができます：
 
   .. code-block:: python
   
@@ -220,11 +220,11 @@ When the code is running, you will see:
       i2c = I2C(0, sda=Pin(4), scl=Pin(5))
       devices = i2c.scan()
 
-      # Print the I2C addresses in hexadecimal format
+      # I2Cアドレスを16進形式で表示
       print("I2C addresses found:", [hex(device) for device in devices])
 
-  This will print the addresses of devices connected to the I2C bus. Update the lcd1602.py library or your code to use the correct address.
+  これにより、I2Cバスに接続されているデバイスのアドレスが表示されます。lcd1602.pyライブラリやコードを正しいアドレスを使用するように更新してください。
 
-**Conclusion**
+**結論**
 
-You've successfully learned how to control an LCD1602 display using the I2C interface with your Raspberry Pi Pico 2! This skill allows you to add visual output to your projects, making them more interactive and informative.
+I2Cインターフェースを使用してLCD1602ディスプレイを制御する方法を学びました。このスキルを活用することで、プロジェクトに視覚的な出力を追加し、よりインタラクティブで情報豊富なプロジェクトを作成できます。

@@ -1,55 +1,55 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_micro_switch:
 
-Micro Switch
+マイクロスイッチ
 ========================
 
 |img_micro_switch|
 
-The construction of a micro switch is really simple. The main parts of the switch are:
+マイクロスイッチの構造は非常にシンプルです。スイッチの主要な部分は以下の通りです：
 
 |img_micro_switch2|
 
-* 1.Plunger (Actuator)
-* 2.Cover
-* 3.Moving piece
-* 4.Support
-* 5.Case
-* 6.NO terminal: normally open
-* 7.NC terminal: normally closed
-* 8.Contact
-* 9.Moving arm
+* 1.プランジャー（アクチュエーター）
+* 2.カバー
+* 3.動く部品
+* 4.サポート
+* 5.ケース
+* 6.NO端子：通常開
+* 7.NC端子：通常閉
+* 8.接点
+* 9.動作アーム
 
 
-After a micro switch makes physical contact with an object, its contacts change position. The basic working principle is as follows.
+マイクロスイッチが物体と物理的に接触すると、その接点の位置が変わります。基本的な動作原理は次のとおりです。
 
-When the plunger is in the released or rest position.
+プランジャーが解放された状態、または休止状態にあるとき。
 
-* The normally closed circuit can carry current.
-* The normally open circuit is electrically insulated.
+* 通常閉回路は電流を通すことができます。
+* 通常開回路は電気的に絶縁されています。
 
-When the plunger is depressed or switched.
+プランジャーが押されたり、切り替えられたりするとき。
 
-* The normally closed circuit is open.
-* The normally open circuit is closed.
+* 通常閉回路は開かれます。
+* 通常開回路は閉じます。
 
 |img_micro_switch1|
 
- **Example**
+ **例**
 
-* :ref:`py_micro` (For MicroPython User)
-* :ref:`ar_micro` (For Arduino User)
-.. * :ref:`per_service_bell` (For Piper Make User)
+* :ref:`py_micro` (MicroPythonユーザー向け)
+* :ref:`ar_micro` (Arduinoユーザー向け)
+.. * :ref:`per_service_bell` (Piper Makeユーザー向け)

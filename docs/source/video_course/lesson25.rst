@@ -1,33 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 25:  Getting Started with OLED 1306 in Micropython
+レッスン25：MicropythonでOLED 1306を使い始める
 =============================================================================
 
-This tutorial covers using the Raspberry Pi Pico W and an OLED display for portable projects:
+このチュートリアルでは、Raspberry Pi Pico WとOLEDディスプレイを使用して携帯型プロジェクトを行う方法について説明します：
 
-* **Introduction**: Focuses on making projects more portable and power-efficient.
-* **Introducing the OLED Display**: Suggests using a low-power OLED display, connected via I2C to GPIO pins 2 and 3.
-* **Library Installation and Initial Setup**: Installs the SSD1306 library and sets up the I2C and display objects.
-* **Displaying Text and Graphics**: Provides code to display text, draw lines, and create shapes on the OLED.
-* **Power Management**: Explains turning the display on and off to save battery.
-* **Practical Demonstration**: Shows text and graphics on the OLED, highlighting its benefits over LCD.
-* **Homework Assignment**: Task to display "My Circle" and draw a circle on the OLED, encouraging sharing the results online.
+* **はじめに**: プロジェクトの持ち運びやすさと省エネを重視します。
+* **OLEDディスプレイの紹介**: 低消費電力のOLEDディスプレイを推奨し、I2Cを介してGPIOピン2と3に接続します。
+* **ライブラリのインストールと初期設定**: SSD1306ライブラリをインストールし、I2Cとディスプレイオブジェクトを設定します。
+* **テキストとグラフィックスの表示**: OLED上にテキストを表示し、線を引き、図形を作成するコードを提供します。
+* **電源管理**: バッテリーの節約のためにディスプレイのオンとオフを切り替える方法を説明します。
+* **実践デモンストレーション**: OLED上でテキストとグラフィックスを表示し、LCDよりも優れている点を強調します。
+* **宿題**: 「My Circle」と表示し、OLED上に円を描く課題を出し、結果をオンラインで共有することを奨励します。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

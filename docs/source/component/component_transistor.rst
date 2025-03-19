@@ -1,74 +1,72 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_transistor:
 
-Transistor
-============
+トランジスタ
+===============
 
 |img_NPN&PNP|
 
-Transistor is a semiconductor device that controls current by current. It functions by amplifying weak signal to larger amplitude signal and is also used for non-contact switch. 
+トランジスタは、電流で電流を制御する半導体素子です。弱い信号を大きな振幅の信号に増幅することで動作し、非接触スイッチとしても使用されます。
 
-A transistor is a three-layer structure composed of P-type and N-type semiconductors. They form the three regions internally. The thinner in the middle is the base region; the other two are both N-type or P-type ones – the smaller region with intense majority carriers is the emitter region, when the other one is the collector region. This composition enables the transistor to be an amplifier. 
-From these three regions, three poles are generated respectively, which are base (b), emitter (e), and collector (c). They form two P-N junctions, namely, the emitter junction and collection junction. The direction of the arrow in the transistor circuit symbol indicates that of the emitter junction. 
+トランジスタは、P型およびN型半導体で構成された3層構造を持っています。内部で3つの領域を形成し、その中で最も薄い部分がベース領域であり、他の2つはどちらもN型またはP型の領域です。小さな領域で多数キャリアが集中しているのがエミッタ領域で、もう一方がコレクタ領域です。この構成により、トランジスタは増幅器として機能します。
+これらの3つの領域からそれぞれベース（b）、エミッタ（e）、コレクタ（c）の3つの端子が生成され、2つのP-N接合、すなわちエミッタ接合とコレクタ接合を形成します。トランジスタ回路記号内の矢印の向きは、エミッタ接合の向きを示しています。
 
 * `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
 
-Based on the semiconductor type, transistors can be divided into two groups, the NPN and PNP ones. From the abbreviation, we can tell that the former is made of two N-type semiconductors and one P-type and that the latter is the opposite. See the figure below. 
+半導体の種類に基づいて、トランジスタはNPN型とPNP型の2つのグループに分けられます。略語から、前者は2つのN型半導体と1つのP型半導体で構成され、後者はその逆であることが分かります。以下の図を参照してください。
 
 .. note::
-    s8550 is PNP transistor and the s8050 is the NPN one, They look very similar, and we need to check carefully to see their labels.
+    s8550はPNP型トランジスタで、s8050はNPN型トランジスタです。見た目は非常に似ているため、ラベルを確認することが重要です。
 
 |img_transistor_symbol|
 
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+高レベル信号がNPN型トランジスタを通過すると、それがエネルギーを供給します。しかし、PNP型トランジスタは低レベル信号を必要とします。両方のタイプのトランジスタは、非接触スイッチとして頻繁に使用されます。この実験でも同様です。
 
 
 * `S8050 Transistor Datasheet <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
 * `S8550 Transistor Datasheet <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
 
-Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).
+ラベル面を自分に向け、ピンを下に向けて配置します。ピンは左から順にエミッタ（e）、ベース（b）、コレクタ（c）です。
 
 |img_ebc|
 
 .. note::
-    * The base is the gate controller device for the larger electrical supply. 
-    * In the NPN transistor, the collector is the larger electrical supply and the emitter is the outlet for that supply, the PNP transistor is just the opposite.
-
+    * ベースは大きな電力供給を制御するゲートデバイスです。
+    * NPN型トランジスタでは、コレクタが大きな電力供給で、エミッタがその電力の出口です。PNP型トランジスタではその逆になります。
 
 .. Example
 .. -------------------
 
 .. :ref:`Two Kinds of Transistors`
 
+**例**
 
-**Example**
-
-* :ref:`py_transistor` (For MicroPython User)
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`ar_transistor` (For Arduino User)
-* :ref:`ar_relay` (For Arduino User)
-.. * :ref:`per_service_bell` (For Piper Make User)
-.. * :ref:`per_reversing_system` (For Piper Make User)
-.. * :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_transistor` (MicroPythonユーザー向け)
+* :ref:`py_relay` (MicroPythonユーザー向け)
+* :ref:`py_ac_buz` (MicroPythonユーザー向け)
+* :ref:`py_pa_buz` (MicroPythonユーザー向け)
+* :ref:`py_light_theremin` (MicroPythonユーザー向け)
+* :ref:`py_alarm_lamp` (MicroPythonユーザー向け)
+* :ref:`py_music_player` (MicroPythonユーザー向け)
+* :ref:`py_fruit_piano` (MicroPythonユーザー向け)
+* :ref:`py_reversing_aid` (MicroPythonユーザー向け)
+* :ref:`ar_ac_buz` (Arduinoユーザー向け)
+* :ref:`ar_pa_buz` (Arduinoユーザー向け)
+* :ref:`ar_transistor` (Arduinoユーザー向け)
+* :ref:`ar_relay` (Arduinoユーザー向け)
+.. * :ref:`per_service_bell` (Piper Makeユーザー向け)
+.. * :ref:`per_reversing_system` (Piper Makeユーザー向け)
+.. * :ref:`per_reaction_game` (Piper Makeユーザー向け)

@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 56: Using a Joystick With MicroPython
+レッスン56: MicroPythonでジョイスティックを使用する
 =============================================================================
 
-This tutorial covers using a joystick with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wでジョイスティックを使用する方法について説明します：
 
-* **Wiring Setup**: Connect ground, 3.3V, VRX to GPIO pin 27, and VRY to GPIO pin 26.
-* **Code Implementation**: Import ``machine``, ``time``, ``math``; set up ADC for joystick axes; read and print joystick values.
-* **Calibration**: Convert readings to a -100 to +100 scale for intuitive interpretation.
-* **Homework Assignment**: Write a program to calibrate the joystick so the center reads (0,0) and edges read ±100.
+* **配線セットアップ**: グランド、3.3V、VRXをGPIOピン27、VRYをGPIOピン26に接続します。
+* **コード実装**: ``machine``、 ``time``、 ``math`` をインポートし、ジョイスティック軸のADCを設定し、ジョイスティックの値を読み取って表示します。
+* **キャリブレーション**: 読み取りを-100から+100のスケールに変換して直感的な解釈が可能にします。
+* **宿題課題**: ジョイスティックをキャリブレートするプログラムを書いて、中心が(0,0)、端が±100となるようにします。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

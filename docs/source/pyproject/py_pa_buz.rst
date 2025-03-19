@@ -1,46 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32の深い探求を仲間と共に楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームからの助けを借りて、購入後の問題や技術的な挑戦を解決します。
+    - **学びと共有**: ヒントやチュートリアルを交換して、技術を磨きましょう。
+    - **独占的なプレビュー**: 新製品の発表や先取り情報を早期にアクセスしましょう。
+    - **特別割引**: 最新製品の独占的な割引を楽しみましょう。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝祭のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
 .. _py_pa_buz:
 
-3.2 Play Custom Tones with a Passive Buzzer
+3.2 パッシブブザーでカスタムトーンを再生
 ==============================================
 
 
-In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して **パッシブブザー** で異なるトーンや簡単なメロディーを再生する方法を学びます！アクティブブザーとは異なり、パッシブブザーは音を生成するために変化する電気信号を必要とし、信号の周波数を変えることで音のピッチを制御できます。
 
 
 * :ref:`cpn_buzzer`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトに必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -48,16 +48,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -77,32 +77,32 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Understanding the Passive Buzzer**
+**パッシブブザーの理解**
 
-A passive buzzer works like a tiny speaker. It doesn't produce sound on its own; instead, it needs an oscillating signal to make sound. By providing signals of different frequencies, we can make the buzzer produce different pitches, allowing us to play notes and melodies.
+パッシブブザーは小型スピーカーのように機能します。自身で音を発することはなく、音を出すためには振動する信号が必要です。異なる周波数の信号を提供することで、ブザーから異なるピッチの音を出すことができ、音符やメロディーを演奏できます。
 
 |img_buzzer|
 
-**Circuit Diagram**
+**回路図**
 
 |sch_buzzer|
 
-In this circuit, the passive buzzer is powered through a transistor (**S8050** NPN). The transistor amplifies the current, making the buzzer sound louder than if it were connected directly to the Pico. 
+この回路では、パッシブブザーはトランジスタ（ **S8050** NPN）を通じて電源が供給されます。トランジスタは電流を増幅し、Picoに直接接続されている場合よりもブザーの音を大きくします。
 
-Here's what happens:
+ここでの流れは以下の通りです：
 
-* **GP15** outputs a high signal to control the transistor.
-* When the transistor is activated, it allows current to flow through the buzzer, making it beep.
+* **GP15** が高信号を出力してトランジスタを制御します。
+* トランジスタが作動すると、ブザーを通じて電流が流れ、ブザーが鳴ります。
 
-A **1kΩ resistor** is used to limit the current to protect the transistor.
+**1kΩの抵抗** は、トランジスタを保護するために電流を制限します。
 
-**Wiring Diagram**
+**配線図**
 
-Make sure you are using the **passive buzzer**. You can tell it's the correct one by looking for the exposed PCB (as opposed to the sealed back, which is a active buzzer).
+**パッシブブザー** を使用していることを確認してください。裸のPCBが見えるものが正しいブザーです（アクティブブザーは裏面が封印されています）。
 
 |img_buzzer|
 
@@ -116,51 +116,52 @@ Make sure you are using the **passive buzzer**. You can tell it's the correct on
 .. #. Connect the **emitter** lead of the transistor to the negative power bus.
 
 
-**Writing the Code**
+**コードの記述**
 
-Now, let's write some code to make the buzzer play different tones.
+それでは、異なるトーンを再生するためのコードを書いてみましょう。
 
 .. note::
 
-    * Open the ``3.2_custom_tone.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * ``pico-2w-kit-main/micropython`` から ``3.2_custom_tone.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押します。
+    * 正しいインタープリターが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）.COMxx。
+
 
 .. code-block:: python
 
    import machine
    import utime
 
-   # Initialize PWM on GP15
+   # GP15でPWMを初期化
    buzzer = machine.PWM(machine.Pin(15))
 
    def play_tone(frequency, duration):
-       # Set the frequency of the PWM signal
+       # PWM信号の周波数を設定
        buzzer.freq(frequency)
-       # Set duty cycle to 50%
+       # デューティサイクルを50%に設定
        buzzer.duty_u16(32768)
-       # Play the tone for the specified duration
+       # 指定された期間でトーンを再生
        utime.sleep_ms(duration)
-       # Turn off the buzzer
+       # ブザーをオフにする
        buzzer.duty_u16(0)
 
-   # Play some tones
-   play_tone(440, 500)  # A4 note for 500ms
+   # いくつかのトーンを再生
+   play_tone(440, 500)  # 500msのA4ノート
    utime.sleep_ms(200)
-   play_tone(494, 500)  # B4 note for 500ms
+   play_tone(494, 500)  # 500msのB4ノート
    utime.sleep_ms(200)
-   play_tone(523, 500)  # C5 note for 500ms
+   play_tone(523, 500)  # 500msのC5ノート
 
-When the code runs, you will hear the passive buzzer play the A4 note for 500ms, the B4 note for 500ms, and the C5 note for 500ms respectively.
+このコードが実行されると、パッシブブザーはそれぞれ500ミリ秒でA4、B4、C5の音符を演奏します。
+コードを実行すると、パッシブブザーがそれぞれ500ms間、A4ノート、B4ノート、C5ノートを再生します。
 
 
-**Explanation of the Code**
+**コードの説明**
 
-#. Initialize PWM:
+#. PWMの初期化：
 
-   * ``buzzer = machine.PWM(machine.Pin(15))``: This sets up PWM (Pulse Width Modulation) on pin GP15, which we'll use to control the buzzer.
+   * ``buzzer = machine.PWM(machine.Pin(15))``: これにより、GP15ピンでPWM（パルス幅変調）を設定し、ブザーの制御に使用します。
 
-#. Define the ``play_tone`` Function: 
+#. ``play_tone`` 関数の定義：
 
    .. code-block:: python
 
@@ -170,35 +171,35 @@ When the code runs, you will hear the passive buzzer play the A4 note for 500ms,
           utime.sleep_ms(duration)
           buzzer.duty_u16(0)
 
-   * ``frequency``: The pitch of the tone. Higher frequency means a higher pitch.
-   * ``duration``: How long the tone plays, in milliseconds.
-   * ``buzzer.duty_u16(32768)``: Sets the duty cycle to 50% (half of 65535), which is ideal for generating sound.
-   * After the duration, we turn off the buzzer by setting the duty cycle to 0.
+   * ``frequency``: 音の高さ（周波数）。周波数が高いほど音程が高くなります。
+   * ``duration``: トーンの再生時間（ミリ秒単位）。
+   * ``buzzer.duty_u16(32768)``: デューティサイクルを50%に設定（65535の半分）、音を出すのに最適です。
+   * 再生時間後、デューティサイクルを0に設定してブザーをオフにします。
 
-#. Play Notes:
+#. ノートの再生：
 
-   We call ``play_tone`` with different frequencies corresponding to musical notes.
+   ``play_tone`` を呼び出し、異なる周波数の音符を再生します。
 
    .. code-block:: python
 
-      # Play some tones
-      play_tone(440, 500)  # A4 note for 500ms
+      # いくつかのトーンを再生
+      play_tone(440, 500)  # A4ノートを500ms再生
       utime.sleep_ms(200)
-      play_tone(494, 500)  # B4 note for 500ms
+      play_tone(494, 500)  # B4ノートを500ms再生
       utime.sleep_ms(200)
-      play_tone(523, 500)  # C5 note for 500ms
+      play_tone(523, 500)  # C5ノートを500ms再生
 
-   
-**Playing a Melody**
 
-Now that we've learned how to play individual tones with the passive buzzer, let's create a simple melody! This will help us understand how to sequence notes and control their durations to produce music.
+**メロディーの再生**
+
+パッシブブザーで個別のトーンを再生する方法を学んだので、次は簡単なメロディーを作成しましょう！これにより、ノートを並べ、音符の持続時間を制御して音楽を作る方法が理解できます。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Note frequencies (in Hz)
+    # 音符の周波数（Hz）
     NOTE_C4 = 262
     NOTE_D4 = 294
     NOTE_E4 = 330
@@ -218,7 +219,7 @@ Now that we've learned how to play individual tones with the passive buzzer, let
         500, 500, 500, 500
     ]
 
-    # Initialize PWM on GP15
+    # GP15でPWMを初期化
     buzzer = machine.PWM(machine.Pin(15))
 
     def play_tone(frequency, duration):
@@ -226,20 +227,20 @@ Now that we've learned how to play individual tones with the passive buzzer, let
         buzzer.duty_u16(32768)
         utime.sleep_ms(duration)
         buzzer.duty_u16(0)
-        utime.sleep_ms(50)  # Short pause between notes
+        utime.sleep_ms(50)  # 音符間の短い休止
 
     for i in range(len(melody)):
         play_tone(melody[i], note_durations[i])
 
-When you run this code, the buzzer will play a simple melody by sounding each note in the sequence. Each note lasts for 500 milliseconds, and there's a short pause between notes. You'll hear the buzzer play an ascending scale from Middle C (C4) up to the next octave's C (C5).
+このコードを実行すると、ブザーはシーケンスの各音符を再生する簡単なメロディーを演奏します。各音符は500ミリ秒持続し、音符の間に短い休止があります。ブザーはミドルC（C4）から次のオクターブのC（C5）まで、上昇するスケールを再生します。
 
-**Experimenting Further**
+**さらに実験する**
 
-* **Create Your Own Melody**: Change the notes and durations in the melody and ``note_durations`` lists to compose your own tune.
-* **Adjust the Tempo**: Modify the values in ``note_durations`` to speed up or slow down the melody.
-* **Add More Notes**: Define additional notes by adding their frequencies and include them in your melody.
-* **Change the Volume**: Adjust the duty cycle in ``buzzer.duty_u16()`` to make the buzzer louder or quieter. A value around 32768 gives 50% duty cycle.
+* **自分だけのメロディーを作成する**: メロディーと ``note_durations`` リストの音符と持続時間を変更して、自分の曲を作成しましょう。
+* **テンポを調整する**: ``note_durations`` の値を変更して、メロディーの速さを調整できます。
+* **音符を追加する**: 音符の周波数を定義し、メロディーに追加して、より多くの音符を使ってみましょう。
+* **音量を調整する**: ``buzzer.duty_u16()`` でデューティサイクルを調整し、ブザーの音量を大きくしたり小さくしたりできます。32768の値は50%のデューティサイクルです。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to use a passive buzzer to play tones and melodies with the Raspberry Pi Pico 2 W. By controlling the frequency of the PWM signal, you can create a variety of sounds and even play simple songs. This is a great way to add audio feedback or fun musical elements to your projects.
+このレッスンでは、Raspberry Pi Pico 2 Wを使ってパッシブブザーでトーンやメロディーを再生する方法を学びました。PWM信号の周波数を制御することで、さまざまな音を作り、シンプルな曲まで演奏できるようになります。これは、プロジェクトに音声フィードバックや楽しい音楽要素を加える素晴らしい方法です。

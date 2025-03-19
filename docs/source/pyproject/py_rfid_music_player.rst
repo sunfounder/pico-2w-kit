@@ -1,43 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 当コミュニティとチームの助けを借りて、販売後の問題や技術的な課題を解決できます。
+    - **学び・共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **特別なプレビュー**: 新製品の発表やプレビューに早期アクセスできます。
+    - **特別割引**: 最新製品の独占的な割引を楽しめます。
+    - **フェスティブなプロモーションとプレゼント企画**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_music_player:
 
-7.8 RFID Music Player
+7.8 RFID音楽プレーヤー
 ==========================
 
-In this project, we'll create an **RFID Music Player** using the Raspberry Pi Pico 2 W, an MFRC522 RFID reader, a passive buzzer, and WS2812 RGB LEDs. By writing musical notes to RFID tags, we'll read them back and have the Pico play the corresponding melody while displaying colorful LED effects. This project combines RFID technology with music generation, allowing you to store and share melodies on RFID cards or key fobs.
+このプロジェクトでは、Raspberry Pi Pico 2 W、MFRC522 RFIDリーダー、パッシブブザー、WS2812 RGB LEDを使用して、 **RFID音楽プレーヤー** を作成します。RFIDタグに音符を書き込んで、それを読み取り、Picoが対応するメロディを再生し、カラフルなLEDエフェクトを表示します。このプロジェクトは、RFID技術と音楽生成を組み合わせ、RFIDカードやキーフォブにメロディを保存・共有できるようにします。
 
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名称
+        - このキットに含まれる部品
+        - リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -45,16 +45,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -74,7 +74,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -86,42 +86,42 @@ You can also buy them separately from the links below.
         - 1
         - |link_ws2812_buy|
 
-**Understanding the Components**
+**部品の理解**
 
-* **MFRC522 RFID Reader Module**: A low-cost RFID reader that communicates over SPI. It can read and write data to RFID tags operating at 13.56 MHz.
-* **RFID Tags/Key Fobs**: Passive devices that can store small amounts of data. We'll write musical notes to these tags.
-* **Passive Buzzer**: An electronic component that can produce sound when driven with a PWM signal. We'll use it to play musical notes.
-* **WS2812 RGB LEDs**: Also known as NeoPixels, these LEDs can display a wide range of colors and can be individually controlled over a single data line.
+* **MFRC522 RFIDリーダーモジュール**: SPIで通信する低価格のRFIDリーダー。13.56 MHzで動作するRFIDタグへのデータの読み書きが可能です。
+* **RFIDタグ/キーフォブ**: 小さなデータを保存できるパッシブデバイス。音符をこれらのタグに書き込みます。
+* **パッシブブザー**: PWM信号で駆動すると音を出す電子部品。音符を再生するために使用します。
+* **WS2812 RGB LED**: NeoPixelとも呼ばれ、幅広い色を表示でき、1本のデータ線で個別に制御可能なLEDです。
 
-**Schematic**
+**回路図**
 
 |sch_music_player|
 
 
-**Wiring**
+**配線**
 
-|wiring_rfid_music_player| 
+|wiring_rfid_music_player|
 
 
-**Writing the Code**
+**コードの作成**
 
-We'll write two scripts:
+二つのスクリプトを作成します：
 
-* ``6.5_rfid_write.py``: To store the musical notes on the RFID tag.
-* ``7.8_rfid_music_player.py``: To read the stored notes and play the melody.
+* ``6.5_rfid_write.py``: RFIDタグに音符を保存するスクリプト
+* ``7.8_rfid_music_player.py``: 保存された音符を読み取り、メロディを再生するスクリプト
 
 .. note::
 
-    Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    ここでは ``mfrc522`` フォルダ内のライブラリを使用する必要があります。Picoにアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
 
-#. Open the ``6.5_rfid_write.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. ``6.5_rfid_write.py`` ファイルを ``pico-2w-kit-main/micropython`` から開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、F5キーを押して実行します。
 
    .. code-block:: python
 
         from mfrc522 import SimpleMFRC522
         from machine import Pin, SPI
 
-        # Initialize the RFID reader
+        # RFIDリーダーの初期化
         reader = SimpleMFRC522(spi_id=0, sck=18, mosi=19, miso=16, cs=17, rst=9)
 
         def write_to_tag():
@@ -135,9 +135,9 @@ We'll write two scripts:
 
         write_to_tag()
 
-#. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the shell, then bring the RFID tag near the reader to store a score of "Ode to Joy". Wait for the confirmation message: "Data written successfully!"
+#. 実行後、シェルに ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` と入力し、RFIDタグをリーダーの近くに持っていくと「喜びの歌」の楽譜が保存されます。確認メッセージ「データが正常に書き込まれました！」が表示されます。
 
-#. Open the ``7.8_rfid_music_player.py`` file from ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.
+#. ``7.8_rfid_music_player.py`` ファイルを ``pico-2w-kit-main/micropython`` から開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、F5キーを押して実行します。
 
    .. code-block:: python
 
@@ -147,15 +147,15 @@ We'll write two scripts:
         from ws2812 import WS2812
         import urandom
 
-        # WS2812 LED setup
-        # Initialize an 8-LED WS2812 strip on pin 0
+        # WS2812 LEDのセットアップ
+        # ピン0に8個のLEDを接続
         ws = WS2812(machine.Pin(0), 8)
 
-        # MFRC522 RFID reader setup
-        # Initialize the RFID reader using SPI on specific pins
+        # MFRC522 RFIDリーダーのセットアップ
+        # SPI通信を使用してRFIDリーダーを初期化
         reader = SimpleMFRC522(spi_id=0, sck=18, miso=16, mosi=19, cs=17, rst=9)
 
-        # Buzzer note frequencies (in Hertz)
+        # ブザー音符周波数（Hz）
         NOTE_C4 = 262
         NOTE_D4 = 294
         NOTE_E4 = 330
@@ -165,120 +165,121 @@ We'll write two scripts:
         NOTE_B4 = 494
         NOTE_C5 = 523
 
-        # Initialize PWM for buzzer on pin 15
+        # ピン15でPWMを使用してブザーを初期化
         buzzer = machine.PWM(machine.Pin(15))
 
-        # List of note frequencies corresponding to musical notes
+        # 音符に対応する周波数のリスト
         note = [NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5]
 
-        # Function to play a tone on the buzzer with a specified frequency and duration
+        # 指定された周波数と継続時間でブザーを鳴らす関数
         def tone(pin, frequency, duration):
-         pin.freq(frequency)  # Set the buzzer frequency
-         pin.duty_u16(30000)  # Set duty cycle to 50% (approx)
-         time.sleep_ms(duration)  # Play the tone for the specified duration
-         pin.duty_u16(0)  # Stop the tone by setting duty cycle to 0
+         pin.freq(frequency)  # ブザーの周波数を設定
+         pin.duty_u16(30000)  # デューティ比を50%に設定
+         time.sleep_ms(duration)  # 指定された時間だけ音を鳴らす
+         pin.duty_u16(0)  # 音を止める
 
-        # Function to light up a WS2812 LED at a specific index with a random color
+        # 指定されたインデックスのWS2812 LEDをランダムな色で点灯させる関数
         def lumi(index):
          for i in range(8):
-             ws[i] = 0x000000  # Turn off all LEDs
-         ws[index] = int(urandom.uniform(0, 0xFFFFFF))  # Set a random color for the LED at the given index
-         ws.write()  # Write the color data to the WS2812 LEDs
+             ws[i] = 0x000000  # 全てのLEDを消灯
+         ws[index] = int(urandom.uniform(0, 0xFFFFFF))  # 指定したインデックスのLEDにランダムな色を設定
+         ws.write()  # WS2812 LEDに色データを書き込む
 
-        # Encode musical notes text into indices and play the corresponding notes
-        words = ["C", "D", "E", "F", "G", "A", "B", "N"]  # Mapping of musical notes to text characters
+        # 音符のテキストをインデックスにエンコードし、対応する音符を再生する関数
+        words = ["C", "D", "E", "F", "G", "A", "B", "N"]  # 音符と文字をマッピング
         def take_text(text):
-         string = text.replace(' ', '').upper()  # Remove spaces and convert the text to uppercase
+         string = text.replace(' ', '').upper()  # 空白を削除し、テキストを大文字に変換
          while len(string) > 0:
-             index = words.index(string[0])  # Find the index of the first note in the string
-             tone(buzzer, note[index], 250)  # Play the corresponding note on the buzzer for 250 ms
-             lumi(index)  # Light up the LED corresponding to the note
-             string = string[1:]  # Move to the next character in the string
+             index = words.index(string[0])  # テキストの最初の音符をインデックスとして取得
+             tone(buzzer, note[index], 250)  # 250ミリ秒間、対応する音符を再生
+             lumi(index)  # 対応する音符のLEDを点灯
+             string = string[1:]  # 次の文字に進む
 
-        # Function to read from the RFID card and play the stored score
+        # RFIDカードからデータを読み取り、保存されたメロディを再生する関数
         def read():
          print("Reading...Please place the card...")
-         id, text = reader.read()  # Read the RFID card (ID and stored text)
-         print("ID: %s\nText: %s" % (id, text))  # Print the ID and text
-         take_text(text)  # Play the score from the text stored on the card
+         id, text = reader.read()  # RFIDカードからIDと保存されたテキストを読み取る
+         print("ID: %s\nText: %s" % (id, text)) # IDとテキストを表示
+         take_text(text)  # カードに保存されたメロディを再生
 
-        # Start reading from the RFID card and play the corresponding score
+        # RFIDカードを読み取り、対応するメロディを再生
         read()
 
 
+#. 実行後、コンソールには「タグをリーダーの近くに置いてください...」と表示されます。
 
-#. After running, the console will display: "Place your tag near the reader...".
-
-   Place the RFID Tag Near the Reader:
+   RFIDタグをリーダーの近くに置くと：
    
-   * The Pico reads the data from the tag.
-   * The console displays the tag ID and text.
-   * The buzzer plays the melody corresponding to the notes stored on the tag.
-   * The WS2812 LEDs light up with effects synchronized to the music.
+   * Picoがタグからデータを読み取ります。
+   * コンソールにタグのIDとテキストが表示されます。
+   * ブザーがタグに保存された音符に対応するメロディを再生します。
+   * WS2812 LEDが音楽に合わせてエフェクトを点灯させます。
 
-**Understanding the Code**
 
-* RFID Interaction:
 
-  * The ``SimpleMFRC522`` class simplifies reading and writing to RFID tags.
-  * **Writing Data**: In ``write_to_tag()``, user input is written to the tag.
-  * **Reading Data**: In ``read_and_play()``, data is read from the tag when it's near the reader.
+**コードの理解**
 
-* Music Playback:
+* RFIDとのやり取り：
 
-  * **Notes Dictionary**: Maps ``note`` characters to frequencies.
-  * **Parsing Notes**: The text from the RFID tag is cleaned and iterated character by character.
-  * **Playing Notes**: For each character, the corresponding frequency is played on the buzzer.
+  * ``SimpleMFRC522`` クラスはRFIDタグの読み書きを簡素化します。
+  * **データの書き込み**: ``write_to_tag()`` ではユーザー入力をタグに書き込みます。
+  * **データの読み取り**: ``read_and_play()`` ではリーダーの近くにタグを置くとデータを読み取ります。
 
-* LED Effects:
+* 音楽の再生:
 
-  * **WS2812 Control**: The ``ws`` object controls the RGB LEDs.
-  * **Lighting LEDs**: For each note played, an LED lights up with a random color.
+  * **音符辞書**: ``note`` 文字列を周波数にマッピングします。
+  * **音符の解析**: RFIDタグから取得したテキストを整形し、1文字ずつ処理します。
+  * **音符の再生**: 各文字に対応する周波数がブザーで再生されます。
 
-* Timing:
+* LEDエフェクト：
 
-  * **Note Duration**: Each note is played for 300 milliseconds.
-  * **Pause Between Notes**: A short pause of 100 milliseconds between notes.
+  * **WS2812の制御**: ``ws`` オブジェクトでRGB LEDを制御。
+  * **LEDの点灯**: 音符に合わせて対応するLEDを点灯させます。
 
-**Experimenting Further**
+* タイミング：
 
-* Create Your Own Melodies:
+  * **音符の継続時間**: 各音符は300ミリ秒間再生されます。
+  * **音符間の休止**: 音符の間には100ミリ秒の短い休止があります。
 
-  * Write different musical notes to RFID tags.
-  * Use notes C, D, E, F, G, A, B, and N (for rest).
-  * Share your musical RFID tags with friends.
+**さらに実験する**
 
-* Extend Note Range:
+* 自分だけのメロディを作成：
 
-  * Add more octaves by defining additional frequencies.
-  * Update the notes dictionary accordingly.
+  * RFIDタグに異なる音符を記録。
+  * C、D、E、F、G、A、B、N（休符）の音符を使用。
+  * 作成した音符のRFIDタグを友達と共有。
 
-* Visual Enhancements:
+* 音符の範囲を拡張:
 
-  * Modify the light_led function to create different LED patterns.
-  * Synchronize LED effects more closely with the music.
+  * 追加の周波数を定義することで、さらに多くのオクターブを追加します。
+  * それに応じて音符辞書を更新します。
 
-* Multiple Tags for Different Songs:
+* ビジュアルの強化:
 
-  * Program multiple RFID tags with different melodies.
-  * Build a simple RFID-based music library.
+  * light_led関数を変更して、異なるLEDパターンを作成します。
+  * LEDエフェクトと音楽の同期をより密にします。
 
-**Understanding Limitations**
+* 異なる曲のための複数のタグ:
 
-* Data Storage on RFID Tags:
+  * 異なるメロディを持つ複数のRFIDタグをプログラムします。
+  * シンプルなRFIDベースの音楽ライブラリを構築します。
 
-  * RFID tags have limited storage capacity (typically up to 48 characters for the MFRC522).
-  * Keep your musical sequences concise.
+**制限事項の理解**
 
-* Audio Quality:
+* RFIDタグのデータ保存：
 
-  * Passive buzzers produce simple tones.
-  * For better sound quality, consider using an active speaker with a DAC output.
+  * RFIDタグの保存容量には制限があります（通常、MFRC522の場合、最大48文字）。
+  * 音楽のシーケンスは簡潔に保ちましょう。
 
-* RFID Tag Compatibility:
+* 音質：
 
-  Ensure that your RFID tags are compatible with the MFRC522 reader.
+  * パッシブブザーは単純な音を出します。
+  * より良い音質を求めるなら、DAC出力を持つアクティブスピーカーの使用を検討してください。
 
-**Conclusion**
+* RFIDタグの互換性：
 
-You've successfully created an RFID Music Player using the Raspberry Pi Pico 2 W! This project combines RFID technology, music generation, and LED control to create an interactive and enjoyable experience. By storing melodies on RFID tags, you can easily share and play different tunes.
+  MFRC522リーダーと互換性のあるRFIDタグを使用してください。
+
+**結論**
+
+Raspberry Pi Pico 2 Wを使ってRFID音楽プレーヤーを作成しました！このプロジェクトは、RFID技術、音楽生成、LED制御を組み合わせて、インタラクティブで楽しい体験を提供します。RFIDタグにメロディを保存すれば、簡単に異なる曲を共有・再生できます。

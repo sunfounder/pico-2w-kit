@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ人たちとさらに深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**: 販売後の問題や技術的な課題をコミュニティやチームの助けを借りて解決します。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換します。
+    - **独占的なプレビュー**: 新製品の発表や先行プレビューに早期アクセスが可能です。
+    - **特別割引**: 最新製品の独占的な割引を楽しむことができます。
+    - **祭りのプロモーションとギフト**: ギフトや祝日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造してみませんか？こちらのリンク [|link_sf_facebook|] から今すぐ参加！
 
 .. _ar_pa_buz:
 
 
-3.2 Play Custom Tones with a Passive Buzzer
-===========================================
+3.2 パッシブブザーでカスタムトーンを再生する
+===============================================
 
-In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
+このレッスンでは、Raspberry Pi Pico 2 Wを使用して、 **パッシブブザー** でさまざまなトーンや単純なメロディを再生する方法を学びます！アクティブブザーとは異なり、パッシブブザーは変化する電気信号を必要として音を生じさせるため、信号の周波数を変更することで音のピッチを制御できます。
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入することは確かに便利です。こちらがリンクです:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前	
+        - このキットのアイテム
+        - 購入リンク
+    *   - Pico 2 W スターターキット	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+それぞれの部品を以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -80,89 +80,88 @@ You can also buy them separately from the links below.
         - 1
         - |link_passive_buzzer_buy|
 
-**Understanding the Passive Buzzer**
+**パッシブブザーの理解**
 
-A passive buzzer works like a tiny speaker. It doesn't produce sound on its own; instead, it needs an oscillating signal to make sound. By providing signals of different frequencies, we can make the buzzer produce different pitches, allowing us to play notes and melodies.
+パッシブブザーは小さなスピーカーのように動作します。それ自体では音を出さず、振動する信号が必要です。異なる周波数の信号を提供することで、ブザーに異なるピッチの音を出させ、音符やメロディを再生させることができます。
 
 |img_buzzer|
 
-**Schematic**
+**回路図**
 
 |sch_buzzer|
 
-In this circuit, the passive buzzer is powered through a transistor (**S8050** NPN). The transistor amplifies the current, making the buzzer sound louder than if it were connected directly to the Pico. 
+この回路では、パッシブブザーはトランジスタ（ **S8050** NPN）を通じて電力を供給されます。トランジスタは電流を増幅し、Picoに直接接続されている場合よりもブザーの音を大きくします。
 
-Here's what happens:
+こうなります:
 
-* **GP15** outputs a high signal to control the transistor.
-* When the transistor is activated, it allows current to flow through the buzzer, making it beep.
+* **GP15** が高い信号を出力してトランジスタを制御します。
+* トランジスタが作動すると、ブザーを鳴らすために電流が流れます。
 
-A **1kΩ resistor** is used to limit the current to protect the transistor.
+トランジスタを保護するために **1kΩの抵抗** が使用されます。
 
-**Wiring**
+**配線**
 
 |img_buzzer|
 
-Make sure you are using the **passive buzzer**. You can tell it's the correct one by looking for the exposed PCB (as opposed to the sealed back, which is a active buzzer).
+**パッシブブザー** を使用していることを確認してください。裏面が封印されていないPCBが露出しているものが正しいブザーです。
 
 |wiring_buzzer|
 
-**Writing the Code**
+**コードの記述**
 
 
 .. note::
 
-    * You can open the file ``3.2_custom_tone.ino`` under the path of ``pico-2w-kit-main/arduino/3.2_custom_tone``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * ``3.2_custom_tone.ino`` ファイルを ``pico-2w-kit-main/arduino/3.2_custom_tone`` パスの下で開くことができます。
+    * または、このコードを **Arduino IDE** にコピーします。
+    * **Upload** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択することを忘れないでください。
+    
 
 
 
 .. code-block:: arduino
 
-    const int buzzerPin = 15;  // GPIO pin connected to the transistor base
+    const int buzzerPin = 15;  // トランジスタのベースに接続されているGPIOピン
 
     void setup() {
       pinMode(buzzerPin, OUTPUT);
     }
 
     void loop() {
-      // Play a tone at 440 Hz (A4 note) for 1 second
+      // 440 Hz（A4の音符）で1秒間トーンを鳴らす
       tone(buzzerPin, 440, 1000);
-      delay(1000);  // Wait for the tone to finish
-      // Wait for 1 second before playing again
+      delay(1000);  // トーンが終わるのを待つ
+      // 再び演奏する前に1秒間待つ
       delay(1000);
     }
 
-The code plays a 440 Hz tone (standard A note) for 1 second, waits for 1 second, and repeats.
+このコードは、1秒間440 Hzのトーン（標準のAノート）を再生し、1秒間待って繰り返します。
 
 * ``tone(pin, frequency, duration)``:
 
-  * ``pin``: The GPIO pin connected to the buzzer (through the transistor).
-  * ``frequency``: The frequency of the tone in hertz (Hz). Higher frequencies produce higher pitches.
-  * ``duration (optional)``: The duration to play the tone in milliseconds.
+  * ``pin``: ブザーに接続されたGPIOピン（トランジスタを介して）。
+  * ``frequency``: トーンの周波数（Hz単位）。周波数が高いほどピッチが高くなります。
+  * ``duration (任意)``: トーンを再生する時間（ミリ秒単位）。
 
+**メロディの演奏**
 
-**Playing a Melody**
+コードを拡張して、単純なメロディを演奏することができます。メロディのノートとそれに対応する周波数を定義します。
 
-Let's expand the code to play a simple melody by defining the notes and their corresponding frequencies.
+* 配列 ``melody[]`` には、演奏するノートのシーケンスが保持されています。
+* 配列 ``noteDurations[]`` は、各ノートの持続時間を定義します。持続時間4は四分音符を表します。
+* ``for`` ループはメロディの各ノートを反復処理します。
 
-* An array ``melody[]`` holds the sequence of notes to play.
-* An array ``noteDurations[]`` defines the duration of each note. A duration of 4 represents a quarter note.
-* The ``for`` loop iterates through each note in the melody.
-
-  * Calculates the note duration in milliseconds.
-  * Uses ``tone()`` to play each note.
-  * Uses ``delay()`` to pause between notes.
-  * Calls ``noTone()`` to stop the tone before moving to the next note.
+  * ノートの持続時間をミリ秒で計算します。
+  * ``tone()`` を使用して各ノートを演奏します。
+  * ノート間の一時停止に ``delay()`` を使用します。
+  * 次のノートに移る前に ``noTone()`` でトーンを停止します。
 
 .. code-block:: arduino
 
-        // Define the buzzer pin
+        // ブザーピンを定義する
         const int buzzerPin = 15;
 
-        // Define note frequencies
+        // ノート周波数を定義する
         #define NOTE_C4  262
         #define NOTE_D4  294
         #define NOTE_E4  330
@@ -172,13 +171,13 @@ Let's expand the code to play a simple melody by defining the notes and their co
         #define NOTE_B4  494
         #define NOTE_C5  523
 
-        // Melody notes
+        // メロディノート
         int melody[] = {
           NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4,
           NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5
         };
 
-        // Note durations: 4 = quarter note, 8 = eighth note, etc.
+        // ノートの持続時間：4 = 四分音符、8 = 八分音符など
         int noteDurations[] = {
           4, 4, 4, 4,
           4, 4, 4, 4
@@ -189,55 +188,55 @@ Let's expand the code to play a simple melody by defining the notes and their co
         }
 
         void loop() {
-          // Iterate over the notes of the melody
+          // メロディのノートを順に演奏する
           for (int thisNote = 0; thisNote < 8; thisNote++) {
             int noteDuration = 1000 / noteDurations[thisNote];
             tone(buzzerPin, melody[thisNote], noteDuration);
-            // Pause between notes
+            // ノート間の一時停止
             int pauseBetweenNotes = noteDuration * 1.30;
             delay(pauseBetweenNotes);
-            // Stop the tone playing
+            // トーンの再生を停止する
             noTone(buzzerPin);
           }
-          // Add a delay before repeating the melody
+          // メロディを繰り返す前に遅延を加える
           delay(2000);
         }
 
-After uploading the code, you should hear the buzzer play the melody. If the sound is too quiet, ensure all connections are secure. Remember that passive buzzers may not produce very loud sounds.
+コードをアップロードした後、ブザーがメロディを演奏するのが聞こえるはずです。音が小さい場合は、すべての接続が確実であることを確認してください。パッシブブザーは非常に大きな音を出さないことがあります。
 
 
-**Learn More**
+**詳細学習**
 
-* Creating Your Own Melodies:
+* 独自のメロディの作成：
 
-  You can create your own melodies by changing the ``melody[]`` and ``noteDurations[]`` arrays.
+  ``melody[]`` および ``noteDurations[]`` 配列を変更することで、独自のメロディを作成できます。
 
-* Using the ``pitches.h`` Library:
+* ``pitches.h`` ライブラリの使用：
 
-  For convenience, you can include a library file ``pitches.h`` that contains definitions for many notes.
-  Create a file named ``pitches.h`` and include it in your sketch.
-  
+  便宜上、多くのノートの定義を含む ``pitches.h`` というライブラリファイルを含めることができます。
+  ``pitches.h`` というファイルを作成し、スケッチに含めます。
+
   .. code-block:: arduino
 
     #include "pitches.h"
 
-**Further Exploration**
+**さらなる探求**
 
-* Compose a Song:
+* 自作の曲を作曲する：
 
-  Try composing your own song by defining a new sequence of notes and durations.
+  新しいノートと持続時間のシーケンスを定義して、自分だけの曲を作曲してみましょう。
 
-* Interactive Music:
+* インタラクティブな音楽：
 
-  Add buttons or sensors to control the playback of the melody.
+  ボタンやセンサーを追加して、メロディの再生を制御します。
 
-* Visual Feedback:
+* 視覚的フィードバック：
 
-  Integrate LEDs to light up in sync with the notes played.
+  演奏されたノートと同期して点灯するLEDを統合します。
 
-**Conclusion**
+**まとめ**
 
-In this lesson, you've learned how to use a passive buzzer with the Raspberry Pi Pico to play different tones and melodies. By controlling the frequency of the signal sent to the buzzer, you can produce various pitches and create music in your projects.
+このレッスンでは、Raspberry Pi Picoを使用してパッシブブザーで異なるトーンとメロディを演奏する方法を学びました。ブザーに送信される信号の周波数を制御することで、さまざまなピッチを生成し、プロジェクトに音楽を作成することができます。
 
 
 

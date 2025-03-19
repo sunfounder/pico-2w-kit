@@ -1,37 +1,39 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_wire:
 
-Jumper Wires
+ジャンパーワイヤー
 ==================
-Jumper wires are used to connect two terminals and are essential for prototyping circuits. While jumper wires come in various types, this explanation focuses on those designed for use with breadboards. These wires are commonly used to transfer electrical signals between different points on a breadboard and the input/output pins of a microcontroller.
 
-**How They Work**
+ジャンパーワイヤーは、2つの端子を接続するために使用され、回路の試作に不可欠な部品です。ジャンパーワイヤーにはさまざまな種類がありますが、ここではブレッドボードで使用するためのものに焦点を当てます。これらのワイヤーは、ブレッドボード上の異なるポイントとマイクロコントローラーの入出力ピンとの間で電気信号を伝送するためによく使用されます。
 
-Jumper wires are connected by inserting their "end connectors" into the slots on the breadboard. Beneath the breadboard's surface, parallel metal plates connect the slots in grouped rows or columns, depending on the section. The "end connectors" are inserted into specific slots to establish connections in the desired prototype, all without requiring soldering.
+**動作の仕組み**
 
-Types of Jumper Wires
-Jumper wires come in three main types:
-- Female-to-Female: Both ends have female connectors.
-- Male-to-Male: Both ends have male connectors.
-- Male-to-Female: One end has a male connector (a protruding pin), while the other end has a female connector (a recessed socket).
+ジャンパーワイヤーは、ワイヤーの「端子コネクタ」をブレッドボードのスロットに挿入することで接続されます。ブレッドボードの表面下には、スロットが並んでいる行または列を接続する平行な金属板が配置されています。ワイヤーの「端子コネクタ」は、特定のスロットに挿入され、はんだ付けなしで所定のプロトタイプ内で接続を確立します。
 
-These variations make jumper wires versatile and suitable for connecting components with different pin configurations.
+ジャンパーワイヤーの種類
+ジャンパーワイヤーには主に3種類があります：
+- メス-to-メス：両端にメスコネクタが付いています。
+- オス-to-オス：両端にオスコネクタが付いています。
+- オス-to-メス：一方の端にオスコネクタ（突起したピン）があり、もう一方の端にメスコネクタ（凹んだソケット）があります。
+
+これらの種類により、ジャンパーワイヤーは多用途で、異なるピン配置を持つコンポーネントを接続するのに適しています。
+
 |img_wire|
 
 .. note::
 
-    * More than one type of them may be used in a project.
-    * The color of the jump wires is different but it doesn't mean their function is different accordingly; it's just designed so to better identify the connection between each circuit.
+    * プロジェクトでは、複数のタイプのジャンパーワイヤーを使用することがあります。
+    * ジャンパーワイヤーの色は異なりますが、それによって機能が変わるわけではなく、各回路間の接続を識別しやすくするために異なる色が使われています。

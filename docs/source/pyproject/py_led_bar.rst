@@ -1,46 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで他の愛好者と一緒に、Raspberry Pi、Arduino、ESP32をさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームのサポートで、販売後の問題や技術的な課題を解決できます。
+    - **学びとシェア**：スキルを高めるために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新しい製品発表や先行情報に早期アクセスできます。
+    - **特別割引**：最新製品に対する限定割引をお楽しみいただけます。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_led_bar:
 
-2.2 Display the Level
+2.2 レベルの表示
 =============================
 
-In this lesson, we'll learn how to control an LED Bar Graph using the Raspberry Pi Pico . An LED Bar Graph consists of 10 LEDs arranged in a line, typically used to display levels such as volume, signal strength, or other measurements. We'll light up the LEDs sequentially to create a level display effect.
+このレッスンでは、Raspberry Pi Picoを使用して **LEDバーグラフ** 制御し、レベルを表示する方法を学びます。LEDバーグラフは、一般的に音量や信号強度、その他の測定値などのレベルを表示するために使用される、10個のLEDが直線状に配置されたものです。LEDを順番に点灯させてレベル表示効果を作り出します。
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクからも個別に購入できます。
 
 
 .. list-table::
@@ -48,16 +48,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,128 +77,128 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Circuit Diagram**
+**回路図**
 
 |sch_ledbar|
 
-In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Raspberry Pi Pico 2 W. The anodes (positive terminals) of the LEDs are connected to GPIO pins GP6 through GP15. The cathodes (negative terminals) are connected through 220Ω resistors to the GND (ground) pin.
+このプロジェクトでは、LEDバーグラフの10個のLEDそれぞれがRaspberry Pi Pico 2 Wに接続されています。LEDのアノード（正端子）はGPIOピンGP6からGP15に接続され、カソード（負端子）は220Ωの抵抗を介してGND（グランド）ピンに接続されています。
 
 
 
-**Wiring Diagram**
+**配線図**
 
 |wiring_ledbar|
 
-**Writing the Code**
+**コードの作成**
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
+    * ``pico-2w-kit-main/micropython`` 内の ``2.2_display_the_level.py`` ファイルを開くか、このコードをThonnyにコピーして、「現在のスクリプトを実行」をクリックするか、F5を押して実行してください。
 
-    * Make sure the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
+    * Thonnyの右下隅で「MicroPython（Raspberry Pi Pico）。COMxx」が選択されていることを確認してください。
 
 .. code-block:: python
 
   import machine
   import utime
 
-  # Define the GPIO pins connected to the LEDs
+  # LEDに接続されたGPIOピンを定義
   pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   leds = []
 
-  # Initialize each pin as an output and store it in the leds list
+  # 各ピンを出力として初期化し、ledsリストに格納
   for pin_number in pins:
       led = machine.Pin(pin_number, machine.Pin.OUT)
       leds.append(led)
 
   while True:
-      # Turn on LEDs one by one to simulate increasing level
+      # LEDを1つずつ点灯させてレベルを増加させる
       for led in leds:
-          led.value(1)  # Turn the LED on
+          led.value(1)  # LEDをオンにする
           utime.sleep(0.2)
-      # Turn off LEDs one by one to simulate decreasing level
+      # LEDを1つずつ消灯させてレベルを減少させる
       for led in leds:
-          led.value(0)  # Turn the LED off
+          led.value(0)  # LEDをオフにする
           utime.sleep(0.2)
 
-When you run the program, the LEDs on the LED Bar Graph will light up sequentially from the first to the last, creating an increasing level effect. Then, they will turn off one by one, simulating a decreasing level.
+プログラムを実行すると、LEDバーグラフのLEDが最初から最後まで順番に点灯し、レベルが増加していく効果が得られます。その後、LEDが1つずつ消灯し、レベルが減少していきます。
 
-**Understanding the Code**
+**コードの理解**
 
-In this project, we control multiple LEDs using lists and loops in MicroPython, which makes the code efficient and easy to read.
+このプロジェクトでは、MicroPythonを使ってリストとループを使用して複数のLEDを制御しており、コードが効率的で読みやすくなっています。
 
-Let's break down the key parts of the code:
+コードの主な部分を分解してみましょう：
 
-1. Importing Modules:
+1. モジュールのインポート：
 
-   * ``import machine``: Provides access to the Raspberry Pi Pico 2 W's hardware functionalities.
-   * ``import utime``: Allows us to use time-related functions like delays.
+   * ``import machine``: Raspberry Pi Pico 2 Wのハードウェア機能へのアクセスを提供します。
+   * ``import utime``: 遅延などの時間関連の関数を使用するため。
 
-2. Defining Pins and Initializing LEDs:
+2. ピンの定義とLEDの初期化：
 
-   * We create a list ``pins`` containing the GPIO pin numbers connected to the LEDs and initialize an empty list ``leds`` to store the LED objects.
+   * ``pins`` リストには、LEDに接続されたGPIOピンの番号を格納し、空の ``leds`` リストを作成してLEDオブジェクトを格納します。
 
      .. code-block:: python
 
-      # Define the GPIO pins connected to the LEDs
+      # LEDに接続されたGPIOピンを定義
       pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
       leds = []
      
-   * Using a ``for`` loop, we iterate over each pin number, set it as an output pin, and append the corresponding ``Pin`` object to the ``leds`` list.
+   * ``for`` ループを使用して、各ピン番号を反復処理し、出力ピンとして設定し、対応する ``Pin`` オブジェクトを ``leds`` リストに追加します。
      
      .. code-block:: python
 
         for pin_number in pins:
             led = machine.Pin(pin_number, machine.Pin.OUT)
             leds.append(led)
-     
-3. Creating the Level Display Effect:
 
-   * The ``while True:`` loop runs indefinitely.
-   * Increasing Level:
+3. レベル表示効果の作成：
 
-     * Use a ``for`` loop to iterate over each ``led`` in the ``leds`` list.
-     * ``led.value(1)`` turns the LED on.
-     * ``utime.sleep(0.2)`` adds a 200ms delay before the next LED turns on.
+   * ``while True:`` ループは無限に実行されます。
+   * レベルの増加：
+
+     * ``for`` ループを使って、 ``leds`` リスト内の各 ``led`` を反復処理します。
+     * ``led.value(1)`` でLEDをオンにします。
+     * ``utime.sleep(0.2)`` で次のLEDが点灯する前に200msの遅延を追加します。
      
      .. code-block:: python
 
         for led in leds:
             led.value(1)
             utime.sleep(0.2)
-     
-   * Decreasing Level:
 
-     * Turn off each LED one by one using another ``for`` loop.
-     * ``led.value(0)`` turns the LED off.
+   * レベルの減少：
+
+     * 別の ``for`` ループを使って、各LEDを順番に消灯させます。
+     * ``led.value(0)`` でLEDをオフにします。
 
      .. code-block:: python
 
         for led in leds:
             led.value(0)
             utime.sleep(0.2)
-  
-**Experimenting Further**
 
-Feel free to experiment with the code:
+**さらに試してみる**
 
-* Change the Speed:
+コードを試してみましょう：
 
-  * Adjust the delay in ``utime.sleep(0.2)`` to make the LEDs light up faster or slower.
+* 速度を変更：
 
-* Reverse the Order:
+  * ``utime.sleep(0.2)`` の遅延を調整して、LEDがより速くまたは遅く点灯するようにします。
 
-  * Use ``reversed(leds)`` to reverse the sequence of the LEDs.
+* 順序を逆にする：
+
+  * ``reversed(leds)`` を使用して、LEDの順序を逆にします。
 
     .. code-block:: python
 
         for led in reversed(leds):
             led.value(1)
             utime.sleep(0.2)
-    
-* Create a Ping-Pong Effect:
 
-  * Make the LEDs light up from left to right and then back from right to left.
+* ピンポン効果を作成：
+
+  * LEDが左から右に点灯し、その後右から左に戻るようにします。
 
     .. code-block:: python
 
@@ -209,14 +209,14 @@ Feel free to experiment with the code:
             for led in reversed(leds):
                 led.value(0)
                 utime.sleep(0.1)
-    
-**Conclusion**
 
-By controlling each LED individually, we've created a simple yet effective level display using the Raspberry Pi Pico 2 W. This project demonstrates the power of lists and loops in Python, allowing us to manage multiple outputs efficiently.
+**結論**
 
-Understanding how to work with multiple GPIO pins and using programming structures like lists and loops is essential for more complex projects, such as creating animations, controlling multiple sensors, or building interactive devices.
+各LEDを個別に制御することにより、Raspberry Pi Pico 2 Wを使用してシンプルで効果的なレベル表示を作成しました。このプロジェクトは、Pythonのリストとループを活用する力を示し、複数の出力を効率的に管理する方法を学べます。
 
-**References**
+複数のGPIOピンを使いこなし、リストやループのようなプログラミング構造を利用する方法は、アニメーションの作成、複数のセンサーの制御、インタラクティブなデバイスの構築など、より複雑なプロジェクトに不可欠です。
+
+**参考文献**
 
 * |link_python_for|
 * |link_python_list|

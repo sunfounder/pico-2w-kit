@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_slide_switch:
 
-Slide Switch
-==============
+スライドスイッチ
+=================
 
 |img_slide|
 
-A slide switch, as the name suggests, operates by sliding a switch bar to open or close a circuit, allowing it to toggle between different circuits. Common types include SPDT, SPTT, DPDT, and DPTT. Slide switches are often used in low-voltage circuits due to their flexibility, stability, and wide application in electronic instruments and toys.
+スライドスイッチは、名前の通りスイッチバーをスライドさせて回路を開閉し、異なる回路間で切り替えることができます。一般的なタイプにはSPDT、SPTT、DPDT、DPTTがあります。スライドスイッチはその柔軟性、安定性、電子機器やおもちゃでの広範な用途から、低電圧回路でよく使用されます。
 
-**How It Works**
+**動作原理**
 
-The middle pin serves as the fixed connection point. When the slide bar is moved to the left, the two pins on the left become connected. Similarly, moving the slide bar to the right connects the two pins on the right. This mechanism enables the switch to establish or break connections between circuits. Refer to the diagram below for a visual representation.
+中央のピンは固定接続点として機能します。スライドバーを左に移動すると、左側の2つのピンが接続されます。同様に、スライドバーを右に移動すると、右側の2つのピンが接続されます。このメカニズムにより、スイッチは回路間の接続の確立または断絶を可能にします。下の図を参照して視覚的に表現しています。
 
 |img_slide_prin|
 
-The circuit symbol of the slide switch is shown as below. The pin2 in the figure refers to the middle pin.
+スライドスイッチの回路記号は以下の通りです。図中のピン2は中央のピンを指します。
 
 |img_slide_symbol|
 
-.. **Example**
+.. **例**
 
-.. * :ref:`Reading Button Value` (For MicroPython User)
-.. * :ref:`Warning Light` (For C/C++(Arduino) User)
+.. * :ref:`Reading Button Value` (MicroPythonユーザー向け)
+.. * :ref:`Warning Light` (C/C++(Arduino)ユーザー向け)
 
 
-**Example**
+**例**
 
-* :ref:`py_slide` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`ar_slide` (For Arduino User)
-.. * :ref:`per_drum_kit` (For Piper Make User)
+* :ref:`py_slide` (MicroPythonユーザー向け)
+* :ref:`py_alarm_lamp` (MicroPythonユーザー向け)
+* :ref:`ar_slide` (Arduinoユーザー向け)
+.. * :ref:`per_drum_kit` (Piper Makeユーザー向け)

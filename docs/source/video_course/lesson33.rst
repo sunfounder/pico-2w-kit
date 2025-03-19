@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 33: Display the HSV Color Wheel on an RGB LED
+レッスン33：RGB LEDでHSVカラーホイールを表示
 =============================================================================
 
-This tutorial covers displaying the HSV (Hue, Saturation, Value) color wheel on an RGB LED using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してRGB LEDでHSV（色相、彩度、明度）カラーホイールを表示する方法について説明します：
 
-* **Introduction to HSV Color Wheel**: Overview of HSV color representation and its relevance for visualizing temperature data.
-* **Project Setup and Goal**: Recap of the remote weather station project and the new goal of displaying temperature using an RGB LED.
-* **Understanding HSV to RGB Conversion**: Explanation of HSV color wheel angles and the process of converting HSV to RGB.
-* **Algorithm Development**: Step-by-step guide for mapping temperature to HSV angles and converting them to RGB for the LED.
-* **Homework Assignment**: Write a function to convert HSV angles to RGB and use the RGB LED to represent weather conditions like temperature.
-
-
+* **HSVカラーホイールへの紹介**: HSVカラー表現の概要と、温度データの視覚化におけるその関連性。
+* **プロジェクトの設定と目標**: リモート気象ステーションプロジェクトの概要と、RGB LEDを使用して温度を表示する新たな目標の確認。
+* **HSVからRGBへの変換理解**: HSVカラーホイールの角度とHSVからRGBへの変換プロセスの説明。
+* **アルゴリズム開発**: 温度をHSV角度にマッピングし、それをLEDのためのRGBに変換する手順のステップバイステップガイド。
+* **宿題**: HSV角度をRGBに変換する関数を書き、RGB LEDを使って気温などの気象条件を表現します。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

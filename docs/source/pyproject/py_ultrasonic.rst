@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題をコミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **特別割引**: 最新製品の限定割引をお楽しみいただけます。
+    - **お得なプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始めませんか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _py_ultrasonic:
 
-6.1 Measuring Distance
+6.1 距離測定
 ======================================
 
-In this lesson, we'll learn how to use an **ultrasonic sensor module** with the Raspberry Pi Pico 2 W to measure the distance to an object. Ultrasonic sensors are commonly used in robotics and automation systems for object detection and distance measurement.
+このレッスンでは、 **超音波センサーモジュール** を使ってRaspberry Pi Pico 2 Wで物体までの距離を測定する方法を学びます。超音波センサーは、ロボティクスや自動化システムで物体検出や距離測定によく使用されます。
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -64,74 +64,74 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-**Understanding the Ultrasonic Sensor**
+**超音波センサーの仕組み**
 
-The ultrasonic sensor works by emitting a short ultrasonic pulse from the **Trig** pin and listening for the echo on the **Echo** pin. By measuring the time it takes for the echo to return, we can calculate the distance to an object using the speed of sound.
+超音波センサーは、 **Trig** ピンから短い超音波パルスを発信し、 **Echo** ピンで反射音を受信することで動作します。エコーが戻ってくるまでの時間を測定し、音速を使って物体までの距離を計算します。
 
 |ultrasonic_prin|
 
-* **Trigger Pulse**: A 10-microsecond high pulse on the Trig pin initiates the measurement.
-* **Ultrasonic Burst**: The sensor emits an 8-cycle ultrasonic burst at 40 kHz.
-* **Echo Reception**: The Echo pin goes high, and stays high until the echo is received back.
-* **Time Measurement**: By measuring the time the Echo pin stays high, we can calculate the distance.
+* **トリガーパルス**: Trigピンで10マイクロ秒の高いパルスを送信して、測定を開始します。
+* **超音波バースト**: センサーは40kHzで8サイクルの超音波バーストを発信します。
+* **エコー受信**: Echoピンが高くなり、エコーが返ってくるまで高い状態を維持します。
+* **時間測定**: Echoピンが高い状態で保持されている時間を測定することで、距離を計算します。
 
-**Schematic**
+**回路図**
 
 |sch_ultrasonic|
 
-**Wiring**
+**配線**
 
 |wiring_ultrasonic|
 
-**Writing the Code**
+**コードの記述**
 
-Let's write a MicroPython program to measure distance using the ultrasonic sensor.
+超音波センサーを使用して距離を測定するMicroPythonプログラムを作成しましょう。
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-     
+    * ``6.1_measuring_distance.py`` を ``pico-2w-kit-main/micropython`` フォルダから開くか、コードをThonnyにコピーして「実行」ボタンをクリックするか、F5キーを押してください。
+    * 正しいインタプリタ（MicroPython（Raspberry Pi Pico）.COMxx）が選択されていることを確認してください。
+
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Define the pins connected to the sensor
+    # センサーに接続されたピンを定義
     TRIG = machine.Pin(17, machine.Pin.OUT)
     ECHO = machine.Pin(16, machine.Pin.IN)
 
     def measure_distance():
-        # Ensure the trigger pin is low
+        # トリガーピンが低いことを確認
         TRIG.low()
         utime.sleep_us(2)
-        # Send a 10µs pulse to trigger the measurement
+        # 10µsのパルスを送信して測定を開始
         TRIG.high()
         utime.sleep_us(10)
         TRIG.low()
         
-        # Wait for the echo pin to go high (start of echo pulse)
+        # エコーピンが高くなるまで待機（エコーパルスの開始）
         while ECHO.value() == 0:
             pass
         start_time = utime.ticks_us()
         
-        # Wait for the echo pin to go low (end of echo pulse)
+        # エコーピンが低くなるまで待機（エコーパルスの終了）
         while ECHO.value() == 1:
             pass
         end_time = utime.ticks_us()
         
-        # Calculate the duration of the echo pulse
+        # エコーパルスの時間を計算
         duration = utime.ticks_diff(end_time, start_time)
         
-        # Calculate the distance (speed of sound is 34300 cm/s)
+        # 距離を計算（音速は34300 cm/s）
         distance = (duration * 0.0343) / 2
         return distance
 
@@ -140,85 +140,85 @@ Let's write a MicroPython program to measure distance using the ultrasonic senso
         print("Distance: {:.2f} cm".format(dist))
         utime.sleep(0.5)
 
-Once the code is running, the Thonny Shell should display the distance readings in centimeters. Move an object closer or farther from the sensor to see the readings change.
+コードを実行すると、Thonnyシェルにセンチメートル単位での距離測定結果が表示されます。物体をセンサーから近づけたり遠ざけたりすると、測定値が変化するのが確認できます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import necessary modules and set up the trigger and echo pins:
+#. 必要なモジュールをインポートし、トリガーとエコーピンを設定：
 
    .. code-block:: python
-   
+       
        import machine
        import utime
-   
+       
        TRIG = machine.Pin(17, machine.Pin.OUT)
        ECHO = machine.Pin(16, machine.Pin.IN)
 
 
-#. Measuring Distance:
+#. 距離測定:
 
-   * Sends a trigger pulse to initiate measurement.
-   * Waits for the echo response.
-   * Calculates the duration of the echo pulse.
-   * Computes the distance using the speed of sound.
+   * 測定を開始するためにトリガーパルスを送信。
+   * エコー応答を待機。
+   * エコーパルスの時間を計算。
+   * 音速を使って距離を計算。
 
    .. code-block:: python
 
        def measure_distance():
-           # Ensure trigger is low
+           # トリガーが低いことを確認
            TRIG.low()
            utime.sleep_us(2)
-           # Trigger a 10µs pulse
+           # 10µsパルスを送信
            TRIG.high()
            utime.sleep_us(10)
            TRIG.low()
            
-           # Wait for echo to start
+           # エコー開始を待機
            while ECHO.value() == 0:
                pass
            start_time = utime.ticks_us()
            
-           # Wait for echo to end
+           # エコー終了を待機
            while ECHO.value() == 1:
                pass
            end_time = utime.ticks_us()
            
-           # Calculate duration
+           # 時間を計算
            duration = utime.ticks_diff(end_time, start_time)
-           # Calculate distance
+           # 距離を計算
            distance = (duration * 0.0343) / 2
            return distance
 
 
-#. Main Loop:
+#. メインループ:
 
-   * Continuously measures and prints the distance.
-   * Pauses for half a second between measurements.
+   * 距離を継続的に測定し、結果を表示。
+   * 測定の間に0.5秒の間隔をおく。
 
    .. code-block:: python
-   
+       
        while True:
            dist = measure_distance()
            print("Distance: {:.2f} cm".format(dist))
            utime.sleep(0.5)
 
-**Understanding Limitations**
+**制限事項の理解**
 
-* Blocking Code:
+* ブロッキングコード:
 
-  * The while loops used to wait for the echo can block other code from running.
-  * For more advanced applications, consider using interrupts or asynchronous programming to avoid blocking.
+  * エコーを待機するwhileループは、他のコードが実行されるのをブロックします。
+  * より高度なアプリケーションでは、割り込みや非同期プログラミングを使用してブロッキングを避けることを検討してください。
 
-* Measurement Range:
+* 測定範囲:
 
-  * The HC-SR04 sensor typically has a range of 2 cm to 400 cm.
-  * Objects closer than 2 cm or farther than 400 cm may not be detected accurately.
+  * HC-SR04センサーは通常、2cmから400cmの範囲を測定できます。
+  * 2cm未満または400cmを超える物体は正確に検出できない場合があります。
 
-* Environmental Factors:
+* 環境要因:
 
-  * Temperature and humidity can affect the speed of sound.
-  * For precise measurements, adjust the speed of sound based on ambient conditions.
+  * 温度や湿度は音速に影響を与えます。
+  * 正確な測定を行うためには、環境条件に基づいて音速を調整する必要があります。
 
-**Conclusion**
+**結論**
 
-You've successfully used an ultrasonic sensor to measure distance with the Raspberry Pi Pico 2 W. This fundamental skill is widely applicable in robotics, automation, and interactive projects.
+超音波センサーを使用して、Raspberry Pi Pico 2 Wで距離を測定する方法を成功裏に習得しました。この基本的なスキルは、ロボティクス、自動化、インタラクティブなプロジェクトに広く応用できます。

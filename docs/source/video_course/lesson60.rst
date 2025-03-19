@@ -1,37 +1,37 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 60: Control NeoPixel Colors with a Joystick in MicroPython
+レッスン60: MicroPythonでジョイスティックを使ってNeoPixelの色を制御する
 =============================================================================
 
-This tutorial covers controlling an LED strip with a joystick using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してジョイスティックでLEDストリップを制御する方法について説明します：
 
-* **Wiring Setup**:
+* **配線セットアップ**:
 
-    - Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26. 
-    - Connect Neopixel ground to pin 38, 5V to pin 40, data to GPIO pin 0.
+    - ジョイスティックのグランドをピン38、3.3Vをピン36、VRXをGPIOピン27、VRYをGPIOピン26に接続します。
+    - Neopixelのグランドをピン38、5Vをピン40、データをGPIOピン0に接続します。
     
-* **Code Implementation**: 
+* **コード実装**: 
 
-    - Import libraries (``machine``, ``time``, ``math``, ``neopixel``). 
-    - Set up ADC for joystick and Neopixel. Read joystick values, calculate angles. 
-    - Convert angles to RGB for Neopixel.
+    - ライブラリ（ ``machine`` 、 ``time`` 、 ``math`` 、 ``neopixel`` ）をインポートします。
+    - ジョイスティックとNeopixelのためのADCを設定します。ジョイスティックの値を読み取り、角度を計算します。
+    - 角度をNeopixelのRGBに変換します。
 
-* **Homework Assignment**: Write a program to control Neopixel color and brightness based on joystick angle and distance from center.
+* **宿題課題**: ジョイスティックの角度と中心からの距離に基づいてNeopixelの色と明るさを制御するプログラムを書いてください。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

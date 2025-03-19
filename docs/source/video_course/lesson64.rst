@@ -1,38 +1,37 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 64:  Object Oriented Programming Example in MicroPython with LEDs
+レッスン64: MicroPythonでLEDを使用したオブジェクト指向プログラミングの例
 ===================================================================================
 
-This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W, focusing on controlling LEDs:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してLEDの制御に焦点を当てたオブジェクト指向プログラミング（OOP）について説明します：
 
+* **配線セットアップ**: 赤いLEDをGPIO 15に、緑のLEDをGPIO 14に接続し、330オームの抵抗を通してグランドに接続します。
+* **クラスとメソッド**:
 
-* **Wiring Setup**: Connect red LED to GPIO 15 and green LED to GPIO 14, with 330-ohm resistors to ground.
-* **Class and Methods**: 
+   1. ``LED`` クラスを定義します。
+   2. ``__init__`` でピンを設定します。
+   3. LEDを制御する ``blink`` メソッドを実装します。
 
-   1. Define an ``LED`` class.
-   2. Use ``__init__`` to set up the pin.
-   3. Implement ``blink`` method to control the LED.
+* **コード実装**:
 
-* **Code Implementation**: 
-
-   1. Import ``machine`` and ``time``.
-   2. Create ``LED`` class with ``__init__`` and ``blink``.
-   3. Instantiate red and green LEDs.
+   1. ``machine`` と ``time`` をインポートします。
+   2. ``__init__`` と ``blink`` を持つ ``LED`` クラスを作成します。
+   3. 赤と緑のLEDをインスタンス化します。
   
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

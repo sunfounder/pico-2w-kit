@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 55: Create a Dynamic Rainbow With Neopixels in MicroPython
+レッスン55: MicroPythonでネオピクセルで動的なレインボーを作成する
 =============================================================================
-This tutorial covers creating a running rainbow pattern on a NeoPixel array using the Raspberry Pi Pico W and MicroPython:
 
-* **Wiring Setup**: Connect 5V, GND, and Data pin to GPIO pin 0 on the Pico W.
-* **Concept Explanation**: Create a running rainbow pattern by incrementing HSV values and applying them to each pixel.
-* **Code Implementation**: Use a function to convert HSV to RGB. Implement nested loops to cycle through the HSV color wheel and update the NeoPixel array.
-* **Demonstration and Testing**: Display the running rainbow pattern and provide troubleshooting tips.
-* **Homework Assignment**: Experiment with new patterns and share results with the community.
+このチュートリアルでは、Raspberry Pi Pico WとMicroPythonを使用してネオピクセルアレイに流れるレインボーパターンを作成する方法について説明します：
+
+* **配線セットアップ**: 5V、GND、データピンをPico WのGPIOピン0に接続します。
+* **コンセプト説明**: HSV値を増分させ、それぞれのピクセルに適用することで流れるレインボーパターンを作成します。
+* **コード実装**: HSVをRGBに変換する関数を使用します。HSVカラーホイールを巡るネストされたループを実装し、ネオピクセルアレイを更新します。
+* **デモンストレーションとテスト**: 流れるレインボーパターンを表示し、トラブルシューティングのヒントを提供します。
+* **宿題課題**: 新しいパターンを実験し、コミュニティと結果を共有してください。
 
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 36: Control a Servo With MicroPython
+レッスン36：MicroPythonでサーボを制御
 =============================================================================
-This tutorial covers controlling a servo motor using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してサーボモーターを制御する方法について説明します：
 
-* **Servo Motor Control**: Introduction to using the SG90 servo with the Raspberry Pi Pico W, including servo connections and caution on power limits.
-* **Wiring Diagram and Setup**: Detailed instructions for connecting the SG90 to GPIO pin 15 and using pin 1 for a 5V supply.
-* **PWM Basics**: Explanation of PWM, calculating pulse widths for servo angles, and setting the frequency to 50Hz.
-* **Code Explanation**: Step-by-step code to set up PWM, convert angles to duty cycles, and control the servo.
-* **Practical Demonstration**: Running the code to move the servo to specific angles and ensuring safe operation.
-* **Homework Assignment**: Integrate a potentiometer to control the servo position based on its adjustments.
+* **サーボモーターの制御**: Raspberry Pi Pico WでSG90サーボを使用する方法の紹介、サーボの接続と電力制限についての注意。
+* **配線図とセットアップ**: SG90をGPIOピン15に接続し、ピン1を5V供給用に使用する詳細な手順。
+* **PWMの基本**: PWMについての説明、サーボ角度のパルス幅を計算し、周波数を50Hzに設定します。
+* **コード説明**: PWMを設定し、角度をデューティサイクルに変換し、サーボを制御するステップバイステップのコード。
+* **実践デモンストレーション**: コードを実行してサーボを特定の角度に動かし、安全な操作を確保します。
+* **宿題**: ポテンショメータを統合して、その調整に基づいてサーボ位置を制御します。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

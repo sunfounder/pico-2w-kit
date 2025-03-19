@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 51: Ultimate Pitch and Roll Gadget Using the MPU6050
+レッスン51: MPU6050を使用した究極のピッチとロールガジェット
 =============================================================================
-This tutorial covers creating a precise tilt meter using the MPU6050 sensor and Raspberry Pi Pico W:
 
-* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometer data is noisy, and gyroscope data drifts over time.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with error correction for steady state errors.
-* **Implementation**: Initialize sensors and OLED. Collect and filter data, displaying tilt as both a bubble level and degree readout on the OLED.
-* **Demonstration**: Test for stable pitch and roll readings, with portable battery-powered operation.
-* **Additional Improvements**: Consider wireless monitoring or creating a 3D-printed case for portability.
+このチュートリアルでは、MPU6050センサーとRaspberry Pi Pico Wを使用して正確な傾斜計を作成する方法について説明します：
 
+* **セットアップ**: MPU6050とOLED 1306をRaspberry Pi Pico Wに接続します。
+* **課題**: 加速度計のデータにはノイズがあり、ジャイロスコープのデータは時間とともにドリフトします。
+* **解決策**: 加速度計とジャイロスコープのデータを組み合わせる補完フィルターを使用し、定常状態のエラーの修正を行います。
+* **実装**: センサーとOLEDを初期化します。データを収集・フィルタリングし、OLED上でバブルレベルと度数表示として傾斜を表示します。
+* **デモンストレーション**: 安定したピッチとロールの読み取りをテストし、ポータブルなバッテリー駆動で操作します。
+* **追加の改善**: ワイヤレスモニタリングを検討するか、持ち運び可能な3Dプリントケースを作成します。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

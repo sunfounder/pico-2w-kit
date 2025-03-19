@@ -1,28 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    FacebookでのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32のさらなる深堀りを一緒に楽しんでいきましょう。
 
-    **Why Join?**
+    **なぜ参加すべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートサポート**: 当コミュニティおよびチームの助けを借りて、販売後の問題や技術的な挑戦を解決します。
+    - **学習＆共有**: ヒントやチュートリアルを交換し、スキルを向上させます。
+    - **独占的なプレビュー**: 新製品発表や先取り情報を早期に入手。
+    - **特別割引**: 最新製品を独占的な割引価格で享受。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや休日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索して創造しませんか？[|link_sf_facebook|]をクリックして今日から参加しましょう！
 
-Lesson 45: Calculating Height from a Dropped Object in Freefall
+レッスン45：自由落下中の物体から高さを計算する
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure vertical distances:
 
-* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W, ensuring secure connections to reduce noise.
-* **Concept**: Measure vertical distance by calculating the time (T_drop) in freefall and use it to determine the height dropped.
-* **Equation**: Calculate height (H) with \( H = 16 \times (T_{drop})^2 \), converting time from milliseconds to seconds.
-* **Code Implementation**: Set up libraries, measure Z-axis acceleration to detect 0G, start a timer during freefall, and display height and drop time on the OLED.
-* **Practical Demonstration**: Test by dropping the sensor from known heights and adjust for accuracy as needed.
+このチュートリアルでは、MPU6050センサーをRaspberry Pi Pico Wと組み合わせて垂直距離を測定します：
 
-**Video**
+* **セットアップ**: MPU6050とOLED 1306をRaspberry Pi Pico Wに接続し、ノイズを減らすために接続が安定していることを確認します。
+* **コンセプト**: 自由落下の時間（T_drop）を計算し、その時間を使って落下した高さを求めます。
+* **公式**: 高さ（H）を \( H = 16 \times (T_{drop})^2 \) で計算し、時間をミリ秒から秒に変換します。
+* **コード実装**: ライブラリを設定し、Z軸の加速度を測定して0Gを検出、自由落下中にタイマーを開始し、落下時間と高さをOLEDに表示します。
+* **実地デモンストレーション**: 既知の高さからセンサーを落としてテストし、必要に応じて精度を調整します。
+
+**ビデオ**
 
 .. raw:: html
 

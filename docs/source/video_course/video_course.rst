@@ -1,27 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な挑戦を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Video Courses
+ビデオコース
 ========================
 
-If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
-A step-by-step video course is here to make your learning journey smoother and more engaging.
-The video course below is designed for the Pico W but is also fully compatible with the Pico 2 W.
-The experiments demonstrated in the videos are entirely compatible with both models, except for the battery section and mainboard.
+オンラインドキュメントの内容が少し難しいと感じる場合は、心配無用です。
+ステップバイステップのビデオコースが、あなたの学習の旅をよりスムーズで魅力的なものにします。
+以下のビデオコースはPico W用に設計されていますが、Pico 2 Wと完全に互換性があります。
+ビデオで実演される実験は、バッテリーセクションとメインボードを除いて、どちらのモデルとも完全に互換性があります。
 
-
-**project**
+**プロジェクト**
 
 .. toctree::
    :maxdepth: 1
@@ -100,4 +99,3 @@ The experiments demonstrated in the videos are entirely compatible with both mod
    lesson72
    lesson73
    lesson74
-    

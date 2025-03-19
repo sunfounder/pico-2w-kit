@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 74:  Create a MicroPython Class for Controlling RGB LED
+レッスン74: RGB LEDを制御するためのMicroPythonクラスの作成
 ===================================================================================
 
-This tutorial covers creating a MicroPython library for controlling an RGB LED with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してRGB LEDを制御するためのMicroPythonライブラリの作成について説明します：
 
-* **Concept Overview**: Control RGB LED with a custom RGB_LED class using PWM.
-* **Example Implementation**: Connect RGB LED to GPIO pins, define a class to manage color changes via PWM, and prompt user input to adjust LED color.
-* **Homework Assignment**: Extend the RGB_LED class to add color patterns or more features. Ensure the main program remains simple and leverages the library.
-* **Key Takeaways**: Learn to structure code using custom classes for hardware control and handle user inputs efficiently in MicroPython.
+* **コンセプトの概要**: PWMを使用してカスタムRGB_LEDクラスでRGB LEDを制御します。
+* **実装例**: GPIOピンにRGB LEDを接続し、PWMを介して色の変更を管理するクラスを定義し、ユーザー入力でLEDの色を調整できるようにします。
+* **宿題課題**: RGB_LEDクラスを拡張してカラーパターンを追加したり、機能を増やしたりしてください。メインプログラムはシンプルを保ち、ライブラリを活用してください。
+* **キーポイント**: ハードウェア制御のためのカスタムクラスを使用してコードを構築し、MicroPythonで効率的にユーザー入力を扱う方法を学びます。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

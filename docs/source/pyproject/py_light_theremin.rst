@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで他の愛好者と一緒に、Raspberry Pi、Arduino、ESP32をさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームのサポートで、販売後の問題や技術的な課題を解決できます。
+    - **学びとシェア**：スキルを高めるために、ヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新しい製品発表や先行情報に早期アクセスできます。
+    - **特別割引**：最新製品に対する限定割引をお楽しみいただけます。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_light_theremin:
 
-7.1 Creating a Light Theremin
+7.1 ライト・テルミンの作成
 ====================================================
 
-In this exciting project, we'll build a **Light Theremin** using a Raspberry Pi Pico 2 W, a photoresistor, and a passive buzzer. A theremin is a unique musical instrument that is played without physical contact, producing different tones based on the position of the player's hands. While we can't replicate a traditional theremin entirely, we can simulate its functionality by using light intensity to control sound frequency.
+このエキサイティングなプロジェクトでは、Raspberry Pi Pico 2 W、フォトレジスタ、そしてパッシブブザーを使用して **ライト・テルミン** を作成します。テルミンは、物理的な接触なしに演奏するユニークな楽器で、プレイヤーの手の位置に基づいて異なる音を生み出します。完全に伝統的なテルミンを再現することはできませんが、光の強度を使って音の周波数を制御することで、その機能をシミュレートできます。
 
-* `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
+* `テルミン - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+下記のリンクからも個別に購入できます。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -79,7 +79,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -87,93 +87,92 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Understanding the Concept**
+**コンセプトの理解**
 
-* **Photoresistor:** A sensor that changes its resistance based on light intensity. More light decreases resistance, less light increases it.
-* **Passive Buzzer:** Requires an external signal to produce sound. We can control its frequency using Pulse Width Modulation (PWM).
-* **Transistor (S8050):** Used to amplify the current, allowing the buzzer to be driven effectively by the Pico.
+* **フォトレジスタ**：光の強度に基づいて抵抗が変化するセンサー。光が強いと抵抗は減少し、光が弱いと増加します。
+* **パッシブブザー**：外部信号を使用して音を鳴らします。PWM（パルス幅変調）を使用してその周波数を制御できます。
+* **トランジスタ（S8050）**：電流を増幅し、ピコから効率よくブザーを駆動できるようにします。
 
-By reading the values from the photoresistor, we can map light intensity to sound frequency. This means moving your hand over the photoresistor will change the pitch of the sound produced by the buzzer, similar to playing a theremin.
+フォトレジスタの値を読み取ることで、光の強度を音の周波数にマッピングできます。手をフォトレジスタの上に移動させることで、ブザーから出る音のピッチが変わり、テルミンを演奏するような効果が得られます。
 
-**Schematic**
+**回路図**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+プロジェクトを開始する前に、フォトレジスタの上に手を上下に動かして光の強度の範囲をキャリブレーションします。GP16に接続されたLEDはデバッグ時間を示し、LEDが点灯するとデバッグが開始され、消灯するとデバッグが終了します。
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+GP15が高レベルを出力すると、S8050（NPNトランジスタ）が導通し、パッシブブザーが鳴り始めます。
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+光が強いと、GP28の値は小さくなり、光が弱いと値は大きくなります。
+フォトレジスタの値をプログラムして、パッシブブザーの周波数に影響を与えることで、光感知デバイスをシミュレートできます。
 
-**Wiring**
+**配線**
 
 |wiring_light_theremin|
 
-**Writing the Code**
+**コードの作成**
 
-Let's write a MicroPython program that reads the light intensity from the photoresistor, maps it to a frequency, and plays that frequency on the buzzer.
+光の強度をフォトレジスタから読み取り、それを周波数にマッピングして、その周波数をブザーで鳴らすMicroPythonプログラムを作成します。
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-
+    * ``pico-2w-kit-main/micropython`` 内の ``7.1_light_theremin.py`` を開くか、このコードをThonnyにコピーして、「現在のスクリプトを実行」するか、F5を押して実行してください。
+    * Thonnyで「MicroPython（Raspberry Pi Pico）。COMxx」が選択されていることを確認してください。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize components
-    led = machine.Pin(16, machine.Pin.OUT)  # LED on GP16
-    photoresistor = machine.ADC(28)         # Photoresistor connected to ADC0 (GP28)
-    buzzer = machine.PWM(machine.Pin(15))   # Buzzer connected to GP15
+    # コンポーネントの初期化
+    led = machine.Pin(16, machine.Pin.OUT)  # GP16のLED
+    photoresistor = machine.ADC(28)         # GP28に接続されたフォトレジスタ
+    buzzer = machine.PWM(machine.Pin(15))   # GP15に接続されたブザー
 
-    # Variables for calibration
+    # キャリブレーション用変数
     light_low = 65535
     light_high = 0
 
-    # Function to map values from one range to another
+    # 値を1つの範囲から別の範囲にマッピングする関数
     def interval_mapping(x, in_min, in_max, out_min, out_max):
-        # Ensure in_min != in_max to avoid division by zero
+        # in_min != in_maxを確認してゼロ除算を避ける
         if in_max - in_min == 0:
             return out_min
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-    # Function to play a tone on the buzzer
+    # ブザーで音を鳴らす関数
     def play_tone(pin, frequency):
         if frequency <= 0:
             pin.duty_u16(0)
         else:
             pin.freq(frequency)
-            pin.duty_u16(32768)  # 50% duty cycle
+            pin.duty_u16(32768)  # 50%のデューティサイクル
 
-    # Calibration process
+    # キャリブレーションプロセス
     def calibrate():
         global light_low, light_high
         print("Calibrating... Move your hand over the sensor.")
-        led.value(1)  # Turn on LED to indicate calibration
+        led.value(1)  # キャリブレーション中であることを示すためLEDを点灯
         start_time = utime.ticks_ms()
-        while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5 seconds calibration
+        while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5秒間のキャリブレーション
             light_value = photoresistor.read_u16()
             if light_value > light_high:
                 light_high = light_value
             if light_value < light_low:
                 light_low = light_value
             utime.sleep_ms(10)
-        led.value(0)  # Turn off LED after calibration
+        led.value(0)  # キャリブレーション後にLEDを消灯
         print("Calibration complete.")
         print("Light Low:", light_low)
         print("Light High:", light_high)
 
-    # Main function
+    # メイン関数
     def main():
         calibrate()
         try:
             while True:
                 light_value = photoresistor.read_u16()
-                # Map the light value to a frequency range (e.g., 200 Hz to 2000 Hz)
+                # 光の値を周波数範囲（例：200Hz〜2000Hz）にマッピング
                 frequency = interval_mapping(light_value, light_low, light_high, 200, 2000)
                 play_tone(buzzer, frequency)
                 utime.sleep_ms(20)
@@ -181,105 +180,104 @@ Let's write a MicroPython program that reads the light intensity from the photor
             buzzer.deinit()
             print("Program stopped.")
 
-    # Run the main function
+    # メイン関数の実行
     if __name__ == "__main__":
         main()
 
-When the code is running, the LED will light up, indicating the calibration period.
+コードが実行されると、LEDが点灯し、キャリブレーション期間を示します。
 
-* Calibration:
+* キャリブレーション:
 
-  * Move your hand over the photoresistor during the 5-second calibration.
-  * This helps the program understand the range of light conditions.
+  * 5秒間のキャリブレーション中に、フォトレジスタの上に手を動かしてください。
+  * これにより、プログラムが光の条件の範囲を理解するのに役立ちます。
 
-* Playing the Theremin:
+* テルミンの演奏:
 
-  * After calibration, the LED turns off.
-  * Move your hand over the photoresistor.
-  * The buzzer will emit tones that change pitch based on the light intensity.
-  * Experiment with different hand positions and movements to create sounds.
+  * キャリブレーション後、LEDが消灯します。
+  * フォトレジスタの上に手を動かしてください。
+  * ブザーが光の強度に基づいて音の高さを変えて音を出します。
+  * 異なる手の位置や動きで音を作る実験をしてみてください。
 
 
-**Understanding the Code**
+**コードの理解**
 
-#. Initialization:
+1. 初期化:
 
-   * **LED Indicator**: Used to signal when calibration is happening.
-   * **Photoresistor**: Reads analog values corresponding to light intensity.
-   * **Buzzer**: Controlled using PWM to generate tones at different frequencies.
+   * **LEDインジケーター**: キャリブレーションが行われていることを示すために使用します。
+   * **フォトレジスタ**: 光の強度に対応するアナログ値を読み取ります。
+   * **ブザー**: PWMを使用して、異なる周波数の音を生成します。
 
-#. Calibration Function (``calibrate()``):
+2. キャリブレーション関数（ ``calibrate()`` ）:
 
-   * Runs for 5 seconds, during which it records the minimum and maximum light values.
-   * Instructs the user to move their hand over the sensor to capture the range.
-   * Uses the LED as a visual indicator.
+   * 5秒間実行され、その間に最小および最大の光値を記録します。
+   * ユーザーにセンサーの上で手を動かして範囲を取得するよう指示します。
+   * LEDを視覚的なインジケーターとして使用します。
 
    .. code-block:: python
 
-        # Calibration process
+        # キャリブレーションプロセス
         def calibrate():
             global light_low, light_high
             print("Calibrating... Move your hand over the sensor.")
-            led.value(1)  # Turn on LED to indicate calibration
+            led.value(1)  # キャリブレーション中であることを示すLEDの点灯
             start_time = utime.ticks_ms()
-            while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5 seconds calibration
+            while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5秒間のキャリブレーション
                 light_value = photoresistor.read_u16()
                 if light_value > light_high:
                     light_high = light_value
                 if light_value < light_low:
                     light_low = light_value
                 utime.sleep_ms(10)
-            led.value(0)  # Turn off LED after calibration
+            led.value(0)  # キャリブレーション後にLEDを消灯
             print("Calibration complete.")
             print("Light Low:", light_low)
             print("Light High:", light_high)
 
+3. インターバルマッピング関数（ ``interval_mapping()`` ）:
 
-#. Interval Mapping Function (``interval_mapping()``):
-
-   * Maps the light sensor values to a frequency range suitable for the buzzer.
-   * Prevents division by zero errors.
+   * フォトセンサーの値をブザーに適した周波数範囲にマッピングします。
+   * ゼロ除算エラーを防止します。
 
    .. code-block:: python
 
-        # Function to map values from one range to another
+        # 1つの範囲から別の範囲に値をマッピングする関数
         def interval_mapping(x, in_min, in_max, out_min, out_max):
-            # Ensure in_min != in_max to avoid division by zero
+            # in_min != in_maxを確認してゼロ除算を防ぐ
             if in_max - in_min == 0:
                 return out_min
             return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-#. Playing Tones (``play_tone()``):
+4. 音の再生（ ``play_tone()`` ）:
 
-   * Sets the frequency of the buzzer using PWM.
-   * If the frequency is zero or negative, turns off the buzzer.
+   * PWMを使用してブザーの周波数を設定します。
+   * 周波数がゼロまたは負の場合、ブザーをオフにします。
 
    .. code-block:: python
 
-        # Function to play a tone on the buzzer
+        # ブザーで音を鳴らす関数
         def play_tone(pin, frequency):
             if frequency <= 0:
                 pin.duty_u16(0)
             else:
                 pin.freq(frequency)
-                pin.duty_u16(32768)  # 50% duty cycle
+                pin.duty_u16(32768)  # 50%のデューティサイクル
+                
+5. メインループ:
 
-#. Main Loop:
-
-   * Continuously reads the light value from the photoresistor.
-   * Maps this value to a frequency.
-   * Plays the tone corresponding to the frequency.
-   * Includes error handling to clean up on exit.
+   * フォトレジスタから光の値を継続的に読み取ります。
+   * この値を周波数にマッピングします。
+   * マッピングした周波数に対応する音を再生します。
+   * 終了時にエラーハンドリングを行い、クリーンアップします。
 
    .. code-block:: python
 
-        # Main function
+        # メイン関数
         def main():
             calibrate()
             try:
                 while True:
                     light_value = photoresistor.read_u16()
-                    # Map the light value to a frequency range (e.g., 200 Hz to 2000 Hz)
+                    # 光の値を周波数範囲（例：200Hz〜2000Hz）にマッピング
                     frequency = interval_mapping(light_value, light_low, light_high, 200, 2000)
                     play_tone(buzzer, frequency)
                     utime.sleep_ms(20)
@@ -287,39 +285,38 @@ When the code is running, the LED will light up, indicating the calibration peri
                 buzzer.deinit()
                 print("Program stopped.")
 
-**Experimenting Further**
+**さらなる実験**
 
-* Adjust Frequency Range:
+* 周波数範囲の調整：
 
-  Modify the values in ``interval_mapping()`` to change the pitch range. Example: Change 200, 2000 to 100, 5000 for a wider range.
+  ``interval_mapping()`` の値を変更して、ピッチ範囲を変更できます。例：200、2000を100、5000に変更して、より広い範囲を作成します。
 
-* Visual Feedback:
+* 視覚的フィードバック：
 
-  Use additional LEDs to provide visual cues corresponding to the pitch.
+  追加のLEDを使用して、ピッチに対応する視覚的な手がかりを提供します。
 
-* Add a Second Sensor:
+* センサーの追加：
 
-  Introduce another photoresistor to control volume or another parameter.
+  もう1つのフォトレジスタを追加して、音量や他のパラメータを制御します。
 
-* Create a Musical Instrument:
+* 音楽楽器の作成：
 
-  Combine with other sensors or inputs to build a more complex instrument.
+  他のセンサーや入力を組み合わせて、より複雑な楽器を作成します。
 
-**Understanding Limitations**
+**制限事項の理解**
 
-* Ambient Light:
+* 周囲の光：
 
-  Changes in ambient light can affect performance. Ensure consistent lighting or recalibrate as needed.
+  周囲の光の変化がパフォーマンスに影響を与える可能性があります。一貫した照明を確保するか、必要に応じて再キャリブレーションを行ってください。
 
-* Sensor Sensitivity:
+* センサーの感度：
 
-  The photoresistor may not respond quickly to rapid hand movements.
+  フォトレジスタは素早い手の動きに素早く反応しない場合があります。
 
-* Sound Quality:
+* 音質：
 
-  Passive buzzers have limited sound quality. For better audio, consider using an active speaker with a DAC output.
+  パッシブブザーは音質に限界があります。より良い音質を求める場合は、DAC出力を持つアクティブスピーカーを使用してください。
 
-**Conclusion**
+**結論**
 
-You've successfully created a Light Theremin using the Raspberry Pi Pico 2 W! This project demonstrates how sensors and actuators can be combined to create interactive and fun experiments. Keep exploring and modifying the project to enhance your understanding and creativity.
-
+Raspberry Pi Pico 2 Wを使用して、ライト・テルミンを作成することに成功しました！このプロジェクトは、センサーとアクチュエーターを組み合わせてインタラクティブで楽しい実験を作成する方法を示しています。プロジェクトをさらに探求し、修正することで、理解と創造力を深めていきましょう。

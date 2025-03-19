@@ -1,42 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの支援で解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 最新製品に対する独占的な割引を享受できます。
+    - **フェスティブプロモーションとプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造しましょう！[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_10_second:
 
-7.5 Creating a "10 Second" Game
+7.5 「10秒ゲーム」の作成
 ======================================================
 
-In this engaging project, we'll build a fun game called **"10 Second"** using the Raspberry Pi Pico 2 W, a tilt switch, and a 4-digit 7-segment display. The objective of the game is to shake a magic wand (simulated using the tilt switch attached to a stick) to start a timer, and then shake it again to stop the timer as close to **10.00 seconds** as possible. It's a great way to test your timing skills and challenge friends to see who is the true time wizard!
+この面白いプロジェクトでは、Raspberry Pi Pico 2 W、傾斜スイッチ、4桁の7セグメントディスプレイを使用して **「10秒ゲーム」** を作成します。このゲームの目的は、魔法の杖（棒に取り付けた傾斜スイッチで模擬）の動作を使ってタイマーを開始し、もう一度振って、 **10.00秒** にできるだけ近い時間でタイマーを停止することです。タイミングスキルをテストし、友達と真のタイムウィザードを競いましょう！
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトに必要なコンポーネントは次の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前	
+        - セットに含まれるアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+個別に購入することもできます。以下のリンクから購入できます。
 
 
 .. list-table::
@@ -44,16 +44,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -62,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -81,46 +81,44 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Understanding the Components**
+**コンポーネントの理解**
 
-* **Tilt Switch**: A sensor that detects orientation or movement. When tilted, it completes or breaks a circuit, allowing us to detect shaking or movement.
-* **4-Digit 7-Segment Display**: Displays numbers from 0000 to 9999. We'll use shift registers to control the display using fewer GPIO pins.
-* **74HC595 Shift Register**: 8-bit serial-in, parallel-out shift register that allow us to control multiple outputs with just a few GPIO pins.
+* **傾斜スイッチ**: 物体の傾きを検出するセンサー。傾けると回路が完成したり切れたりして、振動や動きを検出できます。
+* **4桁の7セグメントディスプレイ**: 0000から9999までの数字を表示できます。ディスプレイを制御するためにシフトレジスタを使用し、GPIOピンの数を減らします。
+* **74HC595シフトレジスタ**: 8ビットのシリアル入力、並列出力のシフトレジスタ。少ないGPIOピンで複数の出力を制御できます。
 
-**Schematic**
-
+**回路図**
 
 |sch_10_second|
 
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
+* この回路は :ref:`py_74hc_4dig` に傾斜スイッチを追加したものです。
+* 傾斜スイッチが垂直のとき、GP16はハイに、傾けるとローになります。
 
-**Wiring**
+**配線**
 
-|wiring_game_10_second| 
+|wiring_game_10_second|
 
+**コードの作成**
 
-**Writing the Code**
+MicroPythonスクリプトを作成して、以下の動作を行います：
 
-We'll write a MicroPython script that:
-
-* Detects shaking using the tilt switch.
-* Starts and stops a timer based on the tilt switch.
-* Displays the elapsed time on the 4-digit 7-segment display.
-* Uses multiplexing and shift registers to control the display.
+* 傾斜スイッチを使用して振動を検出します。
+* 傾斜スイッチを基にタイマーを開始および停止します。
+* 4桁の7セグメントディスプレイに経過時間を表示します。
+* マルチプレクシングとシフトレジスタを使用してディスプレイを制御します。
 
 .. code-block:: python
 
     from machine import Pin
     import utime
 
-    # Initialize the control pins for 74HC595
-    SDI = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input (DS)
-    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register Clock (STCP)
-    SRCLK = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock (SHCP)
+    # 74HC595の制御ピンを初期化
+    SDI = machine.Pin(18, machine.Pin.OUT)   # シリアルデータ入力 (DS)
+    RCLK = machine.Pin(19, machine.Pin.OUT)  # レジスタクロック (STCP)
+    SRCLK = machine.Pin(20, machine.Pin.OUT) # シフトレジスタクロック (SHCP)
 
-    # 7-segment display segment codes for digits 0-9 (common cathode)
+    # 7セグメントディスプレイのセグメントコード（共通カソード）
     SEGMENT_CODES = [0x3F,  # 0
                     0x06,  # 1
                     0x5B,  # 2
@@ -132,24 +130,24 @@ We'll write a MicroPython script that:
                     0x7F,  # 8
                     0x6F]  # 9
 
-    # Initialize digit select pins (common cathodes)
+    # 桁選択ピンを初期化（共通カソード）
     digit_pins = [
-        machine.Pin(10, machine.Pin.OUT),  # Digit 1
-        machine.Pin(11, machine.Pin.OUT),  # Digit 2
-        machine.Pin(12, machine.Pin.OUT),  # Digit 3
-        machine.Pin(13, machine.Pin.OUT)   # Digit 4
+        machine.Pin(10, machine.Pin.OUT),  # 桁1
+        machine.Pin(11, machine.Pin.OUT),  # 桁2
+        machine.Pin(12, machine.Pin.OUT),  # 桁3
+        machine.Pin(13, machine.Pin.OUT)   # 桁4
     ]
 
 
-    # Initialize the tilt switch
+    # 傾斜スイッチを初期化
     tilt_switch = Pin(16, Pin.IN, Pin.PULL_DOWN)
 
-    # Variables for timing
+    # タイミング用の変数
     start_time = 0
     elapsed_time = 0
     counting = False
 
-    # Function to shift out data to the shift registers
+    # シフトレジスタにデータをシフトアウトする関数
     def shift_out(data):
         RCLK.low()
         for bit in range(7, -1, -1):
@@ -159,101 +157,100 @@ We'll write a MicroPython script that:
             SRCLK.high()
         RCLK.high()
 
-    # Function to display a digit at a specific position
+    # 指定した位置に数字を表示する関数
     def display_digit(position, digit):
-        # Turn off all digits
+        # すべての桁を消灯
         for dp in digit_pins:
             dp.high()
-        # Send segment data
+        # セグメントデータを送信
         shift_out(SEGMENT_CODES[digit])
-        # Activate the selected digit (common cathode is active low)
+        # 選択した桁をアクティブに（共通カソードはアクティブロー）
         digit_pins[position].low()
-        # Small delay to allow the digit to be visible
+        # 数字が見えるように短い遅延を挿入
         utime.sleep_ms(5)
-        # Turn off the digit
+        # 桁を消灯
         digit_pins[position].high()
 
-    # Function to display the elapsed time
+    # 経過時間を表示する関数
     def display_time(time_ms):
-        # Convert time to centiseconds (hundredths of a second)
+        # 時間をセンチ秒（0.01秒単位）に変換
         centiseconds = int(time_ms / 10)
-        # Limit to 9999 to fit the display
+        # 9999を超えないように制限
         if centiseconds > 9999:
             centiseconds = 9999
 
-        # Extract individual digits
+        # 各桁を抽出
         digits = [
             (centiseconds // 1000) % 10,
             (centiseconds // 100) % 10,
             (centiseconds // 10) % 10,
             centiseconds % 10
         ]
-        # Display each digit rapidly
+        # 各桁を素早く表示
         for i in range(4):
             display_digit(i, digits[i])
 
-    # Interrupt handler for the tilt switch
+    # 傾斜スイッチの割り込みハンドラー
     def tilt_handler(pin):
         global counting, start_time, elapsed_time
         if not counting:
-            # Start counting
+            # カウント開始
             counting = True
             start_time = utime.ticks_ms()
         else:
-            # Stop counting
+            # カウント停止
             counting = False
             elapsed_time = utime.ticks_diff(utime.ticks_ms(), start_time)
 
-    # Set up tilt switch interrupt
+    # 傾斜スイッチの割り込み設定
     tilt_switch.irq(trigger=Pin.IRQ_RISING, handler=tilt_handler)
 
-    # Main loop
+    # メインループ
     while True:
         if counting:
-            # Calculate elapsed time
+            # 経過時間を計算
             current_time = utime.ticks_diff(utime.ticks_ms(), start_time)
             display_time(current_time)
         else:
-            # Display the final time
+            # 最終的な時間を表示
             display_time(elapsed_time)
 
 
 
-When the code is running, the 4-digit 7-segment display should initialize and show 00.00.
+コードが実行されると、4桁の7セグメントディスプレイは初期化され、00.00が表示されます。
 
-* Start the Timer:
+* タイマー開始：
 
-  * Shake the wand or tilt the tilt switch to trigger the interrupt.
-  * The timer will start counting up from 00.00.
+  * 杖を振るか、傾斜スイッチを傾けて割り込みを発生させます。
+  * タイマーが00.00からカウントアップを開始します。
 
-* Stop the Timer:
+* タイマー停止：
 
-  * Shake the wand or tilt the switch again.
-  * The timer will stop, displaying the final time.
+  * もう一度杖を振るか、スイッチを傾けます。
+  * タイマーが停止し、最終時間が表示されます。
 
-* Objective:
+* 目標：
 
-  * Try to stop the timer as close to 10.00 seconds as possible.
-  * Challenge friends to see who can get the closest!
+  * できるだけ10.00秒に近い時間でタイマーを止めてみましょう。
+  * 友達と誰が最も近いタイムを出せるか挑戦してみてください！
 
+**コードの理解**
 
-**Understanding the Code**
+#. インポートとピン定義：
 
-#. Imports and Pin Definitions:
+   * ``machine.Pin``: GPIOピンを制御するためのクラス。
+   * ``utime``: タイミング関数を使用します。
+   * SDI、SRCLK、RCLKピンをシフトレジスタ制御用に定義します。
+   * GP16にプルダウン抵抗を使って傾斜スイッチを初期化します。
 
-   * ``machine.Pin``: For controlling GPIO pins.
-   * ``utime``: For timing functions.
-   * Define SDI, SRCLK, and RCLK pins for controlling the shift registers.
-   * Initialize the tilt switch on GP16 with a pull-down resistor.
+#. セグメントと数字コード：
 
-#. Segment and Digit Codes:
-
-   * ``SEGMENT_CODES``: A list containing the binary codes for displaying digits 0-9 on a 7-segment display.
-   * ``digit_pins``: Codes to select each digit of the display. Active LOW for common cathode displays.
+   * ``SEGMENT_CODES``: 7セグメントディスプレイに数字0-9を表示するためのバイナリコードのリスト。
+   * ``digit_pins``: ディスプレイの各桁を選択するためのピン。共通カソード表示の場合、アクティブはLOWです。
 
    .. code-block:: python
 
-        # 7-segment display segment codes for digits 0-9 (common cathode)
+        # 7セグメントディスプレイのセグメントコード（共通カソード）
         SEGMENT_CODES = [0x3F,  # 0
                         0x06,  # 1
                         0x5B,  # 2
@@ -265,25 +262,25 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
                         0x7F,  # 8
                         0x6F]  # 9
 
-        # Initialize digit select pins (common cathodes)
+        # 桁選択ピンを初期化（共通カソード）
         digit_pins = [
-            machine.Pin(10, machine.Pin.OUT),  # Digit 1
-            machine.Pin(11, machine.Pin.OUT),  # Digit 2
-            machine.Pin(12, machine.Pin.OUT),  # Digit 3
-            machine.Pin(13, machine.Pin.OUT)   # Digit 4
+            machine.Pin(10, machine.Pin.OUT),  # 桁1
+            machine.Pin(11, machine.Pin.OUT),  # 桁2
+            machine.Pin(12, machine.Pin.OUT),  # 桁3
+            machine.Pin(13, machine.Pin.OUT)   # 桁4
         ]
 
-#. Variables for Timing:
+#. タイミング用の変数：
 
-   * ``start_time``: Records the time when the timer starts.
-   * ``elapsed_time``: Stores the total elapsed time when the timer stops.
-   * ``counting``: A boolean flag indicating whether the timer is running.
+   * ``start_time``: タイマーが開始された時間を記録します。
+   * ``elapsed_time``: タイマー停止時に経過した時間を記録します。
+   * ``counting``: タイマーが動作しているかどうかを示すブール値フラグ。
 
-#. Define the ``shift_out`` Function:
+#. ``shift_out`` 関数の定義：
 
-   * Sends 8 bits of data to the 74HC595.
-   * Shifts out the data starting from the most significant bit (MSB).
-   * Pulses the shift and register clocks appropriately.
+   * シフトレジスタに8ビットのデータを送信します。
+   * 最上位ビット（MSB）からデータをシフトアウトします。
+   * シフトクロックとレジスタクロックを適切にパルスさせます。
 
    .. code-block:: python
 
@@ -296,13 +293,13 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
                 SRCLK.high()
             RCLK.high()
 
-#. Define the ``display_digit`` Function:
+#. ``display_digit`` 関数の定義：
 
-   * Turns off all digits.
-   * Sends the segment code for the digit.
-   * Activates the specified digit by setting its pin low.
-   * Adds a small delay to make the digit visible.
-   * Turns off the digit after displaying.
+   * すべての桁を消灯します。
+   * 数字に対応するセグメントコードを送信します。
+   * 選択された桁をアクティブにします（共通カソード表示はLOWがアクティブ）。
+   * 数字を表示するための短い遅延を追加します。
+   * 表示後に桁を消灯します。
 
    .. code-block:: python
 
@@ -314,114 +311,114 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
             utime.sleep_ms(5)
             digit_pins[position].high()
 
-#. ``display_time`` Function:
+#. ``display_time`` 関数：
 
-   * Converts the elapsed time from milliseconds to centiseconds (hundredths of a second).
-   * Splits the time into individual digits.
-   * Uses multiplexing to display each digit rapidly.
+   * ミリ秒単位の経過時間をセンチ秒（0.01秒単位）に変換します。
+   * 経過時間を個別の数字に分解します。
+   * 各桁を素早く表示するためにマルチプレクシングを使用します。
 
    .. code-block:: python
 
         def display_time(time_ms):
-            # Convert time to centiseconds (hundredths of a second)
+            # 時間をセンチ秒（0.01秒単位）に変換
             centiseconds = int(time_ms / 10)
-            # Limit to 9999 to fit the display
+            # 9999を超えないように制限
             if centiseconds > 9999:
                 centiseconds = 9999
 
-            # Extract individual digits
+            # 各桁を抽出
             digits = [
                 (centiseconds // 1000) % 10,
                 (centiseconds // 100) % 10,
                 (centiseconds // 10) % 10,
                 centiseconds % 10
             ]
-            # Display each digit rapidly
+            # 各桁を素早く表示
             for i in range(4):
                 display_digit(i, digits[i])
 
-#. ``tilt_handler`` Function:
+#. ``tilt_handler`` 関数：
 
-   * Triggered by the tilt switch interrupt.
-   * Toggles the counting state.
-   * Records the ``start_time`` when counting starts.
-   * Calculates the ``elapsed_time`` when counting stops.
+   * 傾斜スイッチの割り込みによってトリガーされます。
+   * カウント状態を切り替えます。
+   * カウント開始時に ``start_time`` を記録します。
+   * カウント停止時に ``elapsed_time`` を計算します。
 
    .. code-block:: python
 
         def tilt_handler(pin):
             global counting, start_time, elapsed_time
             if not counting:
-                # Start counting
+                # カウント開始
                 counting = True
                 start_time = utime.ticks_ms()
             else:
-                # Stop counting
+                # カウント停止
                 counting = False
                 elapsed_time = utime.ticks_diff(utime.ticks_ms(), start_time)
 
-#. Main Loop:
+#. メインループ：
 
-   * If counting is ``True``, continuously updates the display with the current elapsed time.
-   * If counting is ``False``, displays the final ``elapsed_time``.
+   * ``counting`` が ``True`` の場合、現在の経過時間を表示し続けます。
+   * ``counting`` が ``False`` の場合、最終的な ``elapsed_time`` を表示します。
 
    .. code-block:: python
 
         while True:
             if counting:
-                # Calculate elapsed time
+                # 経過時間を計算
                 current_time = utime.ticks_diff(utime.ticks_ms(), start_time)
                 display_time(current_time)
             else:
-                # Display the final time
+                # 最終的な時間を表示
                 display_time(elapsed_time)
 
-**Troubleshooting**
+**トラブルシューティング**
 
-* Display Issues:
+* ディスプレイの問題：
 
-  * If the display is not showing numbers correctly, verify the segment and digit codes, and check the wiring connections.
-  * Ensure that the shift register is connected properly and that data is being shifted out in the correct order.
+  * 数字が正しく表示されない場合は、セグメントコードと桁コード、配線接続を確認してください。
+  * シフトレジスタが適切に接続されていること、およびデータが正しい順序でシフトされていることを確認してください。
 
-* Tilt Switch Sensitivity:
+* 傾斜スイッチの感度：
 
-  * If the tilt switch is too sensitive or not sensitive enough, consider adjusting its orientation or replacing it with a different type.
-  * Ensure that the pull-down resistor is correctly connected to prevent false triggers.
+  * 傾斜スイッチが敏感すぎる、または敏感すぎない場合は、その向きを調整するか、他の種類に交換してください。
+  * 誤動作を防ぐためにプルダウン抵抗が正しく接続されているか確認してください。
 
-* Timing Accuracy:
+* タイミング精度：
 
-  * The timer relies on the system clock, which is reasonably accurate but may have slight variances.
-  * For improved accuracy, use an external real-time clock (RTC) module.
+  * タイマーはシステムクロックに依存していますが、若干の誤差があるかもしれません。
+  * 精度を向上させるために、外部のリアルタイムクロック（RTC）モジュールを使用することができます。
 
-**Extensions and Enhancements**
+**拡張と強化**
 
-* Visual Effects:
+* ビジュアル効果：
 
-  * Add LEDs that flash or change color when the timer stops.
-  * Use a buzzer to provide audio feedback when starting and stopping the timer.
+  * タイマーが停止したときに点滅するLEDや色を変更するLEDを追加します。
+  * タイマーの開始と停止時に音声フィードバックを提供するためにブザーを使用します。
 
-* High Score Tracking:
+* ハイスコアの追跡：
 
-  * Modify the code to store the best (closest to 10.00) time achieved.
-  * Display a congratulatory message or animation for new high scores.
+  * 最も近いタイム（10.00に最も近い時間）を記録するようにコードを変更します。
+  * 新しいハイスコアに対して、お祝いのメッセージやアニメーションを表示します。
 
-* Multiplayer Mode:
+* マルチプレイヤーモード：
 
-  * Allow multiple players to take turns, storing each player's time.
-  * Display player numbers and their respective times.
+  * 複数のプレイヤーが順番にプレイできるようにし、各プレイヤーのタイムを記録します。
+  * プレイヤーの番号とそのタイムを表示します。
 
-* Difficulty Levels:
+* 難易度のレベル：
 
-  * Introduce different target times (e.g., 5.00 seconds, 15.00 seconds) to increase the challenge.
-  * Randomize the target time and display it at the beginning of each round.
+  * 異なるターゲット時間（例：5.00秒、15.00秒）を設定してチャレンジを増やします。
+  * ターゲット時間をランダムにし、各ラウンドの開始時に表示します。
 
-* Alternate Input Methods:
+* 代替入力方法：
 
-  * Replace the tilt switch with a button or another sensor for starting and stopping the timer.
-  * Use a motion sensor to detect specific gestures.
+  * 傾斜スイッチをボタンや他のセンサーに置き換え、タイマーの開始と停止を行います。
+  * 動作センサーを使って特定のジェスチャーを検出します。
 
-**Conclusion**
+**結論**
 
-You've successfully built a "10 Second" Game using the Raspberry Pi Pico 2 W! This project combines sensor input, timing functions, and display control to create an interactive and entertaining game. It's an excellent example of how microcontrollers can be used to create fun and engaging experiences.
+Raspberry Pi Pico 2 Wを使って「10秒ゲーム」を成功裏に作成しました！このプロジェクトでは、センサー入力、タイミング機能、およびディスプレイ制御を組み合わせて、インタラクティブで楽しいゲームを作成しました。これは、マイクロコントローラーを使用して楽しさとエンターテイメントを提供する素晴らしい例です。
 
-Feel free to customize and expand upon this project. Whether it's adding new features, improving the design, or integrating additional components, the possibilities are endless.
+このプロジェクトをカスタマイズして拡張することができます。新しい機能を追加したり、デザインを改善したり、追加のコンポーネントを統合したりすることで、可能性は無限大です。

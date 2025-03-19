@@ -1,50 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_dht11:
 
-DHT11 Humiture Sensor
+DHT11 温湿度センサー
 =============================
 
-The DHT11 digital temperature and humidity sensor is a composite sensor that provides calibrated digital output for both temperature and humidity. It combines advanced digital signal processing with reliable temperature and humidity sensing technologies to deliver high reliability and excellent long-term stability.
+DHT11デジタル温湿度センサーは、温度と湿度の両方に対してキャリブレーションされたデジタル出力を提供する複合センサーです。高度なデジタル信号処理技術と信頼性の高い温湿度センシング技術を組み合わせ、高い信頼性と優れた長期的安定性を実現しています。
 
-The sensor integrates a resistive humidity sensing component and an NTC thermistor for temperature measurement, paired with a high-performance 8-bit microcontroller for precise data processing.
+このセンサーは、抵抗性湿度センサーコンポーネントと温度測定用のNTCサーミスタを統合しており、精密なデータ処理のために高性能な8ビットマイクロコントローラーを搭載しています。
 
-.. The schematic diagram of the Humiture Sensor Module is as shown following: |img_Hum-sch| 
+.. Humitureセンサーモジュールの回路図は以下の通りです: |img_Hum-sch| 
 
-Only three pins are available for use: VCC, GND, and DATA. 
-The communication process begins with the DATA line sending start signals to DHT11, and DHT11 receives the signals and returns an answer signal. 
-Then the host receives the answer signal and begins to receive 40-bit humiture data (8-bit humidity integer + 8-bit humidity decimal + 8-bit temperature integer + 8-bit temperature decimal + 8-bit checksum).
+使用可能なピンは3つのみです：VCC、GND、DATA。
+通信プロセスは、DATAラインがDHT11に開始信号を送信することで始まり、DHT11はその信号を受け取って応答信号を返します。
+その後、ホストは応答信号を受信し、40ビットの温湿度データ（8ビット湿度整数 + 8ビット湿度小数 + 8ビット温度整数 + 8ビット温度小数 + 8ビットチェックサム）を受信し始めます。
 
 |img_Dht11|
 
-**Features**
+**特徴**
 
-    #. Humidity measurement range: 20 - 90%RH
-    #. Temperature measurement range: 0 - 60℃
-    #. Output digital signals indicating temperature and humidity
-    #. Working voltage:DC 5V; PCB size: 2.0 x 2.0 cm
-    #. Humidity measurement accuracy: ±5%RH
-    #. Temperature measurement accuracy: ±2℃
+    #. 湿度測定範囲: 20 - 90%RH
+    #. 温度測定範囲: 0 - 60℃
+    #. 温湿度を示すデジタル信号を出力
+    #. 動作電圧: DC 5V; PCBサイズ: 2.0 x 2.0 cm
+    #. 湿度測定精度: ±5%RH
+    #. 温度測定精度: ±2℃
 
 
 * `DHT11 Datasheet <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
 
-**Example**
+**例**
 
-* :ref:`py_dht11` (For MicroPython User)
-* :ref:`py_iot_adafruitio` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-* :ref:`py_iot_ble_home` (For MicroPython User)
-* :ref:`ar_dht11` (For Arduino User)
+* :ref:`py_dht11` (MicroPythonユーザー向け)
+* :ref:`py_iot_adafruitio` (MicroPythonユーザー向け)
+* :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
+* :ref:`py_iot_ble_home` (MicroPythonユーザー向け)
+* :ref:`ar_dht11` (Arduinoユーザー向け)

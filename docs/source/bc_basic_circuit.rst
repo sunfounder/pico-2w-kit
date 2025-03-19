@@ -1,148 +1,146 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な挑戦を解決します。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Electronic Circuit
+電子回路
 ====================
 
-There are many things you use every day that are powered by electricity, such as the lights in your home and the computer you are reading this on.
+毎日使っている多くのものが電気で動いています。例えば、家の照明やこの文章を読んでいるコンピューターです。
 
-In order to use electricity, you must create an electrical circuit. An electric circuit consists of metal wires and electrical and electronic components.
+電気を使うためには、電気回路を作る必要があります。電気回路は金属のワイヤーと電気・電子部品から構成されています。
 
-Circuits require power from somewhere. In your home, most appliances (e.g., TVs, lights) are powered by wall outlets. But many smaller, portable circuits (e.g., electronic toys, cell phones) are powered by batteries. A battery has two terminals, one of which is called the positive terminal and is marked with a plus sign (+). Negative terminals are symbolized by minus signs (-), but are not usually printed on batteries.
+回路にはどこかから電力を供給する必要があります。家庭では、ほとんどの家電製品（例えば、テレビや照明など）は壁のコンセントから電力を供給されています。しかし、多くの小型の携帯可能な回路（例えば、電子玩具や携帯電話など）は電池で動いています。電池には2つの端子があり、プラス記号（+）でマークされたものが正の端子と呼ばれます。負の端子はマイナス記号（-）で象徴されますが、通常電池には印刷されていません。
 
-For current to flow, a conductive path must connect the positive terminal of the battery to the negative terminal, which is referred to as a closed circuit(If it is disconnected, it is called an open circuit.). Electric current will flow through appliances such as lamps to make them work (e.g., light up).
+電流が流れるためには、電池の正の端子から負の端子に導電路がつながっている必要があります。これを閉回路と呼びます（切断されている場合は開回路と呼ばれます）。電流は電気機器（例えば、ランプ）を通って流れ、それによって機能します（例えば、点灯します）。
 
 |bc1|
 
 
-A Pico 2 W has some power output pins (positive) and some ground pins (negative).
-You can use these pins as the positive and negative sides of the power supply by plugging the Pico 2 W into a power source.
+Pico 2 Wにはいくつかの電力出力ピン（正）とグラウンドピン（負）があります。
+これらのピンを電源の正負の側として使用できます。Pico 2 Wを電源に接続すればいいのです。
 
-|bc2| 
+|bc2|
 
-With electricity, you can create works with light, sound, and motion.
-You can light up an LED by connecting the long pin to the positive terminal and the short pin to the negative terminal.
-The LED will break down very quickly if you do this, so you need to add a 220* resistor inside the circuit to protect it.
+電気を使えば、光、音、動きのある作品を作ることができます。
+LEDを点灯させるには、長いピンを正の端子に、短いピンを負の端子に接続します。
+このままではLEDはすぐに壊れてしまうため、回路内に220オームの抵抗を追加して保護する必要があります。
 
-The circuit they form is shown below.
+下記はそれらが形成する回路です。
 
-|bc2.5| 
+|bc2.5|
 
-You may have questions this time: how do I build this circuit? Hold the wires by hand, or tape the pins and wires?
+この時、どうやってこの回路を組み立てるか疑問に思うかもしれません。ワイヤーを手で持つのか、ピンやワイヤーをテープで固定するのか？
 
-In this situation, solderless breadboards will be your strongest allies.
+このような状況では、はんだ付け不要のブレッドボードが最良の選択肢となります。
 
 .. _bc_bb:
 
-Hello, Breadboard!
+こんにちは、ブレッドボード！
 ------------------------------
 
-
-A breadboard is a rectangular plastic plate with a bunch of small holes. 
-These holes allow us to easily insert electronic components and build electronic circuits. 
-Breadboards do not permanently fix electronic components, so we can easily repair a circuit and start over if something goes wrong.
+ブレッドボードは、たくさんの小さな穴が開いた長方形のプラスチック板です。
+これらの穴により、電子部品を簡単に挿入して電子回路を組み立てることができます。
+ブレッドボードは電子部品を永久に固定しないため、何か問題が発生した場合には簡単に修理してやり直すことができます。
 
 .. note::
-    There is no need for special tools to use breadboards. However, many electronic components are very small, and a pair of tweezers can help us to pick up small parts better.
+    ブレッドボードを使用するために特別な道具は必要ありません。ただし、多くの電子部品が非常に小さいため、ピンセットが小さな部品をつかむのに役立ちます。
 
-On the Internet, we can find a lot of information about breadboards.
+インターネット上では、ブレッドボードに関する多くの情報を見つけることができます。
 
-* `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
+* `ブレッドボードの使い方 - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-* `What is a BREADBOARD? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
+* `ブレッドボードとは何か? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
 
 
-Here are some things you should know about breadboards.
+ブレッドボードについて知っておくべきいくつかのことがあります。
 
-#. Each half-row group (such as column A-E in row 1 or column F-J in row 3) is connected. Therefore, if an electrical signal flows in from A1, it can flow out from B1, C1, D1, E1, but not from F1 or A2.
+#. 各半行グループ（例えば、行1のA-E列または行3のF-J列）は接続されています。そのため、A1から電気信号が流れ込むと、B1、C1、D1、E1から流れ出すことができますが、F1やA2からは流れ出ません。
 
-#. In most cases, both sides of the breadboard are used as power buses, and the holes in each column (about 50 holes) are connected together. As a general rule, positive power supplies are connected to the holes near the red wire, and negative power supplies are connected to the holes near the blue wire.
+#. 通常、ブレッドボードの両側は電源バスとして使用され、各列の穴（約50穴）が接続されています。一般的に、正の電源は赤い線の近くの穴に、負の電源は青い線の近くの穴に接続されます。
 
-#. In a circuit, current flows from the positive pole to the negative pole after passing through the load. In this case, a short circuit may occur.
+#. 回路では、負荷を通過した後に正極から負極へと電流が流れます。この場合、短絡が発生する可能性があります。
 
 |bc3| 
 
 
-Let us follow the direction of the current to build the circuit!
+電流の流れに従って回路を組み立てましょう！
 
-1. In this circuit, we use the 3V3 pin of the Pico 2 W board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
-#. To protect the LED, the current must pass through a 220 ohm resistor. Connect one end (either end) of the resistor to the red power bus, and the other end to the free row of the breadboard (row 24 in my circuit).
-
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
-
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
+1. この回路では、Pico 2 Wボードの3V3ピンを使ってLEDに電力を供給します。オス-オス（M2M）ジャンパーワイヤーを使って、それを赤い電源バスに接続します。
+#. LEDを保護するために、電流は220オームの抵抗器を通過する必要があります。抵抗器の一方の端（どちらでも良い）を赤い電源バスに、もう一方の端をブレッドボードの空いている行（私の回路では行24）に接続します。
 
     .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
+        220オームの抵抗器のカラーリングは赤、赤、黒、黒、茶です。
 
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
+#. LEDを手に取ると、そのリードの一方がもう一方よりも長いことがわかります。長いリードを抵抗器と同じ行に、短いリードをブレッドボードの中央の隙間を越えた同じ行に接続します。
 
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico 2 W to the negative power bus using a jumper.
+    .. note::
+        長いリードはアノードで、回路の正の側を表します。短いリードはカソードで、回路の負の側を表します。
 
-Beware of short circuits
+        アノードは抵抗器を通してGPIOピンに接続する必要があります。カソードはGNDピンに接続する必要があります。
+
+#. オス-オス（M2M）ジャンパーワイヤーを使用して、LEDの短いピンをブレッドボードの負の電源バスに接続します。
+#. Pico 2 WのGNDピンをジャンパーを使用して負の電源バスに接続します。
+
+短絡に注意
 ------------------------------
-Short circuits can occur when two components that shouldn't be connected are "accidentally" connected. 
-This kit includes resistors, transistors, capacitors, LEDs, etc. that have long metal pins that can bump into each other and cause a short. Some circuits are simply prevented from functioning properly when a short occurs. Occasionally, a short circuit can damage components permanently, especially between the power supply and the ground bus, causing the circuit to get very hot, melting the plastic on the breadboard and even burning the components!
+短絡は、接続されるべきではない二つのコンポーネントが「偶然」接続されたときに発生します。 
+このキットには、長い金属ピンを持つ抵抗器、トランジスタ、コンデンサ、LEDなどが含まれており、互いに接触して短絡を引き起こすことがあります。一部の回路では、短絡が発生すると正常に機能しなくなるだけですが、時には短絡がコンポーネントを永久に損傷させることもあります。特に電源とグラウンドバスの間で短絡が発生すると、回路が非常に熱くなり、ブレッドボードのプラスチックが溶け、コンポーネントが焼けることさえあります！
 
-Therefore, always make sure that the pins of all the electronics on the breadboard are not touching each other.
+そのため、常にブレッドボード上のすべての電子部品のピンが互いに触れていないことを確認してください。
 
-Direction of the circuit
+回路の向き
 -------------------------------
-There is an orientation to circuits, and the orientation plays a significant role in certain electronic components. There are some devices with polarity, which means they must be connected correctly based on their positive and negative poles. Circuits built with the wrong orientation will not function properly.
+回路には向きがあり、特定の電子部品では向きが重要な役割を果たします。極性を持つデバイスがあり、その正負の極に基づいて正しく接続する必要があります。間違った向きで組み立てられた回路は正常に機能しません。
 
 |bc3| 
 
-If you reverse the LED in this simple circuit that we built earlier, you will find that it no longer works.
+先に組み立てたこの単純な回路でLEDを逆にすると、それがもはや機能しないことがわかります。
 
-In contrast, some devices have no direction, such as the resistors in this circuit, so you can try inverting them without affecting the LEDs' normal operation.
+対照的に、この回路の抵抗器のように向きがないデバイスもありますので、LEDの正常な動作に影響を与えることなくそれらを逆に試すことができます。
 
-Most components and modules with labels such as "+", "-", "GND", "VCC" or have pins of different lengths must be connected to the circuit in a specific way.
+「+」、「-」、「GND」、「VCC」といったラベルが付いたほとんどのコンポーネントやモジュール、または長さの異なるピンを持つものは、特定の方法で回路に接続する必要があります。
 
 
-Protection of the circuit
+回路の保護
 -------------------------------------
 
-Current is the rate at which electrons flow past a point in a complete electrical circuit. At its most basic, current = flow. An ampere (AM-pir), or amp, is the international unit used for measuring current. It expresses the quantity of electrons (sometimes called "electrical charge") flowing past a point in a circuit over a given time.
+電流は、完全な電気回路の一点を電子が流れる速度です。最も基本的な形で、電流 = 流れです。アンペア（アンピア）、または単にアンプとは、電流を測定するための国際単位です。これは、特定の時間内に回路の一点を流れる電子の量（時々「電気的荷量」と呼ばれます）を表します。
 
-The driving force (voltage) behind the flow of current is called voltage and is measured in volts (V).
+電流の流れを駆動する力（電圧）は電圧と呼ばれ、ボルト（V）で測定されます。
 
-Resistance (R) is the property of the material that restricts the flow of current, and it is measured in ohms (Ω).
+抵抗（R）は、電流の流れを制限する材料の特性であり、オーム（Ω）で測定されます。
 
-According to Ohm's law (as long as the temperature remains constant), current, voltage, and resistance are proportional.
-A circuit's current is proportional to its voltage and inversely proportional to its resistance. 
+オームの法則によると（温度が一定の場合）、電流、電圧、抵抗は比例関係にあります。
+回路の電流はその電圧に比例し、抵抗に反比例します。
 
-Therefore, current (I) = voltage (V) / resistance (R).
+したがって、電流（I）= 電圧（V）/ 抵抗（R）です。
 
-* `Ohm's law - Wikipedia <https://en.wikipedia.org/wiki/Ohm%27s_law>`_
+* `オームの法則 - Wikipedia <https://en.wikipedia.org/wiki/Ohm%27s_law>`_
 
-About Ohm's law we can do a simple experiment.
+オームの法則については、簡単な実験を行うことができます。
 
 |bc3| 
 
-By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico 2 W), the LED will become brighter.
-If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
+3V3から5V（すなわちVBUS、Pico 2 Wの40番ピン）への配線を変更すると、LEDはより明るくなります。
+抵抗を220オームから1000オーム（色環：茶、黒、黒、茶、茶）に変更すると、LEDは以前よりも暗くなることが分かります。抵抗が大きいほど、LEDは暗くなります。
 
 .. note::
-    For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_resistor`.
 
-Most packaged modules only require access to the proper voltage (usually 3.3V or 5V), such as ultrasonic module.
+    抵抗についての紹介と抵抗値の計算方法については、:ref:`cpn_resistor` を参照してください。
 
-However, in your self-built circuits, you need to be aware of the supply voltage and resistor usage for electrical devices.
+ほとんどのパッケージモジュールは、超音波モジュールなど、適切な電圧（通常は3.3Vまたは5V）へのアクセスのみを要求します。
 
+しかし、自作の回路では、電気デバイスの供給電圧と抵抗の使用に注意する必要があります。
 
-As an example, LEDs usually consume 20mA of current, and their voltage drop is about 1.8V. According to Ohm's law, if we use 5V power supply, we need to connect a minimum of 160ohm ((5-1.8)/20mA) resistor in order not to burn out the LED.
-
+例として、LEDは通常20mAの電流を消費し、その電圧降下は約1.8Vです。オームの法則によれば、5Vの電源を使用する場合、LEDを焼損しないように最低160オームの抵抗（(5-1.8)/20mA）を接続する必要があります。
 

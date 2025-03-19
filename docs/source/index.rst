@@ -1,56 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新商品の発表やちら見せに早期アクセスが可能です。
+    - **特別割引**: 最新商品を独占的な割引価格でお楽しみいただけます。
+    - **祭りプロモーションとギフトの抽選**: ギフトの抽選や祝日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索して創造してみませんか？[|link_sf_facebook|]をクリックして今すぐ参加！
 
-Pico 2 W Kit - A Versatile Hardware Programming Kit
+|link_pico2w_kit| - 多用途ハードウェアプログラミングキット
 ======================================================================
 
-Thanks for choosing our Pico 2 W Kit.
+|link_pico2w_starter_Kit|
+
+私たちの |link_pico2w_kit| をお選びいただきありがとうございます。
 
 .. note::
-    This document is available in the following languages.
+    このドキュメントは以下の言語でご利用いただけます。
 
         * |link_en_tutorials|
-   
-    Please click on the respective links to access the document in your preferred language.
+        * |link_jp_tutorials|
+        * |link_german_tutorials|
 
+    ご希望の言語でドキュメントにアクセスするには、それぞれのリンクをクリックしてください。
 
-Thank you for choosing the SunFounder Pico 2 W Starter Kit
+SunFounder Pico 2 Wスターターキットをお選びいただきありがとうございます。
 
-The Pico 2 W Kit is a comprehensive learning and development kit built around the Raspberry Pi Pico 2 W microcontroller. 
-It comes equipped with a variety of modules, including sensors (ultrasonic, RFID, MPU6050, water level), display components 
-(LEDs, dot matrix, 7-segment display, I2C LCD1602), and actuators like motors, servos, and pumps. This kit is designed to 
-enable users to explore hardware programming, interactive projects, and creative designs.
-This documentation is divided into two sections based on the programming environment:
+Pico 2 Wキットは、Raspberry Pi Pico 2 Wマイクロコントローラを中心に構築された包括的な学習および開発キットです。
+センサー（超音波、RFID、MPU6050、水位）、表示コンポーネント（LED、ドットマトリクス、7セグメント表示、I2C LCD1602）、モーターやサーボ、ポンプなどのアクチュエータを含む多様なモジュールが装備されています。
+このキットは、ユーザーがハードウェアプログラミング、インタラクティブプロジェクト、創造的な設計を探求することを可能にします。
+このドキュメントはプログラミング環境に基づいて2つのセクションに分けられています：
 
-* :ref:`projects_micropython`: Learn to program and control the kit using MicroPython, focusing on hands-on examples and hardware interaction.
-* :ref:`projects_arduino`: Utilize the Arduino IDE and C/C++ programming to achieve the same hardware functionality through structured exercises and projects.
+* :ref:`projects_micropython`: MicroPythonを使用してキットをプログラムし、制御する方法を学び、ハードウェアとの対話に焦点を当てます。
+* :ref:`projects_arduino`: Arduino IDEとC/C++プログラミングを利用して、構造化された演習とプロジェクトを通じて同じハードウェア機能を実現します。
 
-Whether you are a beginner or an experienced programmer, the Pico 2 W Kit provides all the tools and guidance you need to start building exciting projects.
+初心者であれ、経験豊富なプログラマーであれ、Pico 2 Wキットは、エキサイティングなプロジェクトを構築するために必要なすべてのツールとガイダンスを提供します。
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+興味があるプロジェクトが当社のチュートリアルにない場合は、お気軽にメールでお問い合わせください。できるだけ早くオンラインチュートリアルを更新します。
 
-Here is the email: service@sunfounder.com.
+こちらがメールアドレスです：service@sunfounder.com。
 
+**ソースコードのダウンロード**
 
-**Source Code download**
+* :download:`SunFounder Pico 2 Wスターターキット <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
-* :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
+* または `Pico 2 Wスターターキット - GitHub <https://github.com/sunfounder/pico-2w-kit>`_ でコードをチェックしてください。
 
-* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_
-
-
-**Content**
+**内容**
 
 .. toctree::
     :maxdepth: 2
@@ -64,8 +64,7 @@ Here is the email: service@sunfounder.com.
     faq
 
 
-Copyright Notice
+著作権に関する注意
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+このマニュアルに含まれるテキスト、画像、コードなどすべてのコンテンツはSunFounder Companyが所有しています。著者および関連権利者の法的権利を侵害することなく、関連する規制および著作権法の下で、個人的な学習、調査、楽しみ、その他の非営利目的にのみ使用してください。許可なく商業利益のためにこれらを使用する個人または組織に対して、当社は法的措置を取る権利を留保します。

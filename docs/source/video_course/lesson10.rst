@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 10:  Controlling a Dimmable LED with a Potentiometer
+レッスン10：ポテンショメーターを使用した調光可能なLEDの制御
 ==========================================================================
 
-This tutorial covers controlling LED brightness using PWM on the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使ってPWMを利用し、LEDの明るさを制御する方法について説明します：
 
-* **LED Brightness Control**: Explains how PWM controls LED brightness by varying duty cycles.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting an LED with a 220 Ohm resistor to the Pico W.
-* **Code Explanation**: Code setup for PWM, converting user input to the corresponding duty cycle.
-* **Practical Demonstration**: Visualizing PWM signals using an oscilloscope to show different duty cycles.
-* **Homework Assignment**: Create a circuit to control LED brightness using a potentiometer and PWM.
+* **LED明るさの制御**: PWMを使ってデューティサイクルを変更することでLEDの明るさを制御する方法を説明します。
+* **配線図とセットアップ**: LEDと220オームの抵抗をPico Wに接続するための詳細な配線図を提供します。
+* **コードの説明**: ユーザー入力を対応するデューティサイクルに変換するためのPWMコード設定を行います。
+* **実践的なデモンストレーション**: オシロスコープを使ってPWM信号を視覚化し、異なるデューティサイクルを示します。
+* **宿題**: ポテンショメーターとPWMを使ってLEDの明るさを制御する回路を作成する課題。
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

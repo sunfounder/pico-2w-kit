@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 21:  Temperature and Humidity Measurements with Toggle Switch
+レッスン21：トグルスイッチを使った温度と湿度の測定
 =============================================================================
 
-This tutorial covers adding a toggle push button to switch between temperature readings in Fahrenheit and Celsius using the DHT11 sensor with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用して、DHT11センサーで摂氏と華氏の温度表示を切り替えるトグルプッシュボタンを追加する方法について説明します：
 
-* **Introduction**: Introduces the tutorial and explains adding a toggle button to the setup.
-* **Previous Lessons Recap**: Reviews using the DHT11 sensor.
-* **Component Introduction and Circuit Setup**: Describes wiring the DHT11 sensor and push button.
-* **Code Explanation**: Imports libraries, sets up GPIO, creates a toggle for Celsius/Fahrenheit, and formats output.
-* **Practical Demonstration**: Shows code execution and toggling between Celsius and Fahrenheit readings.
-* **Homework Assignment**: Adds more toggles to switch between Celsius, Fahrenheit, and humidity displays.
+* **はじめに**: チュートリアルを紹介し、セットアップにトグルボタンを追加する方法を説明します。
+* **以前のレッスンの復習**: DHT11センサーの使用法を振り返ります。
+* **コンポーネントの紹介と回路の設定**: DHT11センサーとプッシュボタンの配線方法を説明します。
+* **コードの説明**: ライブラリをインポートし、GPIOを設定し、摂氏/華氏のトグルを作成し、出力をフォーマットします。
+* **実践デモンストレーション**: コードの実行と摂氏と華氏の読み取り値の切り替えを示します。
+* **宿題**: 摂氏、華氏、湿度表示の切り替えを可能にするトグルを追加する課題。
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

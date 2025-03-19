@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
+レッスン9：PWM（パルス幅変調）を使用してアナログ出力を取得
 ==========================================================================
 
-This tutorial covers generating analog output using PWM on the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してPWMでアナログ出力を生成する方法について説明します：
 
-* **Analog Output Explanation**: Explains PWM and how it simulates analog output by adjusting duty cycles.
-* **GPIO Pin Configuration**: Describes which GPIO pins can generate PWM and the importance of not using overlapping PWM labels.
-* **Circuit Setup and Code**: Provides a wiring diagram and code to set up PWM, take voltage input, and convert it to a PWM duty cycle.
-* **Practical Demonstration**: Shows how to measure PWM signals with an oscilloscope to visualize different duty cycles.
-* **Homework Assignment**: Create a circuit to control LED brightness using user-input voltage and PWM.
+* **アナログ出力の説明**: PWMがどのようにデューティサイクルを調整することでアナログ出力をシミュレートするかを説明します。
+* **GPIOピンの設定**: どのGPIOピンがPWMを生成できるか、また重複するPWMラベルを使用しない重要性を説明します。
+* **回路設定とコード**: PWMを設定し、電圧入力を取り込み、それをPWMのデューティサイクルに変換するための配線図とコードを提供します。
+* **実践的なデモンストレーション**: オシロスコープを使用してPWM信号を測定し、異なるデューティサイクルを視覚化する方法を示します。
+* **宿題**: ユーザー入力の電圧を使用してLEDの明るさをPWMで制御する回路を作成する課題。
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

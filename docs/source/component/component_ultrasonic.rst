@@ -1,77 +1,75 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_ultrasonic:
 
-Ultrasonic Module
+超音波モジュール
 ================================
 
 |ultrasonic_pic|
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: トリガーパルス入力
+* **ECHO**: エコーパルス出力
+* **GND**: グラウンド
+* **VCC**: 5V電源
 
-The HC-SR04 ultrasonic distance sensor offers non-contact distance measurement ranging from 2 cm to 400 cm with an accuracy of up to 3 mm. The module integrates an ultrasonic transmitter, a receiver, and a control circuit for seamless operation.
+HC-SR04超音波距離センサーは、2 cmから400 cmまでの非接触距離測定を提供し、精度は最大で3 mmです。このモジュールは、超音波送信機、受信機、および制御回路を統合しており、シームレスな動作が可能です。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+このセンサーを使用するには、4つのピン（VCC（電源）、Trig（トリガー）、Echo（受信）、GND（グラウンド））を接続するだけで、測定プロジェクトに簡単に利用できます。
 
-**Features**
+**特徴**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* 動作電圧：DC5V
+* 動作電流：16mA
+* 動作周波数：40Hz
+* 最大測定範囲：500cm
+* 最小測定範囲：2cm
+* トリガ入力信号：10uS TTLパルス
+* エコー出力信号：入力TTLレベル信号と距離の比例関係
+* コネクタ：XH2.54-4P
+* 寸法：46x20.5x15 mm
 
-**Principle**
+**原理**
 
-The basic principles are as follows:
+基本的な原理は以下の通りです：
 
-* Using IO trigger for at least 10us high level signal.
+* 少なくとも10usの高レベル信号をIOトリガーで使用します。
 
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
+* モジュールは40 kHzの超音波8サイクルを発信し、反射したパルス信号を検出します。
 
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
+* 信号が返ってくるとエコーは高レベル信号を出力し、その高レベル信号の持続時間が発信から反射までの時間を示します。
 
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* 距離 = (高レベル時間 × 音速（340M/S）) ÷ 2
 
 |ultrasonic_prin|
 
+式：
 
-Formula:
-
-* us / 58 = centimeters distance
-* us / 148 = inch distance
-* distance = high level time x velocity (340M/S) / 2
+* us / 58 = センチメートル単位の距離
+* us / 148 = インチ単位の距離
+* 距離 = 高レベル時間 × 音速（340M/S） ÷ 2
 
 .. note::
 
-    This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
+    このモジュールは電源を入れたままで接続しないでください。必要に応じて、まずモジュールのGNDを接続してください。それ以外の場合、モジュールの動作に影響を与える可能性があります。
 
-    The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+    測定対象の物体の面積は少なくとも0.5平方メートルで、できるだけ平坦である必要があります。そうでないと、結果に影響を与える可能性があります。
 
+**例**
 
-**Example**
-
-* :ref:`py_ultrasonic` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller` (For MicroPython User)
-* :ref:`ar_ultrasonic` (For Arduino User)
-.. * :ref:`per_reversing_system` (For Piper Make User)
+* :ref:`py_ultrasonic` (MicroPythonユーザー向け)
+* :ref:`py_reversing_aid` (MicroPythonユーザー向け)
+* :ref:`py_iot_sunfounder_controller` (MicroPythonユーザー向け)
+* :ref:`ar_ultrasonic` (Arduinoユーザー向け)
+.. * :ref:`per_reversing_system` (Piper Makeユーザー向け)

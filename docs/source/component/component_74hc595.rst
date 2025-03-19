@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_74hc595:
 
@@ -19,46 +19,46 @@
 
 |img_74hc595|
 
-The 74HC595 is an integrated circuit featuring an 8-bit shift register and a storage register with tri-state parallel outputs. It converts serial input into parallel output, allowing you to conserve MCU I/O pins.
+74HC595は、8ビットのシフトレジスタと、トライステート並列出力を備えたストレージレジスタを持つ集積回路です。シリアル入力を並列出力に変換することで、MCUのI/Oピンを節約できます。
 
-* When MR (pin 10) is set to high level and OE (pin 13) is set to low level, data is clocked into the shift register on the rising edge of SHcp and transferred to the storage register on the rising edge of STcp.
-* If the two clock signals are connected, the shift register will always operate one clock pulse ahead of the storage register.
-* The shift register includes a serial input pin (Ds), a serial output pin (Q7'), and an asynchronous reset (active low).
-* The storage register outputs an 8-bit parallel bus in three states.
-* When OE is enabled (low level), the data stored in the storage register is output to the parallel bus (Q0 ~ Q7).
+* MR（ピン10）がハイレベルに設定され、OE（ピン13）がローレベルに設定されている場合、データはSHcpの立ち上がりエッジでシフトレジスタにクロックインされ、STcpの立ち上がりエッジでストレージレジスタに転送されます。
+* 両方のクロック信号が接続されている場合、シフトレジスタは常にストレージレジスタより1クロックパルス分早く動作します。
+* シフトレジスタにはシリアル入力ピン（Ds）、シリアル出力ピン（Q7'）、および非同期リセット（アクティブロー）があります。
+* ストレージレジスタは、8ビットの並列バスを3つの状態で出力します。
+* OEが有効（ローレベル）に設定されている場合、ストレージレジスタに格納されたデータが並列バス（Q0〜Q7）に出力されます。
 
 * `74HC595 Datasheet <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
 
 |img_74jc595_pin|
 
-Pins of 74HC595 and their functions:
+74HC595のピンとその機能：
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level; 
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level. 
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7**: 8ビット並列データ出力ピン。8つのLEDまたは7セグメントディスプレイの8ピンを直接制御できます。
+* **Q7'**: シリアル出力ピン。別の74HC595のDSに接続して、複数の74HC595を直列に接続できます。
+* **MR**: リセットピン、ローレベルでアクティブ。
+* **SHcp**: シフトレジスタの時間順序入力。立ち上がりエッジで、シフトレジスタ内のデータが1ビットずつ移動します。すなわち、Q1のデータがQ2に、そして次に移動します。降り立ちエッジでは、シフトレジスタ内のデータは変わりません。
+* **STcp**: ストレージレジスタの時間順序入力。立ち上がりエッジで、シフトレジスタ内のデータがメモリレジスタに移動します。
+* **CE**: 出力有効ピン、ローレベルでアクティブ。
+* **DS**: シリアルデータ入力ピン。
+* **VCC**: 正電源電圧。
+* **GND**: グラウンド。
 
 .. Example
 .. -------------------
 
 .. :ref:`Microchip - :ref:`cpn_74hc595``
 
-**Example**
+**例**
 
-* :ref:`py_74hc_led` (For MicroPython User)
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_led` (For Arduino User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_led` (MicroPythonユーザー向け)
+* :ref:`py_74hc_7seg` (MicroPythonユーザー向け)
+* :ref:`py_74hc_4dig` (MicroPythonユーザー向け)
+* :ref:`py_74hc_788bs` (MicroPythonユーザー向け)
+* :ref:`py_passage_counter` (MicroPythonユーザー向け)
+* :ref:`py_10_second` (MicroPythonユーザー向け)
+* :ref:`py_traffic_light` (MicroPythonユーザー向け)
+* :ref:`py_bubble_level` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_led` (Arduinoユーザー向け)
+* :ref:`ar_74hc_7seg` (Arduinoユーザー向け)
+* :ref:`ar_74hc_4dig` (Arduinoユーザー向け)
+* :ref:`ar_74hc_788bs` (Arduinoユーザー向け)

@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新商品の発表やちら見せに早期アクセスが可能です。
+    - **特別割引**: 最新商品を独占的な割引価格でお楽しみいただけます。
+    - **祭りプロモーションとギフトの抽選**: ギフトの抽選や祝日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索して創造してみませんか？[|link_sf_facebook|]をクリックして今すぐ参加！
 
 FAQ
 =========
@@ -18,38 +18,37 @@ FAQ
 Arduino
 ---------------------
 
-#. Code upload failed in Arduino IDE?
-    * Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`setup_pico2w_arduino`.
-    * Check that the Board(Raspberry Pi Pico) or port(COMXX (Raspberry Pi Pico))is selected correctly.
-    * If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
+#. Arduino IDEでコードのアップロードに失敗した場合は？
+    * PicoがArduino IDEに正しく認識されているか確認してください。ポートはCOMXX（Raspberry Pi Pico）でなければなりません。設定方法は :ref:`setup_pico2w_arduino` を参照してください。
+    * ボード（Raspberry Pi Pico）やポート（COMXX（Raspberry Pi Pico））が正しく選択されているか確認してください。
+    * コードが正しく、正しいボードとポートが選択されているにもかかわらず、アップロードが成功しない場合は、**アップロード** アイコンを再びクリックします。進行状況が「アップロード中...」と表示されたら、USBケーブルを抜いて、**BOOTSEL** ボタンを押しながら再度差し込むと、コードが成功裏にアップロードされます。
 
 
 MicroPython
 ------------------
 
-#. How to open and run the code?
-    For detailed tutorials, please refer to :ref:`open_run_code_py`.
+#. コードを開いて実行する方法は？
+    詳しいチュートリアルは :ref:`open_run_code_py` を参照してください。
 
-#. How to upload library to Raspberry Pi Pico 2 W？
-    For detailed tutorials, please refer to :ref:`add_libraries_py`.
+#. Raspberry Pi Pico 2 Wにライブラリをアップロードする方法は？
+    詳しいチュートリアルは :ref:`add_libraries_py` を参照してください。
 
-#. NO MicroPython(Raspberry Pi Pico 2 W) Interpreter Option on Thonny IDE?
-    * Check that your Pico 2 W is plugged into your computer via a USB cable.
-    * Check that you have installed MicroPython for Pico 2 W (:ref:`install_micropython_on_pico`).
-    * The Raspberry Pi Pico 2 W interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
-    * If the Li-po Charger module is plugged into the breadboard at this point, unplug it first and then re-plug the Pico 2 W into the computer.
+#. Thonny IDEにMicroPython（Raspberry Pi Pico 2 W）インタープリターのオプションがない？
+    * Pico 2 WがUSBケーブルでコンピュータに接続されているか確認してください。
+    * Pico 2 W用のMicroPythonがインストールされているか確認してください（:ref:`install_micropython_on_pico`）。
+    * Raspberry Pi Pico 2 Wのインタープリターは、Thonnyのバージョン3.3.3以降でのみ利用可能です。古いバージョンを使用している場合は、アップデートしてください（:ref:`thonny_ide`）。
+    * Li-poチャージャーモジュールがブレッドボードに接続されている場合は、一度それを外してからPico 2 Wをコンピュータに再接続してください。
 
-#. Cannot open Pico 2 W code or save code to Pico 2 W via Thonny IDE?
-    * Check that your Pico 2 W is plugged into your computer via a USB cable.
-    * Check that you have selected the Interpreter as **MicroPython (Raspberry Pi Pico)**.
+#. Thonny IDEを使用してPico 2 Wのコードを開くことができない、またはPico 2 Wにコードを保存できない？
+    * Pico 2 WがUSBケーブルでコンピュータに接続されているか確認してください。
+    * インタープリタとして **MicroPython (Raspberry Pi Pico)**  が選択されているか確認してください。
 
-#. Can Raspberry Pi Pico2 W be used on Thonny and Arduino at the same time?
-    NO, you need to do some different operations.
+#. Raspberry Pi Pico2 WをThonnyとArduinoで同時に使用することはできますか？
+    いいえ、異なる操作が必要です。
 
-    * If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`install_micropython_on_pico` on it.
-    * If you used it on Thonny first,  and now you want to use it on Arduino IDE, you need to :ref:`setup_pico2w_arduino`.
-
-
+    * Arduinoで使用した後にThonny IDEで使用したい場合は、Picoに :ref:`install_micropython_on_pico` をインストールする必要があります。
+    * Thonnyで使用した後にArduino IDEで使用したい場合は、 :ref:`setup_pico2w_arduino` を設定する必要があります。
+    
 .. #. If your computer is win7 and Pico 2 W cannot be detected.
     * Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
     * Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.

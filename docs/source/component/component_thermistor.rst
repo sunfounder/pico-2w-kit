@@ -1,53 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_thermistor:
 
-Thermistor
+サーミスター
 ===============
 
 |img_thermistor|
 
-A thermistor is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors. The word is a combination of thermal and resistor. Thermistors are widely used as inrush current limiters, temperature sensors (negative temperature coefficient or NTC type typically), self-resetting overcurrent protectors, and self-regulating heating elements (positive temperature coefficient or PTC type typically).
+サーミスターは、その抵抗が温度に強く依存するタイプの抵抗器です。通常の抵抗器よりも温度による影響が大きいのが特徴です。サーミスターという名前は、「熱（thermal）」と「抵抗器（resistor）」を組み合わせた言葉です。サーミスターは、過電流制限器、温度センサー（主に負の温度係数（NTC）型）、自己リセット型の過電流保護回路、自己調節型加熱素子（主に正の温度係数（PTC）型）として広く使用されています。
 
 * `Thermistor - Wikipedia <https://en.wikipedia.org/wiki/Thermistor>`_
 
-Here is the electronic symbol of thermistor.
+こちらがサーミスターの電子回路記号です。
 
 |img_thermistor_symbol|
 
-Thermistors are of two opposite fundamental types:
+サーミスターには2つの基本的なタイプがあります：
 
-* With NTC thermistors, resistance decreases as temperature rises usually due to an increase in conduction electrons bumped up by thermal agitation from valency band. An NTC is commonly used as a temperature sensor, or in series with a circuit as an inrush current limiter.
-* With PTC thermistors, resistance increases as temperature rises usually due to increased thermal lattice agitations particularly those of impurities and imperfections. PTC thermistors are commonly installed in series with a circuit, and used to protect against overcurrent conditions, as resettable fuses.
+* NTCサーミスターでは、温度が上昇すると抵抗が減少します。これは、価電子帯から熱的な振動によって励起された伝導電子の増加が原因です。NTCは、温度センサーとして使用されたり、回路と直列に接続されて過電流を制限するために使用されます。
+* PTCサーミスターでは、温度が上昇すると抵抗が増加します。これは、特に不純物や欠陥による熱的な格子振動の増加が原因です。PTCサーミスターは、過電流保護用のリセット可能なヒューズとして回路と直列に接続されることが一般的です。
 
-In this kit we use an NTC one. Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius.
+このキットではNTC型サーミスターを使用しています。各サーミスターには標準的な抵抗があります。ここでは25℃で測定した場合の10kΩです。
 
-Here is the relation between the resistance and temperature:
+抵抗と温度の関係は以下の通りです：
 
     RT = RN * expB(1/TK - 1/TN)   
 
-* **RT** is the resistance of the NTC thermistor when the temperature is TK. 
-* **RN** is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k.
-* **TK** is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius.
-* **TN** is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-* And **B(beta)**, the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950.      
-* **exp** is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately.  
+* **RT** は、NTCサーミスターの抵抗で、温度TKのときの値です。
+* **RN** は、NTCサーミスターの定格温度TNにおける抵抗値で、ここでは10kΩです。
+* **TK** はケルビン温度で、単位はKです。ここではTKの数値は273.15 + 摂氏温度です。
+* **TN** は定格ケルビン温度で、単位はKです。ここではTNの数値は273.15 + 25です。
+* **B（ベータ）** は、NTCサーミスターの材質定数で、熱感度指数とも呼ばれ、数値は3950です。
+* **exp** は指数関数の略で、基数eは自然数であり、約2.7です。
 
-Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius.
+この式をTK = 1/(ln(RT/RN)/B + 1/TN)に変換することで、ケルビン温度を求め、それから273.15を引くことで摂氏温度が得られます。
 
-This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+この関係式は経験的な公式であり、温度と抵抗が有効範囲内にある場合にのみ正確です。
 
 .. Example
 .. -------------------
@@ -55,8 +55,8 @@ This relation is an empirical formula. It is accurate only when the temperature 
 .. :ref:`Thermometer`
 
 
-**Example**
+**例**
 
-* :ref:`py_temp` (For MicroPython User)
-* :ref:`py_room_temp` (For MicroPython User)
-* :ref:`ar_temp` (For Arduino User)
+* :ref:`py_temp` (MicroPythonユーザー向け)
+* :ref:`py_room_temp` (MicroPythonユーザー向け)
+* :ref:`ar_temp` (Arduinoユーザー向け)

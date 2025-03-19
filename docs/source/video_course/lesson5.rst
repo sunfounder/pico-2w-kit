@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 5:  Reading Analog Voltages Using a Potentiometer
+レッスン5：ポテンショメーターを使用したアナログ電圧の読み取り
 =================================================================
 
-This tutorial covers reading analog voltages using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WのためのSunFounder Keplerキットを使用してアナログ電圧を読み取る方法について説明します：
 
-* **Analog Voltage Reading**: Importance of reading analog voltages for sensor inputs like potentiometers.
-* **Wiring Setup**: Explains connecting a potentiometer to Pico W, including ground, 3.3V, and GPIO pin 28.
-* **Code**: Write Python code to read and print analog voltage values using GPIO pins.
-* **Conversion**: Convert ADC values to voltage (0-3.3V) using a linear equation.
-* **Demonstration**: Show code reading potentiometer values and converting them to voltage.
+* **アナログ電圧の読み取り**: ポテンショメーターのようなセンサー入力のためにアナログ電圧を読み取る重要性。
+* **配線のセットアップ**: ポテンショメーターをPico Wに接続する方法（グラウンド、3.3V、GPIOピン28を含む）。
+* **コード**: GPIOピンを使用してアナログ電圧値を読み取り、表示するPythonコードを書く方法。
+* **変換**: ADC値を線形方程式を使用して電圧（0-3.3V）に変換する方法。
+* **デモンストレーション**: コードでポテンショメーターの値を読み取り、それを電圧に変換する方法を示します。
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

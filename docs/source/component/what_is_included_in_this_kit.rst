@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームから、購入後の問題や技術的な課題の解決をサポートします。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早く手に入れましょう。
+    - **特別割引**：最新製品をお得に購入できる特典をお楽しみください。
+    - **イベントとプレゼント企画**：プレゼント企画や特別プロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
-What is Included in This Kit
+このキットに含まれるもの
 =============================
 
-The following is a list of this kit so you can check the contents of the kit once you receive it.
+以下は、キットに含まれる内容のリストです。キットを受け取った際に内容をご確認ください。
 
-There are some components in the kit that are very small and look the same, and staff may miss or send them by mistake when packing the kit. You are welcome to send us the name of the missing or incorrect component if you find one.
+キットには非常に小さくて似たような部品が含まれており、スタッフがパッケージング時に見逃したり、間違って送ってしまうことがあります。もし足りない部品や間違った部品があれば、お気軽にご連絡ください。
 
-Here is the email: service@sunfounder.com.
+こちらのメールアドレスまでご連絡ください：service@sunfounder.com。
 
 |compoents_list|
 
-
-**Basic**
+**基本部品**
 
 .. toctree::
     :maxdepth: 1
@@ -38,7 +37,7 @@ Here is the email: service@sunfounder.com.
     component_lipo_charger
 
 
-**Chip**
+**チップ**
 
 .. toctree::
     :maxdepth: 1
@@ -46,7 +45,7 @@ Here is the email: service@sunfounder.com.
     component_74hc595
     component_ta6585
 
-**Display**
+**ディスプレイ**
 
 .. toctree::
     :maxdepth: 1
@@ -60,14 +59,14 @@ Here is the email: service@sunfounder.com.
     component_i2clcd1602
     component_ws2812
 
-**Sound**
+**音声**
 
 .. toctree::
     :maxdepth: 1
 
     component_buzzer
 
-**Actuators**
+**アクチュエーター**
 
 .. toctree::
     :maxdepth: 1
@@ -79,7 +78,7 @@ Here is the email: service@sunfounder.com.
 
 
 
-**Controller**
+**コントローラー**
 
 .. toctree::
     :maxdepth: 1
@@ -94,7 +93,7 @@ Here is the email: service@sunfounder.com.
     component_mpr121
     component_rfid
 
-**Sensor**
+**センサー**
 
 .. toctree::
     :maxdepth: 1
@@ -108,14 +107,14 @@ Here is the email: service@sunfounder.com.
     component_ultrasonic
     component_humiture
     component_mpu6050
+
+
+
+
+
+
+
+
+
+
     
-
-
-
-
-
-
-
-
-
-

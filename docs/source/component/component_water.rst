@@ -1,43 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_water_level:
 
-Water Level Sensor Module
+水位センサーモジュール
 =================================
 
 |img_water_sensor|
 
-The water level sensor detects the water level and transmits the signal to a controller. The controller’s computer compares the measured water level with the preset value to calculate the deviation. Based on this deviation, it sends "on" or "off" commands to the feedwater valve, ensuring the water level in the vessel reaches the desired setting.
+水位センサーは水位を検出し、その信号をコントローラーに送信します。コントローラーのコンピュータは、測定された水位と事前設定された値を比較して偏差を計算します。この偏差に基づき、「オン」または「オフ」のコマンドを給水バルブに送信し、容器内の水位が所定の設定に達するように調整します。
 
-**Design and Functionality**
-The sensor features ten exposed copper traces: five power traces and five sensor traces arranged in an interleaved pattern. When submerged in water, the traces are bridged, allowing current to flow. The circuit board also includes a power indicator LED, which lights up when the sensor is powered.
+**設計と機能性**
+このセンサーには10本の露出した銅トレースがあり、5本は電源用、残りの5本はセンサー用のトレースです。これらは交互に配置されています。水に浸かると、トレースが接続され、電流が流れるようになります。また、回路基板には電源インジケーターLEDが搭載されており、センサーに電源が供給されると点灯します。
 
-The traces function as a variable resistor, with resistance changing based on water immersion:
+トレースは可変抵抗器として機能し、水の浸漬によって抵抗が変化します：
 
-- More Water: Increased conductivity lowers the resistance.
-- Less Water: Reduced conductivity raises the resistance.
+- 水が多い：導電性が増し、抵抗が下がります。
+- 水が少ない：導電性が減少し、抵抗が上がります。
 
-The sensor processes this varying resistance into an output voltage signal, which is sent to a microcontroller. The microcontroller uses this signal to determine the water level accurately.
+センサーはこの変動する抵抗を出力電圧信号に変換し、その信号をマイクロコントローラーに送信します。マイクロコントローラーはこの信号を使って水位を正確に判定します。
 
 .. warning:: 
-    The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.
+    センサーは完全に水に浸してはいけません。10本のトレース部分だけが水と接触するようにしてください。また、湿度の高い環境でセンサーに電源を供給すると、プローブの腐食が早まり、センサーの寿命が短くなります。そのため、測定時にのみ電源を供給することをお勧めします。
 
 
-**Example**
+**例**
 
-* :ref:`py_water` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-* :ref:`ar_water` (For Arduino User)
-.. * :ref:`per_water_tank` (For Piper Make User)
+* :ref:`py_water` (MicroPythonユーザー向け)
+* :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
+* :ref:`ar_water` (Arduinoユーザー向け)
+.. * :ref:`per_water_tank` (Piper Makeユーザー向け)

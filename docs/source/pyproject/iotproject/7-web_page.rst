@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_web_server:
 
-8.7 Setup a Web Server
+8.7 Webサーバーのセットアップ
 ====================================
 
 
-In this article, you will learn how to make Pico 2 W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
+この記事では、Pico 2 WをWebサーバーにして、ブラウザを通じて回路を操作し、センサーの読み取り値を取得する方法を学びます。
 
 |setup_web|
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -84,59 +84,59 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組み立てる**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po充電モジュールが図のように接続されていることを確認してください。そうしないと、短絡が原因でバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/7.web_page_bb.png
     :width: 800
 
 
-**3. Run the Code**
+**3. コードを実行する**
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`py_iot_access` to create them.
+        コードを実行する前に、Pico 2 Wに ``do_connect.py`` および ``secrets.py`` スクリプトがあることを確認してください。もしない場合は、 :ref:`py_iot_access` を参照して作成してください。
 
-#. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
-#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``7_web_page.py`` ファイルを開きます。
+#. **現在のスクリプトを実行** ボタンをクリックするか、F5を押して実行します。接続が成功すると、Pico 2 WのIPアドレスが表示されます。
 
     .. image:: img/7_web_server.png
 
-#. Enter the IP address of the Pico 2 W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
+#. Pico 2 WのIPアドレスをブラウザに入力し、このプロジェクトのために作成されたWebページにアクセスします。任意のボタンをクリックすると、RGB LEDの色が変更され、温度と湿度が更新されます。
 
     .. image:: img/web-1.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. このスクリプトを起動時に実行できるようにしたい場合は、Raspberry Pi Pico 2 Wに ``main.py`` として保存できます。
 
-**How it works?**
+**仕組みは？**
 
-This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
+このプロジェクトはネットワーク接続を必要とし、 :ref:`py_iot_access` メソッドを使用してネットワークに接続します。
 
 .. code-block:: python
 
     from secrets import *
     from do_connect import *
     
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : これは `do_connect()` 関数をインポートします。この関数には、 `network` モジュールを使用してWi-Fiに接続するロジックが含まれています。 `do_connect()` 関数が呼び出されると、 `secrets.py` で指定されたWi-Fiネットワークに接続します。接続に失敗した場合は例外が発生し、成功すれば次のステップに進みます。
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets import * :  `secrets.py` ファイルは通常、Wi-FiのSSID、パスワード、その他の機密情報（APIキーなど）を保存するために使用されます。これにより、機密情報をメインコードファイルに直接埋め込むことを避けることができます。
 
-The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
-A socket is the way a server can listen for a client that wants to connect to it. 
+訪問するWebページは実際にはサーバー上でホストされており、サーバーのソケットは私たちが訪問した際にそのページを送信します。
+ソケットは、サーバーが接続を希望するクライアントを待機する方法です。
 
-In this project, Pico 2 W is your server, and your computer is accessing the web page hosted on Pico 2 W through a browser.
+このプロジェクトでは、Pico 2 Wがサーバーとなり、コンピュータはブラウザを通じてPico 2 WがホストするWebページにアクセスします。
 
-First we create a socket, which requires an IP address and a |link_port|.
-The network connection and the way to get the IP are described in :ref:`py_iot_access`. And for port, we use 80.
-After setting up the socket, return it and use it for the next step.
+まず、IPアドレスと |link_port| が必要なソケットを作成します。
+ネットワーク接続およびIPの取得方法については :ref:`py_iot_access` に記載されています。ポートには80を使用します。
+ソケットの設定後、それを返して次のステップで使用します。
 
 `socket library - Python Docs <https://docs.python.org/3/library/socket.html>`_ 
 
@@ -145,7 +145,7 @@ After setting up the socket, return it and use it for the next step.
     import socket
 
     def open_socket(ip):
-        # Open a socket
+        # ソケットを開く
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -153,8 +153,8 @@ After setting up the socket, return it and use it for the next step.
         print(connection)
         return(connection)
 
-Then, set up your web service where the socket you set up earlier will be used.
-The following code will allow your Pico 2 W to receive access requests from your browser.
+次に、先ほど設定したソケットを使用するWebサービスをセットアップします。
+以下のコードは、Pico 2 Wがブラウザからのアクセスリクエストを受け取ることを可能にします。
 
 .. code-block:: python
 
@@ -164,10 +164,10 @@ The following code will allow your Pico 2 W to receive access requests from your
             request = client.recv(1024)
             client.close()
 
-Next, you need an html page to send to the visitor. This example stores a simple html page in the form of characters in the variable ``html``.
+次に、訪問者に送信するHTMLページが必要です。この例では、 ``html`` という変数に文字列形式でシンプルなHTMLページを格納しています。
 
 .. note:: 
-    If you want to be able to write your own html, you can get help at |link_html|.
+    自分のHTMLを作成したい場合は、 |link_html| でヘルプを受けることができます。
 
 .. code-block:: python
 
@@ -194,7 +194,7 @@ Next, you need an html page to send to the visitor. This example stores a simple
                 """
         return html
 
-Send html page to visitor.
+訪問者にHTMLページを送信します。
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -208,7 +208,7 @@ Send html page to visitor.
             client.close()
 
 
-The page can be accessed through your browser if you combine the above parts. If you want to see the effect, run the code below with thonny.
+上記の部分を組み合わせると、ブラウザを通じてページにアクセスできるようになります。効果を確認するには、以下のコードをThonnyで実行してみてください。
 
 .. code-block:: python
 
@@ -242,7 +242,7 @@ The page can be accessed through your browser if you combine the above parts. If
         return html
 
     def open_socket(ip):
-        # Open a socket
+        # ソケットを開く
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -268,10 +268,10 @@ The page can be accessed through your browser if you combine the above parts. If
 
 
 
-When you run the code above, you will see that it displays only a web page, does not allow you to control RGB LEDs, nor does it show sensor readings.
-The web service needs to be refined further.
+上記のコードを実行すると、Webページのみが表示され、RGB LEDの制御やセンサーの読み取りができません。
+Webサービスはさらに改良が必要です。
 
-The first thing we need to know is what information the server receives when the browser accesses the web page. Therefore, change ``serve()`` slightly to print ``request``.
+次に、ブラウザがWebページにアクセスした際にサーバーが受け取る情報が何であるかを確認する必要があります。そのため、 ``serve()`` を少し変更して ``request`` を表示させます。
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -286,7 +286,7 @@ The first thing we need to know is what information the server receives when the
             client.send(html)
             client.close()
 
-Re-run the script and the Shell will print the following message when we press a key on the web page.
+スクリプトを再実行すると、Webページでキーを押すと、Shellに次のようなメッセージが表示されるのが確認できます。
 
 .. code-block:: 
 
@@ -295,10 +295,10 @@ Re-run the script and the Shell will print the following message when we press a
     b'GET /blue? HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
     b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
 
-They are too long to read!!! 
+これらは読みづらいです！！！
 
-But all we really need is the small piece of information in front of ``/red?``, ``/blue?``.
-It tells us which button was pressed. So we refined ``serve()`` a bit to extract the keystroke information.
+しかし、実際に必要なのは ``/red?`` や ``/blue?`` の前の小さな部分だけです。
+これにより、どのボタンが押されたのかがわかります。そこで、 ``serve()`` を改良してキー入力情報を抽出しました。
 
 .. code-block:: python
     :emphasize-lines: 6,7,8,9
@@ -317,7 +317,7 @@ It tells us which button was pressed. So we refined ``serve()`` a bit to extract
             client.send(html)
             client.close()
 
-Re-run the program and the Shell will print the following message when we press a key on the web page.
+プログラムを再実行すると、Webページでキーを押すと、Shellに次のようなメッセージが表示されます。
 
 .. code-block:: 
 
@@ -328,7 +328,7 @@ Re-run the program and the Shell will print the following message when we press 
     /off?
     /favicon.ico
 
-Then, we just need to change the color of the RGB LED according to the value of ``request``.
+その後、RGB LEDの色を ``request`` の値に従って変更します。
 
 .. code-block:: python
 
@@ -365,9 +365,9 @@ Then, we just need to change the color of the RGB LED according to the value of 
             client.send(html)
             client.close()
 
-The last thing is to display the thermistor value on the web page (see :ref:`py_temp` for details on using the thermistor).
-This part is actually done by modifying the text on the html.
-We set the parameters in the ``webpage(value)`` function and simply change the incoming parameters to change the number displayed on the web page.
+最後に、Webページにサーミスタの値を表示する部分です（サーミスタの使用方法については :ref:`py_temp` を参照）。
+この部分は実際にはHTMLのテキストを変更することによって行います。
+``webpage(value)`` 関数でパラメータを設定し、単に受け取るパラメータを変更することで、Webページに表示される数字を変更します。
 
 .. code-block:: python
     :emphasize-lines: 30,31

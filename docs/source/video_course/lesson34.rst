@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 34: Convert HSV to RGB in Micropython
+レッスン34：MicropythonでHSVからRGBへの変換
 =============================================================================
-This tutorial covers converting HSV (Hue, Saturation, Value) color values to RGB (Red, Green, Blue) values and displaying them on an RGB LED using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してHSV（色相、彩度、明度）の色値をRGB（赤、緑、青）の色値に変換し、それをRGB LEDで表示する方法について説明します：
 
-* **Introduction to the HSV Color Wheel**: Explains the HSV color wheel and its use for smooth color transitions, especially for visualizing temperature data.
-* **Project Setup and Goal**: Recap of the weather station project and the goal of adding RGB LED color representation for temperature.
-* **Understanding HSV to RGB Conversion**: Describes the HSV color wheel's mathematical representation, zones, and RGB conversion.
-* **Algorithm Development**: Creates a function to convert HSV to RGB values and sets up the RGB LED with PWM on the Raspberry Pi Pico W.
-* **Code Implementation**: Walkthrough of Python code for PWM control and HSV to RGB conversion, including a library function.
-* **Practical Demonstration**: Shows RGB LED color changes based on HSV, and assigns the task of integrating the LED into the weather station project.
+* **HSVカラーホイールの紹介**: HSVカラーホイールと、特に温度データの視覚化において滑らかな色の変化に利用する方法について説明します。
+* **プロジェクトの設定と目標**: 気象ステーションプロジェクトの概要と、温度に対するRGB LEDの色表現を追加する目標の復習。
+* **HSVからRGBへの変換理解**: HSVカラーホイールの数学的表現、ゾーン、及びRGB変換について説明します。
+* **アルゴリズム開発**: HSVからRGB値に変換する関数を作成し、Raspberry Pi Pico WのPWMを使用してRGB LEDを設定します。
+* **コード実装**: PWM制御とHSVからRGBへの変換のためのPythonコードの実行手順を説明し、ライブラリ関数を含みます。
+* **実践デモンストレーション**: HSVに基づいてRGB LEDの色変化を示し、気象ステーションプロジェクトへのLEDの統合を課題として割り当てます。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 40: Measuring Acceleration with the MPU6050 Six Axis IMU
+レッスン40：MPU6050六軸IMUを使用した加速度測定
 =============================================================================
-This tutorial covers using the MPU6050 accelerometer and gyroscope with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WでMPU6050加速度センサーとジャイロスコープを使用する方法について説明します：
 
-* **Introduction**: Overview of using the MPU6050 sensor to measure acceleration and gyroscopic movements.
-* **Setting Up the Hardware**: Instructions for connecting the MPU6050 and OLED display to the Raspberry Pi Pico W.
-* **Understanding the Sensor**: Explanation of how the MPU6050 measures acceleration in X, Y, and Z axes using MEMS technology.
-* **Installing Required Libraries**: Guide to downloading and setting up libraries from the SunFounder GitHub repository.
-* **Coding and Testing**: Step-by-step MicroPython code to read and print acceleration values, with real-time visualization using Thonny plotter.
-* **Homework Assignment**: Measure Z-axis acceleration and compare predictions with actual values.
-* **Conclusion**: Recap and preview of future Lessons on practical MPU6050 applications.
+* **はじめに**: MPU6050センサーを使用して加速度とジャイロスコープ運動を測定する方法の概要。
+* **ハードウェアの設定**: MPU6050とOLEDディスプレイをRaspberry Pi Pico Wに接続する手順。
+* **センサーの理解**: MEMS技術を使用してX、Y、Z軸の加速度を測定するMPU6050の説明。
+* **必要なライブラリのインストール**: SunFounderのGitHubリポジトリからライブラリをダウンロードして設定するガイド。
+* **コーディングとテスト**: Thonnyプロッターを使用してリアルタイムで可視化しながら、加速度値を読み取り、表示するMicroPythonのコードのステップバイステップガイド。
+* **宿題**: Z軸の加速度を測定し、予測値と実際の値を比較します。
+* **結論**: 今後のMPU6050の実用的な応用についての復習とプレビュー。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

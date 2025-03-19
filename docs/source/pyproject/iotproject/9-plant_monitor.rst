@@ -1,62 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_iot_sunfounder_controller_plant:
 
-8.9 Plant Monitor in @SunFounder Controller
+8.9 @SunFounder Controllerでのプラントモニター
 ================================================
 
-With this project, you will learn how to build a plant watering system using the Sunfounder Controller APP.
+このプロジェクトでは、Sunfounder Controllerアプリを使用して植物の給水システムを構築する方法を学びます。
 
-In the APP, you can check the current temperature and humidity of the environment, as well as the level of water in potted plants.
-To water the plants, you can also click the button on the APP.
+アプリ上で、環境の現在の温度・湿度や鉢植えの水位を確認できます。
+水が不足していると思ったら、アプリのボタンをクリックして植物に給水することも可能です。
 
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット一式を購入するのが便利です。こちらのリンクから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+別々に購入することもできます。以下のリンクから購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
@@ -84,7 +84,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 10
@@ -92,34 +92,36 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**Steps**
+**手順**
 
 .. note::
-    It is recommended that you complete the previous project :ref:`py_iot_sunfounder_controller`, as that will help you get to grips with the basic use of the SunFounder Controller.
+    事前に :ref:`py_iot_sunfounder_controller` プロジェクトを完了しておくことをお勧めします。SunFounder Controllerの基本的な使い方を理解するのに役立ちます。
 
-#. Build the circuit.
+#. 回路を組み立てます。
 
     .. image:: img/wiring/10.sc_2_bb.png
 
-#. Create a new controller, add the following widgets and change their names.
+#. 新しいコントローラーを作成し、以下のウィジェットを追加して名前を変更します。
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. Open the ``10_plant_monitor.py`` under the path of ``pico-2w-kit-main/micropython/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
+#. ``pico-2w-kit-main/micropython/iot`` のパスにある ``10_plant_monitor.py`` を開き、 **現在のスクリプトを実行** ボタンをクリックするか、F5を押して実行します。接続が成功すると、Pico 2 WのIPアドレスが表示されます。
 
     .. image:: img/10_plant_monitor.png
 
 
-#. Returning to the SunFounder APP, click Run after connecting to PicoW. On the APP, you will be able to see the temperature and humidity of the environment, as well as the water level of the potted plant. You can click the button to water the potted plant for five seconds if you think it's short of water.
+#. SunFounderアプリに戻り、PicoWに接続後にRunをクリックします。アプリ上で環境の温度と湿度、さらに鉢植えの水位を確認できます。水が足りないと感じたら、ボタンをクリックして5秒間の給水を行えます。
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. このスクリプトを起動時に実行できるようにしたい場合は、Raspberry Pi Pico 2 Wに ``main.py`` として保存できます。
 
-**How it works?**
 
-This project works basically the same way as :ref:`py_iot_sunfounder_controller`.
 
-In addition the project also uses DHT11, pump and water level module, you can see the details of using these components in :ref:`py_dht11` , :ref:`py_pump`, :ref:`py_water`.
+**仕組みは？**
+
+このプロジェクトは、基本的には :ref:`py_iot_sunfounder_controller` と同じ仕組みで動作します。
+
+さらに本プロジェクトでは、DHT11、ポンプ、水位モジュールを使用しています。これらの部品の使用方法については、 :ref:`py_dht11`、 :ref:`py_pump`、 :ref:`py_water` を参照してください。

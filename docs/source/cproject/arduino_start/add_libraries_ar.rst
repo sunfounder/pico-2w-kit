@@ -1,42 +1,41 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題をコミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **特別割引**: 最新製品の限定割引をお楽しみいただけます。
+    - **お得なプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始めませんか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-
-1.4 Install libraries (Important)
+1.4 ライブラリのインストール（重要）
 ======================================
 
-Many libraries are available directly through the Arduino **Library Manager**. You can access the **Library Manager** by following these steps:
+多くのライブラリは、Arduinoの **ライブラリマネージャー** から直接インストールできます。 **ライブラリマネージャー** にアクセスするには、以下の手順を実行します：
 
-In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+**ライブラリマネージャー** では、ライブラリの名前で検索したり、さまざまなカテゴリをブラウズして目的のライブラリを見つけることができます。
 
 .. note::
 
-   In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as “The DHT sensor library library is used here, you can install it from the **Library Manager**.” Simply install the recommended libraries as prompted.
+   ライブラリのインストールが必要なプロジェクトでは、インストールすべきライブラリが案内されます。例えば、「ここではDHTセンサライブラリが使用されます。 **ライブラリマネージャー** からインストールできます」といった指示があります。案内に従って、推奨されたライブラリをインストールしてください。
 
 .. image:: img/install_lib3.png
 
-Once you find the library you want to install, click on it and then click the **INSTALL** button.
+インストールしたいライブラリを見つけたら、それをクリックし、次に **インストール** ボタンをクリックします。
 
 .. image:: img/install_lib2.png
 
-The Arduino IDE will automatically download and install the library for you.
+Arduino IDEは自動的にライブラリをダウンロードし、インストールを行います。
 
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   インストールされたライブラリは、通常、Arduino IDEのデフォルトライブラリディレクトリに保存されます。このディレクトリは通常、 ``C:\Users\xxx\Documents\Arduino\libraries`` にあります。
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   ライブラリディレクトリが異なる場合は、 **ファイル** -> **環境設定** から確認できます。
 
       .. image:: img/install_lib1.png

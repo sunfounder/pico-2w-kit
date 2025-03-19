@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームのサポートで、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**：チップやチュートリアルを交換し、スキルを向上させましょう。
+    - **独占プレビュー**：新製品の発表や先行情報に早期アクセスできます。
+    - **特別割引**：最新製品の特別割引を享受できます。
+    - **祝祭シーズンのプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索して一緒に創造したいですか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
 .. _py_74hc_led:
 
-5.1 Using the 74HC595 Shift Register
+5.1 74HC595シフトレジスタの使用
 =======================================
 
-In this lesson, we'll learn how to use the **74HC595 shift register** to control multiple LEDs with just a few GPIO pins on the Raspberry Pi Pico 2 W. The 74HC595 is an integrated circuit (IC) that allows you to expand the number of digital outputs using a serial input. This is incredibly useful when you want to control many outputs but have limited GPIO pins available.
+このレッスンでは、 **74HC595シフトレジスタ** を使用して、Raspberry Pi Pico 2 WのGPIOピンをいくつかだけで複数のLEDを制御する方法を学びます。74HC595は、シリアル入力を使用してデジタル出力の数を拡張できるIC（集積回路）です。GPIOピンが限られている場合でも、多くの出力を制御するのに非常に便利です。
 
 * :ref:`74HC595`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、次のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。リンクはここです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前  
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット  
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+これらのコンポーネントを個別に購入することもできます。リンクは以下の通りです。
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -79,30 +79,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Understanding the 74HC595 Shift Register**
+**74HC595シフトレジスタの理解**
 
-The **74HC595** is an 8-bit serial-in, parallel-out shift register with output latches. It has the ability to take serial data input and convert it into parallel output, allowing you to control 8 outputs using only 3 GPIO pins from the Pico.
+**74HC595** は、8ビットのシリアルイン、パラレルアウトのシフトレジスタで、出力ラッチを備えています。シリアルデータ入力を受け取り、それをパラレル出力に変換することができ、PicoのGPIOピン3本だけで8つの出力を制御できます。
 
-**Key Pins on the 74HC595:**
+**74HC595の主なピン:**
 
 |img_74jc595_pin|
 
-* **DS (Pin 14)**: Serial Data Input
-* **SHCP (Pin 11)**: Shift Register Clock Input
-* **STCP (Pin 12)**: Storage Register Clock Input (Latch Pin)
-* **OE (Pin 13)**: Output Enable (Active Low, connect to GND)
-* **MR (Pin 10)**: Master Reset (Active Low, connect to 3.3V)
-* **Q0-Q7 (Pins 15, 1-7)**: Parallel Outputs
-* **VCC (Pin 16)**: Connect to 3.3V
-* **GND (Pin 8)**: Connect to GND
+* **DS（ピン14）**: シリアルデータ入力
+* **SHCP（ピン11）**: シフトレジスタクロック入力
+* **STCP（ピン12）**: ストレージレジスタクロック入力（ラッチピン）
+* **OE（ピン13）**: 出力有効（アクティブロー、GNDに接続）
+* **MR（ピン10）**: マスタリセット（アクティブロー、3.3Vに接続）
+* **Q0〜Q7（ピン15、1-7）**: パラレル出力
+* **VCC（ピン16）**: 3.3Vに接続
+* **GND（ピン8）**: GNDに接続
 
-**Schematic**
+**回路図**
 
 |sch_74hc_led|
 
 
 
-**Wiring**
+**配線**
 
 .. The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
 
@@ -112,112 +112,109 @@ The **74HC595** is an 8-bit serial-in, parallel-out shift register with output l
 
 |wiring_74hc_led|
 
-.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico 2 W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico 2 W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico 2 W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
+.. 1. Pico 2 Wの3V3とGNDをブレッドボードの電源バスに接続します。
+.. #. 74HC595をブレッドボードの中央の隙間に挿入します。
+.. #. Pico 2 WのGP0ピンを74HC595のDSピン（ピン14）にジャンパーワイヤーで接続します。
+.. #. Pico 2 WのGP1ピンを74HC595のSTcpピン（ピン12）に接続します。
+.. #. Pico 2 WのGP2ピンを74HC595のSHcpピン（ピン11）に接続します。
+.. #. 74HC595のVCCピン（ピン16）とMRピン（ピン10）をプラスの電源バスに接続します。
+.. #. 74HC595のGNDピン（ピン8）とCEピン（ピン13）をマイナスの電源バスに接続します。
+.. #. 8つのLEDをブレッドボードに挿入し、それぞれのアノード端子を74HC595のQ0〜Q7ピン（ピン15, 1, 2, 3, 4, 5, 6, 7）に接続します。
+.. #. LEDのカソード端子を220Ωの抵抗とともにマイナス電源バスに接続します。
 
+**コードの作成**
 
-
-**Writing the Code**
-
-Now, let's write a MicroPython program to control the LEDs through the 74HC595 shift register.
+次に、74HC595シフトレジスタを使ってLEDを制御するMicroPythonプログラムを作成します。
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * ``pico-2w-kit-main/micropython`` から ``5.1_microchip_74hc595.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押してください。
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * 正しいインタープリタが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）。COMxx。
 
-    
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Define the pins connected to the 74HC595
-    SDI = machine.Pin(0, machine.Pin.OUT)   # Serial Data Input (DS)
-    RCLK = machine.Pin(1, machine.Pin.OUT)  # Register Clock (STCP)
-    SRCLK = machine.Pin(2, machine.Pin.OUT) # Shift Register Clock (SHCP)
+    # 74HC595に接続されているピンを定義
+    SDI = machine.Pin(0, machine.Pin.OUT)   # シリアルデータ入力（DS）
+    RCLK = machine.Pin(1, machine.Pin.OUT)  # レジスタクロック（STCP）
+    SRCLK = machine.Pin(2, machine.Pin.OUT) # シフトレジスタクロック（SHCP）
 
-    # Function to send data to 74HC595
+    # 74HC595にデータを送信する関数
     def shift_out(data):
         for bit in range(8):
-            # Extract the highest bit and send it first
+            # 最上位ビットを取り出して最初に送信
             bit_val = (data & 0x80) >> 7
             SDI.value(bit_val)
-            # Pulse the Shift Register Clock
+            # シフトレジスタクロックをパルスさせる
             SRCLK.high()
             utime.sleep_us(1)
             SRCLK.low()
             utime.sleep_us(1)
-            # Shift data left by 1 for the next bit
+            # 次のビットのためにデータを1ビット左にシフト
             data = data << 1
-        # Pulse the Register Clock to latch the data
+        # レジスタクロックをパルスさせてデータをラッチ
         RCLK.high()
         utime.sleep_us(1)
         RCLK.low()
         utime.sleep_us(1)
 
-    # Main loop to demonstrate shifting patterns
+    # LEDの点灯パターンをデモンストレーションするメインループ
     while True:
-        # Light up LEDs one by one from Q0 to Q7
+        # LEDをQ0からQ7まで1つずつ点灯
         for i in range(8):
             data = 1 << i
             shift_out(data)
             utime.sleep(0.2)
-        # Light up LEDs one by one from Q7 to Q0
+        # LEDをQ7からQ0まで逆順に点灯
         for i in range(7, -1, -1):
             data = 1 << i
             shift_out(data)
             utime.sleep(0.2)
-        # Create a moving bar effect
+        # 動くバーの効果を作成
         for i in range(9):
             data = (1 << i) - 1
             shift_out(data)
             utime.sleep(0.2)
-        # Turn off all LEDs
+        # 全てのLEDを消灯
         shift_out(0x00)
         utime.sleep(0.5)
 
-When you run the code, the LEDs connected to the 74HC595 shift register will display dynamic light patterns:
+コードを実行すると、74HC595シフトレジスタに接続されたLEDは動的な光のパターンを表示します：
 
-* **First Sequence**: LEDs light up one after another from left to right. Each LED turns on in sequence, creating the effect of a light moving across the row.
-* **Second Sequence**: LEDs light up one after another from right to left, reversing the direction of the movement.
-* **Third Sequence**: LEDs create a growing bar effect, where LEDs turn on cumulatively from left to right until all LEDs are lit.
-* **Final Step**: All LEDs turn off briefly before the entire sequence repeats.
+* **最初のシーケンス**: LEDが左から右へ順番に点灯します。各LEDが順番に点灯し、光が横に移動する効果が得られます。
+* **2番目のシーケンス**: LEDが右から左へ順番に点灯し、移動方向が逆転します。
+* **3番目のシーケンス**: LEDが累積的に点灯して、左から右にバーが成長していく効果を作ります。
+* **最終ステップ**: 全てのLEDが短時間で消灯し、その後シーケンスが繰り返されます。
 
-This results in an eye-catching display of lights moving back and forth and a bar growing across the LEDs, looping continuously.
+これにより、光が左右に動き、バーが成長する視覚的に魅力的なディスプレイが得られ、シーケンスは連続して繰り返されます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート：
 
-   * ``machine``: Provides access to GPIO pins.
-   * ``utime``: Contains time-related functions.
+   * ``machine``: GPIOピンへのアクセスを提供します。
+   * ``utime``: 時間に関連する関数を含んでいます。
 
-#. Define Control Pins:
+#. 制御ピンの定義：
 
-   We define the GPIO pins connected to the 74HC595.
+   74HC595に接続されたGPIOピンを定義します。
 
    .. code-block:: python
 
-      SDI = machine.Pin(0, machine.Pin.OUT)   # Data Input
-      RCLK = machine.Pin(1, machine.Pin.OUT)  # Latch Clock
-      SRCLK = machine.Pin(2, machine.Pin.OUT) # Shift Clock
+      SDI = machine.Pin(0, machine.Pin.OUT)   # データ入力
+      RCLK = machine.Pin(1, machine.Pin.OUT)  # ラッチクロック
+      SRCLK = machine.Pin(2, machine.Pin.OUT) # シフトクロック
 
-#. Shift Out Function:
+#. シフトアウト関数：
 
-   * This function sends 8 bits of data to the shift register.
-   * It sends the most significant bit (MSB) first.
-   * Pulses the shift register clock (SRCLK) to shift in each bit.
-   * After all bits are shifted in, it pulses the register clock (RCLK) to latch the data to the outputs.
+   * この関数は8ビットのデータをシフトレジスタに送信します。
+   * 最上位ビット（MSB）から送信します。
+   * 各ビットをシフトするためにシフトレジスタクロック（SRCLK）をパルスさせます。
+   * すべてのビットがシフトされた後、レジスタクロック（RCLK）をパルスさせてデータを出力にラッチします。
 
    .. code-block:: python
 
@@ -234,10 +231,10 @@ This results in an eye-catching display of lights moving back and forth and a ba
           utime.sleep_us(1)
           RCLK.low()
           utime.sleep_us(1)
-    
-#. Main Loop:
 
-   * Lights up each LED one by one from Q0 to Q7.
+#. メインループ：
+
+   * Q0からQ7まで各LEDを1つずつ点灯させます。
 
    .. code-block:: python
 
@@ -247,7 +244,7 @@ This results in an eye-catching display of lights moving back and forth and a ba
           utime.sleep(0.2)
 
 
-   * Lights up each LED one by one from Q7 to Q0.
+   * Q7からQ0まで各LEDを1つずつ逆順に点灯させます。
 
    .. code-block:: python
 
@@ -256,7 +253,7 @@ This results in an eye-catching display of lights moving back and forth and a ba
           shift_out(data)
           utime.sleep(0.2)
 
-   * Gradually lights up LEDs to create a bar that grows from Q0 to Q7.
+   * 徐々にLEDを点灯させて、Q0からQ7に向かってバーが成長する効果を作ります。
 
    .. code-block:: python
 
@@ -265,32 +262,32 @@ This results in an eye-catching display of lights moving back and forth and a ba
           shift_out(data)
           utime.sleep(0.2)
 
-   * Sends 0x00 to turn off all LEDs.
+   * 0x00を送信して、すべてのLEDを消灯します。
 
    .. code-block:: python
 
      shift_out(0x00)
      utime.sleep(0.5)
 
-**Experimenting Further**
+**さらなる実験**
 
-* Create Custom Patterns:
+* カスタムパターンの作成：
 
-  Modify the data sent to create different LED patterns. For example, to blink alternate LEDs:
- 
+  送信するデータを変更して、さまざまなLEDパターンを作成します。たとえば、交互のLEDを点滅させる場合：
+
   .. code-block:: python
 
     shift_out(0b10101010)
 
-* Control More LEDs:
+* より多くのLEDの制御：
 
-  Chain multiple 74HC595 chips together to control more outputs. Connect the Q7' (Pin 9) of the first chip to DS (Pin 14) of the second chip.
+  複数の74HC595チップをチェーン接続して、より多くの出力を制御します。最初のチップのQ7'（ピン9）を2番目のチップのDS（ピン14）に接続します。
 
-* Integrate with Sensors:
+* センサーとの統合：
 
-  Use inputs from sensors or buttons to change the LED patterns dynamically.
+  センサーやボタンの入力を使用して、LEDパターンを動的に変更します。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to use the 74HC595 shift register to expand the output capabilities of your Raspberry Pi Pico 2 W. This technique is invaluable when working with projects that require controlling many outputs with limited GPIO pins.
+このレッスンでは、74HC595シフトレジスタを使用してRaspberry Pi Pico 2 Wの出力機能を拡張する方法を学びました。この技術は、限られたGPIOピンで多くの出力を制御する必要があるプロジェクトに非常に役立ちます。
 

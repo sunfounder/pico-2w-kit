@@ -1,50 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_dot_matrix:
 
-LED Dot Matrix
+LEDドットマトリックス
 ==========================
 
 |img_led_matrix|
 
-LED dot matrices are generally classified into two types: Common Cathode (CC) and Common Anode (CA). While they appear similar externally, their internal configurations differ. The type can be identified through testing. In this kit, a CA dot matrix is used, as indicated by the "788BS" label on the side.
+LEDドットマトリックスは、一般的に共通カソード（CC）と共通アノード（CA）の2種類に分類されます。外見は似ていますが、内部構成が異なります。種類はテストによって識別できます。このキットでは、側面に「788BS」というラベルが付いているCAドットマトリックスが使用されています。
 
-Refer to the figure below for the pin arrangement. The pins are positioned at both ends on the back of the dot matrix. Using the label side as a reference, the pins on this end are numbered 1 to 8, while those on the opposite end are numbered 9 to 16.
+下の図は、ピン配置を示しています。ピンはドットマトリックスの裏面の両端に配置されています。ラベルが付いている面を基準に、この端のピンは1から8まで、反対側の端は9から16まで番号が付けられています。
 
-The external view:
+外観：
 
 |img_788bs_i|
 
+下の図は、それぞれの内部構造を示しています。CA型LEDドットマトリックスでは、
+ROWはLEDのアノードを表し、COLはカソードを表します。逆に、CC型ではその逆になります。
+共通点として、両方のタイプで、ピン13、3、4、10、6、11、15、16はすべて
+COLであり、ピン9、14、8、12、1、7、2、5はすべてROWです。左上隅の最初のLEDを点灯さ
+せたい場合、CA型LEDドットマトリックスでは、ピン9をHigh、ピン13をLowに設定します。
+CC型の場合は、ピン13をHigh、ピン9をLowに設定します。最初の列全体を点灯させたい場合、
+CA型ではピン13をLowに設定し、ROWのピン9、14、8、12、1、7、2、5をHighに設定します。
+CC型では、ピン13をHighに設定し、ROWのピン9、14、8、12、1、7、2、5をLowに設定します。
+以下の図を参考にして、さらに理解を深めてください。
 
-Below the figures show their internal structure. You can see in a CA LED
-dot matrix, ROW represents the anode of the LED, and COL is cathode;
-it's contrary for a CC one. One thing in common: for both types, pin 13,
-3, 4, 10, 6, 11, 15, and 16 are all COL, when pin 9, 14, 8, 12, 1, 7, 2,
-and 5 are all ROW. If you want to turn on the first LED at the top left
-corner, for a CA LED dot matrix, just set pin 9 as High and pin 13 as
-Low, and for a CC one, set pin 13 as High and pin 9 as Low. If you want
-to light up the whole first column, for CA, set pin 13 as Low and ROW 9,
-14, 8, 12, 1, 7, 2, and 5 as High, when for CC, set pin 13 as High and
-ROW 9, 14, 8, 12, 1, 7, 2, and 5 as Low. Consider the following figures
-for better understanding.
 
-The internal view:
+
+内部構造：
+
 
 |img_788bs_sche|
 
-Pin numbering corresponding to the above rows and columns:
+上記の行と列に対応するピン番号：
 
 =========== ====== ====== ===== ====== ===== ====== ====== ======
 **COL**     **1**  **2**  **3** **4**  **5** **6**  **7**  **8**
@@ -53,12 +53,11 @@ Pin numbering corresponding to the above rows and columns:
 **Pin No.** **9**  **14** **8** **12** **1** **7**  **2**  **5**
 =========== ====== ====== ===== ====== ===== ====== ====== ======
 
-In addition, two 74HC595 chips are used here. One is to control the rows
-of the LED dot matrix while the other, the columns.
+さらに、ここでは2つの74HC595チップが使用されています。一つはLEDドットマトリックスの行を制御し、もう一つは列を制御します。
 
 
-**Example**
+**例**
 
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_788bs` (MicroPythonユーザー向け)
+* :ref:`py_bubble_level` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_788bs` (Arduinoユーザー向け)

@@ -1,30 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 18:  Push Button Control of LEDs in Micropython
+レッスン18：MicroPythonでのLEDのプッシュボタン制御
 =============================================================================
 
-This tutorial covers using push buttons to toggle an LED on and off with the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してプッシュボタンでLEDをオン・オフする方法について説明します：
 
-* **Introduction**: Overview of using push buttons to control LEDs.
-* **Homework Solution**: Solution for toggling an LED with a push button.
-* **Circuit Setup**: Wiring a push button to GPIO 14 and an LED to GPIO 15.
-* **Toggle Logic**: Explains logic for toggling LED state using button press.
-* **Practical Demonstration**: Step-by-step demo of toggling the LED with the button.
-* **Homework Assignment**: Use multiple buttons to control RGB LED colors.
+* **はじめに**: プッシュボタンを使ってLEDを制御する方法を紹介します。
+* **宿題の解決法**: プッシュボタンでLEDを切り替える方法を説明します。
+* **回路の設定**: プッシュボタンをGPIO14に、LEDをGPIO15に接続します。
+* **トグルロジック**: ボタンを押すことでLEDの状態を切り替えるロジックを説明します。
+* **実践デモンストレーション**: プッシュボタンを使ってLEDを切り替えるステップバイステップのデモンストレーションを行います。
+* **宿題**: 複数のボタンを使用してRGB LEDの色を制御する課題。
 
-**Video**
+
+
+**ビデオ**
 
 .. raw:: html
 

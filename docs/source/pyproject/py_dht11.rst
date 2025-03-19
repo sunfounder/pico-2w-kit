@@ -1,46 +1,45 @@
-.. note::
+.. note:: 
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで仲間と一緒に、Raspberry Pi、Arduino、ESP32について深く学んでいきましょう。
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **なぜ参加するべきか？**
 
-    **Why Join?**
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。
+    - **学び・シェア**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先取り情報をいち早くゲットできます。
+    - **特別割引**: 最新製品を特別価格でお得に購入できます。
+    - **お祭りプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加できます。
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求して、創造していきませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しよう！
 
 .. _py_dht11:
 
-6.2 Measuring Temperature and Humidity with DHT11
+6.2 DHT11を使った温度と湿度の測定
 =======================================================
 
-In this lesson, we'll learn how to use a **DHT11 temperature and humidity sensor** with the Raspberry Pi Pico 2 W. The DHT11 is a basic, low-cost digital sensor that can measure ambient temperature and humidity, providing a calibrated digital output.
+このレッスンでは、Raspberry Pi Pico 2 Wを使って **DHT11温湿度センサー** を使用する方法を学びます。DHT11は、周囲の温度と湿度を測定できる、基本的で低価格なデジタルセンサーで、キャリブレーションされたデジタル出力を提供します。
 
 |img_Dht11|
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトに必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名称
+        - このキットに含まれる部品
+        - リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -48,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -66,44 +65,43 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Understanding the DHT11 Sensor**
+**DHT11センサーの理解**
 
-The **DHT11** sensor uses a capacitive humidity sensor and a thermistor to measure the surrounding air. It outputs a digital signal on the data pin, and it's fairly simple to use, but requires precise timing to read data.
+**DHT11** センサーは、周囲の空気を測定するために、キャパシタンス型湿度センサーと熱抵抗素子を使用しています。データピンでデジタル信号を出力し、使いやすいですが、データを読み取るためには正確なタイミングが必要です。
 
-* Temperature Range: 0–50 °C with ±2 °C accuracy
-* Humidity Range: 20–80% RH with ±5% accuracy
-* Sampling Rate: 1 Hz (once every second)
+* 温度範囲：0〜50 °C、精度±2 °C
+* 湿度範囲：20〜80% RH、精度±5%
+* サンプリングレート：1 Hz（1秒ごと）
 
-**Schematic**
+**回路図**
 
 |sch_dht11|
 
 
-**Wiring**
+**配線図**
 
 
 |wiring_dht11|
 
-**Writing the Code**
+**コードの作成**
 
-Let's write a MicroPython program to read temperature and humidity values from the DHT11 sensor.
+DHT11センサーから温度と湿度の値を読み取るためのMicroPythonプログラムを書きます。
 
 .. note::
 
-    * Open the ``6.2_temperature_humidity.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * ``6.2_temperature_humidity.py`` を ``pico-2w-kit-main/micropython`` から開くか、コードをThonnyにコピーして、「実行」ボタンをクリックするか、F5を押してください。
+    * 正しいインタプリタが選択されていることを確認してください：MicroPython (Raspberry Pi Pico).COMxx。
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
 
-     
     
-    * Here you need to use the library called ``dht.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * このコードでは ``dht.py`` ライブラリを使用します。ライブラリがPicoにアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -111,24 +109,24 @@ Let's write a MicroPython program to read temperature and humidity values from t
    import utime
    import dht
 
-   # Initialize the DHT11 sensor
+   # DHT11センサーの初期化
    sensor = dht.DHT11(Pin(16))
 
    while True:
       try:
-         # Trigger measurement
+         # 測定開始
          sensor.measure()
-         # Read values
-         temperature = sensor.temperature  # In Celsius
-         humidity = sensor.humidity        # In Percent
-         # Print values
+         # 値を読み取る
+         temperature = sensor.temperature  # 摂氏
+         humidity = sensor.humidity        # パーセント
+         # 値を表示
          print("Temperature: {}°C   Humidity: {}%".format(temperature, humidity))
       except OSError as e:
          print("Failed to read sensor.")
-      # Wait before the next reading
+      # 次の読み取り前に待機
       utime.sleep(2)
 
-Once the code is running, the temperature and humidity readings will display in the Thonny Shell.
+コードが実行されると、温度と湿度の値がThonnyシェルに表示されます。
 
 .. code-block::
 
@@ -139,28 +137,28 @@ Once the code is running, the temperature and humidity readings will display in 
   Temperature: 29.2°C   Humidity: 60.0%
   Temperature: 29.3°C   Humidity: 60.0%
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート:
 
-   * ``machine.Pin``: For controlling the GPIO pins.
-   * ``utime``: Contains time-related functions.
-   * ``dht``: The library for DHT sensors.
+   * ``machine.Pin``: GPIOピンを制御するためのモジュール。
+   * ``utime``: 時間関連の関数を含むモジュール。
+   * ``dht``: DHTセンサー用のライブラリ。
 
-#. Initialize the Sensor:
+#. センサーの初期化:
 
    .. code-block:: python
 
       sensor = dht.DHT11(Pin(16))
       Creates an instance of the DHT11 sensor connected to GP16.
 
-#. Main Loop:
+#. メインループ:
 
-   * ``sensor.measure()``: Triggers the sensor to take a measurement.
-   * ``sensor.temperature``: Reads the temperature in Celsius.
-   * ``sensor.humidity``: Reads the humidity percentage.
-   * ``Exception Handling``: Catches any errors that occur during reading.
-   * ``utime.sleep(2)``: Waits 2 seconds between readings.
+   * ``sensor.measure()``: センサーに測定を開始させます。
+   * ``sensor.temperature``: 摂氏の温度を読み取ります。
+   * ``sensor.humidity``: 湿度のパーセントを読み取ります。
+   * ``Exception Handling``: 読み取り中のエラーをキャッチします。
+   * ``utime.sleep(2)``: 2秒間待機して、次の読み取りを行います。
 
    .. code-block:: python
 
@@ -174,41 +172,41 @@ Once the code is running, the temperature and humidity readings will display in 
             print("Failed to read sensor.")
          utime.sleep(2)
 
-**Experimenting Further**
+**さらに試してみる**
 
-* Convert Temperature to Fahrenheit:
+* 摂氏を華氏に変換する:
 
    .. code-block:: python
 
       temperature_f = temperature * 9 / 5 + 32
       print("Temperature: {}°F   Humidity: {}%".format(temperature_f, humidity))
 
-* Display Readings on an LCD:
+* LCDに読み取り結果を表示する:
 
-  Integrate an LCD display to show the readings without a computer.
+  LCDディスプレイを統合して、コンピュータなしで結果を表示します。
 
 
-* Set Up Alerts:
+* アラートを設定する:
 
-  Use an LED or buzzer to alert when temperature or humidity exceeds certain thresholds.
+  温度や湿度が特定の閾値を超えたときに、LEDやブザーでアラートを出すように設定します。
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* Incorrect Readings:
+* 読み取りエラー:
 
-  * Ensure the sensor is connected properly.
-  * Check for loose wires or poor connections.
+  * センサーが正しく接続されていることを確認してください。
+  * ワイヤの緩みや接続不良を確認してください。
 
-* Failed to Read Sensor:
+* センサーの読み取りに失敗:
 
-  This may happen occasionally due to timing issues. The code includes a try-except block to handle this.
+  タイミングの問題で発生することがあります。コードにはこのエラーを処理するためのtry-exceptブロックが含まれています。
 
-* Pull-Up Resistor:
+* プルアップ抵抗:
 
-  If the sensor doesn't work, ensure that a pull-up resistor is connected between VCC and Data pins if your sensor requires it.
+  センサーが動作しない場合、センサーが必要とする場合は、VCCとデータピンの間にプルアップ抵抗を接続してください。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to use the DHT11 temperature and humidity sensor with the Raspberry Pi Pico 2. Monitoring environmental conditions is a fundamental aspect of many projects, from weather stations to home automation systems.
+このレッスンでは、Raspberry Pi Pico 2を使用してDHT11温湿度センサーを操作する方法を学びました。環境条件を監視することは、天気予報システムやホームオートメーションシステムなど、さまざまなプロジェクトの基本的な要素です。
 
 * `Try Statement - Python Docs <https://docs.python.org/3/reference/compound_stmts.html?#the-try-statement>`_

@@ -1,47 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームのサポートを受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **独占的なプレビュー**: 新製品の発表や先取り情報をいち早くチェックできます。
+    - **特別割引**: 最新製品に対する独占的な割引を楽しめます。
+    - **祭事プロモーションとプレゼント**: ギブアウェイや休日のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造しませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _ar_led:
 
 
 
-2.1 - Hello, LED! 
+2.1 - こんにちは、LED！
 =======================================
 
-Welcome to your first hardware project with the Raspberry Pi Pico 2 W! In this lesson, we'll learn how to make an LED blink using MicroPython. This simple project is a great way to get started with physical computing and understand how to control hardware with code.
-
-
+Raspberry Pi Pico 2 Wを使った最初のハードウェアプロジェクトへようこそ！このレッスンでは、MicroPythonを使ってLEDを点滅させる方法を学びます。このシンプルなプロジェクトは、物理コンピューティングの始め方を学ぶ素晴らしい方法であり、コードでハードウェアを制御する方法を理解する手助けとなります。
 * :ref:`cpn_led`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトには、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体キットを購入するのが非常に便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - Pico 2 W スターターキット
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -49,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - 部品紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -67,60 +65,58 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1（220Ω）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Schematic**
+**回路図**
 
 |sch_led|
 
-By setting the GPIO pin high or low, you're controlling the voltage output of that pin. When the pin is high, current flows through the LED (limited by the resistor), causing it to light up. When the pin is low, no current flows, and the LED turns off.
+GPIOピンを高または低に設定することで、そのピンの出力電圧を制御しています。ピンが高の場合、LEDを通って電流が流れ（抵抗で制限されます）、LEDが点灯します。ピンが低の場合、電流は流れず、LEDは消灯します。
 
-**Wiring**
+**配線**
 
 |wiring_led|
 
 
-**Writing the Code**
+**コードの記述**
 
 .. note::
 
-    * You can open the file ``2.1_hello_led.ino`` under the path of ``pico-2w-kit-main/arduino/2.1_hello_led``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * 「 ``2.1_hello_led.ino`` 」ファイルを「 ``pico-2w-kit-main/arduino/2.1_hello_led`` 」のパスで開きます。
+    * または、このコードを **Arduino IDE** にコピーしてください。
+    * アップロードボタンをクリックする前に、Raspberry Pi Picoボードと正しいポートを選択してください。
 
 .. code-block:: Arduino
 
-    const int ledPin = 15;  // GPIO pin connected to the LED
+    const int ledPin = 15;  // LEDに接続されたGPIOピン
 
     void setup() {
-      pinMode(ledPin, OUTPUT);  // Initialize the GPIO pin as an output
+      pinMode(ledPin, OUTPUT);  // GPIOピンを出力として初期化
     }
 
     void loop() {
-      digitalWrite(ledPin, HIGH);  // Turn the LED on
-      delay(1000);                 // Wait for 1 second
-      digitalWrite(ledPin, LOW);   // Turn the LED off
-      delay(1000);                 // Wait for 1 second
+      digitalWrite(ledPin, HIGH);  // LEDをオン
+      delay(1000);                 // 1秒間待機
+      digitalWrite(ledPin, LOW);   // LEDをオフ
+      delay(1000);                 // 1秒間待機
     }
 
-After uploading the code, you should see the LED turn on for 1 second and turn off for 1 second.
+コードをアップロードした後、LEDは1秒間点灯し、次の1秒間は消灯を繰り返します。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Variable Declaration:
+#. 変数の宣言：
 
-   Declare a constant integer ``ledPin`` and assign it the value 15, which corresponds to GPIO pin 15 where the LED is connected.
+   定数整数型 ``ledPin`` を宣言し、その値を15に設定します。これは、LEDが接続されているGPIOピン15に対応しています。
 
    .. code-block:: Arduino
 
@@ -128,7 +124,7 @@ After uploading the code, you should see the LED turn on for 1 second and turn o
 
 #. Setup Function:
 
-   The ``setup()`` function runs once when the board is powered on or reset. Here, we initialize ``ledPin`` as an output pin using ``pinMode()``.
+   ``setup()`` 関数は、ボードが電源オンまたはリセットされると一度だけ実行されます。ここでは、 ``pinMode()`` を使用して ``ledPin`` を出力ピンとして初期化します。
 
    .. code-block:: Arduino
 
@@ -138,9 +134,9 @@ After uploading the code, you should see the LED turn on for 1 second and turn o
 
 #. Loop Function:
 
-   * The ``loop()`` function runs repeatedly after ``setup()``.
-   * Use ``digitalWrite()`` to set the voltage of ``ledPin``. Setting it to ``HIGH`` provides 3.3V, turning the LED on. Setting it to ``LOW`` drops the voltage to 0V, turning the LED off. 
-   * The ``delay(1000)`` function creates a 1-second pause between the on and off states.
+   * ``loop()`` 関数は、 ``setup()`` の後に繰り返し実行されます。
+   * ``digitalWrite()`` を使用して、 ``ledPin`` の電圧を設定します。 ``HIGH`` に設定すると3.3Vが供給され、LEDが点灯します。 ``LOW`` に設定すると、電圧は0Vに下がり、LEDが消灯します。
+   * ``delay(1000)`` 関数は、LEDのオン・オフの間に1秒の待機時間を作成します。
 
    .. code-block:: Arduino
 
@@ -151,12 +147,12 @@ After uploading the code, you should see the LED turn on for 1 second and turn o
           delay(1000);
         }
 
-**Additional Tips**
+**追加のヒント**
 
-* **Understanding the Resistor**: The 220Ω resistor limits the current flowing through the LED, preventing it from burning out.
-* **Polarity Matters**: Ensure the LED is connected correctly. The longer leg is the positive anode and should be connected to the resistor leading to the GPIO pin.
-* **Experiment**: Try changing the ``delay(1000)`` values to make the LED blink faster or slower.
+* **抵抗の理解**: 220Ωの抵抗は、LEDに流れる電流を制限し、LEDが焼き切れないように保護します。
+* **極性の重要性**: LEDが正しく接続されていることを確認してください。長い脚がプラスのアノードで、GPIOピンに接続される抵抗に向けて接続する必要があります。
+* **実験**: ``delay(1000)`` の値を変更して、LEDの点滅速度を速くしたり遅くしたりしてみましょう。
 
-**Conclusion**
+**結論**
 
-Congratulations! You've built your first hardware project with the Raspberry Pi Pico 2 W. This simple LED blinking project is a fundamental step into the world of physical computing. From here, you can explore more complex projects by adding buttons, sensors, and other components.
+おめでとうございます！Raspberry Pi Pico 2 Wを使用した最初のハードウェアプロジェクトを作成しました。このシンプルなLED点滅プロジェクトは、物理コンピューティングの世界への基本的なステップです。ここからは、ボタン、センサー、その他のコンポーネントを追加して、さらに複雑なプロジェクトに挑戦できます。

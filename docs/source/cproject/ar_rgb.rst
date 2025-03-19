@@ -1,56 +1,56 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行公開をいち早くチェックできます。
+    - **特別割引**: 新しい製品に対して独占的な割引を楽しめます。
+    - **祭典のプロモーションやプレゼント**: プレゼントや祝日プロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _ar_rgb:
 
 
-2.4 Colorful Light
+2.4 カラフルな光
 ====================
 
-In this lesson, we'll explore how to create various colors using an RGB LED and the Raspberry Pi Pico 2 W. By adjusting the intensity of the red, green, and blue components, we can mix light to produce a wide range of colors. This concept is based on the additive method of color mixing.
+このレッスンでは、RGB LEDとRaspberry Pi Pico 2 Wを使用してさまざまな色を作成する方法を学びます。赤、緑、青の各成分の強度を調整することで、光を混ぜて幅広い色を生成できます。この概念は、加法混色法に基づいています。
 
-**What is Additive Color Mixing?**
+**加法混色とは？**
 
-Additive color mixing involves combining different colors of light to produce new colors. When red, green, and blue light are combined in various intensities, they can create any color in the visible spectrum. For example:
+加法混色は、異なる色の光を組み合わせて新しい色を作る方法です。赤、緑、青の光をさまざまな強度で組み合わせると、可視光線の範囲内の任意の色を作り出すことができます。例えば：
 
-* **Red + Green = Yellow**
-* **Red + Blue = Magenta**
-* **Green + Blue = Cyan**
-* **Red + Green + Blue = White**
+* **赤 + 緑 = 黄**
+* **赤 + 青 = マゼンタ**
+* **緑 + 青 = シアン**
+* **赤 + 緑 + 青 = 白**
 
 |img_rgb_mix|
 
 * :ref:`cpn_rgb`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全セットを購入するのが便利なので、こちらのリンクをチェックしてください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前
+        - このキットのアイテム
+        - 購入リンク
+    *   - Pico 2 Wスターターキット
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから、コンポーネントを個別に購入することもできます。
 
 
 .. list-table::
@@ -58,16 +58,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -76,65 +76,64 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 3(1-330Ω, 2-220Ω)
+        - 3（1-330Ω、2-220Ω）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_rgb`
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+**回路図**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+PWMピンGP13、GP14、GP15は、それぞれRGB LEDの赤、緑、青のピンを制御し、共通カソードピンをGNDに接続します。これにより、異なるPWM値でこれらのピンに光を重ねることで、特定の色を表示できます。
 
 
 
-**Wiring**
+**配線**
 
 |img_rgb_pin|
 
-The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually connected to GND; the left pin next to the longest pin is Red; and the two pins on the right are Green and Blue.
+RGB LEDには4つのピンがあります。長いピンは共通カソードピンで、通常GNDに接続します。最長のピンの隣にある左のピンは赤、右側の2つのピンは緑と青です。
 
-We use a higher resistance for the red LED because it is typically brighter than the green and blue LEDs at the same current.
-
+赤色LEDは、緑や青のLEDに比べて同じ電流でより明るいため、赤色用には高い抵抗値を使用します。
 
 |wiring_rgb|
 
 
-**Writing the Code**
+**コード作成**
 
-Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
+ここでは、描画ソフトウェア（例えばペイント）でお気に入りの色を選んで、それをRGB LEDで表示する方法を学びます。
 
 .. note::
 
-    * You can open the file ``2.4_colorful_light.ino`` under the path of ``pico-2w-kit-main/arduino/2.4_colorful_light``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * ``2.4_colorful_light.ino`` ファイルを ``pico-2w-kit-main/arduino/2.4_colorful_light`` から開きます。
+    * または、このコードを **Arduino IDE** にコピーします。
+    * **Raspberry Pi Pico 2 W** ボードと正しいポートを選択して、「アップロード」をクリックします。
+    
 
 
 
 .. code-block:: Arduino
 
-   // Define the GPIO pins connected to the RGB LED
-   const int redPin = 13;   // Red pin
-   const int greenPin = 14; // Green pin
-   const int bluePin = 15;  // Blue pin
+   // RGB LEDに接続されたGPIOピンを定義
+   const int redPin = 13;   // 赤ピン
+   const int greenPin = 14; // 緑ピン
+   const int bluePin = 15;  // 青ピン
 
    void setup() {
-     // Initialize each RGB LED pin as an output
+     // 各RGB LEDピンを出力として初期化
      pinMode(redPin, OUTPUT);
      pinMode(greenPin, OUTPUT);
      pinMode(bluePin, OUTPUT);
    }
 
-   // Function to set the color
+   // 色を設定する関数
    void setColor(unsigned char red, unsigned char green, unsigned char blue) {
      analogWrite(redPin, red);
      analogWrite(greenPin, green);
@@ -142,46 +141,46 @@ Here, we can choose our favorite color in drawing software (such as paint) and d
    }
 
    void loop() {
-     // Red color
+     // 赤色
      setColor(255, 0, 0);
      delay(1000);
 
-     // Green color
+     // 緑色
      setColor(0, 255, 0);
      delay(1000);
 
-     // Blue color
+     // 青色
      setColor(0, 0, 255);
      delay(1000);
 
-     // Yellow color (Red + Green)
+     // 黄色（赤 + 緑）
      setColor(255, 255, 0);
      delay(1000);
 
-     // Cyan color (Green + Blue)
+     // シアン（緑 + 青）
      setColor(0, 255, 255);
      delay(1000);
 
-     // Magenta color (Red + Blue)
+     // マゼンタ（赤 + 青）
      setColor(255, 0, 255);
      delay(1000);
 
-     // White color (Red + Green + Blue)
+     // 白色（赤 + 緑 + 青）
      setColor(255, 255, 255);
      delay(1000);
 
-     // Turn off
+     // オフ
      setColor(0, 0, 0);
      delay(1000);
    }
 
-After uploading the code, the RGB LED should cycle through red, green, blue, yellow, cyan, magenta, white, and then turn off, with each color displayed for one second.
+コードをアップロード後、RGB LEDは赤、緑、青、黄色、シアン、マゼンタ、白色に順番に変わり、1秒ごとに各色が表示され、その後オフになります。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Defining the Pins:
+#. ピンの定義：
 
-   Assign the GPIO pins connected to the RGB LED components.
+   RGB LEDの各成分に接続されたGPIOピンを定義します。
 
    .. code-block:: Arduino
 
@@ -189,9 +188,9 @@ After uploading the code, the RGB LED should cycle through red, green, blue, yel
         const int greenPin = 14;
         const int bluePin = 15;
 
-#. Initializing the Pins:
+#. ピンの初期化：
 
-   Set the RGB LED pins as outputs.
+   RGB LEDのピンを出力として設定します。
 
    .. code-block:: Arduino
 
@@ -201,9 +200,9 @@ After uploading the code, the RGB LED should cycle through red, green, blue, yel
           pinMode(bluePin, OUTPUT);
         }
 
-#. Setting the Color:
+#. 色の設定：
 
-   The ``setColor`` function uses PWM (Pulse Width Modulation) to adjust the brightness of each color component.
+   ``setColor`` 関数はPWM（パルス幅変調）を使用して、各色成分の明るさを調整します。
 
    .. code-block:: Arduino
 
@@ -213,35 +212,32 @@ After uploading the code, the RGB LED should cycle through red, green, blue, yel
           analogWrite(bluePin, blue);
         }
 
-#. Looping Through Colors:
+#. 色をループで表示：
 
-   In the ``loop()`` function, we call ``setColor()`` with different values to display various colors, each followed by a 1-second delay.
-
+   ``loop()`` 関数内で ``setColor()`` を呼び出し、異なる値を使ってさまざまな色を表示し、1秒ごとに色が変わるようにします。
 
    .. code-block:: Arduino
 
         void loop() {
-          // Red color
+          // 赤色
           setColor(255, 0, 0);
           delay(1000);
           ...
 
-          // Turn off
+          // オフ
           setColor(0, 0, 0);
           delay(1000);
         }
 
+**色の実験**
 
-**Experimenting with Colors**
+``setColor()`` に渡す値を調整することで、自分だけの色を作ることができます。値は0（オフ）から255（最大輝度）の範囲です。例えば：
 
-You can create your own colors by adjusting the values passed to ``setColor()``. The values range from 0 (off) to 255 (full brightness). For example:
+* オレンジ：setColor(255, 165, 0);
+* 紫：setColor(128, 0, 128);
 
-* Orange: setColor(255, 165, 0);
-* Purple: setColor(128, 0, 128);
+特定の色のRGB値を調べるためには、カラーピッカーツールや **ペイント** などのソフトウェアを使用できます。
 
-To find RGB values for specific colors, you can use a color picker tool or software like **Paint**.
+**結論**
 
-**Conclusion**
-
-In this lesson, you've learned how to control an RGB LED using the Raspberry Pi Pico and how to create various colors by mixing red, green, and blue light. This knowledge is fundamental for projects involving LED displays, mood lights, or any application requiring color control.
-
+このレッスンでは、Raspberry Pi Picoを使用してRGB LEDを制御し、赤、緑、青の光を混ぜることでさまざまな色を作成する方法を学びました。この知識は、LEDディスプレイ、ムードライト、または色の制御を必要とするアプリケーションに役立つ基本的な技術です。

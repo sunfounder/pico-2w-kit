@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者とさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートのサポート**: コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: 技術を向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先取り情報に早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占的な割引を楽しめます。
+    - **祭事プロモーションとギブアウェイ**: ギブアウェイや休日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _ar_keypad:
 
-4.2 Using a 4x4 Keypad
+4.2 4x4キーパッドの使用
 =================================================
 
-In this lesson, we'll learn how to interface a **4x4 matrix keypad** with the Raspberry Pi Pico 2 W to detect which keys are pressed. Matrix keypads are commonly used in devices like calculators, telephones, vending machines, and security systems for numerical input.
+このレッスンでは、 **4x4マトリックスキーパッド** をRaspberry Pi Pico 2 Wに接続して、どのキーが押されたかを検出する方法を学びます。マトリックスキーパッドは、計算機、電話、自動販売機、セキュリティシステムなどで数値入力用として一般的に使用されています。
 
 * :ref:`cpn_keypad`
 
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトには、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入することは非常に便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - Pico 2 W スターターキット
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -65,52 +65,51 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4（10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
         - 1
         - |link_keypad_buy|
 
-**Understanding the 4x4 Keypad**
+**4x4キーパッドの理解**
 
-A 4x4 keypad consists of:
+4x4キーパッドは以下のように構成されています：
 
-* **16 keys** arranged in 4 rows and 4 columns.
-* **8 pins**: 4 connected to rows and 4 connected to columns.
+* **16個のキー** が4行4列に配置されています。
+* **8本のピン**：4本が行に、4本が列に接続されています。
 
-When you press a key, it connects a specific row and column, allowing us to identify the key based on the row and column numbers.
+キーを押すと、特定の行と列が接続され、行と列の番号に基づいてキーを識別することができます。
 
-Here's how the keys are arranged:
+キーの配置は以下の通りです：
 
 |img_keypad|
 
-**Schematic**
+**回路図**
 
 |sch_keypad_ar|
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+キーボードの行（G2〜G5）は高い状態に設定されており、G6〜G9のどれかが高い状態として読み取られた場合、どのキーが押されたかを知ることができます。
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+たとえば、G6が高い状態で読み取られた場合、数字のキー1が押されたことになります。これは、数字キー1の制御ピンがG2とG6に接続されており、数字キー1が押されるとG2とG6が接続され、G6も高い状態になるからです。
 
 
-**Wiring**
+**配線**
 
 |wiring_keypad_ar|
 
-**Writing the Code**
-
+**コードの書き方**
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``pico-2w-kit-main/arduino/4.2_4x4_keypad``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit Keypad`` library is used here, you can install it from the **Library Manager**.
+    * ``4.2_4x4_keypad.ino`` ファイルを ``pico-2w-kit-main/arduino/4.2_4x4_keypad`` のパスで開くことができます。
+    * または、このコードを **Arduino IDE** にコピーしてください。
+    * アップロードボタンをクリックする前に、Raspberry Pi Picoボードと正しいポートを選択してください。
+    * ここでは ``Adafruit Keypad`` ライブラリを使用しています。 **ライブラリマネージャー** からインストールできます。
 
       .. image:: img/lib_ad_keypad.png
 
@@ -118,11 +117,11 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
 
     #include "Adafruit_Keypad.h"
 
-    // Define the number of rows and columns
+    // 行と列の数を定義
     const byte ROWS = 4;
     const byte COLS = 4;
 
-    // Define the keymap for the keypad
+    // キーパッドのキーマップを定義
     char keys[ROWS][COLS] = {
       { '1', '2', '3', 'A' },
       { '4', '5', '6', 'B' },
@@ -130,59 +129,59 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
       { '*', '0', '#', 'D' }
     };
 
-    // Connect to the row pinouts of the keypad
+    // キーパッドの行のピンアウトに接続
     byte rowPins[ROWS] = { 2, 3, 4, 5 };
 
-    // Connect to the column pinouts of the keypad
+    // キーパッドの列のピンアウトに接続
     byte colPins[COLS] = { 6, 7, 8, 9 };
 
-    // Create the Keypad object
+    // Keypadオブジェクトを作成
     Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
     void setup() {
-      // Initialize Serial communication
+      // シリアル通信を初期化
       Serial.begin(115200);
 
-      // Initialize the keypad
+      // キーパッドを初期化
       myKeypad.begin();
     }
 
     void loop() {
-      // Update the state of keys
+      // キーの状態を更新
       myKeypad.tick();
 
-      // Check if there are any new keypad events
+      // 新しいキーパッドイベントがあるかチェック
       while (myKeypad.available()) {
-        // Read the keypad event
+        // キーパッドイベントを読み取る
         keypadEvent e = myKeypad.read();
 
-        // Check if the event is a key press
+        // イベントがキー押下かどうかをチェック
         if (e.bit.EVENT == KEY_JUST_PRESSED) {
-          // Print the key value to the Serial Monitor
+          // シリアルモニターにキー値を出力
           Serial.println((char)e.bit.KEY);
         }
       }
 
-      delay(10); // Short delay to improve stability
+      delay(10); // 安定性を向上させるための短い遅延
     }
 
-After uploading the code, press any key on the keypad. The corresponding key label (e.g., '1', 'A') should appear in the Serial Monitor.
+コードをアップロードした後、キーパッドの任意のキーを押します。対応するキーラベル（例えば「1」や「A」など）がシリアルモニターに表示されるはずです。
 
-Ensure that each key press is accurately detected and displayed. Test all keys to confirm proper functionality.
+各キーの押下が正確に検出され、表示されていることを確認してください。すべてのキーをテストして、正常に動作することを確認しましょう。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Including the Library:
+#. ライブラリのインクルード：
 
-   This line includes the Adafruit Keypad library, which provides functions to interact with the keypad.
+   この行は、キーパッドとやり取りするための関数を提供するAdafruit Keypadライブラリをインクルードします。
 
    .. code-block:: arduino
 
       #include "Adafruit_Keypad.h"
 
-#. Defining the Keypad Layout:
+#. キーパッドレイアウトの定義：
 
-   ``ROWS`` and ``COLS`` define the dimensions of the keypad. ``keys`` is a 2D array representing the label of each key on the keypad.
+   ``ROWS`` と ``COLS`` は、キーパッドの行数と列数を定義します。 ``keys`` は、キーパッド上の各キーに対応するラベルを示す2D配列です。
 
    .. code-block:: arduino
 
@@ -196,18 +195,18 @@ Ensure that each key press is accurately detected and displayed. Test all keys t
         { '*', '0', '#', 'D' }
       };
 
-#. Connecting the Keypad to GPIO Pins:
+#. キーパッドをGPIOピンに接続：
 
-   ``rowPins`` and ``colPins`` are arrays that store the GPIO pins connected to the keypad's rows and columns, respectively.
+   ``rowPins`` と ``colPins`` は、キーパッドの行と列に接続されたGPIOピンを格納する配列です。
 
    .. code-block:: arduino
 
       byte rowPins[ROWS] = { 2, 3, 4, 5 };
       byte colPins[COLS] = { 6, 7, 8, 9 };
 
-#. Initializing the Keypad Object:
+#. キーパッドオブジェクトの初期化：
 
-   This line creates an instance of the ``Adafruit_Keypad`` class, initializing it with the keymap and pin configurations.
+   この行では、 ``Adafruit_Keypad`` クラスのインスタンスを作成し、キーマップとピン設定で初期化します。
 
    .. code-block:: arduino
 
@@ -215,53 +214,53 @@ Ensure that each key press is accurately detected and displayed. Test all keys t
 
 #. Setup Function:
 
-   Initializes serial communication for debugging and starts the keypad.
+   シリアル通信を初期化し、デバッグ用にキーパッドを開始します。
 
    .. code-block:: arduino
 
       void setup() {
-        Serial.begin(115200);    // Initialize serial communication at 115200 baud
-        myKeypad.begin();        // Initialize the keypad
+        Serial.begin(115200);    // シリアル通信を115200ボーレートで初期化
+        myKeypad.begin();        // キーパッドを初期化
       }
 
 #. Loop Function:
 
-   * Continuously checks for key events.
-   * When a key is pressed, it prints the key value to the Serial Monitor.
+   * キーイベントを継続的にチェックします。
+   * キーが押されると、シリアルモニターにそのキーの値を表示します。
 
    .. code-block:: arduino
 
       void loop() {
-        myKeypad.tick(); // Update the state of keys
+        myKeypad.tick(); // キーの状態を更新
 
         while (myKeypad.available()) {
-          keypadEvent e = myKeypad.read(); // Read the keypad event
+          keypadEvent e = myKeypad.read(); // キーパッドイベントを読み取る
 
           if (e.bit.EVENT == KEY_JUST_PRESSED) {
-            Serial.println((char)e.bit.KEY); // Print the pressed key
+            Serial.println((char)e.bit.KEY); // 押されたキーを表示
           }
         }
-        delay(10); // Short delay to improve stability
+        delay(10); // 安定性を向上させるための短い遅延
       }
 
-**Further Exploration**
+**さらなる探索**
 
-* Implementing Key Debouncing:
+* キーデバウンスの実装：
 
-  Improve the reliability of key detection by implementing debouncing techniques to filter out false triggers caused by mechanical noise.
+  機械的なノイズによる誤動作を防ぐために、キーデバウンステクニックを実装してキー検出の信頼性を向上させます。
 
-* Creating a Password Entry System:
+* パスワード入力システムの作成：
 
-  Use the keypad to enter a password and control access to certain functionalities in your project.
+  キーパッドを使用してパスワードを入力し、プロジェクト内で特定の機能へのアクセスを制御します。
 
-* Integrating with Other Components:
+* 他のコンポーネントとの統合：
 
-  Combine the keypad with LCD displays, LEDs, or buzzers to create more complex user interfaces.
+  キーパッドをLCDディスプレイ、LED、またはブザーと組み合わせて、より複雑なユーザーインターフェースを作成します。
 
-* Building a Simple Calculator:
+* シンプルな計算機の作成：
 
-  Use the keypad to input numbers and perform basic arithmetic operations displayed on an LCD.
+  キーパッドを使用して数字を入力し、LCDに表示された基本的な算術演算を実行します。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to interface a 4x4 matrix keypad with the Raspberry Pi Pico using the Adafruit Keypad library. By detecting key presses, you can create interactive projects such as key-based input systems, password entry mechanisms, and more. Understanding how to read and process keypad inputs is essential for building user-friendly interfaces in your electronics projects.
+このレッスンでは、Adafruit Keypadライブラリを使用して、4x4マトリックスキーパッドをRaspberry Pi Picoにインターフェースさせる方法を学びました。キー押下を検出することで、キーベースの入力システムやパスワード入力メカニズムなど、インタラクティブなプロジェクトを作成できます。キーパッドの入力を読み取り、処理する方法を理解することは、エレクトロニクスプロジェクトにおける使いやすいインターフェースを構築するために重要です。

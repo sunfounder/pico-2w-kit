@@ -1,33 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 26:  Drawing a Circle on the OLED 1306 Display
+レッスン26：OLED 1306ディスプレイで円を描く
 =============================================================================
 
-This tutorial covers drawing shapes on an OLED display using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してOLEDディスプレイ上に図形を描く方法について説明します：
 
-* **Introduction**: Focuses on drawing a circle on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**: Reviews using the OLED display and setting up the SSD1306 library.
-* **Drawing a Circle**: Explains using trigonometric functions to calculate x and y positions, and provides a code example to draw a circle.
-* **Enhancing the Circle Drawing**: Demonstrates drawing a filled circle and an arc by adjusting radii and angles.
-* **Practical Demonstration**: Shows the circle and filled circle on the OLED, optimizing drawing speed.
-* **Homework Assignment**: Task to create a "floating potato chip" shape on the OLED display.
-
-
+* **はじめに**: Raspberry Pi Pico Wを使用してOLEDディスプレイ上に円を描くことに焦点を当てます。
+* **復習とセットアップ**: OLEDディスプレイの使用とSSD1306ライブラリの設定をレビューします。
+* **円の描画**: 三角関数を使用してx座標とy座標を計算する方法を説明し、円を描くためのコード例を提供します。
+* **円描画の向上**: 半径や角度を調整して、塗りつぶされた円や弧を描く方法をデモンストレーションします。
+* **実践デモンストレーション**: OLED上で円や塗りつぶされた円を表示し、描画速度を最適化します。
+* **宿題**: OLEDディスプレイ上に「浮かぶポテトチップ」形状を作成する課題。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

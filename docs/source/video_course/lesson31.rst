@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 31: Sensorless Remote Weather Station Project
+レッスン31：センサーレスリモート気象ステーションプロジェクト
 =============================================================================
 
-This tutorial covers creating a sensorless weather station using the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wを使用してセンサーレス気象ステーションを作成する方法について説明します：
 
-* **Connecting to WiFi**: Import libraries and connect to WiFi using a WLAN object.
-* **Fetching Weather Data**: Use OpenWeatherMap API to get real-time weather data, requiring an API key.
-* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
-* **Code Explanation**: Use ``urequests.get()`` to fetch data, convert Unix time, and adjust pressure units.
-* **Displaying Weather Data**: Print temperature, humidity, pressure, conditions, and wind speed.
-* **Homework Assignment**: Add a display and create a portable, battery-powered weather station.
+* **WiFiへの接続**: ライブラリをインポートし、WLANオブジェクトを使用してWiFiに接続します。
+* **天気データの取得**: OpenWeatherMap APIを使用してリアルタイムの天気データを取得し、APIキーが必要です。
+* **JSONデータの解析**: JSONレスポンスから気温、湿度、気圧、日の出と日の入りの時間を抽出します。
+* **コード説明**: ``urequests.get()`` を使用してデータを取得し、Unix時間を変換し、気圧単位を調整します。
+* **天気データの表示**: 気温、湿度、気圧、天候条件、風速を表示します。
+* **宿題**: ディスプレイを追加し、携帯型でバッテリー駆動の気象ステーションを作成します。
 
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

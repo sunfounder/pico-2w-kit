@@ -1,66 +1,66 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_mpr121:
 
-MPR121 Module
+MPR121モジュール
 ===========================
 
 |img_mpr121|
 
 
-* **3.3V**: Power supply
-* **IRQ**: Open Collector Interrupt Output Pin, active low
-* **SCL**: I2C Clock
-* **SDA**: I2C Data
-* **ADD**: I2C Address Select Input Pin. Connect the ADDR pin to the VSS, VDD, SDA or SCL line, the resulting I2C addresses are 0x5A, 0x5B, 0x5C and 0x5D respectively
-* **GND**: Ground
-* **0~11**: Electrode 0~11, electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
+* **3.3V**: 電源供給
+* **IRQ**: オープンコレクタ割り込み出力ピン、アクティブロー
+* **SCL**: I2Cクロック
+* **SDA**: I2Cデータ
+* **ADD**: I2Cアドレス選択入力ピン。ADDRピンをVSS、VDD、SDA、またはSCLラインに接続すると、それぞれ0x5A、0x5B、0x5C、0x5DのI2Cアドレスが設定されます。
+* **GND**: グラウンド
+* **0~11**: 電極0~11、電極はタッチセンサーです。通常、電極は金属の一片やワイヤーで構成されますが、ワイヤーの長さや電極の材料によってはセンサーのトリガーが難しくなる場合があります。そのため、MPR121では電極をトリガーおよびアン・トリガーするために必要な設定を行うことができます。
 
-**MPR121 OVERVIEW**
+**MPR121 概要**
 
-The MPR121 is a second-generation capacitive touch sensor controller, succeeding the MPR03x series. It offers enhanced internal functionality and significant new features, including:
+MPR121は、MPR03xシリーズに続く第二世代の静電容量式タッチセンサコントローラです。内部機能が強化され、次のような新しい特徴が追加されています：
 
-- Support for a higher number of electrodes
-- A hardware-configurable I2C address
-- An improved filtering system with built-in debounce functionality
-- Fully independent electrodes with automatic configuration capabilities
+- より多くの電極をサポート
+- ハードウェア設定可能なI2Cアドレス
+- 内蔵デバウンス機能を備えた改善されたフィルタリングシステム
+- 完全独立した電極と自動設定機能
 
-Additionally, the MPR121 includes a 13th simulated sensing channel specifically designed for near-proximity detection, utilizing the multiplexed sensing inputs.
+さらに、MPR121には近接検出専用の第13のシミュレートされたセンサーチャンネルが搭載されており、複数のセンサー入力を利用します。
 
 * `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
 
-**Features**
+**特徴**
 
-* Low power operation
-    • 1.71 V to 3.6 V supply operation
-    • 29 μA supply current at 16 ms sampling interval period
-    • 3 μA Stop mode current
-* 12 capacitance sensing inputs
-    • 8 inputs are multifunctional for LED driver and GPIO
-* Complete touch detection
-    • Auto-configuration for each sensing input
-    • Auto-calibration for each sensing input
-    • Touch/release threshold and debounce for touch detection
-* I2C interface, with Interrupt output
-* 3 mm x 3 mm x 0.65 mm 20 lead QFN package
-* -40°C to +85°C operating temperature range
+* 低消費電力動作
+    • 1.71 V ～ 3.6 V の電源供給で動作
+    • 16 ms サンプリング間隔時の供給電流 29 μA
+    • ストップモード時の電流 3 μA
+* 12個の静電容量センサ入力
+    • 8つの入力はLEDドライバおよびGPIOとして多機能
+* 完全なタッチ検出
+    • 各センサ入力の自動設定
+    • 各センサ入力の自動キャリブレーション
+    • タッチ検出用のタッチ/リリース閾値とデバウンス
+* I2Cインターフェース、割り込み出力
+* 3 mm x 3 mm x 0.65 mm の20リードQFNパッケージ
+* -40°C ～ +85°C の動作温度範囲
 
 
 
-**Example**
+**例**
 
-* :ref:`py_mpr121` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`ar_mpr121` (For Arduino User)
+* :ref:`py_mpr121` (MicroPythonユーザー向け)
+* :ref:`py_fruit_piano` (MicroPythonユーザー向け)
+* :ref:`ar_mpr121` (Arduinoユーザー向け)

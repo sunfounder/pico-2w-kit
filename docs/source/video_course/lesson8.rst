@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の深い洞察を仲間と共に探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティやチームのサポートを得て解決します。
+    - **学習＆共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品発表や特別情報への早期アクセスが可能です。
+    - **特別割引**: 最新製品に対する独占割引をお楽しみください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しましょうか？[|link_sf_facebook|]をクリックして今日参加してください！
 
-Lesson 8:  Compound Conditionals and If Statements in MicroPython
+レッスン8：MicroPythonでの複合条件式とif文
 ==========================================================================
 
-This tutorial covers using a potentiometer to control three LEDs with the Raspberry Pi Pico W and addresses a critical logical error:
+このチュートリアルでは、ポテンショメーターを使用してRaspberry Pi Pico Wで3つのLEDを制御し、重要な論理エラーを解決する方法について説明します：
 
-* **Homework Solution Review**: Recap of identifying a logical flaw in the LED control code.
-* **Logical Error Explanation**: Discusses the error where LED states overlapped, stressing the need for mutually exclusive conditions.
-* **Real-World Example**: Demonstrates the importance of avoiding logical errors through a UV sterilization scenario.
-* **Compound Conditionals**: Introduces using AND/OR operators to create precise, non-overlapping conditions.
-* **Circuit Setup and Code**: Detailed wiring and corrected code for LED control.
-* **Practical Demonstration**: Shows the corrected code in action with proper LED behavior.
-* **Next Steps**: Preview of the next Lesson on simulating analog output.
+* **宿題の解決法レビュー**: LED制御コード内で論理的な欠陥を識別したことの復習。
+* **論理エラーの説明**: LEDの状態が重複するエラーについて説明し、排他的な条件を使用する必要性を強調します。
+* **実際の例**: UV滅菌シナリオを通じて、論理エラーを避ける重要性を実演します。
+* **複合条件式**: AND/OR演算子を使用して、正確で重複しない条件を作成する方法を紹介します。
+* **回路設定とコード**: LED制御のための詳細な配線図と修正されたコードを提供します。
+* **実践的なデモンストレーション**: 正しく修正されたコードを使って、適切なLEDの動作を示します。
+* **次のステップ**: 次回のレッスンでアナログ出力をシミュレートする方法を紹介します。
 
-
-**Video**
+**ビデオ**
 
 .. raw:: html
 

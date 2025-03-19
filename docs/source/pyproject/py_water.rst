@@ -1,53 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題をコミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **特別割引**: 最新製品の限定割引をお楽しみいただけます。
+    - **お得なプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を始めませんか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _py_water:
 
-2.14 Feel the Water Level
+2.14 水位の測定
 =====================================
 
-In this lesson, we will learn how to use a **water sensor** with the Raspberry Pi Pico 2 W to detect the presence of water or measure the water level. This sensor is commonly used in projects related to rainfall detection, water level monitoring, and liquid leakage alerts.
+このレッスンでは、 **水位センサー** を使って、Raspberry Pi Pico 2 Wで水の存在を検出したり、水位を測定する方法を学びます。このセンサーは、降雨検出、水位監視、液体漏れアラートなどのプロジェクトでよく使用されます。
 
-**How the Water Sensor Works**
+**水位センサーの仕組み**
 
-The water sensor has a series of exposed parallel wire traces that detect water droplets or measure the volume of water. As water comes into contact with these traces, the sensor outputs an analog signal. The more water that comes into contact with the sensor, the higher the output value, which can be read by the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC).
+水位センサーには、露出した平行の配線がいくつかあり、水滴を検出したり、水の量を測定したりします。水がこれらの配線に接触すると、センサーはアナログ信号を出力します。水が多く接触するほど、出力値が高くなり、この値はRaspberry Pi Pico 2 Wのアナログ-デジタル変換器（ADC）で読み取ることができます。
 
 |img_water_sensor|
 
-* Do not fully submerge the sensor in water. Only the area with the exposed traces should come into contact with water.
-* Using the sensor in a humid environment while powered may cause the probe to corrode faster, so it is recommended to power the sensor only when taking readings.
+* センサーを水に完全に沈めないでください。露出した配線部分だけが水に接触するようにしてください。
+* センサーを湿った環境で電源を入れたまま使用すると、プローブが早く腐食する可能性があるため、読み取り時のみセンサーに電源を供給することをお勧めします。
 
 * :ref:`cpn_water_level`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キットを購入するのが便利です。こちらから購入できます：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Pico 2 W スターターキット	
+        - 450以上
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -55,16 +55,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -73,7 +73,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_water_level`
@@ -82,86 +82,83 @@ You can also buy them separately from the links below.
 
 
 
-**Schematic**
+**回路図**
 
 |sch_water|
 
-
-**Wiring**
-
+**配線**
 
 |wiring_water|
 
-**Writing the Code**
+**コードの記述**
 
-We'll write a simple MicroPython program to read the analog value from the water sensor and print it to the console. As the water sensor is submerged, the value read by GP28 will increase.
+水位センサーからアナログ値を読み取ってコンソールに表示する簡単なMicroPythonプログラムを作成しましょう。水位センサーが水に沈むにつれて、GP28で読み取られる値が増加します。
 
 .. note::
 
-    * Open the ``2.14_feel_the_water_level.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * ``2.14_feel_the_water_level.py`` を ``pico-2w-kit-main/micropython`` フォルダから開くか、コードをThonnyにコピーして「実行」ボタンをクリックするか、F5キーを押してください。
+    * 正しいインタプリタ（MicroPython（Raspberry Pi Pico）.COMxx）が選択されていることを確認してください。
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize ADC on GP28
+    # GP28でADCを初期化
     sensor = machine.ADC(28)
 
     while True:
-        # Read the analog value from the sensor
+        # センサーからアナログ値を読み取る
         value = sensor.read_u16()
         print("Water level reading:", value)
-        utime.sleep(0.2)  # Delay to avoid flooding the console with data
+        utime.sleep(0.2)  # コンソールにデータが溢れないように遅延を追加
 
 
-When the code is running, slowly submerge the water sensor into water, watching the values printed to the console. As the sensor detects more water, the printed value will increase.
+コードを実行すると、水位センサーをゆっくり水に沈めながら、コンソールに表示される値を確認できます。センサーが多くの水を検出するほど、表示される値は増加します。
 
-**Learn More: Using the Sensor for Leak Detection**
+**さらに学ぶ: 漏水検出にセンサーを使う**
 
-We can also use the water sensor to detect liquid leakage by treating it like a digital sensor. Here's how:
+水位センサーをデジタルセンサーのように扱い、液体の漏れを検出することもできます。方法は以下の通りです：
 
-#. Measure the Baseline Value:
+#. 基準値を測定する：
 
-   * First, take a reading from the water sensor in a completely dry environment. Record this value to use as a threshold.
-   * If the sensor's reading goes above the baseline threshold, we can assume that the sensor is in contact with water, indicating a potential leak.
+   * 最初に、水位センサーを完全に乾燥した環境で読み取ります。この値を基準として記録します。
+   * センサーの読み取り値が基準値を超えると、センサーが水に接触しているとみなされ、漏水の可能性を示唆します。
 
-#. Leak Detection Code:
+#. 漏水検出コード：
 
-   In this example, we'll check if the sensor's reading exceeds the threshold value (which you'll need to set based on your environment).
+   以下の例では、センサーの読み取り値が基準値を超えるかどうかをチェックします（基準値は環境に応じて設定する必要があります）。
 
    .. code-block:: python
 
       import machine
       import utime
   
-      # Initialize ADC on GP28
+      # GP28でADCを初期化
       sensor = machine.ADC(28)
   
-      # Set a threshold value based on dry readings (adjust as needed)
+      # 乾燥した状態での基準値を設定（必要に応じて調整）
       threshold = 30000
   
       while True:
-          # Read the analog value from the sensor
+          # センサーからアナログ値を読み取る
           value = sensor.read_u16()
           
-          # Check if the value exceeds the threshold, indicating water exposure
+          # 値が基準値を超えた場合、水に接触していると判断
           if value > threshold:
               print("Liquid leakage detected!")
           
-          utime.sleep(0.2)  # Delay for readability
-    
+          utime.sleep(0.2)  # 可読性を高めるために遅延を追加
 
-   The program checks if the sensor's value exceeds a predefined threshold. If the value is higher, it prints a message indicating water or liquid leakage.
 
-**Practical Applications**
+プログラムは、センサーの値が事前に設定した閾値を超えるかどうかを確認します。値が高ければ、水や液体の漏れが発生していることを示すメッセージが表示されます。
 
-* **Leak Detection**: Place the sensor near water pipes, and it can alert you if a pipe starts leaking.
-* **Water Level Monitoring**: Use the sensor in tanks or containers to monitor the water level and trigger alerts or actions.
-* **Rain Detection**: Install the sensor outdoors (with appropriate protection) to detect rainfall.
+**実用的な応用**
 
-**Conclusion**
+* **漏水検出**: センサーを水道管の近くに設置し、漏れが発生するとアラートを送信します。
+* **水位監視**: タンクや容器にセンサーを設置して水位を監視し、アラートやアクションをトリガーします。
+* **降雨検出**: センサーを屋外に設置（適切な保護を施して）して、降雨を検出します。
 
-The water sensor is a simple yet powerful tool for detecting water levels or potential liquid leakage. By integrating it with the Raspberry Pi Pico 2 W, you can create responsive and useful water detection systems for a variety of applications.
+**結論**
 
+水位センサーは、水位の測定や液体漏れの検出に使用できるシンプルで強力なツールです。Raspberry Pi Pico 2 Wと組み合わせることで、さまざまなアプリケーションに対応するレスポンシブで有用な水検出システムを作成できます。

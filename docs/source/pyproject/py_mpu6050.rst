@@ -1,46 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を深く学び、仲間たちと一緒に探索していきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させましょう。
+    - **特別な先行公開**: 新製品の発表や先取り情報をいち早くゲットできます。
+    - **特別割引**: 最新製品をお得に購入できる割引を提供します。
+    - **季節ごとのプロモーションとプレゼント**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 さあ、私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _py_mpu6050:
 
-6.3 6-axis Motion Tracking
+6.3 6軸モーショントラッキング
 =====================================
 
 
-In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2 W. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
+このレッスンでは、Raspberry Pi Pico 2 Wと **MPU-6050** 6軸モーショントラッキングセンサーをインターフェースする方法を学びます。MPU-6050は、3軸ジャイロスコープと3軸加速度計を組み合わせており、I2C通信プロトコルを通じて生のセンサーデータを提供します。
 
 * :ref:`cpn_mpu6050`
 
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご参照ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 
 .. list-table::
@@ -48,16 +48,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -66,40 +66,39 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数個
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Understanding the MPU-6050 Sensor**
+**MPU-6050センサーの理解**
 
-The **MPU-6050** sensor is widely used in projects that require motion tracking and orientation detection, such as drones, robotics, and gaming devices.
+**MPU-6050** センサーは、ドローン、ロボット、ゲームデバイスなど、モーショントラッキングと向き検出を必要とするプロジェクトで広く使用されています。
 
-* **Accelerometer**: Measures acceleration forces along the X, Y, and Z axes. This includes gravitational acceleration, allowing you to determine the tilt or orientation of the sensor.
-* **Gyroscope**: Measures rotational velocity around the X, Y, and Z axes, providing information about how fast the sensor is spinning.
+* **加速度計**: X、Y、Z軸に沿った加速度を測定します。これには重力加速度も含まれ、センサーの傾きや向きを判断できます。
+* **ジャイロスコープ**: X、Y、Z軸を中心に回転速度を測定し、センサーの回転速度を提供します。
 
-**Schematic**
+**回路図**
 
 |sch_mpu6050_ar|
 
 
-**Wiring**
+**配線**
 
 |wiring_mpu6050_ar|
 
-**Writing the Code**
+**コードの作成**
 
-Let's write a MicroPython script to read accelerometer and gyroscope data from the MPU-6050 sensor.
+MPU-6050センサーから加速度計とジャイロスコープのデータを読み取るMicroPythonスクリプトを作成しましょう。
 
 .. note::
 
-    * Open the ``6.3_6axis_motion_tracking.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * ``pico-2w-kit-main/micropython`` から ``6.3_6axis_motion_tracking.py`` を開くか、コードをThonnyにコピーして、「実行」をクリックするか、F5を押します。
+    * 正しいインタープリターが選択されていることを確認してください：MicroPython（Raspberry Pi Pico）.COMxx。
      
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * ここでは ``imu.py`` と ``vector3d.py`` を使用する必要があります。これらがPicoにアップロードされているか確認し、詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -107,10 +106,10 @@ Let's write a MicroPython script to read accelerometer and gyroscope data from t
    import utime
    from imu import MPU6050
 
-   # Initialize I2C interface (I2C0) with SDA on GP4 and SCL on GP5
+   # I2Cインターフェースの初期化（I2C0） SDAをGP4、SCLをGP5に設定
    i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
 
-   # Initialize the MPU-6050 sensor
+   # MPU-6050センサーの初期化
    mpu = MPU6050(i2c)
 
    def read_accelerometer():
@@ -126,73 +125,73 @@ Let's write a MicroPython script to read accelerometer and gyroscope data from t
    def main():
       """Main loop to read and print sensor data."""
       while True:
-         # Read accelerometer data
+         # 加速度計データを読み取る
          ax, ay, az = read_accelerometer()
          print("Accelerometer (g) - X: {:.3f}, Y: {:.3f}, Z: {:.3f}".format(ax, ay, az))
          
-         # Pause for readability
+         # 見やすくするために一時停止
          utime.sleep(0.5)
          
-         # Read gyroscope data
+         # ジャイロスコープデータを読み取る
          gx, gy, gz = read_gyroscope()
          print("Gyroscope (°/s) - X: {:.3f}, Y: {:.3f}, Z: {:.3f}".format(gx, gy, gz))
          
-         # Pause before the next set of readings
+         # 次のデータ読み取り前に一時停止
          utime.sleep(0.5)
 
-   # Run the main function
+   # メイン関数を実行
    if __name__ == "__main__":
       main()
 
 
-The script prints accelerometer and gyroscope readings alternately every 0.5 seconds.
+このスクリプトは、加速度計とジャイロスコープの読み取り値を交互に0.5秒ごとに表示します。
 
-* Accelerometer Output:
+* 加速度計の出力：
 
   .. code-block::
 
      Accelerometer (g) - X: 0.000, Y: 0.000, Z: 1.000
 
-  At rest, you should see values close to 0 g on X and Y axes, and approximately 1 g on the Z-axis due to gravity.
+  静止状態では、X軸とY軸は0gに近く、Z軸は重力の影響でおおよそ1gになります。
 
-* Gyroscope Output:
+* ジャイロスコープの出力：
 
   .. code-block::
 
      Gyroscope (°/s) - X: 0.000, Y: 0.000, Z: 0.000
 
-  When stationary, the gyroscope readings should be close to 0 °/s on all axes.
-  Rotating the sensor will change these values, reflecting the angular velocity.
+  静止状態では、ジャイロスコープの読み取り値は全て0°/sに近くなります。
+  センサーを回転させると、これらの値が変化し、角速度を反映します。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Imports and Setup:
+#. インポートとセットアップ：
 
 
-   * ``machine.I2C and machine.Pin``: For hardware interface.
-   * ``utime``: For timing functions.
-   * ``MPU6050``: The sensor class from the imu.py library.
+   * ``machine.I2C`` と ``machine.Pin``: ハードウェアインターフェースのためのモジュール。
+   * ``utime``: 時間関連の関数。
+   * ``MPU6050``: imu.pyライブラリからのセンサークラス。
 
-#. I2C Initialization:
+#. I2Cの初期化：
 
-   Sets up I2C bus 0 with SDA on GP4 and SCL on GP5. The frequency is set to 400 kHz for fast communication.
+   I2Cバス0を、GP4（SDA）とGP5（SCL）に設定し、通信速度は400 kHzに設定します。
 
    .. code-block:: python
 
       i2c = I2C(0, sda=Pin(4), scl=Pin(5), freq=400000)
 
 
-#. Sensor Initialization:
+#. センサーの初期化：
 
-   Creates an instance of the MPU-6050 sensor using the I2C interface.
+   I2Cインターフェースを使用してMPU-6050センサーのインスタンスを作成します。
 
    .. code-block:: python
 
       mpu = MPU6050(i2c)
 
-#. Reading Accelerometer Data:
+#. 加速度計データの読み取り：
 
-   Accesses the accelerometer data and returns the X, Y, Z values.
+   加速度計データにアクセスし、X、Y、Zの値を取得します。
 
    .. code-block:: python
 
@@ -201,9 +200,9 @@ The script prints accelerometer and gyroscope readings alternately every 0.5 sec
          return accel.x, accel.y, accel.z
 
 
-#. Reading Gyroscope Data:
-   
-   Accesses the gyroscope data and returns the X, Y, Z values.
+#. ジャイロスコープデータの読み取り：
+
+   ジャイロスコープデータにアクセスし、X、Y、Zの値を取得します。
 
    .. code-block:: python
 
@@ -212,33 +211,33 @@ The script prints accelerometer and gyroscope readings alternately every 0.5 sec
          return gyro.x, gyro.y, gyro.z
 
 
-#. Main Loop:
+#. メインループ：
 
-   * Reads and prints accelerometer data.
-   * Waits for 0.5 seconds.
-   * Reads and prints gyroscope data.
-   * Waits for another 0.5 seconds before repeating.
+   * 加速度計データを読み取り、表示します。
+   * 0.5秒待機します。
+   * ジャイロスコープデータを読み取り、表示します。
+   * もう一度0.5秒待機してから繰り返します。
 
    .. code-block:: python
 
       def main():
          while True:
-            # Read and print accelerometer data
+            # 加速度計データを読み取って表示
             ax, ay, az = read_accelerometer()
             print("Accelerometer (g) - X: {:.3f}, Y: {:.3f}, Z: {:.3f}".format(ax, ay, az))
             
             utime.sleep(0.5)
             
-            # Read and print gyroscope data
+            # ジャイロスコープデータを読み取って表示
             gx, gy, gz = read_gyroscope()
             print("Gyroscope (°/s) - X: {:.3f}, Y: {:.3f}, Z: {:.3f}".format(gx, gy, gz))
             
             utime.sleep(0.5)
 
 
-#. Program Entry Point:
+#. プログラムのエントリーポイント：
 
-   Ensures that ``main()`` is called when the script is executed directly.
+   スクリプトが直接実行されるときに、 ``main()`` を呼び出すことを保証します。
 
    .. code-block:: python
 
@@ -246,42 +245,42 @@ The script prints accelerometer and gyroscope readings alternately every 0.5 sec
          main()
 
 
-**Experimenting Further**
+**さらに実験する**
 
-* **Focus on One Sensor**: To concentrate on either accelerometer or gyroscope data, you can comment out the print statements for the other sensor.
-* **Data Visualization**: Use tools or software to plot the sensor data in real-time for better visualization.
-* **Calculating Orientation**: Implement algorithms to calculate pitch and roll from the accelerometer data.
-* **Motion Detection**: Create a program that performs actions when certain motion thresholds are exceeded.
+* **1つのセンサーに集中する**: 加速度計またはジャイロスコープデータのみに集中したい場合、他方のセンサーのprint文をコメントアウトできます。
+* **データの可視化**: センサーデータをリアルタイムでプロットするツールやソフトウェアを使用して、視覚的に確認します。
+* **向きの計算**: 加速度計データからピッチとロールを計算するアルゴリズムを実装します。
+* **動作検出**: 特定の動作閾値を超えた時にアクションを実行するプログラムを作成します。
 
-**Understanding Sensor Data**
+**センサーデータの理解**
 
-* Accelerometer:
+* 加速度計：
 
-  * Measures acceleration forces in g (gravitational force).
-  * Useful for detecting orientation, tilt, and linear motion.
+  * g（重力加速度）単位で加速度を測定します。
+  * 向き、傾き、直線的な動きを検出するのに役立ちます。
 
-* Gyroscope:
+* ジャイロスコープ：
 
-  * Measures rotational velocity in degrees per second (°/s).
-  * Useful for detecting rotation and angular motion.
+  * °/s（毎秒度）単位で回転速度を測定します。
+  * 回転や角度の動きを検出するのに役立ちます。
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* No Output or Errors:
+* 出力がない、またはエラーが出る：
 
-  * Verify the wiring connections, especially SDA and SCL lines.
-  * Ensure that the sensor is powered correctly.
+  * 配線接続、特にSDAとSCLのラインを確認してください。
+  * センサーに正しい電源が供給されていることを確認してください。
 
-* Static Readings:
+* 静止した読み取り：
 
-  * If the readings don't change when moving the sensor, check for loose connections.
-  * Make sure the correct I2C address is being used.
+  * センサーを動かしても読み取りが変化しない場合は、接続が緩んでいないか確認してください。
+  * 正しいI2Cアドレスが使用されているか確認してください。
 
-* Inconsistent Data:
+* 一貫性のないデータ：
 
-  * Environmental vibrations can affect sensor readings.
-  * Place the sensor on a stable surface when testing.
+  * 環境の振動がセンサーの読み取りに影響を与えることがあります。
+  * テスト時にはセンサーを安定した面に置いてください。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to interface the MPU-6050 accelerometer and gyroscope sensor with the Raspberry Pi Pico 2 W. By reading the raw sensor data, you can explore a wide range of applications involving motion detection, orientation tracking, and more.
+このレッスンでは、MPU-6050加速度計とジャイロスコープセンサーをRaspberry Pi Pico 2 Wとインターフェースする方法を学びました。生のセンサーデータを読み取ることで、モーション検出、向きの追跡、さらには他のさまざまなアプリケーションに応用することができます。

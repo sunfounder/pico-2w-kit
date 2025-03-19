@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 68:  MicroPython Multicore Threading Example with LEDs and Servo
+レッスン68: MicroPythonでのマルチコアスレッディング例（LEDとサーボ）
 ===================================================================================
 
-This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:
+このチュートリアルでは、Raspberry Pi Pico Wを使用して両コアでサーボとLEDを制御する方法について説明します：
 
-* **Wiring Setup**: Connect red LED to GPIO 15, green LED to GPIO 14, servo to GPIO 17, power to pin 40, and ground to pin 38.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, and ``Servo``. Set up pins for LEDs and servo. Define ``other_core`` function to blink LEDs based on servo direction.
-* **Homework Assignment**: Modify code to blink red LED for clockwise and green LED for counterclockwise servo movement.
+* **配線セットアップ**: 赤いLEDをGPIO 15、緑のLEDをGPIO 14、サーボをGPIO 17に接続し、電源をピン40、グランドをピン38に接続します。
+* **コード実装**: ``machine``, ``time``, ``_thread``, ``Servo`` をインポートします。LEDとサーボのピンを設定します。サーボの方向に基づいてLEDを点滅させる ``other_core`` 関数を定義します。
+* **宿題課題**: 時計回りの動きで赤いLEDが、反時計回りの動きで緑のLEDが点滅するようにコードを修正してください。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

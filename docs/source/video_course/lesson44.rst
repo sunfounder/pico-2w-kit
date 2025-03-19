@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティのFacebookページへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちとさらに深く掘り下げていきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティや当チームの助けを借りて解決します。
+    - **学習＆共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表や先行情報に早期アクセスが可能です。
+    - **特別割引**: 最新製品の独占割引を楽しんでください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探究し、創造してみませんか？[|link_sf_facebook|]をクリックして今すぐ参加！
 
-Lesson 44: Measure Simultaneous 0 G on All Three Axis of MPU6050
+レッスン44：MPU6050を使って三軸全てで同時に0Gを測定
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch, roll, and vertical displacement:
+このチュートリアルでは、Raspberry Pi Pico WにMPU6050センサーを使用して、ピッチ、ロール、垂直変位を測定する方法について説明します：
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
+* **セットアップ**: 提供された回路図を使用して、MPU6050をRaspberry Pi Pico Wに接続します。
 
-* **Measuring Zero G**: Determine conditions where all accelerometer axes read zero G simultaneously by dropping the sensor.
+* **ゼロGの測定**: センサーを落下させることにより、加速度計の全軸が同時にゼロGを示す条件を特定します。
 
-* **Homework**: Create a method to determine the height from which the sensor was dropped by calculating the time it was in freefall and using the acceleration of gravity.
+* **宿題**: センサーが自由落下していた時間を計算し、重力加速度を使用して落下した高さを決定する方法を作成します。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

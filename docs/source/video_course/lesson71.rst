@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間ともっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 71:  Allow Thread to Complete Task Before Termination
+レッスン71: スレッドがタスクを終了する前に完了することを許可する
 ===================================================================================
 
-This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico Wでマルチスレッドプログラムを上品に終了する方法について説明します：
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch for servo movement, using threading for clean exits.
-* **Handling Clean Termination**: Use a global ``running`` variable to manage loop execution. Implement a lock to control critical sections. Ensure the servo completes movement before terminating.
-* **Homework Assignment**: Modify the program to handle more components or sensors, ensuring clean termination in all cases.
+* **配線セットアップ**: サーボコントロールをGPIO 17に接続し、電源をピン40、グランドをピン38に接続します。ボタンをGPIO 16とグランドに接続します。
+* **コード実装**: ``machine`` 、 ``time`` 、 ``_thread`` 、 ``Servo`` をインポートします。ボタンとサーボのピンをセットアップします。スレッドを使用してサーボの動きを切り替えるトグルスイッチを実装し、きれいな終了を行います。
+* **クリーンな終了の処理**: グローバルな ``running`` 変数を使用してループ実行を管理します。クリティカルセクションを制御するロックを実装します。サーボが動きを完了する前に終了しないようにします。
+* **宿題課題**: プログラムを修正して、より多くのコンポーネントやセンサーを扱い、すべてのケースでクリーンな終了を確保します。
 
 
-**Video**
+**ビデオ**
 
 .. raw:: html
 

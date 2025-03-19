@@ -1,47 +1,46 @@
+.. note:: 
 
-.. note::
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **参加する理由**
 
-    **Why Join?**
+    - **専門家サポート**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **特別割引**: 新しい製品に対する独占的な割引が利用できます。
+    - **季節限定キャンペーンとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
+1.4 Picoにライブラリをアップロード
 ===================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico 2 W first, and then we can run the code directly later.
+一部のプロジェクトでは、追加のライブラリが必要です。そこで、まずこれらのライブラリをRaspberry Pi Pico 2 Wにアップロードし、その後直接コードを実行できるようにします。
 
-#. Download the relevant code from the link below.
+#. 以下のリンクから関連するコードをダウンロードします。
 
 
    * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
 
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Thonny IDEを開き、PicoをマイクロUSBケーブルでコンピュータに接続し、右下の「MicroPython (Raspberry Pi Pico).COMXX」インタプリタを選択します。
 
     .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. 上部のナビゲーションバーで、 **View** -> **Files** をクリックします。
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``pico-2w-kit-main/micropython/libs`` folder.
+#. 前にダウンロードした`コードパッケージ `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ のフォルダにパスを切り替え、次に ``pico-2w-kit-main/micropython/libs`` フォルダに移動します。
 
     .. image:: img/th_path.png
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+#. ``libs/`` フォルダ内のすべてのファイルまたはフォルダを選択し、右クリックして **Upload to** をクリックします。アップロードには少し時間がかかります。
 
     .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. これで、アップロードしたファイルが ``Raspberry Pi Pico`` ドライブ内に表示されるようになります。
 
     .. image:: img/th_done.png

@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookでSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ趣味を持つ仲間と深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの支援を受けて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルアップに役立つヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や先行公開に早期アクセスができます。
+    - **特別割引**: 最新製品を独占的な割引で楽しめます。
+    - **祭りのプロモーションとギフトの抽選**: ギフトの抽選やホリデープロモーションに参加します。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造しませんか？[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-Lesson 61: How to Write Modular Code With Micropython Functions
+レッスン61: MicroPythonでモジュラーコードを書く方法
 =============================================================================
 
-This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:
+このチュートリアルでは、Raspberry Pi Pico WでMicroPythonの関数を使用する方法について説明します：
 
-* **Concept Overview**: Intro to modular programming with functions.
-* **Example Implementation**: Calculate rectangle's perimeter, area, and diagonal using functions. Define and call functions in MicroPython. Use return values to pass results.
-* **Homework Assignment**: Write a program to input grades, find the highest, lowest, calculate average, and sort them using functions.
-* **Key Takeaways**: Learn modular programming, define and use functions in MicroPython.
+* **コンセプトの概要**: 関数を用いたモジュラープログラミングの紹介。
+* **実装例**: 関数を使用して四角形の周囲の長さ、面積、対角線を計算します。MicroPythonで関数を定義して呼び出し、戻り値を使用して結果を渡します。
+* **宿題課題**: 成績を入力し、最高点、最低点を見つけ、平均を計算し、関数を使用して並べ替えるプログラムを書いてください。
+* **キーポイント**: モジュラープログラミングを学び、MicroPythonで関数を定義して使用する方法を習得します。
 
 
-**Video** 
+**ビデオ** 
 
 .. raw:: html
 

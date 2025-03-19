@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティのFacebookページへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちとさらに深く掘り下げていきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 販売後の問題や技術的な課題を、コミュニティや当チームの助けを借りて解決します。
+    - **学習＆共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表や先行情報に早期アクセスが可能です。
+    - **特別割引**: 最新製品の独占割引を楽しんでください。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイや祝日のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探究し、創造してみませんか？[|link_sf_facebook|]をクリックして今すぐ参加！
 
-Lesson 43: Measure Pitch and Roll Using a 3 Axis Accelerometer
+レッスン43：3軸加速度センサーを使用してピッチとロールを測定
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch and roll angles:
+このチュートリアルでは、MPU6050センサーをRaspberry Pi Pico Wに使用して、ピッチとロール角を測定する方法について説明します：
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic and code.
-* **Trigonometry for Tilt Measurement**: Use trigonometric functions to calculate pitch and roll from accelerometer data.
-* **Coding**: Implement and test the calculations in Python to ensure accurate pitch and roll measurements.
-* **Homework**: Find an orientation where X, Y, and Z accelerations read 0G simultaneously and share the solution.
-
-
+* **セットアップ**: 提供された回路図とコードを使用して、MPU6050をRaspberry Pi Pico Wに接続します。
+* **傾斜測定のための三角法**: 加速度センサーのデータからピッチとロールを計算するために三角関数を使用します。
+* **コーディング**: Pythonで計算を実装し、テストして、正確なピッチとロールの測定を確保します。
+* **宿題**: X、Y、Zの加速度が同時に0Gを読むオリエンテーションを見つけ、解決策を共有してください。
 
 
-**Video**
+
+**ビデオ**
 
 .. raw:: html
 

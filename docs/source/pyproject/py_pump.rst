@@ -1,77 +1,74 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を深く学び、仲間たちと一緒に探求していきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートで、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **独占的な先行公開**: 新製品の発表や先取り情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **祭りのプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
 .. _py_pump:
 
-3.6 Pumping
+3.6 ポンプを動かす
 =======================
 
+このレッスンでは、Raspberry Pi Pico 2 Wと **TA6586モータードライバー** を使用して、 **小型水ポンプ** を制御する方法を学びます。
+小型遠心ポンプは、自動植物灌漑システムやミニチュアの水の特徴を作成するプロジェクトに使用できます。
+ポンプの制御は、DCモーターの制御と似ており、同じ原理を使用しています。
 
-In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2 W 
-and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic 
-plant watering systems or creating miniature water features. Controlling the pump is similar to 
-controlling a DC motor, as it uses the same principles.
-
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+その動力部品は電動モーターで、通常のモーターとまったく同じ方法で駆動されます。
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Important Notes Before You Begin**
+**始める前の重要な注意事項**
 
-* **Pump Setup**: Connect the tubing to the pump's outlet. Submerge the pump in water before powering it on.
-* **Avoid Dry Running**: Ensure the pump is always submerged. Running the pump dry can cause overheating and damage the motor.
-* **Prevent Clogging**: If you're using the pump for watering plants, make sure the water is free of debris to prevent clogging.
-* **Priming the Pump**: If water doesn't come out initially, there might be air trapped in the tubing. You may need to prime the pump by allowing water to flow through to remove air bubbles.
+* **ポンプのセットアップ**: ポンプの出口にチューブを接続します。ポンプをオンにする前に、水に浸しておいてください。
+* **乾走行を避ける**: ポンプは常に水中に浸しておく必要があります。ポンプを乾燥状態で運転すると、過熱してモーターが損傷する可能性があります。
+* **詰まりを防ぐ**: ポンプを植物に水をやるために使用している場合は、水にゴミが含まれていないことを確認し、詰まりを防いでください。
+* **ポンプのプライミング**: 初めて水が出ない場合、チューブ内に空気が溜まっている可能性があります。水を流して空気を取り除くことで、ポンプをプライミングする必要があります。
 
+**必要な部品**
 
-**Required Components**
+このプロジェクトで必要な部品は以下の通りです。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品がセットになったキットを購入するのが便利です。こちらのリンクをご覧ください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - 名前    
+        - このキットのアイテム
+        - リンク
+    *   - Pico 2 Wスターターキット    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+また、以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント    
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -80,7 +77,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -91,7 +88,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 8
@@ -100,33 +97,33 @@ You can also buy them separately from the links below.
         -  
 
 
-**Important Notes Before You Begin**
+**始める前の重要な注意事項**
 
-* **Pump Setup**: Connect the tubing to the pump's outlet. Submerge the pump in water before powering it on.
-* **Avoid Dry Running**: Ensure the pump is always submerged. Running the pump dry can cause overheating and damage the motor.
-* **Prevent Clogging**: If you're using the pump for watering plants, make sure the water is free of debris to prevent clogging.
-* **Priming the Pump**: If water doesn't come out initially, there might be air trapped in the tubing. You may need to prime the pump by allowing water to flow through to remove air bubbles.
+* **ポンプのセットアップ**: ポンプの出口にチューブを接続します。ポンプをオンにする前に、水に浸しておいてください。
+* **乾走行を避ける**: ポンプは常に水中に浸しておく必要があります。ポンプを乾燥状態で運転すると、過熱してモーターが損傷する可能性があります。
+* **詰まりを防ぐ**: ポンプを植物に水をやるために使用している場合は、水にゴミが含まれていないことを確認し、詰まりを防いでください。
+* **ポンプのプライミング**: 初めて水が出ない場合、チューブ内に空気が溜まっている可能性があります。水を流して空気を取り除くことで、ポンプをプライミングする必要があります。
 
-**Schematic**
+**回路図**
 
 |sch_pump|
 
 
-**Wiring**
+**配線**
 
-In this circuit, you will see that the button is connected to the RUN pin. This is because the motor is operating with too much current, which may cause the Pico to disconnect from the computer, and the button needs to be pressed (for the Pico's **RUN** pin to receive a low level) to reset.
+この回路では、ボタンがRUNピンに接続されています。これは、モーターが過剰な電流で動作しており、Picoがコンピューターから切断される可能性があるため、ボタンを押すことでPicoの **RUN** ピンが低レベルを受け取り、リセットが行われるようになっています。
 
 |wiring_pump|
 
-**Code**
+**コードの記述**
 
 .. note::
 
-    * Open the ``3.6_pumping.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``pico-2w-kit-main/micropython`` の ``3.6_pumping.py`` ファイルを開くか、このコードをThonnyにコピーして、「実行」をクリックするか、F5を押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Thonnyの右下に「MicroPython（Raspberry Pi Pico）」のインタープリタが選択されていることを確認してください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては :ref:`open_run_code_py` を参照してください。
 
 
 .. code-block:: python
@@ -134,37 +131,37 @@ In this circuit, you will see that the button is connected to the RUN pin. This 
     import machine
     import utime
 
-    # Define the control pins connected to the TA6586
+    # TA6586に接続された制御ピンを定義
     motor1A = machine.Pin(14, machine.Pin.OUT)
     motor2A = machine.Pin(15, machine.Pin.OUT)
 
-    # Start the pump by setting motor1A high and motor2A low
+    # ポンプを起動するためにmotor1Aを高、motor2Aを低に設定
     while True:
         motor1A.high()
         motor2A.low()
 
 
-When the code is running, the pump starts working and you will see water flowing out of the tube at the same time.
+コードを実行すると、ポンプが動作を開始し、同時にチューブから水が流れ出るのが確認できます。
 
-**Understanding the Code**
+**コードの理解**
 
-#. Import Modules:
+#. モジュールのインポート：
 
-   * ``machine``: Access to hardware-related functions.
-   * ``utime``: Time-related functions for delays.
+   * ``machine``: ハードウェア関連の関数にアクセスします。
+   * ``utime``: 遅延に使用する時間関連の関数です。
 
-#. Initialize Control Pins:
+#. 制御ピンの初期化：
 
-   ``motor1A`` and ``motor2A`` control the pump via the TA6586.
+   ``motor1A`` と ``motor2A`` は、TA6586を介してポンプを制御します。
 
    .. code-block:: python
 
       motor1A = machine.Pin(14, machine.Pin.OUT)
       motor2A = machine.Pin(15, machine.Pin.OUT)
 
-#. Start the Pump:
+#. ポンプの起動：
 
-   Sets the pump to run in one direction by applying a high signal to motor1A and a low signal to motor2A.
+   高信号をmotor1Aに、低信号をmotor2Aに適用して、ポンプを一方向に動かします。
 
    .. code-block:: python
 
@@ -173,37 +170,37 @@ When the code is running, the pump starts working and you will see water flowing
 
 
 
-**Troubleshooting Tips**
+**トラブルシューティングのヒント**
 
-* Pump Doesn't Start:
+* ポンプが動作しない：
 
-  * Check all wiring connections.
-  * Make sure the pump is submerged in water.
+  * 配線接続を確認してください。
+  * ポンプが水中に浸されていることを確認してください。
 
-* Pico Becomes Unresponsive:
+* Picoが応答しなくなる：
 
-  * If the Pico disconnects or the program stops, you may need to reset it.
-  * Use the reset connection by momentarily connecting the RUN pin to GND.
+  * Picoが切断されたりプログラムが停止した場合、リセットする必要があります。
+  * RUNピンをGNDに接続してリセットを行ってください。
 
-* Pump Continues Running After Stopping the Script:
+* スクリプト停止後もポンプが動き続ける：
 
-  * The last state of the GPIO pins remains unchanged after stopping the script.
-  * Reset the Pico to stop the pump by connecting RUN to GND.
+  * スクリプトを停止した後、GPIOピンの最後の状態は変更されません。
+  * RUNをGNDに接続してPicoをリセットし、ポンプを停止させてください。
 
   |wiring_run_reset|
 
-**Safety Precautions**
+**安全対策**
 
-* Electrical Safety:
+* 電気安全：
 
-  * Be cautious when working with water and electronics.
-  * Keep the Pico and other electronic components away from water to prevent damage or injury.
+  * 水と電子機器を取り扱う際は十分に注意してください。
+  * Picoや他の電子部品を水から遠ざけて、損傷や怪我を防いでください。
 
-* Pump Care:
+* ポンプの取り扱い：
 
-  * Do not let the pump run dry.
-  * Clean the pump regularly if using it with water that may contain particles.
+  * ポンプを乾燥状態で運転しないでください。
+  * 水に粒子が含まれている場合は、ポンプを定期的に清掃してください。
 
-**Conclusion**
+**結論**
 
-In this lesson, you've learned how to control a small water pump using the Raspberry Pi Pico 2 W and an TA6586 motor driver. This setup can be the foundation for projects like automated plant watering systems or miniature fountains.
+このレッスンでは、Raspberry Pi Pico 2 WとTA6586モータードライバーを使用して、小型水ポンプを制御する方法を学びました。このセットアップは、自動植物灌漑システムやミニチュアの噴水などのプロジェクトの基礎となります。

@@ -1,68 +1,68 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！仲間たちと一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く手に入れましょう。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベント・プレゼント**: プレゼント企画や祝日セールに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-8.10 Get started with bluetooth
+8.10 Bluetoothを使い始める
 =================================
 
-The Raspberry Pi Pico 2 W features an Infineon CYW43439 modem, providing 2.4GHz 802.11n Wi-Fi and Bluetooth 5.2 connectivity. In MicroPython, only Bluetooth Low Energy (BLE) is currently supported; classic Bluetooth isn't available.
+Raspberry Pi Pico 2 Wは、Infineon CYW43439モデムを搭載しており、2.4GHz 802.11n Wi-FiとBluetooth 5.2接続を提供しています。MicroPythonでは、現在Bluetooth Low Energy (BLE)のみがサポートされており、従来のBluetoothは利用できません。
 
-Several BLE examples are provided to help you begin developing Bluetooth projects. Before starting, refer to the following article to familiarize yourself with the basic concepts of BLE.
+BLEのプロジェクトを開発するためのいくつかの例が提供されています。始める前に、以下の記事を参考にして、BLEの基本概念を理解してください。
 
-Basic Concepts of Bluetooth Low Energy
+Bluetooth Low Energyの基本概念
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Bluetooth Low Energy (BLE)** is a low-power wireless communication technology, designed specifically for short-range interactions. Distinguished from classic Bluetooth, BLE focuses on power efficiency and rapid connection, making it an ideal choice for a range of applications including Internet of Things (IoT) devices and health monitoring equipment.
+**Bluetooth Low Energy (BLE)** は、特に短距離の通信に特化した低消費電力の無線通信技術です。従来のBluetoothとは異なり、BLEは電力効率と迅速な接続に重点を置いており、IoTデバイスや健康管理機器など、さまざまな用途に理想的な選択肢です。
 
-BLE communications rely on two key protocols: **Generic Attribute Profile (GATT)** and **Generic Access Profile (GAP)**. GATT is used for data exchange, while GAP is responsible for device discovery and connection.
+BLE通信は、2つの主要なプロトコルに依存しています： **Generic Attribute Profile (GATT)** と **Generic Access Profile (GAP)** 。GATTはデータ交換に使用され、GAPはデバイスの発見と接続を担当します。
 
 .. image:: img/ble.png
  :width: 100%
 
 
-Peripheral Devices (Typically GATT Servers)
+周辺機器（通常はGATTサーバ）
 --------------------------------------------------
 
-In the BLE network, **peripheral devices** primarily broadcast data to be discovered and accessed by central devices (typically acting as GATT clients). Such devices are usually sensors or small hardware like heart rate monitors, temperature sensors, or smart bulbs.
+BLEネットワークにおける **周辺機器** は、主にデータを送信し、中央デバイス（通常はGATTクライアント）によって発見され、アクセスされます。このようなデバイスは、通常、心拍数モニター、温度センサー、スマートライトなどのセンサーや小型のハードウェアです。
 
-In the BLE communication model, peripheral devices often provide one or more **services**, each containing a set of **characteristics**. These services and characteristics collaboratively enable specific functionalities or use-cases, allowing central devices to read or manipulate relevant data.
+BLE通信モデルでは、周辺機器は1つまたは複数の **サービス** を提供することがよくあり、各サービスは複数の **特徴** を含んでいます。これらのサービスと特徴が連携することで、特定の機能やユースケースが可能となり、中央デバイスは関連データを読み取ったり操作したりできます。
 
-- **Services**
+- **サービス**
 
-  In BLE, Services act as high-level abstractions used to organize and encapsulate related Characteristics. Services in BLE can be categorized into standard services and custom services based on their origin and purpose.
+  BLEにおけるサービスは、関連する特徴を整理してカプセル化するための高レベルの抽象化です。サービスは、その起源と目的に基づいて、標準サービスとカスタムサービスに分類できます。
 
-  - Standard Services: Defined by the Bluetooth SIG (Bluetooth Special Interest Group), these are intended for specific functions. For example, the heart rate service for heart rate monitors, device information service providing manufacturer, model, and version details, and battery service indicating battery level and status. Reference: |link_standard_service_uuids| 
-  - Custom Services: These are defined by developers or device manufacturers to meet the requirements of specific applications or devices. For instance, a smart home device manufacturer might define a custom service to control light color and brightness.
+  - 標準サービス：Bluetooth SIG（Bluetooth Special Interest Group）によって定義され、特定の機能のために設計されています。例えば、心拍数モニター用の心拍数サービス、デバイス情報サービス（製造元、モデル、バージョンの詳細を提供）、バッテリーサービス（バッテリーレベルと状態を示す）などがあります。参照リンク： |link_standard_service_uuids|
+  - カスタムサービス：開発者やデバイス製造者が特定のアプリケーションやデバイスの要求に基づいて定義します。たとえば、スマートホームデバイスの製造業者は、ライトの色や明るさを制御するカスタムサービスを定義することがあります。
 
-- **Characteristics**
+- **特徴**
 
-  Characteristics in BLE are the fundamental units of data exposed by the peripheral devices. They're enclosed within a Service and define various types of data and the operations that can be performed on them. Each characteristic is identified by a UUID and has a set of associated attributes like value, descriptor, and permissions.
+  BLEにおける特徴は、周辺機器が提供するデータの基本的な単位です。特徴はサービス内に格納され、さまざまな種類のデータとそれに対して実行できる操作を定義します。各特徴はUUIDで識別され、値、記述子、権限といった一連の属性を持っています。
 
-  - Permissions: In BLE, each characteristic is associated with a set of permissions that dictate whether the characteristic is readable, writable, or notify-able. This helps in securing the data and defining how to interact with it.
+  - 権限：BLEでは、各特徴にはその特徴が読み取り可能、書き込み可能、または通知可能であるかを決定する権限のセットが関連付けられています。これにより、データのセキュリティが確保され、どのように対話するかが定義されます。
 
 - **UUID**
 
-  Services, characteristics, and descriptors are collectively identified as attributes, each having a unique UUID. The Bluetooth SIG has reserved a set of UUIDs for standard attributes. These UUIDs are usually represented as 16-bit or 32-bit identifiers in the BLE protocol for efficiency, rather than the 128 bits required for a full UUID. For instance, the Device Information service is represented by the short code 0x180A.
+  サービス、特徴、および記述子は、すべて属性として識別され、各属性には一意のUUIDがあります。Bluetooth SIGは、標準属性のために一連のUUIDを予約しています。これらのUUIDは通常、BLEプロトコル内で効率のために16ビットまたは32ビットの識別子として表現され、完全なUUIDに必要な128ビットでは表現されません。例えば、デバイス情報サービスは短縮コード0x180Aで表されます。
 
 
 
-Central Devices (Typically GATT Clients)
+中央機器（通常はGATTクライアント）
 --------------------------------------------------
 
-**Central devices** in the BLE network scan for nearby peripheral devices and establish connections to acquire or control data. These devices are generally more complex and feature-rich, such as smartphones, tablets, or specialized gateway hardware. They're responsible for discovering peripheral devices, connecting to them, and accessing or subscribing to services and characteristics offered by the peripherals to serve various applications or solve specific problems.
+BLEネットワークにおける **中央機器** は、近くの周辺機器をスキャンして接続し、データを取得または制御します。これらの機器は一般的により複雑で機能が豊富なもの（スマートフォン、タブレット、または専門的なゲートウェアハードウェア）であり、周辺機器の発見、接続、サービスや特徴のアクセス・購読を担当します。これにより、さまざまなアプリケーションを提供したり、特定の問題を解決したりできます。
 
-Central devices interact with characteristics in the following ways:
+中央機器は、特徴と以下の方法でやり取りします：
 
-- **Read**: Request the peripheral device to send the current value of a characteristic. This is commonly used for characteristics that don't change often, like configuration settings or version numbers.
-- **Write**: Modify the value of a characteristic, typically used for command-like operations, like instructing a peripheral device to turn a motor on or off.
-- **Subscribe**: Request the peripheral device to continuously send updated values of a characteristic, eliminating the need for the central device to repeatedly request this data.
+- **読み取り**：周辺機器に特徴の現在の値を送信するように要求します。これは、設定やバージョン番号など、あまり変化しない特徴に使われます。
+- **書き込み**：特徴の値を変更します。これは、例えば周辺機器にモーターのオン/オフを指示するようなコマンド操作で使用されます。
+- **購読**：周辺機器に特徴の更新された値を継続的に送信するよう要求します。これにより、中央機器がデータを繰り返し要求する必要がなくなります。

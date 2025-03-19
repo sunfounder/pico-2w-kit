@@ -1,39 +1,39 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開情報をいち早くチェックできます。
+    - **特別割引**：最新製品を特別価格でお得に購入できます。
+    - **季節限定プロモーションやプレゼント企画**：プレゼント企画や特別なプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探索し、創造を楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
 .. _cpn_servo:
 
-Servo
-===========
+サーボモーター
+===============
 
 |img_servo|
 
-A servo motor typically consists of the following components: a case, shaft, gear system, potentiometer, DC motor, and an embedded control board.
+サーボモーターは通常、ケース、シャフト、ギアシステム、ポテンショメータ、DCモーター、組み込み制御基板で構成されています。
 
-**How It Works**
-- The microcontroller sends PWM signals to the servo through its signal pin.
-- The embedded control board inside the servo interprets these signals and adjusts the motor's operation accordingly.
-- The motor drives the gear system, which reduces speed and increases torque, ultimately rotating the shaft.
-- The shaft is mechanically linked to the potentiometer. As the shaft rotates, it moves the potentiometer, generating a voltage signal proportional to the shaft's position.
-- This feedback signal is sent to the embedded control board, which compares the current position to the target position.
-- Based on this comparison, the board adjusts the motor's direction and speed, allowing the servo to accurately stop and hold at the desired position.
-- This closed-loop feedback system ensures precision and stability in the servo's movement.
+**動作原理**
+- マイクロコントローラーは、シグナルピンを通じてサーボにPWM信号を送信します。
+- サーボ内の組み込み制御基板は、これらの信号を解釈し、それに応じてモーターの動作を調整します。
+- モーターはギアシステムを駆動し、これにより速度が低下しトルクが増加し、最終的にシャフトが回転します。
+- シャフトは機械的にポテンショメータに接続されています。シャフトが回転すると、シャフトの位置に比例する電圧信号を生成するポテンショメータが動きます。
+- このフィードバック信号は組み込み制御基板に送信され、現在の位置と目標位置とを比較します。
+- この比較に基づいて、基板はモーターの方向と速度を調整し、サーボが正確に所望の位置で停止し保持することを可能にします。
+- この閉ループフィードバックシステムにより、サーボの動きの精度と安定性が保証されます。
 
 |img_servo_i|
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position).
-When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point. When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.
+制御線に適用されるパルスの持続時間によって角度が決定されます。これはパルス幅変調と呼ばれます。サーボは20 msごとにパルスを受け取ることを期待しています。パルスの長さがモーターが回転する距離を決定します。たとえば、1.5msのパルスはモーターを90度位置（ニュートラル位置）に回転させます。
+1.5 ms未満のパルスがサーボに送られると、サーボはニュートラルポイントから反時計回りに数度回転してその位置で出力シャフトを保持します。パルスが1.5 msより広い場合は反対のことが起こります。サーボが有効な位置に回転するための最小幅と最大幅のパルスは、各サーボによって異なります。一般的に最小パルスは約0.5 ms、最大パルスは2.5 msの幅です。
 
 |img_servo_duty|
 
@@ -43,13 +43,13 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
 
 .. :ref:`Swinging Servo`
 
-**Example**
+**例**
 
-* :ref:`py_servo` (For MicroPython User)
-* :ref:`py_somato_controller` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller` (For MicroPython User)
-* :ref:`py_iot_ble_lock` (For MicroPython User)
-* :ref:`ar_servo` (For Arduino User)
-.. * :ref:`per_water_tank` (For Piper Make User)
-.. * :ref:`per_swing_servo` (For Piper Make User)
-.. * :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_servo` (MicroPythonユーザー向け)
+* :ref:`py_somato_controller` (MicroPythonユーザー向け)
+* :ref:`py_iot_sunfounder_controller` (MicroPythonユーザー向け)
+* :ref:`py_iot_ble_lock` (MicroPythonユーザー向け)
+* :ref:`ar_servo` (Arduinoユーザー向け)
+.. * :ref:`per_water_tank` (Piper Makeユーザー向け)
+.. * :ref:`per_swing_servo` (Piper Makeユーザー向け)
+.. * :ref:`per_lucky_cat` (Piper Makeユーザー向け)

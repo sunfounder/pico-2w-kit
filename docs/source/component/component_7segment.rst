@@ -1,49 +1,49 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表やプレビューを早期にチェックできます。
+    - **特別割引**: 新製品に対する独占的な割引をお楽しみいただけます。
+    - **季節限定のプロモーションやプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加してください！
 
 .. _cpn_7_segment:
 
-7-segment Display
-======================
+7セグメントディスプレイ
+=======================
 
 |img_7seg|
 
 
-A 7-segment display is an 8-shaped component that houses 7 LEDs, each referred to as a segment. When powered, each segment lights up to form part of a numeral.
+7セグメントディスプレイは、7つのLEDを内蔵した8の形をした部品です。各LEDはセグメントと呼ばれます。電源を供給すると、各セグメントが点灯し、数字の一部を形成します。
 
-There are two types of pin configurations: Common Cathode (CC) and Common Anode (CA). As the names suggest, a CC display connects all the cathodes of the 7 LEDs, while a CA display connects all the anodes of the 7 segments.
+ピン配置には2種類があります：共通カソード（CC）と共通アノード（CA）です。名前の通り、CCディスプレイは7つのLEDのカソードをすべて接続し、CAディスプレイは7つのセグメントのアノードをすべて接続します。
 
-In this kit, we use a Common Cathode 7-segment display. Below is its electronic symbol.
+このキットでは、共通カソード（CC）タイプの7セグメントディスプレイを使用しています。以下はその電子記号です。
 
 |img_7seg_cathode|
 
-Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from "a" through to "g" representing each individual LED. The other LED pins are connected together forming a common pin. So by forward biasing the appropriate pins of the LED segments in a particular order, some segments will brighten and others stay dim, thus showing the corresponding character on the display. 
+ディスプレイの各LEDには位置ごとにセグメントが割り当てられており、その接続ピンが長方形のプラスチックパッケージから出ています。これらのLEDピンは、aからgまでラベル付けされ、それぞれの個別のLEDを表します。その他のLEDピンは共通ピンとして接続されます。適切なピンを順番に順方向バイアスすることで、いくつかのセグメントが明るくなり、他のセグメントは暗いままとなり、ディスプレイに対応する文字が表示されます。
 
 
 * `Seven-segment Display - Wikipedia <https://en.wikipedia.org/wiki/Seven-segment_display>`_
 
-**Display Codes** 
+**ディスプレイコード**
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+7セグメントディスプレイ（共通カソード）がどのように数字を表示するかを理解するために、以下の表を描きました。数字は7セグメントディスプレイに表示される0〜Fの数字です；（DP）GFEDCBAは、各LEDが0または1に設定された状態を指します。例えば、00111111はDPとGが0に設定され、他のセグメントは1に設定されていることを意味します。したがって、数字の0が7セグメントディスプレイに表示され、HEXコードは16進数の数字に対応します。
 
 .. list-table:: Glyph Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - 数字	
+        - バイナリコード
+        - HEXコード  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -96,9 +96,11 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
 .. Example
 .. -------------------
 
-.. :ref:`LED Segment Display`
+.. :ref:`LEDセグメントディスプレイ`
 
-**Example**
 
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
+
+**例**
+
+* :ref:`py_74hc_7seg` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_7seg` (Arduinoユーザー向け)
