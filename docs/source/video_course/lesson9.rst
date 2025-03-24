@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-Lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
-==========================================================================
+Lektionen 9: Erzeugen eines analogen Outputs mit PWM (Pulsweitenmodulation)
+==============================================================================
 
-This tutorial covers generating analog output using PWM on the Raspberry Pi Pico W:
+In diesem Tutorial wird das Erzeugen eines analogen Outputs mit PWM auf dem Raspberry Pi Pico W behandelt:
 
-* **Analog Output Explanation**: Explains PWM and how it simulates analog output by adjusting duty cycles.
-* **GPIO Pin Configuration**: Describes which GPIO pins can generate PWM and the importance of not using overlapping PWM labels.
-* **Circuit Setup and Code**: Provides a wiring diagram and code to set up PWM, take voltage input, and convert it to a PWM duty cycle.
-* **Practical Demonstration**: Shows how to measure PWM signals with an oscilloscope to visualize different duty cycles.
-* **Homework Assignment**: Create a circuit to control LED brightness using user-input voltage and PWM.
+* **Erklärung des analogen Outputs**: Erläutert PWM und wie es analogen Output simuliert, indem die Tastverhältnisse angepasst werden.
+* **GPIO-Pin-Konfiguration**: Beschreibt, welche GPIO-Pins PWM erzeugen können und betont die Wichtigkeit, sich nicht mit überlappenden PWM-Labels zu überschneiden.
+* **Schaltkreisaufbau und Code**: Stellt ein Schaltbild und Code zur Verfügung, um PWM einzurichten, eine Spannungsquelle zu verwenden und sie in ein PWM-Tastverhältnis umzuwandeln.
+* **Praktische Demonstration**: Zeigt, wie man PWM-Signale mit einem Oszilloskop misst, um verschiedene Tastverhältnisse zu visualisieren.
+* **Hausaufgabe**: Erstelle einen Schaltkreis, um die Helligkeit einer LED mit einer Benutzereingabespanung und PWM zu steuern.
 
 
 **Video**

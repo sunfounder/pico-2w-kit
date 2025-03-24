@@ -1,51 +1,51 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten noch tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf – direkt von unserem Team und der Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Einblicke**: Erfahre als Erster von neuen Produkten und erhalte exklusive Vorschauen.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an spannenden Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_ac_buz:
 
-3.1 Beep
+3.1 Piepen
 ==================
 
 
-In this lesson, we will learn how to make a **buzzer** beep using the Raspberry Pi Pico 2 W. A buzzer is a digital output device, just like an LED, and it's very simple to control. We'll use an **active buzzer** for this project, which generates sound when it receives a signal.
+In dieser Lektion lernst du, wie du einen **Buzzer** mit dem Raspberry Pi Pico 2 W zum Piepen bringst. Ein Buzzer ist – ähnlich wie eine LED – ein digitales Ausgabegerät und lässt sich sehr einfach steuern. Für dieses Projekt verwenden wir einen **aktiven Buzzer**, der bei einem Steuersignal automatisch einen Ton erzeugt.
 
 * :ref:`cpn_buzzer`
 
-**What is an Active Buzzer?**
+**Was ist ein aktiver Buzzer?**
 
-An active buzzer has an internal oscillator that makes it easier to use. You only need to send a signal to the buzzer to make it beep—no complex frequency control is required. This is different from a **passive buzzer**, which requires an external signal to generate sound.
+Ein aktiver Buzzer enthält einen integrierten Oszillator, der seine Anwendung vereinfacht. Um einen Ton zu erzeugen, genügt ein einfaches Steuersignal – eine komplexe Frequenzsteuerung ist nicht nötig. Das unterscheidet ihn vom **passiven Buzzer**, der ein externes Signal zur Tonerzeugung benötigt.
 
 |img_buzzer|
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Bauteile benötigt. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist besonders praktisch – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst die Bauteile alternativ auch einzeln über die folgenden Links beziehen:
 
 
 .. list-table::
@@ -53,8 +53,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -62,7 +62,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -71,97 +71,95 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_buzzer|
 
-In this circuit, the buzzer is powered through a transistor (**S8050** NPN). The transistor amplifies the current, making the buzzer sound louder than if it were connected directly to the Pico. 
+In dieser Schaltung wird der Buzzer über einen Transistor (**S8050**, NPN-Typ) mit Strom versorgt. Der Transistor verstärkt den Stromfluss, wodurch der Ton des Buzzers lauter wird, als wenn er direkt mit dem Pico verbunden wäre.
 
-Here's what happens:
+Das passiert dabei:
 
-* **GP15** outputs a high signal to control the transistor.
-* When the transistor is activated, it allows current to flow through the buzzer, making it beep.
+* **GP15** gibt ein High-Signal aus, um den Transistor zu schalten.
+* Sobald der Transistor aktiviert ist, kann Strom durch den Buzzer fließen – er piept.
 
-A **1kΩ resistor** is used to limit the current to protect the transistor.
+Ein **1kΩ-Widerstand** begrenzt den Strom und schützt so den Transistor vor Schäden.
 
-**Wiring**
+**Verdrahtung**
 
-Make sure you are using the **active buzzer**. You can tell it's the correct one by looking for the sealed back (as opposed to the exposed PCB, which is a passive buzzer).
+Stelle sicher, dass du einen **aktiven Buzzer** verwendest. Du erkennst ihn an der versiegelten Rückseite – im Gegensatz zur offenen Leiterplatte eines passiven Buzzers.
 
 |img_buzzer|
 
-The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
-
+Damit der Buzzer funktioniert, wird ein Transistor benötigt – in unserem Fall der S8050 (NPN).
 
 |wiring_beep|
 
 
-**Writing the Code**
+**Programmcode schreiben**
 
-Let's write a simple MicroPython program to control the buzzer.
+Lass uns ein einfaches MicroPython-Programm schreiben, um den Buzzer zu steuern.
 
 .. note::
 
-    * Open the ``3.1_beep.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * Öffne die Datei ``3.1_beep.py`` aus dem Ordner ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny. Klicke anschließend auf „Run“ oder drücke F5.
+    * Achte darauf, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
+
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize the buzzer pin (GP15)
+    # Initialisierung des Buzzer-Pins (GP15)
     buzzer = machine.Pin(15, machine.Pin.OUT)
 
     while True:
-        # Loop to beep the buzzer 4 times
+        # Schleife zum Piepen des Buzzers (4 Mal)
         for i in range(4):
-            buzzer.value(1)  # Turn the buzzer on
-            utime.sleep(0.3)  # Wait for 0.3 seconds
-            buzzer.value(0)  # Turn the buzzer off
-            utime.sleep(0.3)  # Wait for 0.3 seconds
-        utime.sleep(1)  # Longer pause before the next cycle
+            buzzer.value(1)  # Buzzer einschalten
+            utime.sleep(0.3)  # 0,3 Sekunden warten
+            buzzer.value(0)  # Buzzer ausschalten
+            utime.sleep(0.3)  # 0,3 Sekunden warten
+        utime.sleep(1)  # Längere Pause vor dem nächsten Durchlauf
 
-When the code is running, you should hear:
+Wenn der Code ausgeführt wird, solltest du Folgendes hören:
 
-* The buzzer will beep 4 times in a row, with a 0.3-second pause between each beep.
-* After the 4 beeps, there will be a longer 1-second pause before the cycle repeats.
+* Der Buzzer piept 4 Mal hintereinander, jeweils mit einer Pause von 0,3 Sekunden.
+* Danach folgt eine längere Pause von 1 Sekunde, bevor die Sequenz erneut beginnt.
 
-**Explanation of the Code**
+**Code-Erklärung**
 
-#. Buzzer Initialization:
+#. Initialisierung des Buzzers:
 
-   * ``buzzer = machine.Pin(15, machine.Pin.OUT``): Initializes GP15 as the output pin to control the buzzer.
+   * ``buzzer = machine.Pin(15, machine.Pin.OUT)``: Setzt GP15 als Ausgang, um den Buzzer zu steuern.
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * The ``while True``: loop ensures the code runs indefinitely.
-   * Inside the loop, the buzzer is turned on (``buzzer.value(1)``) and off (``buzzer.value(0)``) four times, each with a 0.3-second delay.
-   * After the four beeps, there is a 1-second pause before the cycle repeats.
+   * Die Schleife ``while True`` sorgt dafür, dass der Code kontinuierlich läuft.
+   * Innerhalb der Schleife wird der Buzzer 4 Mal ein- (``buzzer.value(1)``) und ausgeschaltet (``buzzer.value(0)``), jeweils mit 0,3 Sekunden Pause.
+   * Nach den 4 Pieptönen folgt eine 1-sekündige Pause, bevor die nächste Runde startet.
 
+**Weitere Experimente**
 
-**Experimenting Further**
+* **Piepdauer ändern**: Passe die Werte von ``utime.sleep(0.3)`` an, um längere oder kürzere Töne zu erzeugen.
+* **Anzahl der Pieptöne variieren**: Ändere die Anzahl der Schleifendurchläufe für mehr oder weniger Pieptöne.
+* **Tastersteuerung einbauen**: Schließe einen Taster an GP14 an und erweitere den Code, sodass der Buzzer nur bei Tastendruck piept.
 
-* **Change the Beep Duration**: Adjust the ``utime.sleep(0.3)`` values to make the beeps longer or shorter.
-* **Vary the Number of Beeps**: Change the number of iterations in the loop to make the buzzer beep more or fewer times.
-* **Add Button Control**: Try connecting a button to GP14, and modify the code to beep only when the button is pressed.
+**Fazit**
 
-**Conclusion**
-
-In this lesson, you learned how to control an active buzzer using a transistor and the Raspberry Pi Pico 2 W. You now have a basic understanding of how to use a digital output device to create sound in your projects. The same principles can be applied to other output devices, like LEDs, motors, and more.
+In dieser Lektion hast du gelernt, wie man einen aktiven Buzzer mithilfe eines Transistors und des Raspberry Pi Pico 2 W steuert. Du hast damit die Grundlagen zur Nutzung digitaler Ausgabegeräte für Soundeffekte kennengelernt – ein Prinzip, das sich auch auf LEDs, Motoren und andere Komponenten übertragen lässt.

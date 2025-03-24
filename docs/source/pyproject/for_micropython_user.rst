@@ -1,13 +1,14 @@
-.. _projects_micropython:
+.. _projects_micropython: 
 
-MicroPython Projects
+MicroPython-Projekte
 =======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico 2 W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
 
-We recommend that you read the chapters in order.
+In diesem Abschnitt lernst du die Geschichte von MicroPython kennen, wie man MicroPython auf dem Pico 2 W installiert, die grundlegende Syntax und über ein Dutzend spannende und praxisnahe Projekte, die dir helfen, MicroPython schnell zu erlernen.
+
+Wir empfehlen, die Kapitel in der vorgegebenen Reihenfolge zu lesen.
 
 
-1. Get Started
+1. Erste Schritte
 ------------------------
 
 .. toctree::
@@ -22,8 +23,7 @@ We recommend that you read the chapters in order.
     python_start/syntax/micropython_basic_syntax
 
 
-
-2. Output & Input
+2. Ausgabe & Eingabe
 ------------------------
 
 .. toctree::
@@ -46,7 +46,7 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-3. Sound & Display & Movement
+3. Ton, Anzeige & Bewegung
 ---------------------------------
 
 .. toctree::
@@ -60,7 +60,7 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-4. Controller
+4. Steuerungen
 ------------------------
 
 .. toctree::
@@ -70,7 +70,7 @@ We recommend that you read the chapters in order.
     py_keypad
     py_mpr121
 
-5. Microchip
+5. Mikrochip
 ------------------------
 
 .. toctree::
@@ -81,8 +81,8 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-6. Advanced
-------------------------
+6. Fortgeschrittene Projekte
+--------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -93,7 +93,7 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-7. Funny Project
+7. Spaßprojekte
 ------------------------
 
 .. toctree::
@@ -112,7 +112,7 @@ We recommend that you read the chapters in order.
     py_somatosensory_controller
     py_digital_bubble_level
 
-8. IoT Project
+8. IoT-Projekte
 ------------------------
 
 **Wi-Fi**

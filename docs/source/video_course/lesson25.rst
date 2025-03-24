@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 25:  Getting Started with OLED 1306 in Micropython
+Lektion 25: Einstieg in OLED 1306 mit MicroPython
 =============================================================================
 
-This tutorial covers using the Raspberry Pi Pico W and an OLED display for portable projects:
+Dieses Tutorial behandelt die Verwendung des Raspberry Pi Pico W und eines OLED-Displays für tragbare Projekte:
 
-* **Introduction**: Focuses on making projects more portable and power-efficient.
-* **Introducing the OLED Display**: Suggests using a low-power OLED display, connected via I2C to GPIO pins 2 and 3.
-* **Library Installation and Initial Setup**: Installs the SSD1306 library and sets up the I2C and display objects.
-* **Displaying Text and Graphics**: Provides code to display text, draw lines, and create shapes on the OLED.
-* **Power Management**: Explains turning the display on and off to save battery.
-* **Practical Demonstration**: Shows text and graphics on the OLED, highlighting its benefits over LCD.
-* **Homework Assignment**: Task to display "My Circle" and draw a circle on the OLED, encouraging sharing the results online.
+* **Einführung**: Konzentriert sich darauf, Projekte tragbarer und energieeffizienter zu machen.
+* **Vorstellung des OLED-Displays**: Empfiehlt die Verwendung eines stromsparenden OLED-Displays, verbunden über I2C mit den GPIO-Pins 2 und 3.
+* **Bibliotheksinstallation und Erstkonfiguration**: Installiert die SSD1306-Bibliothek und richtet die I2C- und Displayobjekte ein.
+* **Anzeigen von Text und Grafiken**: Stellt Code bereit, um Text zu anzeigen, Linien zu ziehen und Formen auf dem OLED zu erstellen.
+* **Energiemanagement**: Erklärt das Ein- und Ausschalten des Displays zur Batterieschonung.
+* **Praktische Demonstration**: Zeigt Text und Grafiken auf dem OLED, wobei die Vorteile gegenüber LCD hervorgehoben werden.
+* **Hausaufgabe**: Aufgabe, "My Circle" anzuzeigen und einen Kreis auf dem OLED zu zeichnen, ermutigt dazu, die Ergebnisse online zu teilen.
 
 
 

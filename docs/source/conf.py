@@ -655,39 +655,39 @@ rst_epilog += """
 
 .. |link_raspberrypi_documention| raw:: html
 
-    <a href="https://www.raspberrypi.com/documentation/microcontrollers/micropython.html" target="_blank">Raspberry Pi official website documentation</a>
+    <a href="https://www.raspberrypi.com/documentation/microcontrollers/micropython.html" target="_blank">Raspberry Pi offizielle Website Dokumentation</a>
 
 .. |link_heat_index| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank">heat index</a>
+    <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank">Hitzeindex</a>
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit " target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit " target="_blank">hier</a>
 
 .. |link_german_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
 .. |link_jp_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/ja/latest/" target="_blank">日本語オンライン教材</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/ja/latest/" target="_blank">日本語オンライン教材</a>
 
 .. |link_en_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/en/latest/" target="_blank">English Online-tutorials</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/" target="_blank">English Online-tutorials</a>
 
 .. |link_fr_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
 
 .. |link_es_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
 
 .. |link_it_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/kepler-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
+    <a href="https://docs.sunfounder.com/projects/pico-2w-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
     
 .. |link_download_arduino|  raw:: html
 
@@ -703,7 +703,7 @@ rst_epilog += """
     
 .. |link_python_while| raw:: html
 
-    <a href="https://docs.python.org/3/reference/compound_stmts.html#while" target="_blank">The while statement</a>
+    <a href="https://docs.python.org/3/reference/compound_stmts.html#while" target="_blank">Die while-Anweisung</a>
 
 .. |link_thonny| raw:: html
 
@@ -743,7 +743,7 @@ rst_epilog += """
 
 .. |link_webhooks| raw:: html
 
-    <a href="https://ifttt.com/maker_webhooks/settings" target="_blank">Webhooks Settings</a>
+    <a href="https://ifttt.com/maker_webhooks/settings" target="_blank">Webhooks-Einstellungen</a>
 
 .. |link_openweather| raw:: html
 
@@ -760,7 +760,7 @@ rst_epilog += """
     
 .. |link_piano_frequency| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/Piano_key_frequencies" target="_blank">Piano key frequencies</a>
+    <a href="https://en.wikipedia.org/wiki/Piano_key_frequencies" target="_blank">Klaviertastenfrequenzen</a>
 
 .. |link_port| raw:: html
 
@@ -781,11 +781,11 @@ rst_epilog += """
 
 .. |link_anvil_firmware| raw:: html
 
-    <a href="https://github.com/anvil-works/anvil-pico/releases" target="_blank">firmware from Anvil</a>
+    <a href="https://github.com/anvil-works/anvil-pico/releases" target="_blank">Firmware von Anvil</a>
 
 .. |link_paul_course| raw:: html
 
-    <a href="https://www.youtube.com/playlist?list=PLGs0VKk2DiYz8js1SJog21cDhkBqyAhC5" target="_blank">Raspberry Pi Pico W Lessons for Absolute Beginners</a>
+    <a href="https://www.youtube.com/playlist?list=PLGs0VKk2DiYz8js1SJog21cDhkBqyAhC5" target="_blank">Raspberry Pi Pico W Lektionen für absolute Anfänger</a>
 
 .. |link_python_list| raw:: html
 
@@ -793,7 +793,7 @@ rst_epilog += """
 
 .. |link_python_for| raw:: html
 
-    <a href="https://docs.python.org/3/reference/compound_stmts.html#for" target="_blank">The for statement</a>
+    <a href="https://docs.python.org/3/reference/compound_stmts.html#for" target="_blank">Die for-Anweisung</a>
 
 .. |link_mpython_pwm| raw:: html
 
@@ -805,7 +805,7 @@ rst_epilog += """
 
 .. |link_wiki_pwm| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank">Pulse-width modulation</a>
+    <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank">Pulsweitenmodulation</a>
 
 .. |link_discord_server| raw:: html
 
@@ -825,7 +825,7 @@ rst_epilog += """
 
 .. |link_appinventor_login| raw:: html
     
-    <a href="http://appinventor.mit.edu/explore/get-started" target="_blank">Get Started with MIT App Inventor</a>
+    <a href="http://appinventor.mit.edu/explore/get-started" target="_blank">Beginnen Sie mit MIT App Inventor</a>
 
 .. |link_standard_service_uuids|  raw:: html
     
@@ -848,7 +848,7 @@ rst_epilog += """
 
 .. |link_pico2w_starter_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Pico 2 W Starter Kit</a>
+    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-ultimate-starter-kit-euler-copy?_pos=2&_sid=6a580ca6d&_ss=r" target="_blank">Kauf-Link für Pico 2 W Starter Kit</a>
 
 .. |link_kepler_kit| raw:: html
 
@@ -856,116 +856,116 @@ rst_epilog += """
 
 .. |link_pico2w_kit| raw:: html
 
-    <a href="https://www.sunfounder.com" target="_blank">Pico 2 W Starter Kit(Coming Soon...)</a>
+    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-ultimate-starter-kit-euler-copy?_pos=2&_sid=6a580ca6d&_ss=r" target="_blank">Pico 2 W Kit</a>
 
 .. |link_picow_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w" target="_blank">KAUFEN</a>
     
 .. |link_led_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/500pcs-5-colors-x-100pcs-5mm-leds-with-white-red-yellow-green-blue-colors-kit-box" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/500pcs-5-colors-x-100pcs-5mm-leds-with-white-red-yellow-green-blue-colors-kit-box" target="_blank">KAUFEN</a>
 
 .. |link_resistor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/1-4w-resistor-assortment-kit-40-values-400pcs" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/1-4w-resistor-assortment-kit-40-values-400pcs" target="_blank">KAUFEN</a>
 
 .. |link_wires_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/560pcs-jumper-wire-kit-with-14-lengths" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/560pcs-jumper-wire-kit-with-14-lengths" target="_blank">KAUFEN</a>
 
 .. |link_breadboard_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-breadboard-kit" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-breadboard-kit" target="_blank">KAUFEN</a>
 
 .. |link_rgb_led_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/100pcs-5mm-4-pin-rgb-common-cathode-led" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/100pcs-5mm-4-pin-rgb-common-cathode-led" target="_blank">KAUFEN</a>
 
 .. |link_button_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/100pcs-6x6x5-mm-miniature-push-button" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/100pcs-6x6x5-mm-miniature-push-button" target="_blank">KAUFEN</a>
 
 .. |link_capacitor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/ceramic-capacitor-assortment-kit-set-of-600-small-assorted-capacitors" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/ceramic-capacitor-assortment-kit-set-of-600-small-assorted-capacitors" target="_blank">KAUFEN</a>
 
 .. |link_potentiometer_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/10pcs-10k-ohm-trim-potentiometer-breadboard" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/10pcs-10k-ohm-trim-potentiometer-breadboard" target="_blank">KAUFEN</a>
 
 .. |link_photoresistor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/100pcs-photoresistor-photo-light-sensitive-resistor-5516" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/100pcs-photoresistor-photo-light-sensitive-resistor-5516" target="_blank">KAUFEN</a>
 
 .. |link_thermistor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/50pcs-ntc-thermistor-mf11-103-10k-ohm" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/50pcs-ntc-thermistor-mf11-103-10k-ohm" target="_blank">KAUFEN</a>
 
 .. |link_transistor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/10-values-200pcs-power-supply-general-transistor-npn-pnp-assortment-kit-bc337-bc327-2n2222-2n2907-2n3904-2n3906-s8050-s8550-a1015-c1815-set" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/10-values-200pcs-power-supply-general-transistor-npn-pnp-assortment-kit-bc337-bc327-2n2222-2n2907-2n3904-2n3906-s8050-s8550-a1015-c1815-set" target="_blank">KAUFEN</a>
 
 .. |link_relay_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/10pcs-srs-05vdc-sl-c-5v-relay-coil-spdt-6-pin-pcb-electromagnetic-power-relay" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/10pcs-srs-05vdc-sl-c-5v-relay-coil-spdt-6-pin-pcb-electromagnetic-power-relay" target="_blank">KAUFEN</a>
 
 .. |link_passive_buzzer_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/20pcs-3-5v-2-terminals-passive-buzzer" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/20pcs-3-5v-2-terminals-passive-buzzer" target="_blank">KAUFEN</a>
 
 .. |link_ws2812_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/2pcs-8-bit-ws2812b-rgb-led-strip-5050smd-individual-addressable-60pixels-m" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/2pcs-8-bit-ws2812b-rgb-led-strip-5050smd-individual-addressable-60pixels-m" target="_blank">KAUFEN</a>
 
 .. |link_i2clcd1602_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/i2c-lcd1602-module" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/i2c-lcd1602-module" target="_blank">KAUFEN</a>
 
 .. |link_motor_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/5pcs-1-5v-6v-type-miniature-dc-motors" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/5pcs-1-5v-6v-type-miniature-dc-motors" target="_blank">KAUFEN</a>
 
 .. |link_servo_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sg90-micro-digital-servo" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/sg90-micro-digital-servo" target="_blank">KAUFEN</a>
 
 .. |link_keypad_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/membrane-switch-keypad" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/membrane-switch-keypad" target="_blank">KAUFEN</a>
 
 .. |link_74hc595_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/10-pcs-ic-74hc595-74595-sn74hc595n-8-bit-shift-register-dip-16" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/10-pcs-ic-74hc595-74595-sn74hc595n-8-bit-shift-register-dip-16" target="_blank">KAUFEN</a>
 
 .. |link_7segment_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/30pcs-0-56-7-segment-led" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/30pcs-0-56-7-segment-led" target="_blank">KAUFEN</a>
 
 .. |link_ultrasonic_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/5pcs-hc-sr04-ultrasonic-module-distance-sensor" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/5pcs-hc-sr04-ultrasonic-module-distance-sensor" target="_blank">KAUFEN</a>
 
 .. |link_dht22_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/dht22-am2302-digital-temperature-and-humidity-sensor" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/dht22-am2302-digital-temperature-and-humidity-sensor" target="_blank">KAUFEN</a>
 
 .. |link_receiver_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/infrared-receiver-module" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/infrared-receiver-module" target="_blank">KAUFEN</a>
 
 .. |link_rfid_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/rfid-kit-blue" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/rfid-kit-blue" target="_blank">KAUFEN</a>
 
 
 .. |link_pir_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/hcsr501-human-sensor" target="_blank">BUY</a>
+    <a href="https://www.sunfounder.com/products/hcsr501-human-sensor" target="_blank">KAUFEN</a>
 
 
 .. |link_pico2w_buy| raw:: html
 
-    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w?_pos=4&_sid=c010c8418&_ss=r" target="_blank">BUY</a>
+    </a>
 
 """

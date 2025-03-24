@@ -1,43 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_water_level:
 
-Water Level Sensor Module
+Wasserstandssensor-Modul
 =================================
 
 |img_water_sensor|
 
-The water level sensor detects the water level and transmits the signal to a controller. The controller’s computer compares the measured water level with the preset value to calculate the deviation. Based on this deviation, it sends "on" or "off" commands to the feedwater valve, ensuring the water level in the vessel reaches the desired setting.
+Der Wasserstandssensor misst den Wasserstand und sendet das Signal an einen Controller.  
+Der Controller vergleicht den gemessenen Wasserstand mit einem voreingestellten Wert und berechnet die Abweichung.  
+Basierend auf dieser Abweichung gibt er Steuerbefehle aus, um das Zufuhrventil zu öffnen oder zu schließen,  
+damit der Wasserstand im Behälter das gewünschte Niveau erreicht.
 
-**Design and Functionality**
-The sensor features ten exposed copper traces: five power traces and five sensor traces arranged in an interleaved pattern. When submerged in water, the traces are bridged, allowing current to flow. The circuit board also includes a power indicator LED, which lights up when the sensor is powered.
+**Aufbau und Funktionsweise**  
+Der Sensor verfügt über zehn freiliegende Kupferbahnen, bestehend aus fünf Versorgungsspuren und fünf Sensorschienen,  
+die abwechselnd angeordnet sind.  
 
-The traces function as a variable resistor, with resistance changing based on water immersion:
+Sobald der Sensor in Wasser eingetaucht wird, werden die Bahnen überbrückt und es kann Strom fließen.  
+Auf der Leiterplatte befindet sich zudem eine Betriebs-LED, die aufleuchtet, sobald der Sensor mit Strom versorgt wird.
 
-- More Water: Increased conductivity lowers the resistance.
-- Less Water: Reduced conductivity raises the resistance.
+Die Bahnen wirken als variabler Widerstand, dessen Widerstandswert sich je nach Eintauchtiefe ändert:
 
-The sensor processes this varying resistance into an output voltage signal, which is sent to a microcontroller. The microcontroller uses this signal to determine the water level accurately.
+- Mehr Wasser → Erhöhte Leitfähigkeit → Niedrigerer Widerstand  
+- Weniger Wasser → Reduzierte Leitfähigkeit → Höherer Widerstand  
+
+Diese Widerstandsänderung wird in ein Spannungssignal umgewandelt und an einen Mikrocontroller gesendet.  
+Der Mikrocontroller verarbeitet das Signal und bestimmt daraus den exakten Wasserstand.
 
 .. warning:: 
-    The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.
-
+    Der Sensor darf nicht vollständig in Wasser eingetaucht werden!  
+    Nur der Bereich mit den zehn Messbahnen sollte mit Wasser in Kontakt kommen.  
+    Zudem kann die Nutzung des Sensors in feuchter Umgebung die Korrosion der Kontakte beschleunigen  
+    und die Lebensdauer verkürzen. Daher empfehlen wir, die Stromversorgung nur bei Messvorgängen zu aktivieren.
 
 **Example**
 
-* :ref:`py_water` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-* :ref:`ar_water` (For Arduino User)
-.. * :ref:`per_water_tank` (For Piper Make User)
+* :ref:`py_water` (Für MicroPython-Nutzer)
+* :ref:`py_iot_sunfounder_controller_plant` (Für MicroPython-Nutzer)
+* :ref:`ar_water` (Für Arduino-Nutzer)
+.. * :ref:`per_water_tank` (Für Piper Make-Nutzer)

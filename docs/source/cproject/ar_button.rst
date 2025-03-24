@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und teile dein Wissen mit Gleichgesinnten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Erhalte Hilfe von unserer Community und unserem Team bei technischen Herausforderungen und nach dem Kauf auftretenden Problemen.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu experimentieren und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_button:
 
-2.5 Reading Button Value
+2.5 Den Taster auslesen
 =============================
 
-In this lesson, we'll learn how to read input from a pushbutton using the Raspberry Pi Pico 2 W. So far, we've used the GPIO pins mainly for output, like lighting up LEDs. Now, we'll use a GPIO pin as an input to detect when a button is pressed. This is a fundamental skill for creating interactive projects.
+In dieser Lektion lernen wir, wie man mit dem Raspberry Pi Pico 2 W den Zustand eines Tasters einliest. Bisher haben wir die GPIO-Pins hauptsächlich als Ausgang verwendet, z. B. um LEDs zu steuern. Jetzt nutzen wir einen GPIO-Pin als Eingang, um zu erkennen, wann ein Taster gedrückt wird. Dies ist eine grundlegende Fähigkeit für interaktive Projekte.
 
 * :ref:`cpn_button`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplett-Kit ist besonders praktisch, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln kaufen:
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,31 +64,31 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10 kΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_button`
         - 1
         - |link_button_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_button|
 
-As long as one side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, then when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+Eine Seite des Tasters ist mit 3.3 V verbunden, die andere Seite mit GP14. Wird der Taster gedrückt, erhält GP14 ein HIGH-Signal (1). Ist der Taster nicht gedrückt, befindet sich GP14 in einem undefinierten Zustand (floating) und kann sowohl HIGH als auch LOW sein. Um ein stabiles LOW-Signal (0) im ungedrückten Zustand sicherzustellen, wird GP14 mit einem 10-kΩ-Pull-Down-Widerstand auf GND gezogen.
 
-* **Button Not Pressed**: The GP14 pin is connected to GND through the resistor, so it reads **LOW (0)**.
-* **Button Pressed**: The GP14 pin is connected to 3.3V through the button, so it reads **HIGH (1)**.
+* **Taster nicht gedrückt**: GP14 ist über den Widerstand mit GND verbunden und liest **LOW (0)**.
+* **Taster gedrückt**: GP14 wird mit 3.3 V verbunden und liest **HIGH (1)**.
 
-**Wiring**
+**Verdrahtung**
 
-A four-pin button is shaped like an H. Its left two pins or right two pins are connected, which means that when it crosses the central gap, it connects two half rows with the same row number. (For example, in my circuit, E23 and F23 are already connected, as are E25 and F25).
+Ein vierpoliger Taster hat die Form eines "H". Die beiden linken Pins sowie die beiden rechten Pins sind jeweils miteinander verbunden. Das bedeutet, dass beim Überbrücken der mittleren Trennlinie zwei halbe Reihen mit derselben Reihennummer verbunden werden. (Zum Beispiel sind in meiner Schaltung E23 und F23 bereits verbunden, ebenso wie E25 und F25).
 
-Until the button is pressed, the left and right pins are independent of each other and current cannot flow from one side to the other.
+Solange der Taster nicht gedrückt wird, sind die linken und rechten Pins voneinander isoliert, sodass kein Strom von einer Seite zur anderen fließen kann.
 
 |wiring_button|
 
@@ -96,66 +96,65 @@ Until the button is pressed, the left and right pins are independent of each oth
 
 .. note::
 
-    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``pico-2w-kit-main/arduino/2.5_reading_button_value``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Die Datei ``2.5_reading_button_value.ino`` befindet sich unter ``pico-2w-kit-main/arduino/2.5_reading_button_value``. 
+    * Alternativ kannst du den Code in die **Arduino IDE** kopieren.
+    * Vergiss nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor du auf **Upload** klickst.
 
 .. code-block:: Arduino
 
-   const int buttonPin = 14;  // GPIO pin connected to the button
+   const int buttonPin = 14;  // GPIO-Pin, der mit dem Taster verbunden ist
 
    void setup() {
-     Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-     pinMode(buttonPin, INPUT);  // Set the button pin as input
+     Serial.begin(115200);       // Seriellen Monitor mit 115200 Baud initialisieren
+     pinMode(buttonPin, INPUT);  // Taster-Pin als Eingang definieren
    }
 
    void loop() {
-     int buttonState = digitalRead(buttonPin);  // Read the state of the button
+     int buttonState = digitalRead(buttonPin);  // Zustand des Tasters auslesen
 
      if (buttonState == HIGH) {
        Serial.println("You pressed the button!");
      }
-     delay(100);  // Small delay to avoid reading the button too frequently
+     delay(100);  // Kurze Verzögerung, um zu häufige Abfragen zu vermeiden
    }
 
 
-* After uploading the code, click on the magnifying glass icon(Serial Monitor) in the top-right corner of the Arduino IDE.
-* Set the baud rate to 115200 to match the ``Serial.begin(115200);`` line in your code.
-* Each time you press the button, "You pressed the button!" should appear in the Serial Monitor.
+* Nach dem Hochladen des Codes klicke in der Arduino IDE auf das Lupensymbol (Serieller Monitor).
+* Stelle die Baudrate auf 115200, um mit ``Serial.begin(115200);`` übereinzustimmen.
+* Jedes Mal, wenn du den Taster drückst, sollte die Nachricht "Taste gedrückt!" im seriellen Monitor erscheinen.
 
 .. image:: ../img/serial_monitor.png
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Initializing Serial Communication:
+#. Serielle Kommunikation initialisieren:
 
-   Starts serial communication at a baud rate of 115200. This allows us to print messages to the Serial Monitor.
+   Startet die serielle Verbindung mit einer Baudrate von 115200. Dadurch können wir Nachrichten an den seriellen Monitor senden.
 
    .. code-block:: Arduino
 
         Serial.begin(115200);
 
-#. Setting Up the Button Pin:
+#. Taster-Pin konfigurieren:
 
-   Configures ``buttonPin`` (GP14) as an input to read the button state.
+   Legt ``buttonPin`` (GP14) als Eingang fest, um den Tasterzustand auszulesen.
 
    .. code-block:: Arduino
 
         pinMode(buttonPin, INPUT);
 
-#. Reading the Button State:
+#. Zustand des Tasters auslesen:
 
-   Reads the current state of the button. It will be ``HIGH`` when pressed and ``LOW`` when not pressed.
+   Liest den aktuellen Zustand des Tasters. Dieser ist ``HIGH``, wenn er gedrückt wird, und ``LOW``, wenn er nicht gedrückt wird.
 
    .. code-block:: Arduino
 
         int buttonState = digitalRead(buttonPin);
 
 
-#. Responding to Button Press:
+#. Auf Tastendruck reagieren:
 
-   If the button is pressed, print a message to the Serial Monitor.
+   Falls der Taster gedrückt wird, wird eine Nachricht im seriellen Monitor ausgegeben.
 
    .. code-block:: Arduino
 
@@ -164,22 +163,22 @@ Until the button is pressed, the left and right pins are independent of each oth
         }
 
 
-**Alternative: Pull-Up Resistor Configuration**
+**Alternative: Pull-Up-Widerstand verwenden**
 
-You can also wire the button using a pull-up resistor. In this configuration:
+Der Taster kann auch mit einem Pull-Up-Widerstand verdrahtet werden:
 
-* **Button Not Pressed**: GP14 reads HIGH (1) due to the pull-up resistor connected to 3.3V.
-* **Button Pressed**: GP14 is connected to GND when the button is pressed, so it reads LOW (0).
+* **Taster nicht gedrückt**: GP14 liest HIGH (1), da er über den Widerstand mit 3.3 V verbunden ist.
+* **Taster gedrückt**: GP14 wird mit GND verbunden und liest LOW (0).
 
-* Wiring Instructions:
+* Verdrahtung:
 
-  * Connect a 10KΩ resistor from GP14 to 3.3V.
-  * Connect one side of the button to GP14.
-  * Connect the other side of the button to GND.
+  * Verbinde einen 10-kΩ-Widerstand zwischen GP14 und 3,3 V.
+  * Eine Seite des Tasters wird an GP14 angeschlossen.
+  * Die andere Seite wird mit GND verbunden.
 
-* Code Modification:
+* Code-Änderung:
 
-  Change the condition in the ``if`` statement:
+  Passe die Bedingung im ``if``-Statement an:
 
   .. code-block:: Arduino
 
@@ -187,49 +186,47 @@ You can also wire the button using a pull-up resistor. In this configuration:
           Serial.println("You pressed the button!");
         }
 
-**Using Internal Pull-Up Resistor**
+**Interner Pull-Up-Widerstand nutzen**
 
-The Raspberry Pi Pico 2 allows you to enable internal pull-up resistor, eliminating the need for external resistor.
+Der Raspberry Pi Pico kann den internen Pull-Up-Widerstand aktivieren, 
+wodurch kein externer Widerstand nötig ist. Dies reduziert den Verdrahtungsaufwand.
 
-Using internal resistor simplifies wiring and saves space by eliminating the need for additional external resistor on the breadboard.
+* **Taster nicht gedrückt**: GP14 liest HIGH (1) aufgrund des internen Pull-Up-Widerstands.
+* **Taster gedrückt**: GP14 wird mit GND verbunden und liest LOW (0).
 
-* **Button Not Pressed**: GP14 reads HIGH (1) due to the internal pull-up resistor.
-* **Button Pressed**: GP14 is connected to GND when the button is pressed, so it reads LOW (0).
+* Verdrahtung:
 
-* Wiring Instructions:
+  * Entferne den 10-kΩ-Widerstand.
 
-  * Remove the 10KΩ resistor.
+* Code-Änderung:
 
-* Code Modification:
-
-  * Set the button pin as input with an internal pull-up resistor.
-  * Change the condition in the ``if`` statement.
+  * Setze den Button-Pin als Eingang mit internem Pull-Up-Widerstand.
+  * Ändere die Bedingung im ``if``-Statement.
 
   .. code-block:: Arduino
 
-     const int buttonPin = 14;  // GPIO pin connected to the button
+     const int buttonPin = 14;  // GPIO-Pin für den Taster
   
      void setup() {
-       Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-       pinMode(buttonPin, INPUT_PULLUP);  // Set the button pin as input with an internal pull-up resistor
+       Serial.begin(115200);       // Seriellen Monitor mit 115200 Baud initialisieren
+       pinMode(buttonPin, INPUT_PULLUP);  // Taster-Pin als Eingang mit internem Pull-Up-Widerstand
      }
   
      void loop() {
-       int buttonState = digitalRead(buttonPin);  // Read the state of the button
+       int buttonState = digitalRead(buttonPin);  // Zustand des Tasters auslesen
   
        if (buttonState == LOW) {
          Serial.println("You pressed the button!");
        }
-       delay(100);  // Small delay to avoid reading the button too frequently
+       delay(100);  // Kurze Verzögerung, um zu häufige Abfragen zu vermeiden
      }
 
+**Fazit**
 
-**Conclusion**
+In dieser Lektion hast du gelernt, wie man mit dem Raspberry Pi Pico einen Taster ausliest. Dies ist eine wichtige Grundlage für interaktive Projekte, bei denen das Programm auf Benutzereingaben reagiert.
 
-In this lesson, you've learned how to read input from a pushbutton using the Raspberry Pi Pico. This fundamental skill allows you to create interactive projects where the program responds to user input.
+**Weitere Experimente**
 
-**Further Exploration**
-
-* **Control an LED**: Modify the code to turn an LED on when the button is pressed.
-* **Debouncing**: Implement code to handle button bouncing for more reliable input.
-* **Multiple Buttons**: Try reading input from multiple buttons to perform different actions.
+* **Eine LED steuern**: Ändere den Code, sodass eine LED eingeschaltet wird, wenn der Taster gedrückt wird.
+* **Tasten-Entprellung**: Implementiere eine Entprellung für eine zuverlässigere Eingabe.
+* **Mehrere Taster nutzen**: Lese mehrere Taster ein, um verschiedene Aktionen auszulösen.

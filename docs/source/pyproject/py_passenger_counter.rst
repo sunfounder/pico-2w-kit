@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe von unserer Community und unserem Team bei technischen Herausforderungen und Support-Anfragen nach dem Kauf.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_passage_counter:
 
 
-7.4 Building a Passenger Counter
+7.4 Bau eines Passagierzählers
 =======================================================
 
-In this lesson, we'll create a **Passenger Counter** using a Raspberry Pi Pico 2 W, a PIR (Passive Infrared) motion sensor, and a 4-digit 7-segment display. This device will count the number of times motion is detected by the PIR sensor and display the count on the 7-segment display. This simulates how such counters are used in public places to monitor foot traffic.
+In dieser Lektion erstellen wir einen **Passagierzähler** mit einem Raspberry Pi Pico 2 W, einem PIR-Bewegungssensor (Passive Infrared) und einem 4-stelligen 7-Segment-Display. Dieses Gerät zählt die Anzahl der vom PIR-Sensor erkannten Bewegungen und zeigt die Gesamtzahl auf dem Display an. Es simuliert die Funktionsweise von Zählern, die in öffentlichen Bereichen zur Überwachung des Fußgängerverkehrs verwendet werden.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ENTHALTENE TEILE
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ können die Komponenten auch einzeln über die folgenden Links erworben werden.
 
 
 .. list-table::
@@ -46,8 +46,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -55,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,11 +64,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -83,55 +83,54 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Understanding the Components**
+**Funktionsweise der Komponenten**
 
-* **PIR Motion Sensor**: Detects motion by measuring infrared (IR) light radiating from objects in its field of view. When motion is detected, it outputs a HIGH signal.
-* **4-Digit 7-Segment Display**: Allows us to display numbers from 0000 to 9999. We'll use shift registers to control the display using fewer GPIO pins.
-* **74HC595 Shift Register**: This is a 8-bit serial-in, parallel-out shift register with output latche. It allows us to control multiple outputs using just a few GPIO pins.
+* **PIR-Bewegungssensor**: Erkennt Bewegungen durch Messung der Infrarotstrahlung (IR) von Objekten in seinem Sichtfeld. Sobald Bewegung erkannt wird, gibt er ein HIGH-Signal aus.
+* **4-stelliges 7-Segment-Display**: Ermöglicht die Anzeige von Zahlen zwischen 0000 und 9999. Mithilfe eines Schieberegisters steuern wir das Display mit weniger GPIO-Pins.
+* **74HC595 Schieberegister**: Ein 8-Bit-Schieberegister mit serieller Eingabe und paralleler Ausgabe. Es ermöglicht die Steuerung mehrerer Ausgänge mit wenigen GPIO-Pins.
 
-**Schematic**
+**Schaltplan**
 
 |sch_passager_counter| 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* Diese Schaltung basiert auf der :ref:`py_74hc_4dig` mit der Ergänzung eines PIR-Moduls.
+* Der PIR-Sensor gibt bei erkannter Bewegung ein ca. 2,8 Sekunden langes HIGH-Signal aus.
+* Das PIR-Modul verfügt über zwei Potentiometer: eines zur Einstellung der Empfindlichkeit, das andere zur Anpassung der Erkennungsreichweite. Um die beste Leistung zu erzielen, sollten beide Potentiometer gegen den Uhrzeigersinn bis zum Anschlag gedreht werden.
 
     |img_PIR_TTE|
 
 
-**Wiring**
+**Verdrahtung**
 
 
-|wiring_passager_counter| 
+|wiring_passager_counter|
 
+**Code schreiben**
 
-**Writing the Code**
+Unser MicroPython-Skript wird:
 
-We'll write a MicroPython script that:
-
-* Detects motion using the PIR sensor.
-* Increments a counter each time motion is detected.
-* Updates the 4-digit 7-segment display with the current count.
-* Uses multiplexing to control the display.
+* Bewegungen mit dem PIR-Sensor erkennen.
+* Bei jeder Bewegung den Zähler um eins erhöhen.
+* Die aktuelle Zählung auf dem 4-stelligen 7-Segment-Display anzeigen.
+* Multiplexing-Techniken verwenden, um das Display effizient zu steuern.
 
 .. note::
 
-    * Open the ``7.4_passager_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die Datei ``7.4_passager_counter.py`` im Verzeichnis ``pico-2w-kit-main/micropython`` oder kopiere den folgenden Code in Thonny. Klicke dann auf "Run" oder drücke **F5**, um es auszuführen.
+    * Stelle sicher, dass unten rechts in Thonny der Interpreter "MicroPython (Raspberry Pi Pico).COMxx" ausgewählt ist.
 
 .. code-block:: python
 
     from machine import Pin
     import utime
 
-    # Define the PIR sensor pin
+    # PIR-Sensor-Pin definieren
     pir_sensor = Pin(16, Pin.IN)
 
-    # Initialize the counter
+    # Zähler initialisieren
     count = 0
 
-    # Define the binary codes for each digit (0-9)
+    # Binärcodes für die Anzeige der Ziffern 0-9
     SEGMENT_CODES = [
         0x3F,  # 0
         0x06,  # 1
@@ -145,20 +144,20 @@ We'll write a MicroPython script that:
         0x6F   # 9
     ]
 
-    # Initialize the control pins for 74HC595
-    SDI = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input (DS)
-    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register Clock (STCP)
-    SRCLK = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock (SHCP)
+    # Initialisierung der Steuerpins für 74HC595
+    SDI = machine.Pin(18, machine.Pin.OUT)   # Serielle Dateneingabe (DS)
+    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register-Takt (STCP)
+    SRCLK = machine.Pin(20, machine.Pin.OUT) # Schieberegister-Takt (SHCP)
 
-    # Initialize digit select pins (common cathodes)
+    # Initialisierung der Digit-Auswahlpins (gemeinsame Kathoden)
     digit_pins = [
-        machine.Pin(10, machine.Pin.OUT),  # Digit 1
-        machine.Pin(11, machine.Pin.OUT),  # Digit 2
-        machine.Pin(12, machine.Pin.OUT),  # Digit 3
-        machine.Pin(13, machine.Pin.OUT)   # Digit 4
+        machine.Pin(10, machine.Pin.OUT),  # Ziffer 1
+        machine.Pin(11, machine.Pin.OUT),  # Ziffer 2
+        machine.Pin(12, machine.Pin.OUT),  # Ziffer 3
+        machine.Pin(13, machine.Pin.OUT)   # Ziffer 4
     ]
 
-    # Function to send data to 74HC595
+    # Funktion zum Senden von Daten an 74HC595
     def shift_out(data):
         RCLK.low()
         for bit in range(7, -1, -1):
@@ -168,69 +167,69 @@ We'll write a MicroPython script that:
             SRCLK.high()
         RCLK.high()
 
-    # Function to display a digit at a specific position
+    # Funktion zur Anzeige einer Ziffer an einer bestimmten Position
     def display_digit(position, digit):
-        # Turn off all digits
+        # Alle Ziffern deaktivieren
         for dp in digit_pins:
             dp.high()
-        # Send segment data
+        # Segmentdaten senden
         shift_out(SEGMENT_CODES[digit])
-        # Activate the selected digit (common cathode is active low)
+        # Aktivieren der ausgewählten Ziffer (gemeinsame Kathode ist aktiv niedrig)
         digit_pins[position].low()
-        # Small delay to allow the digit to be visible
+        # Kleine Verzögerung für die Sichtbarkeit der Ziffer
         utime.sleep_ms(5)
-        # Turn off the digit
+        # Ziffer deaktivieren
         digit_pins[position].high()
 
-    # Function to display a number on the 4-digit display
+    # Funktion zur Anzeige einer Zahl auf dem 4-stelligen Display
     def display_number(number):
-        # Extract individual digits
+        # Einzelne Ziffern extrahieren
         digits = [
             (number // 1000) % 10,
             (number // 100) % 10,
             (number // 10) % 10,
             number % 10
         ]
-        # Display each digit rapidly
+        # Jede Ziffer schnell nacheinander anzeigen
         for i in range(4):
             display_digit(i, digits[i])
 
-    # Interrupt handler for PIR sensor
+    # Interrupt-Handler für den PIR-Sensor
     def pir_handler(pin):
         global count
         count += 1
         if count > 9999:
             count = 0
 
-    # Set up PIR sensor interrupt
+    # PIR-Sensor-Interrupt einrichten
     pir_sensor.irq(trigger=Pin.IRQ_RISING, handler=pir_handler)
 
-    # Main loop
+    # Hauptschleife
     while True:
-        # Continuously refresh the display
+        # Anzeige kontinuierlich aktualisieren
         display_number(count)
 
-When the code is running, the 7-segment display should initialize and show 0000.
-Move in front of the PIR sensor.
-The count displayed should increment by one each time motion is detected.
-If the count reaches 9999, it will reset to 0000.
+Wenn das Skript läuft, sollte das 7-Segment-Display initialisiert werden und "0000" anzeigen.
+Bewege dich vor dem PIR-Sensor.
+Die angezeigte Zahl sollte sich jedes Mal um eins erhöhen, wenn eine Bewegung erkannt wird.
+Erreicht der Zähler 9999, wird er auf 0000 zurückgesetzt.
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Imports and Pin Definitions:
+#. Importe und Pin-Definitionen:
 
-   * ``machine.Pin``: For controlling GPIO pins.
-   * ``utime``: For timing functions.
-   * Define SDI, SRCLK, and RCLK pins for controlling the shift register.
-   * Define ``pir_sensor`` on GP16 as an input pin for the PIR sensor.
+   * ``machine.Pin``: Zur Steuerung der GPIO-Pins.
+   * ``utime``: Für Zeitfunktionen.
+   * Definition der Steuerpins SDI, SRCLK und RCLK für das Schieberegister.
+   * Definition von ``pir_sensor`` auf GP16 als Eingangspin für den PIR-Sensor.
 
-#. Segment Codes:
+#. Segment-Codes:
 
-   * ``SEGMENT_CODES``: A list containing the binary codes for displaying digits 0-9 on a 7-segment display. Each byte represents which segments should be lit.
+   * ``SEGMENT_CODES``: Eine Liste mit den Binärcodes für die Anzeige der Ziffern 0-9 auf einem 7-Segment-Display. Jeder Bytewert bestimmt, welche Segmente leuchten.
 
    .. code-block:: python
 
-        # 7-segment display segment codes for digits 0-9 (common cathode)
+        # 7-Segment-Display Codes für die Ziffern 0-9 (gemeinsame Kathode)
         SEGMENT_CODES = [
             0x3F,  # 0
             0x06,  # 1
@@ -244,15 +243,15 @@ If the count reaches 9999, it will reset to 0000.
             0x6F   # 9
         ]
 
-#. Counter Initialization:
+#. Zähler-Initialisierung:
 
-   * ``count``: A global variable that keeps track of the number of times motion has been detected.
+   * ``count``: Eine globale Variable zur Erfassung der erkannten Bewegungen.
 
-#. Define the ``shift_out`` Function:
+#. Die Funktion ``shift_out`` definieren:
 
-   * Sends 8 bits of data to the 74HC595.
-   * Shifts out the data starting from the most significant bit (MSB).
-   * Pulses the shift and register clocks appropriately.
+   * Sendet 8 Bit Daten an das 74HC595-Schieberegister.
+   * Beginnt mit dem höchstwertigen Bit (MSB).
+   * Pulsiert die Schiebe- und Registertaktsignale korrekt.
 
    .. code-block:: python
 
@@ -265,13 +264,13 @@ If the count reaches 9999, it will reset to 0000.
                 SRCLK.high()
             RCLK.high()
 
-#. Define the ``display_digit`` Function:
+#. Die Funktion ``display_digit`` definieren:
 
-   * Turns off all digits.
-   * Sends the segment code for the digit.
-   * Activates the specified digit by setting its pin low.
-   * Adds a small delay to make the digit visible.
-   * Turns off the digit after displaying.
+   * Deaktiviert alle Ziffern.
+   * Sendet die Segmentdaten der gewünschten Ziffer.
+   * Aktiviert die gewählte Ziffer, indem ihr Pin auf LOW gesetzt wird.
+   * Fügt eine kurze Verzögerung hinzu, um die Ziffer sichtbar zu machen.
+   * Deaktiviert die Ziffer danach wieder.
 
    .. code-block:: python
 
@@ -283,31 +282,30 @@ If the count reaches 9999, it will reset to 0000.
             utime.sleep_ms(5)
             digit_pins[position].high()
 
+#. Die Funktion ``display_number`` definieren:
 
-#. Define the ``display_number`` Function:
-
-   * Extracts each digit from the number.
-   * Calls ``display_digit`` for each digit rapidly to create the multiplexing effect.
+   * Extrahiert die einzelnen Ziffern einer Zahl.
+   * Ruft ``display_digit`` für jede Ziffer schnell auf, um den Multiplexing-Effekt zu erzeugen.
 
    .. code-block:: python
 
         def display_number(number):
-            # Extract individual digits
+            # Einzelne Ziffern extrahieren
             digits = [
                 (number // 1000) % 10,
                 (number // 100) % 10,
                 (number // 10) % 10,
                 number % 10
             ]
-            # Display each digit rapidly
+            # Jede Ziffer schnell nacheinander anzeigen
             for i in range(4):
                 display_digit(i, digits[i])
 
-#. PIR Interrupt Handler:
+#. PIR-Interrupt-Handler:
 
-   * ``pir_handler``: This function is called automatically when the PIR sensor detects motion.
-   * Increments the count variable.
-   * Resets the count to 0 if it exceeds 9999.
+   * ``pir_handler``: Diese Funktion wird automatisch aufgerufen, wenn der PIR-Sensor eine Bewegung erkennt.
+   * Erhöht die count-Variable.
+   * Setzt count auf 0 zurück, falls der Wert 9999 überschreitet.
 
    .. code-block:: python
 
@@ -317,67 +315,64 @@ If the count reaches 9999, it will reset to 0000.
             if count > 9999:
                 count = 0
 
-#. PIR Sensor Interrupt Setup:
+#. PIR-Sensor-Interrupt einrichten:
 
-   ``pir_sensor.irq``: Sets up an interrupt to call ``pir_handler`` on a rising edge signal from the PIR sensor (i.e., when motion is detected).
+   ``pir_sensor.irq``: Legt eine Unterbrechung fest, um ``pir_handler`` bei einem steigenden Signal vom PIR-Sensor auszulösen.
 
    .. code-block:: python
 
         pir_sensor.irq(trigger=Pin.IRQ_RISING, handler=pir_handler)
 
-#. Main Loop:
+#. Hauptschleife:
 
-   Continuously calls ``display_number(count)`` to refresh the display with the current count.
+   Ruft kontinuierlich ``display_number(count)`` auf, um das Display mit der aktuellen Zählung zu aktualisieren.
 
    .. code-block:: python
 
         while True:
             display_number(count)
 
-**Troubleshooting**
+**Fehlersuche**
 
-* Display Issues:
+* Anzeigeprobleme:
 
-  * If the display is not showing numbers correctly, verify the segment codes and wiring connections.
-  * Ensure that the shift register is connected properly and that data is being shifted out in the correct order.
+  * Falls die Anzeige falsche Zahlen zeigt, überprüfe die Segmentcodes und die Verdrahtung.
+  * Stelle sicher, dass das Schieberegister korrekt angeschlossen ist und Daten richtig ausgegeben werden.
 
-* PIR Sensor Sensitivity:
+* Empfindlichkeit des PIR-Sensors:
 
-  * The PIR sensor may have adjustable potentiometers for sensitivity and delay.
-  * Adjust these to fine-tune motion detection for your environment.
-  * Note that the PIR sensor may have a short delay after detecting motion before it can detect again.
+  * Der PIR-Sensor kann mit Potentiometern für Empfindlichkeit und Verzögerung eingestellt werden.
+  * Justiere diese Parameter, um die Bewegungserkennung zu optimieren.
+  * Beachte, dass der PIR-Sensor eine kurze Verzögerung nach der Bewegungserkennung haben kann.
 
-* Counting Accuracy:
+* Genauigkeit der Zählung:
 
-  * In environments with a lot of movement, the counter may increment rapidly.
-  * Consider adding logic to debounce the PIR sensor or limit counting frequency if necessary.
+  * In Umgebungen mit viel Bewegung kann der Zähler schnell hochzählen.
+  * Erwäge eine Entprellung des PIR-Sensors oder begrenze die Zählfrequenz.
 
-**Extensions and Enhancements**
+**Erweiterungen und Verbesserungen**
 
-* Reset Button:
+* Reset-Taste: 
 
-  Add a push button connected to another GPIO pin to reset the count to zero when pressed.
+    Eine zusätzliche Taste hinzufügen, um den Zähler manuell auf 0 zu setzen.
 
-* Bidirectional Counting:
+* Bidirektionale Zählung: 
 
-  Use two PIR sensors placed strategically to detect the direction of movement (entering or exiting) and increment or decrement the count accordingly.
+    Zwei PIR-Sensoren zur Erkennung der Bewegungsrichtung (Eintritt/Austritt) nutzen.
 
-* Data Logging:
+* Datenprotokollierung:
 
-  Extend the program to log counts over time, either by storing data on the Pico or sending it to a computer for analysis.
+    Speichere die Daten lokal oder sende sie an einen Server für Analysen.
 
-* Display Improvements:
+* LCD-Anzeige: 
+    
+    Ersetze das 7-Segment-Display durch ein LCD für mehr Informationen.
 
-  Use an LCD display to show additional information such as timestamps, total counts, or messages.
+* Netzwerkanbindung: 
+    
+    Daten über WLAN an eine Cloud oder ein Dashboard senden.
 
-* Network Connectivity:
+**Fazit**
 
-  Connect the Pico to a network (using Wi-Fi modules like ESP8266) to send data to a server or cloud service for remote monitoring.
-
-**Conclusion**
-
-In this lesson, you've learned how to create a practical Passenger Counter using the Raspberry Pi Pico 2 W, a PIR motion sensor, and a 4-digit 7-segment display. This project demonstrates how microcontrollers can interact with sensors and output devices to collect and display data in real-time.
-
-Feel free to experiment with the code and hardware to add new features or improve functionality. This project can serve as a foundation for more complex systems involving data analysis, remote monitoring, or integration with other sensors and devices.
-
-
+Dieses Projekt zeigt, wie man einen Passagierzähler mit dem Raspberry Pi Pico 2 W, 
+einem PIR-Sensor und einem 7-Segment-Display realisiert. Du kannst es als Grundlage für weiterführende Anwendungen nutzen.

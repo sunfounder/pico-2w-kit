@@ -1,53 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Promotions teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_led:
 
-2.1 Hello, LED! 
+2.1 Hallo, LED! 
 =======================================
 
-Welcome to your first hardware project with the Raspberry Pi Pico ! In this lesson, we'll learn how to make an LED blink using MicroPython. This simple project is a great way to get started with physical computing and understand how to control hardware with code.
+Willkommen zu deinem ersten Hardware-Projekt mit dem Raspberry Pi Pico! In dieser Lektion lernen wir, wie man eine LED mithilfe von MicroPython zum Blinken bringt. Dieses einfache Projekt ist ein idealer Einstieg in das Physical Computing und hilft dir zu verstehen, wie du Hardware mit Code steuerst.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE ARTIKEL IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
-
+Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,11 +63,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -76,25 +75,25 @@ You can also buy them separately from the links below.
         - |link_led_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_led|
 
-By setting the GPIO pin high or low, you're controlling the voltage output of that pin. When the pin is high, current flows through the LED (limited by the resistor), causing it to light up. When the pin is low, no current flows, and the LED turns off.
+Durch das Setzen des GPIO-Pins auf HIGH oder LOW steuerst du die Spannungsausgabe dieses Pins. Wenn der Pin auf HIGH gesetzt wird, fließt Strom durch die LED (begrenzt durch den Widerstand), wodurch sie aufleuchtet. Wird der Pin auf LOW gesetzt, fließt kein Strom und die LED erlischt.
 
-**Wiring Diagram**
+**Verdrahtungsdiagramm**
 
 |wiring_led|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * Open the ``2.1_hello_led.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffne die Datei ``2.1_hello_led.py`` unter dem Pfad ``pico-2w-kit-main/micropython`` oder kopiere diesen Code in Thonny, klicke dann auf "Run Current Script" oder drücke F5, um ihn auszuführen.
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -103,63 +102,62 @@ By setting the GPIO pin high or low, you're controlling the voltage output of th
     
     led = machine.Pin(15, machine.Pin.OUT)
     while True:
-        led.value(1)      # Turn the LED on
-        utime.sleep(2)    # Wait for 2 second
-        led.value(0)      # Turn the LED off
-        utime.sleep(2)    # Wait for 2 second
+        led.value(1)      # LED einschalten
+        utime.sleep(2)    # 2 Sekunden warten
+        led.value(0)      # LED ausschalten
+        utime.sleep(2)    # 2 Sekunden warten
 
-When the code is running, the LED is turn on for 2 second and turn off for 2 second.
-
-
-
-**Understanding the Code**
-
-#. Importing Libraries:
-
-   * ``machine``: Provides access to the hardware components.
-   * ``utime``: Allows us to use time-related functions like delays.
-
-#. Setting Up the LED Pin:
-
-   * ``led = machine.Pin(15, machine.Pin.OUT)``: Initializes GP15 as an output pin and assigns it to the variable ``led``.
+Sobald der Code ausgeführt wird, leuchtet die LED für 2 Sekunden auf und erlischt dann für 2 Sekunden.
 
 
-#. Creating an Infinite Loop:
 
-   * ``while True``: Starts an endless loop to continuously run the code inside it.
+**Den Code verstehen**
 
-#. Controlling the LED:
+#. Bibliotheken importieren:
 
-   * ``led.value(1)``: Sets the pin output to high (3.3V), turning the LED on.
-   * ``utime.sleep(2)``: Pauses the program for 2 second.
-   * ``led.value(0)``: Sets the pin output to low (0V), turning the LED off.
-   * ``utime.sleep(2)``: Pauses the program for another 2 second.
+   * ``machine``: Ermöglicht den Zugriff auf die Hardware-Komponenten.
+   * ``utime``: Enthält Zeitfunktionen wie Verzögerungen.
 
-**Experimenting Further**
+#. Initialisierung des LED-Pins:
 
-* **Change Blink Rate**: Modify the ``utime.sleep(1)`` values to make the LED blink faster or slower.
-* **Use Different Pins**: Try connecting the LED to a different GPIO pin and update the code accordingly.
-* **Multiple LEDs**: Add more LEDs to different pins and control them in your code.
+   * ``led = machine.Pin(15, machine.Pin.OUT)``: Initialisiert GP15 als Ausgangspin und weist ihn der Variable ``led`` zu.
 
-**Troubleshooting**
+#. Erstellen einer Endlosschleife:
 
-* LED Not Lighting Up:
+   * ``while True``: Startet eine Schleife, die den Code kontinuierlich ausführt.
 
-  * Check the orientation of the LED. Ensure the anode and cathode are connected correctly.
-  * Verify all connections are secure.
-  * Ensure the resistor is connected in series with the LED.
+#. Steuern der LED:
 
-* Error Messages in Thonny:
+   * ``led.value(1)``: Setzt den Pin auf HIGH (3,3V) und schaltet die LED ein.
+   * ``utime.sleep(2)``: Hält das Programm für 2 Sekunden an.
+   * ``led.value(0)``: Setzt den Pin auf LOW (0V) und schaltet die LED aus.
+   * ``utime.sleep(2)``: Hält das Programm für weitere 2 Sekunden an.
 
-  * Make sure you have selected the correct interpreter.
-  * Check for typos in your code.
+**Weitere Experimente**
 
-**Conclusion**
+* **Blinkfrequenz ändern**: Passe die ``utime.sleep(2)``-Werte an, um die Blinkgeschwindigkeit zu erhöhen oder zu verringern.
+* **Andere Pins nutzen**: Verbinde die LED mit einem anderen GPIO-Pin und aktualisiere den Code entsprechend.
+* **Mehrere LEDs steuern**: Füge weitere LEDs an verschiedene Pins hinzu und steuere sie im Code.
 
-Congratulations! You've successfully made an LED blink using the Raspberry Pi Pico  and MicroPython. This foundational project introduces you to controlling hardware with code, setting the stage for more complex projects.
+**Fehlersuche**
+
+* LED leuchtet nicht:
+
+  * Überprüfe die Orientierung der LED. Stelle sicher, dass Anode und Kathode korrekt angeschlossen sind.
+  * Prüfe, ob alle Verbindungen sicher sind.
+  * Stelle sicher, dass der Widerstand in Reihe mit der LED verbunden ist.
+
+* Fehlermeldungen in Thonny:
+
+  * Stelle sicher, dass du den richtigen Interpreter ausgewählt hast.
+  * Überprüfe den Code auf Tippfehler.
+
+**Fazit**
+
+Glückwunsch! Du hast erfolgreich eine LED mit dem Raspberry Pi Pico und MicroPython zum Blinken gebracht. Dieses grundlegende Projekt führt dich in die Steuerung von Hardware mit Code ein und bildet die Basis für komplexere Projekte.
 
 
-**References**
+**Referenzen**
 
 * |link_mpython_machine_pin|
 * |link_mpython_machine|

@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Entdecke gemeinsam mit anderen Technikbegeisterten die Welt von Raspberry Pi, Arduino und ESP32 noch intensiver.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Herausforderungen und Fragen nach dem Kauf – durch unser Team und die Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um dein Wissen zu erweitern.
+    - **Exklusive Vorschauen**: Erfahre frühzeitig von neuen Produktveröffentlichungen.
+    - **Sonderrabatte**: Profitiere von exklusiven Angeboten auf unsere neuesten Produkte.
+    - **Aktionen & Gewinnspiele**: Nimm an Verlosungen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und mach mit!
 
 .. _py_74hc_led:
 
-5.1 Using the 74HC595 Shift Register
-=======================================
+5.1 Verwendung des 74HC595-Schieberegisters
+==============================================
 
-In this lesson, we'll learn how to use the **74HC595 shift register** to control multiple LEDs with just a few GPIO pins on the Raspberry Pi Pico 2 W. The 74HC595 is an integrated circuit (IC) that allows you to expand the number of digital outputs using a serial input. This is incredibly useful when you want to control many outputs but have limited GPIO pins available.
+In dieser Lektion lernst du, wie du mithilfe des **74HC595-Schieberegisters** mehrere LEDs mit nur wenigen GPIO-Pins des Raspberry Pi Pico 2 W steuern kannst. Der 74HC595 ist ein integrierter Schaltkreis (IC), mit dem sich über serielle Eingabe mehrere digitale Ausgänge ansteuern lassen – ideal, wenn viele Ausgänge benötigt werden, aber nur wenige Pins zur Verfügung stehen.
 
 * :ref:`74HC595`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Am bequemsten ist es, ein Komplett-Kit zu kaufen – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die folgenden Links beziehen:
 
 
 .. list-table::
@@ -46,8 +46,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -55,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,11 +64,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 8(220Ω)
+        - 8 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -79,30 +79,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Understanding the 74HC595 Shift Register**
+**Funktionsweise des 74HC595-Schieberegisters**
 
-The **74HC595** is an 8-bit serial-in, parallel-out shift register with output latches. It has the ability to take serial data input and convert it into parallel output, allowing you to control 8 outputs using only 3 GPIO pins from the Pico.
+Der **74HC595** ist ein 8-Bit-Schieberegister mit serieller Eingabe und parallelen Ausgängen sowie integrierten Latches. Er ermöglicht es, serielle Daten in parallele Signale umzuwandeln und dadurch acht Ausgänge mit nur drei GPIO-Pins des Pico zu steuern.
 
-**Key Pins on the 74HC595:**
+**Wichtige Pins des 74HC595:**
 
 |img_74jc595_pin|
 
-* **DS (Pin 14)**: Serial Data Input
-* **SHCP (Pin 11)**: Shift Register Clock Input
-* **STCP (Pin 12)**: Storage Register Clock Input (Latch Pin)
-* **OE (Pin 13)**: Output Enable (Active Low, connect to GND)
-* **MR (Pin 10)**: Master Reset (Active Low, connect to 3.3V)
-* **Q0-Q7 (Pins 15, 1-7)**: Parallel Outputs
-* **VCC (Pin 16)**: Connect to 3.3V
-* **GND (Pin 8)**: Connect to GND
+* **DS (Pin 14)**: Serielle Dateneingabe  
+* **SHCP (Pin 11)**: Takteingang für das Schieberegister  
+* **STCP (Pin 12)**: Takteingang für das Speicheregister (Latch)  
+* **OE (Pin 13)**: Ausgangsfreigabe (aktiv Low, mit GND verbinden)  
+* **MR (Pin 10)**: Master-Reset (aktiv Low, mit 3.3V verbinden)  
+* **Q0–Q7 (Pins 15, 1–7)**: Parallele Ausgänge  
+* **VCC (Pin 16)**: Mit 3.3V verbinden  
+* **GND (Pin 8)**: Mit Masse verbinden
 
-**Schematic**
+**Schaltplan**
 
 |sch_74hc_led|
 
 
 
-**Wiring**
+**Verdrahtung**
 
 .. The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
 
@@ -112,29 +112,27 @@ The **74HC595** is an 8-bit serial-in, parallel-out shift register with output l
 
 |wiring_74hc_led|
 
-.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico 2 W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico 2 W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico 2 W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
+.. 1. Verbinde 3V3 und GND des Pico 2 W mit den Stromschienen des Breadboards.
+.. #. Setze den 74HC595 mittig ins Breadboard (über den Mittelsteg).
+.. #. Verbinde GP0 mit Pin 14 (DS) des 74HC595.
+.. #. Verbinde GP1 mit Pin 12 (STCP).
+.. #. Verbinde GP2 mit Pin 11 (SHCP).
+.. #. Verbinde Pin 16 (VCC) und Pin 10 (MR) mit der positiven Stromschiene.
+.. #. Verbinde Pin 8 (GND) und Pin 13 (OE) mit der Masse.
+.. #. Setze 8 LEDs ins Breadboard, Anode an die Pins Q0–Q7 (15, 1–7) des 74HC595.
+.. #. Die Kathoden der LEDs kommen über je einen 220Ω-Widerstand zur Masse.
 
 
 
-**Writing the Code**
+**Code schreiben**
 
-Now, let's write a MicroPython program to control the LEDs through the 74HC595 shift register.
+Nun schreiben wir ein MicroPython-Programm, um die LEDs über das 74HC595 zu steuern.
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Öffne ``5.1_microchip_74hc595.py`` aus dem Ordner ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny und klicke auf „Run“ oder drücke F5.
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-
-    
+    * Achte darauf, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
 
 .. code-block:: python
 
@@ -186,25 +184,25 @@ Now, let's write a MicroPython program to control the LEDs through the 74HC595 s
         shift_out(0x00)
         utime.sleep(0.5)
 
-When you run the code, the LEDs connected to the 74HC595 shift register will display dynamic light patterns:
+Beim Ausführen des Codes zeigen die LEDs dynamische Lichteffekte:
 
-* **First Sequence**: LEDs light up one after another from left to right. Each LED turns on in sequence, creating the effect of a light moving across the row.
-* **Second Sequence**: LEDs light up one after another from right to left, reversing the direction of the movement.
-* **Third Sequence**: LEDs create a growing bar effect, where LEDs turn on cumulatively from left to right until all LEDs are lit.
-* **Final Step**: All LEDs turn off briefly before the entire sequence repeats.
+* **Erste Sequenz**: Die LEDs leuchten nacheinander von links nach rechts auf – ein laufendes Licht.
+* **Zweite Sequenz**: Die LEDs leuchten nacheinander von rechts nach links – das Licht kehrt zurück.
+* **Dritte Sequenz**: Eine wachsende Lichtleiste von links nach rechts – immer mehr LEDs leuchten.
+* **Abschließend**: Alle LEDs gehen kurz aus, bevor die Animation von vorne beginnt.
 
-This results in an eye-catching display of lights moving back and forth and a bar growing across the LEDs, looping continuously.
+Das Ergebnis ist eine auffällige, sich wiederholende Lichtanimation.
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Import Modules:
+#. Module importieren:
 
-   * ``machine``: Provides access to GPIO pins.
-   * ``utime``: Contains time-related functions.
+   * ``machine``: Ermöglicht Zugriff auf die GPIO-Pins.
+   * ``utime``: Stellt Zeitfunktionen bereit.
 
-#. Define Control Pins:
+#. Steuerpins definieren:
 
-   We define the GPIO pins connected to the 74HC595.
+   GPIO-Pins, die mit dem 74HC595 verbunden sind, werden festgelegt.
 
    .. code-block:: python
 
@@ -212,12 +210,12 @@ This results in an eye-catching display of lights moving back and forth and a ba
       RCLK = machine.Pin(1, machine.Pin.OUT)  # Latch Clock
       SRCLK = machine.Pin(2, machine.Pin.OUT) # Shift Clock
 
-#. Shift Out Function:
+#. Funktion zum Seriellen Ausgeben (Shift Out):
 
-   * This function sends 8 bits of data to the shift register.
-   * It sends the most significant bit (MSB) first.
-   * Pulses the shift register clock (SRCLK) to shift in each bit.
-   * After all bits are shifted in, it pulses the register clock (RCLK) to latch the data to the outputs.
+   * Diese Funktion überträgt 8 Datenbits an das Schieberegister.
+   * Dabei wird das höchstwertige Bit (MSB) zuerst gesendet.
+   * Der Taktpin des Schieberegisters (SRCLK) wird getoggelt, um jedes Bit einzuschieben.
+   * Nachdem alle Bits übertragen wurden, wird der Register-Takt (RCLK) ausgelöst, um die Daten an den Ausgängen zu übernehmen.
 
    .. code-block:: python
 
@@ -234,10 +232,10 @@ This results in an eye-catching display of lights moving back and forth and a ba
           utime.sleep_us(1)
           RCLK.low()
           utime.sleep_us(1)
-    
-#. Main Loop:
 
-   * Lights up each LED one by one from Q0 to Q7.
+#. Hauptschleife:
+
+   * LEDs einzeln von Q0 bis Q7 einschalten.
 
    .. code-block:: python
 
@@ -247,7 +245,7 @@ This results in an eye-catching display of lights moving back and forth and a ba
           utime.sleep(0.2)
 
 
-   * Lights up each LED one by one from Q7 to Q0.
+   * LEDs einzeln von Q7 bis Q0 einschalten.
 
    .. code-block:: python
 
@@ -256,7 +254,7 @@ This results in an eye-catching display of lights moving back and forth and a ba
           shift_out(data)
           utime.sleep(0.2)
 
-   * Gradually lights up LEDs to create a bar that grows from Q0 to Q7.
+   * Eine wachsende Leiste anzeigen.
 
    .. code-block:: python
 
@@ -265,32 +263,32 @@ This results in an eye-catching display of lights moving back and forth and a ba
           shift_out(data)
           utime.sleep(0.2)
 
-   * Sends 0x00 to turn off all LEDs.
+   * Alle LEDs ausschalten.
 
    .. code-block:: python
 
      shift_out(0x00)
      utime.sleep(0.5)
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* Create Custom Patterns:
+* Eigene Muster erstellen:
 
-  Modify the data sent to create different LED patterns. For example, to blink alternate LEDs:
- 
+  Erstelle neue LED-Muster, z. B. wechselndes Blinken:
+
   .. code-block:: python
 
     shift_out(0b10101010)
 
-* Control More LEDs:
+* Mehr LEDs steuern:
 
-  Chain multiple 74HC595 chips together to control more outputs. Connect the Q7' (Pin 9) of the first chip to DS (Pin 14) of the second chip.
+  Mehrere 74HC595 in Reihe schalten. Verbinde Pin 9 (Q7’) des ersten mit Pin 14 (DS) des zweiten ICs.
 
-* Integrate with Sensors:
+* Mit Sensoren kombinieren:
 
-  Use inputs from sensors or buttons to change the LED patterns dynamically.
+  Nutze Eingaben von Tastern oder Sensoren, um die Muster dynamisch zu ändern.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use the 74HC595 shift register to expand the output capabilities of your Raspberry Pi Pico 2 W. This technique is invaluable when working with projects that require controlling many outputs with limited GPIO pins.
+In dieser Lektion hast du gelernt, wie man mit dem 74HC595-Schieberegister die Ausgabemöglichkeiten des Raspberry Pi Pico 2 W erweitert. Diese Technik ist besonders nützlich für Projekte mit vielen Ausgängen und begrenzten GPIO-Ressourcen.
 

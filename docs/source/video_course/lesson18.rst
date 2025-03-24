@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 18:  Push Button Control of LEDs in Micropython
+Lektion 18: Steuerung von LEDs mit Tastern in MicroPython
 =============================================================================
 
-This tutorial covers using push buttons to toggle an LED on and off with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Verwendung von Tastern, um eine LED am Raspberry Pi Pico W ein- und auszuschalten:
 
-* **Introduction**: Overview of using push buttons to control LEDs.
-* **Homework Solution**: Solution for toggling an LED with a push button.
-* **Circuit Setup**: Wiring a push button to GPIO 14 and an LED to GPIO 15.
-* **Toggle Logic**: Explains logic for toggling LED state using button press.
-* **Practical Demonstration**: Step-by-step demo of toggling the LED with the button.
-* **Homework Assignment**: Use multiple buttons to control RGB LED colors.
+* **Einführung**: Überblick über die Verwendung von Tastern zur LED-Steuerung.
+* **Lösung der Hausaufgabe**: Lösung für das Ein- und Ausschalten einer LED mit einem Taster.
+* **Schaltungsaufbau**: Verdrahtung eines Tasters an GPIO 14 und einer LED an GPIO 15.
+* **Umschaltlogik**: Erklärung der Logik zum Umschalten des LED-Zustands per Tasterdruck.
+* **Praktische Demonstration**: Schritt-für-Schritt-Demonstration des Umschaltens der LED mit dem Taster.
+* **Hausaufgabe**: Verwendung mehrerer Taster zur Steuerung der Farben einer RGB-LED.
 
 **Video**
 

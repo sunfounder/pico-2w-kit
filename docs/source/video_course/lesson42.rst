@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 42: Measuring Tilt With an MPU6050 Accelerometer
+Lektion 42: Neigungsmessung mit einem MPU6050-Beschleunigungssensor
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure and calculate tilt angles:
+Dieses Tutorial behandelt die Verwendung des MPU6050-Sensors mit dem Raspberry Pi Pico W zur Messung und Berechnung von Neigungswinkeln:
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes with MPU6050, and setting up hardware and software.
-* **Previous Lesson Recap**: Recap of measuring accelerations and homework on tilt calculation.
-* **Z-Axis Acceleration**: Explains 1G acceleration in the Z-axis due to gravity and tilt effects on readings.
-* **Calculating Tilt Angles**: Uses trigonometry to derive tilt equations (pitch and roll) and implements in Python.
-* **Practical Application**: Tests code for tilt accuracy and homework to refine pitch and roll measurements.
-* **Conclusion**: Emphasizes understanding concepts over using libraries, and encourages support via Patreon.
+* **Einführung**: Messung der Beschleunigung in den X-, Y- und Z-Achsen mit dem MPU6050 und Einrichtung der Hardware und Software.
+* **Rückblick auf die vorherige Lektion**: Zusammenfassung der Beschleunigungsmessungen und Hausaufgaben zur Neigungsberechnung.
+* **Z-Achsen-Beschleunigung**: Erklärt die 1G-Beschleunigung in der Z-Achse aufgrund der Schwerkraft und die Auswirkungen der Neigung auf die Messwerte.
+* **Berechnung der Neigungswinkel**: Verwendet Trigonometrie zur Ableitung der Neigungsgleichungen (Nick- und Rollwinkel) und setzt diese in Python um.
+* **Praktische Anwendung**: Testet den Code auf Neigungsgenauigkeit und gibt Hausaufgaben zur Verfeinerung der Messungen von Nick- und Rollwinkel.
+* **Schlussfolgerung**: Betont das Verständnis der Konzepte über die Verwendung von Bibliotheken und fördert die Unterstützung über Patreon.
 
 
 

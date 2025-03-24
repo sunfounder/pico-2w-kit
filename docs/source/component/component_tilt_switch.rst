@@ -1,33 +1,35 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_tilt:
 
-Tilt Switch
+Neigungsschalter
 =============================
 
 |img_tilt| 
 
-The tilt switch used here is a ball-type switch containing a metal ball inside. It is designed to detect small angular inclinations.
+Der hier verwendete Neigungsschalter ist ein Kugelschalter, der eine Metallkugel im Inneren enthält. Er ist speziell dafür ausgelegt, kleine Neigungswinkel zu erkennen.
 
-**Working Principle**
+**Funktionsprinzip**
 
-The operation of the tilt switch is straightforward:
-- When the switch is tilted at a certain angle, the metal ball inside rolls and makes contact with two terminals, completing the circuit and triggering the connected system.
-- When the switch is not tilted, the ball remains away from the contacts, breaking the circuit and leaving it inactive.
+Die Funktionsweise des Neigungsschalters ist einfach:
 
-This simple yet effective mechanism makes the tilt switch ideal for detecting changes in orientation or inclination.
+- Wird der Schalter um einen bestimmten Winkel geneigt, rollt die Metallkugel im Inneren und stellt eine Verbindung zwischen zwei Anschlüssen her. Dadurch wird der Stromkreis geschlossen und das angeschlossene System ausgelöst.
+- Ist der Schalter nicht geneigt, bleibt die Kugel von den Kontakten entfernt, wodurch der Stromkreis unterbrochen und inaktiv bleibt.
+
+Dieses einfache, aber effektive Mechanismus macht den Neigungsschalter ideal für die Erkennung von Änderungen in der Orientierung oder Neigung.
+
 |img_tilt_symbol|
 
 * `SW520D Tilt Switch Datasheet <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_
@@ -37,7 +39,7 @@ This simple yet effective mechanism makes the tilt switch ideal for detecting ch
 
 **Example**
 
-* :ref:`py_tilt` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`ar_tilt` (For Arduino User)
-.. * :ref:`per_flowing_leds` (For Piper Make User)
+* :ref:`py_tilt` (Für MicroPython-Nutzer)
+* :ref:`py_10_second` (Für MicroPython-Nutzer)
+* :ref:`ar_tilt` (Für Arduino-Nutzer)
+.. * :ref:`per_flowing_leds` (Für Piper Make-Nutzer)

@@ -1,27 +1,26 @@
-.. note::
+.. note:: 
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Lesson 59: Controlling a Servo with a Joystick
+Lektion 59: Steuerung eines Servos mit einem Joystick
 =============================================================================
 
-This tutorial covers controlling a servo with a joystick using the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Steuerung eines Servos mit einem Joystick unter Verwendung des Raspberry Pi Pico W:
 
 
-* **Wiring Setup**: Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO 27, VRY to GPIO 26. Connect servo 5V to pin 40, ground to pin 38, control to GPIO 15.
-* **Code Implementation**: Import ``machine``, ``time``, ``math``. Set up ADC for joystick and PWM for servo. Read and print joystick values.
-* **Calibration and Control**: Scale ADC values to -100 to +100. Calculate joystick angle. Map angle to PWM for servo.
-* **Homework Assignment**: Write code to control servo from joystick angle (0-180 degrees).
+* **Verkabelungsaufbau**: Verbinde den Ground des Joysticks mit Pin 38, 3.3V mit Pin 36, VRX mit GPIO 27 und VRY mit GPIO 26. Verbinde die 5V des Servos mit Pin 40, Ground mit Pin 38 und die Steuerung mit GPIO 15.
+* **Codeimplementierung**: Importiere ``machine``, ``time``, ``math``. Richte ADC für den Joystick und PWM für den Servo ein. Lese und drucke die Joystickwerte.
+* **Kalibrierung und Steuerung**: Skaliere ADC-Werte auf -100 bis +100. Berechne den Winkel des Joysticks. Mappe den Winkel auf PWM für den Servo.
+* **Hausaufgabe**: Schreibe Code, um den Servo basierend auf dem Winkel des Joysticks (0-180 Grad) zu steuern.
 
 
 **Video**

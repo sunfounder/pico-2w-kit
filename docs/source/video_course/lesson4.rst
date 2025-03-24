@@ -1,31 +1,30 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-Lesson 4:  Create a Binary Counter Using the Pico W
+Lektionen 4: Erstelle einen Binärzähler mit dem Pico W
 =================================================================
 
-This tutorial covers creating a 4-bit digital counter using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+In diesem Tutorial wird gezeigt, wie man einen 4-Bit digitalen Zähler mit dem SunFounder Kepler Kit für den Raspberry Pi Pico W erstellt:
 
-* **Homework Review**: Review of the 4-bit counter using LEDs.
-* **Schematic Setup**: Connect four LEDs with 220 Ohm resistors to the Pico W.
-* **Code**: Write Python code to create a 4-bit counter from 0 to 15 using LEDs.
-* **Demonstration**: Test the counter and verify functionality.
-
+* **Hausaufgabenüberprüfung**: Rückblick auf den 4-Bit Zähler mit LEDs.
+* **Schaltplanaufbau**: Schließe vier LEDs mit 220-Ohm-Widerständen an den Pico W an.
+* **Code**: Schreibe Python-Code, um einen 4-Bit Zähler von 0 bis 15 mit LEDs zu erstellen.
+* **Demonstration**: Teste den Zähler und überprüfe die Funktionsweise.
 
 **Video**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/P1dzHNgAtvg?si=Pvr8_qzheuR2BBAb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    

@@ -1,57 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Tauche gemeinsam mit anderen Technikfans tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Erhalte Unterstützung bei technischen Problemen oder Fragen nach dem Kauf – durch unser Team und die Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erfahre als Erster von neuen Produktankündigungen und erhalte exklusive Einblicke.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Aktionen & Gewinnspiele**: Nimm an saisonalen Aktionen und spannenden Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_iot_ble_lock:
 
-8.16 Bluetooth Lock Controller
+8.16 Bluetooth-Schloss-Controller
 ==========================================
 
-The project uses a Raspberry Pi Pico 2 W board with Bluetooth capabilities to create a smart lock system. The lock's servo motor, connected to the Pico 2 W, is controlled wirelessly via a custom mobile application. The app sends lock and unlock commands to the board using BLE (Bluetooth Low Energy) communication.
+In diesem Projekt wird das Raspberry Pi Pico 2 W mit Bluetooth-Funktionalität verwendet, um ein intelligentes Schlosssystem zu entwickeln. Der am Pico 2 W angeschlossene Servomotor des Schlosses wird drahtlos über eine selbst entwickelte mobile App gesteuert. Die App sendet per BLE (Bluetooth Low Energy) Sperr- und Entsperrbefehle an das Board.
 
-This project demonstrates how to use the Raspberry Pi Pico 2 W for IoT applications, integrating Bluetooth functionality with physical control mechanisms. It provides an engaging way to explore BLE communication and servo control using MicroPython.
+Dieses Projekt zeigt, wie man das Raspberry Pi Pico 2 W für IoT-Anwendungen nutzen kann – durch Integration von Bluetooth-Funktionen mit physischer Steuerung. Es bietet eine spannende Möglichkeit, BLE-Kommunikation und Servosteuerung mit MicroPython zu erlernen.
 
-The app used in this project was developed with |link_appinventor|.
+Die in diesem Projekt verwendete App wurde mit |link_appinventor| entwickelt.
 
-1. Build the Circuit
+1. Schaltung aufbauen
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden folgende Bauteile benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist besonders praktisch – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ENTHALTENE TEILE
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Die Komponenten können alternativ auch einzeln über die folgenden Links erworben werden:
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -59,7 +59,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -68,7 +68,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -82,62 +82,62 @@ You can also buy them separately from the links below.
 
    <br/>
 
-2. Create the Android App
+2. Android-App erstellen
 +++++++++++++++++++++++++++++++++
 
-You will develop the Android application using |link_appinventor|, a free web application ideal for beginners in Android development. It offers intuitive drag-and-drop features for creating functional applications.
+Du erstellst die Android-App mit |link_appinventor| – einer kostenlosen Webanwendung, die besonders für Einsteiger geeignet ist. Sie bietet eine intuitive Drag-and-Drop-Oberfläche zur App-Erstellung.
 
-Follow these steps to get started:
+So startest du:
 
-#. Go to |link_appinventor_login|, and click "online tool" to login. You will need a Google account to register with MIT App Inventor.
+#. Besuche |link_appinventor_login| und klicke auf "Online-Tool", um dich anzumelden. Du benötigst ein Google-Konto zur Registrierung bei MIT App Inventor.
 
    .. image:: img/13-ai-signup.png
        :width: 90%
        :align: center
 
-#. After logging in, navigate to **Projects** -> **Import project (.aia) from my computer**. Subsequently, upload the ``ble_lock_picow.aia`` file located in the following path: ``pico-2w-kit/micropython/iot/8.16-ble_lock``.
+#. Gehe nach der Anmeldung zu **Projekte** -> **Projekt (.aia) von meinem Computer importieren** und lade die Datei ``ble_lock_picow.aia`` hoch, die sich unter folgendem Pfad befindet: ``pico-2w-kit/micropython/iot/8.16-ble_lock``.
 
-   Alternatively, you can download the file directly: :download:`ble_lock_picow.aia</_static/other/ble_lock_picow.aia>`
+   Alternativ kannst du die Datei direkt herunterladen: :download:`ble_lock_picow.aia</_static/other/ble_lock_picow.aia>`
 
    .. image:: img/13-ai-import.png
         :align: center
 
-#. Once uploaded, the app template will appear in the MIT App Inventor interface. This pre-configured template can be customized after you become familiar with the platform.
+#. Nach dem Hochladen erscheint die App-Vorlage in der Oberfläche von MIT App Inventor. Diese vorkonfigurierte Vorlage kannst du später individuell anpassen.
 
-#. MIT App Inventor has two main sections: **Designer** and **Blocks**. You can switch between these two sections in the upper right corner of the page.
+#. MIT App Inventor besteht aus zwei Hauptbereichen: **Designer** und **Blocks**. Du kannst oben rechts zwischen ihnen wechseln.
 
    .. image:: img/13-ai-intro-1.png
 
-#. The **Designer** allows you to add buttons, text, screens, and modify the overall aesthetic of your app.
+#. Im **Designer** fügst du Schaltflächen, Texte und Oberflächenelemente hinzu und gestaltest das Aussehen der App.
 
    .. image:: img/16-ai-intro-2.png
       :width: 100%
-   
-#. Next, there's the **Blocks** section. This section lets you craft custom functionalities for your app, allowing you to program each component on the app's GUI to achieve desired features.
+
+#. Im Bereich **Blocks** kannst du die Funktionen der App programmieren und das Verhalten einzelner Elemente festlegen.
 
    .. image:: img/16-ai-intro-3.png
       :width: 100%
 
-#. To install the app on a phone, navigate to the **Build** tab.
+#. Um die App auf deinem Smartphone zu installieren, gehe zum Reiter **Build**.
 
    .. image:: img/13-ai-intro-4.png
       :width: 60%
       :align: center
 
-   * Generate a ``.apk`` file. After selecting this option, a page will appear allowing you to choose between downloading a ``.apk`` file or scanning a QR code for installation. Follow the installation guide to complete the application installation. 
+   * Erstelle eine ``.apk``-Datei. Nach Auswahl dieser Option kannst du die Datei herunterladen oder per QR-Code installieren. Folge der Anleitung zur Installation der App.
 
-     Alternatively, download our pre-compiled APK file here: :download:`ble_lock_picow.apk</_static/other/ble_lock_picow.apk>`
+     Oder lade die vorkompilierte APK-Datei direkt herunter: :download:`ble_lock_picow.apk</_static/other/ble_lock_picow.apk>`
 
-   * If you wish to publish this app to Google Play or another app marketplace, you can generate a ``.aab`` file.
+   * Wenn du die App im Google Play Store veröffentlichen möchtest, kannst du eine ``.aab``-Datei generieren.
 
 
-3. Run the Code
+3. Code ausführen
 +++++++++++++++++++++++++++++++++
 
-Open the ``8.16-ble_lock.py`` file under the path of ``pico-2w-kit/micropython/iot/8.16-ble_lock``, or copy this code into your IDE.
-   
-.. note:: 
-   This code depends on the ``ble_advertising.py`` file. Make sure to upload it to the Pico board before running the script.
+Öffne die Datei ``8.16-ble_lock.py`` unter dem Pfad ``pico-2w-kit/micropython/iot/8.16-ble_lock`` oder kopiere den Code in deine IDE.
+
+.. note::
+   Dieser Code benötigt zusätzlich die Datei ``ble_advertising.py``. Stelle sicher, dass sie auf das Pico-Board hochgeladen wird, bevor du das Skript ausführst.
 
 .. code-block:: python
 
@@ -254,40 +254,40 @@ Open the ``8.16-ble_lock.py`` file under the path of ``pico-2w-kit/micropython/i
    if __name__ == "__main__":
        demo()
 
-4. App and Bluetooth Connection
+4. App- und Bluetooth-Verbindung
 ++++++++++++++++++++++++++++++++++++++++++
 
-Ensure that the "Bluetooth controlled lock ble" app created earlier is installed on your phone.
+Stelle sicher, dass die zuvor erstellte App Bluetooth controlled lock ble auf deinem Smartphone installiert ist.
 
-#. Enable Bluetooth on your phone.
+#. Aktiviere Bluetooth auf deinem Smartphone.
 
-#. Open the **Bluetooth controlled lock ble** app.
+#. Öffne die App **Bluetooth controlled lock ble**.
 
    .. image:: img/16_app_2.png
       :width: 25%
       :align: center
 
-#. When you open the app for the first time, you will see two consecutive prompts requesting permissions. These permissions are required for Bluetooth functionality.
+#. Beim ersten Start der App erscheinen zwei aufeinanderfolgende Berechtigungsanfragen. Diese sind für die Bluetooth-Funktionalität notwendig.
 
    .. image:: img/16_app_3.png
       :width: 100%
       :align: center
 
-#. In the APP, click the lock icon to establish a Bluetooth connection between the application and the Pico 2 W.
+#. Tippe auf das Schlosssymbol, um die Bluetooth-Verbindung zwischen App und Pico 2 W herzustellen.
 
    .. image:: img/16_app_4.png
       :width: 55%
       :align: center
 
-#. This page displays a list of all Bluetooth devices. Choose the ``xx.xx.xx.xx.xx.xx pico2w`` option from the list. Each device name is displayed alongside its MAC address.
+#. Es wird eine Liste aller verfügbaren Bluetooth-Geräte angezeigt. Wähle das Gerät mit dem Namen ``xx.xx.xx.xx.xx.xx pico2w`` aus (Name plus MAC-Adresse).
 
    .. image:: img/13_app_5.png
       :width: 60%
       :align: center
 
-#. If no devices appear in the list, try enabling the location feature on your phone. (On some Android versions, the location setting is linked to Bluetooth functionality.)
+#. Falls keine Geräte angezeigt werden, aktiviere gegebenenfalls die Standortdienste auf deinem Smartphone (bei manchen Android-Versionen ist Bluetooth daran gekoppelt).
 
-#. Once connected, you will be redirected to the main screen. Click the unlock or lock button to control the servo motor, unlocking or locking it as needed.
+#. Nach erfolgreicher Verbindung wirst du auf die Hauptseite der App weitergeleitet. Tippe auf „Sperren“ oder „Entsperren“, um den Servomotor entsprechend zu steuern.
 
    .. image:: img/16_app_7.png
       :width: 90%

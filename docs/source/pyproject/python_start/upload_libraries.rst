@@ -1,47 +1,47 @@
 
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+   Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Begeisterten.
 
-    **Why Join?**
+   **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+   - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+   - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+   - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+   - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+   - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+   👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
-===================================
+1.4 Bibliotheken auf den Pico hochladen
+=============================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico 2 W first, and then we can run the code directly later.
+In einigen Projekten benötigst du zusätzliche Bibliotheken. Deshalb laden wir diese Bibliotheken zuerst auf den Raspberry Pi Pico 2 W hoch, damit wir später den Code direkt ausführen können.
 
-#. Download the relevant code from the link below.
+#. Lade den relevanten Code über den unten stehenden Link herunter.
 
 
    * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
 
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Öffne die Thonny IDE und verbinde den Pico mit deinem Computer über ein Micro-USB-Kabel. Klicke dann in der rechten unteren Ecke auf den Interpreter "MicroPython (Raspberry Pi Pico).COMXX".
 
     .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. Klicke in der oberen Navigationsleiste auf **Ansicht** -> **Dateien**.
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``pico-2w-kit-main/micropython/libs`` folder.
+#. Wechsle den Pfad zu dem Ordner, in dem du das `Codepaket <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`_ heruntergeladen hast, und gehe dann zum Ordner ``pico-2w-kit-main/micropython/libs``.
 
     .. image:: img/th_path.png
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+#. Wähle alle Dateien oder Ordner im Ordner ``libs/`` aus, klicke mit der rechten Maustaste und klicke auf **Hochladen auf**, es dauert eine Weile, bis der Upload abgeschlossen ist.
 
     .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. Jetzt siehst du die Dateien, die du gerade in deinem Laufwerk ``Raspberry Pi Pico`` hochgeladen hast.
 
     .. image:: img/th_done.png

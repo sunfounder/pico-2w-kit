@@ -1,47 +1,47 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein und lerne gemeinsam mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Lösche nach dem Verkauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_micro:
 
-2.8 - Press Gently
+2.8 - Drücke sanft
 ==========================
 
 |img_micro_switch|
 
-In this lesson, we'll learn how to use a **micro switch** (also known as a limit switch) with the Raspberry Pi Pico 2 W to detect when it's pressed or released. Micro switches are commonly used in devices like microwave oven doors, printer covers, or as end stops in 3D printers because they are reliable and can handle frequent activation.
+In dieser Lektion lernen wir, wie man einen **Mikroschalter** (auch als Endschalter bekannt) mit dem Raspberry Pi Pico 2 W verwendet, um zu erkennen, wann er gedrückt oder losgelassen wird. Mikroschalter werden häufig in Geräten wie Mikrowellentüren, Druckerabdeckungen oder als Endanschläge in 3D-Druckern verwendet, weil sie zuverlässig sind und häufige Betätigungen aushalten können.
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
-        - 450+
+        - 450+ 
         - |link_pico2w_kit|
 
 
-You can also buy them separately from the links below.
+Du kannst die Teile auch einzeln über die folgenden Links kaufen.
 
 
 .. list-table::
@@ -49,16 +49,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -67,123 +67,123 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_micro_switch`
         - 1
         - 
 
-**Understanding the Micro Switch**
+**Den Mikroschalter verstehen**
 
-A micro switch typically has three pins:
+Ein Mikroschalter hat in der Regel drei Pins:
 
 |img_micro_switch|
 
-- **Common (C)**: The middle pin.
-- **Normally Open (NO)**: Connected to the common pin when the switch is **pressed**.
-- **Normally Closed (NC)**: Connected to the common pin when the switch is **not pressed**.
+- **Common (C)**: Der mittlere Pin.
+- **Normally Open (NO)**: Wird mit dem Common-Pin verbunden, wenn der Schalter **gedrückt** wird.
+- **Normally Closed (NC)**: Wird mit dem Common-Pin verbunden, wenn der Schalter **nicht gedrückt** wird.
 
-By connecting the switch appropriately, we can detect when it's pressed by reading the voltage level on a GPIO pin.
+Indem der Schalter korrekt angeschlossen wird, können wir erkennen, wann er gedrückt wird, indem wir das Spannungsniveau an einem GPIO-Pin ablesen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+Standardmäßig ist GP14 niedrig, und wenn der Schalter gedrückt wird, ist GP14 hoch.
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+Der Zweck des 10K-Widerstands ist es, GP14 während des Druckens niedrig zu halten.
 
-When you press a mechanical switch, the contacts may bounce, causing multiple rapid transitions between open and closed states. The capacitor connected between GP14 and GND helps filter out this noise.
+Wenn du einen mechanischen Schalter drückst, können die Kontakte prellen, was zu mehreren schnellen Übergängen zwischen offenen und geschlossenen Zuständen führt. Der zwischen GP14 und GND geschaltete Kondensator hilft, dieses Rauschen herauszufiltern.
 
-* **Switch Not Pressed**:
+* **Schalter nicht gedrückt**:
 
-  * The **Common (C)** pin is connected to the **NC** pin, which is connected to **GND**.
-  * **GP14** reads **LOW** (0V).
+  * Der **Common (C)** Pin ist mit dem **NC** Pin verbunden, der mit **GND** verbunden ist.
+  * **GP14** liest **LOW** (0V).
 
-* **Switch Pressed**:
+* **Schalter gedrückt**:
 
-  * The **Common (C)** pin is connected to the **NO** pin, which is connected to **3.3V**.
-  * **GP14** reads **HIGH** (3.3V).
+  * Der **Common (C)** Pin ist mit dem **NO** Pin verbunden, der mit **3.3V** verbunden ist.
+  * **GP14** liest **HIGH** (3.3V).
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_limit_sw|
 
 
-**Writing the Code**
+**Code schreiben**
 
-We'll write a simple program that detects when the micro switch is pressed and prints a message to the Serial Monitor.
+Wir schreiben ein einfaches Programm, das erkennt, wann der Mikroschalter gedrückt wird und eine Nachricht an den Serial Monitor ausgibt.
 
 .. note::
 
-    * You can open the file ``2.8_press_gently.ino`` under the path of ``pico-2w-kit-main/arduino/2.8_press_gently``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Du kannst die Datei ``2.8_press_gently.ino`` im Verzeichnis ``pico-2w-kit-main/arduino/2.8_press_gently`` öffnen. 
+    * Oder kopiere diesen Code in die **Arduino IDE**.
+    * Vergiss nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor du auf den **Upload**-Button klickst.
 
-
+    
 
 .. code-block:: Arduino
 
-   const int switchPin = 14;   // GPIO pin connected to the micro switch
+   const int switchPin = 14;   // GPIO-Pin, der mit dem Mikroschalter verbunden ist
    int switchState = 0;
 
    void setup() {
-     Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-     pinMode(switchPin, INPUT);  // Set the switch pin as input
+     Serial.begin(115200);       // Initialisiere den Serial Monitor mit 115200 Baud
+     pinMode(switchPin, INPUT);  // Setze den Schalterpin als Eingang
    }
 
    void loop() {
-     switchState = digitalRead(switchPin);  // Read the state of the switch
+     switchState = digitalRead(switchPin);  // Lese den Zustand des Schalters
 
      if (switchState == HIGH) {
        Serial.println("The switch is pressed!");
      } else {
        Serial.println("The switch is not pressed.");
      }
-     delay(200);  // Small delay to avoid flooding the Serial Monitor
+     delay(200);  // Kleine Verzögerung, um das Überfluten des Serial Monitors zu vermeiden
    }
 
-When the code is running and the Serial Monitor is open, press and release the micro switch.
-The Serial Monitor will display "The switch is pressed!" when you press the switch and "The switch is not pressed." when you release it.
+Wenn der Code läuft und der Serial Monitor geöffnet ist, drücke und lasse den Mikroschalter los.
+Der Serial Monitor zeigt "Der Schalter ist gedrückt!" an, wenn du den Schalter drückst, und "Der Schalter ist nicht gedrückt." wenn du ihn loslässt.
 
-**Understanding the Code**
+**Code verstehen**
 
-#. Initializing Serial Communication:
+#. Initialisierung der seriellen Kommunikation:
 
-   Starts serial communication at a baud rate of 115200. This allows us to print messages to the Serial Monitor.
+   Die serielle Kommunikation wird mit einer Baudrate von 115200 gestartet. Dies ermöglicht es uns, Nachrichten an den Serial Monitor zu senden.
 
    .. code-block:: Arduino
 
         Serial.begin(115200);
 
-#. Setting Up the Switch Pin:
+#. Setup der Schalterpin:
 
-   Configures switchPin (GP14) as an input to read the switch state.
+   Konfiguriert switchPin (GP14) als Eingang, um den Zustand des Schalters zu lesen.
 
    .. code-block:: Arduino
 
         pinMode(switchPin, INPUT);
 
-#. Reading the Switch State:
+#. Ablesen des Schalterzustands:
 
-   Reads the current state of the switch. It will be HIGH when pressed and LOW when not pressed.
+   Liest den aktuellen Zustand des Schalters. Es wird HIGH sein, wenn er gedrückt wird, und LOW, wenn er nicht gedrückt wird.
 
    .. code-block:: Arduino
 
         switchState = digitalRead(switchPin);
 
-#. Responding to Switch Press:
+#. Reaktion auf den Schalterdruck:
 
-   Prints a message based on whether the switch is pressed or not.
+   Gibt eine Nachricht basierend darauf aus, ob der Schalter gedrückt ist oder nicht.
 
    .. code-block:: Arduino
 
@@ -194,58 +194,57 @@ The Serial Monitor will display "The switch is pressed!" when you press the swit
         }
 
 
-**Alternative: Using Internal Pull-Up Resistor**
+**Alternative: Verwendung des internen Pull-Up-Widerstands**
 
-If you prefer to simplify the circuit and reduce the number of components, you can use the internal pull-up resistor of the Pico.
+Wenn du den Schaltkreis vereinfachen und die Anzahl der Komponenten reduzieren möchtest, kannst du den internen Pull-Up-Widerstand des Pico verwenden.
 
-* GP14 is connected to GND when the switch is pressed, so it reads LOW (0).
-* GP14 reads HIGH when the switch is not pressed due to the internal pull-up resistor.
+* GP14 ist mit GND verbunden, wenn der Schalter gedrückt ist, also liest es LOW (0).
+* GP14 liest HIGH, wenn der Schalter nicht gedrückt wird, aufgrund des internen Pull-Up-Widerstands.
 
-* Circuit Modifications:
+* Schaltkreis-Modifikationen:
 
-  Remove the External 10KΩ Resistor and Capacitor.
+  Entferne den externen 10KΩ-Widerstand und den Kondensator.
 
-* Micro Switch Connections:
+* Mikroschalter-Verbindungen:
 
-  * **Common (C) Terminal**: Connect to GP14 on the Pico.
-  * **Normally Open (NO) Terminal**: Connect to GND on the Pico.
-  * **Normally Closed (NC) Terminal**: Leave unconnected.
+  * **Common (C)-Terminal**: Verbinde es mit GP14 auf dem Pico.
+  * **Normally Open (NO)-Terminal**: Verbinde es mit GND auf dem Pico.
+  * **Normally Closed (NC)-Terminal**: Lasse es unverbunden.
 
-* Code Modifications:
+* Code-Modifikationen:
 
   .. code-block:: Arduino
 
-        const int switchPin = 14;   // GPIO pin connected to the micro switch
+        const int switchPin = 14;   // GPIO-Pin, der mit dem Mikroschalter verbunden ist
         int switchState = 0;
 
         void setup() {
-          Serial.begin(115200);          // Initialize Serial Monitor at 115200 baud
-          pinMode(switchPin, INPUT_PULLUP);  // Enable internal pull-up resistor
+          Serial.begin(115200);          // Initialisiere den Serial Monitor mit 115200 Baud
+          pinMode(switchPin, INPUT_PULLUP);  // Aktiviere den internen Pull-Up-Widerstand
         }
 
         void loop() {
-          switchState = digitalRead(switchPin);  // Read the state of the switch
+          switchState = digitalRead(switchPin);  // Lese den Zustand des Schalters
 
           if (switchState == LOW) {
             Serial.println("The switch is pressed!");
           } else {
             Serial.println("The switch is not pressed.");
           }
-          delay(200);  // Small delay to avoid flooding the Serial Monitor
+          delay(200);  // Kleine Verzögerung, um das Überfluten des Serial Monitors zu vermeiden
         }
 
-**Debouncing the Switch**
+**Entprellen des Schalters**
 
-Mechanical switches can generate noise due to bouncing contacts. To improve the reliability of your readings, you can implement software debouncing.
-
+Mechanische Schalter können aufgrund der prellenden Kontakte Rauschen erzeugen. Um die Zuverlässigkeit deiner Messungen zu verbessern, kannst du Software-Entprellung implementieren.
 
 .. code-block:: Arduino
 
-    const int switchPin = 14;   // GPIO pin connected to the micro switch
-    int switchState = 0;        // Current state of the switch
-    int lastSwitchState = HIGH; // Previous state of the switch
-    unsigned long lastDebounceTime = 0;  // Time of the last state change
-    unsigned long debounceDelay = 50;    // Debounce time in milliseconds
+    const int switchPin = 14;   // GPIO-Pin, der mit dem Mikroschalter verbunden ist
+    int switchState = 0;        // Aktueller Zustand des Schalters
+    int lastSwitchState = HIGH; // Vorheriger Zustand des Schalters
+    unsigned long lastDebounceTime = 0;  // Zeit des letzten Zustandswechsels
+    unsigned long debounceDelay = 50;    // Entprellzeit in Millisekunden
 
     void setup() {
       Serial.begin(115200);
@@ -274,16 +273,16 @@ Mechanical switches can generate noise due to bouncing contacts. To improve the 
       lastSwitchState = reading;
     }
 
-* Checks if the reading has changed from the last state.
-* If it has, resets the ``lastDebounceTime``.
-* If the reading remains stable past the debounce delay, it considers the new state as valid.
+* Überprüft, ob sich die Lesung vom letzten Zustand geändert hat.
+* Wenn ja, wird ``lastDebounceTime`` zurückgesetzt.
+* Wenn die Lesung nach der Entprellzeit stabil bleibt, wird der neue Zustand als gültig betrachtet.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a micro switch with the Raspberry Pi Pico to detect when it's pressed or released. You've also seen how to implement a pull-down resistor in the circuit to ensure reliable readings and how to use the internal pull-up resistor to simplify the circuit. Additionally, you've learned about debouncing to handle mechanical switch noise.
+In dieser Lektion hast du gelernt, wie man einen Mikroschalter mit dem Raspberry Pi Pico verwendet, um zu erkennen, wann er gedrückt oder losgelassen wird. Du hast auch gesehen, wie man einen Pull-Down-Widerstand im Schaltkreis implementiert, um zuverlässige Messwerte zu gewährleisten, und wie man den internen Pull-Up-Widerstand verwendet, um den Schaltkreis zu vereinfachen. Außerdem hast du das Entprellen gelernt, um das Rauschen von mechanischen Schaltern zu verarbeiten.
 
-**Further Exploration**
+**Weiterführende Exploration**
 
-* **Control an LED**: Modify the code to turn an LED on when the switch is pressed.
-* **Multiple Switches**: Try adding more micro switches to detect different inputs.
-* **Create a Counter**: Count the number of times the switch is pressed and display it.
+* **LED steuern**: Ändere den Code, um eine LED einzuschalten, wenn der Schalter gedrückt wird.
+* **Mehrere Schalter**: Versuche, mehr Mikroschalter hinzuzufügen, um verschiedene Eingaben zu erkennen.
+* **Zähler erstellen**: Zähle, wie oft der Schalter gedrückt wurde, und zeige es an.

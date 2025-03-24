@@ -1,58 +1,61 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Unterstützung bei technischen Herausforderungen und nach dem Kauf durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen & Gewinnspiele**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-Pico 2 W Kit - A Versatile Hardware Programming Kit
+|link_pico2w_kit| – Ein vielseitiges Hardware-Programmierkit
 ======================================================================
 
-Thanks for choosing our Pico 2 W Kit.
+* |link_pico2w_starter_Kit|
 
-.. note::
-    This document is available in the following languages.
+Vielen Dank, dass du dich für unser |link_pico2w_kit| entschieden hast.
+
+.. note:: 
+    Dieses Dokument ist in den folgenden Sprachen verfügbar:
 
         * |link_en_tutorials|
-   
-    Please click on the respective links to access the document in your preferred language.
+        * |link_jp_tutorials|
+        * |link_german_tutorials|
 
+    Klicke auf die jeweiligen Links, um das Dokument in deiner bevorzugten Sprache zu öffnen.
 
-Thank you for choosing the SunFounder Pico 2 W Starter Kit
+Danke, dass du dich für das SunFounder Pico 2 W Starter Kit entschieden hast.
 
-The Pico 2 W Kit is a comprehensive learning and development kit built around the Raspberry Pi Pico 2 W microcontroller. 
-It comes equipped with a variety of modules, including sensors (ultrasonic, RFID, MPU6050, water level), display components 
-(LEDs, dot matrix, 7-segment display, I2C LCD1602), and actuators like motors, servos, and pumps. This kit is designed to 
-enable users to explore hardware programming, interactive projects, and creative designs.
-This documentation is divided into two sections based on the programming environment:
+Das Pico 2 W Kit ist ein umfassendes Lern- und Entwicklungsset, das auf dem Raspberry Pi Pico 2 W Mikrocontroller basiert. 
+Es enthält eine Vielzahl von Modulen, darunter Sensoren (Ultraschall, RFID, MPU6050, Wasserstand), Anzeigeelemente 
+(LEDs, Punktmatrix, 7-Segment-Anzeige, I2C LCD1602) und Aktoren wie Motoren, Servos und Pumpen. Dieses Kit wurde entwickelt, 
+um Nutzern die Möglichkeit zu geben, Hardware-Programmierung, interaktive Projekte und kreative Designs zu erkunden.
 
-* :ref:`projects_micropython`: Learn to program and control the kit using MicroPython, focusing on hands-on examples and hardware interaction.
-* :ref:`projects_arduino`: Utilize the Arduino IDE and C/C++ programming to achieve the same hardware functionality through structured exercises and projects.
+Diese Dokumentation ist in zwei Abschnitte unterteilt, basierend auf der gewählten Programmierumgebung:
 
-Whether you are a beginner or an experienced programmer, the Pico 2 W Kit provides all the tools and guidance you need to start building exciting projects.
+* :ref:`projects_micropython`: Lerne, das Kit mit MicroPython zu programmieren und zu steuern, mit einem Fokus auf praxisnahe Beispiele und Hardware-Interaktion.
+* :ref:`projects_arduino`: Nutze die Arduino-IDE und C/C++-Programmierung, um dieselbe Hardware-Funktionalität durch strukturierte Übungen und Projekte zu erreichen.
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+Egal, ob du Anfänger oder erfahrener Programmierer bist – das Pico 2 W Kit bietet alle Werkzeuge und Anleitungen, die du benötigst, um spannende Projekte zu realisieren.
 
-Here is the email: service@sunfounder.com.
+Falls du Interesse an weiteren Projekten hast, die nicht in unserer Dokumentation enthalten sind, kannst du uns gerne per E-Mail kontaktieren. Wir werden unsere Online-Tutorials so schnell wie möglich aktualisieren.
 
+Hier ist unsere E-Mail: service@sunfounder.com.
 
-**Source Code download**
+**Quellcode herunterladen**
 
 * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_
+* Oder sieh dir den Code direkt auf `Pico 2 W Starter Kit – GitHub <https://github.com/sunfounder/pico-2w-kit>`_ an.
 
 
-**Content**
+**Inhalt**
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 2
 
     About This Kit <self>
@@ -64,8 +67,7 @@ Here is the email: service@sunfounder.com.
     faq
 
 
-Copyright Notice
+Copyright-Hinweis
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Alle Inhalte dieses Handbuchs, einschließlich, aber nicht beschränkt auf Texte, Bilder und Code, sind Eigentum der SunFounder Company. Du darfst sie ausschließlich für persönliche Lernzwecke, Forschung, Unterhaltung oder andere nicht-kommerzielle bzw. gemeinnützige Zwecke gemäß den geltenden Urheberrechtsgesetzen nutzen, ohne die gesetzlichen Rechte des Autors und relevanter Rechteinhaber zu verletzen. Jede kommerzielle Nutzung durch Einzelpersonen oder Organisationen ohne Genehmigung ist untersagt. Die SunFounder Company behält sich das Recht vor, rechtliche Schritte einzuleiten.

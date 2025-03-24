@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie gemeinsam mit anderen begeisterten Mitgliedern Ihr Wissen rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Herausforderungen und Fragen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Teilen Sie Ihre Erfahrungen, tauschen Sie Tipps und Tutorials aus und verbessern Sie Ihre Fähigkeiten.
+    - **Exclusive Previews**: Erhalten Sie frühzeitig Zugriff auf neue Produktankündigungen und exklusive Einblicke.
+    - **Special Discounts**: Profitieren Sie von speziellen Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und werden Sie noch heute Mitglied!
 
 .. _cpn_button:
 
@@ -19,15 +19,15 @@ Button
 
 |img_button|
 
-Buttons are commonly used components for controlling electronic devices, typically functioning as switches to open or close circuits. While buttons come in various sizes and shapes, the one used here is a 6mm mini push-button, as shown in the images below.
+Buttons (auch Taster genannt) sind häufig eingesetzte Bauelemente zur Steuerung elektronischer Geräte und dienen typischerweise dazu, Stromkreise zu öffnen oder zu schließen. Sie sind in unterschiedlichen Größen und Formen erhältlich; in diesem Kit wird ein 6-mm-Mini-Drucktaster verwendet, wie unten dargestellt.
 
-In this button, pin 1 is internally connected to pin 2, and pin 3 is connected to pin 4. To complete a circuit, you only need to connect either pin 1 or pin 2 to either pin 3 or pin 4.
+Innerhalb dieses Tasters sind Pin 1 und Pin 2 miteinander verbunden, ebenso Pin 3 und Pin 4. Um einen Stromkreis zu schließen, genügt es daher, entweder Pin 1 oder Pin 2 mit Pin 3 oder Pin 4 zu verbinden.
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits. 
+Die folgende Abbildung zeigt die interne Struktur eines Tasters. Das rechts abgebildete Symbol wird üblicherweise zur Darstellung eines Buttons in Schaltplänen verwendet.
 
 |img_button_symbol|
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+Da Pin 1 mit Pin 2 und Pin 3 mit Pin 4 verbunden ist, werden beim Drücken des Tasters alle vier Pins miteinander verbunden und der Stromkreis geschlossen.
 
 |img_button2|
 
@@ -38,10 +38,10 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 
 **Example**
 
-* :ref:`py_button` (For MicroPython User)
-* :ref:`py_iot_mqtt_publish` (For MicroPython User)
-* :ref:`ar_button` (For Arduino User)
-.. * :ref:`per_button` (For Piper Make User)
-.. * :ref:`per_rainbow_light` (For Piper Make User)
-.. * :ref:`per_drum_kit` (For Piper Make User)
-.. * :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_button` (Für MicroPython-Nutzer)
+* :ref:`py_iot_mqtt_publish` (Für MicroPython-Nutzer)
+* :ref:`ar_button` (Für Arduino-Nutzer)
+.. * :ref:`per_button` (Für Piper Make-Nutzer)
+.. * :ref:`per_rainbow_light` (Für Piper Make-Nutzer)
+.. * :ref:`per_drum_kit` (Für Piper Make-Nutzer)
+.. * :ref:`per_reaction_game` (Für Piper Make-Nutzer)

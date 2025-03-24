@@ -1,53 +1,52 @@
 .. note::
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_transistor:
 
-2.15 Two Kinds of Transistors
+2.15 Zwei Arten von Transistoren
 ==========================================
 
-In this lesson, we'll explore two types of transistors: the **S8050 (NPN)** and the **S8550 (PNP)**. Transistors are commonly used as electronic switches, and we’ll see how both types can be used to control an LED with a button.
+In dieser Lektion erkunden wir zwei Arten von Transistoren: den **S8050 (NPN)** und den **S8550 (PNP)**. Transistoren werden häufig als elektronische Schalter verwendet, und wir werden sehen, wie beide Typen verwendet werden können, um eine LED mit einem Knopf zu steuern.
 
 |img_NPN&PNP|
 
-* **NPN (S8050)**: This type of transistor allows current to flow from the **collector** to the **emitter** when a high signal is applied to the **base**.
-* **PNP (S8550)**: For PNP transistors, current flows from the **emitter** to the **collector** when a low signal is applied to the **base**.
+* **NPN (S8050)**: Diese Art von Transistor ermöglicht es dem Strom, vom **Kollektor** zum **Emitter** zu fließen, wenn ein hohes Signal an der **Basis** angelegt wird.
+* **PNP (S8550)**: Bei PNP-Transistoren fließt der Strom vom **Emitter** zum **Kollektor**, wenn ein niedriges Signal an der **Basis** angelegt wird.
 
 
-While both transistors serve similar purposes, they behave oppositely when it comes to signal control. Let’s use these transistors to control an LED based on button input.
+Obwohl beide Transistoren ähnliche Zwecke erfüllen, verhalten sie sich gegenüber der Signalsteuerung entgegengesetzt. Lassen Sie uns diese Transistoren verwenden, um eine LED basierend auf der Eingabe eines Knopfes zu steuern.
 
 
 :ref:`cpn_transistor`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -55,8 +54,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB-Kabel
         - 1
         - 
     *   - 3
@@ -73,7 +72,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -93,64 +92,63 @@ You can also buy them separately from the links below.
         - |link_transistor_buy|
 
 
-**Way to connect NPN (S8050) transistor**
+**Verbindungsweg für NPN (S8050) Transistor**
 
 |sch_s8050|
 
-In this circuit, pressing the button sends a **high signal** to the GP14 pin. When GP15 outputs a high signal, the NPN transistor conducts, allowing current to flow through the LED, lighting it up.
+In diesem Schaltkreis sendet das Drücken des Knopfes ein **hohes Signal** an den GP14-Pin. Wenn GP15 ein hohes Signal ausgibt, leitet der NPN-Transistor und lässt Strom durch die LED fließen, die dadurch aufleuchtet.
 
 
 |wiring_s8050|
 
-**Way to connect PNP(S8550) transistor**
+**Verbindungsweg für PNP(S8550) Transistor**
 
 |sch_s8550|
 
-For the PNP transistor circuit, the button starts with a low signal on GP14 and changes to high when pressed. When GP15 outputs a **low signal**, the PNP transistor conducts, allowing current to flow and lighting up the LED.
+Im Schaltkreis des PNP-Transistors beginnt der Knopf mit einem niedrigen Signal auf GP14 und wechselt zu hoch, wenn er gedrückt wird. Wenn GP15 ein **niedriges Signal** ausgibt, leitet der PNP-Transistor und lässt Strom fließen, wodurch die LED aufleuchtet.
 
 |wiring_s8550|
 
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
-Both the NPN and PNP transistors can be controlled with the same code. The button's status is read, and depending on whether it's pressed or not, the Pico outputs a high or low signal to GP15.
+Sowohl der NPN- als auch der PNP-Transistor können mit demselben Code gesteuert werden. Der Status des Knopfes wird gelesen und je nachdem, ob er gedrückt wird oder nicht, gibt der Pico ein hohes oder niedriges Signal an GP15 aus.
 
 .. note::
 
-    * Open the ``2.15_transistor.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die Datei ``2.15_transistor.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
     
 
 .. code-block:: python
 
     import machine
 
-    # Initialize the button and signal pins
+    # Initialisiere den Knopf und die Signalpins
     button = machine.Pin(14, machine.Pin.IN)
     signal = machine.Pin(15, machine.Pin.OUT)
 
     while True:
         button_status = button.value()
         if button_status == 1:
-            signal.value(1)  # Send high signal to the transistor
+            signal.value(1)  # Sende hohes Signal an den Transistor
         else:
-            signal.value(0)  # Send low signal to the transistor
+            signal.value(0)  # Sende niedriges Signal an den Transistor
 
 
-**Results**
+**Ergebnisse**
 
-* NPN Circuit (S8050):
+* NPN-Schaltung (S8050):
 
-  The LED lights up when the button is pressed because the NPN transistor conducts when a high signal is applied to its base.
+  Die LED leuchtet auf, wenn der Knopf gedrückt wird, da der NPN-Transistor leitet, wenn ein hohes Signal an seine Basis angelegt wird.
 
-* PNP Circuit (S8550):
+* PNP-Schaltung (S8550):
 
-  The LED lights up when the button is released because the PNP transistor conducts when a low signal is applied to its base.
+  Die LED leuchtet auf, wenn der Knopf losgelassen wird, da der PNP-Transistor leitet, wenn ein niedriges Signal an seine Basis angelegt wird.
 
-Both circuits demonstrate how transistors can be used to control current flow based on different types of signals.
+Beide Schaltungen demonstrieren, wie Transistoren verwendet werden können, um den Stromfluss basierend auf verschiedenen Arten von Signalen zu steuern.
 
-**Conclusion**
+**Fazit**
 
-By experimenting with these two transistors, you gain a better understanding of how NPN and PNP transistors function and how to use them in circuits to control electronic devices.
-
+Durch das Experimentieren mit diesen beiden Transistoren erhältst du ein besseres Verständnis dafür, wie NPN- und PNP-Transistoren funktionieren und wie sie in Schaltkreisen verwendet werden können, um elektronische Geräte zu steuern.

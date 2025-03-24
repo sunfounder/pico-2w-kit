@@ -1,48 +1,48 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_pir:
 
-PIR Motion Sensor Module
+PIR-Bewegungssensor-Modul
 ==================================
 
 |img_pir|
 
-The PIR (Passive Infrared) sensor detects infrared radiation, enabling it to sense the presence of organisms that emit heat.
+Der PIR-Sensor (Passive Infrared) erkennt Infrarotstrahlung und kann somit die Anwesenheit von wärmeemittierenden Lebewesen erfassen.
 
-The sensor is divided into two slots connected to a differential amplifier. When a stationary object is in front of the sensor, both slots receive an equal amount of infrared radiation, resulting in zero output. However, when a moving object passes in front of the sensor, one slot detects more radiation than the other. This imbalance causes the output to fluctuate between high and low. These fluctuations in output voltage indicate motion detection.
+Der Sensor besitzt zwei Erfassungselemente, die mit einem Differenzverstärker verbunden sind. Befindet sich ein stationäres Objekt vor dem Sensor, empfangen beide Elemente eine gleiche Menge an Infrarotstrahlung, sodass der Ausgang 0 bleibt. Bewegt sich jedoch ein Objekt vor dem Sensor, nimmt ein Erfassungselement mehr Strahlung auf als das andere, wodurch ein Ungleichgewicht entsteht. Dies führt zu einer schwankenden Ausgangsspannung, die auf eine Bewegung hinweist.
 
 |img_PIR_working_principle|
 
-After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you'd better use the module without too much wind, because the wind can also interfere with the sensor.
+Nach dem Anschluss des Sensormoduls erfolgt eine etwa einminütige Initialisierung. Während dieser Zeit gibt das Modul in unregelmäßigen Abständen für 0–3 Zyklen ein Signal aus. Danach wechselt es in den Standby-Modus. Um Fehlfunktionen durch Störsignale zu vermeiden, sollte das Modul nicht direktem Licht oder anderen Störquellen ausgesetzt werden. Auch starke Luftströmungen können die Erkennung beeinträchtigen.
 
 |img_pir_back|
 
-**Distance Adjustment**
+**Entfernungseinstellung**
 
-Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.
+Durch Drehen des Potentiometers zur Einstellung der Reichweite im Uhrzeigersinn erhöht sich der Erfassungsbereich auf maximal 0–7 Meter. Dreht man es gegen den Uhrzeigersinn, wird der Bereich verkleinert, mit einer minimalen Reichweite von etwa 0–3 Metern.
 
-**Delay adjustment**
+**Verzögerungseinstellung**
 
-Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s. 
+Das Potentiometer für die Verzögerungseinstellung kann ebenfalls angepasst werden. Dreht man den Knopf im Uhrzeigersinn, erhöht sich die Verzögerungszeit auf maximal 300 Sekunden. Dreht man ihn gegen den Uhrzeigersinn, kann die Verzögerung auf ein Minimum von 5 Sekunden reduziert werden.
 
-**Two Trigger Modes**
+**Zwei Auslösemodi**
 
-Choosing different modes by using the jumper cap.
+Der gewünschte Modus kann durch Setzen des Jumper-Käppchens ausgewählt werden.
 
-* **H**: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.
-* **L**: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically.
+* **H**: Wiederholbarer Auslösemodus – nach Erfassung eines Körpers gibt das Modul ein High-Signal aus. Bleibt eine Person während der Verzögerungszeit im Erfassungsbereich, bleibt das Signal auf High.
+* **L**: Nicht wiederholbarer Auslösemodus – das Modul gibt ein High-Signal aus, sobald eine Bewegung erkannt wird. Nach Ablauf der Verzögerungszeit wechselt das Signal automatisch von High auf Low.
 
 .. Example 
 .. -------------------
@@ -52,7 +52,7 @@ Choosing different modes by using the jumper cap.
 
 **Example**
 
-* :ref:`py_pir` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`ar_pir` (For Arduino User)
-.. * :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_pir` (Für MicroPython-Nutzer)
+* :ref:`py_passage_counter` (Für MicroPython-Nutzer)
+* :ref:`ar_pir` (Für Arduino-Nutzer)
+.. * :ref:`per_lucky_cat` (Für Piper Make-Nutzer)

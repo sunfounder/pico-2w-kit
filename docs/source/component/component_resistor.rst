@@ -1,54 +1,58 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_resistor:
 
-Resistor
+Widerstand
 ============
 
 |img_res|
 
-Resistor is an electronic element that can limit the branch current. 
-A fixed resistor is a kind of resistor whose resistance cannot be changed, while that of a potentiometer or a variable resistor can be adjusted. 
+Ein Widerstand ist ein elektronisches Bauelement, das den Stromfluss in einem Zweig begrenzen kann.  
+Ein Festwiderstand ist ein Widerstandstyp mit festem Widerstandswert, während ein Potentiometer oder ein variabler Widerstand verstellbar ist.
 
-There are two commonly used circuit symbols for resistors, and the resistance value is typically indicated on the component. When you encounter these symbols in a circuit diagram, they represent a resistor.
+Es gibt zwei gängige Schaltsymbole für Widerstände, und der Widerstandswert ist normalerweise direkt auf dem Bauelement angegeben.  
+Diese Symbole in einem Schaltplan stehen für einen Widerstand.
 
 |img_res_symbol|
 
-**Ω** is the unit of resistance and the larger units include KΩ, MΩ, etc. 
-Their relationship can be shown as follows: 1 MΩ=1000 KΩ, 1 KΩ = 1000 Ω. Normally, the value of resistance is marked on it. 
+**Ω** ist die Einheit des Widerstands, größere Einheiten sind KΩ, MΩ usw.  
+Ihr Verhältnis ist wie folgt: 1 MΩ = 1000 KΩ, 1 KΩ = 1000 Ω.  
+Der Widerstandswert ist in der Regel auf dem Bauteil markiert.
 
-When using a resistor, we need to know its resistance first. Here are two methods: you can observe the bands on the resistor, or use a multimeter to measure the resistance. You are recommended to use the first method as it is more convenient and faster. 
+Beim Einsatz eines Widerstands ist es notwendig, seinen Wert zu bestimmen.  
+Dafür gibt es zwei Methoden: Entweder man liest den Farbcode auf dem Widerstand oder misst ihn mit einem Multimeter.  
+Die erste Methode ist schneller und praktischer.
 
 |img_res_card|
 
-As shown in the card, each color stands for a number. 
+Wie in der Karte dargestellt, steht jede Farbe für eine Zahl.
 
 .. list-table::
 
-   * - Black
-     - Brown
-     - Red
+   * - Schwarz
+     - Braun
+     - Rot
      - Orange
-     - Yellow
-     - Green
-     - Blue
-     - Violet
-     - Grey
-     - White
+     - Gelb
+     - Grün
+     - Blau
+     - Violett
+     - Grau
+     - Weiß
      - Gold
-     - Silver
+     - Silber
    * - 0
      - 1
      - 2
@@ -62,48 +66,49 @@ As shown in the card, each color stands for a number.
      - 0.1
      - 0.01
 
-The 4- and 5-band resistors are frequently used, on which there are 4 and 5 chromatic bands. 
+Widerstände mit 4 oder 5 Farbringen werden häufig verwendet. Sie sind mit jeweils vier oder fünf farbigen Bändern versehen.
 
-Normally, when you get a resistor, you may find it hard to decide which end to start for reading the color. 
-The tip is that the gap between the 4th and 5th band will be comparatively larger.
+Oft ist es schwierig zu bestimmen, von welchem Ende aus die Farbcodierung gelesen werden soll.  
+Ein hilfreicher Tipp: Der Abstand zwischen dem 4. und 5. Farbring ist in der Regel größer als die anderen Abstände.
 
-Therefore, you can observe the gap between the two chromatic bands at one end of the resistor; 
-if it's larger than any other band gaps, then you can read from the opposite side. 
+Daher kann man das Ende des Widerstands betrachten, an dem sich zwei Farbringe befinden.  
+Ist der Abstand zwischen diesen größer als bei den anderen, sollte die Farbcodierung von der gegenüberliegenden Seite abgelesen werden.
 
-Let's see how to read the resistance value of a 5-band resistor as shown below.
+Sehen wir uns nun an, wie der Widerstandswert eines 5-Band-Widerstands ermittelt wird.
 
 |img_220ohm|
 
-So for this resistor, the resistance should be read from left to right. 
-The value should be in this format: 1st Band 2nd Band 3rd Band x 10^Multiplier (Ω) and the permissible error is ±Tolerance%. 
-So the resistance value of this resistor is 2(red) 2(red) 0(black) x 10^0(black) Ω = 220 Ω, 
-and the permissible error is ± 1% (brown). 
+Der Widerstandswert wird von links nach rechts gelesen.  
+Das Format lautet: 1. Band 2. Band 3. Band x 10^Multiplikator (Ω), mit einer Toleranz von ±Toleranz%.  
+Für diesen Widerstand ergibt sich:
+
+2 (Rot) 2 (Rot) 0 (Schwarz) x 10^0 (Schwarz) Ω = 220 Ω, mit einer Toleranz von ±1% (Braun).
 
 .. list-table:: Common resistor color band
     :header-rows: 1
 
     * - :ref:`cpn_resistor` 
-      - Color Band  
+      - Farbcode  
     * - 10Ω   
-      - brown black black silver brown
+      - Braun Schwarz Schwarz Silber Braun
     * - 100Ω   
-      - brown black black black brown
+      - Braun Schwarz Schwarz Schwarz Braun
     * - 220Ω 
-      - red red black black brown
+      - Rot Rot Schwarz Schwarz Braun
     * - 330Ω 
-      - orange orange black black brown
+      - Orange Orange Schwarz Schwarz Braun
     * - 1kΩ 
-      - brown black black brown brown
+      - Braun Schwarz Schwarz Braun Braun
     * - 2kΩ 
-      - red black black brown brown
+      - Rot Schwarz Schwarz Braun Braun
     * - 5.1kΩ 
-      - green brown black brown brown
+      - Grün Braun Schwarz Braun Braun
     * - 10kΩ 
-      - brown black black red brown 
+      - Braun Schwarz Schwarz Rot Braun 
     * - 100kΩ 
-      - brown black black orange brown 
+      - Braun Schwarz Schwarz Orange Braun 
     * - 1MΩ 
-      - brown black black green brown 
+      - Braun Schwarz Schwarz Grün Braun 
 
-You can learn more about resistor from Wiki: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.
+Mehr Informationen über Widerstände findest du hier: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.
 

@@ -1,54 +1,54 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer ein in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_rgb:
 
 
-2.4 Colorful Light
+2.4 Buntes Licht
 ==============================================
 
-In this lesson, we'll explore how to create various colors using an RGB LED and the Raspberry Pi Pico 2 W. By adjusting the intensity of the red, green, and blue components, we can mix light to produce a wide range of colors. This concept is based on the additive method of color mixing.
+In dieser Lektion erforschen wir, wie man verschiedene Farben mit einer RGB-LED und dem Raspberry Pi Pico 2 W erzeugt. Durch Anpassen der Intensität der roten, grünen und blauen Komponenten können wir Licht mischen, um eine breite Palette von Farben zu erzeugen. Dieses Konzept basiert auf der additiven Methode der Farbmischung.
 
-**What is Additive Color Mixing?**
+**Was ist additive Farbmischung?**
 
-Additive color mixing involves combining different colors of light to produce new colors. When red, green, and blue light are combined in various intensities, they can create any color in the visible spectrum. For example:
+Die additive Farbmischung beinhaltet das Kombinieren verschiedener Lichtfarben, um neue Farben zu erzeugen. Wenn rotes, grünes und blaues Licht in verschiedenen Intensitäten kombiniert werden, können sie jede Farbe im sichtbaren Spektrum erzeugen. Zum Beispiel:
 
-* **Red + Green = Yellow**
-* **Red + Blue = Magenta**
-* **Green + Blue = Cyan**
-* **Red + Green + Blue = White**
+* **Rot + Grün = Gelb**
+* **Rot + Blau = Magenta**
+* **Grün + Blau = Cyan**
+* **Rot + Grün + Blau = Weiß**
 
 |img_rgb_mix|
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -56,8 +56,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -74,7 +74,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -85,34 +85,34 @@ You can also buy them separately from the links below.
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+Die PWM-Pins GP13, GP14 und GP15 steuern die Rot-, Grün- und Blau-Pins der RGB-LED und verbinden den gemeinsamen Kathoden-Pin mit GND. Dies ermöglicht der RGB-LED, eine spezifische Farbe anzuzeigen, indem Licht auf diesen Pins mit verschiedenen PWM-Werten überlagert wird.
 
 
-**Wiring Diagram**
+**Verdrahtungsdiagramm**
 
 |img_rgb_pin|
 
-The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually connected to GND; the left pin next to the longest pin is Red; and the two pins on the right are Green and Blue.
+Die RGB-LED hat 4 Pins: Der lange Pin ist der gemeinsame Kathoden-Pin, der normalerweise mit GND verbunden ist; der linke Pin neben dem längsten Pin ist Rot; und die zwei Pins rechts sind Grün und Blau.
 
-We use a higher resistance for the red LED because it is typically brighter than the green and blue LEDs at the same current.
+Wir verwenden einen höheren Widerstand für die rote LED, da sie typischerweise heller als die grünen und blauen LEDs bei gleichem Strom ist.
 
 
 |wiring_rgb|
 
 
 
-**Writing the Code**
+**Programmierung**
 
-We'll write a MicroPython program that controls the intensity of each color using Pulse Width Modulation (PWM) to produce different colors.
+Wir werden ein MicroPython-Programm schreiben, das die Intensität jeder Farbe mit Pulsweitenmodulation (PWM) steuert, um verschiedene Farben zu erzeugen.
 
 .. note::
 
-    * Open the ``2.4_colorful_light.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die ``2.4_colorful_light.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
 .. code-block:: python
@@ -120,130 +120,130 @@ We'll write a MicroPython program that controls the intensity of each color usin
     import machine
     import utime
 
-    # Initialize PWM for red, green, and blue pins
-    red = machine.PWM(machine.Pin(13))
-    green = machine.PWM(machine.Pin(14))
-    blue = machine.PWM(machine.Pin(15))
+    # Initialisiere PWM für die roten, grünen und blauen Pins
+    rot = machine.PWM(machine.Pin(13))
+    grün = machine.PWM(machine.Pin(14))
+    blau = machine.PWM(machine.Pin(15))
 
-    # Set the PWM frequency
-    red.freq(1000)
-    green.freq(1000)
-    blue.freq(1000)
+    # Setze die PWM-Frequenz
+    rot.freq(1000)
+    grün.freq(1000)
+    blau.freq(1000)
 
     def map_value(x, in_min, in_max, out_min, out_max):
-        # Map a value from one range to another
+        # Mappe einen Wert von einem Bereich in einen anderen
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
     def set_color(r, g, b):
-        # Set the color by adjusting duty cycles
-        red.duty_u16(map_value(r, 0, 255, 0, 65535))
-        green.duty_u16(map_value(g, 0, 255, 0, 65535))
-        blue.duty_u16(map_value(b, 0, 255, 0, 65535))
+        # Stelle die Farbe durch Anpassen der Tastzyklen ein
+        rot.duty_u16(map_value(r, 0, 255, 0, 65535))
+        grün.duty_u16(map_value(g, 0, 255, 0, 65535))
+        blau.duty_u16(map_value(b, 0, 255, 0, 65535))
 
-    # Example: Set the color to orange
+    # Beispiel: Stelle die Farbe auf Orange ein
     set_color(255, 165, 0)
 
-When the code is running, the RGB LED will emit an orange light.
+Wenn das Programm läuft, wird die RGB-LED ein orangenes Licht ausstrahlen.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Import Libraries:
+#. Importierte Bibliotheken:
 
-   * ``machine``: To access hardware-specific functions.
-   * ``utime``: For time-related functions (not used in this example but useful for animations).
+   * ``machine``: Um hardware-spezifische Funktionen zu nutzen.
+   * ``utime``: Für zeitbezogene Funktionen (nicht in diesem Beispiel verwendet, aber nützlich für Animationen).
 
-#. Initialize PWM Objects:
+#. Initialisiere PWM-Objekte:
 
-   * Create PWM objects for the red, green, and blue pins connected to the RGB LED and set the PWM frequency to 1000 Hz for all colors.
+   * Erstelle PWM-Objekte für die mit der RGB-LED verbundenen roten, grünen und blauen Pins und setze die PWM-Frequenz auf 1000 Hz für alle Farben.
 
    .. code-block:: python
 
-        # Initialize PWM for red, green, and blue pins
-        red = machine.PWM(machine.Pin(13))
-        green = machine.PWM(machine.Pin(14))
-        blue = machine.PWM(machine.Pin(15))
+        # Initialisiere PWM für die roten, grünen und blauen Pins
+        rot = machine.PWM(machine.Pin(13))
+        grün = machine.PWM(machine.Pin(14))
+        blau = machine.PWM(machine.Pin(15))
 
-        # Set the PWM frequency
-        red.freq(1000)
-        green.freq(1000)
-        blue.freq(1000)
+        # Setze die PWM-Frequenz
+        rot.freq(1000)
+        grün.freq(1000)
+        blau.freq(1000)
 
-#. Define ``map_value`` Function:
+#. Definiere die ``map_value`` Funktion:
 
-   * Since the ``duty_u16`` method accepts values from 0 to 65535, but color values are typically in the range 0 to 255, we need to map the 0-255 range to 0-65535.
-   * The ``map_value`` function scales the input value accordingly.
+   * Da die Methode ``duty_u16`` Werte von 0 bis 65535 akzeptiert, aber Farbwerte typischerweise im Bereich 0 bis 255 liegen, müssen wir den Bereich 0-255 auf 0-65535 mappen.
+   * Die Funktion ``map_value`` skaliert den Eingabewert entsprechend.
 
    .. code-block:: python
 
         def map_value(x, in_min, in_max, out_min, out_max):
-            # Map a value from one range to another
+            # Mappe einen Wert von einem Bereich in einen anderen
             return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-#. Define ``set_color`` Function:
+#. Definiere die ``set_color`` Funktion:
 
-   This function takes RGB values (each from 0 to 255) and sets the duty cycle for each color channel after mapping.
+   Diese Funktion nimmt RGB-Werte (jeweils von 0 bis 255) und stellt den Tastzyklus für jeden Farbkanal nach der Mapping ein.
 
    .. code-block:: python
 
         def set_color(r, g, b):
-            # Set the color by adjusting duty cycles
-            red.duty_u16(map_value(r, 0, 255, 0, 65535))
-            green.duty_u16(map_value(g, 0, 255, 0, 65535))
-            blue.duty_u16(map_value(b, 0, 255, 0, 65535))
+            # Stelle die Farbe durch Anpassen der Tastzyklen ein
+            rot.duty_u16(map_value(r, 0, 255, 0, 65535))
+            grün.duty_u16(map_value(g, 0, 255, 0, 65535))
+            blau.duty_u16(map_value(b, 0, 255, 0, 65535))
     
-#. Set the Desired Color:
+#. Stelle die gewünschte Farbe ein:
 
-   Call ``set_color(255, 165, 0)`` to set the RGB LED to orange. You can change the values to any RGB color you like.
+   Rufe ``set_color(255, 165, 0)`` auf, um die RGB-LED auf Orange zu stellen. Du kannst die Werte auf jede RGB-Farbe ändern, die du möchtest.
 
-**Example: Color Cycling**
+**Beispiel: Farbzyklus**
 
-Let's enhance the code to cycle through different colors.
+Lassen Sie uns den Code erweitern, um verschiedene Farben durchzugehen.
 
-#. To find the RGB values for different colors, you can use any graphic software or an online color picker. For example:
+#. Um die RGB-Werte für verschiedene Farben zu finden, können Sie jede Grafiksoftware oder einen Online-Farbwähler verwenden. Zum Beispiel:
 
-   * Red: (255, 0, 0)
-   * Green: (0, 255, 0)
-   * Blue: (0, 0, 255)
-   * White: (255, 255, 255)
-   * Purple: (128, 0, 128)
+   * Rot: (255, 0, 0)
+   * Grün: (0, 255, 0)
+   * Blau: (0, 0, 255)
+   * Weiß: (255, 255, 255)
+   * Lila: (128, 0, 128)
 
-#. Write the code.
+#. Schreibe den Code.
 
-   We define a list of RGB tuples representing different colors.
-   The ``while True`` loop cycles through each color, sets the RGB LED to that color, and waits for 1 second before moving to the next color.
+   Wir definieren eine Liste von RGB-Tupeln, die verschiedene Farben darstellen.
+   Die Schleife ``while True`` durchläuft jede Farbe, stellt die RGB-LED auf diese Farbe ein und wartet 1 Sekunde, bevor sie zur nächsten Farbe übergeht.
 
    .. code-block:: python
    
        import machine
        import utime
    
-       # Initialize PWM for red, green, and blue pins
-       red = machine.PWM(machine.Pin(13))
-       green = machine.PWM(machine.Pin(14))
-       blue = machine.PWM(machine.Pin(15))
+       # Initialisiere PWM für die roten, grünen und blauen Pins
+       rot = machine.PWM(machine.Pin(13))
+       grün = machine.PWM(machine.Pin(14))
+       blau = machine.PWM(machine.Pin(15))
    
-       # Set the PWM frequency
-       red.freq(1000)
-       green.freq(1000)
-       blue.freq(1000)
+       # Setze die PWM-Frequenz
+       rot.freq(1000)
+       grün.freq(1000)
+       blau.freq(1000)
    
        def map_value(x, in_min, in_max, out_min, out_max):
            return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
    
        def set_color(r, g, b):
-           red.duty_u16(map_value(r, 0, 255, 0, 65535))
-           green.duty_u16(map_value(g, 0, 255, 0, 65535))
-           blue.duty_u16(map_value(b, 0, 255, 0, 65535))
+           rot.duty_u16(map_value(r, 0, 255, 0, 65535))
+           grün.duty_u16(map_value(g, 0, 255, 0, 65535))
+           blau.duty_u16(map_value(b, 0, 255, 0, 65535))
    
-       # List of colors to cycle through
+       # Liste von Farben, durch die zyklisch gewechselt wird
        colors = [
-           (255, 0, 0),     # Red
-           (0, 255, 0),     # Green
-           (0, 0, 255),     # Blue
-           (255, 255, 0),   # Yellow
+           (255, 0, 0),     # Rot
+           (0, 255, 0),     # Grün
+           (0, 0, 255),     # Blau
+           (255, 255, 0),   # Gelb
            (0, 255, 255),   # Cyan
            (255, 0, 255),   # Magenta
-           (255, 255, 255)  # White
+           (255, 255, 255)  # Weiß
        ]
    
        while True:
@@ -251,15 +251,15 @@ Let's enhance the code to cycle through different colors.
                set_color(*color)
                utime.sleep(1)
 
-When this code is running, the RGB LED will cycle through a sequence of colors: red, green, blue, yellow, cyan, magenta, and white.
+Wenn dieser Code läuft, wird die RGB-LED eine Sequenz von Farben durchlaufen: rot, grün, blau, gelb, cyan, magenta und weiß.
 
-Each color will be displayed for 1 second before transitioning to the next one in the list.
+Jede Farbe wird 1 Sekunde lang angezeigt, bevor sie zur nächsten in der Liste übergeht.
 
-**Conclusion**
+**Fazit**
 
-By controlling the intensity of the red, green, and blue components of an RGB LED using PWM, we can create a vast array of colors. This project demonstrates the principles of additive color mixing and provides a foundation for creating colorful light displays with microcontrollers.
+Durch die Steuerung der Intensität der roten, grünen und blauen Komponenten einer RGB-LED mittels PWM können wir eine riesige Palette von Farben erzeugen. Dieses Projekt demonstriert die Prinzipien der additiven Farbmischung und bietet eine Grundlage für das Erstellen farbenfroher Lichtdisplays mit Mikrocontrollern.
 
 
-**References**
+**Referenzen**
 
 * |link_mpython_pwm|

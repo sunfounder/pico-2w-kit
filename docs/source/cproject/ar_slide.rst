@@ -1,60 +1,57 @@
 .. note::
+      Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich mit anderen Enthusiasten in die Welt von Raspberry Pi, Arduino und ESP32.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_slide:
 
-2.7 Toggle Left and Right
-============================
+2.7 Umschalten Links und Rechts
+=====================================
 
-In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2 W to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
+In dieser Lektion lernen wir, wie man mit dem Raspberry Pi Pico 2 W einen **Schiebeschalter** verwendet, um dessen Position (links oder rechts) zu erkennen und darauf basierend Aktionen durchzuführen. Ein Schiebeschalter ist ein einfaches mechanisches Gerät, das den gemeinsamen (mittleren) Pin je nach Position mit einem der beiden äußeren Pins verbindet.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-
-You can also buy them separately from the links below.
-
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENEINFÜHRUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -63,132 +60,131 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_slide_switch`
         - 1
         - 
 
-**Understanding the Slide Switch**
+**Verständnis des Schiebeschalters**
 
 |img_slide|
 
-A slide switch has three pins:
+Ein Schiebeschalter hat drei Pins:
 
-- **Pin 1**: Connected when the switch is toggled to one side (e.g., left)
-- **Pin 2**: Common pin (middle pin)
-- **Pin 3**: Connected when the switch is toggled to the other side (e.g., right)
+- **Pin 1**: Verbunden, wenn der Schalter nach einer Seite (z. B. links) umgelegt wird
+- **Pin 2**: Gemeinsamer Pin (mittlerer Pin)
+- **Pin 3**: Verbunden, wenn der Schalter nach der anderen Seite (z. B. rechts) umgelegt wird
 
-By reading the voltage on the common pin, we can determine the position of the switch.
+Durch das Lesen der Spannung am gemeinsamen Pin können wir die Position des Schalters bestimmen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+GP14 erhält ein unterschiedliches Niveau, wenn Sie den Schiebeschalter nach rechts oder links umlegen.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+Der Zweck des 10K-Widerstands besteht darin, GP14 während des Umschaltens niedrig zu halten (nicht ganz nach links und nicht ganz nach rechts umgelegt).
 
-When you toggle the switch, the mechanical contacts can cause rapid, noisy signals known as "bounce." The capacitor connected between GP14 and GND helps to filter out these rapid fluctuations, providing a cleaner signal.
+Wenn Sie den Schalter umlegen, können die mechanischen Kontakte schnelle, verrauschte Signale verursachen, bekannt als "Prellen". Der zwischen GP14 und GND angeschlossene Kondensator hilft, diese schnellen Schwankungen zu filtern und ein saubereres Signal bereitzustellen.
 
-* Switch Toggled to the Right:
+* Schalter nach rechts umgelegt:
 
-  * Pin 2 (GP14) is connected to **3.3V** through Pin 1.
-  * The GPIO pin reads **HIGH** (1).
+  * Pin 2 (GP14) ist über Pin 1 mit **3.3V** verbunden.
+  * Der GPIO-Pin liest **HIGH** (1).
 
-* Switch Toggled to the Left:
+* Schalter nach links umgelegt:
 
-  * Pin 2 (GP14) is connected to **GND** through Pin 3.
-  * The GPIO pin reads **LOW** (0).
+  * Pin 2 (GP14) ist über Pin 3 mit **GND** verbunden.
+  * Der GPIO-Pin liest **LOW** (0).
 
-* Switch in the Middle Position:
+* Schalter in Mittelposition:
 
-  * Pin 2 (GP14) is not connected to either **3.3V** or **GND**.
-  * The pull-down resistor keeps the GPIO pin at **LOW** (0).
-  * The capacitor helps to reduce switch bounce (noise due to mechanical movement).
+  * Pin 2 (GP14) ist nicht mit **3.3V** oder **GND** verbunden.
+  * Der Pull-Down-Widerstand hält den GPIO-Pin auf **LOW** (0).
+  * Der Kondensator hilft, das Schalterprellen zu reduzieren (Geräusche durch mechanische Bewegung).
 
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_slide|
 
-**Writing the Code**
+**Schreiben des Codes**
 
 .. note::
 
-    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``pico-2w-kit-main/arduino/2.7_toggle_left_right``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Sie können die Datei ``2.7_toggle_left_right.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/2.7_toggle_left_right`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Upload**-Button auszuwählen.
 
 .. code-block:: Arduino
 
-   const int switchPin = 14;   // GPIO pin connected to the slide switch
+   const int switchPin = 14;   // GPIO-Pin, der mit dem Schiebeschalter verbunden ist
    int switchState = 0;
 
    void setup() {
-     Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-     pinMode(switchPin, INPUT);  // Set the switch pin as input
+     Serial.begin(115200);       // Serielle Überwachung mit 115200 Baud initialisieren
+     pinMode(switchPin, INPUT);  // Den Schalterpin als Eingang setzen
    }
 
    void loop() {
-     switchState = digitalRead(switchPin);  // Read the state of the switch
+     switchState = digitalRead(switchPin);  // Den Zustand des Schalters lesen
 
      if (switchState == HIGH) {
-       Serial.println("ON");   // Switch toggled to the left
+       Serial.println("ON");   // Schalter nach links umgelegt
      } else {
-       Serial.println("OFF");  // Switch toggled to the right
+       Serial.println("OFF");  // Schalter nach rechts umgelegt
      }
-     delay(200);  // Small delay to avoid flooding the Serial Monitor
+     delay(200);  // Kleine Verzögerung, um die serielle Überwachung nicht zu überfluten
    }
 
-When the code is running and the Serial Monitor is open:
+Wenn der Code ausgeführt wird und die serielle Überwachung offen ist:
 
-Prints "ON" when the switch is toggled to the left and "OFF" when toggled to the right.
+Druckt "ON", wenn der Schalter nach links umgelegt wird und "OFF", wenn er nach rechts umgelegt wird.
 
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Initializing Serial Communication:
+#. Initialisierung der seriellen Kommunikation:
 
-   Starts serial communication at a baud rate of 115200. This allows us to print messages to the Serial Monitor.
+   Startet die serielle Kommunikation mit einer Baudrate von 115200. Dies ermöglicht es uns, Nachrichten auf den Seriellen Monitor zu drucken.
 
    .. code-block:: Arduino
 
         Serial.begin(115200);
 
 
-#. Setting Up the Switch Pin:
+#. Einrichten des Schalterpins:
 
-   Configures switchPin (GP14) as an input to read the switch state.
+   Konfiguriert den Schalterpin (GP14) als Eingang, um den Schalterzustand zu lesen.
 
    .. code-block:: Arduino
 
         pinMode(switchPin, INPUT);
 
 
-#. Reading the Switch State:
+#. Lesen des Schalterzustands:
 
-   Reads the current state of the switch. It will be HIGH when toggled to the right and LOW when toggled to the left or in the middle position due to the pull-down resistor.
+   Liest den aktuellen Zustand des Schalters. Er ist HIGH, wenn nach rechts umgelegt, und LOW, wenn nach links oder in der Mittelposition umgelegt, wegen des Pull-Down-Widerstands.
 
    .. code-block:: Arduino
 
         switchState = digitalRead(switchPin);
 
 
-#. Responding to Switch Position:
+#. Reaktion auf die Schalterposition:
 
-   Prints "ON" when the switch is toggled to the left (GP14 reads HIGH) and "OFF" when toggled to the right (GP14 reads LOW).
+   Druckt "ON", wenn der Schalter nach links (GP14 liest HIGH) und "OFF", wenn nach rechts (GP14 liest LOW) umgelegt wird.
 
    .. code-block:: Arduino
 
@@ -198,48 +194,48 @@ Prints "ON" when the switch is toggled to the left and "OFF" when toggled to the
           Serial.println("OFF");
         }
 
-**Alternative: Using Internal Pull-Up Resistor**
+**Alternative: Verwendung des internen Pull-Up-Widerstands**
 
-If you prefer to simplify the circuit and reduce the number of components, you can use the internal pull-up resistor of the Pico. However, please note that traditional Arduino boards do not support internal pull-down resistors, only internal pull-up resistors. The Raspberry Pi Pico does support INPUT_PULLDOWN, but in the Arduino environment, its support may vary. For this example, we'll use INPUT_PULLUP.
+Wenn Sie den Schaltkreis vereinfachen und die Anzahl der Komponenten reduzieren möchten, können Sie den internen Pull-Up-Widerstand des Pico verwenden. Bitte beachten Sie jedoch, dass traditionelle Arduino-Boards keine internen Pull-Down-Widerstände unterstützen, sondern nur interne Pull-Up-Widerstände. Der Raspberry Pi Pico unterstützt INPUT_PULLDOWN, aber in der Arduino-Umgebung kann die Unterstützung variieren. Für dieses Beispiel verwenden wir INPUT_PULLUP.
 
-* Circuit Modifications:
+* Schaltkreisänderungen:
 
-  * Remove the External 10KΩ Resistor and Capacitor.
-  * Slide Switch Connections:
+  * Entfernen Sie den externen 10KΩ-Widerstand und Kondensator.
+  * Schiebeschalterverbindungen:
 
-    * Pin 1: Connect to GND on the Pico.
-    * Pin 2: Connect to GP14 on the Pico.
-    * Pin 3: Leave unconnected or connect to GND (since we're using the internal pull-up).
+    * Pin 1: Verbinden Sie mit GND am Pico.
+    * Pin 2: Verbinden Sie mit GP14 am Pico.
+    * Pin 3: Lassen Sie unverbunden oder verbinden Sie mit GND (da wir den internen Pull-Up verwenden).
 
-* Code Modifications:
+* Codeänderungen:
 
   .. code-block:: Arduino
 
-        const int switchPin = 14;   // GPIO pin connected to the slide switch
+        const int switchPin = 14;   // GPIO-Pin, der mit dem Schiebeschalter verbunden ist
         int switchState = 0;
 
         void setup() {
-          Serial.begin(115200);          // Initialize Serial Monitor at 115200 baud
-          pinMode(switchPin, INPUT_PULLUP);  // Enable internal pull-up resistor
+          Serial.begin(115200);          // Serielle Überwachung mit 115200 Baud initialisieren
+          pinMode(switchPin, INPUT_PULLUP);  // Internen Pull-Up-Widerstand aktivieren
         }
 
         void loop() {
-          switchState = digitalRead(switchPin);  // Read the state of the switch
+          switchState = digitalRead(switchPin);  // Den Zustand des Schalters lesen
 
           if (switchState == LOW) {
-            Serial.println("ON");    // Switch connected to GND, toggled to the right
+            Serial.println("ON");    // Schalter mit GND verbunden, nach rechts umgelegt
           } else {
-            Serial.println("OFF");   // Switch not connected, reads HIGH due to pull-up
+            Serial.println("OFF");   // Schalter nicht verbunden, liest HIGH wegen Pull-Up
           }
-          delay(200);  // Small delay to avoid flooding the Serial Monitor
+          delay(200);  // Kleine Verzögerung, um die serielle Überwachung nicht zu überfluten
         }
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a slide switch with the Raspberry Pi Pico to detect its position and perform actions based on that. You've also seen how to implement a pull-down resistor in the circuit to ensure reliable readings and how to use the internal pull-up resistor to simplify the circuit.
+In dieser Lektion haben Sie gelernt, wie man einen Schiebeschalter mit dem Raspberry Pi Pico verwendet, um dessen Position zu erkennen und darauf basierende Aktionen durchzuführen. Sie haben auch gesehen, wie man einen Pull-Down-Widerstand im Schaltkreis implementiert, um zuverlässige Ablesungen zu gewährleisten, und wie man den internen Pull-Up-Widerstand verwendet, um den Schaltkreis zu vereinfachen.
 
-**Further Exploration**
+**Weitere Erkundungen**
 
-* **Control an LED**: Modify the code to turn an LED on or off based on the switch position.
-* **Multiple Switches**: Try adding more switches to control different actions.
-* **Debouncing**: Implement software debouncing to handle any residual switch bounce.
+* **Steuerung einer LED**: Modifizieren Sie den Code, um eine LED basierend auf der Schalterposition ein- oder auszuschalten.
+* **Mehrere Schalter**: Versuchen Sie, mehr Schalter hinzuzufügen, um verschiedene Aktionen zu steuern.
+* **Entprellen**: Implementieren Sie eine Software-Entprellung, um eventuelles restliches Schalterprellen zu handhaben.

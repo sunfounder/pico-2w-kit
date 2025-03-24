@@ -1,63 +1,63 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein und lerne gemeinsam mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Lösche nach dem Verkauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_motor:
 
-3.5 Controlling a Small Fan (DC Motor)
-=========================================
+3.5 Steuerung eines kleinen Lüfters (DC-Motor)
+=================================================
 
-In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the Raspberry Pi Pico 2 W and an **TA6586 motor driver**. The TA6586 allows us to control the direction of the motor rotation—both clockwise and counterclockwise. Since DC motors require more current than the Pico can provide directly, we'll use an external power supply to safely power the motor.
+In dieser Lektion lernen wir, wie man einen **DC-Motor** (wie einen kleinen Lüfter) mit dem Raspberry Pi Pico 2 W und einem **TA6586 Motorsteuerung** steuert. Der TA6586 ermöglicht es uns, die Drehrichtung des Motors zu steuern – sowohl im Uhrzeigersinn als auch gegen den Uhrzeigersinn. Da DC-Motoren mehr Strom benötigen, als der Pico direkt liefern kann, verwenden wir eine externe Stromversorgung, um den Motor sicher zu betreiben.
 
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
-        - 450+
+        - 450+ 
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -81,16 +81,15 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650 Batterie
         - 1
         -  
 
-**Schematic**
+**Schaltplan**
 
 |sch_motor|
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_motor|
 
@@ -100,78 +99,78 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.5_small_fan.ino`` under the path of ``pico-2w-kit-main/arduino/3.5_small_fan``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Du kannst die Datei ``3.5_small_fan.ino`` im Verzeichnis ``pico-2w-kit-main/arduino/3.5_small_fan`` öffnen. 
+    * Oder kopiere diesen Code in die **Arduino IDE**.
+    * Vergiss nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor du auf den **Upload** -Button klickst.
 
 
 .. code-block:: arduino
 
-    // Define the pins connected to the motor driver
-    const int motor1A = 14; // Motor control pin 1
-    const int motor2A = 15; // Motor control pin 2
+    // Definiere die Pins, die mit der Motorsteuerung verbunden sind
+    const int motor1A = 14; // Motorsteuerung Pin 1
+    const int motor2A = 15; // Motorsteuerung Pin 2
 
     void setup() {
-      // Initialize the motor control pins as OUTPUT
+      // Initialisiere die Motorsteuerpins als AUSGANG
       pinMode(motor1A, OUTPUT); 
       pinMode(motor2A, OUTPUT); 
     }
 
     void loop() {
-         // Rotate the motor clockwise
+         // Drehe den Motor im Uhrzeigersinn
          clockwise();
-         delay(1000); // Keep the motor running clockwise for 1 second
+         delay(1000); // Lass den Motor 1 Sekunde lang im Uhrzeigersinn drehen
     
-        // Stop the motor
+        // Stoppe den Motor
         stopMotor();
-        delay(1000); // Pause for 1 second
+        delay(1000); // Pause von 1 Sekunde
     
-        // Rotate the motor counterclockwise
+        // Drehe den Motor gegen den Uhrzeigersinn
         anticlockwise();
-        delay(1000); // Keep the motor running counterclockwise for 1 second
+        delay(1000); // Lass den Motor 1 Sekunde lang gegen den Uhrzeigersinn drehen
     
-        // Stop the motor
+        // Stoppe den Motor
         stopMotor();
-        delay(1000); // Pause for 1 second
+        delay(1000); // Pause von 1 Sekunde
     }
 
-        // Function to rotate the motor clockwise
+        // Funktion, um den Motor im Uhrzeigersinn zu drehen
     void clockwise()
     {
-        digitalWrite(motor1A, HIGH); // Set motor1A to HIGH
-        digitalWrite(motor2A, LOW);  // Set motor2A to LOW
-       // This combination causes the motor to rotate in the clockwise direction
+        digitalWrite(motor1A, HIGH); // Setze motor1A auf HIGH
+        digitalWrite(motor2A, LOW);  // Setze motor2A auf LOW
+       // Diese Kombination lässt den Motor im Uhrzeigersinn drehen
     }
 
-    // Function to rotate the motor counterclockwise
+    // Funktion, um den Motor gegen den Uhrzeigersinn zu drehen
     void anticlockwise()
     {
-        digitalWrite(motor1A, LOW);  // Set motor1A to LOW
-        digitalWrite(motor2A, HIGH); // Set motor2A to HIGH
-    // This combination causes the motor to rotate in the counterclockwise direction
+        digitalWrite(motor1A, LOW);  // Setze motor1A auf LOW
+        digitalWrite(motor2A, HIGH); // Setze motor2A auf HIGH
+    // Diese Kombination lässt den Motor gegen den Uhrzeigersinn drehen
     }
 
-    // Function to stop the motor
+    // Funktion, um den Motor zu stoppen
     void stopMotor()
     {
-        digitalWrite(motor1A, LOW);  // Set motor1A to LOW
-        digitalWrite(motor2A, LOW);  // Set motor2A to LOW
-    // Setting both pins LOW stops the motor
+        digitalWrite(motor1A, LOW);  // Setze motor1A auf LOW
+        digitalWrite(motor2A, LOW);  // Setze motor2A auf LOW
+    // Das Setzen beider Pins auf LOW stoppt den Motor
     }
 
-After uploading the code: the motor will rotate back and forth in a regular pattern.
+Nach dem Hochladen des Codes wird der Motor hin und her in einem regelmäßigen Muster rotieren.
 
 
-**Understanding the Code**
+**Code verstehen**
 
-#. Defining Control Pins:
+#. Steuerpins definieren:
 
    .. code-block:: arduino
 
-        const int motor1A = 14; // Motor control pin 1
-        const int motor2A = 15; // Motor control pin 2
+        const int motor1A = 14; // Motorsteuerung Pin 1
+        const int motor2A = 15; // Motorsteuerung Pin 2
 
-#. Setting Pin Modes:
+#. Pin-Modi setzen:
 
    .. code-block:: arduino
 
@@ -180,83 +179,82 @@ After uploading the code: the motor will rotate back and forth in a regular patt
           pinMode(motor2A, OUTPUT); 
         }
 
-#. Controlling Motor Direction:
+#. Steuerung der Drehrichtung des Motors:
 
-   * **Clockwise Rotation**: Sets motor1 HIGH and motor2A LOW, causing the motor to rotate in the clockwise direction.
+   * **Drehung im Uhrzeigersinn**: Setzt motor1 auf HIGH und motor2A auf LOW, wodurch der Motor im Uhrzeigersinn dreht.
 
    .. code-block:: arduino
 
-        digitalWrite(motor1A, HIGH); // Set motor1A to HIGH
-        digitalWrite(motor2A, LOW);  // Set motor2A to LOW
+        digitalWrite(motor1A, HIGH); // Setze motor1A auf HIGH
+        digitalWrite(motor2A, LOW);  // Setze motor2A auf LOW
 
-   * **Counterclockwise Rotation**: Sets motor1A LOW and motor2A HIGH, causing the motor to rotate in the counterclockwise direction.
+   * **Drehung gegen den Uhrzeigersinn**: Setzt motor1A auf LOW und motor2A auf HIGH, wodurch der Motor gegen den Uhrzeigersinn dreht.
 
    .. code-block:: arduino
 
         digitalWrite(motor1A, LOW);
         digitalWrite(motor2A, HIGH);
 
-   * Keep the motor running clockwise for 1 second
+   * Lasse den Motor 1 Sekunde lang im Uhrzeigersinn laufen
 
    .. code-block:: arduino
 
         anticlockwise();
         delay(1000); 
 
-   * Keep the motor running counterclockwise for 1 second
+   * Lasse den Motor 1 Sekunde lang gegen den Uhrzeigersinn laufen
 
    .. code-block:: arduino
 
         anticlockwise();
         delay(1000); 
 
-   #. Stopping the Motor:
+   #. Den Motor stoppen:
 
-   Sets both inputs LOW, stopping the motor.
+   Setzt beide Eingänge auf LOW, um den Motor zu stoppen.
 
    .. code-block:: arduino
 
-        digitalWrite(motor1A, LOW);  // Set motor1A to LOW
-        digitalWrite(motor2A, LOW);  // Set motor2A to LOW
+        digitalWrite(motor1A, LOW);  // Setze motor1A auf LOW
+        digitalWrite(motor2A, LOW);  // Setze motor2A auf LOW
     
-   Pause for 1 second
+   Pause für 1 Sekunde
 
       .. code-block:: arduino
 
         stopMotor();
         delay(1000); 
 
-**Further Exploration**
+**Weitere Erkundung**
 
-* Speed Control:
+* Geschwindigkeitssteuerung:
 
-  Use Pulse Width Modulation (PWM) to control the speed of the motor by connecting the EN1 pin to a PWM-capable GPIO pin and varying the duty cycle.
+  Verwende Pulsweitenmodulation (PWM), um die Geschwindigkeit des Motors zu steuern, indem du den EN1 Pin an einen PWM-fähigen GPIO-Pin anschließt und den Tastgrad variierst.
 
-* Sensor Integration:
+* Sensoreinbindung:
 
-  Incorporate sensors (e.g., limit switches, encoders) to create more advanced motor control systems.
+  Integriere Sensoren (z.B. Endschalter, Encoder), um fortschrittlichere Motorsteuerungssysteme zu erstellen.
 
+**Sicherheitsvorkehrungen**
 
-**Safety Precautions**
+* Stromversorgung:
 
-* Power Supply:
+  * Stelle sicher, dass die Spannung der externen Stromversorgung mit der Nennspannung des Motors übereinstimmt.
+  * Versorge den Motor nicht direkt über den 3.3V Pin des Pico.
 
-  * Ensure that the external power supply voltage matches the motor's voltage rating.
-  * Do not power the motor directly from the Pico's 3.3V pin.
+* Stromverbrauch:
 
-* Current Draw:
+  * Motoren können erheblichen Strom ziehen, insbesondere beim Starten oder bei einem Stillstand.
+  * Stelle sicher, dass deine Stromversorgung den Strombedarf des Motors decken kann.
 
-  * Motors can draw significant current, especially during startup or when stalled.
-  * Ensure that your power supply can handle the motor's current requirements.
+* Zurücksetzen des Pico:
 
-* Resetting the Pico:
-
-  * In some cases, the motor's current draw may cause voltage dips, leading the Pico to reset or disconnect.
-  * If you encounter issues uploading code after running the motor, you can manually reset the Pico by connecting the RUN pin to GND momentarily.
+  * In einigen Fällen kann der hohe Stromverbrauch des Motors zu Spannungseinbrüchen führen, die den Pico zum Zurücksetzen oder Trennen bringen.
+  * Wenn du Probleme beim Hochladen von Code nach dem Betreiben des Motors hast, kannst du den Pico manuell zurücksetzen, indem du den RUN-Pin kurz mit GND verbindest.
 
   |wiring_run_reset|
 
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control a DC motor using the Raspberry Pi Pico and the TA6586 motor driver. By controlling the inputs to the TA6586, you can change the direction of the motor's rotation. This fundamental concept is essential in robotics, automation, and many other applications involving motors.
+In dieser Lektion hast du gelernt, wie man einen DC-Motor mit dem Raspberry Pi Pico und dem TA6586 Motorsteuergerät steuert. Indem du die Eingänge des TA6586 steuerst, kannst du die Drehrichtung des Motors ändern. Dieses grundlegende Konzept ist in der Robotik, Automatisierung und vielen anderen Anwendungen, die Motoren betreffen, von entscheidender Bedeutung.

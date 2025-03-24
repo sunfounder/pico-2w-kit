@@ -1,55 +1,55 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_iot_read_ble:
 
-8.12 Read data from bluetooth
-=================================
+8.12 Daten vom Bluetooth empfangen
+=====================================
 
-In this project, the Pico 2 W functions as a peripheral device in a Bluetooth Low Energy (BLE) network. It offers a custom BLE service to control an LED-based traffic light system. This service includes a writable characteristic, allowing a central device, such as a smartphone or computer, to send commands. The Pico board processes these commands to toggle the red, yellow, or green LEDs, simulating traffic light operations. Debugging information, including received commands, is displayed on the serial monitor to assist development.
+In diesem Projekt fungiert der Pico 2 W als Peripheriegerät in einem Bluetooth Low Energy (BLE) Netzwerk. Er bietet einen benutzerdefinierten BLE-Dienst zur Steuerung eines LED-basierten Ampelsystems. Dieser Dienst umfasst eine schreibbare Eigenschaft, die es einem zentralen Gerät, wie einem Smartphone oder Computer, ermöglicht, Befehle zu senden. Das Pico-Board verarbeitet diese Befehle, um die roten, gelben oder grünen LEDs umzuschalten und somit den Betrieb einer Ampel zu simulieren. Debugging-Informationen, einschließlich empfangener Befehle, werden im seriellen Monitor angezeigt, um die Entwicklung zu unterstützen.
 
-The onboard LED indicates the connection status: it lights up when a central device is connected and turns off when the connection is lost. 
+Die an Bord befindliche LED zeigt den Verbindungsstatus an: Sie leuchtet, wenn sich ein zentrales Gerät verbunden hat, und erlischt, wenn die Verbindung verloren geht.
 
-1. Build the circuit
+1. Schaltkreis aufbauen
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -57,7 +57,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -66,11 +66,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 3(220Ω)
+        - 3 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -82,27 +82,27 @@ You can also buy them separately from the links below.
 .. image:: img/wiring/8.12_bb.png
    :width: 90%
 
-2. Upload the code
+2. Code hochladen
 +++++++++++++++++++++++++++++++++
 
-Copy the following code into your IDE. Alternatively, you can find it in our repository at the path: ``pico-2w-kit/micropython/iot/8.12-read_from_ble/ble_trafficlight.py``.
+Kopiere den folgenden Code in deine IDE. Alternativ findest du ihn in unserem Repository unter dem Pfad: ``pico-2w-kit/micropython/iot/8.12-read_from_ble/ble_trafficlight.py``.
 
-Note: This code depends on the ``ble_advertising.py`` and ``ble_simple_peripheral.py`` file. Make sure to upload it to the Pico board before running the script.
+Hinweis: Dieser Code hängt von den Dateien ``ble_advertising.py`` und ``ble_simple_peripheral.py`` ab. Stelle sicher, dass du diese auf das Pico-Board hochlädst, bevor du das Skript ausführst.
 
 .. code-block:: python
 
-   # Import necessary modules
+   # Notwendige Module importieren
    from machine import Pin 
    import bluetooth
    from ble_example.ble_simple_peripheral import BLESimplePeripheral
    
-   # Create a Bluetooth Low Energy (BLE) object
+   # Erstelle ein Bluetooth Low Energy (BLE) Objekt
    ble = bluetooth.BLE()
    
-   # Create an instance of the BLESimplePeripheral class with the BLE object
+   # Erstelle eine Instanz der BLESimplePeripheral-Klasse mit dem BLE-Objekt
    sp = BLESimplePeripheral(ble,"pico2w")
    
-   # Create a Pin object for the onboard LED, configure it as an output
+   # Erstelle ein Pin-Objekt für die an Bord befindliche LED und konfiguriere es als Ausgang
    led = Pin("LED", Pin.OUT)
    
    red = machine.Pin(13, machine.Pin.OUT)
@@ -125,59 +125,59 @@ Note: This code depends on the ``ble_advertising.py`` and ``ble_simple_periphera
            yellow.on()
        
    
-   # Define a callback function to handle received data
+   # Definiere eine Callback-Funktion zum Behandeln empfangener Daten
    def on_rx(data):
        print("Data received: ", data)  # Print the received data
        
        update_traffic(data)
    
-   # Start an infinite loop
+   # Starte eine Endlosschleife
    while True:
-       if sp.is_connected():  # Check if a BLE connection is established
-           sp.on_write(on_rx)  # Set the callback function for data reception
+       if sp.is_connected():  # Überprüfen, ob eine BLE-Verbindung besteht
+           sp.on_write(on_rx)  # Setze die Callback-Funktion für den Empfang von Daten
 
 
-3. Write data to bluetooth
+3. Daten an Bluetooth senden
 +++++++++++++++++++++++++++++++++
 
-To interact with the services and characteristics defined in this code, use a generic Bluetooth® Low Energy central app, such as LightBlue (available for iOS and Android) or nRF Connect (for Android).
+Um mit den in diesem Code definierten Diensten und Eigenschaften zu interagieren, verwende eine allgemeine Bluetooth® Low Energy Zentral-App, wie zum Beispiel LightBlue (verfügbar für iOS und Android) oder nRF Connect (für Android).
 
-This section uses LightBlue as an example to demonstrate how to control the Pico 2 W’s features via Bluetooth. 
+In diesem Abschnitt wird LightBlue als Beispiel verwendet, um zu zeigen, wie du die Funktionen des Pico 2 W über Bluetooth steuern kannst.
 
-a. Install LightBlue
+a. Installiere LightBlue
 
-   Download the LightBlue app from the |link_lightblue_apple| (for iOS) or |link_lightblue_google| (for Android).
+   Lade die LightBlue-App aus dem |link_lightblue_apple| (für iOS) oder |link_lightblue_google| (für Android) herunter.
 
    .. image:: img/lightblue.png
       :width: 90%
 
-b. Connect Pico 2 W
+b. Pico 2 W verbinden
 
-   Launch LightBlue and enable location and Bluetooth permissions if prompted. On the **Peripherals** page, search for “pico” in the search bar, and tap to connect to the Pico 2 W device.
+   Starte LightBlue und erlaube die Standort- und Bluetooth-Berechtigungen, falls du dazu aufgefordert wirst. Auf der Seite **Peripheriegeräte** suche nach „pico“ in der Suchleiste und tippe, um dich mit dem Pico 2 W Gerät zu verbinden.
 
    .. image:: img/11-1-connect-pico.png
       :width: 60%
       :align: center
 
-c. Send data to toggle the light
+c. Daten senden, um das Licht umzuschalten
 
-   After connecting, LightBlue displays detailed information about the Pico 2 W Bluetooth device. Scroll down to locate the **Service (6E400001-B5A3-F393-E0A9-E50E24DCCA9E)** and **Characteristic (6E400002-B5A3-F393-E0A9-E50E24DCCA9E)**.
+   Nach der Verbindung zeigt LightBlue detaillierte Informationen über das Pico 2 W Bluetooth-Gerät an. Scrolle nach unten, um den **Dienst (6E400001-B5A3-F393-E0A9-E50E24DCCA9E)** und die **Eigenschaft (6E400002-B5A3-F393-E0A9-E50E24DCCA9E)** zu finden.
 
-   Tap the characteristic 6E400002-B5A3-F393-E0A9-E50E24DCCA9E. The app shows the properties of this characteristic: it's writable.
+   Tippe auf die Eigenschaft 6E400002-B5A3-F393-E0A9-E50E24DCCA9E. Die App zeigt die Eigenschaften dieser Eigenschaft an: sie ist schreibbar.
 
    .. image:: img/12-2-new.png
       :width: 100%
 
-   In the top-right corner, select **"UTF-8 String"** as the data type.
+   Wähle oben rechts **"UTF-8 String"** als Datentyp aus.
 
    .. image:: img/12-4-new.png
       :width: 100%   
 
-   Click **"Write New Value"** and input ``R``. This character will be sent to the Pico board via Bluetooth. The Pico board will interpret the received character and control specific LEDs accordingly:  
+   Klicke auf **"Neuen Wert schreiben"** und gib ``R`` ein. Dieses Zeichen wird über Bluetooth an das Pico-Board gesendet. Das Pico-Board wird das empfangene Zeichen interpretieren und die entsprechenden LEDs steuern:  
    
-   - ``r`` lights up the red LED
-   - ``y`` lights up the yellow LED
-   - ``g`` lights up the green LED
+   - ``r`` schaltet die rote LED ein
+   - ``y`` schaltet die gelbe LED ein
+   - ``g`` schaltet die grüne LED ein
 
    .. image:: img/12-6-new.png
-      :width: 100%  
+      :width: 100%

@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_ws2812:
 
@@ -19,13 +19,16 @@ WS2812 RGB 8 LEDs Strip
 
 |img_ws2812|
 
-The WS2812 RGB 8 LEDs Strip is composed of 8 RGB LEDs. 
-Only one pin is required to control all the LEDs. Each RGB LED has a WS2812 chip, which can be controlled independently. 
-It can realize 256-level brightness display and complete true color display of 16,777,216 colors. 
-At the same time, the pixel contains an intelligent digital interface data latch signal shaping amplifier drive circuit, 
-and a signal shaping circuit is built in to effectively ensure the color height of the pixel point light Consistent.
+Der WS2812 RGB 8 LEDs Strip besteht aus 8 RGB-LEDs.  
+Zur Steuerung aller LEDs wird nur ein einziger Pin benötigt. Jede RGB-LED enthält einen WS2812-Chip, der individuell gesteuert werden kann.  
+Er ermöglicht eine 256-stufige Helligkeitssteuerung sowie eine vollständige Farbdarstellung mit 16.777.216 Farben.  
 
-It is flexible, can be docked, bent, and cut at will, and the back is equipped with adhesive tape, which can be fixed on the uneven surface at will, and can be installed in a narrow space.
+Zudem verfügt jedes Pixel über eine digitale Schnittstelle, ein Daten-Latch-Signal, eine Verstärkerschaltung und eine integrierte Signalformung,  
+die eine gleichbleibende Farbwiedergabe über alle Pixel hinweg sicherstellt.
+
+Der Streifen ist flexibel, koppelbar, biegbar und nach Bedarf zuschneidbar.  
+Auf der Rückseite befindet sich ein selbstklebendes Band, mit dem er auf unebenen Oberflächen befestigt werden kann.  
+Dadurch eignet er sich für Installationen in engen Räumen.
 
 **Features**
 
@@ -42,11 +45,21 @@ It is flexible, can be docked, bent, and cut at will, and the back is equipped w
 
 * `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
-The WS2812B is an intelligent LED light source that integrates a control circuit and an RGB chip within a 5050 package. It includes an intelligent digital port data latch, a signal reshaping amplification drive circuit, a precision internal oscillator, and a programmable constant-current control component for 12V voltage. These features ensure consistent and accurate color rendering across pixel points.
+Der WS2812B ist eine intelligente LED-Lichtquelle, die eine Steuerschaltung und einen RGB-Chip in einem 5050-Gehäuse integriert.  
+Er verfügt über ein digitales Daten-Latch, eine Signalverstärkerschaltung, einen internen Oszillator  
+und eine programmierbare Konstantstromsteuerung für eine 12V-Spannungsversorgung.  
+Diese Eigenschaften gewährleisten eine gleichmäßige und präzise Farbdarstellung über alle Pixel hinweg.
 
-The data transfer protocol uses a single NZR communication mode. After a power-on reset, the DIN port receives data from the controller. The first pixel processes the initial 24-bit data and stores it in its internal data latch. Remaining data is reshaped by the internal signal reshaping amplification circuit and transmitted to the next pixel via the DO port. With each pixel, the signal is reduced by 24 bits. The pixel employs auto-reshaping transmission technology, which allows an unlimited number of pixels to be cascaded. The only limitation is the speed of signal transmission.
+Die Datenübertragung erfolgt über ein NZR-Kommunikationsprotokoll.  
+Nach dem Einschalten empfängt der DIN-Port Daten vom Controller.  
+Das erste Pixel verarbeitet die ersten 24 Bit der Daten und speichert sie in seinem internen Latch.  
+Die verbleibenden Daten werden von der internen Verstärkerschaltung aufbereitet und über den DO-Port an das nächste Pixel weitergeleitet.  
+Mit jeder weiteren LED reduziert sich das Datensignal um 24 Bit.  
+Dank der automatischen Signalregeneration können beliebig viele Pixel in Reihe geschaltet werden,  
+die einzige Begrenzung liegt in der Signalübertragungsgeschwindigkeit.
 
-The LED offers several advantages, including low driving voltage, energy efficiency, environmental friendliness, high brightness, a wide light-scattering angle, excellent consistency, low power consumption, and long lifespan. The integration of the control chip within the LED simplifies circuit design, reduces size, and facilitates convenient installation.
+Die LED bietet zahlreiche Vorteile: niedrige Betriebsspannung, energieeffizienter Betrieb, lange Lebensdauer, hohe Helligkeit,  
+weiter Abstrahlwinkel, gute Farbkonsistenz, geringer Stromverbrauch sowie eine einfache Installation durch die Integration des Steuerchips in der LED.
 
 .. Example
 .. -------------------

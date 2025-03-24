@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 26:  Drawing a Circle on the OLED 1306 Display
+Lektion 26: Einen Kreis auf dem OLED 1306 Display zeichnen
 =============================================================================
 
-This tutorial covers drawing shapes on an OLED display using the Raspberry Pi Pico W:
+Dieses Tutorial behandelt das Zeichnen von Formen auf einem OLED-Display mit dem Raspberry Pi Pico W:
 
-* **Introduction**: Focuses on drawing a circle on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**: Reviews using the OLED display and setting up the SSD1306 library.
-* **Drawing a Circle**: Explains using trigonometric functions to calculate x and y positions, and provides a code example to draw a circle.
-* **Enhancing the Circle Drawing**: Demonstrates drawing a filled circle and an arc by adjusting radii and angles.
-* **Practical Demonstration**: Shows the circle and filled circle on the OLED, optimizing drawing speed.
-* **Homework Assignment**: Task to create a "floating potato chip" shape on the OLED display.
+* **Einführung**: Konzentriert sich darauf, einen Kreis auf einem OLED-Display mit dem Raspberry Pi Pico W zu zeichnen.
+* **Zusammenfassung und Einrichtung**: Wiederholung der Verwendung des OLED-Displays und Einrichtung der SSD1306-Bibliothek.
+* **Einen Kreis zeichnen**: Erklärt die Verwendung trigonometrischer Funktionen zur Berechnung von x- und y-Positionen und bietet ein Codebeispiel zum Zeichnen eines Kreises.
+* **Verbesserung der Kreiszeichnung**: Demonstriert das Zeichnen eines gefüllten Kreises und eines Bogens durch Anpassung von Radien und Winkeln.
+* **Praktische Demonstration**: Zeigt den Kreis und den gefüllten Kreis auf dem OLED, optimiert die Zeichengeschwindigkeit.
+* **Hausaufgabe**: Aufgabe, eine „schwebende Kartoffelchip“-Form auf dem OLED-Display zu erstellen.
 
 
 

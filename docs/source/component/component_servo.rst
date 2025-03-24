@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_servo:
 
@@ -19,21 +19,26 @@ Servo
 
 |img_servo|
 
-A servo motor typically consists of the following components: a case, shaft, gear system, potentiometer, DC motor, and an embedded control board.
+Ein Servomotor besteht typischerweise aus folgenden Komponenten: einem Gehäuse, einer Welle, einem Getriebesystem, einem Potentiometer, einem Gleichstrommotor und einer integrierten Steuerplatine.
 
-**How It Works**
-- The microcontroller sends PWM signals to the servo through its signal pin.
-- The embedded control board inside the servo interprets these signals and adjusts the motor's operation accordingly.
-- The motor drives the gear system, which reduces speed and increases torque, ultimately rotating the shaft.
-- The shaft is mechanically linked to the potentiometer. As the shaft rotates, it moves the potentiometer, generating a voltage signal proportional to the shaft's position.
-- This feedback signal is sent to the embedded control board, which compares the current position to the target position.
-- Based on this comparison, the board adjusts the motor's direction and speed, allowing the servo to accurately stop and hold at the desired position.
-- This closed-loop feedback system ensures precision and stability in the servo's movement.
+**Funktionsweise**
+- Der Mikrocontroller sendet PWM-Signale über den Signaldraht an das Servo.
+- Die integrierte Steuerplatine im Servo interpretiert diese Signale und passt den Betrieb des Motors entsprechend an.
+- Der Motor treibt das Getriebesystem an, das die Drehzahl reduziert und das Drehmoment erhöht, wodurch die Welle gedreht wird.
+- Die Welle ist mechanisch mit dem Potentiometer verbunden. Während sich die Welle dreht, bewegt sich das Potentiometer und erzeugt ein Spannungssignal, das proportional zur Position der Welle ist.
+- Dieses Rückmeldesignal wird an die Steuerplatine gesendet, die die aktuelle Position mit der Zielposition vergleicht.
+- Basierend auf diesem Vergleich passt die Steuerung die Drehrichtung und Geschwindigkeit des Motors an, sodass das Servo präzise stoppt und die gewünschte Position hält.
+- Dieses geschlossene Regelungssystem gewährleistet eine hohe Genauigkeit und Stabilität in der Bewegung des Servos.
 
 |img_servo_i|
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position).
-When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point. When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.
+Der Drehwinkel des Servos wird durch die Dauer eines auf den Steuerdraht angelegten Impulses bestimmt. Dieses Verfahren nennt sich Pulsweitenmodulation (PWM).  
+Das Servo erwartet alle 20 ms einen Impuls. Die Länge des Impulses bestimmt, wie weit sich der Motor dreht.  
+Ein Impuls von 1,5 ms bringt den Motor in die 90-Grad-Position (Neutralstellung).  
+Wird ein Impuls von weniger als 1,5 ms gesendet, dreht sich das Servo gegen den Uhrzeigersinn aus der Neutralposition.  
+Ein Impuls, der breiter als 1,5 ms ist, bewirkt das Gegenteil.  
+Die minimale und maximale Impulsbreite, die eine gültige Position steuert, hängt vom jeweiligen Servo ab.  
+Typischerweise liegt die minimale Impulsbreite bei etwa 0,5 ms und die maximale bei 2,5 ms.
 
 |img_servo_duty|
 
@@ -45,11 +50,11 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
 
 **Example**
 
-* :ref:`py_servo` (For MicroPython User)
-* :ref:`py_somato_controller` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller` (For MicroPython User)
-* :ref:`py_iot_ble_lock` (For MicroPython User)
-* :ref:`ar_servo` (For Arduino User)
-.. * :ref:`per_water_tank` (For Piper Make User)
-.. * :ref:`per_swing_servo` (For Piper Make User)
-.. * :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_servo` (Für MicroPython-Nutzer)
+* :ref:`py_somato_controller` (Für MicroPython-Nutzer)
+* :ref:`py_iot_sunfounder_controller` (Für MicroPython-Nutzer)
+* :ref:`py_iot_ble_lock` (Für MicroPython-Nutzer)
+* :ref:`ar_servo` (Für Arduino-Nutzer)
+.. * :ref:`per_water_tank` (Für Piper Make-Nutzer)
+.. * :ref:`per_swing_servo` (Für Piper Make-Nutzer)
+.. * :ref:`per_lucky_cat` (Für Piper Make-Nutzer)

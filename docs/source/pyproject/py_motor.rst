@@ -1,59 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Herausforderungen und Fragen nach dem Kauf von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Promotions teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_motor:
 
-3.5 Controlling a Small Fan (DC Motor)
-=========================================
+3.5 Steuerung eines kleinen Lüfters (Gleichstrommotor)
+==========================================================
 
 
-In this lesson, we'll learn how to control a **DC motor** (like a small fan) using the 
-Raspberry Pi Pico 2 W and an **TA6586 motor driver**. The TA6586 allows us to control the 
-direction of the motor rotation—both clockwise and counterclockwise. 
-Since the DC motor requires a relatively large current, for safety reasons, 
-here we use a power module to supply power to the motor.
+In dieser Lektion lernen wir, wie man einen **Gleichstrommotor** 
+(z. B. einen kleinen Lüfter) mit dem Raspberry Pi Pico 2 W und 
+einem **TA6586-Motortreiber** steuert. Der TA6586 ermöglicht die 
+Steuerung der Drehrichtung des Motors – sowohl im Uhrzeigersinn 
+als auch gegen den Uhrzeigersinn. 
+
+Da der Gleichstrommotor einen relativ hohen Strom benötigt, verwenden 
+wir zur Sicherheit ein separates Stromversorgungsmodul, um den Motor zu betreiben.
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE ARTIKEL IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -61,7 +64,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -70,7 +73,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -85,36 +88,34 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650 Batterie
         - 1
         -   
 
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_motor|
 
 
 
-**Wiring**
+**Verkabelung**
 
 .. note::
 
-    * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * Da Gleichstrommotoren einen hohen Strombedarf haben, verwenden wir hier zur Sicherheit ein Li-po-Lademodul zur Stromversorgung des Motors.
+    * Stelle sicher, dass dein Li-po-Lademodul gemäß dem Schaltplan korrekt angeschlossen ist. Andernfalls kann ein Kurzschluss deine Batterie und Schaltung beschädigen.
 
 |wiring_motor|
-
 
 **Code**
 
 .. note::
 
-    * Open the ``3.5_small_fan.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Öffne die Datei ``3.5_small_fan.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, klicke auf "Run" oder drücke F5.
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
 
@@ -146,30 +147,29 @@ You can also buy them separately from the links below.
         stopMotor()
         utime.sleep(1)
 
+Sobald das Programm läuft, dreht sich der Motor in einem regelmäßigen Muster vorwärts und rückwärts.
 
-Once the program is running, the motor will rotate back and forth in a regular pattern.
 
+**Den Code verstehen**
 
-**Understanding the Code**
+#. **Pins initialisieren**:
 
-#. Initialize the Pins:
-
-   ``motor1A`` and ``motor2A`` are connected to GP14 and GP15, controlling the direction of the motor.
+   ``motor1A`` und ``motor2A`` sind mit GP14 und GP15 verbunden und steuern die Drehrichtung des Motors.
 
    .. code-block:: python
 
      motor1A = machine.Pin(14, machine.Pin.OUT)
      motor2A = machine.Pin(15, machine.Pin.OUT)
 
-#. Define Functions:
+#. **Funktionen definieren**:
 
-   * ``rotate_clockwise()``: Sets ``motor1A`` high and ``motor2A`` low to rotate the motor clockwise.
-   * ``rotate_counterclockwise()``: Sets ``motor1A`` low and ``motor2A`` high to rotate counterclockwise.
-   * ``stop_motor()``: Sets both ``motor1A`` and ``motor2A`` low to stop the motor.
+   * ``rotate_clockwise()``: Setzt ``motor1A`` auf HIGH und ``motor2A`` auf LOW, um den Motor im Uhrzeigersinn zu drehen. 
+   * ``rotate_counterclockwise()``: Setzt ``motor1A`` auf LOW und ``motor2A`` auf HIGH, um den Motor gegen den Uhrzeigersinn zu drehen.
+   * ``stop_motor()``: Setzt sowohl ``motor1A`` als auch ``motor2A`` auf LOW, um den Motor zu stoppen.
 
-#. Main Loop:
+#. Hauptschleife:
 
-   The motor rotates clockwise, stops, rotates counterclockwise, and stops again, each for one second, repeatedly.
+   Der Motor dreht sich eine Sekunde im Uhrzeigersinn, stoppt, dreht sich dann eine Sekunde gegen den Uhrzeigersinn und stoppt erneut. Dieser Ablauf wiederholt sich kontinuierlich.
 
    .. code-block:: python
 
@@ -183,24 +183,24 @@ Once the program is running, the motor will rotate back and forth in a regular p
         stopMotor()
         utime.sleep(1)
 
-**Troubleshooting Tips**
+**Fehlersuche & Tipps**
 
-* Motor Keeps Spinning After Stopping the Script:
+* Motor läuft weiter, nachdem das Skript gestoppt wurde:
 
-  If the motor continues to run after stopping the program, you may need to reset the Pico. Use a wire or a button to momentarily connect the RUN pin to GND, which resets the Pico.
+  Falls der Motor nach Beenden des Programms weiterläuft, kann es notwendig sein, den Pico zurückzusetzen. Verbinde dazu kurz den RUN-Pin mit GND, um einen Reset durchzuführen.
 
   |wiring_run_reset|
 
-* Pico Disconnects or Becomes Unresponsive:
+* Pico trennt sich oder reagiert nicht mehr:
 
-  The motor may draw too much current, causing voltage fluctuations. Ensure you're using a separate power supply for the motor and that all grounds are connected.
+  Der Motor kann hohe Ströme ziehen, die Spannungsschwankungen verursachen. Stelle sicher, dass du eine separate Stromversorgung für den Motor verwendest und alle Masseleitungen (GND) verbunden sind.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control a DC motor using the TA6586 motor driver and the Raspberry Pi Pico 2 W. You can now control the motor's direction and create projects like a small fan or a motorized device.
+In dieser Lektion hast du gelernt, wie du einen Gleichstrommotor mit dem TA6586-Motortreiber und dem **Raspberry Pi Pico 2 W** steuerst. Du kannst nun die Drehrichtung des Motors kontrollieren und Projekte wie einen kleinen Lüfter oder ein motorisiertes Gerät realisieren.
 
-**Next Steps**
+**Nächste Schritte**
 
-* **Speed Control**: Try using PWM (Pulse Width Modulation) to control the speed of the motor by connecting the EN1 pin to a PWM-capable GPIO pin.
-* **Control Multiple Motors**: Use the other channels of the TA6586 to control additional motors.
-* **Sensor Integration**: Incorporate sensors to control the motor based on input (e.g., temperature, light).
+* **Drehzahlregelung**: Verwende PWM (Pulsweitenmodulation), um die Drehzahl des Motors zu steuern, indem du den EN1-Pin mit einem PWM-fähigen GPIO-Pin verbindest.
+* **Mehrere Motoren steuern**: Nutze die zusätzlichen Kanäle des TA6586, um mehrere Motoren gleichzeitig zu betreiben.
+* **Sensorintegration**: Kombiniere Sensoren mit dem Motor, um ihn basierend auf Eingaben zu steuern (z. B. Temperatur- oder Lichtsensoren).

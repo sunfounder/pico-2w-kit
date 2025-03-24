@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 28: Connecting the Raspberry Pi Pico W to WiFi
+Lektion 28: Den Raspberry Pi Pico W mit WiFi verbinden
 =============================================================================
 
-This tutorial covers setting up a client-server relationship between a Raspberry Pi Pico W and a PC over Wi-Fi:
+Dieses Tutorial behandelt das Einrichten einer Client-Server-Beziehung zwischen einem Raspberry Pi Pico W und einem PC über Wi-Fi:
 
-* **Introduction**: Goal is to connect the Raspberry Pi Pico W to Wi-Fi and establish a client-server relationship with a PC.
-* **Understanding Client-Server Relationship**: Uses a McDonald's analogy to explain the concept, with the PC as the client and the Pico W as the server.
-* **Setting Up the Raspberry Pi Pico W as a Server**: Explains how to connect to Wi-Fi, retrieve an IP address, and set up a UDP server.
-* **Creating a Client on the PC**: Provides code for the PC client to send commands to the Raspberry Pi Pico W server.
-* **Sending and Receiving Data**: Shows how the server decodes client commands and sends responses.
-* **Practical Demonstration**: Runs the server and client, showing data exchange with the Pico W displaying its IP on an OLED.
+* **Einführung**: Ziel ist es, den Raspberry Pi Pico W mit Wi-Fi zu verbinden und eine Client-Server-Beziehung mit einem PC herzustellen.
+* **Verständnis der Client-Server-Beziehung**: Verwendet eine McDonald's-Analogie, um das Konzept zu erklären, wobei der PC der Client und der Pico W der Server ist.
+* **Einrichtung des Raspberry Pi Pico W als Server**: Erklärt, wie man sich mit Wi-Fi verbindet, eine IP-Adresse abruft und einen UDP-Server einrichtet.
+* **Erstellen eines Clients auf dem PC**: Stellt Code für den PC-Client bereit, um Befehle an den Raspberry Pi Pico W Server zu senden.
+* **Senden und Empfangen von Daten**: Zeigt, wie der Server Client-Befehle entschlüsselt und Antworten sendet.
+* **Praktische Demonstration**: Führt den Server und Client aus, zeigt den Datenaustausch, wobei der Pico W seine IP auf einem OLED anzeigt.
 
 
 

@@ -1,69 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Erhalte Unterstützung bei technischen Fragen und Problemen nach dem Kauf – durch unser Team und die Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um dein Wissen zu erweitern.
+    - **Exklusive Einblicke**: Erfahre frühzeitig von Produktneuheiten und erhalte exklusive Vorschauen.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Angeboten auf unsere neuesten Produkte.
+    - **Feiertagsaktionen & Gewinnspiele**: Nimm an saisonalen Aktionen und Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und werde Teil unserer Community!
 
 .. _py_fade:
 
-2.3 Fading LED
-========================
+2.3 LED sanft ein- und ausblenden
+======================================
 
-In this lesson, we'll learn how to control the brightness of an LED using Pulse Width Modulation (PWM) on the Raspberry Pi Pico 2 W. This is a fundamental technique in electronics that allows us to control devices like LEDs and motors with varying intensities.
+In dieser Lektion lernen wir, wie man mithilfe von Pulsweitenmodulation (PWM) die Helligkeit einer LED auf dem Raspberry Pi Pico 2 W steuert. Diese Technik ist ein grundlegendes Werkzeug in der Elektronik, mit dem sich beispielsweise LEDs oder Motoren in ihrer Intensität regulieren lassen.
 
-**What is PWM?**
+**Was ist PWM?**
 
-**Pulse Width Modulation (PWM)** is a method of controlling the amount of power delivered to an electronic device by cycling the power on and off at a high frequency. The "width" of the pulse (the duration it stays on) determines how much power the device receives.
+**Pulsweitenmodulation (PWM)** ist ein Verfahren zur Steuerung der Leistungszufuhr an ein elektronisches Bauteil, indem die Spannung mit hoher Frequenz ein- und ausgeschaltet wird. Die „Breite“ des Impulses (die Zeit, in der das Signal aktiv ist) bestimmt, wie viel Leistung das Bauteil erhält.
 
 |img_pwm_duty_cycle|
 
-* **Duty Cycle**: The percentage of one period in which a signal is active. A 100% duty cycle means the signal is always on, and 0% means it's always off.
-* **Frequency**: How often the signal cycles on and off per second.
+* **Duty Cycle (Tastverhältnis)**: Gibt an, wie viel Prozent eines Zyklus das Signal aktiv ist. 100 % bedeutet, das Signal ist durchgehend an, 0 % heißt, es ist immer aus.
+* **Frequenz**: Gibt an, wie oft das Signal pro Sekunde ein- und ausgeschaltet wird.
 
-By adjusting the duty cycle, we can simulate analog output using digital signals. For example, if we rapidly turn an LED on and off, our eyes perceive varying brightness levels depending on how long the LED stays on during each cycle.
+Durch Anpassen des Tastverhältnisses können wir analoge Ausgaben mit digitalen Signalen simulieren. Wenn eine LED schnell genug ein- und ausgeschaltet wird, nimmt unser Auge unterschiedliche Helligkeitsstufen wahr – abhängig davon, wie lange die LED pro Zyklus leuchtet.
 
-**Why Use PWM?**
+**Warum PWM verwenden?**
 
-* **LED Brightness Control**: Smoothly adjust the brightness of LEDs.
-* **Motor Speed Control**: Control the speed of DC motors.
-* **Efficiency**: PWM is more efficient than using variable resistors because it reduces energy loss in the form of heat.
+* **LED-Helligkeitssteuerung**: Sanftes Regeln der Leuchtkraft.
+* **Motorsteuerung**: Geschwindigkeit von Gleichstrommotoren kontrollieren.
+* **Effizienz**: PWM ist energieeffizienter als veränderliche Widerstände, da weniger Energie in Wärme umgewandelt wird.
 
-**Understanding PWM on the Raspberry Pi Pico 2 W**
+**PWM auf dem Raspberry Pi Pico 2 W**
 
-The Raspberry Pi Pico 2 W has PWM capabilities on all its GPIO pins, but it actually has 8 PWM slices (from PWM0 to PWM7), each with two channels (A and B), giving a total of 16 independent PWM outputs.
+Der Raspberry Pi Pico 2 W unterstützt PWM auf allen GPIO-Pins. Intern stehen 8 PWM-Slices (PWM0 bis PWM7) zur Verfügung, jeweils mit zwei Kanälen (A und B), was insgesamt 16 unabhängige PWM-Ausgänge ergibt.
 
 |pin_pwm|
 
 .. note::
-     Pins sharing the same PWM slice (like GP0 and GP16) cannot have different frequencies but can have different duty cycles.
+     Pins, die denselben PWM-Slice verwenden (z. B. GP0 und GP16), können nicht mit unterschiedlichen Frequenzen betrieben werden – jedoch mit unterschiedlichen Duty Cycles.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt brauchst du folgende Bauteile:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplett-Kit ist besonders praktisch – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ENTHALTENE TEILE
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Die Komponenten sind auch einzeln erhältlich:
 
 
 .. list-table::
@@ -71,8 +71,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -80,7 +80,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -89,35 +89,35 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220 Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Circuit Diagram**
+**Schaltplan**
 
 |sch_led|
 
-**Wiring Diagram**
+**Verdrahtung**
 
 |wiring_led|
 
 
-**Writing the Code**
+**Den Code schreiben**
 
 
 .. note::
 
-  * Open the ``2.3_fading_led.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Öffne die Datei ``2.3_fading_led.py`` aus dem Ordner ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny und klicke auf „Run“ oder drücke F5.
   
-  * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-  
+  * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico) COMxx.
+
 
 
 .. code-block:: python
@@ -125,57 +125,56 @@ You can also buy them separately from the links below.
     import machine
     import utime
 
-    # Set up PWM on pin GP15
+    # PWM auf Pin GP15 einrichten
     led = machine.PWM(machine.Pin(15))
-    led.freq(1000)  # Set frequency to 1000Hz
+    led.freq(1000)  # Frequenz auf 1000 Hz setzen
 
-    # Gradually increase brightness
+    # Helligkeit schrittweise erhöhen
     for duty in range(0, 65536, 64):
-        led.duty_u16(duty)  # Set duty cycle (16-bit value)
-        utime.sleep(0.01)   # Wait 10ms
+        led.duty_u16(duty)  # Duty Cycle setzen (16-Bit-Wert)
+        utime.sleep(0.01)   # 10 ms warten
 
-    # Turn off the LED
+    # LED ausschalten
     led.duty_u16(0)
 
-
-When the code is running, the LED connected to pin GP15 will gradually increase in brightness from off to full brightness.
-
-
-**Understanding the Code**
-
-* Import Libraries:
-
-  * ``machine``: Provides access to the hardware components.
-  * ``utime``: Allows us to add delays.
-
-* Set Up PWM:
-
-  * ``machine.PWM(machine.Pin(15))``: Initializes PWM on GP15.
-  * ``led.freq(1000)``: Sets the PWM frequency to 1000Hz (1ms per cycle).
-
-* Adjust Duty Cycle:
-
-  * ``for duty in range(0, 65536, 64)``: Loops from 0 to 65535 in steps of 64.
-  * ``led.duty_u16(duty)``: Sets the duty cycle. The ``duty_u16`` function accepts a 16-bit value (0 to 65535), where 0 is 0% and 65535 is 100% duty cycle.
-  * ``utime.sleep(0.01)``: Adds a small delay so the change in brightness is perceptible.
-
-* Turn Off the LED:
-
-  * ``led.duty_u16(0)``: Sets the duty cycle to 0%, turning off the LED.
+Sobald der Code ausgeführt wird, beginnt die LED an Pin GP15 langsam heller zu leuchten – von ausgeschaltet bis zur vollen Helligkeit.
 
 
-**Experimenting Further**
+**Den Code verstehen**
 
-* **Fade In and Out**: Modify the code to make the LED fade in and then fade out.
-* **Change Speed**: Adjust the ``utime.sleep()`` value to change how quickly the brightness changes.
-* **Different Frequencies**: Try different PWM frequencies using ``led.freq()`` to see how it affects the LED.
+* Bibliotheken importieren:
 
-**Conclusion**
+  * ``machine``: Zugriff auf die Hardware des Pico.
+  * ``utime``: Ermöglicht Zeitverzögerungen.
 
-PWM is a powerful technique for controlling devices that require analog-like inputs using digital outputs. Understanding PWM opens up possibilities for more complex projects like motor control, audio signal generation, and more.
+* PWM konfigurieren:
 
-By mastering the basics of PWM on the Raspberry Pi Pico 2 W, you're well on your way to creating more advanced electronics projects.
+  * ``machine.PWM(machine.Pin(15))``: Initialisiert PWM auf GP15.
+  * ``led.freq(1000)``: Setzt die PWM-Frequenz auf 1000 Hz (1 ms pro Zyklus).
 
-**References**
+* Duty Cycle anpassen:
+
+  * ``for duty in range(0, 65536, 64)``: Schleife von 0 bis 65535 in 64er-Schritten.
+  * ``led.duty_u16(duty)``: Legt das Tastverhältnis fest. Der Wert reicht von 0 (0 %) bis 65535 (100 %).
+  * ``utime.sleep(0.01)``: Kurze Pause, um den Helligkeitsanstieg sichtbar zu machen.
+
+* LED ausschalten:
+
+  * ``led.duty_u16(0)``: Setzt das Tastverhältnis auf 0 % – die LED ist aus.
+
+
+**Weitere Experimente**
+
+* **Ein- und Ausblenden**: Erweitere den Code, um die LED auch wieder sanft zu dimmen.
+* **Geschwindigkeit ändern**: Passe ``utime.sleep()`` an, um die Geschwindigkeit der Helligkeitsänderung zu steuern.
+* **Frequenzen testen**: Experimentiere mit verschiedenen PWM-Frequenzen über ``led.freq()`` und beobachte die Wirkung.
+
+**Fazit**
+
+PWM ist eine leistungsstarke Technik zur Steuerung von Geräten, die analoge Eingänge erwarten – mithilfe digitaler Ausgaben. Wer PWM versteht, kann Projekte wie Motorsteuerungen, Audioanwendungen und vieles mehr realisieren.
+
+Mit den Grundlagen der PWM auf dem Raspberry Pi Pico 2 W bist du bestens gerüstet für komplexere Elektronikprojekte.
+
+**Referenzen**
 
 * |link_mpython_pwm|

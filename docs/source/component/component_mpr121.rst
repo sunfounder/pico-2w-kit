@@ -1,66 +1,65 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Fragen nach dem Kauf.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Einblicke**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_mpr121:
 
-MPR121 Module
+MPR121-Modul
 ===========================
 
 |img_mpr121|
 
+* **3.3V**: Spannungsversorgung
+* **IRQ**: Open-Collector-Interrupt-Ausgang, aktiv niedrig
+* **SCL**: I2C-Takt (Clock)
+* **SDA**: I2C-Daten (Data)
+* **ADD**: I2C-Adressauswahl-Pin. Durch Verbinden des ADDR-Pins mit VSS, VDD, SDA oder SCL ergeben sich die I2C-Adressen 0x5A, 0x5B, 0x5C und 0x5D.
+* **GND**: Masse (Ground)
+* **0~11**: Elektroden 0~11, jede Elektrode fungiert als kapazitiver Berührungssensor. Typischerweise kann eine Elektrode einfach ein Metallstück oder ein Draht sein. Abhängig von der Länge des Drahtes oder dem Material, auf dem sich die Elektrode befindet, kann die Empfindlichkeit des Sensors jedoch variieren. Daher ermöglicht der MPR121 eine individuelle Konfiguration der Trigger- und Deaktivierungswerte für jede Elektrode.
 
-* **3.3V**: Power supply
-* **IRQ**: Open Collector Interrupt Output Pin, active low
-* **SCL**: I2C Clock
-* **SDA**: I2C Data
-* **ADD**: I2C Address Select Input Pin. Connect the ADDR pin to the VSS, VDD, SDA or SCL line, the resulting I2C addresses are 0x5A, 0x5B, 0x5C and 0x5D respectively
-* **GND**: Ground
-* **0~11**: Electrode 0~11, electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
+**MPR121 ÜBERSICHT**
 
-**MPR121 OVERVIEW**
+Der MPR121 ist ein kapazitiver Berührungssensor-Controller der zweiten Generation und der Nachfolger der MPR03x-Serie. Er bietet erweiterte interne Funktionen und zahlreiche neue Features, darunter:
 
-The MPR121 is a second-generation capacitive touch sensor controller, succeeding the MPR03x series. It offers enhanced internal functionality and significant new features, including:
+- Unterstützung für eine größere Anzahl von Elektroden
+- Hardware-konfigurierbare I2C-Adresse
+- Verbesserte Filtermechanismen mit integrierter Entprellungsfunktion
+- Vollständig unabhängige Elektroden mit automatischer Konfigurationsfähigkeit
 
-- Support for a higher number of electrodes
-- A hardware-configurable I2C address
-- An improved filtering system with built-in debounce functionality
-- Fully independent electrodes with automatic configuration capabilities
-
-Additionally, the MPR121 includes a 13th simulated sensing channel specifically designed for near-proximity detection, utilizing the multiplexed sensing inputs.
+Zusätzlich verfügt der MPR121 über einen 13. simulierten Sensorkanal, der speziell für die Erkennung von Objekten in unmittelbarer Nähe entwickelt wurde und die multiplexierten Sensoreingänge nutzt.
 
 * `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
 
-**Features**
+**Eigenschaften**
 
-* Low power operation
-    • 1.71 V to 3.6 V supply operation
-    • 29 μA supply current at 16 ms sampling interval period
-    • 3 μA Stop mode current
-* 12 capacitance sensing inputs
-    • 8 inputs are multifunctional for LED driver and GPIO
-* Complete touch detection
-    • Auto-configuration for each sensing input
-    • Auto-calibration for each sensing input
-    • Touch/release threshold and debounce for touch detection
-* I2C interface, with Interrupt output
-* 3 mm x 3 mm x 0.65 mm 20 lead QFN package
-* -40°C to +85°C operating temperature range
+* Energiesparender Betrieb
+    • Betriebsspannung von 1,71 V bis 3,6 V
+    • 29 μA Stromverbrauch bei einer Abtastrate von 16 ms
+    • 3 μA Stromverbrauch im Stop-Modus
+* 12 kapazitive Sensoreingänge
+    • 8 davon können zusätzlich als LED-Treiber oder GPIO genutzt werden
+* Vollständige Berührungserkennung
+    • Automatische Konfiguration für jeden Sensoreingang
+    • Automatische Kalibrierung für jeden Sensoreingang
+    • Einstellbare Schwellwerte für Berührungs- und Loslassereignisse mit Entprellungsfunktion
+* I2C-Schnittstelle mit Interrupt-Ausgang
+* 3 mm x 3 mm x 0,65 mm QFN-Gehäuse mit 20 Pins
+* Betriebstemperaturbereich von -40 °C bis +85 °C
 
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_mpr121` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`ar_mpr121` (For Arduino User)
+* :ref:`py_mpr121` (Für MicroPython-Nutzer)
+* :ref:`py_fruit_piano` (Für MicroPython-Nutzer)
+* :ref:`ar_mpr121` (Für Arduino-Nutzer)

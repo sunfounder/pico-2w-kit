@@ -1,63 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein und lerne zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Lösche nach dem Verkauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und des Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_led_bar:
 
-2.2 - Display the Level
+2.2 - Anzeige des Levels
 =============================
 
-In this lesson, we'll learn how to control an LED Bar Graph using the Raspberry Pi Pico 2 W. An LED Bar Graph consists of 10 LEDs arranged in a line, typically used to display levels such as volume, signal strength, or other measurements. We'll light up the LEDs sequentially to create a level display effect.
+In dieser Lektion lernen wir, wie man ein LED-Bar-Graph mit dem Raspberry Pi Pico 2 W steuert. Ein LED-Bar-Graph besteht aus 10 LEDs, die in einer Reihe angeordnet sind und typischerweise verwendet werden, um Werte wie Lautstärke, Signalstärke oder andere Messungen darzustellen. Wir werden die LEDs der Reihe nach einschalten, um einen Level-Anzeigeeffekt zu erzeugen.
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
-        - 450+
+    *   - Name    
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Pico 2 W Starter Kit    
+        - 450+    
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPLEMENTEINLIEFERUNG    
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,64 +76,62 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_ledbar|
 
-The LED Bar Graph contains 10 LEDs, each of which is individually controllable. Here, the anode of each of the 10 LEDs is connected to GP6~GP15, and the cathode is connected to a 220ohm resistor, and then to GND.
+Der LED-Bar-Graph enthält 10 LEDs, die jeweils einzeln steuerbar sind. Hierbei ist die Anode jeder der 10 LEDs mit GP6 bis GP15 verbunden, während die Kathode an einen 220-Ohm-Widerstand und dann an GND angeschlossen ist.
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_ledbar|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * You can open the file ``2.2_display_the_level.ino`` under the path of ``pico-2w-kit-main/arduino/2.2_display_the_level``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Du kannst die Datei ``2.2_display_the_level.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/2.2_display_the_level`` öffnen. 
+    * Oder kopiere diesen Code in die **Arduino IDE**.
+    * Vergiss nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor du auf den **Upload**-Button klickst.
 
 .. code-block:: Arduino
 
-    // Define the GPIO pins connected to the LED Bar Graph
+    // Definiere die GPIO-Pins, die mit dem LED-Bar-Graph verbunden sind
     const int ledPins[] = {6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 
     void setup() {
-      // Initialize each pin as an output
+      // Initialisiere jeden Pin als Ausgang
       for (int i = 0; i < 10; i++) {
         pinMode(ledPins[i], OUTPUT);
       }
     }
 
     void loop() {
-      // Turn on LEDs sequentially
+      // Schalte die LEDs der Reihe nach ein
       for (int i = 0; i < 10; i++) {
-        digitalWrite(ledPins[i], HIGH); // Turn on LED
-        delay(500);                     // Wait 500 milliseconds
-        digitalWrite(ledPins[i], LOW);  // Turn off LED
-        delay(500);                     // Wait 500 milliseconds
+        digitalWrite(ledPins[i], HIGH); // LED einschalten
+        delay(500);                     // Warte 500 Millisekunden
+        digitalWrite(ledPins[i], LOW);  // LED ausschalten
+        delay(500);                     // Warte 500 Millisekunden
       }
     }    
 
-After uploading the code, the LEDs on the bar graph should light up one after another, creating a level display effect. Each LED turns on for half a second and then turns off before the next one lights up.
+Nach dem Hochladen des Codes sollten die LEDs auf dem Bar-Graph nacheinander aufleuchten und so einen Level-Anzeigeeffekt erzeugen. Jede LED wird für eine halbe Sekunde eingeschaltet und dann ausgeschaltet, bevor die nächste LED aufleuchtet.
 
-**Understanding the Code**
+**Code verstehen**
 
-#. Defining the LED Pins:
+#. Definition der LED-Pins:
 
-   Create an array ``ledPins`` that holds the GPIO pin numbers connected to each LED on the bar graph.
+   Erstelle ein Array ``ledPins``, das die GPIO-Pinnummern speichert, die mit jeder LED auf dem Bar-Graph verbunden sind.
 
    .. code-block:: Arduino
 
       const int ledPins[] = {6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 
-#. Initializing the Pins:
+#. Initialisierung der Pins:
 
-   In the ``setup()`` function, we set each pin in the ``ledPins`` array as an output.
+   In der Funktion ``setup()`` setzen wir jeden Pin im Array ``ledPins`` als Ausgang.
 
    .. code-block:: Arduino
 
@@ -144,9 +141,9 @@ After uploading the code, the LEDs on the bar graph should light up one after an
         }
       }
 
-#. Controlling the LEDs:
+#. Steuern der LEDs:
 
-   In the ``loop()`` function, we use a ``for`` loop to iterate through each LED. We turn it on, wait for 500 milliseconds, turn it off, and then wait another 500 milliseconds before moving to the next LED.
+   In der Funktion ``loop()`` verwenden wir eine ``for``-Schleife, um jede LED der Reihe nach zu steuern. Wir schalten sie ein, warten 500 Millisekunden, schalten sie aus und warten weitere 500 Millisekunden, bevor die nächste LED eingeschaltet wird.
 
    .. code-block:: Arduino
 
@@ -159,22 +156,22 @@ After uploading the code, the LEDs on the bar graph should light up one after an
         }
       }
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* **Reverse the Order**: Modify the code to light up the LEDs in reverse order.
+* **Reihenfolge umkehren**: Ändere den Code, um die LEDs in umgekehrter Reihenfolge einzuschalten.
 
-* **Create a Bounce Effect**: After reaching the last LED, make the sequence reverse back to the first LED.
+* **Bounce-Effekt erstellen**: Nachdem die letzte LED erreicht ist, lass die Reihenfolge zurück zur ersten LED umkehren.
 
   .. code-block:: Arduino
     
       void loop() {
-        // Ascending sequence
+        // Aufsteigende Reihenfolge
         for (int i = 0; i < 10; i++) {
           digitalWrite(ledPins[i], HIGH);
           delay(200);
           digitalWrite(ledPins[i], LOW);
         }
-        // Descending sequence
+        // Absteigende Reihenfolge
         for (int i = 8; i >= 0; i--) {
           digitalWrite(ledPins[i], HIGH);
           delay(200);
@@ -182,8 +179,10 @@ After uploading the code, the LEDs on the bar graph should light up one after an
         }
       }
 
-* **Adjust the Speed**: Change the delay times to make the LEDs light up faster or slower.
+* **Geschwindigkeit anpassen**: Ändere die Verzögerungszeiten, um die Geschwindigkeit der LEDs zu erhöhen oder zu verringern.
 
-**Conclusion**
 
-In this lesson, you've learned how to control multiple LEDs using the Raspberry Pi Pico and how to create visual effects using simple programming constructs like loops and delays. This foundational knowledge is essential for more advanced projects involving LED displays and indicators.
+
+**Fazit**
+
+In dieser Lektion hast du gelernt, wie man mehrere LEDs mit dem Raspberry Pi Pico steuert und visuelle Effekte mithilfe einfacher Programmierkonstrukte wie Schleifen und Verzögerungen erstellt. Dieses grundlegende Wissen ist entscheidend für fortgeschrittene Projekte, die LED-Displays und Indikatoren verwenden.

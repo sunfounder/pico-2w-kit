@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Entdecken Sie gemeinsam mit anderen begeisterten Mitgliedern tiefergehendes Wissen rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und Problemen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Tauschen Sie Erfahrungen, Tipps und Tutorials aus, um Ihre Kenntnisse zu erweitern.
+    - **Exclusive Previews**: Erhalten Sie exklusive Vorabinformationen und frühzeitige Einblicke in Produktneuheiten.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und werden Sie noch heute Mitglied!
 
 .. _cpn_capacitor:
 
@@ -20,27 +20,28 @@ Capacitor
 
 |img_capacitor|
 
-Capacitance refers to the ability of a system to store electric charge under a given potential difference. It is denoted by C, and its unit in the International System of Units (SI) is the farad (F).
+Die Kapazität beschreibt die Fähigkeit eines Systems, elektrische Ladung bei einer bestimmten Spannung zu speichern. Sie wird mit dem Buchstaben C bezeichnet, und ihre Einheit im Internationalen Einheitensystem (SI) ist das Farad (F).
 
-In general, electric charges move under the influence of an electric field. When a dielectric medium is placed between conductors, it impedes the movement of charges, causing them to accumulate on the conductor surfaces. This accumulation of electric charge is quantified as capacitance.
+Generell bewegen sich elektrische Ladungen unter Einfluss eines elektrischen Feldes. Befindet sich ein dielektrisches Material zwischen Leitern, wird die Ladungsbewegung behindert, sodass sich Ladungen auf den Leiteroberflächen ansammeln. Diese Ansammlung elektrischer Ladung wird als Kapazität bezeichnet.
 
-Capacitors, one of the most widely used electronic components, have diverse applications in electronic equipment. They are commonly employed in DC isolation, coupling, bypassing, filtering, tuning circuits, energy conversion, and control circuits. Capacitors can be categorized into various types, including electrolytic capacitors and solid capacitors.
+Kondensatoren gehören zu den am häufigsten eingesetzten elektronischen Bauelementen und werden in elektronischen Geräten vielseitig genutzt. Typische Einsatzgebiete umfassen Gleichspannungsentkopplung, Kopplung, Bypass-Schaltungen, Filterung, Abstimmung von Schaltungen, Energieumwandlung und Steuerkreise. Kondensatoren werden in mehrere Typen unterteilt, unter anderem Elektrolytkondensatoren und Feststoffkondensatoren.
 
-Based on material characteristics, capacitors can be further classified into:
-- Aluminum electrolytic capacitors
-- Film capacitors
-- Tantalum capacitors
-- Ceramic capacitors
-- Super capacitors
+Basierend auf ihren Materialeigenschaften unterscheidet man Kondensatoren in:
 
-In this kit, ceramic capacitors and electrolytic capacitors are used. 
+- Aluminium-Elektrolytkondensatoren
+- Folienkondensatoren
+- Tantal-Elektrolytkondensatoren
+- Keramikkondensatoren
+- Superkondensatoren
+
+In diesem Kit kommen Keramikkondensatoren und Elektrolytkondensatoren zum Einsatz.
 
 * `Ceramic Capacitor - Wikipedia <https://en.wikipedia.org/wiki/Ceramic_capacitor>`_
 
 * `Electrolytic Capacitor - Wikipedia <https://en.wikipedia.org/wiki/Electrolytic_capacitor>`_
 
-There are 103 or 104 label on the ceramic capacitors, which represent the capacitance value, 103=10x10^3pF, 104=10x10^4pF
+Die Bezeichnung auf den Keramikkondensatoren lautet z.B. „103“ oder „104“. Dabei steht „103“ für 10 × 10³ pF und „104“ für 10 × 10⁴ pF.
 
-**Unit Conversion**
+**Einheitenumrechnung**
     1F=10^3mF=10^6uF=10^9nF=10^12pF
 

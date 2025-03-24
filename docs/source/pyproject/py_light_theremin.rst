@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Herausforderungen und Fragen nach dem Kauf von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Promotions teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_light_theremin:
 
-7.1 Creating a Light Theremin
+7.1 Ein Licht-Theremin bauen
 ====================================================
 
-In this exciting project, we'll build a **Light Theremin** using a Raspberry Pi Pico 2 W, a photoresistor, and a passive buzzer. A theremin is a unique musical instrument that is played without physical contact, producing different tones based on the position of the player's hands. While we can't replicate a traditional theremin entirely, we can simulate its functionality by using light intensity to control sound frequency.
+In diesem spannenden Projekt bauen wir ein **Licht-Theremin** mit einem Raspberry Pi Pico 2 W, einem Fotoresistor und einem passiven Summer. Ein Theremin ist ein einzigartiges Musikinstrument, das ohne physische Berührung gespielt wird und verschiedene Töne erzeugt, abhängig von der Position der Hände des Spielers. Während wir ein traditionelles Theremin nicht vollständig nachbilden können, können wir seine Funktionsweise simulieren, indem wir die Lichtintensität zur Steuerung der Tonfrequenz nutzen.
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE ARTIKEL IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Links erwerben.
 
 
 .. list-table::
@@ -46,8 +46,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -55,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -72,14 +72,14 @@ You can also buy them separately from the links below.
         - |link_led_buy|
     *   - 6
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 7
         - :ref:`cpn_resistor`
-        - 3(1KΩ, 220Ω, 10KΩ)
+        - 3 (1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -87,69 +87,70 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Understanding the Concept**
+**Funktionsweise**
 
-* **Photoresistor:** A sensor that changes its resistance based on light intensity. More light decreases resistance, less light increases it.
-* **Passive Buzzer:** Requires an external signal to produce sound. We can control its frequency using Pulse Width Modulation (PWM).
-* **Transistor (S8050):** Used to amplify the current, allowing the buzzer to be driven effectively by the Pico.
+* **Fotoresistor**: Ein Sensor, dessen Widerstand sich je nach Lichtintensität ändert. Mehr Licht verringert den Widerstand, weniger Licht erhöht ihn.
+* **Passiver Summer**: Er benötigt ein externes Signal zur Klangerzeugung. Die Frequenz kann über Pulsweitenmodulation (PWM) gesteuert werden.
+* **Transistor (S8050)**: Verstärkt den Strom, sodass der Summer effizient vom Pico angesteuert werden kann.
 
-By reading the values from the photoresistor, we can map light intensity to sound frequency. This means moving your hand over the photoresistor will change the pitch of the sound produced by the buzzer, similar to playing a theremin.
+Indem wir die Werte des Fotoresistors auslesen, können wir die Lichtintensität einer bestimmten Tonfrequenz zuordnen. Das bedeutet, dass das Bewegen der Hand über den Fotoresistor die Tonhöhe des Summers verändert – ähnlich wie bei einem Theremin.
 
-**Schematic**
+**Schaltplan**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+Bevor das Projekt gestartet wird, bewege deine Hand über den Fotoresistor, um den Bereich der Lichtintensität zu kalibrieren. Die LED an GP16 dient als Indikator für die Kalibrierung. Sie leuchtet während des Kalibriervorgangs und erlischt, sobald dieser abgeschlossen ist.
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+Wenn GP15 ein HIGH-Signal ausgibt, schaltet der NPN-Transistor (S8050) durch und der Summer beginnt zu tönen.
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+Je stärker das Licht, desto kleiner ist der Wert von GP28; je schwächer das Licht, desto größer ist der Wert.
 
-**Wiring**
+Durch das Programmieren einer Verbindung zwischen dem Fotoresistor und der Frequenz des Summers kann ein lichtsensitives Musikinstrument simuliert werden.
+
+
+**Verdrahtung**
 
 |wiring_light_theremin|
 
-**Writing the Code**
+**Code schreiben**
 
-Let's write a MicroPython program that reads the light intensity from the photoresistor, maps it to a frequency, and plays that frequency on the buzzer.
+Wir schreiben ein MicroPython-Programm, das die Lichtintensität des Fotoresistors ausliest, diese in eine Frequenz umwandelt und diese über den Summer ausgibt.
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-
+    * Öffne die Datei ``7.1_light_theremin.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, klicke auf "Run" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize components
-    led = machine.Pin(16, machine.Pin.OUT)  # LED on GP16
-    photoresistor = machine.ADC(28)         # Photoresistor connected to ADC0 (GP28)
-    buzzer = machine.PWM(machine.Pin(15))   # Buzzer connected to GP15
+    # Komponenten initialisieren
+    led = machine.Pin(16, machine.Pin.OUT)  # LED an GP16
+    photoresistor = machine.ADC(28)         # Fotoresistor an ADC0 (GP28)
+    buzzer = machine.PWM(machine.Pin(15))   # Summer an GP15
 
-    # Variables for calibration
+    # Variablen für die Kalibrierung
     light_low = 65535
     light_high = 0
 
-    # Function to map values from one range to another
+    # Funktion zur Skalierung von Werten
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         # Ensure in_min != in_max to avoid division by zero
         if in_max - in_min == 0:
             return out_min
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-    # Function to play a tone on the buzzer
+    # Funktion zur Klangerzeugung
     def play_tone(pin, frequency):
         if frequency <= 0:
             pin.duty_u16(0)
         else:
             pin.freq(frequency)
-            pin.duty_u16(32768)  # 50% duty cycle
+            pin.duty_u16(32768)  # 50 % Tastverhältnis
 
-    # Calibration process
+    # Kalibrierung
     def calibrate():
         global light_low, light_high
         print("Calibrating... Move your hand over the sensor.")
@@ -162,12 +163,12 @@ Let's write a MicroPython program that reads the light intensity from the photor
             if light_value < light_low:
                 light_low = light_value
             utime.sleep_ms(10)
-        led.value(0)  # Turn off LED after calibration
+        led.value(0)  # Turn off LED after calibration 
         print("Calibration complete.")
         print("Light Low:", light_low)
         print("Light High:", light_high)
 
-    # Main function
+    # Hauptfunktion
     def main():
         calibrate()
         try:
@@ -185,101 +186,100 @@ Let's write a MicroPython program that reads the light intensity from the photor
     if __name__ == "__main__":
         main()
 
-When the code is running, the LED will light up, indicating the calibration period.
+Wenn der Code ausgeführt wird, leuchtet die LED auf und signalisiert damit die Kalibrierungsphase.
 
-* Calibration:
+* Kalibrierung:
 
-  * Move your hand over the photoresistor during the 5-second calibration.
-  * This helps the program understand the range of light conditions.
+  * Bewege deine Hand während der 5-sekündigen Kalibrierung über den Fotoresistor.
+  * Dadurch kann das Programm den Bereich der Lichtverhältnisse erfassen.
 
-* Playing the Theremin:
+* Das Theremin spielen:
 
-  * After calibration, the LED turns off.
-  * Move your hand over the photoresistor.
-  * The buzzer will emit tones that change pitch based on the light intensity.
-  * Experiment with different hand positions and movements to create sounds.
+  * Nach der Kalibrierung erlischt die LED.
+  * Bewege deine Hand über den Fotoresistor.
+  * Der Summer gibt Töne aus, deren Tonhöhe sich je nach Lichtintensität verändert.
+  * Experimentiere mit verschiedenen Handpositionen und -bewegungen, um unterschiedliche Klänge zu erzeugen.
 
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Initialization:
+#. Initialisierung:
 
-   * **LED Indicator**: Used to signal when calibration is happening.
-   * **Photoresistor**: Reads analog values corresponding to light intensity.
-   * **Buzzer**: Controlled using PWM to generate tones at different frequencies.
+   * **LED-Anzeige**: Zeigt an, wenn die Kalibrierung läuft.
+   * **Fotoresistor**: Liest analoge Werte aus, die der Lichtintensität entsprechen.
+   * **Summer**: Wird mittels PWM gesteuert, um Töne mit unterschiedlichen Frequenzen zu erzeugen.
 
-#. Calibration Function (``calibrate()``):
+#. Kalibrierungsfunktion (``calibrate()``):
 
-   * Runs for 5 seconds, during which it records the minimum and maximum light values.
-   * Instructs the user to move their hand over the sensor to capture the range.
-   * Uses the LED as a visual indicator.
+   * Läuft 5 Sekunden und speichert dabei die minimalen und maximalen Lichtwerte.
+   * Fordert den Benutzer auf, die Hand über den Sensor zu bewegen, um den Messbereich festzulegen.
+   * Die LED dient als visuelles Signal.
 
    .. code-block:: python
 
-        # Calibration process
+        # Kalibrierungsprozess
         def calibrate():
             global light_low, light_high
             print("Calibrating... Move your hand over the sensor.")
-            led.value(1)  # Turn on LED to indicate calibration
+            led.value(1)  # LED einschalten zur Anzeige der Kalibrierung
             start_time = utime.ticks_ms()
-            while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5 seconds calibration
+            while utime.ticks_diff(utime.ticks_ms(), start_time) < 5000:  # 5 Sekunden Kalibrierung
                 light_value = photoresistor.read_u16()
                 if light_value > light_high:
                     light_high = light_value
                 if light_value < light_low:
                     light_low = light_value
                 utime.sleep_ms(10)
-            led.value(0)  # Turn off LED after calibration
+            led.value(0)  # LED ausschalten nach der Kalibrierung
             print("Calibration complete.")
             print("Light Low:", light_low)
             print("Light High:", light_high)
 
+#. Intervall-Mapping-Funktion (``interval_mapping()``):
 
-#. Interval Mapping Function (``interval_mapping()``):
-
-   * Maps the light sensor values to a frequency range suitable for the buzzer.
-   * Prevents division by zero errors.
+   * Wandelt die Werte des Lichtsensors in einen für den Summer geeigneten Frequenzbereich um.
+   * Verhindert Division durch Null.
 
    .. code-block:: python
 
-        # Function to map values from one range to another
+        # Funktion zur Skalierung von Werten
         def interval_mapping(x, in_min, in_max, out_min, out_max):
             # Ensure in_min != in_max to avoid division by zero
             if in_max - in_min == 0:
                 return out_min
             return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-#. Playing Tones (``play_tone()``):
+#. Ton abspielen (``play_tone()``):
 
-   * Sets the frequency of the buzzer using PWM.
-   * If the frequency is zero or negative, turns off the buzzer.
+   * Setzt die Frequenz des Summers mittels PWM.
+   * Falls die Frequenz null oder negativ ist, wird der Summer ausgeschaltet.
 
    .. code-block:: python
 
-        # Function to play a tone on the buzzer
+        # Funktion zum Abspielen eines Tons auf dem Summer
         def play_tone(pin, frequency):
             if frequency <= 0:
                 pin.duty_u16(0)
             else:
                 pin.freq(frequency)
-                pin.duty_u16(32768)  # 50% duty cycle
+                pin.duty_u16(32768)  # 50 % Tastverhältnis
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * Continuously reads the light value from the photoresistor.
-   * Maps this value to a frequency.
-   * Plays the tone corresponding to the frequency.
-   * Includes error handling to clean up on exit.
+   * Liest kontinuierlich die Lichtwerte vom Fotoresistor aus.
+   * Wandelt diese Werte in eine Frequenz um.
+   * Gibt den entsprechenden Ton über den Summer aus.
+   * Enthält eine Fehlerbehandlung zur Bereinigung beim Beenden.
 
    .. code-block:: python
 
-        # Main function
+        # Hauptfunktion
         def main():
             calibrate()
             try:
                 while True:
                     light_value = photoresistor.read_u16()
-                    # Map the light value to a frequency range (e.g., 200 Hz to 2000 Hz)
+                    # Wertebereich von 200 Hz bis 2000 Hz skalieren
                     frequency = interval_mapping(light_value, light_low, light_high, 200, 2000)
                     play_tone(buzzer, frequency)
                     utime.sleep_ms(20)
@@ -287,39 +287,38 @@ When the code is running, the LED will light up, indicating the calibration peri
                 buzzer.deinit()
                 print("Program stopped.")
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* Adjust Frequency Range:
+* Frequenzbereich anpassen:
 
-  Modify the values in ``interval_mapping()`` to change the pitch range. Example: Change 200, 2000 to 100, 5000 for a wider range.
+  Ändere die Werte in ``interval_mapping()``, um den Tonhöhenbereich zu variieren. Beispiel: Ersetze 200, 2000 durch 100, 5000 für einen erweiterten Bereich.
 
-* Visual Feedback:
+* Visuelles Feedback:
 
-  Use additional LEDs to provide visual cues corresponding to the pitch.
+  Verwende zusätzliche LEDs, um optische Signale entsprechend der Tonhöhe anzuzeigen.
 
-* Add a Second Sensor:
+* Einen zweiten Sensor hinzufügen:
 
-  Introduce another photoresistor to control volume or another parameter.
+  Integriere einen weiteren Fotoresistor, um die Lautstärke oder eine andere Funktion zu steuern.
 
-* Create a Musical Instrument:
+* Ein Musikinstrument entwickeln:
 
-  Combine with other sensors or inputs to build a more complex instrument.
+  Kombiniere verschiedene Sensoren oder Eingaben, um ein komplexeres Instrument zu erschaffen.
 
-**Understanding Limitations**
+**Einschränkungen verstehen**
 
-* Ambient Light:
+* Umgebungslicht:
 
-  Changes in ambient light can affect performance. Ensure consistent lighting or recalibrate as needed.
+  Änderungen in der Umgebungsbeleuchtung können die Leistung beeinflussen. Stelle eine konstante Lichtquelle sicher oder führe regelmäßig eine Neukalibrierung durch.
 
-* Sensor Sensitivity:
+* Sensorempfindlichkeit:
 
-  The photoresistor may not respond quickly to rapid hand movements.
+  Der Fotoresistor reagiert möglicherweise nicht schnell genug auf schnelle Handbewegungen.
 
-* Sound Quality:
+* Klangqualität:
 
-  Passive buzzers have limited sound quality. For better audio, consider using an active speaker with a DAC output.
+  Passive Summer haben eine begrenzte Klangqualität. Für eine bessere Audioausgabe kann ein aktiver Lautsprecher mit DAC-Ausgang verwendet werden.
 
-**Conclusion**
+**Fazit**
 
-You've successfully created a Light Theremin using the Raspberry Pi Pico 2 W! This project demonstrates how sensors and actuators can be combined to create interactive and fun experiments. Keep exploring and modifying the project to enhance your understanding and creativity.
-
+Du hast erfolgreich ein Licht-Theremin mit dem Raspberry Pi Pico 2 W gebaut! Dieses Projekt zeigt, wie Sensoren und Aktoren kombiniert werden können, um interaktive und unterhaltsame Experimente zu erstellen. Experimentiere weiter und modifiziere das Projekt, um dein Verständnis und deine Kreativität zu erweitern.

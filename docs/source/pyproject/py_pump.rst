@@ -1,69 +1,71 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung Ihrer Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nehmen Sie an Giveaways und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _py_pump:
 
-3.6 Pumping
+3.6 Pumpen
 =======================
 
+In dieser Lektion lernen wir, wie man eine **kleine Wasserpumpe** mit dem 
+Raspberry Pi Pico 2 W und einem **TA6586-Motortreiber** steuert. Eine kleine 
+Zentrifugalpumpe kann für Projekte wie automatische Bewässerungssysteme für 
+Pflanzen oder das Erstellen von Miniaturwassermerkmalen verwendet werden. 
+Die Steuerung der Pumpe ähnelt der Steuerung eines Gleichstrommotors, da sie 
+denselben Prinzipien folgt.
 
-In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2 W 
-and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic 
-plant watering systems or creating miniature water features. Controlling the pump is similar to 
-controlling a DC motor, as it uses the same principles.
-
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+Ihr Antriebselement ist ein Elektromotor, der genau wie ein normaler Motor 
+angetrieben wird.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Important Notes Before You Begin**
+**Wichtige Hinweise bevor Sie beginnen**
 
-* **Pump Setup**: Connect the tubing to the pump's outlet. Submerge the pump in water before powering it on.
-* **Avoid Dry Running**: Ensure the pump is always submerged. Running the pump dry can cause overheating and damage the motor.
-* **Prevent Clogging**: If you're using the pump for watering plants, make sure the water is free of debris to prevent clogging.
-* **Priming the Pump**: If water doesn't come out initially, there might be air trapped in the tubing. You may need to prime the pump by allowing water to flow through to remove air bubbles.
+* **Pumpeneinrichtung**: Schließen Sie den Schlauch an den Auslass der Pumpe an. Tauchen Sie die Pumpe vor dem Einschalten ins Wasser.
+* **Trockenlauf vermeiden**: Stellen Sie sicher, dass die Pumpe immer untergetaucht ist. Trockenlauf kann Überhitzung verursachen und den Motor beschädigen.
+* **Verstopfung verhindern**: Wenn Sie die Pumpe zur Bewässerung von Pflanzen verwenden, stellen Sie sicher, dass das Wasser frei von Schmutz ist, um eine Verstopfung zu verhindern.
+* **Pumpe entlüften**: Wenn anfangs kein Wasser austritt, könnte Luft im Schlauch eingeschlossen sein. Möglicherweise müssen Sie die Pumpe entlüften, indem Sie Wasser durchfließen lassen, um Luftblasen zu entfernen.
 
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -71,50 +73,49 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
         - 1
-        - 
+        -
     *   - 6
         - :ref:`cpn_lipo_charger`
         - 1
-        -  
+        -
     *   - 7
-        - 18650 Battery
+        - 18650 Batterie
         - 1
-        -  
+        -
     *   - 8
         - :ref:`cpn_pump`
         - 1
-        -  
+        -
 
+**Wichtige Hinweise bevor Sie beginnen**
 
-**Important Notes Before You Begin**
+* **Pumpeneinrichtung**: Schließen Sie den Schlauch an den Auslass der Pumpe an. Tauchen Sie die Pumpe vor dem Einschalten ins Wasser.
+* **Trockenlauf vermeiden**: Stellen Sie sicher, dass die Pumpe immer untergetaucht ist. Trockenlauf kann Überhitzung verursachen und den Motor beschädigen.
+* **Verstopfung verhindern**: Wenn Sie die Pumpe zur Bewässerung von Pflanzen verwenden, stellen Sie sicher, dass das Wasser frei von Schmutz ist, um eine Verstopfung zu verhindern.
+* **Pumpe entlüften**: Wenn anfangs kein Wasser austritt, könnte Luft im Schlauch eingeschlossen sein. Möglicherweise müssen Sie die Pumpe entlüften, indem Sie Wasser durchfließen lassen, um Luftblasen zu entfernen.
 
-* **Pump Setup**: Connect the tubing to the pump's outlet. Submerge the pump in water before powering it on.
-* **Avoid Dry Running**: Ensure the pump is always submerged. Running the pump dry can cause overheating and damage the motor.
-* **Prevent Clogging**: If you're using the pump for watering plants, make sure the water is free of debris to prevent clogging.
-* **Priming the Pump**: If water doesn't come out initially, there might be air trapped in the tubing. You may need to prime the pump by allowing water to flow through to remove air bubbles.
-
-**Schematic**
+**Schaltplan**
 
 |sch_pump|
 
 
-**Wiring**
+**Verdrahtung**
 
-In this circuit, you will see that the button is connected to the RUN pin. This is because the motor is operating with too much current, which may cause the Pico to disconnect from the computer, and the button needs to be pressed (for the Pico's **RUN** pin to receive a low level) to reset.
+In diesem Schaltkreis sehen Sie, dass der Knopf mit dem RUN-Pin verbunden ist. Dies liegt daran, dass der Motor mit zu viel Strom betrieben wird, was dazu führen kann, dass der Pico sich vom Computer trennt, und der Knopf muss gedrückt werden (damit der RUN-Pin des Pico ein niedriges Signal erhält), um ihn zurückzusetzen.
 
 |wiring_pump|
 
@@ -122,11 +123,11 @@ In this circuit, you will see that the button is connected to the RUN pin. This 
 
 .. note::
 
-    * Open the ``3.6_pumping.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.6_pumping.py`` im Pfad ``pico-2w-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, dann klicken Sie auf „Run Current Script“ oder drücken Sie einfach F5, um es auszuführen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter „MicroPython (Raspberry Pi Pico)“ in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Tutorials beziehen Sie sich bitte auf :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -134,37 +135,37 @@ In this circuit, you will see that the button is connected to the RUN pin. This 
     import machine
     import utime
 
-    # Define the control pins connected to the TA6586
+    # Definieren Sie die Steuerpins, die mit dem TA6586 verbunden sind
     motor1A = machine.Pin(14, machine.Pin.OUT)
     motor2A = machine.Pin(15, machine.Pin.OUT)
 
-    # Start the pump by setting motor1A high and motor2A low
+    # Starten Sie die Pumpe, indem Sie motor1A hoch und motor2A niedrig setzen
     while True:
         motor1A.high()
         motor2A.low()
 
 
-When the code is running, the pump starts working and you will see water flowing out of the tube at the same time.
+Wenn der Code läuft, beginnt die Pumpe zu arbeiten und Sie werden sehen, dass Wasser gleichzeitig aus dem Schlauch fließt.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Import Modules:
+#. Import von Modulen:
 
-   * ``machine``: Access to hardware-related functions.
-   * ``utime``: Time-related functions for delays.
+   * ``machine``: Zugriff auf hardwarebezogene Funktionen.
+   * ``utime``: Zeitbezogene Funktionen für Verzögerungen.
 
-#. Initialize Control Pins:
+#. Initialisierung der Steuerpins:
 
-   ``motor1A`` and ``motor2A`` control the pump via the TA6586.
+   ``motor1A`` und ``motor2A`` steuern die Pumpe über den TA6586.
 
    .. code-block:: python
 
       motor1A = machine.Pin(14, machine.Pin.OUT)
       motor2A = machine.Pin(15, machine.Pin.OUT)
 
-#. Start the Pump:
+#. Starten der Pumpe:
 
-   Sets the pump to run in one direction by applying a high signal to motor1A and a low signal to motor2A.
+   Setzt die Pumpe in Betrieb, indem ein hohes Signal an motor1A und ein niedriges Signal an motor2A angelegt wird.
 
    .. code-block:: python
 
@@ -173,37 +174,37 @@ When the code is running, the pump starts working and you will see water flowing
 
 
 
-**Troubleshooting Tips**
+**Fehlerbehebungstipps**
 
-* Pump Doesn't Start:
+* Pumpe startet nicht:
 
-  * Check all wiring connections.
-  * Make sure the pump is submerged in water.
+  * Überprüfen Sie alle Verdrahtungsverbindungen.
+  * Stellen Sie sicher, dass die Pumpe im Wasser untergetaucht ist.
 
-* Pico Becomes Unresponsive:
+* Pico reagiert nicht mehr:
 
-  * If the Pico disconnects or the program stops, you may need to reset it.
-  * Use the reset connection by momentarily connecting the RUN pin to GND.
+  * Wenn sich der Pico trennt oder das Programm stoppt, müssen Sie ihn möglicherweise zurücksetzen.
+  * Verwenden Sie die Reset-Verbindung, indem Sie den RUN-Pin kurz mit GND verbinden.
 
-* Pump Continues Running After Stopping the Script:
+* Pumpe läuft weiter, nachdem das Skript gestoppt wurde:
 
-  * The last state of the GPIO pins remains unchanged after stopping the script.
-  * Reset the Pico to stop the pump by connecting RUN to GND.
+  * Der letzte Zustand der GPIO-Pins bleibt nach dem Stoppen des Skripts unverändert.
+  * Setzen Sie den Pico zurück, um die Pumpe zu stoppen, indem Sie RUN mit GND verbinden.
 
   |wiring_run_reset|
 
-**Safety Precautions**
+**Sicherheitsvorkehrungen**
 
-* Electrical Safety:
+* Elektrische Sicherheit:
 
-  * Be cautious when working with water and electronics.
-  * Keep the Pico and other electronic components away from water to prevent damage or injury.
+  * Seien Sie vorsichtig beim Umgang mit Wasser und Elektronik.
+  * Halten Sie den Pico und andere elektronische Komponenten fern von Wasser, um Schäden oder Verletzungen zu vermeiden.
 
-* Pump Care:
+* Pumpenpflege:
 
-  * Do not let the pump run dry.
-  * Clean the pump regularly if using it with water that may contain particles.
+  * Lassen Sie die Pumpe nicht trocken laufen.
+  * Reinigen Sie die Pumpe regelmäßig, wenn Sie sie mit Wasser verwenden, das Partikel enthalten könnte.
 
-**Conclusion**
+**Schlussfolgerung**
 
-In this lesson, you've learned how to control a small water pump using the Raspberry Pi Pico 2 W and an TA6586 motor driver. This setup can be the foundation for projects like automated plant watering systems or miniature fountains.
+In dieser Lektion haben Sie gelernt, wie man eine kleine Wasserpumpe mit dem Raspberry Pi Pico 2 W und einem TA6586-Motortreiber steuert. Diese Einrichtung kann die Grundlage für Projekte wie automatische Bewässerungssysteme oder Miniaturbrunnen sein.

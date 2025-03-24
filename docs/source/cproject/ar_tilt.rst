@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich mit anderen Enthusiasten in die Welt von Raspberry Pi, Arduino und ESP32.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_tilt:
 
-2.6 Tilt It!
+2.6 Neige es!
 =======================
 
-In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2 W to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
+In dieser Lektion lernen wir, wie man einen Neigungsschalter mit dem Raspberry Pi Pico 2 W verwendet, um Änderungen der Ausrichtung zu erkennen. Ein Neigungsschalter ist ein einfaches Gerät, das erkennen kann, ob es aufrecht oder geneigt ist, was es nützlich für Anwendungen wie Bewegungserkennung, Orientierungssensorik oder als Auslöser basierend auf der Position macht.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENEINFÜHRUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -75,86 +75,85 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_tilt|
 
-* **When Upright (Switch Closed)**:
+* **Im aufrechten Zustand (Schalter geschlossen)**:
 
-  * The tilt switch connects **3.3V** directly to **GP14**.
-  * The GPIO pin reads **HIGH** (1).
+  * Der Neigungsschalter verbindet **3.3V** direkt mit **GP14**.
+  * Der GPIO-Pin liest **HIGH** (1).
 
-* **When Tilted (Switch Open)**:
+* **Bei Neigung (Schalter geöffnet)**:
 
-  * The tilt switch disconnects **3.3V** from **GP14**.
-  * The pull-down resistor pulls **GP14** to **GND**.
-  * The GPIO pin reads **LOW** (0).
+  * Der Neigungsschalter trennt **3.3V** von **GP14**.
+  * Der Pull-Down-Widerstand zieht **GP14** zu **GND**.
+  * Der GPIO-Pin liest **LOW** (0).
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_tilt|
 
-**Writing the Code**
+**Schreiben des Codes**
 
 .. note::
 
-    * You can open the file ``2.6_tilt_it.ino`` under the path of ``pico-2w-kit-main/arduino/2.4_colorful_light``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``2.6_tilt_it.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/2.4_colorful_light`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Upload**-Button auszuwählen.
 
 
 
 .. code-block:: Arduino
 
-   const int tiltPin = 14;  // GPIO pin connected to the tilt switch
+   const int tiltPin = 14;  // GPIO-Pin, der mit dem Neigungsschalter verbunden ist
 
    void setup() {
-     Serial.begin(115200);       // Initialize Serial Monitor at 115200 baud
-     pinMode(tiltPin, INPUT);    // Set the tilt pin as input
-   }
+     Serial.begin(115200);       // Serielle Überwachung mit 115200 Baud initialisieren
+     pinMode(tiltPin, INPUT);    // Den Neigungsp
 
    void loop() {
-     int tiltState = digitalRead(tiltPin);  // Read the state of the tilt switch
+     int tiltState = digitalRead(tiltPin);  // Den Zustand des Neigungsschalters lesen
 
      if (tiltState == HIGH) {
        Serial.println("The switch works!");
      }
-     delay(100);  // Small delay to avoid flooding the Serial Monitor
+     delay(100);  // Kleine Verzögerung, um die serielle Überwachung nicht zu überfluten
    }
 
-When the code is running, and the Serial Monitor is open, tilt the breadboard or the tilt switch.
-Each time you tilt the switch to the upright position, "The switch works!" should appear in the Serial Monitor.
+Wenn der Code läuft und die serielle Überwachung offen ist, neigen Sie das Breadboard oder den Neigungsschalter.
+Jedes Mal, wenn Sie den Schalter in die aufrechte Position neigen, sollte „Der Schalter funktioniert!“ im seriellen Monitor erscheinen.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Initializing Serial Communication:
+#. Initialisierung der seriellen Kommunikation:
 
-   Starts serial communication at a baud rate of 115200. This allows us to print messages to the Serial Monitor.
+   Startet die serielle Kommunikation mit einer Baudrate von 115200. Dies ermöglicht es uns, Nachrichten auf den seriellen Monitor zu drucken.
 
    .. code-block:: Arduino
 
         Serial.begin(115200);
 
-#. Setting Up the Tilt Pin:
+#. Einrichten des Neigungspins:
 
-   Configures ``tiltPin`` (GP14) as an input to read the state of the tilt switch.
+   Konfiguriert ``tiltPin`` (GP14) als Eingang, um den Zustand des Neigungsschalters zu lesen.
 
    .. code-block:: Arduino
 
         pinMode(tiltPin, INPUT);
 
 
-#. Reading the Tilt Switch State:
+#. Lesen des Zustands des Neigungsschalters:
 
-   Reads the current state of the tilt switch. It will be ``HIGH`` when upright and ``LOW`` when tilted.
+   Liest den aktuellen Zustand des Neigungsschalters. Er wird ``HIGH`` sein, wenn er aufrecht steht, und ``LOW``, wenn er geneigt ist.
 
    .. code-block:: Arduino
 
         int tiltState = digitalRead(tiltPin);
 
-#. Responding to Tilt:
+#. Reaktion auf Neigung:
 
-   If the tilt switch is upright (closed), print a message to the Serial Monitor.
+   Wenn der Neigungsschalter aufrecht (geschlossen) ist, wird eine Nachricht auf den seriellen Monitor gedruckt.
 
    .. code-block:: Arduino
 
@@ -162,14 +161,14 @@ Each time you tilt the switch to the upright position, "The switch works!" shoul
           Serial.println("The switch works!");
         }
 
-**Experimenting Further**
+**Weiteres Experimentieren**
 
-* **Control an LED**: Modify the code to turn an LED on when the tilt switch is upright and off when tilted.
+* **Steuerung einer LED**: Modifizieren Sie den Code, um eine LED einzuschalten, wenn der Neigungsschalter aufrecht ist, und auszuschalten, wenn er geneigt ist.
 
   .. code-block:: Arduino
 
-        const int tiltPin = 14;   // GPIO pin connected to the tilt switch
-        const int ledPin = 15;    // GPIO pin connected to an LED
+        const int tiltPin = 14;   // GPIO-Pin, der mit dem Neigungsschalter verbunden ist
+        const int ledPin = 15;    // GPIO-Pin, der mit einer LED verbunden ist
 
         void setup() {
           Serial.begin(115200);
@@ -182,16 +181,16 @@ Each time you tilt the switch to the upright position, "The switch works!" shoul
 
           if (tiltState == HIGH) {
             Serial.println("The switch works!");
-            digitalWrite(ledPin, HIGH);  // Turn on LED
+            digitalWrite(ledPin, HIGH);  // LED einschalten
           } else {
-            digitalWrite(ledPin, LOW);   // Turn off LED
+            digitalWrite(ledPin, LOW);   // LED ausschalten
           }
           delay(100);
         }
 
-* **Adjust Sensitivity**: Some tilt switches have different sensitivity levels. Experiment by adjusting the orientation to see at what angle the switch activates.
+* **Empfindlichkeit einstellen**: Einige Neigungsschalter haben unterschiedliche Empfindlichkeitsstufen. Experimentieren Sie, indem Sie die Orientierung anpassen, um zu sehen, bei welchem Winkel der Schalter aktiviert wird.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a tilt switch with the Raspberry Pi Pico to detect changes in orientation. This fundamental skill allows you to create projects that respond to movement or position, such as alarms, automatic lighting, or interactive devices.
+In dieser Lektion haben Sie gelernt, wie man einen Neigungsschalter mit dem Raspberry Pi Pico verwendet, um Änderungen der Ausrichtung zu erkennen. Diese grundlegende Fähigkeit ermöglicht es Ihnen, Projekte zu erstellen, die auf Bewegungen oder Positionen reagieren, wie Alarmanlagen, automatische Beleuchtung oder interaktive Geräte.
 

@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 51: Ultimate Pitch and Roll Gadget Using the MPU6050
-=============================================================================
-This tutorial covers creating a precise tilt meter using the MPU6050 sensor and Raspberry Pi Pico W:
+Lektion 51: Das ultimative Neigungsmessgerät für Pitch und Roll mit dem MPU6050
+=====================================================================================
+Dieses Tutorial behandelt die Erstellung eines präzisen Neigungsmessers mit dem MPU6050-Sensor und dem Raspberry Pi Pico W:
 
-* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometer data is noisy, and gyroscope data drifts over time.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with error correction for steady state errors.
-* **Implementation**: Initialize sensors and OLED. Collect and filter data, displaying tilt as both a bubble level and degree readout on the OLED.
-* **Demonstration**: Test for stable pitch and roll readings, with portable battery-powered operation.
-* **Additional Improvements**: Consider wireless monitoring or creating a 3D-printed case for portability.
+* **Aufbau**: Verbinde den MPU6050 und das OLED 1306 mit dem Raspberry Pi Pico W.
+* **Herausforderungen**: Daten von Beschleunigungsmessern sind rauschanfällig, und Daten von Gyroskopen driften über die Zeit.
+* **Lösung**: Verwende einen Komplementärfilter, um Daten von Beschleunigungsmesser und Gyroskop zu kombinieren, mit Fehlerkorrektur für gleichbleibende Fehler.
+* **Implementierung**: Initialisiere Sensoren und OLED. Sammle und filtere Daten, zeige die Neigung als Blasenwaage und als Gradanzeige auf dem OLED an.
+* **Demonstration**: Teste auf stabile Pitch- und Roll-Anzeigen, betrieben mit einem tragbaren Akku.
+* **Weitere Verbesserungen**: Betrachte die Möglichkeit der drahtlosen Überwachung oder die Erstellung eines 3D-gedruckten Gehäuses für die Portabilität.
 
 
 **Video**

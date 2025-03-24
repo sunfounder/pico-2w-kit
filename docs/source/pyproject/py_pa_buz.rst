@@ -1,46 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe von unserer Community und unserem Team bei technischen Herausforderungen und Support-Anfragen nach dem Kauf.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_pa_buz:
 
-3.2 Play Custom Tones with a Passive Buzzer
-==============================================
+3.2 Eigene Töne mit einem passiven Buzzer erzeugen
+=====================================================
 
-
-In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
-
+In dieser Lektion lernen wir, wie man mit einem **passiven Buzzer** und dem Raspberry Pi Pico 2 W verschiedene Töne und sogar einfache Melodien erzeugt! Im Gegensatz zu einem aktiven Buzzer benötigt ein passiver Buzzer ein wechselndes elektrisches Signal, um einen Ton zu erzeugen. Durch Ändern der Frequenz dieses Signals können wir die Tonhöhe steuern.
 
 * :ref:`cpn_buzzer`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ENTHALTENE TEILE
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ können die Komponenten auch einzeln über die folgenden Links erworben werden.
 
 
 .. list-table::
@@ -48,8 +46,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -57,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,101 +64,98 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Understanding the Passive Buzzer**
+**Funktionsweise eines passiven Buzzers**
 
-A passive buzzer works like a tiny speaker. It doesn't produce sound on its own; instead, it needs an oscillating signal to make sound. By providing signals of different frequencies, we can make the buzzer produce different pitches, allowing us to play notes and melodies.
+Ein passiver Buzzer funktioniert wie ein kleiner Lautsprecher. Er erzeugt keinen eigenen Ton, sondern benötigt ein externes Wechselstromsignal. Durch die Steuerung der Frequenz des Signals kann der Buzzer verschiedene Tonhöhen wiedergeben und so Noten oder Melodien spielen.
 
 |img_buzzer|
 
-**Circuit Diagram**
+**Schaltplan**
 
 |sch_buzzer|
 
-In this circuit, the passive buzzer is powered through a transistor (**S8050** NPN). The transistor amplifies the current, making the buzzer sound louder than if it were connected directly to the Pico. 
+In dieser Schaltung wird der passive Buzzer über einen **S8050**-NPN-Transistor gesteuert. Der Transistor verstärkt den Stromfluss und macht den Ton lauter, als wenn der Buzzer direkt an den Pico angeschlossen wäre.
 
-Here's what happens:
+Funktionsweise:
 
-* **GP15** outputs a high signal to control the transistor.
-* When the transistor is activated, it allows current to flow through the buzzer, making it beep.
+* **GP15** gibt ein hohes Signal aus, um den Transistor zu aktivieren.
+* Wenn der Transistor leitend wird, fließt Strom durch den Buzzer, wodurch ein Ton erzeugt wird.
 
-A **1kΩ resistor** is used to limit the current to protect the transistor.
+Ein **1kΩ-Widerstand** begrenzt den Stromfluss, um den Transistor zu schützen.
 
-**Wiring Diagram**
+**Verdrahtung**
 
-Make sure you are using the **passive buzzer**. You can tell it's the correct one by looking for the exposed PCB (as opposed to the sealed back, which is a active buzzer).
+Achte darauf, dass du einen **passiven Buzzer** verwendest. Du kannst ihn daran erkennen, dass die Leiterplatte auf der Unterseite sichtbar ist (im Gegensatz zum versiegelten Gehäuse eines aktiven Buzzers).
 
 |img_buzzer|
 
 |wiring_buzzer|
 
+.. 1. Verbinde 3V3 und GND des Pico 2 W mit den Stromschienen des Breadboards.
+.. #. Verbinde den positiven Pin des Buzzers mit der positiven Stromschiene.
+.. #. Verbinde den Kathoden-Pin des Buzzers mit dem **Kollektor** des Transistors.
+.. #. Verbinde den **Basisanschluss** des Transistors über einen 1kΩ-Widerstand mit GP15.
+.. #. Verbinde den **Emitter** des Transistors mit der negativen Stromschiene.
 
-.. 1. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Connect the positive pin of the buzzer to the positive power bus.
-.. #. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
-.. #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
-.. #. Connect the **emitter** lead of the transistor to the negative power bus.
+**Code schreiben**
 
-
-**Writing the Code**
-
-Now, let's write some code to make the buzzer play different tones.
+Nun schreiben wir ein Programm, das den Buzzer verschiedene Töne spielen lässt.
 
 .. note::
 
-    * Open the ``3.2_custom_tone.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * Öffne die Datei ``3.2_custom_tone.py`` aus dem Verzeichnis ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny. Klicke dann auf "Run" oder drücke **F5**.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
 
 .. code-block:: python
 
    import machine
    import utime
 
-   # Initialize PWM on GP15
+   # PWM auf GP15 initialisieren
    buzzer = machine.PWM(machine.Pin(15))
 
    def play_tone(frequency, duration):
-       # Set the frequency of the PWM signal
+       # Frequenz des PWM-Signals setzen
        buzzer.freq(frequency)
-       # Set duty cycle to 50%
+       # Duty Cycle auf 50% setzen
        buzzer.duty_u16(32768)
-       # Play the tone for the specified duration
+       # Ton für die angegebene Dauer spielen
        utime.sleep_ms(duration)
-       # Turn off the buzzer
+       # Buzzer ausschalten
        buzzer.duty_u16(0)
 
-   # Play some tones
-   play_tone(440, 500)  # A4 note for 500ms
+   # Ein paar Töne abspielen
+   play_tone(440, 500)  # A4-Ton für 500 ms
    utime.sleep_ms(200)
-   play_tone(494, 500)  # B4 note for 500ms
+   play_tone(494, 500)  # B4-Ton für 500 ms
    utime.sleep_ms(200)
-   play_tone(523, 500)  # C5 note for 500ms
+   play_tone(523, 500)  # C5-Ton für 500 ms
 
-When the code runs, you will hear the passive buzzer play the A4 note for 500ms, the B4 note for 500ms, and the C5 note for 500ms respectively.
+Nach dem Start des Codes spielt der Buzzer die Noten A4, B4 und C5 für jeweils 500 ms.
 
 
-**Explanation of the Code**
+**Erklärung des Codes**
 
-#. Initialize PWM:
+#. PWM initialisieren:
 
-   * ``buzzer = machine.PWM(machine.Pin(15))``: This sets up PWM (Pulse Width Modulation) on pin GP15, which we'll use to control the buzzer.
+   * ``buzzer = machine.PWM(machine.Pin(15))``: Aktiviert PWM auf GP15 zur Steuerung des Buzzers.
 
-#. Define the ``play_tone`` Function: 
+#. Die Funktion ``play_tone`` definieren:
 
    .. code-block:: python
 
@@ -170,35 +165,34 @@ When the code runs, you will hear the passive buzzer play the A4 note for 500ms,
           utime.sleep_ms(duration)
           buzzer.duty_u16(0)
 
-   * ``frequency``: The pitch of the tone. Higher frequency means a higher pitch.
-   * ``duration``: How long the tone plays, in milliseconds.
-   * ``buzzer.duty_u16(32768)``: Sets the duty cycle to 50% (half of 65535), which is ideal for generating sound.
-   * After the duration, we turn off the buzzer by setting the duty cycle to 0.
+   * ``frequency``: Die Tonhöhe des Signals.
+   * ``duration``: Die Abspielzeit in Millisekunden.
+   * ``buzzer.duty_u16(32768)``: Setzt den Duty Cycle auf 50% (max. Wert 65535).
+   * Nach der Dauer wird der Ton gestoppt, indem der Duty Cycle auf 0 gesetzt wird.
 
-#. Play Notes:
+#. Noten abspielen:
 
-   We call ``play_tone`` with different frequencies corresponding to musical notes.
+   Durch Aufrufe von ``play_tone`` mit verschiedenen Frequenzen spielen wir verschiedene Töne.
 
    .. code-block:: python
 
-      # Play some tones
-      play_tone(440, 500)  # A4 note for 500ms
+      play_tone(440, 500)  # A4-Ton für 500 ms
       utime.sleep_ms(200)
-      play_tone(494, 500)  # B4 note for 500ms
+      play_tone(494, 500)  # B4-Ton für 500 ms
       utime.sleep_ms(200)
-      play_tone(523, 500)  # C5 note for 500ms
+      play_tone(523, 500)  # C5-Ton für 500 ms
 
-   
-**Playing a Melody**
 
-Now that we've learned how to play individual tones with the passive buzzer, let's create a simple melody! This will help us understand how to sequence notes and control their durations to produce music.
+**Eine Melodie spielen**
+
+Jetzt erstellen wir eine einfache Melodie, indem wir mehrere Noten in einer Sequenz spielen.
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Note frequencies (in Hz)
+    # Notenfrequenzen (Hz)
     NOTE_C4 = 262
     NOTE_D4 = 294
     NOTE_E4 = 330
@@ -209,9 +203,9 @@ Now that we've learned how to play individual tones with the passive buzzer, let
     NOTE_C5 = 523
 
     melody = [
-        NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4,
+        NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, 
         NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5
-    ]
+        ]
 
     note_durations = [
         500, 500, 500, 500,
@@ -231,15 +225,15 @@ Now that we've learned how to play individual tones with the passive buzzer, let
     for i in range(len(melody)):
         play_tone(melody[i], note_durations[i])
 
-When you run this code, the buzzer will play a simple melody by sounding each note in the sequence. Each note lasts for 500 milliseconds, and there's a short pause between notes. You'll hear the buzzer play an ascending scale from Middle C (C4) up to the next octave's C (C5).
+Wenn du diesen Code ausführst, spielt der Buzzer eine einfache Melodie, indem er jede Note der Reihe nach wiedergibt. Jede Note dauert 500 Millisekunden, mit einer kurzen Pause dazwischen. Du wirst hören, wie der Buzzer eine aufsteigende Tonleiter von Mittlerem C (C4) bis zum C der nächsten Oktave (C5) spielt.
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* **Create Your Own Melody**: Change the notes and durations in the melody and ``note_durations`` lists to compose your own tune.
-* **Adjust the Tempo**: Modify the values in ``note_durations`` to speed up or slow down the melody.
-* **Add More Notes**: Define additional notes by adding their frequencies and include them in your melody.
-* **Change the Volume**: Adjust the duty cycle in ``buzzer.duty_u16()`` to make the buzzer louder or quieter. A value around 32768 gives 50% duty cycle.
+* **Eigene Melodie erstellen**: Ändere die Noten und Dauern in den Listen ``melody`` und ``note_durations``, um deine eigene Komposition zu erstellen.
+* **Tempo anpassen**: Modifiziere die Werte in ``note_durations``, um die Melodie schneller oder langsamer abzuspielen.
+* **Weitere Noten hinzufügen**: Definiere zusätzliche Noten durch Angabe ihrer Frequenzen und integriere sie in deine Melodie.
+* **Lautstärke verändern**: Passe den Duty Cycle in ``buzzer.duty_u16()`` an, um die Lautstärke des Buzzers zu erhöhen oder zu verringern. Ein Wert um 32768 entspricht einem Duty Cycle von 50 %.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a passive buzzer to play tones and melodies with the Raspberry Pi Pico 2 W. By controlling the frequency of the PWM signal, you can create a variety of sounds and even play simple songs. This is a great way to add audio feedback or fun musical elements to your projects.
+In dieser Lektion hast du gelernt, wie du mit einem passiven Buzzer Töne und Melodien auf dem Raspberry Pi Pico 2 W erzeugst. Durch die Steuerung der PWM-Frequenz kannst du eine Vielzahl von Klängen erzeugen und sogar einfache Lieder spielen. Dies ist eine großartige Möglichkeit, um Audio-Feedback oder unterhaltsame musikalische Elemente in deine Projekte zu integrieren.

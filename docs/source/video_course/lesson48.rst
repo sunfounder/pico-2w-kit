@@ -1,28 +1,27 @@
-.. note::
+.. note::  
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dein Wissen über Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung deiner Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    👉 Bereit, mit uns zu erkunden und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Lesson 48: Measuring Rotation Using the Gyros on the MPU6050
+Lektion 48: Drehungsmessung mit den Gyroskopen des MPU6050
 =============================================================================
 
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable tilt meter by combining accelerometer and gyroscope data:
+Dieses Tutorial behandelt die Verwendung des MPU6050-Sensors mit dem Raspberry Pi Pico W, um einen stabilen Neigungsmesser zu erstellen, indem Daten von Beschleunigungsmesser und Gyroskop kombiniert werden:
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Concept**: Measure tilt using accelerometer and gyroscope data, addressing noise and drift.
-* **Low-Pass Filter**: Apply to smooth accelerometer data and reduce noise.
-* **Gyroscope Integration**: Use rotational velocity to calculate and update pitch, roll, and yaw.
-* **Combining Data**: Fuse accelerometer and gyroscope data to minimize errors.
-* **Homework**: Implement and fine-tune the method for stable tilt measurement.
+* **Einrichtung**: Verbinde den MPU6050 mit dem Raspberry Pi Pico W.
+* **Konzept**: Messe die Neigung mit Daten von Beschleunigungsmesser und Gyroskop, wobei Störungen und Drift berücksichtigt werden.
+* **Tiefpassfilter**: Wende ihn an, um die Daten des Beschleunigungsmessers zu glätten und Störungen zu reduzieren.
+* **Gyroskop-Integration**: Nutze die Rotationsgeschwindigkeit, um die Neigungswinkel (Pitch, Roll und Yaw) zu berechnen und zu aktualisieren.
+* **Datenkombination**: Füge die Daten von Beschleunigungsmesser und Gyroskop zusammen, um Fehler zu minimieren.
+* **Hausaufgabe**: Implementiere und optimiere das Verfahren für eine stabile Neigungsmessung.
 
 
 

@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich tiefer in Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_slide:
 
-2.7 Toggle Left and Right
+2.7 Umschalten Links und Rechts
 ====================================
 
 |img_slide|
 
-In this lesson, we'll learn how to use a **slide switch** with the Raspberry Pi Pico 2 W to detect its position (left or right) and perform actions based on that. A slide switch is a simple mechanical device that connects the common (middle) pin to one of the two outer pins depending on its position.
+In dieser Lektion lernen wir, wie man einen **Schiebeschalter** mit dem Raspberry Pi Pico 2 W verwendet, um seine Position (links oder rechts) zu erkennen und darauf basierende Aktionen auszuführen. Ein Schiebeschalter ist ein einfaches mechanisches Gerät, das den gemeinsamen (mittleren) Pin je nach Position mit einem der beiden äußeren Pins verbindet.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -47,8 +47,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -56,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB-Kabel
         - 1
         - 
     *   - 3
@@ -65,73 +65,73 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_slide_switch`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |img_slide|
 
-A slide switch has three pins:
+Ein Schiebeschalter hat drei Pins:
 
-- **Pin 1**: Connected when the switch is toggled to one side (e.g., left)
-- **Pin 2**: Common pin (middle pin)
-- **Pin 3**: Connected when the switch is toggled to the other side (e.g., right)
+- **Pin 1**: Verbunden, wenn der Schalter auf eine Seite umgelegt wird (z. B. links)
+- **Pin 2**: Gemeinsamer Pin (Mittelpin)
+- **Pin 3**: Verbunden, wenn der Schalter auf die andere Seite umgelegt wird (z. B. rechts)
 
-By reading the voltage on the common pin, we can determine the position of the switch.
+Durch das Lesen der Spannung am gemeinsamen Pin können wir die Position des Schalters bestimmen.
 
-**Circuit Diagram**
+**Schaltbild**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+GP14 erhält ein unterschiedliches Signal, wenn du den Schiebeschalter nach rechts oder links umlegst.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+Der Zweck des 10K-Widerstands besteht darin, GP14 während des Umschaltens niedrig zu halten (nicht ganz links und nicht ganz rechts umgeschaltet).
 
-When you toggle the switch, the mechanical contacts can cause rapid, noisy signals known as "bounce." The capacitor connected between GP14 and GND helps to filter out these rapid fluctuations, providing a cleaner signal.
+Wenn du den Schalter umlegst, können die mechanischen Kontakte schnelle, störende Signale verursachen, die als "Prellen" bekannt sind. Der zwischen GP14 und GND angeschlossene Kondensator hilft, diese schnellen Schwankungen herauszufiltern und liefert ein saubereres Signal.
 
-* Switch Toggled to the Right:
+* Schalter nach rechts umgelegt:
 
-  * Pin 2 (GP14) is connected to **3.3V** through Pin 1.
-  * The GPIO pin reads **HIGH** (1).
+  * Pin 2 (GP14) ist durch Pin 1 mit **3.3V** verbunden.
+  * Der GPIO-Pin liest **HOCH** (1).
 
-* Switch Toggled to the Left:
+* Schalter nach links umgelegt:
 
-  * Pin 2 (GP14) is connected to **GND** through Pin 3.
-  * The GPIO pin reads **LOW** (0).
+  * Pin 2 (GP14) ist durch Pin 3 mit **GND** verbunden.
+  * Der GPIO-Pin liest **NIEDRIG** (0).
 
-* Switch in the Middle Position:
+* Schalter in Mittelposition:
 
-  * Pin 2 (GP14) is not connected to either **3.3V** or **GND**.
-  * The pull-down resistor keeps the GPIO pin at **LOW** (0).
-  * The capacitor helps to reduce switch bounce (noise due to mechanical movement).
+  * Pin 2 (GP14) ist nicht mit **3.3V** oder **GND** verbunden.
+  * Der Pull-Down-Widerstand hält den GPIO-Pin auf **NIEDRIG** (0).
+  * Der Kondensator hilft, das Schalterprellen zu reduzieren (Geräusche durch mechanische Bewegung).
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_slide|
 
-**Writing the Code**
+**Programmierung**
 
-We'll write a MicroPython program that detects the position of the slide switch and prints a message accordingly.
+Wir werden ein MicroPython-Programm schreiben, das die Position des Schiebeschalters erkennt und entsprechend eine Nachricht ausgibt.
 
 .. note::
 
-  * Open the ``2.7_slide_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+  * Öffne die ``2.7_slide_switch.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
 
-  * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+  * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
   
 
@@ -140,7 +140,7 @@ We'll write a MicroPython program that detects the position of the slide switch 
   import machine
   import utime
 
-  # Initialize GP14 as an input
+  # Initialisiere GP14 als Eingang
   slide_switch = machine.Pin(14, machine.Pin.IN)
 
   while True:
@@ -151,50 +151,50 @@ We'll write a MicroPython program that detects the position of the slide switch 
           print("Switch is toggled to the RIGHT!")
       utime.sleep(0.5)
 
-When the code is running, you will observe the following phenomenon:
+Wenn der Code läuft, wirst du folgendes Phänomen beobachten:
 
-* **Toggle to the Right**: You should see "Switch is toggled to the RIGHT!" in the console.
-* **Toggle to the Left**: You should see "Switch is toggled to the LEFT!" in the console.
-
-
-**Understanding the Code**
-
-#. Import Modules:
-
-   * ``import machine``: Access hardware functions.
-   * ``import utime``: Use time-related functions.
-
-#. Initialize the Slide Switch Pin:
-
-   * ``slide_switch = machine.Pin(14, machine.Pin.IN)``: Sets up GP14 as an input pin.
-
-#. Main Loop:
-
-   * ``while True``: Creates an infinite loop to continuously check the switch state.
-   * ``switch_state = slide_switch.value()``: Reads the current state of the switch.
-   * ``if switch_state == 1``: Checks if the GPIO pin is HIGH (switch toggled to the left).
-   * ``print("Switch is toggled to the RIGHT!")``: Prints a message.
-   * ``else``: If the GPIO pin is LOW (switch toggled to the right or in the middle).
-   * ``print("Switch is toggled to the LEFT!")``: Prints a message.
-   * ``utime.sleep(0.5)``: Adds a short delay to debounce the switch and avoid flooding the console.
+* **Umschalten nach rechts**: Du solltest "Schalter ist nach RECHTS umgelegt!" in der Konsole sehen.
+* **Umschalten nach links**: Du solltest "Schalter ist nach LINKS umgelegt!" in der Konsole sehen.
 
 
-**Alternative: Using an internal pull-down resistor**
+**Verständnis des Codes**
 
-The Raspberry Pi Pico 2 W allows us to enable internal pull-down resistors, eliminating the need for an external resistor.
+#. Importiere Module:
 
-* Modify the Circuit:
+   * ``import machine``: Zugriff auf Hardwarefunktionen.
+   * ``import utime``: Verwende zeitbezogene Funktionen.
 
-  Remove the external 10 kΩ resistor and 0.1 µF capacitor.
+#. Initialisiere den Schiebeschalter-Pin:
 
-* Modified Code:
+   * ``slide_switch = machine.Pin(14, machine.Pin.IN)``: Richtet GP14 als Eingangspin ein.
+
+#. Hauptschleife:
+
+   * ``while True``: Erstellt eine unendliche Schleife, um kontinuierlich den Schalterzustand zu überprüfen.
+   * ``switch_state = slide_switch.value()``: Liest den aktuellen Zustand des Schalters.
+   * ``if switch_state == 1``: Überprüft, ob der GPIO-Pin HOCH ist (Schalter nach links umgelegt).
+   * ``print("Switch is toggled to the RIGHT!")``: Gibt eine Nachricht aus.
+   * ``else``: Wenn der GPIO-Pin NIEDRIG ist (Schalter nach rechts oder in der Mitte umgelegt).
+   * ``print("Switch is toggled to the LEFT!")``: Gibt eine Nachricht aus.
+   * ``utime.sleep(0.5)``: Fügt eine kurze Verzögerung hinzu, um den Schalter zu entprellen und die Konsole nicht zu überfluten.
+
+
+**Alternative: Verwendung eines internen Pull-Down-Widerstands**
+
+Der Raspberry Pi Pico 2 W ermöglicht es uns, interne Pull-Down-Widerstände zu aktivieren, was den Bedarf an einem externen Widerstand eliminiert.
+
+* Schaltkreis ändern:
+
+  Entferne den externen 10 kΩ Widerstand und den 0.1 µF Kondensator.
+
+* Modifizierter Code:
 
   .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize GP14 as an input with internal pull-down resistor
+    # Initialisiere GP14 als Eingang mit internem Pull-Down-Widerstand
     slide_switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 
     while True:
@@ -205,17 +205,17 @@ The Raspberry Pi Pico 2 W allows us to enable internal pull-down resistors, elim
             print("Switch is toggled to the RIGHT!")
         utime.sleep(0.5)
   
-**Practical Applications**
+**Praktische Anwendungen**
 
-* **Mode Selection**: Use the switch to toggle between different modes in your program.
-* **Power Control**: Control power to certain parts of your circuit.
-* **User Input**: Provide simple user controls for your projects.
+* **Modusauswahl**: Verwende den Schalter, um zwischen verschiedenen Modi in deinem Programm umzuschalten.
+* **Stromsteuerung**: Steuere die Stromzufuhr zu bestimmten Teilen deiner Schaltung.
+* **Benutzereingabe**: Biete einfache Benutzersteuerungen für deine Projekte.
 
-**Experimenting Further**
+**Weiteres Experimentieren**
 
-* Add an LED Indicator:
+* Füge eine LED-Anzeige hinzu:
 
-  Connect an LED to another GPIO pin (e.g., GP15) with a suitable resistor.Modify the code to turn the LED on or off based on the switch position.
+  Verbinde eine LED mit einem anderen GPIO-Pin (z. B. GP15) mit einem geeigneten Widerstand. Modifiziere den Code, um die LED ein- oder auszuschalten, basierend auf der Schalterposition.
 
   .. code-block:: python
 
@@ -227,16 +227,15 @@ The Raspberry Pi Pico 2 W allows us to enable internal pull-down resistors, elim
 
     while True:
         if slide_switch.value() == 1:
-            led.value(1)  # Turn on the LED
+            led.value(1)  # Schalte die LED ein
         else:
-            led.value(0)  # Turn off the LED
+            led.value(0)  # Schalte die LED aus
         utime.sleep(0.1)
 
-* Detect Middle Position:
+* Mittelposition erkennen:
 
-  To detect when the switch is in the middle (neither left nor right), you'll need to modify the wiring and code to read all three states.
+  Um zu erkennen, wenn der Schalter in der Mitte ist (weder links noch rechts), musst du die Verdrahtung und den Code ändern, um alle drei Zustände zu lesen.
 
-**Conclusion**
+**Fazit**
 
-Using a slide switch with the Raspberry Pi Pico 2 W allows you to add physical input controls to your projects. By understanding how to read the switch's state and handle potential issues like switch bounce, you can create more interactive and user-friendly applications.
-
+Die Verwendung eines Schiebeschalters mit dem Raspberry Pi Pico 2 W ermöglicht es dir, physische Eingabesteuerungen in deine Projekte einzubinden. Durch das Verständnis, wie man den Zustand des Schalters liest und potenzielle Probleme wie Schalterprellen handhabt, kannst du interaktivere und benutzerfreundlichere Anwendungen erstellen.

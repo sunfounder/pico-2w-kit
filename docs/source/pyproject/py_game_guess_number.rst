@@ -1,43 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
 .. _py_guess_number:
 
-7.7 Creating a "Guess the Number" Game
+7.7 Erstellen eines „Zahlenraten“-Spiels
 =============================================================
 
-In this project, we'll build an interactive **Guess the Number** game using the Raspberry Pi Pico 2 W, a 4x4 matrix keypad, and an I2C LCD1602 display. The game generates a random number between 0 and 99, and players take turns guessing the number. After each guess, the game narrows down the range based on whether the guess was too high or too low, until someone guesses the correct number.
+In diesem Projekt entwickeln wir ein interaktives **Zahlenraten**-Spiel mit dem Raspberry Pi Pico 2 W, einer 4x4-Matrix-Tastatur und einem I2C LCD1602-Display. Das Spiel generiert eine zufällige Zahl zwischen 0 und 99, und die Spieler geben nacheinander ihre Vermutungen ein. Nach jeder Eingabe wird der Wertebereich entsprechend eingegrenzt, bis jemand die richtige Zahl errät.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist besonders praktisch, ein komplettes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Die Komponenten können auch einzeln über die folgenden Links erworben werden.
 
 
 .. list-table::
@@ -45,8 +45,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -63,11 +63,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
@@ -78,40 +78,40 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-**Understanding the Components**
+**Verständnis der Komponenten**
 
-* **4x4 Matrix Keypad**: A keypad with 16 buttons arranged in a 4-row by 4-column matrix. We'll use it to input numbers and commands.
-* **I2C LCD1602 Display**: A 16x2 character LCD display with an I2C interface, simplifying wiring by using only two data lines (SDA and SCL).
+* **4x4-Matrix-Tastatur**: Eine Tastatur mit 16 Tasten in einer 4x4-Matrix. Sie wird zur Eingabe von Zahlen und Befehlen verwendet.
+* **I2C LCD1602-Display**: Ein 16x2-Zeichen-LCD mit I2C-Schnittstelle, das die Verkabelung vereinfacht, da nur zwei Datenleitungen (SDA und SCL) benötigt werden.
 
-**Schematic**
+**Schaltplan**
 
 
 |sch_guess_number|
 
-This circuit is based on :ref:`py_keypad` with the addition of an I2C LCD1602 to display the pressed keys.
+Diese Schaltung basiert auf :ref:`py_keypad` und ergänzt ein I2C LCD1602-Display zur Anzeige der eingegebenen Zahlen.
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_game_guess_number| 
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G10 ~ G13 are located at the same time.
+Um die Verdrahtung zu erleichtern, wurden in der obigen Schaltung die Spalten der Matrix-Tastatur und die 10K-Widerstände gleichzeitig in die Steckplätze G10 bis G13 eingesetzt.
 
 
-**Writing the Code**
+**Code schreiben**
 
-We'll write a MicroPython program that:
+Wir schreiben ein MicroPython-Programm, das:
 
-* Generates a random number between 0 and 99.
-* Reads input from the keypad.
-* Updates the LCD display with hints and player inputs.
-* Narrows down the range after each guess.
+* Eine zufällige Zahl zwischen 0 und 99 generiert.
+* Tastatureingaben liest.
+* Das LCD-Display mit Hinweisen und Benutzereingaben aktualisiert.
+* Nach jeder Eingabe den Wertebereich eingrenzt.
 
 .. note::
 
-    * Open the ``7.7_game_guess_number.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Öffne die Datei ``7.7_game_guess_number.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Run" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
+    * Die benötigte Bibliothek ``lcd1602.py`` muss auf den Pico hochgeladen sein. Eine detaillierte Anleitung findest du unter :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -120,11 +120,11 @@ We'll write a MicroPython program that:
     import utime
     import urandom
 
-    # Initialize I2C communication for the LCD1602 display
+    # I2C-Kommunikation für das LCD1602-Display initialisieren
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     lcd = LCD(i2c)
 
-    # Keypad character mapping for a 4x4 matrix keypad
+    # Tastatur-Zuordnung für eine 4x4-Matrix-Tastatur
     keypad_map = [
         ["1", "2", "3", "A"],
         ["4", "5", "6", "B"],
@@ -132,11 +132,11 @@ We'll write a MicroPython program that:
         ["*", "0", "#", "D"]
     ]
 
-    # Define row and column pins
+    # Reihen- und Spalten-Pins definieren
     row_pins = [Pin(pin_num, Pin.OUT) for pin_num in [21, 20, 19, 18]]  # R1-R4
     col_pins = [Pin(pin_num, Pin.IN, Pin.PULL_DOWN) for pin_num in [13, 12, 11, 10]]  # C1-C4
 
-    # Function to scan the keypad
+    # Funktion zum Scannen der Tastatur
     def read_keypad():
         for row_num, row_pin in enumerate(row_pins):
             row_pin.high()
@@ -147,7 +147,7 @@ We'll write a MicroPython program that:
             row_pin.low()
         return None
 
-    # Initialize game variables
+    # Spielvariablen initialisieren
     def init_game():
         global target_number, lower_bound, upper_bound, guess
         target_number = urandom.randint(0, 99)
@@ -157,19 +157,19 @@ We'll write a MicroPython program that:
         lcd.clear()
         lcd.message("Press A to Start")
 
-    # Display function
+    # Anzeige aktualisieren
     def update_display(message):
         lcd.clear()
         lcd.message(message)
 
-    # Main program
+    # Hauptprogramm
     init_game()
     game_started = False
 
     while True:
         key = read_keypad()
         if key:
-            utime.sleep(0.2)  # Debounce delay
+            utime.sleep(0.2)  # Entprellung
 
             if not game_started:
                 if key == "A":
@@ -214,41 +214,41 @@ We'll write a MicroPython program that:
                     update_display("Hint not available")
         utime.sleep(0.1)
 
-After the code runs, follow these steps to play the game:
+Nach dem Start des Codes folge diesen Schritten, um das Spiel zu spielen:
 
-* Start the Game:
+* Spiel starten:
 
-  Press the 'A' key on the keypad.
+  Drücke die 'A'-Taste auf der Tastatur.
 
-* Enter Guesses:
+* Eine Zahl eingeben:
 
-  * Use the number keys to input your guess (0-99).
-  * Press 'D' to submit your guess.
+  * Verwende die Zahlentasten, um deine Vermutung (0-99) einzugeben.
+  * Drücke 'D', um deine Eingabe zu bestätigen.
 
-* Receive Feedback:
+* Rückmeldung erhalten:
 
-  * The LCD will indicate if your guess is too high, too low, or correct.
-  * The range will adjust accordingly.
+  * Das LCD zeigt an, ob die Eingabe zu hoch, zu niedrig oder korrekt ist.
+  * Der Wertebereich wird entsprechend angepasst.
 
-* Winning the Game:
+* Das Spiel gewinnen:
 
-  * When you guess the correct number, the LCD will display "Correct! Number is XX".
-  * The game resets automatically after a short delay.
+  * Wenn du die richtige Zahl errätst, zeigt das LCD „Richtig! Die Zahl ist XX“ an.
+  * Das Spiel wird nach einer kurzen Verzögerung automatisch zurückgesetzt.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Imports and Initialization:
+#. Importieren und Initialisierung:
 
-   * ``lcd1602.LCD``: For controlling the LCD display.
-   * ``machine.Pin``: For interacting with GPIO pins.
-   * ``urandom``: For generating random numbers.
-   * Initialize I2C communication for the LCD1602 display.
+   * ``lcd1602.LCD``: Steuert das LCD-Display.
+   * ``machine.Pin``: Ermöglicht die Interaktion mit den GPIO-Pins.
+   * ``urandom``: Erzeugt Zufallszahlen.
+   * Initialisiert die I2C-Kommunikation für das LCD1602-Display.
 
-#. Keypad Scanning Function (``read_keypad``):
+#. Tastatur-Scan-Funktion (``read_keypad``):
 
-   * Sets each row high one at a time.
-   * Checks if any column reads high, indicating a button press.
-   * Returns the character corresponding to the pressed key.
+   * Setzt jede Zeile nacheinander auf HIGH.
+   * Prüft, ob eine Spalte HIGH liest, um eine Tastenbetätigung zu erkennen.
+   * Gibt das Zeichen der gedrückten Taste zurück.
 
    .. code-block:: python
 
@@ -262,11 +262,11 @@ After the code runs, follow these steps to play the game:
                 row_pin.low()
             return None
 
-#. Game Variables and Initialization (``init_game``):
+#. Spielvariablen und Initialisierung (``init_game``):
 
-   * ``target_number``: Random number between 0 and 99.
-   * ``lower_bound and upper_bound``: Start at 0 and 99 respectively.
-   * ``guess``: String to store the current guess input.
+   * ``target_number``: Zufallszahl zwischen 0 und 99.
+   * ``lower_bound und upper_bound``: Beginnen bei 0 bzw. 99.
+   * ``guess``: Speichert die aktuelle Eingabe.
 
    .. code-block:: python
 
@@ -279,36 +279,36 @@ After the code runs, follow these steps to play the game:
             lcd.clear()
             lcd.message("Press A to Start")
 
-#. Display Update Function (``update_display``):
+#. Anzeigeaktualisierung (``update_display``):
 
-   Clears the LCD and displays the provided message.
+   Löscht das LCD und zeigt die übergebene Nachricht an.
 
    .. code-block:: python
 
-        # Display function
+        # Anzeigeaktualisierung
         def update_display(message):
             lcd.clear()
             lcd.message(message)
 
-#. Main Program Loop:
+#. Hauptprogrammschleife:
 
-   * Waits for key presses and handles game logic.
-   * Key ``A``: Starts or restarts the game.
-   * Digits ``0``-``9``: Builds the current guess number.
-   * Key ``D``: Submits the guess and updates the range.
-   * Checks if the guess is within the current bounds.
-   * Updates ``lower_bound`` or ``upper_bound`` based on the guess.
-   * Resets guess for the next input.
-   * If the guess is correct, displays a success message and resets the game.
-   * Key ``B``: Clears the current guess.
-   * Key ``C``: Reserved for additional functionality (e.g., hints).
+   * Wartet auf Tastenanschläge und verarbeitet die Spiellogik.
+   * Taste ``A``: Startet oder setzt das Spiel zurück.
+   * Zahlen ``0``-``9``: Erstellt die aktuelle Zahleneingabe.
+   * Taste ``D``: Bestätigt die Eingabe und aktualisiert den Wertebereich.
+   * Prüft, ob die Eingabe innerhalb der aktuellen Grenzen liegt.
+   * Aktualisiert ``lower_bound`` oder ``upper_bound`` basierend auf der Eingabe.
+   * Setzt die Eingabe nach jeder Überprüfung zurück.
+   * Falls die Eingabe korrekt ist, wird eine Erfolgsmeldung angezeigt und das Spiel zurückgesetzt.
+   * Taste ``B``: Löscht die aktuelle Eingabe.
+   * Taste ``C``: Reserviert für weitere Funktionen (z. B. Hinweise).
 
    .. code-block:: python
 
         while True:
             key = read_keypad()
             if key:
-                utime.sleep(0.2)  # Debounce delay
+                utime.sleep(0.2)  # Entprellung
 
                 if not game_started:
                     if key == "A":
@@ -318,62 +318,63 @@ After the code runs, follow these steps to play the game:
         ...
             utime.sleep(0.1)
 
-#. Debouncing and Delays:
+#. Entprellung und Verzögerungen:
 
-   * ``utime.sleep(0.2)``: Short delay after a key press to debounce.
-   * ``utime.sleep(0.1)``: Small delay in the main loop to reduce CPU usage.
+   * ``utime.sleep(0.2)``: Kurze Verzögerung nach einer Tasteneingabe zur Entprellung.
+   * ``utime.sleep(0.1)``: Kleine Verzögerung in der Hauptschleife zur Reduzierung der CPU-Auslastung.
 
-**Troubleshooting**
 
-* LCD Not Displaying Text:
+**Fehlersuche**
 
-  * Verify SDA and SCL connections (GP6 and GP7).
-  * Check that the LCD is powered correctly.
-  * Adjust the contrast potentiometer on the back of the LCD module.
+* LCD zeigt keinen Text an:
 
-* Keypad Not Responding:
+  * Überprüfe die SDA- und SCL-Verbindungen (GP6 und GP7).
+  * Stelle sicher, dass das LCD korrekt mit Strom versorgt wird.
+  * Passe das Kontrastpotentiometer auf der Rückseite des LCD-Moduls an.
 
-  * Check all row and column connections.
-  * Ensure that pull-down resistors are connected if not using internal pull-downs.
-  * Verify that the keypad is functioning properly.
+* Tastatur reagiert nicht:
 
-* Random Number Not Changing:
+  * Prüfe alle Reihen- und Spaltenverbindungen.
+  * Stelle sicher, dass Pull-Down-Widerstände angeschlossen sind, falls keine internen Pull-Downs verwendet werden.
+  * Vergewissere dich, dass die Tastatur ordnungsgemäß funktioniert.
 
-  * Ensure that ``urandom`` is properly imported and used.
-  * The random seed may need to be initialized for better randomness.
+* Zufallszahl ändert sich nicht:
 
-* Game Logic Issues:
+  * Stelle sicher, dass ``urandom`` korrekt importiert und verwendet wird.
+  * Falls nötig, initialisiere den Zufallszahlengenerator für eine bessere Zufallsverteilung.
 
-  * Double-check the conditions and bounds when processing guesses.
-  * Ensure that the upper and lower bounds are updated correctly.
+* Probleme mit der Spiellogik:
 
-**Enhancements and Extensions**
+  * Überprüfe die Bedingungen und Grenzen bei der Verarbeitung der Eingaben.
+  * Stelle sicher, dass lower bound und upper bound korrekt aktualisiert werden.
 
-* Add Multiplayer Support:
+**Erweiterungen und Verbesserungen**
 
-  * Keep track of the number of guesses each player makes.
-  * Rotate turns between players.
+* Mehrspieler-Modus hinzufügen:
 
-* Implement Scoring System:
+  * Speichere die Anzahl der Versuche pro Spieler.
+  * Wechselnde Runden zwischen den Spielern.
 
-  * Award points based on how quickly the number is guessed.
-  * Display scores on the LCD.
+* Punktesystem implementieren:
 
-* Provide Hints:
+  * Vergib Punkte basierend darauf, wie schnell die Zahl erraten wurde.
+  * Zeige Punktzahlen auf dem LCD an.
 
-  Use the 'C' key to give hints, such as "Number is even" or "Number is a multiple of 5".
+* Hinweise bereitstellen:
 
-* Increase Range:
+  Verwende die 'C'-Taste, um Hinweise anzuzeigen, z. B. „Zahl ist gerade“ oder „Zahl ist ein Vielfaches von 5“.
 
-  * Modify the game to guess numbers between 0 and 999.
-  * Adjust the display and input methods accordingly.
+* Zahlenbereich vergrößern:
 
-* Visual and Audio Feedback:
+  * Erweitere das Spiel auf Zahlen zwischen 0 und 999.
+  * Passe Anzeige und Eingabemethoden entsprechend an.
 
-  Add LEDs or a buzzer to provide additional feedback.
+* Visuelles und akustisches Feedback:
 
-**Conclusion**
+  Füge LEDs oder einen Summer hinzu, um zusätzliches Feedback zu geben.
 
-You've successfully built an interactive Guess the Number game using the Raspberry Pi Pico 2 W! This project combines user input, random number generation, and display output to create a fun and engaging game. It's an excellent way to practice working with keypads, LCD displays, and game logic in MicroPython.
+**Fazit**
 
-Feel free to enhance the game further by adding new features or improving the interface. This project can serve as a foundation for more complex interactive applications.
+Du hast erfolgreich ein interaktives „Zahlenraten“-Spiel mit dem Raspberry Pi Pico 2 W entwickelt! Dieses Projekt kombiniert Benutzereingaben, Zufallszahlengenerierung und Display-Ausgabe zu einem unterhaltsamen und lehrreichen Spiel. Es ist eine hervorragende Möglichkeit, den Umgang mit Tastaturen, LCD-Displays und Spielmechaniken in MicroPython zu üben.
+
+Verbessere das Spiel weiter, indem du neue Funktionen hinzufügst oder die Benutzeroberfläche optimierst. Dieses Projekt kann als Grundlage für komplexere interaktive Anwendungen dienen.

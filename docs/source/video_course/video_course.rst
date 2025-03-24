@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Video Courses
+Video-Kurse
 ========================
 
-If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
-A step-by-step video course is here to make your learning journey smoother and more engaging.
-The video course below is designed for the Pico W but is also fully compatible with the Pico 2 W.
-The experiments demonstrated in the videos are entirely compatible with both models, except for the battery section and mainboard.
+Wenn du den Inhalt der Online-Dokumentation etwas herausfordernd findest, mach dir keine Sorgen. 
+Ein Schritt-für-Schritt-Video-Kurs ist hier, um deinen Lernweg zu erleichtern und ansprechender zu gestalten.
+Der untenstehende Video-Kurs ist für den Pico W konzipiert, aber auch vollständig kompatibel mit dem Pico 2 W.
+Die in den Videos demonstrierten Experimente sind vollständig kompatibel mit beiden Modellen, ausgenommen der Batterieabschnitt und das Hauptboard.
 
 
-**project**
+**Projekt**
 
 .. toctree::
    :maxdepth: 1
@@ -100,4 +100,3 @@ The experiments demonstrated in the videos are entirely compatible with both mod
    lesson72
    lesson73
    lesson74
-    

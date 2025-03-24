@@ -1,50 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei Problemen nach dem Kauf sowie bei technischen Herausforderungen – durch unser Team und unsere Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Einblicke**: Erfahre als Erste*r von neuen Produkten und erhalte exklusive Vorschauen.
+    - **Sonderrabatte**: Profitiere von exklusiven Angeboten auf unsere neuesten Produkte.
+    - **Aktionen und Gewinnspiele**: Nimm an spannenden Aktionen und festlichen Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit für Entdeckungen und Kreativität? Klicke auf [|link_sf_facebook|] und sei dabei!
 
 .. _py_iot_ble_piano:
 
-8.14 Bluetooth Piano
+8.14 Bluetooth-Piano
 ==========================================
 
-The project uses a custom-built application to transform a Raspberry Pi Pico 2 W into a Bluetooth-enabled piano. The Pico 2 W runs a MicroPython script that sets up a BLE peripheral, enabling it to receive note data from a connected device. Upon receiving a note, the board processes the data and plays the corresponding frequency using a passive buzzer.
+In diesem Projekt wird eine selbst entwickelte App genutzt, um ein Raspberry Pi Pico 2 W in ein Bluetooth-fähiges Piano zu verwandeln. Das Pico 2 W führt ein MicroPython-Skript aus, das es als BLE-Peripheriegerät konfiguriert, damit es Notendaten von einem verbundenen Gerät empfangen kann. Beim Empfang einer Note verarbeitet das Board die Daten und spielt den entsprechenden Ton über einen passiven Summer.
 
-This project is a great way to explore the basics of Bluetooth Low Energy (BLE) communication, sound generation with PWM, and how to create interactive applications using Raspberry Pi Pico 2 W.
+Dieses Projekt ist ideal, um die Grundlagen der Bluetooth-Low-Energy-Kommunikation (BLE), Tonerzeugung per PWM und die Entwicklung interaktiver Anwendungen mit dem Raspberry Pi Pico 2 W zu erlernen.
 
-The app used in this project was developed with |link_appinventor|.
+Die in diesem Projekt verwendete App wurde mit |link_appinventor| erstellt.
 
 
-1. Build the Circuit
+1. Schaltung aufbauen
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist sehr praktisch – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Teile auch einzeln über die folgenden Links erwerben:
 
 
 .. list-table::
@@ -52,8 +52,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -61,7 +61,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -70,18 +70,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
@@ -93,62 +93,62 @@ You can also buy them separately from the links below.
 
    <br/>
 
-2. Create the Android App
+2. Android-App erstellen
 +++++++++++++++++++++++++++++++++
 
-You will develop the Android application using |link_appinventor|, a free web application ideal for beginners in Android development. It offers intuitive drag-and-drop features for creating functional applications.
+Die Android-App wird mit |link_appinventor| entwickelt – einer kostenlosen Webanwendung, ideal für Einsteiger in die Android-Entwicklung. Sie bietet eine intuitive Drag-and-Drop-Oberfläche für die Erstellung funktionaler Apps.
 
-Follow these steps to get started:
+So beginnst du:
 
-#. Go to |link_appinventor_login|, and click "online tool" to login. You will need a Google account to register with MIT App Inventor.
+#. Gehe zu |link_appinventor_login| und klicke auf "Online Tool", um dich anzumelden. Du benötigst ein Google-Konto für die Registrierung bei MIT App Inventor.
 
    .. image:: img/13-ai-signup.png
        :width: 90%
        :align: center
 
-#. After logging in, navigate to **Projects** -> **Import project (.aia) from my computer**. Subsequently, upload the ``ble_piano_picow.aia`` file located in the following path: ``pico-2w-kit/micropython/iot/8.14-ble_piano``.
+#. Nach der Anmeldung navigierst du zu **Projects** → **Import project (.aia) from my computer**. Lade dann die Datei ``ble_piano_picow.aia`` aus dem Verzeichnis ``pico-2w-kit/micropython/iot/8.14-ble_piano`` hoch.
 
-   Alternatively, you can download the file directly: :download:`ble_piano_picow.aia</_static/other/ble_piano_picow.aia>`
+   Alternativ kannst du die Datei direkt hier herunterladen: :download:`ble_piano_picow.aia</_static/other/ble_piano_picow.aia>`
 
    .. image:: img/13-ai-import.png
         :align: center
 
-#. Once uploaded, the app template will appear in the MIT App Inventor interface. This pre-configured template can be customized after you become familiar with the platform.
+#. Nach dem Upload erscheint die App-Vorlage in der MIT-App-Inventor-Oberfläche. Diese vorgefertigte Vorlage kann später individuell angepasst werden.
 
-#. MIT App Inventor has two main sections: **Designer** and **Blocks**. You can switch between these two sections in the upper right corner of the page.
+#. MIT App Inventor besteht aus zwei Hauptbereichen: **Designer** und **Blocks**. Oben rechts auf der Seite kannst du zwischen beiden wechseln.
 
    .. image:: img/13-ai-intro-1.png
 
-#. The **Designer** allows you to add buttons, text, screens, and modify the overall aesthetic of your app.
+#. Im **Designer**-Bereich kannst du Buttons, Texte und Bildschirme hinzufügen und das App-Layout gestalten.
 
    .. image:: img/14-ai-intro-2.png
       :width: 100%
-   
-#. Next, there's the **Blocks** section. This section lets you craft custom functionalities for your app, allowing you to program each component on the app's GUI to achieve desired features.
+
+#. Im **Blocks**-Bereich erstellst du individuelle Funktionen für die App und programmierst die Logik hinter den Bedienelementen.
 
    .. image:: img/14-ai-intro-3.png
       :width: 100%
 
-#. To install the app on a phone, navigate to the **Build** tab.
+#. Um die App auf deinem Smartphone zu installieren, gehe zum Reiter **Build**.
 
    .. image:: img/13-ai-intro-4.png
       :width: 60%
       :align: center
 
-   * Generate a ``.apk`` file. After selecting this option, a page will appear allowing you to choose between downloading a ``.apk`` file or scanning a QR code for installation. Follow the installation guide to complete the application installation. 
+   * Erzeuge eine ``.apk``-Datei. Du kannst die Datei anschließend herunterladen oder per QR-Code auf dem Handy installieren. Folge den Anweisungen zur Installation.
 
-     Alternatively, download our pre-compiled APK file here: :download:`ble_piano_picow.apk</_static/other/ble_piano_picow.apk>`
+     Oder lade unsere vorgefertigte APK hier herunter: :download:`ble_piano_picow.apk</_static/other/ble_piano_picow.apk>`
 
-   * If you wish to publish this app to Google Play or another app marketplace, you can generate a ``.aab`` file.
+   * Falls du die App im Google Play Store veröffentlichen möchtest, kannst du auch eine ``.aab``-Datei erzeugen.
 
 
-3. Run the Code
+3. Code ausführen
 +++++++++++++++++++++++++++++++++
 
-Open the ``8.14-ble_piano.py`` file under the path of ``pico-2w-kit/micropython/iot/8.14-ble_piano``, or copy this code into your IDE.
-   
+Öffne die Datei ``8.14-ble_piano.py`` im Verzeichnis ``pico-2w-kit/micropython/iot/8.14-ble_piano`` oder kopiere den Code in deine Entwicklungsumgebung.
+
 .. note:: 
-   This code depends on the ``ble_advertising.py`` file. Make sure to upload it to the Pico board before running the script.
+   Dieser Code erfordert die Datei ``ble_advertising.py``. Stelle sicher, dass du sie vor dem Start auf den Pico hochlädst.
 
 .. code-block:: python
 
@@ -265,40 +265,40 @@ Open the ``8.14-ble_piano.py`` file under the path of ``pico-2w-kit/micropython/
    if __name__ == "__main__":
        demo()
 
-4. App and Bluetooth Connection
+4. App und Bluetooth-Verbindung
 ++++++++++++++++++++++++++++++++++++++++++
 
-Ensure that the "BLE Piano" app created earlier is installed on your phone.
+Stelle sicher, dass die App BLE Piano installiert ist.
 
-#. Enable Bluetooth on your phone.
+#. Aktiviere Bluetooth auf deinem Smartphone.
 
-#. Open the **BLE Piano** app.
+#. Öffne die App **BLE Piano**.
 
    .. image:: img/14_app_2.png
       :width: 25%
       :align: center
 
-#. When you open the app for the first time, you will see two consecutive prompts requesting permissions. These permissions are required for Bluetooth functionality.
+#. Beim ersten Start erscheinen zwei aufeinanderfolgende Dialoge zur Berechtigungsanfrage. Diese sind notwendig für Bluetooth-Funktionalität.
 
    .. image:: img/14_app_3.png
       :width: 90%
       :align: center
 
-#. In the APP, click on **Connect** button to establish a connection between the APP and Pico 2 W via bluetooth.
+#. Klicke in der App auf den Button **Connect**, um eine Verbindung per Bluetooth mit dem Pico 2 W herzustellen.
 
    .. image:: img/14_app_4.png
       :width: 90%
       :align: center
 
-#. This page displays a list of all Bluetooth devices. Choose the ``xx.xx.xx.xx.xx.xx pico2w`` option from the list. Each device name is displayed alongside its MAC address.
+#. Es wird eine Liste aller verfügbaren Bluetooth-Geräte angezeigt. Wähle das Gerät ``xx.xx.xx.xx.xx.xx pico2w`` aus. Jedes Gerät ist mit seiner MAC-Adresse aufgeführt.
 
    .. image:: img/13_app_5.png
       :width: 60%
       :align: center
 
-#. If no devices appear in the list, try enabling the location feature on your phone. (On some Android versions, the location setting is linked to Bluetooth functionality.)
+#. Falls keine Geräte angezeigt werden, aktiviere die Standortdienste auf deinem Smartphone. (Bei manchen Android-Versionen ist Bluetooth daran gekoppelt.)
 
-#. Once connected, the system will redirect you to the main screen. You can tap the music note button to play the corresponding note. The app sends the note data to the Pico board, which drives the buzzer to play the specified note based on the data.
+#. Nach erfolgreicher Verbindung wirst du zur Hauptansicht weitergeleitet. Durch Tippen auf die Notensymbole kannst du Töne abspielen. Die App sendet die Notendaten an das Pico-Board, das den Summer ansteuert, um den gewünschten Ton zu erzeugen.
 
    .. image:: img/14_app_7.png
       :width: 90%

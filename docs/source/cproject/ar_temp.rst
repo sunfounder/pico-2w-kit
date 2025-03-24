@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit Gleichgesinnten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_temp:
 
 2.13 Thermometer
 ===========================
 
-In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2 W to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
+In dieser Lektion lernen wir, wie man einen **Thermistor** mit dem Raspberry Pi Pico 2 W zur Temperaturmessung verwendet. Ein Thermistor ist eine Art Widerstand, dessen Widerstandswert sich deutlich mit der Temperatur ändert. Speziell werden wir einen Thermistor mit negativem Temperaturkoeffizienten (NTC) verwenden, dessen Widerstand mit steigender Temperatur abnimmt.
 
 * :ref:`cpn_thermistor`
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -47,16 +47,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENEINFÜHRUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,134 +77,134 @@ You can also buy them separately from the links below.
         - |link_thermistor_buy|
 
 
-**Understanding the Thermistor**
+**Verständnis des Thermistors**
 
-An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
+Ein NTC-Thermistor ist ein temperaturabhängiger Widerstand. Sein Widerstand verringert sich mit steigender Temperatur. Indem wir ihn in einen Spannungsteiler-Schaltkreis einbauen, können wir die Spannung über ihm messen, die sich mit der Temperatur ändert. Mit dem Analog-Digital-Wandler (ADC) des Raspberry Pi Pico 2 W können wir diese Spannung lesen und die entsprechende Temperatur berechnen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_temp|
 
-In this circuit, a 10K resistor and an NTC thermistor form a voltage divider, with GP28 reading the voltage across the thermistor. The 10K resistor also provides protection by limiting current.
+In diesem Schaltkreis bilden ein 10K-Widerstand und ein NTC-Thermistor einen Spannungsteiler, wobei GP28 die Spannung über dem Thermistor liest. Der 10K-Widerstand bietet auch Schutz, indem er den Strom begrenzt.
 
-* **High Temperature**: The thermistor's resistance decreases, lowering its voltage and the GP28 reading. At high enough temperatures, resistance approaches zero, and GP28 reads close to 0.
-* **Low Temperature**: The thermistor's resistance increases, raising its voltage and the GP28 value. In extreme cold, resistance becomes nearly infinite, and GP28 reads close to 1023.
+* **Hohe Temperatur**: Der Widerstand des Thermistors verringert sich, senkt seine Spannung und den GP28-Wert. Bei hohen Temperaturen nähert sich der Widerstand dem Nullpunkt, und GP28 liest nahe 0.
+* **Niedrige Temperatur**: Der Widerstand des Thermistors steigt, erhöht seine Spannung und den GP28-Wert. Bei extremer Kälte wird der Widerstand fast unendlich, und GP28 liest nahe 1023.
 
-The 10K resistor ensures 3.3V and GND are not directly connected, preventing a short circuit.
+Der 10K-Widerstand stellt sicher, dass 3.3V und GND nicht direkt verbunden sind, um einen Kurzschluss zu verhindern.
 
 
 
-**Wiring**
+**Verdrahtung**
 
 
 |wiring_temp|
  
-.. #. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
+.. #. Verbinden Sie 3V3 und GND des Pico 2 W mit der Stromschiene des Breadboards.
+.. #. Verbinden Sie ein Ende des Thermistors mit dem GP28-Pin und verbinden Sie dasselbe Ende mit der positiven Stromschiene über einen 10K-Ohm-Widerstand.
+.. #. Verbinden Sie das andere Ende des Thermistors mit der negativen Stromschiene.
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
 .. note::
 
-    * You can open the file ``2.13_thermometer.ino`` under the path of ``pico-2w-kit-main/arduino/2.13_thermometer``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``2.13_thermometer.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/2.13_thermometer`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Upload** -Button auszuwählen.
 
 
 
 .. code-block:: arduino
 
-    // Define the pins
-    const int thermistorPin = 28;  // Thermistor connected to GP28 (ADC2)
+    // Definieren der Pins
+    const int thermistorPin = 28;  // Thermistor an GP28 (ADC2) angeschlossen
 
-    // Constants for the thermistor and calculations
-    const float BETA = 3950;       // Beta value of the thermistor (provided by manufacturer)
-    const float SERIES_RESISTOR = 10000; // 10KΩ resistor
-    const float NOMINAL_RESISTANCE = 10000; // Resistance at 25°C (provided by manufacturer)
+    // Konstanten für den Thermistor und Berechnungen
+    const float BETA = 3950;       // Beta-Wert des Thermistors (vom Hersteller bereitgestellt)
+    const float SERIES_RESISTOR = 10000; // 10KΩ Widerstand
+    const float NOMINAL_RESISTANCE = 10000; // Widerstand bei 25°C (vom Hersteller bereitgestellt)
     const float NOMINAL_TEMPERATURE = 25.0; // 25°C in Celsius
 
     void setup() {
-      Serial.begin(115200);  // Initialize Serial Monitor
+      Serial.begin(115200);  // Serielle Überwachung initialisieren
     }
 
     void loop() {
-      // Read the analog value from the thermistor
+      // Den Analogwert vom Thermistor lesen
       int adcValue = analogRead(thermistorPin);
-      // Convert the ADC value to voltage
+      // Den ADC-Wert in Spannung umwandeln
       float voltage = adcValue * (3.3 / 1023.0);
-      // Calculate the resistance of the thermistor
+      // Den Widerstand des Thermistors berechnen
       float resistance = (voltage * SERIES_RESISTOR) / (3.3-voltage);
-      // Calculate the temperature in Kelvin using the Beta formula
+      // Die Temperatur in Kelvin berechnen mit der Beta-Formel
       float temperatureK = 1 / ( (1 / (NOMINAL_TEMPERATURE + 273.15)) + (1 / BETA) * log(resistance / NOMINAL_RESISTANCE) );
-      // Convert Kelvin to Celsius
+      // Kelvin in Celsius umwandeln
       float temperatureC = temperatureK - 273.15;
-      // Convert Celsius to Fahrenheit
+      // Celsius in Fahrenheit umwandeln
       float temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
 
-      // Print the temperature readings
+      // Die Temperaturwerte ausgeben
       Serial.print("Temperature: ");
       Serial.print(temperatureC);
       Serial.print(" °C, ");
       Serial.print(temperatureF);
       Serial.println(" °F");
 
-      delay(1000);  // Wait a second before the next reading
+      delay(1000);  // Eine Sekunde warten vor der nächsten Messung
     }
 
-When the code is running and the Serial Monitor is open:
+Wenn der Code läuft und die serielle Überwachung offen ist:
 
-* You should see the temperature readings in Celsius and Fahrenheit.
-* Gently hold the thermistor between your fingers. The temperature reading should increase as the thermistor warms up.
-* Blow cool air over the thermistor or place a cold object near it. The temperature reading should decrease.
+* Sie sollten die Temperaturwerte in Celsius und Fahrenheit sehen.
+* Halten Sie den Thermistor sanft zwischen Ihren Fingern. Die Temperaturanzeige sollte steigen, da der Thermistor sich erwärmt.
+* Pusten Sie kühle Luft über den Thermistor oder platzieren Sie ein kaltes Objekt in der Nähe. Die Temperaturanzeige sollte sinken.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Defining the Pins and Constants:
+#. Definieren der Pins und Konstanten:
 
-   Assigns the GPIO pin used for reading the thermistor.
-
-   .. code-block:: arduino
-
-        const int thermistorPin = 28;  // Thermistor connected to GP28 (ADC2)
-
-#. Constants for Calculations:
-
-   These constants are used in the calculations to determine the temperature.
+   Weist den GPIO-Pin zu, der zum Lesen des Thermistors verwendet wird.
 
    .. code-block:: arduino
 
-        const float BETA = 3950;       // Beta value of the thermistor
-        const float SERIES_RESISTOR = 10000; // 10KΩ resistor
-        const float NOMINAL_RESISTANCE = 10000; // Resistance at 25°C
+        const int thermistorPin = 28;  // Thermistor an GP28 (ADC2) angeschlossen
+
+#. Konstanten für Berechnungen:
+
+   Diese Konstanten werden in den Berechnungen zur Bestimmung der Temperatur verwendet.
+
+   .. code-block:: arduino
+
+        const float BETA = 3950;       // Beta-Wert des Thermistors
+        const float SERIES_RESISTOR = 10000; // 10KΩ Widerstand
+        const float NOMINAL_RESISTANCE = 10000; // Widerstand bei 25°C
         const float NOMINAL_TEMPERATURE = 25.0; // 25°C in Celsius
 
-#. Reading the Analog Value:
+#. Lesen des Analogwerts:
 
-   Reads the analog voltage at thermistorPin and returns a value between 0 and 1023.
+   Liest die analoge Spannung am thermistorPin und gibt einen Wert zwischen 0 und 1023 zurück.
 
    .. code-block:: arduino
 
         int adcValue = analogRead(thermistorPin);
 
-#. Calculating the Voltage:
+#. Berechnen der Spannung:
 
-   Converts the ADC value to the actual voltage.
+   Wandelt den ADC-Wert in die tatsächliche Spannung um.
 
    .. code-block:: arduino
 
         float voltage = adcValue * (3.3 / 1023.0);
 
-#. Calculating the Thermistor Resistance:
+#. Berechnen des Thermistorwiderstands:
 
-   Uses the voltage divider formula to calculate the resistance of the thermistor.
+   Verwendet die Formel des Spannungsteilers, um den Widerstand des Thermistors zu berechnen.
 
    .. code-block:: arduino
 
         float resistance = (voltage * SERIES_RESISTOR) / (3.3-voltage);
 
-#. Calculating the Temperature:
+#. Berechnen der Temperatur:
 
    .. code-block:: arduino
 
@@ -212,9 +212,9 @@ When the code is running and the Serial Monitor is open:
         float temperatureC = temperatureK - 273.15;
         float temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
 
-#. Printing the Temperature:
+#. Ausgeben der Temperatur:
 
-   Outputs the temperature in Celsius and Fahrenheit to the Serial Monitor.
+   Gibt die Temperatur in Celsius und Fahrenheit auf den Seriellen Monitor aus.
 
    .. code-block:: arduino
 
@@ -224,50 +224,48 @@ When the code is running and the Serial Monitor is open:
         Serial.print(temperatureF);
         Serial.println(" °F");
 
-#. Delay:
+#. Verzögerung:
 
-   Waits for one second before taking the next reading.
+   Wartet eine Sekunde, bevor die nächste Messung durchgeführt wird.
 
    .. code-block:: arduino
 
         delay(1000);
 
-**Understanding the Temperature Calculation**
+**Verständnis der Temperaturberechnung**
 
-* Steinhart-Hart Equation:
+* Steinhart-Hart-Gleichung:
 
-The Steinhart-Hart equation provides a model of the thermistor's resistance as a function of temperature:
+Die Steinhart-Hart-Gleichung bietet ein Modell des Widerstands des Thermistors als Funktion der Temperatur:
 
 |temp_format|
 
-* ``T`` is the temperature of the thermistor in Kelvin.
-* ``T0`` is a reference temperature, usually at 25°C (which is 273.15 + 25 in Kelvin).
-* ``B`` is the beta parameter of the material, the beta coefficient of the NTC thermistor used in this kit is 3950.
-* ``R`` is the resistance we measure.
-* ``R0`` is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
+* ``T`` ist die Temperatur des Thermistors in Kelvin.
+* ``T0`` ist eine Referenztemperatur, üblicherweise bei 25°C (was 273.15 + 25 in Kelvin ist).
+* ``B`` ist der Beta-Parameter des Materials, der Beta-Koeffizient des in diesem Kit verwendeten NTC-Thermistors ist 3950.
+* ``R`` ist der gemessene Widerstand.
+* ``R0`` ist der Widerstand bei der Referenztemperatur T0, der Widerstand des NTC-Thermistors in diesem Kit bei 25°C beträgt 10 Kilohm.
 
-**Note on Accuracy**
+**Hinweis zur Genauigkeit**
 
-* Thermistors are nonlinear devices, and the Beta equation provides an approximation.
-* For more accurate temperature measurements over a wider range, the Steinhart-Hart equation can be used.
-* Calibration may be necessary for precise applications.
+* Thermistoren sind nichtlineare Geräte, und die Beta-Gleichung bietet eine Annäherung.
+* Für genauere Temperaturmessungen über einen breiteren Bereich kann die Steinhart-Hart-Gleichung verwendet werden.
+* Eine Kalibrierung kann für präzise Anwendungen notwendig sein.
 
-**Further Exploration**
+**Weitere Erkundungen**
 
-* Display Temperature on an LCD:
+* Temperaturanzeige auf einem LCD:
 
-  Connect an LCD display to show the temperature readings without a computer.
+  Schließen Sie ein LCD-Display an, um die Temperaturwerte ohne Computer anzuzeigen.
 
-* Data Logging:
+* Datenprotokollierung:
 
-  Record temperature readings over time to monitor environmental changes.
+  Zeichnen Sie Temperaturwerte über die Zeit auf, um Umweltveränderungen zu überwachen.
 
-* Temperature-Controlled Devices:
+* Temperaturgesteuerte Geräte:
 
-  Use the temperature readings to control a fan or heater.
+  Verwenden Sie die Temperaturwerte, um einen Ventilator oder Heizgerät zu steuern.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a thermistor with the Raspberry Pi Pico to measure temperature. By creating a voltage divider and using the Beta equation, you've been able to read analog values, calculate resistance, and determine the temperature in both Celsius and Fahrenheit.
-
-
+In dieser Lektion haben Sie gelernt, wie man einen Thermistor mit dem Raspberry Pi Pico zur Temperaturmessung verwendet. Durch das Erstellen eines Spannungsteilers und die Verwendung der Beta-Gleichung konnten Sie analoge Werte lesen, den Widerstand berechnen und die Temperatur in Celsius und Fahrenheit bestimmen.

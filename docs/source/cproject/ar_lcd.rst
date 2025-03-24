@@ -1,71 +1,71 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit Gleichgesinnten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe von unserer Community und unserem Team, um technische Herausforderungen und Support-Probleme nach dem Kauf zu lösen.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
 .. _ar_lcd:
 
-3.4 Liquid Crystal Display (LCD1602)
-=====================================
+3.4 Flüssigkristallanzeige (LCD1602)
+========================================
 
-In this lesson, we will learn how to use a **1602 LCD** with the Raspberry Pi Pico 2 W to display text. The LCD1602 is a character-based liquid crystal display that can show 16 characters on 2 lines, making it ideal for projects that need to display information like messages, sensor readings, or status updates.
+In dieser Lektion lernen wir, wie man ein **1602 LCD** mit dem Raspberry Pi Pico 2 W verwendet, um Text anzuzeigen. Das LCD1602 ist ein zeichenbasiertes Flüssigkristalldisplay, das 16 Zeichen auf 2 Zeilen anzeigen kann – ideal für Projekte, die Nachrichten, Sensordaten oder Statusaktualisierungen anzeigen müssen.
 
-Connecting an LCD directly to a microcontroller typically requires many GPIO pins, which can limit the functionality of your project. To solve this problem, we can use an LCD1602 module that has an **I2C interface**. The I2C protocol uses only two data lines (SDA and SCL), allowing you to control the LCD with just two GPIO pins, freeing up other pins for additional sensors or devices.
+Das direkte Anschließen eines LCDs an einen Mikrocontroller erfordert normalerweise viele GPIO-Pins, was die Funktionalität deines Projekts einschränken kann. Um dieses Problem zu lösen, können wir ein LCD1602-Modul mit einer **I2C-Schnittstelle** verwenden. Das I2C-Protokoll benötigt nur zwei Datenleitungen (SDA und SCL), sodass du das LCD mit nur zwei GPIO-Pins steuern kannst. Dadurch bleiben weitere Pins für zusätzliche Sensoren oder Geräte frei.
 
-**Understanding I2C on the Raspberry Pi Pico 2 W**
+**I2C auf dem Raspberry Pi Pico 2 W verstehen**
 
-The Raspberry Pi Pico 2 W supports I2C communication through multiple GPIO pins, providing flexibility for your projects. It has two I2C buses, I2C0 and I2C1, and each can be mapped to several sets of pins.
+Der Raspberry Pi Pico 2 W unterstützt die I2C-Kommunikation über mehrere GPIO-Pins und bietet damit eine hohe Flexibilität für deine Projekte. Er verfügt über zwei I2C-Busse, I2C0 und I2C1, die jeweils mehreren Pin-Kombinationen zugeordnet werden können.
 
-Here's a breakdown of the I2C-capable pins on the Pico 2:
+Hier sind die I2C-fähigen Pins des Pico 2:
 
 |pin_i2c|
 
-You can choose any matching pair of SDA and SCL pins for either I2C0 or I2C1. This flexibility allows you to avoid pin conflicts with other peripherals in your project.
+Du kannst jedes passende Paar von SDA- und SCL-Pins für I2C0 oder I2C1 wählen. Diese Flexibilität hilft, Pin-Konflikte mit anderen Peripheriegeräten in deinem Projekt zu vermeiden.
 
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein Komplettset zu kaufen – hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE IM KIT
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die unten stehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - ANZAHL
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -74,29 +74,29 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_lcd_ar|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_lcd_ar|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``pico-2w-kit-main/arduino/3.4_liquid_crystal_display``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Du kannst die Datei ``3.4_liquid_crystal_display.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/3.4_liquid_crystal_display`` öffnen. 
+    * Oder kopiere diesen Code in die **Arduino IDE**.
+    * Wähle die Raspberry Pi Pico-Platine und den richtigen Port aus, bevor du auf den Upload-Button klickst.
+    * Die ``LiquidCrystal I2C``-Bibliothek wird hier verwendet. Du kannst sie über den **Library Manager** installieren.
 
       .. image:: img/lib_i2c_lcd.png
 
@@ -105,48 +105,48 @@ You can also buy them separately from the links below.
   #include <Wire.h>
   #include <LiquidCrystal_I2C.h>
 
-  // Set the LCD I2C address (usually 0x27 or 0x3F)
+  // LCD I2C-Adresse (normalerweise 0x27 oder 0x3F)
   #define LCD_ADDRESS 0x27
   #define LCD_COLUMNS 16
   #define LCD_ROWS    2
 
-  // Initialize the library with the I2C address and dimensions
+  // Bibliothek mit der I2C-Adresse und Dimensionen initialisieren
   LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS);
 
   void setup() {
-    // Initialize the LCD
+    // LCD initialisieren
     lcd.init();
-    lcd.backlight();  // Turn on the backlight
+    lcd.backlight();  // Hintergrundbeleuchtung aktivieren
 
-    // Print messages to the LCD
-    lcd.setCursor(0, 0);  // Column 0, Row 0
+    // Nachrichten auf dem LCD anzeigen
+    lcd.setCursor(0, 0);  // Spalte 0, Zeile 0
     lcd.print("Hello, World!");
-    lcd.setCursor(0, 1);  // Column 0, Row 1
-    lcd.print("LCD1602 with I2C");
+    lcd.setCursor(0, 1);  // Spalte 0, Zeile 1
+    lcd.print("LCD1602 mit I2C");
   }
 
   void loop() {
-    // Nothing to do here
+    // Keine Aktion erforderlich
   }
 
 
-After uploading the code to the Raspberry Pi Pico, the LCD should display the following:
+Nach dem Hochladen des Codes auf den Raspberry Pi Pico sollte das LCD folgende Nachrichten anzeigen:
 
-* On the first line: "Hello, World!"
-* On the second line: "LCD1602 with I2C"
+* In der ersten Zeile: „Hello, World!“
+* In der zweiten Zeile: „LCD1602 mit I2C“
 
-If nothing appears on the screen, try adjusting the contrast by turning the small potentiometer (knob) on the back of the LCD module until the text becomes visible. 
+Falls nichts auf dem Bildschirm erscheint, versuche, den Kontrast mit dem kleinen Potentiometer auf der Rückseite des LCD-Moduls einzustellen, bis der Text sichtbar wird.
 
-**Understanding the Code**
+**Code-Verständnis**
 
-#. Including Libraries:
+#. Einbinden der Bibliotheken:
 
-   * ``Wire.h``: Handles I2C communication.
-   * ``LiquidCrystal_I2C.h``: Simplifies interaction with the I2C LCD.
+   * ``Wire.h``: Verwaltet die I2C-Kommunikation.
+   * ``LiquidCrystal_I2C.h``: Erleichtert die Interaktion mit dem I2C-LCD.
 
-#. Defining the LCD Parameters:
+#. Definition der LCD-Parameter:
 
-   * ``LCD_ADDRESS``: The I2C address of the LCD module. Common addresses are 0x27 or 0x3F. If you're unsure, you can use an I2C scanner sketch to find the address.
+   * ``LCD_ADDRESS``: Die I2C-Adresse des LCD-Moduls. Häufige Adressen sind 0x27 oder 0x3F. Falls du unsicher bist, kannst du ein I2C-Scanner-Sketch verwenden, um die Adresse zu ermitteln.
 
    .. code-block:: arduino
 
@@ -154,34 +154,34 @@ If nothing appears on the screen, try adjusting the contrast by turning the smal
       #define LCD_COLUMNS 16
       #define LCD_ROWS    2
 
-#. Initializing the LCD:
+#. Initialisierung des LCDs:
 
    .. code-block:: arduino
 
       LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS);
 
-#. In ``setup()`` Function:
+#. In der ``setup()`` -Funktion:
 
    .. code-block:: arduino
 
-      lcd.init();         // Initializes the LCD
-      lcd.backlight();    // Turns on the backlight
+      lcd.init();         // Initialisiert das LCD
+      lcd.backlight();    // Schaltet die Hintergrundbeleuchtung ein
 
-#. Displaying Text:
+#. Anzeige von Text:
 
    .. code-block:: arduino
 
-      lcd.setCursor(0, 0);  // Sets cursor to column 0, row 0
+      lcd.setCursor(0, 0);  // Setzt den Cursor auf Spalte 0, Zeile 0
       lcd.print("Hello, World!");
 
-      lcd.setCursor(0, 1);  // Sets cursor to column 0, row 1
-      lcd.print("LCD1602 with I2C");
+      lcd.setCursor(0, 1);  // Setzt den Cursor auf Spalte 0, Zeile 1
+      lcd.print("LCD1602 mit I2C");
 
-**Using Serial Input to Display Text on LCD**
+**Serielle Eingaben zur Anzeige auf dem LCD nutzen**
 
-We can enhance the program to read input from the Serial Monitor and display it on the LCD.
+Wir können das Programm erweitern, um Eingaben aus dem seriellen Monitor zu lesen und auf dem LCD anzuzeigen.
 
-* Modified Code:
+* Geänderter Code:
 
   .. code-block:: arduino
 
@@ -200,14 +200,14 @@ We can enhance the program to read input from the Serial Monitor and display it 
 
       Serial.begin(115200);
       lcd.setCursor(0, 0);
-      lcd.print("Enter text:");
+      lcd.print("Gib Text ein:");
     }
 
     void loop() {
       if (Serial.available() > 0) {
         lcd.clear();
         lcd.setCursor(0, 0);
-        lcd.print("You typed:");
+        lcd.print("Du hast eingegeben:");
 
         String inputText = Serial.readStringUntil('\n');
         lcd.setCursor(0, 1);
@@ -215,12 +215,11 @@ We can enhance the program to read input from the Serial Monitor and display it 
       }
     }
 
-  After uploading the code, type a message and press ``Enter``. The message will be displayed on the LCD.
+  Nach dem Hochladen des Codes kannst du eine Nachricht eingeben und ``Enter`` drücken. Die Nachricht wird auf dem LCD angezeigt.
 
-* Explanation: 
+* Erklärung:
 
-  * Reading Serial Input: Checks if data is available on the Serial port. Reads the input string until a newline character is encountered.
-
+  * Lesen der seriellen Eingabe: Überprüft, ob Daten im seriellen Port verfügbar sind, und liest den Eingabestring bis zum nächsten Zeilenumbruch.
 
    .. code-block:: arduino
 
@@ -228,9 +227,8 @@ We can enhance the program to read input from the Serial Monitor and display it 
         String inputText = Serial.readStringUntil('\n');
         // ...
       }
-    
 
-  * Displaying Serial Input on LCD:
+  * Anzeige der seriellen Eingabe auf dem LCD:
 
     .. code-block:: arduino
 
@@ -240,14 +238,14 @@ We can enhance the program to read input from the Serial Monitor and display it 
       lcd.setCursor(0, 1);
       lcd.print(inputText);
 
-**Troubleshooting**
+**Fehlersuche**
 
-* No Display on LCD:
+* Keine Anzeige auf dem LCD:
 
-  * Adjust the contrast potentiometer on the back of the LCD module.
-  * Verify the wiring connections.
-  * Make sure the correct I2C address is used. You can scan for devices on the I2C bus. If your I2C LCD1602 is connected correctly, the address will be displayed. The default address is usually 0x27, but in some cases, it could be 0x3F.
-  
+  * Stelle den Kontrast mit dem Potentiometer auf der Rückseite des LCD-Moduls ein.
+  * Überprüfe die Verdrahtung.
+  * Stelle sicher, dass die richtige I2C-Adresse verwendet wird. Falls nötig, kann ein I2C-Scanner zur Überprüfung genutzt werden. Die Standardadresse ist meist 0x27, kann aber auch 0x3F sein.
+
   .. code-block:: arduino
 
       #include <Wire.h>
@@ -255,7 +253,7 @@ We can enhance the program to read input from the Serial Monitor and display it 
       void setup() {
           Wire.begin();
           Serial.begin(115200);
-          while (!Serial); // Wait for the serial connection to be established
+          while (!Serial); // Warten, bis die serielle Verbindung hergestellt ist
           Serial.println("\nI2C Scanner");
       }
 
@@ -291,29 +289,28 @@ We can enhance the program to read input from the Serial Monitor and display it 
           }else {
               Serial.println("done\n");
           }
-          delay(5000); // Wait 5 seconds before scanning again
+          delay(5000); // Warte 5 Sekunden, bevor erneut gescannt wird
       }
 
-* Incorrect Characters Displayed:
+* Falsche Zeichen auf dem Display:
 
-  * Check for loose connections.
-  * Verify that the LCD is properly initialized.
+  * Überprüfe die Verkabelung.
+  * Stelle sicher, dass das LCD korrekt initialisiert wurde.
 
-**Further Exploration**
+**Weitere Experimente**
 
-* Custom Characters:
+* **Eigene Zeichen erstellen**:
 
-  Create and display custom characters or symbols on the LCD.
+  Entwickle und speichere benutzerdefinierte Zeichen oder Symbole auf dem LCD.
 
-* Sensor Data Display:
+* **Sensorwerte anzeigen**:
 
-  Read data from sensors (e.g., temperature, humidity) and display the readings on the LCD.
+  Erfasse und zeige Messwerte von Sensoren (z. B. Temperatur, Luftfeuchtigkeit) auf dem LCD an.
 
-* Multiple I2C Devices:
+* **Mehrere I2C-Geräte verwalten**:
 
-  Connect multiple I2C devices to the Pico and manage them simultaneously.
+  Schließe mehrere I2C-Geräte an den Pico an und steuere sie gleichzeitig.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use an I2C LCD1602 display with the Raspberry Pi Pico to display text. By utilizing the I2C interface, we've minimized the number of GPIO pins required, allowing for more complex projects with additional sensors and peripherals.
-
+In dieser Lektion hast du gelernt, wie du ein I2C LCD1602 mit dem Raspberry Pi Pico verwendest, um Text anzuzeigen. Dank der I2C-Schnittstelle benötigt das LCD nur zwei GPIO-Pins, wodurch zusätzliche Pins für weitere Sensoren und Peripheriegeräte frei bleiben. Dies ermöglicht komplexere und vielseitigere Projekte.

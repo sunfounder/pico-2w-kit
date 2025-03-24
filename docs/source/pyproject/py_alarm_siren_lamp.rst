@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Kompetente Unterstützung**: Erhalte Hilfe bei Fragen nach dem Kauf oder bei technischen Problemen durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Einblicke**: Erfahre als Erster von neuen Produktankündigungen und Vorschauen.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Angeboten auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nimm an saisonalen Gewinnspielen und Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und werde Teil der Community!
 
 .. _py_alarm_lamp:
 
-7.3 Building an Alarm Siren Lamp
+7.3 Bau einer Alarm-Sirenen-Lampe
 =======================================================
 
-In this project, we'll create an **Alarm Siren Lamp** using the Raspberry Pi Pico 2 W. This device simulates the flashing lights and siren sound of a police car or emergency vehicle. It's a fun way to learn about PWM (Pulse Width Modulation), interrupts, and controlling multiple components like LEDs and buzzers.
+In diesem Projekt bauen wir eine **Alarm-Sirenen-Lampe** mit dem Raspberry Pi Pico 2 W. Das Gerät simuliert das blinkende Licht und den Sirenenton eines Polizeiwagens oder Einsatzfahrzeugs. Eine unterhaltsame Art, um mehr über PWM (Pulsweitenmodulation), Interrupts und die Ansteuerung mehrerer Komponenten wie LEDs und Summer zu lernen.
 
 
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist auf jeden Fall praktisch, ein Komplettset zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Bauteile auch einzeln über die folgenden Links erwerben.
 
 
 .. list-table::
@@ -46,8 +46,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -55,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Einige
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -72,98 +72,98 @@ You can also buy them separately from the links below.
         - |link_led_buy|
     *   - 6
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 7
         - :ref:`cpn_resistor`
-        - 3(1KΩ, 220Ω, 10KΩ)
+        - 3 (1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 9
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 10
         - :ref:`cpn_slide_switch`
         - 1
         - 
 
-**Understanding the Components**
+**Verständnis der Komponenten**
 
-* **Passive Buzzer**: Requires an external signal to produce sound. We'll use PWM to generate varying frequencies, creating a siren effect.
-* **LED**: Will simulate the flashing light of a siren by changing brightness.
-* **Slide Switch**: Acts as an on/off switch to control the alarm.
-* **NPN Transistor (S8050)**: Used to drive the buzzer, as the Pico's GPIO pins cannot supply enough current directly.
-* **Resistor and Capacitor**: Used to debounce the slide switch, ensuring stable readings.
+* **Passiver Summer**: Benötigt ein externes Signal zur Tonerzeugung. Über PWM erzeugen wir wechselnde Frequenzen für den Sireneneffekt.
+* **LED**: Simuliert das Blinken einer Sirene durch variierende Helligkeit.
+* **Schiebeschalter**: Dient als Ein-/Ausschalter für den Alarm.
+* **NPN-Transistor (S8050)**: Treibt den Summer an, da die GPIO-Pins des Pico nicht genügend Strom liefern können.
+* **Widerstand und Kondensator**: Entprellen den Schiebeschalter, um stabile Signale zu gewährleisten.
 
-**Schematic**
+**Schaltplan**
 
 |sch_alarm_siren_lamp|
 
-* GP17 is connected to the middle pin of the slider, along with a 10K resistor and a capacitor (filter) in parallel to GND, which allows the slider to output a steady high or low level when toggled to the left or right.
-* As soon as GP15 is high, the NPN transistor conducts, causing the passive buzzer to start sounding. This passive buzzer is programmed to gradually increase in frequency to produce a siren sound.
-* An LED is connected to GP16 and is programmed to periodically change its brightness in order to simulate a siren.
+* GP17 ist mit dem mittleren Pin des Schalters verbunden sowie mit einem 10K-Widerstand und einem Kondensator (Filter) parallel zu GND. Dadurch kann der Schalter beim Umschalten zuverlässig ein stabiles High- oder Low-Signal liefern.
+* Sobald GP15 auf High geht, leitet der NPN-Transistor, und der passive Summer beginnt zu tönen. Der Summer wird so angesteuert, dass die Frequenz allmählich ansteigt und so ein Sirenengeräusch erzeugt.
+* Eine LED ist an GP16 angeschlossen und wird so programmiert, dass sie ihre Helligkeit periodisch ändert – ebenfalls zur Simulation der Sirene.
 
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_alarm_siren_lamp|
 
 
 **Writing the Code**
 
-We'll write a MicroPython script to control the buzzer and LED based on the position of the slide switch.
+Wir schreiben ein MicroPython-Skript, das den Summer und die LED abhängig von der Stellung des Schalters steuert.
 
 .. note::
 
-    * Open the ``7.3_alarm_siren_lamp.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne ``7.3_alarm_siren_lamp.py`` im Verzeichnis ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny und klicke auf "Run" bzw. drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
 
-.. code-block:: python
+.. code-block:: python 
 
     import machine
     import utime
 
-    # Initialize PWM for buzzer and LED
+    # Initialisierung von PWM für Summer und LED
     buzzer = machine.PWM(machine.Pin(15))
     led = machine.PWM(machine.Pin(16))
-    led.freq(1000)  # Set LED PWM frequency
+    led.freq(1000)  # PWM-Frequenz für die LED setzen
 
-    # Initialize the slide switch
+    # Initialisierung des Schalters
     switch = machine.Pin(17, machine.Pin.IN, machine.Pin.PULL_DOWN)
 
-    # Function to map values from one range to another
+    # Funktion zur Abbildung von Werten aus einem Bereich in einen anderen
     def interval_mapping(x, in_min, in_max, out_min, out_max):
-        # Ensure in_min != in_max to avoid division by zero
+        # Sicherstellen, dass in_min != in_max ist, um Division durch Null zu vermeiden
         if in_max - in_min == 0:
             return out_min
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-    # Main loop
+    # Hauptschleife
     try:
         while True:
             if switch.value() == 1:
-                # Alarm is ON
-                # Increase frequency and brightness
+                # Alarm EIN
+                # Frequenz und Helligkeit erhöhen
                 for i in range(0, 100, 2):
-                    # Map 'i' to LED brightness and buzzer frequency
+                    # 'i' auf LED-Helligkeit und Summerfrequenz abbilden
                     brightness = interval_mapping(i, 0, 100, 0, 65535)
                     frequency = interval_mapping(i, 0, 100, 500, 2000)
                     
-                    # Set LED brightness
+                    # LED-Helligkeit setzen
                     led.duty_u16(brightness)
                     
-                    # Set buzzer frequency and duty cycle
+                    # Summerfrequenz und Tastverhältnis setzen
                     buzzer.freq(frequency)
-                    buzzer.duty_u16(32768)  # 50% duty cycle
+                    buzzer.duty_u16(32768)  # 50 % Tastverhältnis
                     
                     utime.sleep(0.01)
                     
-                # Decrease frequency and brightness
+                # Frequenz und Helligkeit verringern
                 for i in range(100, 0, -2):
                     brightness = interval_mapping(i, 0, 100, 0, 65535)
                     frequency = interval_mapping(i, 0, 100, 500, 2000)
@@ -174,32 +174,33 @@ We'll write a MicroPython script to control the buzzer and LED based on the posi
                     
                     utime.sleep(0.01)
             else:
-                # Alarm is OFF
-                # Turn off LED and buzzer
+                # Alarm AUS
+                # LED und Summer ausschalten
                 led.duty_u16(0)
                 buzzer.duty_u16(0)
                 utime.sleep(0.1)
     except KeyboardInterrupt:
-        # Clean up
+        # Aufräumen
         buzzer.deinit()
         led.deinit()
         print("Program stopped.")
 
-Once the code is running, toggle the slide switch to the ON position.
-The buzzer should emit a siren sound, and the LED should flash accordingly.
-Toggle the switch to OFF to stop the alarm.
+Sobald der Code läuft, schalten Sie den Schiebeschalter in die ON-Position.  
+Der Summer sollte ein Sirenengeräusch erzeugen und die LED entsprechend blinken.  
+Schalten Sie den Schalter auf OFF, um den Alarm zu stoppen.
 
-**Understanding the Code**
 
-#. Initialization:
+**Verständnis des Codes**
 
-   * **buzzer**: PWM object on GP15.
-   * **led**: PWM object on GP16, frequency set to 1kHz for smooth brightness control.
-   * **switch**: Input pin on GP17 with an internal pull-down resistor.
+#. Initialisierung:
 
-#. Interval Mapping Function:
+   * **buzzer**: PWM-Objekt an GP15.
+   * **led**: PWM-Objekt an GP16 mit 1kHz Frequenz zur weichen Helligkeitssteuerung.
+   * **switch**: Eingang an GP17 mit internem Pull-down-Widerstand.
 
-   Maps a value from one range to another, useful for scaling the loop variable to desired frequency and brightness ranges.
+#. Intervall-Mapping-Funktion:
+
+   Ordnet einen Wert von einem Wertebereich einem anderen zu – nützlich, um Schleifenwerte auf Frequenz- und Helligkeitsbereiche zu skalieren.
 
    .. code-block:: python
 
@@ -210,16 +211,16 @@ Toggle the switch to OFF to stop the alarm.
                 return out_min
             return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * Checks the state of the switch.
-   * If the switch is ON (``switch.value() == 1``):
+   * Überprüft den Zustand des Schalters.
+   * Wenn der Schalter EIN ist (``switch.value() == 1``):
 
-     * Runs two loops to simulate the siren effect:
-     * Increasing frequency and brightness.
-     * Decreasing frequency and brightness.
-     * The buzzer frequency varies between 500 Hz and 2000 Hz.
-     * The LED brightness varies from off to full brightness and back.
+     * Zwei Schleifen erzeugen den Sireneneffekt:
+     * Frequenz und Helligkeit werden erhöht.
+     * Frequenz und Helligkeit werden wieder reduziert.
+     * Die Frequenz des Summers variiert zwischen 500 Hz und 2000 Hz.
+     * Die LED-Helligkeit wechselt von aus bis maximale Helligkeit und zurück.
 
      .. code-block:: python
 
@@ -233,7 +234,7 @@ Toggle the switch to OFF to stop the alarm.
                 
                 utime.sleep(0.01)
 
-   * If the switch is OFF: Turns off the LED and buzzer.
+   * Wenn der Schalter AUS ist: LED und Summer werden deaktiviert.
 
      .. code-block:: python
 
@@ -244,7 +245,7 @@ Toggle the switch to OFF to stop the alarm.
                 buzzer.duty_u16(0)
                 utime.sleep(0.1)
 
-   * Exception Handling: Captures a keyboard interrupt (Ctrl+C) to cleanly deinitialize the PWM objects.
+   * Ausnahmebehandlung: Fängt eine Tastenkombination (Strg+C) ab, um PWM-Objekte sauber zu deaktivieren.
 
      .. code-block:: python
     
@@ -254,27 +255,26 @@ Toggle the switch to OFF to stop the alarm.
             led.deinit()
             print("Program stopped.")
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* Adjusting the Siren Effect:
+* Anpassung des Sireneneffekts:
 
-  * Modify the frequency range in the ``interval_mapping`` function to change the pitch.
-  * Adjust the delay in the loops (``utime.sleep(0.01)``) to speed up or slow down the siren cycle.
+  * Ändere den Frequenzbereich in der ``interval_mapping`` -Funktion, um die Tonhöhe zu verändern.
+  * Passe die Verzögerung in den Schleifen (``utime.sleep(0.01)``) an, um den Ablauf zu beschleunigen oder zu verlangsamen.
 
-* Add More LEDs:
+* Weitere LEDs hinzufügen:
 
-  * Incorporate additional LEDs of different colors to create a more dynamic light show.
-  * Use multiple GPIO pins and PWM channels.
+  * Ergänze zusätzliche LEDs in unterschiedlichen Farben für ein dynamischeres Lichtspiel.
+  * Nutze mehrere GPIO-Pins und PWM-Kanäle.
 
-* Motion Activation:
+* Bewegungserkennung:
 
-  Replace the slide switch with a motion sensor (e.g., PIR sensor) to trigger the alarm when movement is detected.
+  Ersetze den Schalter durch einen Bewegungssensor (z. B. PIR), um den Alarm bei erkannter Bewegung auszulösen.
 
-* Remote Control:
+* Fernbedienung:
 
-  Integrate an IR receiver to control the alarm using a remote control.
-
+  Integriere einen IR-Empfänger, um den Alarm per Fernbedienung zu steuern.
 
 **Conclusion**
 
-You've successfully built an Alarm Siren Lamp using the Raspberry Pi Pico 2 W! This project demonstrates how to control multiple components and create interactive effects. It's a great foundation for more complex projects like security systems, emergency signals, or creative art installations.
+Du hast erfolgreich eine Alarm-Sirenen-Lampe mit dem Raspberry Pi Pico 2 W gebaut! Dieses Projekt zeigt, wie man mehrere Komponenten steuern und interaktive Effekte erzeugen kann. Es bildet eine hervorragende Grundlage für komplexere Projekte wie Alarmsysteme, Notfallanzeigen oder kreative Lichtinstallationen.

@@ -1,28 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-Lesson 5:  Reading Analog Voltages Using a Potentiometer
+Lektionen 5: Analoge Spannungen mit einem Potentiometer lesen
 =================================================================
 
-This tutorial covers reading analog voltages using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+Dieses Tutorial behandelt das Lesen analoger Spannungen mit dem SunFounder Kepler Kit für den Raspberry Pi Pico W:
 
-* **Analog Voltage Reading**: Importance of reading analog voltages for sensor inputs like potentiometers.
-* **Wiring Setup**: Explains connecting a potentiometer to Pico W, including ground, 3.3V, and GPIO pin 28.
-* **Code**: Write Python code to read and print analog voltage values using GPIO pins.
-* **Conversion**: Convert ADC values to voltage (0-3.3V) using a linear equation.
-* **Demonstration**: Show code reading potentiometer values and converting them to voltage.
-
+* **Lesen analoger Spannungen**: Die Bedeutung des Lesens analoger Spannungen für Sensoreingaben wie Potentiometer.
+* **Verdrahtungsaufbau**: Erklärung des Anschlusses eines Potentiometers an den Pico W, einschließlich der Verbindungen für Masse, 3,3V und GPIO-Pin 28.
+* **Code**: Schreiben von Python-Code, um analoge Spannungswerte über GPIO-Pins zu lesen und auszugeben.
+* **Umrechnung**: Umwandlung von ADC-Werten in Spannung (0-3,3V) mittels einer linearen Gleichung.
+* **Demonstration**: Zeigen des Codes, der die Werte des Potentiometers liest und in Spannung umwandelt.
 
 **Video**
 

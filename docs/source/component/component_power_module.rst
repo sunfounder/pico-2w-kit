@@ -1,48 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_power_module:
 
-Power Supply Module
-===================
+Stromversorgungsmodul
+========================
 
-This breadboard power module provides 3.3V and 5V outputs and features a series diode for reverse polarity protection.
+Dieses Breadboard-Stromversorgungsmodul bietet 3,3V- und 5V-Ausgänge und verfügt über eine Schutzdiode gegen Verpolung.
 
-It accepts input voltages ranging from 6.5V to 12V and efficiently generates both 3.3V and 5V outputs.
+Es akzeptiert Eingangsspannungen im Bereich von 6,5V bis 12V und erzeugt effizient sowohl 3,3V- als auch 5V-Ausgänge.
 
-This module is an essential tool for experimenters and prototypers working with electronic circuits on breadboards or perforated/veroboards, offering a reliable and convenient power supply solution.
-
+Dieses Modul ist ein unverzichtbares Werkzeug für Experimentatoren und Entwickler, die mit elektronischen Schaltungen auf Breadboards oder Lochrasterplatinen arbeiten. Es bietet eine zuverlässige und bequeme Stromversorgungslösung.
 
 |img_power_module|
 
-**Features**
-    #. Plug directly to MB102 Standard breadboard.
-    #. Input voltage: 6.5-12 V (DC) or 5V USB power supply.
-    #. Output voltage: 3.3V and 5V can switch over.
-    #. Maximum output current: <700 mA.
-    #. External Input voltage ON/OFF switch.
-    #. Independent control of upper and Lower Bread Board Power Rails. Can switch over to 0V, 3.3V, 5V using jumpers on any rail.
-    #. On-board two groups of 3.3V, 5V DC output plug pin, convenient external lead use.
-    #. USB device connector onboard for power output to external device.
-    #. Size: 5.3cm x 3.5cm.
-
+**Eigenschaften**
+    #. Direkter Anschluss an das MB102-Standard-Breadboard.
+    #. Eingangsspannung: 6,5–12 V (DC) oder 5V-USB-Stromversorgung.
+    #. Ausgangsspannung: Umschaltbar zwischen 3,3V und 5V.
+    #. Maximale Ausgangsstromstärke: <700 mA.
+    #. Externer EIN/AUS-Schalter für die Eingangsspannung.
+    #. Unabhängige Steuerung der oberen und unteren Stromschienen des Breadboards. Jede Schiene kann über Jumper auf 0V, 3,3V oder 5V eingestellt werden.
+    #. Zwei Gruppen von 3,3V- und 5V-Gleichstromausgängen auf der Platine für bequeme externe Verdrahtung.
+    #. Integrierter USB-Anschluss zur Stromversorgung externer Geräte.
+    #. Abmessungen: 5,3 cm x 3,5 cm.
 
 **Example**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`ar_relay` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
+* :ref:`py_motor` (Für MicroPython-Nutzer)
+* :ref:`ar_motor` (Für Arduino-Nutzer)
+* :ref:`py_relay` (Für MicroPython-Nutzer)
+* :ref:`ar_relay` (Für Arduino-Nutzer)
+* :ref:`py_pump` (Für MicroPython-Nutzer)
+* :ref:`ar_pump` (Für Arduino-Nutzer)

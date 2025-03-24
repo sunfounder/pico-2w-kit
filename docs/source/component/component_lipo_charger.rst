@@ -1,45 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und Herausforderungen nach dem Kauf von unserer Community und unserem Team.
+    - **Learn & Share**: Tauschen Sie Erfahrungen, Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exclusive Previews**: Erhalten Sie frühzeitigen Zugang zu Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_lipo_charger:
 
-Li-po Charger Module
+Li-Po Charger Module
 =================================================
 
 
 |lipo_module|
 
-This Li-Po charger module is designed specifically for the Raspberry Pi Pico, Pico H, Pico W and Pico 2 W. To use it, simply plug the module and the Pico into a breadboard as shown below, connect a Li-Po battery to the module, and it's ready to go.
+Dieses Li-Po-Lademodul wurde speziell für die Verwendung mit dem Raspberry Pi Pico entwickelt. Zum Einsatz stecken Sie einfach den Pico und das Modul, wie unten dargestellt, auf ein Breadboard und verbinden einen Li-Po-Akku mit dem Modul – schon ist Ihr Setup einsatzbereit.
 
-When the Pico 2 W is connected to a computer or power socket via a USB cable, the indicator light on the Li-Po charger module will turn on, indicating that the battery is charging. Once the USB cable is disconnected, the Pico 2 W will automatically switch to battery power, allowing your project to continue running seamlessly.
+Sobald der Pico 2 W über ein USB-Kabel mit einem Computer oder einer Stromquelle verbunden ist, leuchtet die Ladeanzeige auf dem Li-Po-Lademodul auf und signalisiert damit, dass der Akku geladen wird. Wird das USB-Kabel entfernt, wechselt der Pico 2 W automatisch in den Akkubetrieb, sodass Ihr Projekt unterbrechungsfrei weiterlaufen kann.
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico 2 W to your computer with this charging module attached, it may cause the computer not to recognize your Pico 2 W.
+    Bei manchen Computern kann es vorkommen, dass der Pico 2 W nicht erkannt wird, wenn gleichzeitig das 
+    Li-Po-Modul mit angeschlossenem Akku verwendet wird. Grund hierfür ist, dass die USB-Spannung während des Ladevorgangs leicht absinken kann und der Pico dadurch nicht ausreichend mit Strom versorgt wird, um vom Computer erkannt zu werden.
 
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico 2 W power supply is insufficient to be recognized by the computer.
-    
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico 2 W again.
+    In diesem Fall entfernen Sie zunächst das Li-Po-Lademodul und verbinden dann den Pico 2 W erneut mit dem Computer.
 
 |lipo_wire|
 
 **Features**
 
-* Input voltage: 5V
-* Output voltage: 3.3V
-* Size: 20mmx7mm
-* Interface model: PH2.0
-
+* Eingangsspannung: 5 V
+* Ausgangsspannung: 3,3 V
+* Größe: 20 mm x 7 mm
+* Schnittstellenmodell: PH2.0
 
 
 **Schematic**

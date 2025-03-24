@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-Lesson 1:  Write Your First Program for Absolute Beginners
-=================================================================
+Lektionen 1: Dein erstes Programm für absolute Anfänger schreiben
+====================================================================
 
-* **Setup**: Unbox and connect the Pico W to the PC via USB.
-* **MicroPython**: Install MicroPython on the Pico W.
-* **Thonny IDE**: Install and set up Thonny IDE.
-* **First Program**: Run a "Hello, World!" program in Thonny.
-* **GPIO**: Control the onboard LED with a simple blink program.
+* **Setup**: Unboxe den Pico W und schließe ihn über USB an den PC an.
+* **MicroPython**: Installiere MicroPython auf dem Pico W.
+* **Thonny IDE**: Installiere und richte die Thonny IDE ein.
+* **Erstes Programm**: Führe ein "Hello, World!"-Programm in Thonny aus.
+* **GPIO**: Steuere die an Bord befindliche LED mit einem einfachen Blink-Programm.
 
 **Video**
 

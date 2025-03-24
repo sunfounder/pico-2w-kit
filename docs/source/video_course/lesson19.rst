@@ -1,28 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 19:  Button Control of RGB LED in Micropython
+Lektion 19: Steuerung einer RGB-LED mit Tastern in MicroPython
 =============================================================================
 
-This tutorial covers using multiple push buttons to control the RGB channels of an LED on the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Verwendung mehrerer Taster zur Steuerung der RGB-Kanäle einer LED am Raspberry Pi Pico W:
 
-* **Introduction**: Overview of using three push buttons to control RGB LED channels.
-* **Homework Solution**: Solution for creating toggle switches for RGB LED using push buttons.
-* **Circuit Setup**: Wiring three push buttons and RGB LED to the Pico W, connecting through GPIO pins and resistors.
-* **Code Explanation**: Initializes GPIO, creates objects for LED channels and buttons, and implements toggle logic for each channel.
-* **Practical Demonstration**: Demonstrates code execution, testing button functionality, and debugging techniques.
-
+* **Einführung**: Überblick über die Verwendung von drei Tastern zur Steuerung der RGB-LED-Kanäle.
+* **Lösung der Hausaufgabe**: Lösung zur Erstellung von Umschaltern für die RGB-LED mithilfe von Tastern.
+* **Schaltungsaufbau**: Verdrahtung von drei Tastern und einer RGB-LED an den Pico W, verbunden über GPIO-Pins und Widerstände.
+* **Code-Erklärung**: Initialisiert GPIO, erstellt Objekte für LED-Kanäle und Taster und implementiert die Umschaltlogik für jeden Kanal.
+* **Praktische Demonstration**: Demonstration der Codeausführung, Testen der Tasterfunktionalität und Debugging-Techniken.
 
 **Video**
 

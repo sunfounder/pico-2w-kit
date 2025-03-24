@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nimm an Giveaways und Urlaubspromotionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
 .. _ar_mpu6050:
 
-6.3 Read from the MPU-6050
+6.3 Lesen vom MPU-6050
 ===============================
 
-In this lesson, we'll explore how to interface the **MPU-6050** 6-axis motion tracking sensor with the Raspberry Pi Pico 2 W. The MPU-6050 combines a 3-axis gyroscope and a 3-axis accelerometer, providing raw sensor data over the I2C communication protocol.
+In dieser Lektion werden wir die Anbindung des **MPU-6050 6-Achsen-Bewegungssensors** an den Raspberry Pi Pico 2 W erlernen. Der MPU-6050 kombiniert ein 3-Achsen-Gyroskop und einen 3-Achsen-Beschleunigungssensor, die rohe Sensordaten über das I2C-Kommunikationsprotokoll bereitstellen.
 
 * :ref:`cpn_mpu6050`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein gesamtes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die unten stehenden Links kaufen.
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,39 +64,38 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Understanding the MPU-6050 Sensor**
+**Verständnis des MPU-6050 Sensors**
 
-The **MPU-6050** sensor is widely used in projects that require motion tracking and orientation detection, such as drones, robotics, and gaming devices.
+Der **MPU-6050** Sensor wird weit verbreitet in Projekten verwendet, die Bewegungstracking und Orientierungserkennung benötigen, wie z.B. bei Drohnen, Robotik und Gaming-Geräten.
 
-* **Accelerometer**: Measures acceleration forces along the X, Y, and Z axes. This includes gravitational acceleration, allowing you to determine the tilt or orientation of the sensor.
-* **Gyroscope**: Measures rotational velocity around the X, Y, and Z axes, providing information about how fast the sensor is spinning.
+* **Beschleunigungsmesser**: Misst Beschleunigungskräfte entlang der X-, Y- und Z-Achsen. Dazu gehört auch die Gravitationsbeschleunigung, was es ermöglicht, die Neigung oder Orientierung des Sensors zu bestimmen.
+* **Gyroskop**: Misst die Rotationsgeschwindigkeit um die X-, Y- und Z-Achsen, was Informationen darüber liefert, wie schnell der Sensor sich dreht.
 
-**Schematic**
+**Schaltplan**
 
 |sch_mpu6050_ar|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_mpu6050_ar|
 
-**Writing the Code**
+**Code schreiben**
 
-We'll write a program that initializes the MPU-6050 sensor, reads acceleration and gyroscope data, and prints the values to the Serial Monitor.
-
+Wir werden ein Programm schreiben, das den MPU-6050 Sensor initialisiert, Beschleunigungs- und Gyroskopdaten liest und die Werte im Seriellen Monitor ausgibt.
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``pico-2w-kit-main/arduino/6.3_6axis_motion_tracking``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit MPU6050`` library is used here, you can install it from the **Library Manager**.
+    * Du kannst die Datei ``6.3_6axis_motion_tracking.ino`` im Pfad ``pico-2w-kit-main/arduino/6.3_6axis_motion_tracking`` öffnen. 
+    * Oder kopiere diesen Code in die **Arduino IDE**.
+    * Wähle dann das Raspberry Pi Pico Board und den richtigen Port aus, bevor du auf den Upload-Button klickst.
+    * Die ``Adafruit MPU6050`` Bibliothek wird hier verwendet, du kannst sie aus dem **Library Manager** installieren.
 
       .. image:: img/lib_mpu6050.png
 
@@ -106,25 +105,25 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
     #include <Adafruit_MPU6050.h>
     #include <Wire.h>
 
-    // Create an MPU6050 object
+    // Erstelle ein MPU6050 Objekt
     Adafruit_MPU6050 mpu;
 
     void setup(void) {
-      // Initialize Serial Communication
+      // Initialisiere die serielle Kommunikation
       Serial.begin(115200);
 
       Serial.println("Adafruit MPU6050 test!");
 
-      // Try to initialize the MPU6050
+      // Versuche den MPU6050 zu initialisieren
       if (!mpu.begin()) {
         Serial.println("Failed to find MPU6050 chip");
         while (1) {
           delay(10);
         }
       }
-      Serial.println("MPU6050 Found!");
+      Serial.println("MPU6050 gefunden!");
 
-      // Set accelerometer range
+      // Stelle den Beschleunigungsmesserbereich ein
       mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
       Serial.print("Accelerometer range set to: ");
       switch (mpu.getAccelerometerRange()) {
@@ -142,7 +141,7 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
           break;
       }
 
-      // Set gyroscope range
+      // Stelle den Gyroskopbereich ein
       mpu.setGyroRange(MPU6050_RANGE_500_DEG);
       Serial.print("Gyro range set to: ");
       switch (mpu.getGyroRange()) {
@@ -160,7 +159,7 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
           break;
       }
 
-      // Set filter bandwidth
+      // Stelle die Filterbandbreite ein
       mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
       Serial.print("Filter bandwidth set to: ");
       switch (mpu.getFilterBandwidth()) {
@@ -192,11 +191,11 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
     }
 
     void loop() {
-      // Get new sensor events with the readings
+      // Hole neue Sensorevents mit den Messwerten
       sensors_event_t a, g, temp;
       mpu.getEvent(&a, &g, &temp);
 
-      // Print acceleration values
+      // Drucke Beschleunigungswerte
       Serial.print("Acceleration X: ");
       Serial.print(a.acceleration.x);
       Serial.print(" m/s^2, Y: ");
@@ -214,11 +213,11 @@ We'll write a program that initializes the MPU-6050 sensor, reads acceleration a
       Serial.print(g.gyro.z);
       Serial.println(" rad/s");
 
-      delay(500); // Adjust delay as needed
+      delay(500); // Passe die Verzögerung bei Bedarf an
     }
 
 
-After uploading the code, the Serial Monitor should display the acceleration and rotation values continuously.
+Nach dem Hochladen des Codes sollte der Serielle Monitor kontinuierlich die Beschleunigungs- und Rotationswerte anzeigen.
 
 .. code-block::
 
@@ -233,29 +232,29 @@ After uploading the code, the Serial Monitor should display the acceleration and
     Acceleration X: 0.10 m/s^2, Y: 0.05 m/s^2, Z: 9.76 m/s^2
     Rotation X: 0.15 rad/s, Y: -0.05 rad/s, Z: 0.02 rad/s
 
-Gently rotate or move the MPU-6050 sensor module.
-Observe changes in the acceleration and rotation values corresponding to the movement.
+Bewege oder drehe das MPU-6050 Sensor-Modul vorsichtig.
+Beobachte die Veränderungen in den Beschleunigungs- und Rotationswerten, die den Bewegungen entsprechen.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Including Libraries and Defining Constants:
+#. Einbinden der Bibliotheken und Definition der Konstanten:
 
 
-   * ``Adafruit_MPU6050.h``: Includes the MPU6050 library for easier interfacing.
-   * ``Wire.h``: Includes the I2C communication library.
-   * ``mpu``: Creates an MPU6050 object to interact with the sensor.
+   * ``Adafruit_MPU6050.h``: Bindet die MPU6050-Bibliothek ein, um die Schnittstelle zu erleichtern.
+   * ``Wire.h``: Bindet die I2C-Kommunikationsbibliothek ein.
+   * ``mpu``: Erstellt ein MPU6050-Objekt, um mit dem Sensor zu interagieren.
 
-#. Setup Function:
+#. Setup-Funktion:
 
-   * MPU6050 Initialization: 
-   
-     Attempts to initialize the MPU6050 sensor. If unsuccessful, it prints an error message and halts the program.
-   
+   * MPU6050-Initialisierung:
+
+     Versucht, den MPU6050-Sensor zu initialisieren. Wenn dies nicht erfolgreich ist, wird eine Fehlermeldung ausgegeben und das Programm angehalten.
+
      .. code-block:: arduino
-   
+
          Serial.println("Adafruit MPU6050 test!");
-   
-         // Try to initialize the MPU6050
+
+         // Versuche den MPU6050 zu initialisieren
          if (!mpu.begin()) {
            Serial.println("Failed to find MPU6050 chip");
            while (1) {
@@ -264,12 +263,12 @@ Observe changes in the acceleration and rotation values corresponding to the mov
          }
          Serial.println("MPU6050 Found!");
 
-   * Accelerometer Range: 
-   
-     Sets the accelerometer range to ±8G and prints the current range.
-   
+   * Beschleunigungsmesserbereich:
+
+     Stellt den Beschleunigungsmesserbereich auf ±8G ein und gibt den aktuellen Bereich aus.
+
      .. code-block:: arduino
-   
+
          mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
          Serial.print("Accelerometer range set to: ");
          switch (mpu.getAccelerometerRange()) {
@@ -281,13 +280,13 @@ Observe changes in the acceleration and rotation values corresponding to the mov
              Serial.println("+-16G");
              break;
          }
-   
-   * Gyroscope Range: 
-   
-     Sets the gyroscope range to ±500 degrees per second and prints the current range.
-   
+
+   * Gyroskopbereich:
+
+     Stellt den Gyroskopbereich auf ±500 Grad pro Sekunde ein und gibt den aktuellen Bereich aus.
+
      .. code-block:: arduino
-   
+
          mpu.setGyroRange(MPU6050_RANGE_500_DEG);
          Serial.print("Gyro range set to: ");
          switch (mpu.getGyroRange()) {
@@ -299,13 +298,13 @@ Observe changes in the acceleration and rotation values corresponding to the mov
              Serial.println("+-2000 deg/s");
              break;
          }
-   
-   * Setting Filter Bandwidth: 
-   
-     Configures the filter bandwidth to 21 Hz to reduce noise and prints the current setting.
-   
+
+   * Einstellung der Filterbandbreite:
+
+     Konfiguriert die Filterbandbreite auf 21 Hz, um Rauschen zu reduzieren, und gibt die aktuelle Einstellung aus.
+
      .. code-block:: arduino
-   
+
          mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
          Serial.print("Filter bandwidth set to: ");
          switch (mpu.getFilterBandwidth()) {
@@ -318,26 +317,26 @@ Observe changes in the acceleration and rotation values corresponding to the mov
              break;
          }
 
-#. Loop Function:
+#. Loop-Funktion:
 
-   * Reading Sensor Data:
-   
-     * ``sensors_event_t a, g, temp;``: Creates event objects to store accelerometer, gyroscope, and temperature data.
-     * ``mpu.getEvent(&a, &g, &temp);``: Retrieves the latest sensor data.
-   
+   * Auslesen der Sensordaten:
+
+     * ``sensors_event_t a, g, temp;``: Erstellt Ereignisobjekte, um Beschleunigungs-, Gyroskop- und Temperaturdaten zu speichern.
+     * ``mpu.getEvent(&a, &g, &temp);``: Ruft die neuesten Sensordaten ab.
+
      .. code-block:: arduino
-   
+
          sensors_event_t a, g, temp;
          mpu.getEvent(&a, &g, &temp);
-   
-   * Printing Sensor Data:
-   
-     * **Acceleration**: Prints acceleration values along the X, Y, and Z axes in meters per second squared (m/s²).
-     * **Rotation**: Prints gyroscope values (rotational velocity) around the X, Y, and Z axes in radians per second (rad/s).
-   
+
+   * Ausgabe der Sensordaten:
+
+     * **Beschleunigung**: Gibt Beschleunigungswerte entlang der X-, Y- und Z-Achsen in Metern pro Sekunde im Quadrat (m/s²) aus.
+     * **Rotation**: Gibt Gyroskopwerte (Rotationsgeschwindigkeit) um die X-, Y- und Z-Achsen in Radianten pro Sekunde (rad/s) aus.
+
      .. code-block:: Arduino
-   
-       // Print acceleration values
+
+       // Drucke Beschleunigungswerte
        Serial.print("Acceleration X: ");
        Serial.print(a.acceleration.x);
        ...
@@ -347,43 +346,43 @@ Observe changes in the acceleration and rotation values corresponding to the mov
        Serial.println(" rad/s");
 
 
-**Troubleshooting**
+**Fehlerbehebung**
 
-* No Readings Displayed:
+* Keine Anzeige von Messwerten:
 
-  * Check all wiring connections, especially the I2C lines (SCL and SDA).
-  * Ensure the MPU-6050 sensor is receiving power (VCC and GND connections).
-  * Verify that the correct GPIO pins are defined in the code.
+  * Überprüfe alle Verdrahtungsverbindungen, insbesondere die I2C-Leitungen (SCL und SDA).
+  * Stelle sicher, dass der MPU6050-Sensor mit Strom versorgt wird (VCC- und GND-Verbindungen).
+  * Überprüfe, ob die richtigen GPIO-Pins im Code definiert sind.
 
-* Incorrect Readings:
+* Falsche Messwerte:
 
-  * Ensure that the MPU-6050 sensor is properly seated in the breadboard.
-  * Verify that the sensor's range and filter settings match the desired application.
-  * Check for any loose connections or shorts in the wiring.
+  * Stelle sicher, dass der MPU6050-Sensor richtig im Steckbrett sitzt.
+  * Überprüfe, ob die Bereichs- und Filtereinstellungen des Sensors der gewünschten Anwendung entsprechen.
+  * Überprüfe auf lose Verbindungen oder Kurzschlüsse in der Verdrahtung.
 
-* Sensor Interference:
+* Sensorinterferenzen:
 
-  * Avoid placing the sensor near other electronic devices that might cause interference.
-  * Ensure there are no physical obstructions blocking the sensor's movement.
+  * Vermeide es, den Sensor in der Nähe anderer elektronischer Geräte zu platzieren, die Störungen verursachen könnten.
+  * Stelle sicher, dass keine physischen Hindernisse die Bewegung des Sensors blockieren.
 
-**Further Exploration**
+**Weitere Erkundungen**
 
-* Combining with Other Sensors:
+* Kombination mit anderen Sensoren:
 
-  Integrate the MPU-6050 with GPS modules, magnetometers, or other sensors to create comprehensive tracking systems.
+  Integriere den MPU6050 mit GPS-Modulen, Magnetometern oder anderen Sensoren, um umfassende Trackingsysteme zu erstellen.
 
-* Building a Motion-Based Game Controller:
+* Bau eines bewegungsbasierten Spielcontrollers:
 
-  Use the MPU-6050 to detect movement and orientation, allowing for the creation of motion-controlled gaming devices.
+  Verwende den MPU6050, um Bewegungen und Orientierungen zu erkennen, was die Erstellung von bewegungsgesteuerten Spielgeräten ermöglicht.
 
-* Creating a Self-Balancing Robot:
+* Bau eines selbstbalancierenden Roboters:
 
-  Utilize the accelerometer and gyroscope data to maintain balance and stability in robotic applications.
+  Nutze die Beschleunigungs- und Gyroskopdaten, um Balance und Stabilität in Roboteranwendungen zu gewährleisten.
 
-* Implementing Sensor Fusion Algorithms:
+* Implementierung von Sensorfusionsalgorithmen:
 
-  Combine accelerometer and gyroscope data to calculate orientation angles using algorithms like the Kalman filter or complementary filter.
+  Kombiniere Beschleunigungs- und Gyroskopdaten, um Orientierungswinkel mithilfe von Algorithmen wie dem Kalman-Filter oder dem Komplementärfilter zu berechnen.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to interface the MPU-6050 6-axis motion tracking sensor with the Raspberry Pi Pico. By leveraging the Adafruit MPU6050 library, you can easily retrieve and interpret accelerometer and gyroscope data, enabling a wide range of motion and orientation-based applications. The optional LED indicator adds a simple way to provide visual feedback based on sensor readings, enhancing the interactivity of your projects.
+In dieser Lektion hast du gelernt, wie man den MPU6050 6-Achsen-Bewegungssensor mit dem Raspberry Pi Pico anbindet. Durch die Nutzung der Adafruit MPU6050-Bibliothek kannst du einfach Beschleunigungs- und Gyroskopdaten abrufen und interpretieren, was eine Vielzahl von Bewegungs- und Orientierungsanwendungen ermöglicht. Die optionale LED-Anzeige bietet eine einfache Möglichkeit, visuelles Feedback basierend auf den Sensordaten zu geben, was die Interaktivität deiner Projekte erhöht.

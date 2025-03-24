@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Entdecken Sie gemeinsam mit anderen begeisterten Mitgliedern die vielfältigen Möglichkeiten rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und After-Sales-Problemen durch unsere Community und unser Team.
+    - **Learn & Share**: Tauschen Sie Ihre Erfahrungen, Tipps und Tutorials aus, um Ihre Kenntnisse zu erweitern.
+    - **Exclusive Previews**: Bekommen Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_keypad:
 
@@ -18,24 +18,28 @@
 ========================
 
 
-In microcontroller systems, devices requiring multiple keys—such as electronic locks or telephone keypads—often use a matrix keypad, especially when 12 to 16 keys are needed.
+In Mikrocontrollersystemen werden häufig Matrix-Keypads verwendet, um Geräte mit vielen Tasten – wie elektronische Schlösser oder Telefon-Tastaturen – anzusteuern, insbesondere wenn 12 bis 16 Tasten benötigt werden.
 
-A matrix keypad, also known as a row-column keypad, is designed with four I/O lines serving as rows and another four as columns. Each intersection of a row and a column corresponds to a key, resulting in a total of 4×4 keys. This structure efficiently optimizes the use of I/O ports in a microcontroller system.
+Ein Matrix-Keypad (auch als Zeilen-Spalten-Tastatur bezeichnet) besteht aus vier I/O-Leitungen für die Zeilen und vier weiteren für die Spalten. Jeder Schnittpunkt zwischen einer Zeile und einer Spalte entspricht einer einzelnen Taste, sodass insgesamt 4×4 Tasten zur Verfügung stehen. Diese Anordnung optimiert effizient die Nutzung von I/O-Ports eines Mikrocontrollers.
 
-The keypad's contacts are typically accessible via a header, which can connect to a ribbon cable or be directly inserted into a printed circuit board. In some keypads, each button connects to an individual contact in the header, while all buttons share a common ground connection.
+Die Kontakte des Keypads sind normalerweise über einen Steckverbinder zugänglich, der an ein Flachbandkabel angeschlossen oder direkt in eine Leiterplatte gesteckt werden kann. Bei manchen Keypads besitzt jede Taste einen eigenen Anschluss am Steckverbinder, wobei alle Tasten einen gemeinsamen Masseanschluss haben.
 
 
 |img_keypad|
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+Meist sind die Tasten jedoch in einer Matrix verschaltet, wobei jede Taste 
+eine spezifische Verbindung zwischen einer Zeilen- und einer Spaltenleitung 
+herstellt. Ein Mikrocontroller kann diese Tastenmatrix durch zyklisches 
+Abtasten (Polling) auswerten, indem er nacheinander jeder der vier horizontalen 
+Leitungen ein Ausgangssignal gibt und gleichzeitig die vier vertikalen Leitungen 
+überprüft. So lässt sich feststellen, welche Taste gedrückt wurde. Pull-up- oder 
+Pull-down-Widerstände sollten an den Eingängen verwendet werden, um undefinierte 
+Zustände des Mikrocontrollers zu verhindern, wenn kein Signal vorhanden ist.
 
 * `Keypad - Wikipedia <https://en.wikipedia.org/wiki/Keypad>`_
 
 **Example**
 
-* :ref:`py_keypad` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`ar_keypad` (For Arduino User)
+* :ref:`py_keypad` (Für MicroPython-Nutzer)
+* :ref:`py_guess_number` (Für MicroPython-Nutzer)
+* :ref:`ar_keypad` (Für Arduino-Nutzer)

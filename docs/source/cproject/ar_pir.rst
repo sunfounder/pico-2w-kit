@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie Ihr Wissen über Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nehmen Sie an Giveaways und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_pir:
 
-2.10 Detect Human Movement
-==========================
+2.10 Menschliche Bewegung erkennen
+=======================================
 
-In this lesson, we'll learn how to use a Passive Infrared (PIR) sensor with the Raspberry Pi Pico 2 W to detect human movement. PIR sensors are commonly used in security systems, automatic lighting, and other applications where motion detection is required. They detect infrared radiation emitted by warm objects, such as humans or animals, in their field of view.
+In dieser Lektion lernen wir, wie man einen passiven Infrarot (PIR)-Sensor mit dem Raspberry Pi Pico 2 W verwendet, um menschliche Bewegungen zu erkennen. PIR-Sensoren werden häufig in Sicherheitssystemen, automatischer Beleuchtung und anderen Anwendungen verwendet, bei denen Bewegungserkennung erforderlich ist. Sie detektieren die von warmen Objekten wie Menschen oder Tieren abgegebene Infrarotstrahlung in ihrem Sichtfeld.
 
 :ref:`cpn_pir`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENVORSTELLUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
@@ -72,53 +72,50 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+Wenn das PIR-Modul eine vorbeigehende Person erkennt, ist GP14 hoch, sonst ist es niedrig.
 
 .. note::
 
-    The PIR sensor have two potentiometers:
+    Der PIR-Sensor verfügt über zwei Potentiometer:
 
-    * **Sensitivity Adjustment**: Controls the range of detection.
-    * **Time Delay Adjustment**: Controls how long the output remains HIGH after motion is detected.
+    * **Empfindlichkeitseinstellung**: Steuert den Erfassungsbereich.
+    * **Zeitverzögerungseinstellung**: Steuert, wie lange der Ausgang nach der Bewegungserkennung HOCH bleibt.
 
-    For initial testing, turn both potentiometers counterclockwise to their minimum positions. This sets the sensor to its most sensitive and shortest delay settings, allowing you to observe immediate responses.
-
+    Für erste Tests drehen Sie beide Potentiometer gegen den Uhrzeigersinn auf ihre Mindestpositionen. Dies stellt den Sensor auf seine höchste Empfindlichkeit und die kürzeste Verzögerungseinstellung ein, sodass Sie sofortige Reaktionen beobachten können.
 
     |img_PIR_TTE|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_pir|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``pico-2w-kit-main/arduino/2.10_detect_human_movement``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Sie können die Datei ``2.10_detect_human_movement.ino`` im Verzeichnis ``pico-2w-kit-main/arduino/2.10_detect_human_movement`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Upload**-Button klicken.
 
 .. code-block:: python
 
-   const int pirPin = 14;     // PIR sensor output pin connected to GP14
-   int pirState = LOW;        // Current state of PIR sensor
-   int val = 0;               // Variable to store the PIR reading
+   const int pirPin = 14;     // PIR-Sensorausgangspin verbunden mit GP14
+   int pirState = LOW;        // Aktueller Zustand des PIR-Sensors
+   int val = 0;               // Variable zum Speichern des PIR-Wertes
 
    void setup() {
-     Serial.begin(115200);    // Initialize Serial Monitor
-     pinMode(pirPin, INPUT);  // Set the PIR pin as input
+     Serial.begin(115200);    // Initialisieren des Serial Monitors
+     pinMode(pirPin, INPUT);  // Setzen des PIR-Pins als Eingang
      Serial.println("PIR Sensor Test");
-     delay(2000);             // Allow the PIR sensor to stabilize
+     delay(2000);             // Dem PIR-Sensor Zeit geben, sich zu stabilisieren
    }
 
    void loop() {
-     val = digitalRead(pirPin);  // Read the PIR sensor
+     val = digitalRead(pirPin);  // Lesen des PIR-Sensors
 
      if (val == HIGH) {
        if (pirState == LOW) {
@@ -131,28 +128,28 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
          pirState = LOW;
        }
      }
-     delay(500);  // Wait half a second before checking again
+     delay(500);  // Eine halbe Sekunde warten, bevor erneut geprüft wird
    }
 
-When the code is running and the Serial Monitor is open:
+Wenn der Code läuft und der Serial Monitor offen ist:
 
-* Move in front of the PIR sensor. The Serial Monitor should display "Motion detected!"
-* Stop moving or move out of the sensor's range. After a short delay, the Serial Monitor should display "Motion ended!"
+* Bewegen Sie sich vor dem PIR-Sensor. Der Serial Monitor sollte "Bewegung erkannt!" anzeigen.
+* Hören Sie auf sich zu bewegen oder bewegen Sie sich aus dem Erfassungsbereich des Sensors. Nach einer kurzen Verzögerung sollte der Serial Monitor "Bewegung beendet!" anzeigen.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Reading the PIR Sensor:
+#. Lesen des PIR-Sensors:
 
-   Reads the current state of the PIR sensor. It will be HIGH when motion is detected and LOW when no motion is detected.
+   Liest den aktuellen Zustand des PIR-Sensors. Er wird HIGH sein, wenn Bewegung erkannt wird und LOW, wenn keine Bewegung erkannt wird.
 
    .. code-block:: Arduino
 
       val = digitalRead(pirPin);
 
-#. Detecting Motion:
+#. Bewegung erkennen:
 
-   * When motion is detected, and it's the first detection, it prints "Motion detected!" and updates pirState.
-   * When motion ends, it prints "Motion ended!" and updates pirState.
+   * Wenn Bewegung erkannt wird und es die erste Erkennung ist, wird "Bewegung erkannt!" gedruckt und pirState aktualisiert.
+   * Wenn die Bewegung endet, wird "Bewegung beendet!" gedruckt und pirState aktualisiert.
   
    .. code-block:: Arduino
 
@@ -169,29 +166,28 @@ When the code is running and the Serial Monitor is open:
       }
 
 
-**Practical Applications**
+**Praktische Anwendungen**
 
-* **Security Systems**: Detect intruders or unauthorized movement.
-* **Automatic Lighting**: Turn lights on when motion is detected.
-* **Energy Saving**: Power down devices when no movement is detected for a period.
+* **Sicherheitssysteme**: Eindringlinge oder unbefugte Bewegungen erkennen.
+* **Automatische Beleuchtung**: Lichter einschalten, wenn Bewegung erkannt wird.
+* **Energieeinsparung**: Geräte abschalten, wenn für eine bestimmte Zeit keine Bewegung erkannt wird.
 
-**Troubleshooting Tips**
+**Fehlerbehebungstipps**
 
-* False Triggers:
+* Falsche Auslösungen:
 
-  * PIR sensors can be sensitive to environmental factors like temperature changes or sunlight.
-  * Avoid pointing the sensor directly at heat sources or windows.
+  * PIR-Sensoren können empfindlich auf Umweltfaktoren wie Temperaturänderungen oder Sonnenlicht reagieren.
+  * Vermeiden Sie es, den Sensor direkt auf Wärmequellen oder Fenster zu richten.
 
-* Sensor Not Detecting Motion:
+* Sensor erkennt keine Bewegung:
 
-  * Ensure the sensor has had time to initialize (some sensors require up to 60 seconds).
-  * Adjust the sensitivity potentiometer.
+  * Stellen Sie sicher, dass der Sensor Zeit zum Initialisieren hatte (einige Sensoren benötigen bis zu 60 Sekunden).
+  * Stellen Sie den Empfindlichkeitspotentiometer ein.
 
-* Interference: 
+* Interferenzen: 
 
-  * Keep the sensor away from electronics that may cause electromagnetic interference.
+  * Halten Sie den Sensor fern von Elektronik, die elektromagnetische Störungen verursachen könnte.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a PIR sensor with the Raspberry Pi Pico to detect human movement. You've set up the hardware, written code to read the sensor's output, and tested it to respond to motion. Understanding how to adjust the PIR sensor's settings allows you to tailor it to your specific application, whether it's for security, automation, or interactive projects.
-
+In dieser Lektion haben Sie gelernt, wie Sie einen PIR-Sensor mit dem Raspberry Pi Pico verwenden, um menschliche Bewegungen zu erkennen. Sie haben die Hardware eingerichtet, Code geschrieben, um die Ausgabe des Sensors zu lesen, und ihn getestet, um auf Bewegungen zu reagieren. Das Verständnis, wie man die Einstellungen des PIR-Sensors anpasst, ermöglicht es Ihnen, ihn für Ihre spezifische Anwendung anzupassen, sei es für Sicherheit, Automatisierung oder interaktive Projekte.

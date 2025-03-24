@@ -1,48 +1,47 @@
 .. note::
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_traffic_light:
 
 
-7.6 Building a Traffic Light Controller
+7.6 Bau eines Ampelsteuergeräts
 ==============================================================
 
-In this project, we'll create a **Traffic Light Controller** using the Raspberry Pi Pico 2 W, three LEDs (red, yellow, green), and a 4-digit 7-segment display. This system will simulate a real traffic light sequence, displaying the remaining time for each light on the 7-segment display.
+In diesem Projekt erstellen wir ein **Ampelsteuergerät** mit dem Raspberry Pi Pico 2 W, drei LEDs (rot, gelb, grün) und einem 4-stelligen 7-Segment-Display. Dieses System simuliert eine echte Ampelsequenz und zeigt die verbleibende Zeit für jedes Licht auf dem 7-Segment-Display an.
 
-* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
-* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
-* **Green light**: Allows traffic to move in the indicated direction.
+* **Rotes Licht**: Der Verkehr sollte bei einem blinkenden roten Licht stoppen, was einem Stoppschild entspricht.
+* **Gelbes Licht**: Ein Warnsignal, das gleich rot wird. Gelbe Lichter werden in verschiedenen Ländern (Regionen) unterschiedlich interpretiert.
+* **Grünes Licht**: Erlaubt dem Verkehr, in die angezeigte Richtung zu fahren.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -50,8 +49,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -59,7 +58,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB-Kabel
         - 1
         - 
     *   - 3
@@ -68,7 +67,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -88,39 +87,39 @@ You can also buy them separately from the links below.
         - |link_led_buy|
 
 
-**Understanding the Components**
+**Verständnis der Komponenten**
 
-* **LEDs**: Represent the traffic lights. We'll control them to simulate the standard traffic light sequence.
-* **4-Digit 7-Segment Display**: Shows the countdown timer for each light.
-* **74HC595 Shift Register**: Allow us to control multiple outputs (segments and digits of the display) using fewer GPIO pins on the Pico.
+* **LEDs**: Repräsentieren die Ampeln. Wir steuern sie, um die standardmäßige Ampelsequenz zu simulieren.
+* **4-stelliges 7-Segment-Display**: Zeigt den Countdown-Timer für jedes Licht an.
+* **74HC595 Schieberegister**: Ermöglicht es uns, mehrere Ausgänge (Segmente und Ziffern des Displays) mit weniger GPIO-Pins am Pico zu steuern.
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_traffic_light|
 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
-* The 3 red, yellow and green LEDs are connected to GP7~GP9 respectively.
+* Dieser Schaltkreis basiert auf dem :ref:`py_74hc_4dig` mit der Ergänzung von 3 LEDs.
+* Die 3 roten, gelben und grünen LEDs sind jeweils mit GP7~GP9 verbunden.
 
-**Wiring**
+**Verdrahtung**
 
 
 |wiring_traffic_light| 
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
-We'll write a MicroPython script that:
+Wir schreiben ein MicroPython-Skript, das:
 
-* Controls the traffic light sequence.
-* Displays the countdown timer on the 7-segment display.
-* Uses shift registers to control the display.
+* Die Ampelsequenz steuert.
+* Den Countdown-Timer auf dem 7-Segment-Display anzeigt.
+* Schieberegister verwendet, um das Display zu steuern.
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die Datei ``7.6_traffic_light.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
 
@@ -234,60 +233,60 @@ We'll write a MicroPython script that:
         print("Program stopped.")
 
 
-When the code runs, the green LED will light up first, and the display will show a countdown from 30.
-After 30 seconds, the yellow LED will light up, and the display will count down from 5.
-Then, the red LED will light up, and the display will count down from 30.
-The cycle repeats indefinitely.
+Wenn der Code ausgeführt wird, leuchtet zuerst die grüne LED auf, und das Display zeigt einen Countdown von 30 an.
+Nach 30 Sekunden leuchtet die gelbe LED auf, und das Display zählt von 5 herunter.
+Dann leuchtet die rote LED auf, und das Display zählt von 30 herunter.
+Der Zyklus wiederholt sich unendlich.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Imports and Initialization:
+#. Imports und Initialisierung:
 
-   * ``machine``: Provides access to hardware-related functions.
-   * ``utime``: Offers time-related functions.
-   * ``Timer``: Used for creating hardware timers.
+   * ``machine``: Bietet Zugang zu hardwarebezogenen Funktionen.
+   * ``utime``: Bietet zeitbezogene Funktionen.
+   * ``Timer``: Wird verwendet, um Hardware-Timer zu erstellen.
 
-#. LED Initialization:
+#. LED-Initialisierung:
 
-   Defines GPIO pins for the red, yellow, and green LEDs. Initializes each pin as an output.
+   Definiert GPIO-Pins für die roten, gelben und grünen LEDs. Initialisiert jeden Pin als Ausgang.
 
    .. code-block:: python
 
-        led_pins = [7, 8, 9]  # Green, Yellow, Red LEDs connected to GP7, GP8, GP9
+        led_pins = [7, 8, 9]  # Grüne, gelbe, rote LEDs verbunden mit GP7, GP8, GP9
         leds = [machine.Pin(pin, machine.Pin.OUT) for pin in led_pins]
 
-#. Traffic Light Timings:
+#. Ampelzeiten:
 
-   Specifies the duration (in seconds) for each traffic light state.
+   Gibt die Dauer (in Sekunden) für jeden Ampelzustand an.
 
    .. code-block:: python
 
-        light_time = [30, 5, 30]  # [Green, Yellow, Red]
+        light_time = [30, 5, 30]  # [Grün, Gelb, Rot]
 
-#. Display Functions:
+#. Anzeigefunktionen:
 
-   * ``display_digit(digit)``: Activates a specific digit on the display.
-   * ``shift_out(data)``: Sends data to the shift register.
-   * ``display_number(num)``: Breaks down the number into digits and displays them using multiplexing.
+   * ``display_digit(digit)``: Aktiviert eine spezifische Ziffer auf der Anzeige.
+   * ``shift_out(data)``: Sendet Daten an das Schieberegister.
+   * ``display_number(num)``: Zerlegt die Zahl in Ziffern und zeigt sie durch Multiplexing an.
 
-#. ``update_leds(state)`` Function:
+#. ``update_leds(state)`` Funktion:
 
-   * Updates the LED states based on the current traffic light state.
-   * Turns off all LEDs and then turns on the LED corresponding to the current state.
+   * Aktualisiert den Zustand der LEDs basierend auf dem aktuellen Ampelzustand.
+   * Schaltet alle LEDs aus und dann die LED ein, die dem aktuellen Zustand entspricht.
 
    .. code-block:: python
 
         def update_leds(state):
-            # States: 0 = Green, 1 = Yellow, 2 = Red
-            for i in range(3):
+            # Zustände: 0 = Grün, 1 = Gelb, 2 = Rot
+            for i in range 3:
                 leds[i].value(0)
             leds[state].value(1)
 
-#. ``timer_callback(t)`` Function:
+#. ``timer_callback(t)`` Funktion:
 
-   * Timer interrupt callback function.
-   * Decrements the counter every second.
-   * When the counter reaches zero, it cycles to the next traffic light state and resets the counter.
+   * Timer-Interrupt-Rückruffunktion.
+   * Verringert den Zähler jede Sekunde.
+   * Wenn der Zähler null erreicht, wechselt er zum nächsten Ampelzustand und setzt den Zähler zurück.
 
    .. code-block:: python
 
@@ -295,33 +294,33 @@ The cycle repeats indefinitely.
             global counter, current_state
             counter -= 1
             if counter <= 0:
-                current_state = (current_state + 1) % 3  # Cycle through the states
-                counter = light_time[current_state]  # Reset counter for the new state
+                current_state = (current_state + 1) % 3  # Durchlaufe die Zustände
+                counter = light_time[current_state]  # Setze Zähler für den neuen Zustand zurück
                 update_leds(current_state)
 
-#. Main Execution:
+#. Hauptausführung:
 
-   * Initial Variables: Sets the initial state to green and initializes the counter.
+   * Anfangsvariablen: Setzt den Anfangszustand auf grün und initialisiert den Zähler.
 
      .. code-block:: python
 
-        counter = light_time[0]  # Start with green light duration
-        current_state = 0  # 0 = Green, 1 = Yellow, 2 = Red
+        counter = light_time[0]  # Beginne mit grüner Lichtdauer
+        current_state = 0  # 0 = Grün, 1 = Gelb, 2 = Rot
    
-   * Initialize the Timer: Creates a periodic timer that triggers every 1000 milliseconds (1 second) and calls timer_callback.
+   * Timer initialisieren: Erstellt einen periodischen Timer, der alle 1000 Millisekunden (1 Sekunde) auslöst und timer_callback aufruft.
 
 
      .. code-block:: python
 
         timer = Timer(period=1000, mode=Timer.PERIODIC, callback=timer_callback)
    
-   * Set Initial LED State: Ensures the correct LED is lit at the start.
+   * Setze den anfänglichen LED-Zustand: Stellt sicher, dass die richtige LED zu Beginn leuchtet.
 
      .. code-block:: python
 
         update_leds(current_state)
 
-   * Main Loop: Enters an infinite loop displaying the countdown timer. Handles a keyboard interrupt (e.g., Ctrl+C) to safely deinitialize the timer and exit.
+   * Hauptschleife: Betritt eine Endlosschleife, die den Countdown-Timer anzeigt. Behandelt eine Tastaturunterbrechung (z. B. Ctrl+C), um den Timer sicher zu deinitialisieren und zu beenden.
 
 
      .. code-block:: python
@@ -333,26 +332,28 @@ The cycle repeats indefinitely.
             timer.deinit()
             print("Program stopped.")
 
-**Experimenting Further**
 
-* Adjust Timing:
 
-  Change the ``light_time`` list to adjust the durations for each light.
+**Weiteres Experimentieren**
 
-* Add Pedestrian Crossing:
+* Zeit anpassen:
 
-  Implement buttons and additional LEDs to simulate pedestrian crossing signals.
+  Ändere die Liste ``light_time``, um die Dauer für jedes Licht anzupassen.
 
-* Improve Display:
+* Fußgängerüberweg hinzufügen:
 
-  Modify the code to add features like blinking the LED when time is almost up.
+  Implementiere Knöpfe und zusätzliche LEDs, um Fußgängerampelsignale zu simulieren.
 
-* Simulate Real Traffic Lights:
+* Anzeige verbessern:
 
-  Add more complex sequences, such as left-turn signals or multiple intersections.
+  Modifiziere den Code, um Funktionen wie das Blinken der LED hinzuzufügen, wenn die Zeit fast abgelaufen ist.
 
-**Conclusion**
+* Echte Ampeln simulieren:
 
-You've successfully built a Traffic Light Controller using the Raspberry Pi Pico 2 W! This project demonstrates how microcontrollers can be used to control hardware components like LEDs and displays, and how timers and interrupts can create real-time applications.
+  Füge komplexere Sequenzen hinzu, wie Linksabbiegersignale oder mehrere Kreuzungen.
 
-Feel free to expand upon this project, adding new features or integrating it into a larger system.
+**Fazit**
+
+Du hast erfolgreich ein Ampelsteuergerät mit dem Raspberry Pi Pico 2 W gebaut! Dieses Projekt zeigt, wie Mikrocontroller verwendet werden können, um Hardwarekomponenten wie LEDs und Anzeigen zu steuern, und wie Timer und Interrupts Echtzeitanwendungen erstellen können.
+
+Fühle dich frei, dieses Projekt zu erweitern, indem du neue Funktionen hinzufügst oder es in ein größeres System integrierst.

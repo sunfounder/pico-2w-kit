@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Vorab-Einblicken.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
-Indentation
+Einrückung
 =============
 
-Indentation refers to the spaces at the beginning of a code line.
-Like standard Python programs, MicroPython programs usually run from top to bottom:
-It traverses each line in turn, runs it in the interpreter, and then continues to the next line,
-Just like you type them line by line in the Shell.
-A program that just browses the instruction list line by line is not very smart, though – so MicroPython, just like Python, has its own method to control the sequence of its program execution: indentation.
+Einrückung bezieht sich auf Leerzeichen am Anfang einer Codezeile.  
+Wie bei Standard-Python-Programmen wird auch MicroPython-Code normalerweise von oben nach unten ausgeführt:  
+Der Interpreter durchläuft Zeile für Zeile, führt sie aus und fährt dann mit der nächsten fort –  
+genauso, wie man sie Zeile für Zeile im Shell-Terminal eingibt.  
+Ein Programm, das die Befehle nur der Reihe nach abarbeitet, ist allerdings nicht sehr intelligent – daher bietet MicroPython, wie auch Python, eine eigene Methode zur Steuerung des Programmflusses: die Einrückung.
 
-You must put at least one space before print(), otherwise an error message "Invalid syntax" will appear. It is usually recommended to standardise spaces by pressing the Tab key uniformly.
-
-
+Vor print() muss mindestens ein Leerzeichen stehen, sonst erscheint eine Fehlermeldung wie „Invalid syntax“.  
+Es wird empfohlen, die Einrückung einheitlich mit der Tabulatortaste oder vier Leerzeichen vorzunehmen.
 
 .. code-block:: python
 
@@ -35,8 +34,8 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 
-You must use the same number of spaces in the same block of code, or Python will give you an error.
-
+Du musst innerhalb eines Codeblocks dieselbe Anzahl an Leerzeichen verwenden,  
+sonst gibt Python einen Fehler aus.
 
 .. code-block:: python
 

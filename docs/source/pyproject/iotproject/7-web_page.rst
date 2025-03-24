@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 ein mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung deiner Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und Einblicke.
+    - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bist du bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
 .. _py_iot_web_server:
 
-8.7 Setup a Web Server
+8.7 Einrichtung eines Web-Servers
 ====================================
 
 
-In this article, you will learn how to make Pico 2 W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
+In diesem Artikel lernst du, wie du den Pico 2 W als Webserver einrichten kannst, der es dir ermöglicht, die Schaltung zu bedienen und Sensorablesungen über einen Browser zu erhalten.
 
 |setup_web|
 
-**1. Required Components**
+**1. Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
@@ -39,7 +39,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -88,55 +88,55 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Den Schaltkreis aufbauen**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Stelle sicher, dass dein Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist. Andernfalls könnte ein Kurzschluss deine Batterie und die Schaltung beschädigen.
 
 .. image:: img/wiring/7.web_page_bb.png
     :width: 800
 
 
-**3. Run the Code**
+**3. Führe den Code aus**
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, if not please refer to :ref:`py_iot_access` to create them.
+        Bevor du den Code ausführst, musst du sicherstellen, dass du die Skripte „do_connect.py“ und „secrets.py“ auf deinem Pico 2 W hast. Falls nicht, siehe :ref:`py_iot_access`, um sie zu erstellen.
 
-#. Open the ``7_web_page.py`` file under the path of ``pico-2w-kit-main/micropython/iot``.
-#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
+#. Öffne die Datei „7_web_page.py“ unter dem Pfad „pico-2w-kit-main/micropython/iot“.
+#. Klicke auf den Knopf **Run current script** oder drücke F5, um es auszuführen. Nach erfolgreicher Verbindung siehst du die IP des Pico 2 W.
 
     .. image:: img/7_web_server.png
 
-#. Enter the IP address of the Pico 2 W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
+#. Gib die IP-Adresse des Pico 2 W in deinen Browser ein, um auf die für dieses Projekt erstellte Webseite zuzugreifen. Klicke auf einen beliebigen Button, um die Farbe der RGB-LEDs zu ändern und die Temperatur und Feuchtigkeit zu aktualisieren.
 
     .. image:: img/web-1.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. Wenn du möchtest, dass dieses Skript beim Booten ausgeführt wird, kannst du es als „main.py“ auf dem Raspberry Pi Pico 2 W speichern.
 
-**How it works?**
+**Wie funktioniert es?**
 
-This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
+Dieses Projekt benötigt eine Netzwerkverbindung. Verwende die Methode :ref:`py_iot_access`, um dich mit dem Netzwerk zu verbinden. 
 
 .. code-block:: python
 
     from secrets import *
     from do_connect import *
     
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : Dies importiert die Funktion `do_connect()`, die die Logik zum Verbinden mit Wi-Fi mithilfe des `network`-Moduls enthält. Sobald die Funktion `do_connect()` aufgerufen wird, stellt sie eine Verbindung zum in `secrets.py` angegebenen Wi-Fi-Netzwerk her. Scheitert die Verbindung, wird eine Ausnahme ausgelöst; ist sie erfolgreich, geht es mit dem nächsten Schritt weiter.
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets include * : Die Datei `secrets.py` ist normalerweise eine separate Datei, die dazu dient, dein Wi-Fi SSID, Passwort und andere sensible Informationen (wie API-Schlüssel) zu speichern. Dies hilft, sensible Informationen nicht direkt in der Hauptcode-Datei einzubetten. 
 
-The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
-A socket is the way a server can listen for a client that wants to connect to it. 
+Die Webseite, die du besuchst, wird tatsächlich auf einem Server gehostet, und der Socket auf dem Server sendet die Webseite an uns, wenn wir sie besuchen.
+Ein Socket ist die Art und Weise, wie ein Server auf einen Client hören kann, der sich mit ihm verbinden möchte. 
 
-In this project, Pico 2 W is your server, and your computer is accessing the web page hosted on Pico 2 W through a browser.
+In diesem Projekt ist Pico 2 W dein Server, und dein Computer greift über einen Browser auf die auf Pico 2 W gehostete Webseite zu.
 
-First we create a socket, which requires an IP address and a |link_port|.
-The network connection and the way to get the IP are described in :ref:`py_iot_access`. And for port, we use 80.
-After setting up the socket, return it and use it for the next step.
+Zuerst erstellen wir einen Socket, der eine IP-Adresse und einen |link_port| benötigt.
+Die Netzwerkverbindung und die Art, die IP zu erhalten, sind in :ref:`py_iot_access` beschrieben. Für den Port verwenden wir 80.
+Nachdem der Socket eingerichtet wurde, geben wir ihn zurück und verwenden ihn für den nächsten Schritt.
 
 `socket library - Python Docs <https://docs.python.org/3/library/socket.html>`_ 
 
@@ -145,7 +145,7 @@ After setting up the socket, return it and use it for the next step.
     import socket
 
     def open_socket(ip):
-        # Open a socket
+        # Einen Socket öffnen
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -153,8 +153,8 @@ After setting up the socket, return it and use it for the next step.
         print(connection)
         return(connection)
 
-Then, set up your web service where the socket you set up earlier will be used.
-The following code will allow your Pico 2 W to receive access requests from your browser.
+Danach richten wir Ihren Webservice ein, bei dem der zuvor eingerichtete Socket verwendet wird.
+Der folgende Code ermöglicht es deinem Pico 2 W, Zugriffsanfragen von deinem Browser zu empfangen.
 
 .. code-block:: python
 
@@ -164,10 +164,10 @@ The following code will allow your Pico 2 W to receive access requests from your
             request = client.recv(1024)
             client.close()
 
-Next, you need an html page to send to the visitor. This example stores a simple html page in the form of characters in the variable ``html``.
+Als Nächstes benötigst du eine HTML-Seite, um sie dem Besucher zu senden. Dieses Beispiel speichert eine einfache HTML-Seite in Form von Zeichen in der Variablen „html“.
 
 .. note:: 
-    If you want to be able to write your own html, you can get help at |link_html|.
+    Wenn du deine eigene HTML schreiben möchtest, kannst du Hilfe bei |link_html| erhalten.
 
 .. code-block:: python
 
@@ -194,7 +194,7 @@ Next, you need an html page to send to the visitor. This example stores a simple
                 """
         return html
 
-Send html page to visitor.
+Sende die HTML-Seite an den Besucher.
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -208,7 +208,7 @@ Send html page to visitor.
             client.close()
 
 
-The page can be accessed through your browser if you combine the above parts. If you want to see the effect, run the code below with thonny.
+Die Seite kann über deinen Browser aufgerufen werden, wenn du die obigen Teile kombinierst. Wenn du den Effekt sehen möchtest, führe den unten stehenden Code mit Thonny aus.
 
 .. code-block:: python
 
@@ -242,7 +242,7 @@ The page can be accessed through your browser if you combine the above parts. If
         return html
 
     def open_socket(ip):
-        # Open a socket
+        # Einen Socket öffnen
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -268,10 +268,11 @@ The page can be accessed through your browser if you combine the above parts. If
 
 
 
-When you run the code above, you will see that it displays only a web page, does not allow you to control RGB LEDs, nor does it show sensor readings.
-The web service needs to be refined further.
 
-The first thing we need to know is what information the server receives when the browser accesses the web page. Therefore, change ``serve()`` slightly to print ``request``.
+Wenn du den obigen Code ausführst, wirst du sehen, dass nur eine Webseite angezeigt wird, die es dir nicht ermöglicht, RGB-LEDs zu steuern oder Sensorenablesungen anzuzeigen.
+Der Webservice muss weiter verfeinert werden.
+
+Das Erste, was wir wissen müssen, ist, welche Informationen der Server erhält, wenn der Browser die Webseite aufruft. Ändere daher „serve()“ leicht ab, um „request“ zu drucken.
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -286,7 +287,7 @@ The first thing we need to know is what information the server receives when the
             client.send(html)
             client.close()
 
-Re-run the script and the Shell will print the following message when we press a key on the web page.
+Führe das Skript erneut aus und die Shell wird folgende Nachricht drucken, wenn wir auf der Webseite eine Taste drücken.
 
 .. code-block:: 
 
@@ -295,10 +296,10 @@ Re-run the script and the Shell will print the following message when we press a
     b'GET /blue? HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
     b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
 
-They are too long to read!!! 
+Sie sind zu lang, um sie zu lesen!!!
 
-But all we really need is the small piece of information in front of ``/red?``, ``/blue?``.
-It tells us which button was pressed. So we refined ``serve()`` a bit to extract the keystroke information.
+Aber alles, was wir wirklich brauchen, ist das kleine Stück Information vor ``/red?``, ``/blue?``.
+Es sagt uns, welche Taste gedrückt wurde. Also verfeinerten wir ``serve()`` ein wenig, um die Tasteninformationen zu extrahieren.
 
 .. code-block:: python
     :emphasize-lines: 6,7,8,9
@@ -317,7 +318,7 @@ It tells us which button was pressed. So we refined ``serve()`` a bit to extract
             client.send(html)
             client.close()
 
-Re-run the program and the Shell will print the following message when we press a key on the web page.
+Führe das Programm erneut aus und die Shell wird folgende Nachricht drucken, wenn wir auf der Webseite eine Taste drücken.
 
 .. code-block:: 
 
@@ -328,7 +329,7 @@ Re-run the program and the Shell will print the following message when we press 
     /off?
     /favicon.ico
 
-Then, we just need to change the color of the RGB LED according to the value of ``request``.
+Dann müssen wir nur noch die Farbe der RGB-LED entsprechend dem Wert von ``request`` ändern.
 
 .. code-block:: python
 
@@ -365,9 +366,9 @@ Then, we just need to change the color of the RGB LED according to the value of 
             client.send(html)
             client.close()
 
-The last thing is to display the thermistor value on the web page (see :ref:`py_temp` for details on using the thermistor).
-This part is actually done by modifying the text on the html.
-We set the parameters in the ``webpage(value)`` function and simply change the incoming parameters to change the number displayed on the web page.
+Das Letzte ist, den Wert des Thermistors auf der Webseite anzuzeigen (siehe :ref:`py_temp` für Details zur Verwendung des Thermistors).
+Dieser Teil wird eigentlich durch die Änderung des Textes auf der HTML-Seite durchgeführt.
+Wir setzen die Parameter in der Funktion ``webpage(value)`` und ändern einfach die eingehenden Parameter, um die angezeigte Zahl auf der Webseite zu ändern.
 
 .. code-block:: python
     :emphasize-lines: 30,31

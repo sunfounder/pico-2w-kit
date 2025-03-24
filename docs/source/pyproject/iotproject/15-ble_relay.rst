@@ -1,47 +1,47 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Tüftler*innen noch tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Erhalte Unterstützung bei Problemen nach dem Kauf sowie bei technischen Herausforderungen – durch unser Team und unsere Community.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Einblicke**: Erhalte frühzeitige Informationen zu neuen Produktankündigungen und einen Blick hinter die Kulissen.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen & Gewinnspiele**: Nimm an spannenden Aktionen und Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und sei dabei!
 
 .. _py_iot_ble_relay:
 
-8.15 Bluetooth Voice-control Relay
+8.15 Bluetooth-Sprachgesteuertes Relais
 ==========================================
 
-This project demonstrates the use of a Raspberry Pi Pico 2 W to control a relay through Bluetooth Low Energy (BLE). The Pico W receives BLE commands from a smartphone or other BLE-capable device. When it receives a "1" signal, the relay is switched on, and when it receives a "0" signal, the relay is switched off.
+In diesem Projekt zeigen wir, wie ein Relais mithilfe eines Raspberry Pi Pico 2 W über Bluetooth Low Energy (BLE) gesteuert werden kann. Der Pico W empfängt BLE-Befehle von einem Smartphone oder einem anderen BLE-fähigen Gerät. Wenn er ein „1“-Signal empfängt, wird das Relais eingeschaltet – bei einem „0“-Signal wieder ausgeschaltet.
 
-This project is ideal for those exploring BLE communication and IoT applications with the Raspberry Pi Pico 2 W.
+Das Projekt eignet sich perfekt für alle, die die BLE-Kommunikation und IoT-Anwendungen mit dem Raspberry Pi Pico 2 W kennenlernen möchten.
 
-1. Build the Circuit
+1. Schaltung aufbauen
 +++++++++++++++++++++++++++++++++
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein vollständiges Set ist sehr praktisch – hier der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE KOMPONENTEN
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Die Komponenten können alternativ auch einzeln gekauft werden:
 
 
 .. list-table::
@@ -49,8 +49,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -58,7 +58,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -67,11 +67,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_diode`
@@ -79,7 +79,7 @@ You can also buy them separately from the links below.
         - 
     *   - 7
         - :ref:`cpn_resistor`
-        - 1(1KΩ) 1(220Ω)
+        - 1 (1KΩ), 1 (220Ω)
         - |link_resistor_buy|
     *   - 8
         - :ref:`cpn_relay`
@@ -90,14 +90,14 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 10
-        - 18650 Battery
+        - 18650-Akku
         - 1
         - 
-  
-.. warning ::
 
-   This example demonstrates how to use a relay to control an LED. While the relay can connect to other appliances in practical applications, exercise extreme caution when working with high AC voltage. Improper or incorrect use may result in serious injury or death. Always prioritize safety.
-   
+.. warning::
+
+   In diesem Beispiel wird gezeigt, wie ein Relais zur Steuerung einer LED verwendet wird. Auch wenn das Relais in der Praxis andere Geräte schalten kann, ist beim Umgang mit Netzspannung äußerste Vorsicht geboten! Unsachgemäßer Einsatz kann zu schweren Verletzungen oder Tod führen. Sicherheit steht immer an erster Stelle!
+
 .. image:: img/wiring/8.15_bb.png
    :width: 90%
 
@@ -105,62 +105,62 @@ You can also buy them separately from the links below.
 
    <br/>
 
-1. Create the Android App
+2. Android-App erstellen
 +++++++++++++++++++++++++++++++++
 
-You will develop the Android application using |link_appinventor|, a free web application ideal for beginners in Android development. It offers intuitive drag-and-drop features for creating functional applications.
+Die Android-App wird mit |link_appinventor| entwickelt – einer kostenlosen Webanwendung, die ideal für Einsteiger ist. Sie bietet eine intuitive Drag-and-Drop-Oberfläche zur App-Erstellung.
 
-Follow these steps to get started:
+So startest du:
 
-#. Go to |link_appinventor_login|, and click "online tool" to login. You will need a Google account to register with MIT App Inventor.
+#. Gehe zu |link_appinventor_login| und klicke auf „Online-Tool“, um dich anzumelden. Du benötigst ein Google-Konto zur Registrierung bei MIT App Inventor.
 
    .. image:: img/13-ai-signup.png
        :width: 90%
        :align: center
 
-#. After logging in, navigate to **Projects** -> **Import project (.aia) from my computer**. Subsequently, upload the ``ble_relay_picow.aia`` file located in the following path: ``pico-2w-kit/micropython/iot/8.15-ble_relay``.
+#. Nach der Anmeldung navigierst du zu **Projekte** → **Projekt (.aia) von meinem Computer importieren**. Lade dort die Datei ``ble_relay_picow.aia`` hoch, die du unter ``pico-2w-kit/micropython/iot/8.15-ble_relay`` findest.
 
-   Alternatively, you can download the file directly: :download:`ble_relay_picow.aia</_static/other/ble_relay_picow.aia>`
+   Alternativ kannst du die Datei direkt hier herunterladen: :download:`ble_relay_picow.aia</_static/other/ble_relay_picow.aia>`
 
    .. image:: img/13-ai-import.png
         :align: center
 
-#. Once uploaded, the app template will appear in the MIT App Inventor interface. This pre-configured template can be customized after you become familiar with the platform.
+#. Nach dem Upload erscheint die App-Vorlage in der Oberfläche. Du kannst sie nach Belieben anpassen, sobald du dich mit der Plattform vertraut gemacht hast.
 
-#. MIT App Inventor has two main sections: **Designer** and **Blocks**. You can switch between these two sections in the upper right corner of the page.
+#. MIT App Inventor hat zwei Hauptbereiche: **Designer** und **Blocks**. Oben rechts kannst du zwischen ihnen umschalten.
 
    .. image:: img/13-ai-intro-1.png
 
-#. The **Designer** allows you to add buttons, text, screens, and modify the overall aesthetic of your app.
+#. Im **Designer** kannst du Schaltflächen, Texte und Layouts hinzufügen und das Design deiner App gestalten.
 
    .. image:: img/15-ai-intro-2.png
       :width: 100%
-   
-#. Next, there's the **Blocks** section. This section lets you craft custom functionalities for your app, allowing you to program each component on the app's GUI to achieve desired features.
+
+#. Im **Blocks**-Bereich programmierst du das Verhalten der App – per Drag-and-Drop der Logikblöcke.
 
    .. image:: img/15-ai-intro-3.png
       :width: 100%
 
-#. To install the app on a phone, navigate to the **Build** tab.
+#. Um die App auf dem Smartphone zu installieren, gehe auf den Reiter **Build**.
 
    .. image:: img/13-ai-intro-4.png
       :width: 60%
       :align: center
 
-   * Generate a ``.apk`` file. After selecting this option, a page will appear allowing you to choose between downloading a ``.apk`` file or scanning a QR code for installation. Follow the installation guide to complete the application installation. 
+   * Erstelle eine ``.apk``-Datei. Danach kannst du sie entweder herunterladen oder per QR-Code auf dem Smartphone installieren. Folge dem Installationsassistenten.
 
-     Alternatively, download our pre-compiled APK file here: :download:`ble_relay_picow.apk</_static/other/ble_relay_picow.apk>`
+     Alternativ kannst du die vorgefertigte APK-Datei hier herunterladen: :download:`ble_relay_picow.apk</_static/other/ble_relay_picow.apk>`
 
-   * If you wish to publish this app to Google Play or another app marketplace, you can generate a ``.aab`` file.
+   * Wenn du die App z. B. im Play Store veröffentlichen möchtest, kannst du auch eine ``.aab``-Datei generieren.
 
 
-3. Run the Code
+3. Code ausführen
 +++++++++++++++++++++++++++++++++
 
-Open the ``8.15-ble_relay.py`` file under the path of ``pico-2w-kit/micropython/iot/8.15-ble_relay``, or copy this code into your IDE.
-   
+Öffne die Datei ``8.15-ble_relay.py`` im Verzeichnis ``pico-2w-kit/micropython/iot/8.15-ble_relay`` oder kopiere den Code in deine IDE.
+
 .. note:: 
-   This code depends on the ``ble_advertising.py`` file. Make sure to upload it to the Pico board before running the script.
+   Dieser Code benötigt zusätzlich die Datei ``ble_advertising.py``. Achte darauf, sie vor dem Start auf den Pico hochzuladen.
 
 .. code-block:: python
 
@@ -265,42 +265,42 @@ Open the ``8.15-ble_relay.py`` file under the path of ``pico-2w-kit/micropython/
    
    if __name__ == "__main__":
        demo()
-   
 
-4. App and Bluetooth Connection
+
+4. App- und Bluetooth-Verbindung
 ++++++++++++++++++++++++++++++++++++++++++
 
-Ensure that the "Voice-Controlled Relay BLE" app created earlier is installed on your phone.
+Stelle sicher, dass die App **Voice-Controlled Relay BLE** installiert ist.
 
-#. Enable Bluetooth on your phone.
+#. Aktiviere Bluetooth auf deinem Smartphone.
 
-#. Open the **Voice-Controlled Relay BLE** app.
+#. Öffne die App **Voice-Controlled Relay BLE**.
 
    .. image:: img/15_app_2.png
       :width: 25%
       :align: center
 
-#. When you open the app for the first time, you will see two consecutive prompts requesting permissions. These permissions are required for Bluetooth functionality.
+#. Beim ersten Öffnen erscheinen zwei aufeinanderfolgende Berechtigungsabfragen – diese sind für die Bluetooth-Funktion notwendig.
 
    .. image:: img/15_app_3.png
       :width: 100%
       :align: center
 
-#. In the APP, click on **Connect** button to establish a connection between the APP and Pico 2 W via bluetooth.
+#. Tippe in der App auf **Connect**, um eine Verbindung zum Pico 2 W herzustellen.
 
    .. image:: img/15_app_4.png
       :width: 55%
       :align: center
 
-#. This page displays a list of all Bluetooth devices. Choose the ``xx.xx.xx.xx.xx.xx pico2w`` option from the list. Each device name is displayed alongside its MAC address.
+#. Es erscheint eine Liste aller verfügbaren Bluetooth-Geräte. Wähle dort ``xx.xx.xx.xx.xx.xx pico2w`` aus – jedes Gerät wird mit seiner MAC-Adresse angezeigt.
 
    .. image:: img/13_app_5.png
       :width: 60%
       :align: center
 
-#. If no devices appear in the list, try enabling the location feature on your phone. (On some Android versions, the location setting is linked to Bluetooth functionality.)
+#. Falls keine Geräte erscheinen, aktiviere die Standortfunktion auf deinem Smartphone (bei manchen Android-Versionen ist Bluetooth damit verknüpft).
 
-#. Once connected, you will be redirected to the main screen. Tap the microphone icon to control the relay using voice commands. If your voice command contains "on," the relay will activate. If it contains "off," the relay will deactivate.
+#. Nach erfolgreicher Verbindung gelangst du zurück zur Hauptseite. Tippe dort auf das Mikrofon-Symbol, um das Relais per Sprachbefehl zu steuern. Bei „on“ schaltet sich das Relais ein, bei „off“ aus.
 
    .. image:: img/15_app_7.png
       :width: 80%

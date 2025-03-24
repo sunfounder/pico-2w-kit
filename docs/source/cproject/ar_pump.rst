@@ -1,63 +1,63 @@
-.. note::
+.. note:: 
+   
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_pump:
 
-3.6 Controlling a Water Pump
-=============================
+3.6 Eine Wasserpumpe steuern
+================================
 
-In this lesson, we'll learn how to control a **small water pump** using the Raspberry Pi Pico 2 W and an **TA6586 motor driver**. A small centrifugal pump can be used for projects like automatic plant watering systems or creating miniature water features. Controlling the pump is similar to controlling a DC motor, as it uses the same principles.
+In dieser Lektion lernen wir, wie man eine **kleine Wasserpumpe** mit dem Raspberry Pi Pico 2 W und einem **TA6586 Motortreiber** steuert. Eine kleine Zentrifugalpumpe kann für Projekte wie automatische Bewässerungssysteme für Pflanzen oder die Erstellung von Miniaturwassermerkmalen verwendet werden. Die Steuerung der Pumpe ähnelt der Steuerung eines Gleichstrommotors, da dieselben Prinzipien verwendet werden.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTEN-EINFÜHRUNG	
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -77,7 +77,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650 Batterie
         - 1
         -  
     *   - 8
@@ -86,17 +86,17 @@ You can also buy them separately from the links below.
         -  
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_pump|
 
 
-**Wiring**
+**Verdrahtung**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    * Da die Pumpe einen hohen Strom benötigt, verwenden wir hier aus Sicherheitsgründen ein Li-po-Ladegerät, um den Motor zu betreiben.
+    * Stellen Sie sicher, dass Ihr Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist, da sonst ein Kurzschluss Ihre Batterie und Schaltung beschädigen könnte.
 
 
 |wiring_pump|
@@ -105,74 +105,73 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.6_pumping.ino`` under the path of ``pico-2w-kit-main/arduino/3.6_pumping``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``3.6_pumping.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/3.6_pumping`` öffnen. 
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Knopf klicken.
 
     
 .. code-block:: Arduino
 
-    const int motor1A = 14; // Motor control pin 1
-    const int motor2A = 15; // Motor control pin 2
+    const int motor1A = 14; // Motorsteuerungspin 1
+    const int motor2A = 15; // Motorsteuerungspin 2
 
     void setup() {
-      // Set motor control pins as OUTPUT
-      pinMode(motor1A, OUTPUT); // Configure motor1A as an output pin
-      pinMode(motor2A, OUTPUT); // Configure motor2A as an output pin
+      // Motorsteuerungspins als OUTPUT festlegen
+      pinMode(motor1A, OUTPUT); // Konfigurieren von motor1A als Ausgangspin
+      pinMode(motor2A, OUTPUT); // Konfigurieren von motor2A als Ausgangspin
     }
 
     void loop() {
-      // Rotate the motor in a clockwise direction
-      digitalWrite(motor1A, HIGH); // Set motor1A to HIGH (activates one side of the motor)
-      digitalWrite(motor2A, LOW);  // Set motor2A to LOW (deactivates the opposite side of the motor)
+      // Den Motor in Uhrzeigersinn drehen
+      digitalWrite(motor1A, HIGH); // Setze motor1A auf HIGH (aktiviert eine Seite des Motors)
+      digitalWrite(motor2A, LOW);  // Setze motor2A auf LOW (deaktiviert die gegenüberliegende Seite des Motors)
     }
 
 
 
 
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
-* This cycle repeats indefinitely.
-* If water doesn't flow initially, make sure the pump is submerged, and there are no air bubbles in the tubing.
+Nach dem Start des Codes beginnt die Pumpe zu arbeiten und Sie werden gleichzeitig Wasser aus dem Schlauch fließen sehen.
+* Dieser Zyklus wiederholt sich unendlich.
+* Wenn zunächst kein Wasser fließt, stellen Sie sicher, dass die Pumpe untergetaucht ist und sich keine Luftblasen im Schlauch befinden.
 
 
-**Safety Precautions**
+**Sicherheitsvorkehrungen**
 
-* Water and Electricity:
+* Wasser und Elektrizität:
 
-  * Be extremely careful to keep water away from the Pico and other electronic components.
-  * Ensure all connections are secure and insulated if necessary.
+  * Seien Sie äußerst vorsichtig, Wasser fern von Pico und anderen elektronischen Komponenten zu halten.
+  * Stellen Sie sicher, dass alle Verbindungen sicher und gegebenenfalls isoliert sind.
 
-* Power Supply:
+* Stromversorgung:
 
-  * Use a power supply that matches the pump's voltage requirements (typically 3V-6V).
-  * Do not power the pump directly from the Pico's 3.3V pin.
+  * Verwenden Sie eine Stromquelle, die den Spannungsanforderungen der Pumpe entspricht (typischerweise 3V-6V).
+  * Schließen Sie die Pumpe nicht direkt an den 3.3V-Pin des Pico an.
 
-* Current Draw:
+* Stromverbrauch:
 
-  * Pumps can draw significant current.
-  * Ensure your power source can handle the pump's current requirements.
+  * Pumpen können einen erheblichen Strom ziehen.
+  * Stellen Sie sicher, dass Ihre Stromquelle den Strombedarf der Pumpe bewältigen kann.
 
-* Resetting the Pico:
+* Zurücksetzen des Pico:
 
-  If you encounter issues uploading code after running the pump, you can manually reset the Pico by connecting the RUN pin to GND momentarily.
+  Wenn Sie Probleme beim Hochladen von Code nach dem Betrieb der Pumpe haben, können Sie den Pico manuell zurücksetzen, indem Sie den RUN-Pin kurzzeitig mit GND verbinden.
 
   |wiring_run_reset|
 
-**Further Exploration**
+**Weiterführende Erkundungen**
 
-* Automated Plant Watering:
+* Automatisierte Pflanzenbewässerung:
 
-  Incorporate soil moisture sensors to automate the watering process based on soil dryness.
+  Integrieren Sie Bodenfeuchtigkeitssensoren, um den Bewässerungsprozess basierend auf der Trockenheit des Bodens zu automatisieren.
 
-* PWM Speed Control:
+* PWM-Geschwindigkeitskontrolle:
 
-  Use Pulse Width Modulation (PWM) to control the pump's speed by varying the voltage.
+  Verwenden Sie die Pulsweitenmodulation (PWM), um die Geschwindigkeit der Pumpe durch Veränderung der Spannung zu steuern.
 
-* Timing and Scheduling:
+* Zeitsteuerung und Planung:
 
-  Implement more complex timing using real-time clocks or schedulers.
+  Implementieren Sie komplexere Zeitsteuerungen mit Echtzeituhren oder Planern.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control a small water pump using the Raspberry Pi Pico and the TA6586 motor driver. This technique can be used in various projects like automated plant watering systems, fountains, or hydroponic setups.
-
+In dieser Lektion haben Sie gelernt, wie man eine kleine Wasserpumpe mit dem Raspberry Pi Pico und dem TA6586 Motortreiber steuert. Diese Technik kann in verschiedenen Projekten wie automatisierten Bewässerungssystemen, Brunnen oder Hydrokulturanlagen verwendet werden.

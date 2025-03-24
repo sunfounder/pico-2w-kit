@@ -1,30 +1,30 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 46: Build a 2 Axis Tilt Meter with Display Using the MPU6050
-=============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a two-axis tilt meter:
+Lektion 46: Bau eines 2-Achsen-Neigungsmessers mit Anzeige unter Verwendung des MPU6050
+============================================================================================
+Dieses Tutorial behandelt die Verwendung des MPU6050-Sensors mit dem Raspberry Pi Pico W zum Erstellen eines Zwei-Achsen-Neigungsmessers:
 
-* **Setup**: Connect MPU6050 and OLED 1306 to Raspberry Pi Pico W.
-* **Concept**: Measure tilt using pitch and roll angles, display bubble level on OLED.
-* **Equation**: 
-   - Pitch: \(\arctan\left(\frac{Y}{Z}\right)\)
-   - Roll: \(\arctan\left(\frac{X}{Z}\right)\)
-   - Convert radians to degrees.
-* **Code**: Set up libraries, measure X, Y, Z acceleration, calculate angles, and display on OLED.
-* **Demonstration**: Test tilt, adjust bubble movement for responsiveness.
-* **Advanced**: Stabilize tilt readings to avoid errors from acceleration or vibrations.
+* **Einrichtung**: Verbinden Sie MPU6050 und OLED 1306 mit dem Raspberry Pi Pico W.
+* **Konzept**: Messen der Neigung über Nick- und Rollwinkel, Anzeige der Wasserwaage auf dem OLED.
+* **Gleichungen**: 
+   - Nickwinkel: \(\arctan\left(\frac{Y}{Z}\right)\)
+   - Rollwinkel: \(\arctan\left(\frac{X}{Z}\right)\)
+   - Umrechnung von Radiant in Grad.
+* **Code**: Einrichten von Bibliotheken, Messen der X-, Y-, Z-Beschleunigung, Berechnen der Winkel und Anzeigen auf dem OLED.
+* **Demonstration**: Test der Neigung, Anpassung der Blasenbewegung für Reaktionsfähigkeit.
+* **Fortgeschritten**: Stabilisierung der Neigungsmessungen, um Fehler durch Beschleunigung oder Vibrationen zu vermeiden.
 
 **Video**
 

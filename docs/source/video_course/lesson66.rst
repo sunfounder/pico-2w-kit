@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 66:  Create Your Own Libraries in Micropython
+Lektion 66: Eigene Bibliotheken in MicroPython erstellen
 ===================================================================================
 
-This tutorial covers creating and using a Servo library with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt das Erstellen und Verwenden einer Servo-Bibliothek mit dem Raspberry Pi Pico W:
 
-* **Task Overview**: Control a servo using a custom ``Servo`` class saved as a library.
-* **Key Steps**: Define the ``Servo`` class, initialize the servo with ``__init__``, implement the ``pos`` method, save the class as ``ServoLib.py``, and import it for use in code.
-* **Homework Assignment**: Create a library for another component like an LED for easier future usage.
+* **Aufgabenüberblick**: Steuere einen Servo mit einer benutzerdefinierten ``Servo`` Klasse, die als Bibliothek gespeichert ist.
+* **Wichtige Schritte**: Definiere die ``Servo`` Klasse, initialisiere den Servo mit ``__init__``, implementiere die ``pos`` Methode, speichere die Klasse als ``ServoLib.py``, und importiere sie zur Verwendung im Code.
+* **Hausaufgabe**: Erstelle eine Bibliothek für eine andere Komponente wie eine LED, um deren zukünftige Nutzung zu erleichtern.
 
 **Video**
 

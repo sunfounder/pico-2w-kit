@@ -1,52 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der Community für Raspberry Pi, Arduino und ESP32-Enthusiasten von SunFounder auf Facebook! Vertiefen Sie Ihr Wissen über Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_relay:
 
 
-2.16 Control Another Circuit with a Relay
-==========================================
+2.16 Einen weiteren Stromkreis mit einem Relais steuern
+==========================================================
 
-In this lesson, we will learn how to control another circuit using a **relay** and the Raspberry Pi Pico 2 W. A relay acts like a switch controlled by a low-voltage circuit (like Pico) to operate a high-voltage circuit. For example, you can use a relay to turn on a lamp or any other device, making it possible to automate electrical appliances.
+In dieser Lektion lernen wir, wie man mit einem **Relais** und dem Raspberry Pi Pico 2 W einen anderen Stromkreis steuert. Ein Relais fungiert wie ein Schalter, der durch einen Niederspannungsstromkreis (wie den Pico) einen Hochspannungsstromkreis steuert. Zum Beispiel können Sie ein Relais verwenden, um eine Lampe oder ein anderes Gerät einzuschalten, was die Automatisierung elektrischer Geräte ermöglicht.
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    Das Modifizieren von elektrischen Geräten birgt große Gefahren. Versuchen Sie dies nicht leichtfertig und führen Sie es nur unter Anleitung von Fachleuten durch.
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+Hier verwenden wir nur einen einfachen, durch ein Steckbrett-Stromversorgungsmodul gespeisten Schaltkreis als Beispiel, um zu zeigen, wie man ihn mit einem Relais steuert.
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können diese auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -54,16 +54,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENVORSTELLUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -72,11 +72,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_diode`
@@ -87,21 +87,21 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
-**Circuit Diagram**
+**Schaltplan**
 
 |sch_relay_1|
 
-* Relay Activation:
+* Relaisaktivierung:
 
-  * The relay's coil is energized by the transistor when the Pico outputs a **high signal** (3.3V) to GP15.
-  * The transistor allows current to flow through the relay, activating the switch inside.
-  * The relay makes a "click" sound when switching, indicating the control of the load circuit.
+  * Die Spule des Relais wird durch den Transistor aktiviert, wenn der Pico ein **hohes Signal** (3,3V) an GP15 ausgibt.
+  * Der Transistor ermöglicht den Stromfluss durch das Relais, was den Schalter im Inneren aktiviert.
+  * Das Relais macht ein "Klick"-Geräusch beim Schalten, was die Kontrolle über den Laststromkreis anzeigt.
 
-* Flyback Diode:
+* Freilaufdiode:
 
-  * The diode is placed across the relay coil to protect the transistor from voltage spikes that occur when the relay is turned off.
+  * Die Diode wird über die Relaisspule platziert, um den Transistor vor Spannungsspitzen zu schützen, die auftreten, wenn das Relais abgeschaltet wird.
 
-**Wiring Diagram**
+**Verdrahtungsplan**
 
 |wiring_relay_1|
 
@@ -110,141 +110,140 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.16_relay.ino`` under the path of ``pico-2w-kit-main/arduino/2.16_relay``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``2.16_relay.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/2.16_relay`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Hochladen**-Knopf auszuwählen.
 
 .. code-block:: arduino
 
-   const int relayPin = 15;  // GPIO pin connected to the transistor base
+   const int relayPin = 15;  // GPIO-Pin verbunden mit der Basis des Transistors
 
    void setup() {
      pinMode(relayPin, OUTPUT);
-     digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+     digitalWrite(relayPin, LOW);  // Stellen Sie sicher, dass das Relais beim Start ausgeschaltet ist
    }
 
    void loop() {
-     // Turn the relay on
+     // Schalten Sie das Relais ein
      digitalWrite(relayPin, HIGH);
      Serial.println("Relay ON");
-     delay(2000);  // Wait for 2 seconds
+     delay(2000);  // Warten Sie 2 Sekunden
 
-     // Turn the relay off
+     // Schalten Sie das Relais aus
      digitalWrite(relayPin, LOW);
      Serial.println("Relay OFF");
-     delay(2000);  // Wait for 2 seconds
+     delay(2000);  // Warten Sie 2 Sekunden
    }
 
-After uploading the code, you should hear a "click" sound from the relay every 2 seconds as it switches on and off.
+Nach dem Hochladen des Codes sollten Sie alle 2 Sekunden ein "Klick"-Geräusch vom Relais hören, wenn es ein- und ausschaltet.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Defining the Relay Pin:
+#. Definition des Relais-Pins:
 
-   Assigns ``relayPin`` to GPIO 15, which controls the transistor and thus the relay.
+   Weist ``relayPin`` GPIO 15 zu, der den Transistor und damit das Relais steuert.
 
    .. code-block:: arduino
 
-        const int relayPin = 15;  // GPIO pin connected to the transistor base
+        const int relayPin = 15;  // GPIO-Pin verbunden mit der Basis des Transistors
 
-#. Setting Up the Pin Modes:
+#. Einrichten der Pin-Modi:
 
-   Sets ``relayPin`` as an output. Initializes the relay in the OFF state.
+   Stellt ``relayPin`` als Ausgang ein. Initialisiert das Relais im AUS-Zustand.
 
    .. code-block:: arduino
 
         void setup() {
           pinMode(relayPin, OUTPUT);
-          digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+          digitalWrite(relayPin, LOW);  // Stellen Sie sicher, dass das Relais beim Start ausgeschaltet ist
         }
 
-#. Controlling the Relay:
+#. Steuerung des Relais:
 
-   * Sets ``relayPin`` ``HIGH`` to turn on the transistor, energizing the relay coil.
-   * Waits for 2 seconds.
-   * Sets ``relayPin`` ``LOW`` to turn off the transistor, de-energizing the relay coil.
-   * Waits for another 2 seconds.
-   * Repeats the cycle indefinitely.
+   * Setzt ``relayPin`` auf ``HIGH``, um den Transistor einzuschalten, wodurch die Relaisspule aktiviert wird.
+   * Wartet 2 Sekunden.
+   * Setzt ``relayPin`` auf ``LOW``, um den Transistor auszuschalten, wodurch die Relaisspule deaktiviert wird.
+   * Wartet weitere 2 Sekunden.
+   * Wiederholt den Zyklus unbegrenzt.
 
    .. code-block:: arduino
 
-        // Turn the relay on
+        // Schalten Sie das Relais ein
         digitalWrite(relayPin, HIGH);
-        Serial.println("Relay ON");
-        delay(2000);  // Wait for 2 seconds
+        Serial.println("Relais EIN");
+        delay(2000);  // Warten Sie 2 Sekunden
 
-        // Turn the relay off
+        // Schalten Sie das Relais aus
         digitalWrite(relayPin, LOW);
         Serial.println("Relay OFF");
-        delay(2000);  // Wait for 2 seconds
+        delay(2000);  // Warten Sie 2 Sekunden
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* **Set a Timer**: Modify the code to turn the relay on for 10 minutes and then automatically turn it off.
-* **Control Home Appliances**: With appropriate guidance, you can connect high-voltage devices to the relay for automation tasks such as turning lights or fans on and off.
+* **Stellen Sie einen Timer ein**: Modifizieren Sie den Code, um das Relais 10 Minuten lang einzuschalten und dann automatisch auszuschalten.
+* **Steuerung von Haushaltsgeräten**: Mit angemessener Anleitung können Sie Hochspannungsgeräte an das Relais anschließen, um Automatisierungsaufgaben wie das Ein- und Ausschalten von Lichtern oder Ventilatoren zu übernehmen.
 
-  * The circuit should look like this: To demonstrate controlling an external circuit safely, we'll add an external 5V power supply (through a breadboard power module) to power an LED. This simulates how you could control higher voltage devices (like home appliances) using the relay. Here's how to modify the circuit:
+  * Der Schaltkreis sollte folgendermaßen aussehen: Um zu demonstrieren, wie man einen externen Stromkreis sicher steuert, fügen wir eine externe 5V-Stromquelle (über ein Steckbrett-Stromversorgungsmodul) hinzu, um eine LED zu betreiben. Dies simuliert, wie Sie mit dem Relais höhere Spannungsgeräte (wie Haushaltsgeräte) steuern könnten. So modifizieren Sie den Schaltkreis:
 
     |sch_relay_2|
   
     |wiring_relay_2|
 
-  * Code to Control the Relay:
+* Code zur Steuerung des Relais:
 
     .. code-block:: arduino
     
-       const int relayPin = 15;  // GPIO pin connected to the transistor base
+       const int relayPin = 15;  // GPIO-Pin verbunden mit der Basis des Transistors
 
        void setup() {
          pinMode(relayPin, OUTPUT);
-         digitalWrite(relayPin, LOW);  // Ensure the relay is off at startup
+         digitalWrite(relayPin, LOW);  // Stellen Sie sicher, dass das Relais beim Start ausgeschaltet ist
        }
 
        void loop() {
-         // Turn the relay on
+         // Schalten Sie das Relais ein
          digitalWrite(relayPin, HIGH);
          Serial.println("Relay ON");
-         delay(2000);  // Wait for 2 seconds
+         delay(2000);  // Warten Sie 2 Sekunden
 
-         // Turn the relay off
+         // Schalten Sie das Relais aus
          digitalWrite(relayPin, LOW);
          Serial.println("Relay OFF");
-         delay(2000);  // Wait for 2 seconds
+         delay(2000);  // Warten Sie 2 Sekunden
        }
 
-    When the relay is activated (GP15 outputs high), the Normally Open (NO) and Common (C) pins of the relay connect, allowing the external 5V power to flow through the LED. The LED will light up, simulating how a relay can control an external appliance.
+    Wenn das Relais aktiviert wird (GP15 gibt ein hohes Signal aus), verbinden sich die Normally Open (NO) und Common (C) Pins des Relais, wodurch der externe 5V-Strom durch die LED fließen kann. Die LED leuchtet auf und simuliert, wie ein Relais ein externes Gerät steuern kann.
 
-    When the relay is deactivated (GP15 outputs low), the Normally Open (NO) pin disconnects from the Common (C) pin, cutting off the external power, and the LED turns off.
+    Wenn das Relais deaktiviert wird (GP15 gibt ein niedriges Signal aus), trennt sich der Normally Open (NO) Pin vom Common (C) Pin, was die externe Stromzufuhr unterbricht und die LED ausschaltet.
 
 
-**Safety Considerations for Controlling Real Appliances**
+**Sicherheitsüberlegungen für die Steuerung echter Geräte**
 
-This example uses an LED and a 5V power source to demonstrate relay control. If you are controlling higher voltage devices (like household appliances), ensure:
+Dieses Beispiel verwendet eine LED und eine 5V-Stromquelle, um die Relaissteuerung zu demonstrieren. Wenn Sie höhere Spannungsgeräte (wie Haushaltsgeräte) steuern, stellen Sie sicher:
 
-* **Proper Voltage Rating**: Use a relay rated for the appropriate voltage and current for your appliance.
-* **Isolation**: For safety, ensure proper isolation between the low-voltage control circuit (like the Pico) and the high-voltage appliance circuit.
-* **Fuse Protection**: Consider adding fuses or circuit breakers to protect against short circuits or overloads.
-* **Professional Guidance**: When working with high-voltage circuits, always seek professional guidance to ensure safe operation.
+* **Richtige Spannungsbewertung**: Verwenden Sie ein Relais, das für die angemessene Spannung und Stromstärke Ihres Geräts ausgelegt ist.
+* **Isolierung**: Achten Sie aus Sicherheitsgründen auf eine angemessene Isolierung zwischen dem Niederspannungssteuerkreis (wie dem Pico) und dem Hochspannungsgerätekreis.
+* **Sicherungsschutz**: Erwägen Sie das Hinzufügen von Sicherungen oder Leitungsschutzschaltern, um gegen Kurzschlüsse oder Überlastungen zu schützen.
+* **Fachliche Anleitung**: Suchen Sie immer professionelle Beratung, wenn Sie mit Hochspannungsstromkreisen arbeiten, um einen sicheren Betrieb zu gewährleisten.
 
-This project can serve as the basis for home automation, such as controlling lamps, fans, or other devices based on timers or sensors connected to the Raspberry Pi Pico 2 W.
+Dieses Projekt kann als Grundlage für die Hausautomatisierung dienen, wie zum Beispiel die Steuerung von Lampen, Ventilatoren oder anderen Geräten, die auf Zeitgeber oder Sensoren basieren, die mit dem Raspberry Pi Pico 2 W verbunden sind.
 
-**Using the NC Terminal**
+**Verwendung des NC-Terminals**
 
-* If you connect your controlled circuit between COM and NC:
+* Wenn Sie Ihren gesteuerten Stromkreis zwischen COM und NC anschließen:
 
-  * The circuit will be closed (ON) when the relay is not energized.
-  * The circuit will be open (OFF) when the relay is energized.
-  * Example: Controlling an External Device
-  * Warning: Do not attempt to control high-voltage devices without proper knowledge and safety precautions.
+  * Der Stromkreis wird geschlossen (EIN) sein, wenn das Relais nicht aktiviert ist.
+  * Der Stromkreis wird geöffnet (AUS) sein, wenn das Relais aktiviert ist.
+  * Beispiel: Steuerung eines externen Geräts
+  * Warnung: Versuchen Sie nicht, Hochspannungsgeräte ohne angemessene Kenntnisse und Sicherheitsvorkehrungen zu steuern.
 
-* If you want to control a small DC motor or another device:
+* Wenn Sie einen kleinen Gleichstrommotor oder ein anderes Gerät steuern möchten:
 
-  * Replace the LED with the device you want to control.
-  * Ensure the device's voltage and current requirements are compatible.
-  * Provide an appropriate power supply for the device.
-  * Connect the device in series with the relay's COM and NO (or NC) terminals.
+  * Ersetzen Sie die LED durch das Gerät, das Sie steuern möchten.
+  * Stellen Sie sicher, dass die Spannungs- und Stromanforderungen des Geräts kompatibel sind.
+  * Stellen Sie eine geeignete Stromversorgung für das Gerät bereit.
+  * Schließen Sie das Gerät in Serie mit den COM- und NO- (oder NC-)Klemmen des Relais an.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control another circuit using a relay and the Raspberry Pi Pico. By using a transistor to switch the relay coil, you've safely controlled a higher-current circuit without overloading the Pico's GPIO pins. Understanding how to use relays opens up many possibilities for controlling various devices and appliances in your projects.
-
+In dieser Lektion haben Sie gelernt, wie Sie einen anderen Stromkreis mit einem Relais und dem Raspberry Pi Pico steuern können. Durch die Verwendung eines Transistors zum Schalten der Relaisspule haben Sie einen Stromkreis mit höherem Strom sicher gesteuert, ohne die GPIO-Pins des Pico zu überlasten. Das Verständnis der Verwendung von Relais eröffnet viele Möglichkeiten zur Steuerung verschiedener Geräte und Haushaltsgeräte in Ihren Projekten.

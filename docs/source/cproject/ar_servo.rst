@@ -1,62 +1,61 @@
 .. note::
+      Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit Gleichgesinnten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_servo:
 
-3.7 Swinging Servo
-===================
+3.7 Schwingender Servo
+=======================
 
-In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2 W. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
+In dieser Lektion lernen wir, wie man einen **Servomotor** mit dem Raspberry Pi Pico 2 W steuert. Ein Servomotor ist ein Gerät, das sich auf einen spezifischen Winkel zwischen 0° und 180° drehen kann. Er wird häufig in ferngesteuerten Spielzeugen, Robotern und anderen Anwendungen verwendet, die eine präzise Positionssteuerung erfordern.
 
-Let's get started and make the servo swing back and forth!
+Lassen Sie uns beginnen und den Servo hin und her schwingen lassen!
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENEINFÜHRUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -65,101 +64,101 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_servo|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* Orangefarbenes Kabel ist das Signalkabel und verbunden mit GP15.
+* Rotes Kabel ist VCC und verbunden mit VBUS(5V).
+* Braunes Kabel ist GND und verbunden mit GND.
 
-Servos can draw significant current, especially under load. Since we're using a small servo and not putting it under heavy load, powering it from the Pico's VBUS pin is acceptable for this simple experiment. For larger servos or multiple servos, use an external power supply.
+Servos können, besonders unter Last, erheblichen Strom ziehen. Da wir einen kleinen Servo verwenden und ihn nicht stark belasten, ist es akzeptabel, ihn für dieses einfache Experiment über den VBUS-Pin des Pico mit Strom zu versorgen. Bei größeren Servos oder mehreren Servos verwenden Sie eine externe Stromquelle.
 
-**Setting Up the Servo Arm**
+**Einrichten des Servoarms**
 
-* Attach the servo arm (also called a horn) to the servo's output shaft.
-* Secure it with the small screw provided with the servo if necessary.
+* Befestigen Sie den Servoarm (auch als Horn bekannt) auf der Ausgangswelle des Servos.
+* Sichern Sie ihn mit der kleinen Schraube, die mit dem Servo geliefert wurde, falls notwendig.
 
-**Writing the Code**
+**Schreiben des Codes**
 
 
 .. note::
 
-    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``pico-2w-kit-main/arduino/3.7_swinging_servo``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``3.7_swinging_servo.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/3.7_swinging_servo`` öffnen. 
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Upload**-Button auszuwählen.
 
 
 .. code-block:: arduino
 
     #include <Servo.h>
 
-    Servo myServo;  // Create a servo object
+    Servo myServo;  // Erstellen eines Servo-Objekts
 
     void setup() {
-      myServo.attach(15);  // Attach the servo to GPIO pin 15
+      myServo.attach(15);  // Befestigen des Servos an GPIO-Pin 15
     }
 
     void loop() {
-      // Move the servo from 0 to 180 degrees
+      // Bewegen des Servos von 0 bis 180 Grad
       for (int angle = 0; angle <= 180; angle += 1) {
         myServo.write(angle);
-        delay(15);  // Wait 15 milliseconds for the servo to reach the position
+        delay(15);  // Warten Sie 15 Millisekunden, bis der Servo die Position erreicht hat
       }
-      // Move the servo from 180 to 0 degrees
+      // Bewegen des Servos von 180 bis 0 Grad
       for (int angle = 180; angle >= 0; angle -= 1) {
         myServo.write(angle);
         delay(15);
       }
     }
 
-After uploading the code, the servo arm should start swinging smoothly from 0° to 180° and back.
-If the servo doesn't move or behaves erratically:
+Nach dem Hochladen des Codes sollte der Servoarm reibungslos von 0° bis 180° und zurück schwingen.
+Wenn sich der Servo nicht bewegt oder unregelmäßig verhält:
 
-* Check your wiring connections.
-* Ensure the servo is properly powered.
-* Make sure the servo is not mechanically blocked.
+* Überprüfen Sie Ihre Verdrahtung.
+* Stellen Sie sicher, dass der Servo ordnungsgemäß mit Strom versorgt wird.
+* Achten Sie darauf, dass der Servo mechanisch nicht blockiert ist.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Including the ``Servo`` Library:
+#. Einbinden der ``Servo`` -Bibliothek:
 
-   Includes the ``Servo`` library, which provides functions to control the servo motor.
+   Bindet die ``Servo`` -Bibliothek ein, die Funktionen zur Steuerung des Servomotors bietet.
 
    .. code-block:: arduino
 
         #include <Servo.h>
 
-#. Creating a ``Servo`` Object:
+#. Erstellen eines ``Servo``-Objekts:
 
-   Creates a ``Servo`` object named ``myServo`` to control the servo.
+   Erstellt ein ``Servo``-Objekt namens ``myServo`` zur Steuerung des Servos.
 
    .. code-block:: arduino
 
         Servo myServo;
 
-#. Attaching the Servo to a Pin:
+#. Befestigen des Servos an einem Pin:
 
-   Attaches the servo to GPIO pin 15 on the Pico.
+   Befestigt den Servo an GPIO-Pin 15 am Pico.
 
    .. code-block:: arduino
 
         myServo.attach(15);
 
-#. Moving the Servo:
+#. Bewegen des Servos:
 
-   * Moves the servo from 0° to 180° in 1-degree increments. The delay(15) provides a small delay to allow the servo to reach each position smoothly.
+   * Bewegt den Servo von 0° bis 180° in 1-Grad-Schritten. Die Verzögerung (15) bietet eine kleine Verzögerung, um dem Servo zu ermöglichen, jede Position reibungslos zu erreichen.
    
    .. code-block:: arduino
 
@@ -168,7 +167,7 @@ If the servo doesn't move or behaves erratically:
           delay(15);
         }
 
-   * Reversing the Movement: Moves the servo back from 180° to 0°, creating a back-and-forth swinging motion.
+   * Umkehr der Bewegung: Bewegt den Servo zurück von 180° bis 0° und erzeugt eine hin- und her schwingende Bewegung.
 
    .. code-block:: arduino
 
@@ -177,22 +176,20 @@ If the servo doesn't move or behaves erratically:
           delay(15);
         }
 
-**Further Exploration**
+**Weitere Erkundungen**
 
-* Adjusting Speed:
+* Geschwindigkeit anpassen:
 
-  Change the ``delay()`` value in the loops to make the servo move faster or slower.
+  Ändern Sie den ``delay()``-Wert in den Schleifen, um den Servo schneller oder langsamer zu bewegen.
 
-* Controlling Position Directly:
+* Direkte Positionssteuerung:
 
-  Use ``myServo.write(angle);`` with a specific angle to set the servo to a fixed position.
+  Verwenden Sie ``myServo.write(angle);`` mit einem bestimmten Winkel, um den Servo in eine feste Position zu setzen.
 
-* Interactive Control:
+* Interaktive Steuerung:
 
-  Connect a potentiometer to control the servo angle interactively.
+  Schließen Sie ein Potentiometer an, um den Servowinkel interaktiv zu steuern.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control a servo motor using the Raspberry Pi Pico and the Servo library. By adjusting the code, you can set the servo to any angle between 0° and 180°, allowing for precise control in your projects.
-
-
+In dieser Lektion haben Sie gelernt, wie man einen Servomotor mit dem Raspberry Pi Pico und der Servo-Bibliothek steuert. Durch Anpassungen im Code können Sie den Servo auf jeden Winkel zwischen 0° und 180° einstellen, was eine präzise Steuerung in Ihren Projekten ermöglicht.

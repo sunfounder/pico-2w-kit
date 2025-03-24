@@ -1,47 +1,47 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe von unserer Community und unserem Team bei technischen Herausforderungen und nach dem Kauf auftretenden Problemen.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und Sonderaktionen während der Feiertage teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu experimentieren und kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_dht11:
 
 
-6.2 Measuring Temperature and Humidity with DHT11
-=======================================================
+6.2 Temperatur und Luftfeuchtigkeit mit dem DHT11 messen
+===========================================================
 
-In this lesson, we'll learn how to use a **DHT11 temperature and humidity sensor** with the Raspberry Pi Pico 2 W. The DHT11 is a basic, low-cost digital sensor that can measure ambient temperature and humidity, providing a calibrated digital output.
+In dieser Lektion lernen wir, wie man einen **DHT11 Temperatur- und Luftfeuchtigkeitssensor** mit dem Raspberry Pi Pico 2 W verwendet. Der DHT11 ist ein kostengünstiger digitaler Sensor, der Umgebungstemperatur und Luftfeuchtigkeit misst und die Werte als kalibriertes Digitalsignal ausgibt.
 
 |img_Dht11|
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Bauteile einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -49,16 +49,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTE	
+        - MENGE
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -67,41 +67,41 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Understanding the DHT11 Sensor**
+**Funktionsweise des DHT11 Sensors**
 
-The **DHT11** sensor uses a capacitive humidity sensor and a thermistor to measure the surrounding air. It outputs a digital signal on the data pin, and it's fairly simple to use, but requires precise timing to read data.
+Der **DHT11** Sensor nutzt einen kapazitiven Feuchtigkeitssensor und einen Thermistor, um die Umgebungsluft zu messen. Die Messwerte werden als digitales Signal über den Datenpin ausgegeben. Die Nutzung des Sensors ist relativ einfach, er erfordert jedoch eine präzise Zeitsynchronisation zur Datenübertragung.
 
-* Temperature Range: 0–50 °C with ±2 °C accuracy
-* Humidity Range: 20–80% RH with ±5% accuracy
-* Sampling Rate: 1 Hz (once every second)
+* Temperaturbereich: 0–50 °C mit einer Genauigkeit von ±2 °C
+* Luftfeuchtigkeitsbereich: 20–80 % RH mit einer Genauigkeit von ±5 %
+* Abtastrate: 1 Hz (eine Messung pro Sekunde)
 
-**Schematic**
+**Schaltplan**
 
 |sch_dht11|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_dht11|
 
 
-**Writing the Code**
+**Code schreiben**
 
-We'll write a program that reads temperature and humidity data from the DHT11 sensor and prints the values to the Serial Monitor.
+Wir schreiben ein Programm, das Temperatur- und Luftfeuchtigkeitswerte vom DHT11-Sensor ausliest und auf dem Seriellen Monitor anzeigt.
 
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``pico-2w-kit-main/arduino/6.2_dht11``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.
+    * Du kannst die Datei ``6.2_dht11.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/6.2_dht11`` öffnen.
+    * Oder kopiere den Code in die **Arduino IDE**.
+    * Wähle die Raspberry Pi Pico-Platine und den richtigen Port aus, bevor du auf die Upload-Schaltfläche klickst.
+    * Die ``DHT sensor library`` wird benötigt. Installiere sie über den **Bibliotheksverwalter**.
 
       .. image:: img/lib_dht.png
 
@@ -111,22 +111,22 @@ We'll write a program that reads temperature and humidity data from the DHT11 se
 
     #include <DHT.h>
 
-    // Define the connection pins
-    #define DHTPIN 16       // GPIO 16 -> Data pin of DHT11
-    #define DHTTYPE DHT11    // Define the sensor type
+    // Pin-Definition
+    #define DHTPIN 16       // GPIO 16 -> Datenpin des DHT11
+    #define DHTTYPE DHT11    // Sensortyp definieren
 
-    // Create a DHT object
+    // DHT-Objekt erstellen
     DHT dht(DHTPIN, DHTTYPE);
 
-    unsigned long previousMillis = 0; // Stores the last time the display was updated
-    const long interval = 2000;        // Interval at which to read sensor (milliseconds)
+    unsigned long previousMillis = 0; // Speichert die letzte Aktualisierungszeit
+    const long interval = 2000;        // Messintervall in Millisekunden
 
     void setup() {
-      // Initialize serial communication at 115200 baud
+      // Serielle Kommunikation initialisieren
       Serial.begin(115200);
       Serial.println(F("DHT11 Sensor Test!"));
     
-      // Initialize the DHT sensor
+      // DHT-Sensor initialisieren
       dht.begin();
    
     }
@@ -134,26 +134,26 @@ We'll write a program that reads temperature and humidity data from the DHT11 se
     void loop() {
       unsigned long currentMillis = millis();
 
-      // Update the sensor reading every 'interval' milliseconds
+      // Sensorwerte alle 2 Sekunden auslesen
       if (currentMillis - previousMillis >= interval) {
         previousMillis = currentMillis;
 
-        // Read humidity and temperature
+        // Luftfeuchtigkeit und Temperatur auslesen
         float humidity = dht.readHumidity();
         float temperatureC = dht.readTemperature();
         float temperatureF = dht.readTemperature(true);
 
-        // Check if any reads failed
+        // Prüfen, ob die Messung fehlgeschlagen ist
         if (isnan(humidity) || isnan(temperatureC) || isnan(temperatureF)) {
           Serial.println(F("Failed to read from DHT sensor!"));
           return;
         }
 
-        // Calculate heat index
+        // Hitzeindex berechnen
         float heatIndexC = dht.computeHeatIndex(temperatureC, humidity, false);
         float heatIndexF = dht.computeHeatIndex(temperatureF, humidity);
 
-        // Print the results to the Serial Monitor
+        // Ergebnisse auf dem Seriellen Monitor ausgeben
         Serial.print(F("Humidity: "));
         Serial.print(humidity);
         Serial.print(F("%  Temperature: "));
@@ -168,7 +168,7 @@ We'll write a program that reads temperature and humidity data from the DHT11 se
       }
     }
 
-After uploading the code, the Serial Monitor should display the temperature and humidity readings every two seconds.
+Nach dem Hochladen des Codes werden Temperatur- und Luftfeuchtigkeitswerte alle zwei Sekunden im Seriellen Monitor angezeigt.
 
 .. code-block::
 
@@ -177,52 +177,52 @@ After uploading the code, the Serial Monitor should display the temperature and 
     Humidity: 46.00%  Temperature: 25.50°C 78.00°F  Heat index: 25.50°C 78.00°F
     Humidity: 47.00%  Temperature: 26.00°C 79.00°F  Heat index: 26.00°C 79.00°F
 
-* **Humidity**: Expose the sensor to different humidity levels to see changes in readings.
-* **Temperature**: Change the temperature around the sensor to observe temperature measurements.
+* **Luftfeuchtigkeit**: Setze den Sensor unterschiedlichen Luftfeuchtigkeitswerten aus, um Veränderungen in den Messwerten zu beobachten. 
+* **Temperatur**: Verändere die Umgebungstemperatur des Sensors, um die Temperaturmessungen zu beobachten.
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Including Libraries and Defining Constants:
+#. Bibliotheken einbinden und Konstanten definieren:
 
-   * ``DHT.h``: Includes the DHT sensor library to simplify interactions with the sensor.
-   * ``DHTPIN``: Specifies the GPIO pin connected to the DHT11 data pin.
-   * ``DHTTYPE``: Defines the type of DHT sensor being used (DHT11 in this case).
+   * ``DHT.h``: Bindet die DHT-Sensorbibliothek ein, um die Kommunikation mit dem Sensor zu vereinfachen.
+   * ``DHTPIN``: Gibt den GPIO-Pin an, der mit dem Datenpin des DHT11 verbunden ist.
+   * ``DHTTYPE``: Definiert den verwendeten Sensortyp (in diesem Fall DHT11).
 
    .. code-block:: arduino
 
         #include <DHT.h>
-        #define DHTPIN 16       // GPIO 16 -> Data pin of DHT11
-        #define DHTTYPE DHT11    // Define the sensor type
+        #define DHTPIN 16       // GPIO 16 -> Datenpin des DHT11
+        #define DHTTYPE DHT11    // Sensortyp definieren
 
-#. Creating the ``DHT`` Object:
+#. Das ``DHT`` -Objekt erstellen:
 
-   Initializes a ``DHT`` object with the specified data pin and sensor type.
+   Erstellt ein ``DHT`` -Objekt mit dem angegebenen Datenpin und Sensortyp.
 
    .. code-block:: arduino
 
         DHT dht(DHTPIN, DHTTYPE);
 
-#. Setup Function:
+#. Setup-Funktion:
 
-   * **Serial Communication**: Starts serial communication for debugging and data display.
-   * **DHT Sensor Initialization**: Prepares the DHT11 sensor for data reading.
+   * **Serielle Kommunikation**: Startet die serielle Kommunikation zur Datenanzeige und zum Debugging.
+   * **Initialisierung des DHT-Sensors**: Bereitet den DHT11-Sensor für die Datenerfassung vor.
 
    .. code-block:: arduino
 
         void setup() {
-          // Initialize serial communication at 115200 baud
+          // Serielle Kommunikation mit 115200 Baud starten
           Serial.begin(115200);
           Serial.println(F("DHT11 Sensor Test!"));
 
-          // Initialize the DHT sensor
+          // DHT-Sensor initialisieren
           dht.begin();
         }
 
-#. Loop Function:
+#. Loop-Funktion:
 
-   * Timing with ``millis()``: 
+   * Zeitsteuerung mit ``millis()``: 
    
-     Uses non-blocking timing to read the sensor every 2 seconds (interval = 2000 milliseconds).
+     Verwendet eine nicht-blockierende Zeitsteuerung, um den Sensor alle 2 Sekunden auszulesen (Intervall = 2000 Millisekunden).
    
      .. code-block:: arduino
    
@@ -231,15 +231,15 @@ After uploading the code, the Serial Monitor should display the temperature and 
           ...
         }
    
-   * Reading Sensor Data:
+   * Sensorwerte auslesen:
    
-     * ``dht.readHumidity()``: Reads the current humidity.
-     * ``dht.readTemperature()``: Reads the current temperature in Celsius.
-     * ``dht.readTemperature(true)``: Reads the current temperature in Fahrenheit.
+     * ``dht.readHumidity()``: Liest die aktuelle Luftfeuchtigkeit aus.
+     * ``dht.readTemperature()``: Liest die aktuelle Temperatur in Celsius aus.
+     * ``dht.readTemperature(true)``: Liest die aktuelle Temperatur in Fahrenheit aus.
    
-   * Error Handling:
+   * Fehlerbehandlung:
    
-     Checks if any of the readings failed (returned NaN) and prints an error message if so.
+     Überprüft, ob eine Messung fehlgeschlagen ist (NaN-Wert zurückgegeben) und gibt im Fehlerfall eine Meldung aus.
    
      .. code-block:: arduino
    
@@ -248,14 +248,14 @@ After uploading the code, the Serial Monitor should display the temperature and 
           return;
         }
    
-   * Calculating Heat Index:
+   * Hitzeindex berechnen:
    
-     * ``dht.computeHeatIndex(temperatureC, humidity, false)``: Calculates the heat index in Celsius.
-     * ``dht.computeHeatIndex(temperatureF, humidity)``: Calculates the heat index in Fahrenheit.
+     * ``dht.computeHeatIndex(temperatureC, humidity, false)``: Berechnet den Hitzeindex in Celsius.
+     * ``dht.computeHeatIndex(temperatureF, humidity)``: Berechnet den Hitzeindex in Fahrenheit.
    
-   * Displaying Data:
+   * Daten ausgeben:
    
-     Prints humidity, temperature in Celsius and Fahrenheit, and heat index to the Serial Monitor.
+     Gibt die Luftfeuchtigkeit, die Temperatur in Celsius und Fahrenheit sowie den Hitzeindex auf dem Seriellen Monitor aus.
    
      .. code-block:: arduino
    
@@ -271,42 +271,42 @@ After uploading the code, the Serial Monitor should display the temperature and 
         Serial.print(heatIndexF);
         Serial.println(F("°F"));
 
-**Troubleshooting**
+**Fehlersuche**
 
-* No Readings Displayed:
+* Keine Messwerte angezeigt:
 
-  * Check all wiring connections.
-  * Ensure the DHT11 sensor is receiving power.
-  * Verify that the correct GPIO pins are defined in the code.
+  * Überprüfe alle Verkabelungen.
+  * Stelle sicher, dass der DHT11-Sensor mit Strom versorgt wird.
+  * Kontrolliere, ob die richtigen GPIO-Pins im Code definiert sind.
 
-* Incorrect Readings:
+* Falsche Messwerte:
 
-  * Verify that the DHT11 sensor is not damaged.
-  * Check the sensor's datasheet for proper timing and signal requirements.
+  * Prüfe, ob der DHT11-Sensor beschädigt ist.
+  * Überprüfe das Datenblatt des Sensors auf richtige Timing-Anforderungen.
 
-* Sensor Interference:
+* Störungen durch andere Geräte:
 
-  * Avoid placing the sensor near other electronic devices that might cause interference.
-  * Ensure there are no obstacles blocking the sensor's line of sight.
+  * Platziere den Sensor nicht in der Nähe anderer elektronischer Geräte, die Störungen verursachen könnten.
+  * Stelle sicher, dass keine Hindernisse die Messung des Sensors beeinflussen.
 
-**Further Exploration**
+**Weiterführende Experimente**
 
-* Integrating with Displays:
+* Integration mit Displays:
 
-  Connect an LCD or OLED display to show temperature and humidity readings without using the Serial Monitor.
+  Verbinde ein LCD- oder OLED-Display, um Temperatur- und Luftfeuchtigkeitswerte ohne den Seriellen Monitor anzuzeigen.
 
-* Creating Alerts:
+* Warnsysteme erstellen:
 
-  Implement buzzer or notification systems that trigger when temperature or humidity exceeds certain thresholds.
+  Implementiere einen Summer oder eine Benachrichtigungsfunktion, die ausgelöst wird, wenn Temperatur oder Luftfeuchtigkeit einen bestimmten Schwellenwert überschreiten.
 
-* Combining with Other Sensors:
+* Kombination mit anderen Sensoren:
 
-  Pair the DHT11 with motion sensors, light sensors, or other environmental sensors to create comprehensive monitoring systems.
+  Kombiniere den DHT11 mit Bewegungssensoren, Lichtsensoren oder anderen Umweltsensoren, um ein umfassendes Überwachungssystem zu erstellen.
 
-* Building a Weather Station:
+* Bau einer Wetterstation:
 
-  Expand the project by adding additional sensors like barometric pressure sensors, rain gauges, and wind speed sensors to build a full-fledged weather station.
+  Erweitere das Projekt durch zusätzliche Sensoren wie Barometer, Regenmesser und Windmesser, um eine vollwertige Wetterstation zu realisieren.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a DHT11 temperature and humidity sensor with the Raspberry Pi Pico to measure and display ambient temperature and humidity levels. By leveraging the DHT library, you can easily integrate environmental sensing into your projects. The optional LED indicator provides a simple way to add visual feedback based on sensor readings, enhancing the interactivity of your system.
+In dieser Lektion hast du gelernt, wie du mit dem DHT11-Temperatur- und Luftfeuchtigkeitssensor den Raspberry Pi Pico zur Erfassung und Anzeige von Umgebungswerten nutzen kannst. Durch die DHT-Bibliothek kannst du Umweltdaten einfach in deine Projekte integrieren. Eine optionale LED-Anzeige bietet zudem eine visuelle Rückmeldung basierend auf den Sensormesswerten und erhöht so die Interaktivität deines Systems.

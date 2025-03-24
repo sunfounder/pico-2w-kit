@@ -1,64 +1,62 @@
-.. note::
+Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nehmen Sie an Giveaways und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _ar_neopixel:
 
-3.3 Controlling an RGB LED Strip
+3.3 Steuerung eines RGB-LED-Streifens
 ===========================================================
 
-In this lesson, we'll learn how to control an **RGB LED strip** (specifically the WS2812 type) using the Raspberry Pi Pico 2 W and MicroPython.
+In dieser Lektion lernen wir, wie man einen **RGB-LED-Streifen** (speziell den Typ WS2812) mit dem Raspberry Pi Pico 2 W und MicroPython steuert.
 
-The WS2812 is a smart LED that integrates a control circuit and an RGB chip into a 5050-sized LED package. Each LED has its own built-in controller, which allows us to control each LED individually using a single data line. This means we can change the color and brightness of each LED on the strip independently.
+Der WS2812 ist ein intelligenter LED, der einen Steuerkreis und einen RGB-Chip in einem 5050-LED-Gehäuse integriert. Jede LED hat ihren eigenen eingebauten Controller, was uns ermöglicht, jede LED einzeln über eine einzige Datenleitung zu steuern. Das bedeutet, dass wir die Farbe und Helligkeit jeder LED auf dem Streifen unabhängig ändern können.
 
 
 
-* :ref:`cpn_ws2812`
+    * :ref:`cpn_ws2812`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENVORSTELLUNG	
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -67,32 +65,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
         - 1
         - |link_ws2812_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_ws2812|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_ws2812|
 
-Be cautious with the current draw. While the Pico's VBUS pin can supply power for a small number of LEDs (like 8), using more LEDs may require an external power supply to prevent overloading the Pico.
+Seien Sie vorsichtig mit dem Stromverbrauch. Während der VBUS-Pin des Pico Strom für eine kleine Anzahl von LEDs (wie 8) liefern kann, kann die Verwendung mehrerer LEDs ein externes Netzteil erforderlich machen, um eine Überlastung des Pico zu vermeiden.
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
 .. note::
 
-    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``pico-2w-kit-main/arduino/3.3_rgb_led_strip``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit_NeoPixel`` library is used here, you can install it from the **Library Manager**.
+    * Sie können die Datei ``3.3_rgb_led_strip.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/3.3_rgb_led_strip`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Wählen Sie dann das Raspberry Pi Pico-Board und den richtigen Port, bevor Sie auf den Upload-Button klicken.
+    * Die ``Adafruit_NeoPixel``-Bibliothek wird hier verwendet, Sie können sie aus dem **Library Manager** installieren.
 
       .. image:: img/lib_neopixel.png
 
@@ -100,78 +98,78 @@ Be cautious with the current draw. While the Pico's VBUS pin can supply power fo
 
   #include <Adafruit_NeoPixel.h>
 
-  #define PIXEL_PIN    0    // Digital IO pin connected to the NeoPixels
-  #define PIXEL_COUNT  8    // Number of NeoPixels
+  #define PIXEL_PIN    0    // Digitaler IO-Pin, der mit den NeoPixels verbunden ist
+  #define PIXEL_COUNT  8    // Anzahl der NeoPixels
 
-  // Declare our NeoPixel strip object
+  // Deklariere unser NeoPixel-Streifenobjekt
   Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
   void setup() {
-    strip.begin();           // Initialize the NeoPixel library
-    strip.show();            // Turn OFF all pixels ASAP
+    strip.begin();           // Initialisiere die NeoPixel-Bibliothek
+    strip.show();            // Schalte alle Pixel so schnell wie möglich AUS
   }
 
   void loop() {
-    // Set the color of each pixel
-    strip.setPixelColor(0, strip.Color(255, 0, 0));   // Red
-    strip.setPixelColor(1, strip.Color(0, 255, 0));   // Green
-    strip.setPixelColor(2, strip.Color(0, 0, 255));   // Blue
-    strip.setPixelColor(3, strip.Color(255, 255, 0)); // Yellow
+    // Setze die Farbe jedes Pixels
+    strip.setPixelColor(0, strip.Color(255, 0, 0));   // Rot
+    strip.setPixelColor(1, strip.Color(0, 255, 0));   // Grün
+    strip.setPixelColor(2, strip.Color(0, 0, 255));   // Blau
+    strip.setPixelColor(3, strip.Color(255, 255, 0)); // Gelb
     strip.setPixelColor(4, strip.Color(0, 255, 255)); // Cyan
     strip.setPixelColor(5, strip.Color(255, 0, 255)); // Magenta
-    strip.setPixelColor(6, strip.Color(255, 255, 255)); // White
-    strip.setPixelColor(7, strip.Color(0, 0, 0));     // Off
+    strip.setPixelColor(6, strip.Color(255, 255, 255)); // Weiß
+    strip.setPixelColor(7, strip.Color(0, 0, 0));     // Aus
 
-    strip.show();  // Update the strip with new contents
-    delay(1000);   // Wait for a second
+    strip.show();  // Aktualisiere den Streifen mit neuen Inhalten
+    delay(1000);   // Warte eine Sekunde
 
-    // Turn off all pixels
+    // Schalte alle Pixel aus
     strip.clear();
     strip.show();
-    delay(1000);   // Wait for a second
+    delay(1000);   // Warte eine Sekunde
   }
 
-After uploading the code, you should see the LEDs light up with different colors, stay on for a second, then turn off for a second.
+Nach dem Hochladen des Codes sollten Sie sehen, dass die LEDs mit unterschiedlichen Farben aufleuchten, eine Sekunde lang eingeschaltet bleiben und dann eine Sekunde lang ausgeschaltet sind.
 
-**Understanding the Code**
+**Code verstehen**
 
-#. Include the Library:
+#. Bibliothek einbinden:
 
    .. code-block:: arduino
     
       #include <Adafruit_NeoPixel.h>
 
-#. Define Constants:
+#. Konstanten definieren:
 
-   * ``PIXEL_PIN``: The GPIO pin connected to the data input of the LED strip (GP0).
-   * ``PIXEL_COUNT``: The number of LEDs on the strip.
+   * ``PIXEL_PIN``: Der GPIO-Pin, der mit dem Dateneingang des LED-Streifens verbunden ist (GP0).
+   * ``PIXEL_COUNT``: Die Anzahl der LEDs auf dem Streifen.
 
-#. Initialize the Strip:
+#. Streifen initialisieren:
 
-   ``NEO_GRB + NEO_KHZ800``: Specifies the color order and communication speed.
+   ``NEO_GRB + NEO_KHZ800``: Gibt die Farbreihenfolge und die Kommunikationsgeschwindigkeit an.
 
    .. code-block:: arduino
     
       Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
       
-#. In ``setup()`` function:
+#. In der ``setup()``-Funktion:
 
-   * ``strip.begin()``: Initializes the NeoPixel library.
-   * ``strip.show()``: Ensures all pixels are off.
+   * ``strip.begin()``: Initialisiert die NeoPixel-Bibliothek.
+   * ``strip.show()``: Stellt sicher, dass alle Pixel ausgeschaltet sind.
 
-#. In ``loop()`` function:
+#. In der ``loop()`` -Funktion:
 
-   * ``strip.setPixelColor(index, color)``: Sets the color of a specific pixel.
-   * ``strip.Color(r, g, b)``: Creates a 24-bit color value from red, green, and blue components (0-255).
-   * ``strip.show()``: Sends the updated color data to the strip.
-   * ``strip.clear()``: Clears the pixel data in memory (turns off the pixels on the next ``show()``).
+   * ``strip.setPixelColor(index, color)``: Stellt die Farbe eines bestimmten Pixels ein.
+   * ``strip.Color(r, g, b)``: Erstellt einen 24-Bit-Farbwert aus den Rot-, Grün- und Blaukomponenten (0-255).
+   * ``strip.show()``: Sendet die aktualisierten Farbdaten an den Streifen.
+   * ``strip.clear()``: Löscht die Pixeldaten im Speicher (schaltet die Pixel beim nächsten ``show()`` aus).
 
-**Advanced Example: Color Wipe Animation**
+**Fortgeschrittenes Beispiel: Farbwisch-Animation**
 
-Let's create a simple animation where each LED lights up in sequence.
+Erstellen wir eine einfache Animation, bei der jede LED nacheinander aufleuchtet.
 
-* ``colorWipe()``: Lights up each pixel in sequence with the specified color.
-* Calls ``colorWipe()`` with different colors to create an animation.
+* ``colorWipe()``: Lässt jedes Pixel nacheinander mit der angegebenen Farbe aufleuchten.
+* Ruft ``colorWipe()`` mit unterschiedlichen Farben auf, um eine Animation zu erstellen.
 
 .. code-block:: arduino
     
@@ -184,13 +182,13 @@ Let's create a simple animation where each LED lights up in sequence.
 
   void setup() {
     strip.begin();
-    strip.show(); // Initialize all pixels to 'off'
+    strip.show(); // Initialisiere alle Pixel auf 'aus'
   }
 
   void loop() {
-    colorWipe(strip.Color(255, 0, 0), 50); // Red
-    colorWipe(strip.Color(0, 255, 0), 50); // Green
-    colorWipe(strip.Color(0, 0, 255), 50); // Blue
+    colorWipe(strip.Color(255, 0, 0), 50); // Rot
+    colorWipe(strip.Color(0, 255, 0), 50); // Grün
+    colorWipe(strip.Color(0, 0, 255), 50); // Blau
   }
 
   void colorWipe(uint32_t color, int wait) {
@@ -201,13 +199,13 @@ Let's create a simple animation where each LED lights up in sequence.
     }
   }
 
-After uploading the code, you should see the LEDs light up one by one in red, then green, then blue.
+Nach dem Hochladen des Codes sollten Sie sehen, wie die LEDs nacheinander in Rot, dann Grün und dann Blau aufleuchten.
 
-**Advanced Example: Rainbow Cycle Animation**
+**Fortgeschrittenes Beispiel: Regenbogenzyklus-Animation**
 
-* ``rainbowCycle()`` Function: Cycles through the colors of the rainbow across all pixels.
-* The nested loops create a smooth transition of colors.
-* ``Wheel()`` Function: Generates rainbow colors across 0-255 positions.
+* ``rainbowCycle()`` -Funktion: Durchläuft die Farben des Regenbogens über alle Pixel.
+* Die verschachtelten Schleifen erzeugen einen sanften Übergang der Farben.
+* ``Wheel()`` -Funktion: Erzeugt Regenbogenfarben über 0-255 Positionen.
 
 .. code-block:: arduino
     
@@ -220,17 +218,17 @@ After uploading the code, you should see the LEDs light up one by one in red, th
 
   void setup() {
     strip.begin();
-    strip.show(); // Initialize all pixels to 'off'
+    strip.show(); // Initialisiere alle Pixel auf 'aus'
   }
 
   void loop() {
-    rainbowCycle(20); // Rainbow cycle with 20ms delay per step
+    rainbowCycle(20); // Regenbogenzyklus mit 20 ms Verzögerung pro Schritt
   }
 
   void rainbowCycle(int wait) {
     uint16_t i, j;
 
-    for(j=0; j<256*5; j++) { // 5 cycles of all colors on the wheel
+    for(j=0; j<256*5; j++) { // 5 Zyklen aller Farben am Rad
       for(i=0; i< strip.numPixels(); i++) {
         strip.setPixelColor(i, Wheel(((i * 256 / strip.numPixels()) + j) & 255));
       }
@@ -239,8 +237,8 @@ After uploading the code, you should see the LEDs light up one by one in red, th
     }
   }
 
-  // Input a value 0 to 255 to get a color value.
-  // The colors are a transition r - g - b - back to r.
+  // Eingabewert 0 bis 255, um einen Farbwert zu erhalten.
+  // Die Farben sind ein Übergang r - g - b - zurück zu r.
   uint32_t Wheel(byte WheelPos) {
     if(WheelPos < 85) {
       return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
@@ -253,37 +251,36 @@ After uploading the code, you should see the LEDs light up one by one in red, th
     }
   }
 
-After uploading the code, the LED strip should display a rainbow of colors cycling smoothly.
+Nach dem Hochladen des Codes sollte der LED-Streifen einen Regenbogen an Farben zeigen, der sich sanft durchläuft.
 
-**Further Exploration**
+**Weitere Erkundungen**
 
-* Create Custom Animations:
+* Erstellen Sie benutzerdefinierte Animationen:
 
-  * Experiment with different colors and animations.
-  * Combine multiple animation functions.
+  * Experimentieren Sie mit verschiedenen Farben und Animationen.
+  * Kombinieren Sie mehrere Animationsfunktionen.
 
-* Respond to Sensors:
+* Reagieren auf Sensoren:
 
-  Use input from sensors to change the LED colors or patterns.
+  Nutzen Sie Eingaben von Sensoren, um die LED-Farben oder -Muster zu ändern.
 
-* Build a Visualizer:
+* Erstellen eines Visualisierers:
 
-  Create a music visualizer that changes the LEDs based on sound input.
+  Erstellen Sie einen Musikvisualisierer, der die LEDs basierend auf dem Toneingang ändert.
 
-**Power Considerations**
+**Leistungsüberlegungen**
 
-* Current Draw:
+* Stromverbrauch:
 
-  * Each LED can draw up to 60mA at full brightness.
-  * For 8 LEDs, that's up to 480mA.
-  * Ensure your power source can supply the required current.
+  * Jede LED kann bei voller Helligkeit bis zu 60mA ziehen.
+  * Für 8 LEDs sind das bis zu 480mA.
+  * Stellen Sie sicher, dass Ihre Stromquelle den erforderlichen Strom liefern kann.
 
-* External Power Supply:
+* Externes Netzteil:
 
-  * For larger strips or higher brightness, use an external 5V power supply.
-  * Connect the ground of the external power supply to the Pico's ground.
+  * Für größere Streifen oder höhere Helligkeit verwenden Sie ein externes 5V-Netzteil.
+  * Verbinden Sie den Ground des externen Netzteils mit dem Ground des Pico.
 
-**Conclusion**
+**Schlussfolgerung**
 
-In this lesson, you've learned how to control a WS2812 RGB LED strip using the Raspberry Pi Pico and the Adafruit NeoPixel library. By manipulating individual pixels, you can create stunning visual effects for your projects.
-
+In dieser Lektion haben Sie gelernt, wie man einen WS2812 RGB-LED-Streifen mit dem Raspberry Pi Pico und der Adafruit NeoPixel-Bibliothek steuert. Indem Sie einzelne Pixel manipulieren, können Sie atemberaubende visuelle Effekte für Ihre Projekte erstellen.

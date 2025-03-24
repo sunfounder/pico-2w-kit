@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich mit anderen Enthusiasten in die Welt von Raspberry Pi, Arduino und ESP32.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
 .. _ar_ultrasonic:
 
-6.1 Measuring Distance with an Ultrasonic Sensor
+6.1 Distanzmessung mit einem Ultraschallsensor
 ================================================
 
-In this lesson, we'll learn how to use an **ultrasonic sensor module** with the Raspberry Pi Pico 2 W to measure the distance to an object. Ultrasonic sensors are commonly used in robotics and automation systems for object detection and distance measurement.
+In dieser Lektion lernen wir, wie man ein **Ultraschallsensormodul** mit dem Raspberry Pi Pico 2 W verwendet, um die Distanz zu einem Objekt zu messen. Ultraschallsensoren werden häufig in der Robotik und in Automatisierungssystemen für die Objekterkennung und Distanzmessung verwendet.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -46,16 +46,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENEINFÜHRUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -64,54 +64,54 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-**Understanding the Ultrasonic Sensor**
+**Verständnis des Ultraschallsensors**
 
-The ultrasonic sensor works by emitting a short ultrasonic pulse from the **Trig** pin and listening for the echo on the **Echo** pin. By measuring the time it takes for the echo to return, we can calculate the distance to an object using the speed of sound.
+Der Ultraschallsensor funktioniert, indem er einen kurzen Ultraschallimpuls vom **Trig**-Pin aussendet und das Echo am **Echo**-Pin empfängt. Indem die Zeit gemessen wird, die das Echo für die Rückkehr benötigt, können wir die Distanz zu einem Objekt unter Verwendung der Schallgeschwindigkeit berechnen.
 
 |ultrasonic_prin|
 
-* **Trigger Pulse**: A 10-microsecond high pulse on the Trig pin initiates the measurement.
-* **Ultrasonic Burst**: The sensor emits an 8-cycle ultrasonic burst at 40 kHz.
-* **Echo Reception**: The Echo pin goes high, and stays high until the echo is received back.
-* **Time Measurement**: By measuring the time the Echo pin stays high, we can calculate the distance.
+* **Triggerimpuls**: Ein 10-Mikrosekunden langer hoher Impuls am Trig-Pin initiiert die Messung.
+* **Ultraschallburst**: Der Sensor sendet einen 8-Zyklus-Ultraschallburst mit 40 kHz aus.
+* **Echorezeption**: Der Echo-Pin wird hochgeschaltet und bleibt hoch, bis das Echo zurück empfangen wird.
+* **Zeitmessung**: Indem die Zeit gemessen wird, in der der Echo-Pin hoch bleibt, können wir die Distanz berechnen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_ultrasonic|
 
-**Writing the Code**
+**Schreiben des Codes**
 
-We'll write a program that triggers the ultrasonic sensor, measures the echo time, and calculates the distance to an object. The distance will be printed to the Serial Monitor.
+Wir werden ein Programm schreiben, das den Ultraschallsensor auslöst, die Echozeit misst und die Distanz zu einem Objekt berechnet. Die Distanz wird auf dem seriellen Monitor angezeigt.
 
 .. note::
 
-    * You can open the file ``6.1_ultrasonic.ino`` under the path of ``pico-2w-kit-main/arduino/6.1_ultrasonic``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Sie können die Datei ``6.1_ultrasonic.ino`` unter dem Pfad ``pico-2w-kit-main/arduino/6.1_ultrasonic`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port vor dem Klicken auf den **Upload**-Button auszuwählen.
 
 
 .. code-block:: arduino
 
-    // Define the connection pins
+    // Definieren der Anschlusspins
     const int trigPin = 17;  // GPIO 17 -> Trig
     const int echoPin = 16;  // GPIO 16 -> Echo
 
     void setup() {
-      // Initialize serial communication at 115200 baud
+      // Serielle Kommunikation mit 115200 Baud starten
       Serial.begin(115200);
-    
-      // Initialize the sensor pins
+
+      // Sensorpins initialisieren
       pinMode(trigPin, OUTPUT);
       pinMode(echoPin, INPUT);
     }
@@ -120,67 +120,67 @@ We'll write a program that triggers the ultrasonic sensor, measures the echo tim
       long duration;
       float distance;
 
-      // Trigger the sensor by setting Trig HIGH for 10 microseconds
+      // Den Sensor durch Setzen von Trig auf HIGH für 10 Mikrosekunden auslösen
       digitalWrite(trigPin, HIGH);
       delayMicroseconds(10);
       digitalWrite(trigPin, LOW);
-    
-      // Read the Echo pin, returns the duration in microseconds
+
+      // Den Echo-Pin lesen, gibt die Dauer in Mikrosekunden zurück
       duration = pulseIn(echoPin, HIGH);
-    
-      // Calculate the distance in centimeters
+
+      // Die Distanz in Zentimetern berechnen
       distance = duration * 0.034 / 2;
-    
-      // Print the distance to the Serial Monitor
+
+      // Die Distanz auf dem seriellen Monitor ausgeben
       Serial.print("Distance: ");
       Serial.print(distance);
       Serial.println(" cm");
-    
-      delay(500); // Wait for half a second before the next measurement
+
+      delay(500); // Eine halbe Sekunde warten, bevor die nächste Messung erfolgt
     }
 
-After uploading the code, the Serial Monitor should display the distance measurements in centimeters.
+Nach dem Hochladen des Codes sollte der serielle Monitor die Distanzmessungen in Zentimetern anzeigen.
 
-.. code-block::
+.. code-block:: 
 
     Distance: 25.3 cm
     Distance: 24.8 cm
     Distance: 24.5 cm
 
-Place an object at varying distances from the sensor.
-Move the object closer and farther to observe changes in the distance readings.
+Platzieren Sie ein Objekt in verschiedenen Entfernungen vom Sensor.
+Bewegen Sie das Objekt näher und weiter weg, um Änderungen in den Distanzmessungen zu beobachten.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Defining Connection Pins:
+#. Definieren der Anschlusspins:
 
-   * ``trigPin``: Sends the ultrasonic pulse.
-   * ``echoPin``: Receives the echo of the ultrasonic pulse.
+   * ``trigPin``: Sendet den Ultraschallimpuls.
+   * ``echoPin``: Empfängt das Echo des Ultraschallimpulses.
 
    .. code-block:: arduino
 
         const int trigPin = 17;  // GPIO 17 -> Trig
         const int echoPin = 16;  // GPIO 16 -> Echo
 
-#. Setup Function:
+#. Setup-Funktion:
 
-   * **Serial Communication**: Enables communication between the Pico and the computer for debugging.
-   * **Pin Modes**: Sets the ``Trig`` pin as ``OUTPUT`` and the ``Echo`` pin as ``INPUT``.
+   * **Serielle Kommunikation**: Ermöglicht die Kommunikation zwischen dem Pico und dem Computer zur Fehlerbehebung.
+   * **Pinmodi**: Setzt den ``Trig``-Pin als ``OUTPUT`` und den ``Echo``-Pin als ``INPUT``.
 
    .. code-block:: arduino
 
         void setup() {
-          // Initialize serial communication at 115200 baud
+          // Serielle Kommunikation mit 115200 Baud starten
           Serial.begin(115200);
 
-          // Initialize the sensor pins
+          // Sensorpins initialisieren
           pinMode(trigPin, OUTPUT);
           pinMode(echoPin, INPUT);
         }
 
-#. Loop Function:
+#. Loop-Funktion:
 
-   * **Triggering the Sensor**: Sets the ``Trig`` pin ``HIGH`` for 10 microseconds to send the ultrasonic pulse. Sets the ``Trig`` pin ``LOW`` to end the pulse.
+   * **Sensor auslösen**: Setzt den ``Trig``-Pin ``HIGH`` für 10 Mikrosekunden, um den Ultraschallimpuls zu senden. Setzt den ``Trig``-Pin ``LOW``, um den Impuls zu beenden.
 
      .. code-block:: arduino
 
@@ -188,19 +188,19 @@ Move the object closer and farther to observe changes in the distance readings.
         delayMicroseconds(10);
         digitalWrite(trigPin, LOW);
 
-   * **Reading the Echo**: Measures the duration (in microseconds) that the ``Echo`` pin stays ``HIGH``, indicating the time taken for the echo to return.
+   * **Echo lesen**: Misst die Dauer (in Mikrosekunden), die der ``Echo``-Pin ``HIGH`` bleibt, was die Zeit für die Rückkehr des Echos anzeigt.
 
      .. code-block:: arduino
 
         duration = pulseIn(echoPin, HIGH);
 
-   * **Calculating Distance**: Converts the time to distance (cm/microsecond). Divides by 2 to account for the round-trip of the pulse.
+   * **Distanz berechnen**: Wandelt die Zeit in Distanz (cm/Mikrosekunde) um. Dividiert durch 2, um den Hin- und Rückweg des Impulses zu berücksichtigen.
 
      .. code-block:: arduino
 
         distance = duration * 0.034 / 2;
 
-   * **Serial Output**: Prints the calculated distance to the Serial Monitor for real-time monitoring.
+   * **Serielle Ausgabe**: Gibt die berechnete Distanz auf dem seriellen Monitor zur Echtzeitüberwachung aus.
 
      .. code-block:: arduino
 
@@ -208,43 +208,43 @@ Move the object closer and farther to observe changes in the distance readings.
         Serial.print(distance);
         Serial.println(" cm");
 
-   * **Delay**: Adds a 500-millisecond delay to prevent flooding the Serial Monitor and to allow time between measurements.
+   * **Verzögerung**: Fügt eine 500-Millisekunden-Verzögerung hinzu, um den seriellen Monitor nicht zu überfluten und Zeit zwischen den Messungen zu lassen.
 
-**Troubleshooting**
+**Fehlerbehebung**
 
-* No Readings Displayed:
+* Keine Anzeigen:
 
-  * Ensure the Trig and Echo pins are correctly connected.
-  * Verify that the sensor is receiving power (VCC and GND connections).
-  * Check that the Serial Monitor is set to the correct baud rate.
+  * Stellen Sie sicher, dass die Trig- und Echo-Pins korrekt verbunden sind.
+  * Überprüfen Sie, ob der Sensor Strom erhält (VCC- und GND-Verbindungen).
+  * Überprüfen Sie, ob der serielle Monitor auf die richtige Baudrate eingestellt ist.
 
-* Incorrect Readings:
+* Falsche Messungen:
 
-  * Ensure that the calculations in the code are correct.
-  * Verify that the speed of sound constant (0.034) is appropriate for your environment (humidity and temperature can affect sound speed).
-
-
-* Sensor Interference:
-
-  * Make sure there are no obstructions or reflective surfaces that might interfere with the ultrasonic pulses.
-  * Avoid placing the sensor near other ultrasonic devices that could cause false readings.
+  * Stellen Sie sicher, dass die Berechnungen im Code korrekt sind.
+  * Überprüfen Sie, ob die Schallgeschwindigkeitskonstante (0.034) für Ihre Umgebung geeignet ist (Feuchtigkeit und Temperatur können die Schallgeschwindigkeit beeinflussen).
 
 
-**Further Exploration**
+* Sensorinterferenzen:
 
-* Integrating with LEDs or Displays:
+  * Stellen Sie sicher, dass keine Hindernisse oder reflektierenden Flächen vorhanden sind, die die Ultraschallimpulse stören könnten.
+  * Vermeiden Sie es, den Sensor in der Nähe anderer Ultraschallgeräte zu platzieren, die falsche Ablesungen verursachen könnten.
 
-  * Use multiple LEDs to create a visual distance indicator.
-  * Integrate with a 7-segment or LCD display to show the distance numerically.
 
-* Creating a Proximity Alert System:
+**Weiterführende Untersuchungen**
 
-  Set thresholds to trigger alerts (e.g., sound alarms when objects are too close).
+* Integration mit LEDs oder Displays:
 
-* Building a Simple Obstacle-Avoiding Robot:
+  * Verwenden Sie mehrere LEDs, um einen visuellen Distanzindikator zu erstellen.
+  * Integrieren Sie ein 7-Segment- oder LCD-Display, um die Distanz numerisch anzuzeigen.
 
-  Utilize the ultrasonic sensor to detect obstacles and navigate around them.
+* Erstellen eines Näherungsalarm-Systems:
 
-**Conclusion**
+  Setzen Sie Schwellenwerte, um Alarme auszulösen (z. B. Klangalarme, wenn Objekte zu nahe kommen).
 
-In this lesson, you've learned how to use an ultrasonic sensor module with the Raspberry Pi Pico to measure the distance to an object. By triggering ultrasonic pulses and measuring the echo time, you can accurately determine the distance of nearby objects. This project serves as a foundation for more complex applications in robotics, automation, and interactive systems.
+* Bau eines einfachen hindernisvermeidenden Roboters:
+
+  Nutzen Sie den Ultraschallsensor, um Hindernisse zu erkennen und sie zu umfahren.
+
+**Fazit**
+
+In dieser Lektion haben Sie gelernt, wie man ein Ultraschallsensormodul mit dem Raspberry Pi Pico zur Messung der Distanz zu einem Objekt verwendet. Durch das Auslösen von Ultraschallimpulsen und das Messen der Echozeit können Sie die Distanz zu nahen Objekten genau bestimmen. Dieses Projekt dient als Grundlage für komplexere Anwendungen in der Robotik, Automatisierung und interaktiven Systemen.

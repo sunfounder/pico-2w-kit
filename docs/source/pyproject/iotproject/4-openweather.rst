@@ -1,31 +1,26 @@
 .. note::
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 ein mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung deiner Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und Einblicke.
+    - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bist du bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
 .. _py_iot_openweather:
 
-8.4 Real-time Weather From @OpenWeatherMap 
-===========================================
+8.4 Echtzeit-Wetterdaten von @OpenWeatherMap 
+================================================
 
+In diesem Projekt erstellst du eine intelligente Uhr, die neben der Uhrzeit auch das Wetter in deiner Stadt auf einem LCD anzeigt.
 
-This project involves making a smart clock that prints the weather in your city along with the time on the LCD.
+**1. Benötigte Komponenten**
 
-
-**1. Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Für dieses Projekt benötigst du die folgenden Komponenten. Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
@@ -38,7 +33,7 @@ It's definitely convenient to buy a whole kit, here's the link:
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
@@ -63,7 +58,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
@@ -78,50 +73,50 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Den Schaltkreis aufbauen**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Stelle sicher, dass dein Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist. Andernfalls könnte ein Kurzschluss deine Batterie und die Schaltung beschädigen.
 
 .. image:: img/wiring/4.owm_bb.png
 
 
-**3. Get OpenWeather API keys**
+**3. OpenWeather API-Schlüssel erhalten**
 
-|link_openweather| is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.
+|link_openweather| ist ein Online-Dienst von OpenWeather Ltd, der weltweite Wetterdaten über eine API bereitstellt, einschließlich aktueller Wetterdaten, Prognosen, Nowcasts und historischen Wetterdaten für jeden geografischen Standort.
 
-#. Visit |link_openweather| to log in/create an account.
+#. Besuche |link_openweather|, um dich anzumelden/ein Konto zu erstellen.
 
     .. image:: img/OWM-1.png
 
 
-#. Click into the API page from the navigation bar.
+#. Klicke auf die API-Seite in der Navigationsleiste.
 
     .. image:: img/OWM-2.png
 
 
-#. Find **Current Weather Data** and click Subscribe.
+#. Finde **Current Weather Data** und klicke auf Abonnieren.
 
     .. image:: img/OWM-3.png
 
 
-#. Under **Current weather and forecasts collection**, subscribe to the appropriate service. In our project, Free is good enough.
+#. Unter **Current weather and forecasts collection** abonniere den entsprechenden Dienst. Für unser Projekt reicht die kostenlose Version.
 
    .. image:: img/OWM-4.png
 
 
-#. Copy the Key from the **API keys** page.
+#. Kopiere den Schlüssel von der Seite **API keys**.
 
    .. image:: img/OWM-5.png
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico 2 W.
+#. Kopiere ihn in das Skript ``secrets.py`` auf dem Raspberry Pi Pico 2 W.
 
     .. image:: img/4_openweather1(1).png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico 2 W, you need to create them in your Pico 2 W, please refer to :ref:`py_iot_access` to create them.
+        Wenn du die Skripte ``do_connect.py`` und ``secrets.py`` nicht auf deinem Pico 2 W hast, musst du sie dort erstellen. Bitte siehe :ref:`py_iot_access`, um sie zu erstellen.
 
     .. code-block:: python
         :emphasize-lines: 5
@@ -132,26 +127,26 @@ You can also buy them separately from the links below.
         'openweather_api_key':'OPENWEATHERMAP_API_KEY'
         }
 
-**4. Run the Script**
+**4. Das Skript ausführen**
 
-#. Open the ``8.4_weather.py`` file under the path of ``pico-2w-kit-main/micropython/iot``, click the **Run current script** button or press F5 to run it.
+#. Öffne die Datei ``8.4_weather.py`` unter dem Pfad ``pico-2w-kit-main/micropython/iot``, klicke auf den Knopf **Run current script** oder drücke F5, um es auszuführen.
 
     .. image:: img/4_openweather2.png
 
 
-#. After the script runs, you will see the time and weather information of your location on the I2C LCD1602.
 
+#. Nachdem das Skript ausgeführt wurde, werden die Uhrzeit und die Wetterinformationen deines Standorts auf dem I2C LCD1602 angezeigt.
 
     .. note:: 
 
-        When the code is running, if the screen is blank, you can turn the potentiometer on the back of the module to increase the contrast.
+        Wenn der Bildschirm während des Betriebs leer bleibt, kannst du das Potentiometer auf der Rückseite des Moduls drehen, um den Kontrast zu erhöhen.
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+#. Wenn du möchtest, dass dieses Skript beim Booten ausgeführt wird, kannst du es als „main.py“ auf dem Raspberry Pi Pico 2 W speichern.
 
 
-**How it works?**
+**Wie funktioniert es?**
 
-This project requires a network connection,  use the  :ref:`py_iot_access` method to connect to the network. 
+Dieses Projekt benötigt eine Netzwerkverbindung. Verwende die Methode :ref:`py_iot_access`, um eine Verbindung zum Netzwerk herzustellen.
 
 .. code-block:: python
 
@@ -159,11 +154,11 @@ This project requires a network connection,  use the  :ref:`py_iot_access` metho
     from do_connect import *
     do_connect()
 
-from do_connect import * : This imports the `do_connect()` function, which contains the logic for connecting to Wi-Fi using the `network` module. Once the `do_connect()` function is called, it will connect to the Wi-Fi network specified in `secrets.py`. If the connection fails, it will raise an exception; if successful, the next step will proceed.
+from do_connect import * : Dies importiert die Funktion  `do_connect()` , welche die Logik zum Verbinden mit Wi-Fi unter Verwendung des `network`-Moduls enthält. Sobald die Funktion `do_connect()` aufgerufen wird, verbindet sie sich mit dem in `secrets.py` angegebenen Wi-Fi-Netzwerk. Wenn die Verbindung fehlschlägt, wird eine Ausnahme ausgelöst; wenn sie erfolgreich ist, wird mit dem nächsten Schritt fortgefahren.
 
-from secrets import * :  The `secrets.py` file is typically a separate file used to store your Wi-Fi SSID, password, and other sensitive information (such as API keys). This helps avoid embedding sensitive information directly in the main code file. 
+from secrets import * : Die Datei `secrets.py` ist in der Regel eine separate Datei, die dazu dient, deine Wi-Fi-SSID, das Passwort und andere sensible Informationen (wie API-Schlüssel) zu speichern. Dadurch wird vermieden, dass sensible Informationen direkt in der Hauptcode-Datei eingebettet werden.
 
-After connecting to the Internet, these few lines of code will help synchronize your Pico 2 W to Greenwich Mean Time.
+Nachdem eine Internetverbindung hergestellt wurde, helfen diese Codezeilen, deinen Pico 2 W auf die Greenwich Mean Time zu synchronisieren.
 
 .. code-block:: python
 
@@ -177,7 +172,7 @@ After connecting to the Internet, these few lines of code will help synchronize 
          print('Time Setting...')
          continue   
 
-Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
+Initialisiere dein LCD. Bitte siehe :ref:`py_lcd` für Details zur Verwendung.
 
 .. code-block:: python
 
@@ -187,7 +182,7 @@ Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
    string = 'Loading...'
    lcd.message(string)
 
-We need to select the unit for some weather data (e.g. temperature, wind speed) before we get the weather data. In this case, the unit is ``metric``.
+Wir müssen die Einheit für einige Wetterdaten (z.B. Temperatur, Windgeschwindigkeit) auswählen, bevor wir die Wetterdaten erhalten. In diesem Fall ist die Einheit „metrisch“.
 
 .. code-block:: python
 
@@ -206,9 +201,9 @@ We need to select the unit for some weather data (e.g. temperature, wind speed) 
 
    units = "metric"
 
-Next, this function gets the weather data from ``openweathermap.org``.
-We will post a URL message to it with your city, API keys, and a set unit.
-As a result, you will receive a ``JSON`` file with weather data.
+Als nächstes holt diese Funktion die Wetterdaten von ``openweathermap.org``. 
+Wir senden eine URL-Nachricht mit deiner Stadt, API-Schlüsseln und einer 
+festgelegten Einheit. Als Ergebnis erhältst du eine ``JSON``-Datei mit Wetterdaten.
 
 .. code-block:: python
 
@@ -225,11 +220,11 @@ As a result, you will receive a ``JSON`` file with weather data.
       res = urequests.post(url)
       return res.json()
 
-If you print out this set of raw data, you will be able to see information similar to that shown below.
+Wenn du diese Rohdaten ausgibst, wirst du Informationen sehen, die denen unten ähnlich sind.
 
 .. code-block:: python
 
-   weather data example:
+   Wetterdatenbeispiel:
    {
        'timezone': 28800,
        'sys': {
@@ -275,9 +270,9 @@ If you print out this set of raw data, you will be able to see information simil
        }
    }
 
-We used the ``print_weather(weather_data)`` function to convert these raw data into easy-to-read data format and print them.
+Wir haben die Funktion ``print_weather(weather_data)`` verwendet, um diese Rohdaten in ein leicht lesbares Datenformat umzuwandeln und auszudrucken.
 
-But this function is not called, and you can uncomment this line in ``while True`` as needed.
+Diese Funktion wird jedoch nicht aufgerufen, und du kannst diese Zeile in ``while True`` bei Bedarf auskommentieren.
 
 .. image:: img/4_openweather3.png
 
@@ -287,7 +282,7 @@ But this function is not called, and you can uncomment this line in ``while True
    # shell print
    print_weather(weather_data)
 
-In the ``while True`` loop, the ``get_weather()`` function is called first to retrieve the ``weather``, ``temperature`` and ``humidity`` information needed for this project.
+In der Schleife ``while True`` wird zuerst die Funktion ``get_weather()`` aufgerufen, um die benötigten Informationen über das ``weather``, die ``temperatur`` und die ``humidity`` für dieses Projekt abzurufen.
 
 .. code-block:: python
 
@@ -296,9 +291,9 @@ In the ``while True`` loop, the ``get_weather()`` function is called first to re
    t=weather_data["main"]["temp"]
    rh=weather_data["main"]["humidity"]
 
-Get the local time. The ``time.localtime()`` function is called here to return a set of tuples (year, month, mday, hour, minute, second, weekday, yearday). We have taken ``hour`` and ``minute`` out of it.
+Hole die lokale Zeit. Die Funktion ``time.localtime()`` wird hier aufgerufen, um eine Reihe von Tupeln (Jahr, Monat, Tag, Stunde, Minute, Sekunde, Wochentag, Jahrestag) zurückzugeben. Wir haben ``hour`` und ``minute`` daraus entnommen.
 
-Note that we have already synchronized Pico 2 W to Greenwich Mean Time, so we need to add the time zone of your location.
+Beachte, dass wir den Pico 2 W bereits auf die Greenwich Mean Time synchronisiert haben, daher müssen wir die Zeitzone deines Standorts hinzufügen.
 
 .. code-block:: python
     
@@ -309,7 +304,7 @@ Note that we have already synchronized Pico 2 W to Greenwich Mean Time, so we ne
     hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
     mins=time.localtime()[4]
 
-Finally, the weather information and time are just displayed in the LCD1602.
+Schließlich werden die Wetterinformationen und die Zeit einfach auf dem LCD1602 angezeigt.
 
 .. code-block:: python
 
@@ -320,13 +315,13 @@ Finally, the weather information and time are just displayed in the LCD1602.
    string = f'{t}{TEMPERATURE_UNITS[units]} {rh}%rh'
    lcd.message(string)
 
-Your LCD1602 will become a clock that refreshes every 30 seconds when the main loop runs every 30 seconds.
+Dein LCD1602 wird zu einer Uhr, die alle 30 Sekunden aktualisiert wird, wenn die Hauptschleife alle 30 Sekunden ausgeführt wird.
 
 
 
-.. OPW的文档页面, 可以查找每种产品的所有技术信息。https://openweathermap.org/api
+.. OPW's documentation page, where you can find all the technical information for each product. https://openweathermap.org/api
 
 
-.. 查看获取到的key https://home.openweathermap.org/api_keys
-.. 当前天气的资料页 https://openweathermap.org/current
+.. View the obtained key https://home.openweathermap.org/api_keys
+.. Current weather data page https://openweathermap.org/current
 .. https://openweathermap.org/appid

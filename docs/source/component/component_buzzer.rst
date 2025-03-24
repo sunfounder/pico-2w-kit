@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie gemeinsam mit anderen begeisterten Mitgliedern tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und Problemen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Teilen Sie Tipps, Tutorials und Erfahrungen, um Ihre Kenntnisse zu erweitern.
+    - **Exclusive Previews**: Sichern Sie sich vorzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Special Discounts**: Nutzen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an Gewinnspielen und besonderen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns gemeinsam Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_buzzer:
 
@@ -18,23 +18,23 @@ Buzzer
 =======
 
 
-Buzzers are electronic components with an integrated structure, commonly powered by DC. They are widely used in a variety of devices, including computers, printers, photocopiers, alarms, electronic toys, automotive electronics, telephones, timers, and other electronic products or audio signaling devices.
+Buzzer sind elektronische Bauelemente mit integrierter Struktur, die üblicherweise mit Gleichstrom (DC) betrieben werden. Sie kommen in vielen Geräten zum Einsatz, darunter Computer, Drucker, Kopierer, Alarme, elektronisches Spielzeug, Fahrzeugelektronik, Telefone, Timer und andere elektronische Produkte oder Audiosignaleinrichtungen.
 
-Buzzers are categorized into two types: active and passive (as shown in the image below). To identify the type, turn the buzzer so that its pins face upward. A passive buzzer features a green circuit board, while an active buzzer is enclosed with black tape.
+Grundsätzlich unterscheidet man zwei Typen von Buzzern: aktive und passive Buzzer (siehe Abbildung unten). Um den Typ zu bestimmen, drehen Sie den Buzzer so, dass die Pins nach oben zeigen. Ein passiver Buzzer besitzt eine grüne Platine, während ein aktiver Buzzer typischerweise mit schwarzem Klebeband umhüllt ist.
 
 |img_buzzer|
 
-Difference Between an Active Buzzer and a Passive Buzzer:
+Unterschied zwischen aktivem und passivem Buzzer:
 
-An active buzzer has a built-in oscillating source, allowing it to produce sound as soon as it is powered. In contrast, a passive buzzer lacks an internal oscillating source and will not emit sound if powered by a DC signal. Instead, it requires a square wave with a frequency between 2 kHz and 5 kHz to function. Due to the additional internal circuitry, active buzzers are typically more expensive than passive buzzers.
+Ein aktiver Buzzer verfügt über eine integrierte Oszillatorschaltung, die bereits beim Anlegen einer Gleichspannung einen Ton erzeugt. Im Gegensatz dazu besitzt ein passiver Buzzer keinen eingebauten Oszillator und erzeugt daher bei Anlegen einer reinen Gleichspannung keinen Ton. Um einen Ton zu erzeugen, muss ein passiver Buzzer mit einem Rechtecksignal zwischen 2 kHz und 5 kHz angesteuert werden. Aufgrund der zusätzlichen internen Schaltung sind aktive Buzzer in der Regel teurer als passive Modelle.
 
-The electrical symbol for a buzzer is shown below. It features two pins, one positive and one negative. The pin marked with a "+" on the surface indicates the anode, while the other pin represents the cathode.
+Das folgende Symbol zeigt das Schaltzeichen eines Buzzers. Es verfügt über zwei Pins: eine Anode (positiver Pol), die mit „+“ markiert ist, und eine Kathode (negativer Pol).
 
 |img_buzzer_symbol|
 
-You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don't mix them up when connecting, otherwise the buzzer will not make sound. 
+Um die Pins des Buzzers korrekt zu identifizieren, achten Sie darauf, dass der längere Pin die Anode und der kürzere Pin die Kathode ist. Vertauschen Sie die Anschlüsse nicht, da der Buzzer ansonsten keinen Ton erzeugt.
 
-`Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
+Weitere Informationen: `Buzzer – Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
 
 .. Example
 .. -------------------
@@ -45,17 +45,17 @@ You can check the pins of the buzzer, the longer one is the anode and the shorte
 
 **Example**
 
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`py_iot_mqtt_subscribe` (For MicroPython User)
-* :ref:`py_iot_ble_piano` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-.. * :ref:`per_service_bell` (For Piper Make User)
-.. * :ref:`per_reversing_system` (For Piper Make User)
-.. * :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_ac_buz` (Für MicroPython-Nutzer)
+* :ref:`py_pa_buz` (Für MicroPython-Nutzer)
+* :ref:`py_light_theremin` (Für MicroPython-Nutzer)
+* :ref:`py_alarm_lamp` (Für MicroPython-Nutzer)
+* :ref:`py_music_player` (Für MicroPython-Nutzer)
+* :ref:`py_fruit_piano` (Für MicroPython-Nutzer)
+* :ref:`py_reversing_aid` (Für MicroPython-Nutzer)
+* :ref:`py_iot_mqtt_subscribe` (Für MicroPython-Nutzer)
+* :ref:`py_iot_ble_piano` (Für MicroPython-Nutzer)
+* :ref:`ar_ac_buz` (Für Arduino-Nutzer)
+* :ref:`ar_pa_buz` (Für Arduino-Nutzer)
+.. * :ref:`per_service_bell` (Für Piper Make-Nutzer)
+.. * :ref:`per_reversing_system` (Für Piper Make-Nutzer)
+.. * :ref:`per_reaction_game` (Für Piper Make-Nutzer)

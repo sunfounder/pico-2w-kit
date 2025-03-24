@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 16:  Sequence of Colors in RGB LED With Micropython
+Lektion 16: Farbsequenzen in RGB-LEDs mit MicroPython
 =============================================================================
 
-This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W to control an RGB LED:
+Dieses Tutorial behandelt die Verwendung von For-Schleifen in MicroPython am Raspberry Pi Pico W zur Steuerung einer RGB-LED:
 
-* **Introduction**: Overview of using for loops and PWM to control RGB LED brightness and color.
-* **Circuit Setup**: Wiring the RGB LED to GPIO pins 13, 14, and 15, using 330 Ohm resistors.
-* **PWM Setup**: Setting up PWM on each LED channel with a frequency of 1000 Hz for smooth transitions.
-* **Color Sequence Input**: Prompting the user for a color sequence, storing inputs in an array.
-* **Color Control Logic**: Using if statements to assign PWM values for colors like red, green, blue, cyan, magenta, yellow, orange, and off.
-* **Continuous Loop**: Cycling through the color sequence using a while true loop with sleep statements.
+* **Einführung**: Überblick über die Nutzung von For-Schleifen und PWM zur Steuerung der Helligkeit und Farbe von RGB-LEDs.
+* **Schaltungsaufbau**: Anschluss der RGB-LED an die GPIO-Pins 13, 14 und 15 unter Verwendung von 330 Ohm Widerständen.
+* **PWM-Einrichtung**: Einrichtung von PWM auf jedem LED-Kanal mit einer Frequenz von 1000 Hz für sanfte Übergänge.
+* **Eingabe der Farbsequenz**: Aufforderung an den Benutzer, eine Farbsequenz einzugeben, die Eingaben werden in einem Array gespeichert.
+* **Farbsteuerungslogik**: Verwendung von If-Anweisungen zur Zuweisung von PWM-Werten für Farben wie Rot, Grün, Blau, Cyan, Magenta, Gelb, Orange und Aus.
+* **Dauerschleife**: Durchlaufen der Farbsequenz mit einer While-True-Schleife und Sleep-Anweisungen.
 
 
 

@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 71:  Allow Thread to Complete Task Before Termination
+Lektion 71:  Erlaube dem Thread, die Aufgabe vor Beendigung abzuschließen
 ===================================================================================
 
-This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:
+Dieses Tutorial behandelt das gnädige Beenden eines mehrfädigen Programms auf dem Raspberry Pi Pico W:
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch for servo movement, using threading for clean exits.
-* **Handling Clean Termination**: Use a global ``running`` variable to manage loop execution. Implement a lock to control critical sections. Ensure the servo completes movement before terminating.
-* **Homework Assignment**: Modify the program to handle more components or sensors, ensuring clean termination in all cases.
+* **Verkabelungsaufbau**: Verbinde die Servosteuerung mit GPIO 17, die Stromversorgung an Pin 40 und Masse an Pin 38. Verbinde den Button mit GPIO 16 und Masse.
+* **Codeimplementierung**: Importiere ``machine``, ``time``, ``_thread``, ``Servo``. Richte die Pins für Button und Servo ein. Implementiere einen Umschalter für die Servobewegung und verwende Threading für saubere Ausgänge.
+* **Saubere Beendigung handhaben**: Verwende eine globale ``running`` Variable zur Steuerung der Schleifenausführung. Implementiere ein Lock, um kritische Bereiche zu kontrollieren. Stelle sicher, dass der Servo die Bewegung vor der Beendigung abschließt.
+* **Hausaufgabe**: Modifiziere das Programm, um mehr Komponenten oder Sensoren zu handhaben, und gewährleiste in allen Fällen eine saubere Beendigung.
 
 
 **Video**

@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 67:  Use Both Cores on Your Pi Pico with MicroPython
+Lektion 67:  Verwende beide Kerne deines Pi Pico mit MicroPython
 ===================================================================================
 
-This tutorial covers using both cores of the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Nutzung beider Kerne des Raspberry Pi Pico W:
 
-* **Concept Overview**: Control LEDs and a servo using threading and functions.
-* **Example Implementation**: Connect red and green LEDs to GPIO pins, set up threading to blink LEDs on separate cores, and control a servo based on direction.
-* **Homework Assignment**: Add servo control, blink the red LED when the servo moves backward, and blink the green LED when it moves forward.
-* **Key Takeaways**: Learn to use threading to control LEDs and servos simultaneously on separate cores.
+* **Konzeptüberblick**: Steuere LEDs und einen Servo mit Threading und Funktionen.
+* **Beispielimplementierung**: Verbinde rote und grüne LEDs mit GPIO-Pins, richte Threading ein, um LEDs auf getrennten Kernen blinken zu lassen, und steuere einen Servo basierend auf der Richtung.
+* **Hausaufgabe**: Füge die Servosteuerung hinzu, lasse die rote LED blinken, wenn der Servo rückwärts bewegt wird, und die grüne LED, wenn er vorwärts bewegt wird.
+* **Wichtigste Erkenntnisse**: Lerne, Threading zu nutzen, um LEDs und Servos gleichzeitig auf getrennten Kernen zu steuern.
 
 
 **Video**

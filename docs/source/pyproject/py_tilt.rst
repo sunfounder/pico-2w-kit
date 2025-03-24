@@ -1,46 +1,45 @@
 .. note::
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich mit anderen Enthusiasten in die Welt von Raspberry Pi, Arduino und ESP32.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_tilt:
 
 
-2.6 Tilt It！
+2.6 Kippe es!
 ==========================
 
 |img_tilt|
 
-In this lesson, we'll learn how to use a tilt switch with the Raspberry Pi Pico 2 W to detect changes in orientation. A tilt switch is a simple device that can sense whether it is upright or tilted, making it useful for applications like motion detection, orientation sensing, or as a trigger based on position.
+In dieser Lektion lernen wir, wie man einen Neigungsschalter mit dem Raspberry Pi Pico 2 W verwendet, um Änderungen der Ausrichtung zu erkennen. Ein Neigungsschalter ist ein einfaches Gerät, das erkennen kann, ob es aufrecht oder geneigt ist, was es nützlich für Anwendungen wie Bewegungserkennung, Orientierungssensorik oder als Auslöser basierend auf der Position macht.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -48,8 +47,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,37 +76,37 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Circuit Diagram**
+**Schaltplan**
 
 |sch_tilt|
 
-* **When Upright (Switch Closed)**:
+* **Im aufrechten Zustand (Schalter geschlossen)**:
 
-  * The tilt switch connects **3.3V** directly to **GP14**.
-  * The GPIO pin reads **HIGH** (1).
+  * Der Neigungsschalter verbindet **3,3V** direkt mit **GP14**.
+  * Der GPIO-Pin liest **HOCH** (1).
 
-* **When Tilted (Switch Open)**:
+* **Im geneigten Zustand (Schalter geöffnet)**:
 
-  * The tilt switch disconnects **3.3V** from **GP14**.
-  * The pull-down resistor pulls **GP14** to **GND**.
-  * The GPIO pin reads **LOW** (0).
+  * Der Neigungsschalter trennt **3,3V** von **GP14**.
+  * Der Pull-Down-Widerstand zieht **GP14** auf **GND**.
+  * Der GPIO-Pin liest **NIEDRIG** (0).
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_tilt|
 
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
-We'll write a simple MicroPython program that detects the state of the tilt switch and prints a message when the switch is tilted.
+Wir schreiben ein einfaches MicroPython-Programm, das den Zustand des Neigungsschalters erkennt und eine Nachricht ausgibt, wenn der Schalter geneigt wird.
 
 .. note::
 
-    * Open the ``2.6_tilt_switch.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die Datei ``2.6_tilt_switch.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
 .. code-block:: python
@@ -115,47 +114,47 @@ We'll write a simple MicroPython program that detects the state of the tilt swit
     import machine
     import utime
 
-    # Initialize GP14 as an input pin
+    # Initialisiere GP14 als Eingangspin
     tilt_switch = machine.Pin(14, machine.Pin.IN)
 
     while True:
         if tilt_switch.value() == 0:
             print("Tilt detected!")
-            utime.sleep(1)  # Delay to avoid multiple rapid detections
+            utime.sleep(1)  # Verzögerung, um mehrfache schnelle Erkennungen zu vermeiden
 
-When the code is running, you will observe the following phenomenon:
+Wenn der Code läuft, wirst du folgendes Phänomen beobachten:
 
-* Keep the tilt switch upright; no message should appear. 
-* Tilt the breadboard or switch; "Tilt detected!" should appear in the console.
+* Halte den Neigungsschalter aufrecht; es sollte keine Nachricht erscheinen. 
+* Kippe das Breadboard oder den Schalter; "Kippung erkannt!" sollte in der Konsole erscheinen.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Import Modules:
+#. Module importieren:
 
-   * ``import machine``: Gives us access to the hardware components.
-   * ``import utime``: Allows us to use time-related functions.
+   * ``import machine``: Gibt uns Zugang zu den Hardwarekomponenten.
+   * ``import utime``: Ermöglicht uns die Verwendung von zeitbezogenen Funktionen.
 
-#. Initialize the Tilt Switch Pin:
+#. Initialisierung des Neigungsschalter-Pins:
 
-   * ``tilt_switch = machine.Pin(14, machine.Pin.IN)``: Sets up GP14 as an input pin.
+   * ``tilt_switch = machine.Pin(14, machine.Pin.IN)``: Richtet GP14 als Eingangspin ein.
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * ``while True``: Creates an infinite loop to continuously check the tilt switch state.
-   * ``if tilt_switch.value() == 0``: Checks if the GPIO pin reads LOW (0), indicating the switch is tilted.
-   * ``print("Tilt detected!")``: Outputs a message when the tilt is detected.
-   * ``utime.sleep(1)``: Adds a 1-second delay to debounce the switch and prevent multiple detections.
+   * ``while True``: Erstellt eine unendliche Schleife, um kontinuierlich den Zustand des Neigungsschalters zu überprüfen.
+   * ``if tilt_switch.value() == 0``: Überprüft, ob der GPIO-Pin NIEDRIG (0) liest, was darauf hinweist, dass der Schalter geneigt ist.
+   * ``print("Tilt detected!")``: Gibt eine Nachricht aus, wenn die Kippung erkannt wird.
+   * ``utime.sleep(1)``: Fügt eine 1-Sekunden-Verzögerung hinzu, um den Schalter zu entprellen und mehrfache Erkennungen zu verhindern.
 
-**Alternative Wiring: Using Internal Pull-Down Resistor**
+**Alternative Verdrahtung: Verwendung eines internen Pull-Down-Widerstands**
 
-The Raspberry Pi Pico 2 W allows us to enable internal pull-up or pull-down resistors, eliminating the need for an external resistor.
+Der Raspberry Pi Pico 2 W ermöglicht es uns, interne Pull-Up- oder Pull-Down-Widerstände zu aktivieren, was den Bedarf an einem externen Widerstand eliminiert.
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize GP14 as an input pin with internal pull-down resistor
+    # Initialisiere GP14 als Eingangspin mit internem Pull-Down-Widerstand
     tilt_switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 
     while True:
@@ -163,20 +162,20 @@ The Raspberry Pi Pico 2 W allows us to enable internal pull-up or pull-down resi
             print("Tilt detected!")
             utime.sleep(1)
 
-By enabling the internal pull-down resistor (``machine.Pin.PULL_DOWN``), the GPIO pin defaults to LOW when no voltage is applied.
-When the tilt switch is upright (closed), it connects 3.3V to GP14, and the pin reads HIGH (1).
+Durch Aktivieren des internen Pull-Down-Widerstands (``machine.Pin.PULL_DOWN``) wird der GPIO-Pin standardmäßig auf NIEDRIG gesetzt, wenn keine Spannung angelegt wird.
+Wenn der Neigungsschalter aufrecht (geschlossen) ist, verbindet er 3,3V mit GP14, und der Pin liest HOCH (1).
 
-**Practical Applications**
+**Praktische Anwendungen**
 
-* **Orientation Detection**: Determine if a device is upright or tilted.
-* **Motion-Triggered Events**: Activate alarms, notifications, or actions when movement is detected.
-* **Interactive Projects**: Use as an input to control games or installations that respond to tilting.
+* **Orientierungserkennung**: Bestimme, ob ein Gerät aufrecht oder geneigt ist.
+* **Bewegungsausgelöste Ereignisse**: Aktiviere Alarme, Benachrichtigungen oder Aktionen, wenn eine Bewegung erkannt wird.
+* **Interaktive Projekte**: Verwende es als Eingabe, um Spiele oder Installationen zu steuern, die auf Kippen reagieren.
 
-**Experimenting Further**
+**Weiteres Experimentieren**
 
-* Add an LED Indicator:
+* LED-Anzeige hinzufügen:
 
-Connect an LED to another GPIO pin (e.g., GP15) with a suitable resistor. Modify the code to light up the LED when a tilt is detected.
+Verbinde eine LED mit einem anderen GPIO-Pin (z.B. GP15) mit einem geeigneten Widerstand. Modifiziere den Code, um die LED leuchten zu lassen, wenn eine Kippung erkannt wird.
 
 .. code-block:: python
 
@@ -189,15 +188,15 @@ Connect an LED to another GPIO pin (e.g., GP15) with a suitable resistor. Modify
     while True:
         if tilt_switch.value() == 1:
             print("Tilt detected!")
-            led.value(1)  # Turn on the LED
+            led.value(1)  # Schalte die LED ein
             utime.sleep(1)
         else:
-            led.value(0)  # Turn off the LED
+            led.value(0)  # Schalte die LED aus
 
-* Use with Other Sensors:
+* Verwende es mit anderen Sensoren:
 
-  Combine the tilt switch with other sensors like buttons or light sensors for more complex interactions.
+  Kombiniere den Neigungsschalter mit anderen Sensoren wie Tasten oder Lichtsensoren für komplexere Interaktionen.
 
-**Conclusion**
+**Fazit**
 
-By incorporating a tilt switch into your Raspberry Pi Pico 2 W projects, you can add a new dimension of interactivity based on orientation and movement. Understanding how to read digital inputs from sensors like the tilt switch expands your ability to create dynamic and responsive electronics.
+Durch die Integration eines Neigungsschalters in deine Raspberry Pi Pico 2 W-Projekte kannst du eine neue Dimension der Interaktivität basierend auf Orientierung und Bewegung hinzufügen. Das Verständnis, wie man digitale Eingaben von Sensoren wie dem Neigungsschalter liest, erweitert deine Fähigkeit, dynamische und reaktionsfähige Elektronik zu erstellen.

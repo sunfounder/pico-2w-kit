@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 27:  Creating Lissajous Patterns on an OLED Display
+Lektion 27: Erstellen von Lissajous-Figuren auf einem OLED-Display
 =============================================================================
 
-This tutorial covers generating Lissajous patterns on an OLED display using the Raspberry Pi Pico W:
+Dieses Tutorial behandelt das Generieren von Lissajous-Figuren auf einem OLED-Display mit dem Raspberry Pi Pico W:
 
-* **Introduction**: Goal is to generate a floating "potato chip" Lissajous pattern on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**: Reviews drawing circles and introduces the math for Lissajous patterns using sine and cosine functions.
-* **Generating the Pattern**: Provides code to draw a circle, then modifies it to create the Lissajous pattern using trigonometric functions.
-* **Enhancing the Pattern**: Adjusts parameters and adds phase shift for a rotating effect.
-* **Practical Demonstration**: Shows the Lissajous pattern on the OLED, optimizing speed for smooth animations.
-* **Homework Assignment**: Task to create a Lissajous pattern and post results on YouTube, experimenting with parameters.
+* **Einführung**: Ziel ist es, ein "schwebendes Kartoffelchip"-Lissajous-Muster auf einem OLED-Display mit dem Raspberry Pi Pico W zu erzeugen.
+* **Zusammenfassung und Einrichtung**: Wiederholung des Zeichnens von Kreisen und Einführung in die Mathematik für Lissajous-Figuren mit Sinus- und Kosinusfunktionen.
+* **Generierung des Musters**: Stellt Code bereit, um einen Kreis zu zeichnen, und modifiziert diesen dann, um das Lissajous-Muster mit trigonometrischen Funktionen zu erstellen.
+* **Verbesserung des Musters**: Anpassung der Parameter und Hinzufügen einer Phasenverschiebung für einen rotierenden Effekt.
+* **Praktische Demonstration**: Zeigt das Lissajous-Muster auf dem OLED, optimiert die Geschwindigkeit für fließende Animationen.
+* **Hausaufgabe**: Aufgabe, ein Lissajous-Muster zu erstellen und die Ergebnisse auf YouTube zu posten, mit Experimentieren an den Parametern.
 
 
 

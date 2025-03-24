@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 15:  For Loops in Micropython
+Lektion 15: For-Schleifen in MicroPython
 ==========================================================================
-This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Verwendung von For-Schleifen in MicroPython am Beispiel des Raspberry Pi Pico W:
 
-* **Introduction to For Loops**: Explains the difference between for and while loops, highlighting when to use each.
-* **Basic For Loop Syntax**: Demonstrates looping through a range of numbers and explains the start, stop, and step values.
-* **Looping Through Arrays**: Shows how to iterate through arrays with different data types like numbers and strings.
-* **Nested Loops**: Introduces nested loops and their use in multi-dimensional arrays or complex operations.
-* **Practical Example with Hardware**: Uses a for loop to control LED blinking based on user input.
-* **Combining Loops and User Input**: Combines user input with loops for dynamic programs, converting strings to integers.
-* **Homework Assignment**: Replace the LED with an RGB LED, ask for a sequence of colors, and display them using a for loop.
+* **Einführung in For-Schleifen**: Erklärt den Unterschied zwischen For- und While-Schleifen und hebt hervor, wann welche Schleife verwendet werden sollte.
+* **Grundsyntax von For-Schleifen**: Demonstriert das Durchlaufen einer Reihe von Zahlen und erläutert die Start-, Stopp- und Schrittwerte.
+* **Durchlaufen von Arrays**: Zeigt, wie man Arrays mit verschiedenen Datentypen wie Zahlen und Zeichenfolgen durchläuft.
+* **Verschachtelte Schleifen**: Führt verschachtelte Schleifen ein und deren Anwendung in mehrdimensionalen Arrays oder komplexen Operationen.
+* **Praktisches Beispiel mit Hardware**: Verwendet eine For-Schleife zur Steuerung des Blinkens einer LED basierend auf Benutzereingaben.
+* **Kombination von Schleifen und Benutzereingaben**: Kombiniert Benutzereingaben mit Schleifen für dynamische Programme, wandelt Zeichenketten in Ganzzahlen um.
+* **Hausaufgabe**: Ersetzen Sie die LED durch eine RGB-LED, fordern Sie eine Sequenz von Farben an und zeigen Sie diese mit einer For-Schleife an.
 
 **Video**
 

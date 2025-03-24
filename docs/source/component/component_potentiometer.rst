@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_potentiometer:
 
@@ -19,44 +19,44 @@ Potentiometer
 
 |img_pot|
 
-A potentiometer is a variable resistor with three terminals, allowing its resistance value to be adjusted according to a specific pattern or mechanism.
+Ein Potentiometer ist ein verstellbarer Widerstand mit drei Anschlüssen, dessen Widerstandswert über einen Mechanismus oder ein Muster angepasst werden kann.
 
-Potentiometers come in various shapes, sizes, and resistance values, but they share these common characteristics:
+Potentiometer gibt es in verschiedenen Formen, Größen und Widerstandswerten, jedoch haben sie folgende gemeinsame Merkmale:
 
-* They have three terminals (or connection points).
-* They have a knob, screw, or slider that can be moved to vary the resistance between the middle terminal and either one of the outer terminals.
-* The resistance between the middle terminal and either one of the outer terminals varies from 0 Ω to the maximum resistance of the pot as the knob, screw, or slider is moved.
+* Sie verfügen über drei Anschlüsse (Kontaktpunkte).
+* Sie besitzen einen Drehknopf, eine Schraube oder einen Schieberegler, mit dem der Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse variiert werden kann.
+* Der Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse ändert sich von 0 Ω bis zum maximalen Widerstandswert des Potentiometers, wenn der Knopf, die Schraube oder der Schieberegler bewegt wird.
 
-Here is the circuit symbol of potentiometer. 
+Hier ist das Schaltzeichen eines Potentiometers:
 
 |img_pot_symbol|
 
 
-The functions of the potentiometer in the circuit are as follows: 
+Die Funktionen des Potentiometers in einer Schaltung sind folgende:
 
-#. Serving as a voltage divider
+#. Als Spannungsteiler 
+   
+    Ein Potentiometer ist ein stufenlos einstellbarer Widerstand. Durch Drehen der Achse oder Verschieben des Reglers bewegt sich der Kontakt auf dem Widerstandselement. Je nach angelegter Spannung und der Position des beweglichen Arms kann eine entsprechende Ausgangsspannung erzeugt werden.
 
-    Potentiometer is a continuously adjustable resistor. When you adjust the shaft or sliding handle of the potentiometer, the movable contact will slide on the resistor.  At this point, a voltage can be output depending on the voltage applied onto the potentiometer and the angle the movable arm has rotated to or the travel it has made. 
+#. Als verstellbarer Widerstand (Rheostat)  
+   
+    Wird das Potentiometer als verstellbarer Widerstand genutzt, verbindet man den mittleren Anschluss mit einem der beiden äußeren Anschlüsse. So lässt sich ein kontinuierlich variabler Widerstandswert innerhalb des gesamten Regelbereichs erzielen.
 
-#. Serving as a rheostat
+#. Als Stromregler  
+   
+    Wenn das Potentiometer als Stromregler fungiert, muss der Gleitkontakt als einer der Ausgangsanschlüsse verwendet werden.
 
-    When the potentiometer is used as a rheostat, connect the middle pin and one of the other 2 pins in the circuit. Thus you can get a smoothly and continuously changed resistance value within the travel of the moving contact. 
-
-#. Serving as a current controller
-
-    When the potentiometer acts as a current controller, the sliding contact terminal must be connected as one of the output terminals.
-
-If you want to know more about potentiometer, refer to: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
+Weitere Informationen über Potentiometer findest du unter: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
 
 .. Example
 .. -------------------
 
-.. * :ref:`Turn the Knob` (For MicroPython User)
-.. * :ref:`Table Lamp` (For C/C++(Arduino) User)
+.. * :ref:`Turn the Knob` (Für MicroPython-Nutzer)
+.. * :ref:`Table Lamp` (Für C/C++(Arduino)-Nutzer)
 
 
 **Example**
 
-* :ref:`py_pot` (For MicroPython User)
-* :ref:`ar_pot` (For Arduino User)
-.. * :ref:`per_swing_servo` (For Piper Make User)
+* :ref:`py_pot` (Für MicroPython-Nutzer)
+* :ref:`ar_pot` (Für Arduino-Nutzer)
+.. * :ref:`per_swing_servo` (Für Piper Make-Nutzer)

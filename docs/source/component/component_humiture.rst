@@ -1,50 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie gemeinsam mit anderen begeisterten Mitgliedern Ihr Wissen rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und Problemen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Tauschen Sie Tipps und Tutorials aus und erweitern Sie Ihre Fähigkeiten.
+    - **Exclusive Previews**: Bekommen Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und werden Sie noch heute Mitglied!
 
 .. _cpn_dht11:
 
 DHT11 Humiture Sensor
 =============================
 
-The DHT11 digital temperature and humidity sensor is a composite sensor that provides calibrated digital output for both temperature and humidity. It combines advanced digital signal processing with reliable temperature and humidity sensing technologies to deliver high reliability and excellent long-term stability.
+Der digitale Temperatur- und Luftfeuchtigkeitssensor DHT11 ist ein kombinierter Sensor, der kalibrierte digitale Messwerte für Temperatur und Luftfeuchtigkeit liefert. Er vereint moderne digitale Signalverarbeitung mit zuverlässigen Messverfahren und bietet somit hohe Genauigkeit und langfristige Stabilität.
 
-The sensor integrates a resistive humidity sensing component and an NTC thermistor for temperature measurement, paired with a high-performance 8-bit microcontroller for precise data processing.
+Der DHT11 kombiniert einen resistiven Feuchtigkeitssensor mit einem NTC-Thermistor zur Temperaturmessung und enthält einen leistungsfähigen 8-Bit-Mikrocontroller für die präzise Verarbeitung der Messdaten.
 
-.. The schematic diagram of the Humiture Sensor Module is as shown following: |img_Hum-sch| 
+.. Das Schaltbild des Feuchtigkeits- und Temperatursensormoduls ist wie folgt dargestellt: |img_Hum-sch| 
 
-Only three pins are available for use: VCC, GND, and DATA. 
-The communication process begins with the DATA line sending start signals to DHT11, and DHT11 receives the signals and returns an answer signal. 
-Then the host receives the answer signal and begins to receive 40-bit humiture data (8-bit humidity integer + 8-bit humidity decimal + 8-bit temperature integer + 8-bit temperature decimal + 8-bit checksum).
+Es stehen drei Anschlusspins zur Verfügung: VCC, GND und DATA.
+Die Kommunikation startet mit einem Startsignal auf der DATA-Leitung 
+vom Host zum DHT11. Anschließend sendet der DHT11 ein Antwortsignal zurück. Danach beginnt die Übertragung der 40-Bit-Daten (8 Bit Luftfeuchtigkeit ganzzahlig + 8 Bit Luftfeuchtigkeit dezimal + 8 Bit Temperatur ganzzahlig + 8 Bit Temperatur dezimal + 8 Bit Prüfsumme).
 
 |img_Dht11|
 
 **Features**
 
-    #. Humidity measurement range: 20 - 90%RH
-    #. Temperature measurement range: 0 - 60℃
-    #. Output digital signals indicating temperature and humidity
-    #. Working voltage:DC 5V; PCB size: 2.0 x 2.0 cm
-    #. Humidity measurement accuracy: ±5%RH
-    #. Temperature measurement accuracy: ±2℃
+    #. Messbereich Luftfeuchtigkeit: 20 – 90 % RH
+    #. Messbereich Temperatur: 0 – 60 ℃
+    #. Digitale Ausgangssignale für Temperatur und Luftfeuchtigkeit
+    #. Betriebsspannung: DC 5 V; PCB-Größe: 2,0 × 2,0 cm
+    #. Messgenauigkeit Luftfeuchtigkeit: ±5 % RH
+    #. Messgenauigkeit Temperatur: ±2 ℃
 
-
-* `DHT11 Datasheet <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
+* `DHT11 Datenblatt <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
 
 **Example**
 
-* :ref:`py_dht11` (For MicroPython User)
-* :ref:`py_iot_adafruitio` (For MicroPython User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-* :ref:`py_iot_ble_home` (For MicroPython User)
-* :ref:`ar_dht11` (For Arduino User)
+* :ref:`py_dht11` (Für MicroPython-Nutzer)
+* :ref:`py_iot_adafruitio` (Für MicroPython-Nutzer)
+* :ref:`py_iot_sunfounder_controller_plant` (Für MicroPython-Nutzer)
+* :ref:`py_iot_ble_home` (Für MicroPython-Nutzer)
+* :ref:`ar_dht11` (Für Arduino-Nutzer)

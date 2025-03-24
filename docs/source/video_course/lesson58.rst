@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 58: Determine Angular Position of a Joystick in MicroPython
+Lektion 58: Bestimmung der Winkelposition eines Joysticks in MicroPython
 =============================================================================
 
-This tutorial covers calibrating a joystick with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Kalibrierung eines Joysticks mit dem Raspberry Pi Pico W:
 
-* **Wiring Setup**: Connect ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26.
-* **Code Implementation**: Import necessary libraries.Set up ADC for joystick axes and read values for calibration.
-* **Calibration**: Convert raw ADC values to a scale from -100 to +100. Use trigonometry to calculate the joystick's angle.
-* **Homework Assignment**: Write a program to control a servo motor based on the joystick's angle, ensuring accurate tracking between 0 and 180 degrees.
+* **Verkabelungsaufbau**: Verbinde den Ground mit Pin 38, 3.3V mit Pin 36, VRX mit GPIO-Pin 27 und VRY mit GPIO-Pin 26.
+* **Codeimplementierung**: Importiere die notwendigen Bibliotheken. Richte den ADC für die Joystickachsen ein und lese Werte zur Kalibrierung.
+* **Kalibrierung**: Konvertiere die rohen ADC-Werte in eine Skala von -100 bis +100. Verwende Trigonometrie, um den Winkel des Joysticks zu berechnen.
+* **Hausaufgabe**: Schreibe ein Programm zur Steuerung eines Servomotors basierend auf dem Winkel des Joysticks, um eine genaue Nachverfolgung zwischen 0 und 180 Grad sicherzustellen.
 
 **Video**
 

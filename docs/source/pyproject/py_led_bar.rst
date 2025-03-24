@@ -1,46 +1,46 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Herausforderungen und Fragen nach dem Kauf von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Promotions teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_led_bar:
 
-2.2 Display the Level
+2.2 Anzeigen des Pegels
 =============================
 
-In this lesson, we'll learn how to control an LED Bar Graph using the Raspberry Pi Pico . An LED Bar Graph consists of 10 LEDs arranged in a line, typically used to display levels such as volume, signal strength, or other measurements. We'll light up the LEDs sequentially to create a level display effect.
+In dieser Lektion lernen wir, wie man eine LED-Balkenanzeige mit dem Raspberry Pi Pico steuert. Eine LED-Balkenanzeige besteht aus 10 in einer Reihe angeordneten LEDs und wird typischerweise zur Anzeige von Pegeln wie Lautstärke, Signalstärke oder anderen Messwerten verwendet. Wir werden die LEDs nacheinander einschalten, um einen ansteigenden Pegel-Effekt zu erzeugen.
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name    
+        - ENTHALTENE ARTIKEL IM KIT
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit    
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Links erwerben.
 
 
 .. list-table::
@@ -48,8 +48,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE 
+        - MENGE
         - LINK
 
     *   - 1
@@ -57,7 +57,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,111 +66,109 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 10(220Ω)
+        - 10 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led_bar`
         - 1
         - 
 
-**Circuit Diagram**
+**Schaltplan**
 
 |sch_ledbar|
 
-In this project, each of the 10 LEDs in the LED Bar Graph is connected to the Raspberry Pi Pico 2 W. The anodes (positive terminals) of the LEDs are connected to GPIO pins GP6 through GP15. The cathodes (negative terminals) are connected through 220Ω resistors to the GND (ground) pin.
+In diesem Projekt ist jede der 10 LEDs in der LED-Balkenanzeige mit dem Raspberry Pi Pico 2 W verbunden. Die Anoden (positive Anschlüsse) der LEDs sind mit den GPIO-Pins GP6 bis GP15 verbunden. Die Kathoden (negative Anschlüsse) sind über 220Ω-Widerstände mit dem GND (Masse) verbunden.
 
 
 
-**Wiring Diagram**
+**Verdrahtungsdiagramm**
 
 |wiring_ledbar|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``pico-2w-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press **F5** to run it.
+    * Öffne die Datei ``2.2_display_the_level.py`` unter dem Pfad ``pico-2w-kit-main/micropython`` oder kopiere diesen Code in Thonny, klicke dann auf "Run Current Script" oder drücke **F5**, um ihn auszuführen.
 
-    * Make sure the "MicroPython (Raspberry Pi Pico).COMxx" interpreter is selected in the bottom right corner of Thonny.
+    * Stelle sicher, dass der Interpreter "MicroPython (Raspberry Pi Pico).COMxx" in der unteren rechten Ecke von Thonny ausgewählt ist.
 
 .. code-block:: python
 
-  import machine
-  import utime
+    import machine
+    import utime
 
-  # Define the GPIO pins connected to the LEDs
-  pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-  leds = []
+    # Definiere die GPIO-Pins, die mit den LEDs verbunden sind
+    pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    leds = []
 
-  # Initialize each pin as an output and store it in the leds list
-  for pin_number in pins:
-      led = machine.Pin(pin_number, machine.Pin.OUT)
-      leds.append(led)
+    # Initialisiere jeden Pin als Ausgang und speichere ihn in der Liste leds
+    for pin_number in pins:
+        led = machine.Pin(pin_number, machine.Pin.OUT)
+        leds.append(led)
 
-  while True:
-      # Turn on LEDs one by one to simulate increasing level
-      for led in leds:
-          led.value(1)  # Turn the LED on
-          utime.sleep(0.2)
-      # Turn off LEDs one by one to simulate decreasing level
-      for led in leds:
-          led.value(0)  # Turn the LED off
-          utime.sleep(0.2)
+    while True:
+        # LEDs nacheinander einschalten, um einen ansteigenden Pegel zu simulieren
+        for led in leds:
+            led.value(1)  # LED einschalten
+            utime.sleep(0.2)
+        # LEDs nacheinander ausschalten, um einen absteigenden Pegel zu simulieren
+        for led in leds:
+            led.value(0)  # LED ausschalten
+            utime.sleep(0.2)
 
-When you run the program, the LEDs on the LED Bar Graph will light up sequentially from the first to the last, creating an increasing level effect. Then, they will turn off one by one, simulating a decreasing level.
+Wenn du das Programm ausführst, leuchten die LEDs in der LED-Balkenanzeige der Reihe nach von der ersten bis zur letzten auf, wodurch ein ansteigender Pegel-Effekt entsteht. Danach erlöschen sie nacheinander, um einen absteigenden Pegel zu simulieren.
 
-**Understanding the Code**
+**Den Code verstehen**
 
-In this project, we control multiple LEDs using lists and loops in MicroPython, which makes the code efficient and easy to read.
+In diesem Projekt steuern wir mehrere LEDs mit Listen und Schleifen in MicroPython. Dies macht den Code effizient und gut lesbar.
 
-Let's break down the key parts of the code:
+Lass uns die wichtigsten Abschnitte des Codes durchgehen:
 
-1. Importing Modules:
+1. Bibliotheken importieren:
 
-   * ``import machine``: Provides access to the Raspberry Pi Pico 2 W's hardware functionalities.
-   * ``import utime``: Allows us to use time-related functions like delays.
+   * ``import machine``: Ermöglicht den Zugriff auf die Hardware-Funktionen des Raspberry Pi Pico 2 W.
+   * ``import utime``: Ermöglicht die Verwendung von Zeitfunktionen wie Verzögerungen.
 
-2. Defining Pins and Initializing LEDs:
+2. Pins definieren und LEDs initialisieren:
 
-   * We create a list ``pins`` containing the GPIO pin numbers connected to the LEDs and initialize an empty list ``leds`` to store the LED objects.
+   * Wir erstellen eine Liste ``pins``, die die GPIO-Pin-Nummern der LEDs enthält, und eine leere Liste ``leds``, um die LED-Objekte zu speichern.
 
-     .. code-block:: python
+   .. code-block:: python
 
-      # Define the GPIO pins connected to the LEDs
-      pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-      leds = []
-     
-   * Using a ``for`` loop, we iterate over each pin number, set it as an output pin, and append the corresponding ``Pin`` object to the ``leds`` list.
-     
-     .. code-block:: python
+       # Definiere die GPIO-Pins, die mit den LEDs verbunden sind
+       pins = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+       leds = []
+      
+   * Mit einer ``for``-Schleife durchlaufen wir jede Pin-Nummer, setzen sie als Ausgang und fügen das zugehörige ``Pin``-Objekt der ``leds``-Liste hinzu.
 
-        for pin_number in pins:
-            led = machine.Pin(pin_number, machine.Pin.OUT)
-            leds.append(led)
-     
-3. Creating the Level Display Effect:
+   .. code-block:: python
 
-   * The ``while True:`` loop runs indefinitely.
-   * Increasing Level:
+       for pin_number in pins:
+           led = machine.Pin(pin_number, machine.Pin.OUT)
+           leds.append(led)
+      
+3. Erstellen des Pegelanzeige-Effekts:
 
-     * Use a ``for`` loop to iterate over each ``led`` in the ``leds`` list.
-     * ``led.value(1)`` turns the LED on.
-     * ``utime.sleep(0.2)`` adds a 200ms delay before the next LED turns on.
-     
+   * Die ``while True:``-Schleife läuft unendlich.
+   * Ansteigender Pegel:
+     * Eine ``for``-Schleife durchläuft jede LED in der ``leds``-Liste.
+     * ``led.value(1)`` schaltet die LED ein.
+     * ``utime.sleep(0.2)`` fügt eine 200ms-Verzögerung hinzu, bevor die nächste LED eingeschaltet wird.
+
      .. code-block:: python
 
         for led in leds:
             led.value(1)
             utime.sleep(0.2)
-     
-   * Decreasing Level:
 
-     * Turn off each LED one by one using another ``for`` loop.
-     * ``led.value(0)`` turns the LED off.
+   * Absteigender Pegel:
+     * Eine weitere ``for``-Schleife schaltet jede LED nacheinander aus.
+     * ``led.value(0)`` schaltet die LED aus.
 
      .. code-block:: python
 
@@ -178,45 +176,45 @@ Let's break down the key parts of the code:
             led.value(0)
             utime.sleep(0.2)
   
-**Experimenting Further**
+**Weitere Experimente**
 
-Feel free to experiment with the code:
+Experimentiere mit dem Code:
 
-* Change the Speed:
+* Geschwindigkeit anpassen: 
 
-  * Adjust the delay in ``utime.sleep(0.2)`` to make the LEDs light up faster or slower.
+    * Ändere die Verzögerung in ``utime.sleep(0.2)``, um die LEDs schneller oder langsamer ein- und auszuschalten.
 
-* Reverse the Order:
+* Reihenfolge umkehren: 
 
-  * Use ``reversed(leds)`` to reverse the sequence of the LEDs.
+    * Verwende ``reversed(leds)``, um die LEDs in umgekehrter Reihenfolge einzuschalten.
 
-    .. code-block:: python
+  .. code-block:: python
 
-        for led in reversed(leds):
-            led.value(1)
-            utime.sleep(0.2)
-    
-* Create a Ping-Pong Effect:
+      for led in reversed(leds):
+          led.value(1)
+          utime.sleep(0.2)
 
-  * Make the LEDs light up from left to right and then back from right to left.
+* Ping-Pong-Effekt erstellen: 
 
-    .. code-block:: python
+    * Lasse die LEDs von links nach rechts und dann wieder zurück von rechts nach links leuchten.
 
-        while True:
-            for led in leds:
-                led.value(1)
-                utime.sleep(0.1)
-            for led in reversed(leds):
-                led.value(0)
-                utime.sleep(0.1)
-    
-**Conclusion**
+  .. code-block:: python
 
-By controlling each LED individually, we've created a simple yet effective level display using the Raspberry Pi Pico 2 W. This project demonstrates the power of lists and loops in Python, allowing us to manage multiple outputs efficiently.
+      while True:
+          for led in leds:
+              led.value(1)
+              utime.sleep(0.1)
+          for led in reversed(leds):
+              led.value(0)
+              utime.sleep(0.1)
 
-Understanding how to work with multiple GPIO pins and using programming structures like lists and loops is essential for more complex projects, such as creating animations, controlling multiple sensors, or building interactive devices.
+**Fazit**
 
-**References**
+Durch die individuelle Steuerung jeder LED haben wir eine einfache, aber effektive Pegelanzeige mit dem Raspberry Pi Pico 2 W erstellt. Dieses Projekt zeigt die Leistungsfähigkeit von Listen und Schleifen in Python, wodurch sich mehrere Ausgänge effizient verwalten lassen.
+
+Das Verständnis für die Arbeit mit mehreren GPIO-Pins und den Einsatz von Programmierstrukturen wie Listen und Schleifen ist entscheidend für komplexere Projekte – sei es die Erstellung von Animationen, die Steuerung mehrerer Sensoren oder der Bau interaktiver Geräte.
+
+**Referenzen**
 
 * |link_python_for|
 * |link_python_list|

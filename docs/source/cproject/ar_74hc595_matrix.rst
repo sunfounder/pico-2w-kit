@@ -1,63 +1,63 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Erhalte Unterstützung bei technischen Herausforderungen und Problemen nach dem Kauf – direkt von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Feiertagsaktionen und Gewinnspiele**: Nimm an Sonderaktionen und Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
 .. _ar_74hc_788bs:
 
 
-5.4 Displaying Graphics on an 8x8 LED Matrix
+5.4 Grafiken auf einer 8x8-LED-Matrix anzeigen
 ===================================================================
 
-In this lesson, we'll learn how to control an **8x8 LED matrix** using the Raspberry Pi Pico 2 W and two **74HC595 shift registers**. We'll display patterns and simple graphics by controlling individual LEDs on the matrix.
+In dieser Lektion lernen wir, wie man eine **8x8-LED-Matrix** mit dem Raspberry Pi Pico 2 W und zwei **74HC595-Schieberegistern** steuert. Wir werden Muster und einfache Grafiken anzeigen, indem wir einzelne LEDs der Matrix gezielt ansteuern.
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist besonders praktisch. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE IM KIT
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
-        - 450+
+        - 450+ Komponenten
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
 
+Alternativ können die Komponenten auch einzeln über die folgenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -78,47 +78,44 @@ You can also buy them separately from the links below.
         - |link_74hc595_buy|
 
 
-**Understanding the 8x8 LED Matrix**
+**Funktionsweise der 8x8-LED-Matrix**
 
-An 8x8 LED matrix consists of 64 LEDs arranged in 8 rows and 8 columns. Each LED can be individually controlled by applying voltage across its row and column. By controlling the current through each pair of rows and columns, we can control each LED to display characters or patterns.
+Eine 8x8-LED-Matrix besteht aus 64 LEDs, die in 8 Reihen und 8 Spalten angeordnet sind. Jede LED kann individuell gesteuert werden, indem eine Spannung zwischen ihrer Reihe und Spalte angelegt wird. Durch gezielte Steuerung der Reihen- und Spaltenströme können Zeichen oder Muster auf der Matrix dargestellt werden.
 
-In this setup, we'll use two 74HC595 shift registers to control the rows and columns of the LED matrix, effectively expanding the number of outputs from the Raspberry Pi Pico 2 while using only a few GPIO pins.
+In diesem Aufbau verwenden wir zwei 74HC595-Schieberegister zur Steuerung der Reihen und Spalten der LED-Matrix. Dadurch erweitern wir die Anzahl der Ausgänge des Raspberry Pi Pico, während wir nur wenige GPIO-Pins verwenden.
 
-**Schematic**
+**Schaltplan**
 
 |sch_ledmatrix|
 
-The 8x8 LED dot matrix is controlled by two **74HC595** shift registers: one controls the rows, and the other controls the columns. These two chips share the Pico's GPIO pins **GP18**, **GP19**, and **GP20**, greatly conserving the Pico's I/O ports.
+Die 8x8-LED-Matrix wird von zwei **74HC595**-Schieberegistern gesteuert: Eines kontrolliert die Reihen, das andere die Spalten. Beide ICs teilen sich die GPIO-Pins **GP18**, **GP19** und **GP20** des Pico, wodurch dessen I/O-Pins effizient genutzt werden.
 
-The Pico outputs a 16-bit binary number at a time. The first 8 bits are sent to the 74HC595 controlling the rows, and the last 8 bits are sent to the 74HC595 controlling the columns. This allows the dot matrix to display specific patterns.
+Der Pico sendet jeweils ein 16-Bit-Binärsignal aus. Die ersten 8 Bits werden an das 74HC595 übermittelt, das die Reihen steuert, und die letzten 8 Bits an das 74HC595 für die Spalten. Dadurch kann die Matrix gezielt Muster anzeigen.
 
-**Q7' (Pin 9)**: This serial data output pin of the first 74HC595 connects to the **DS (Pin 14)** of the second 74HC595, enabling you to chain multiple 74HC595 chips together.
+**Q7' (Pin 9)**: Dieser serielle Ausgang des ersten 74HC595 ist mit dem **DS (Pin 14)** des zweiten 74HC595 verbunden, wodurch mehrere Schieberegister in Reihe geschaltet werden können.
 
-**Wiring**
+**Verdrahtung**
 
-Building the circuit can be complex, so let's proceed step by step.
+Der Aufbau der Schaltung kann komplex sein, daher gehen wir schrittweise vor.
 
-**Step 1:**  First, insert the Pico 2 W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico 2 W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+**Schritt 1:** Setze zunächst den Pico 2 W, die LED-Matrix und zwei 74HC595-Chips 
+auf das Breadboard. Verbinde 3,3V und GND des Pico 2 W mit den Stromschienen des 
+Boards. Anschließend verbinde Pin 16 und 10 der beiden 74HC595-Chips mit VCC sowie 
+Pin 13 und 8 mit GND.
 
 .. note::
-   In the Fritzing image above, the side with label is at the bottom.
+   In der obigen Fritzing-Grafik befindet sich die Seite mit der Beschriftung unten.
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**Schritt 2:** Verbinde Pin 11 der beiden 74HC595-Chips miteinander und anschließend 
+mit GP20. Danach verbinde Pin 12 der beiden Chips mit GP19. Schließlich verbinde Pin 14 des linken 74HC595 mit GP18 und Pin 9 mit Pin 14 des zweiten 74HC595.
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
+**Schritt 3:** Der 74HC595 auf der rechten Seite steuert die Spalten der LED-Matrix. 
+Die folgende Tabelle zeigt die Zuordnung der Pins. Die Pins Q0-Q7 des 74HC595 sind 
+den Pins 13, 3, 4, 10, 6, 11, 15 und 16 der LED-Matrix zugeordnet.
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -128,10 +125,10 @@ respectively.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**Schritt 4:** Verbinde nun die Reihen (Rows) der LED-Matrix. Der linke 74HC595 
+steuert die Reihen der Matrix. In der folgenden Tabelle siehst du die Zuordnung 
+der Pins. Q0-Q7 des linken 74HC595 sind den Pins 9, 14, 8, 12, 1, 7, 2 und 5 der 
+LED-Matrix zugeordnet.
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -141,23 +138,21 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 |wiring_ledmatrix_1|
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``pico-2w-kit-main/arduino/5.4_8x8_pixel_graphics``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Die Datei ``5.4_8x8_pixel_graphics.ino`` befindet sich unter ``pico-2w-kit-main/arduino/5.4_8x8_pixel_graphics``. 
+    * Alternativ kann der Code in die **Arduino IDE** kopiert werden.
+    * Vor dem Hochladen muss das richtige Board (Raspberry Pi Pico) und der **korrekte Port** ausgewählt werden.
 
 .. code-block:: arduino
 
-    const int STcp = 19;  // Pin connected to ST_CP (latch pin) of 74HC595
-    const int SHcp = 20;  // Pin connected to SH_CP (clock pin) of 74HC595
-    const int DS = 18;    // Pin connected to DS (data pin) of 74HC595
+    const int STcp = 19;  // Pin für ST_CP (Latch-Pin) des 74HC595
+    const int SHcp = 20;  // Pin für SH_CP (Takt-Pin) des 74HC595
+    const int DS = 18;    // Pin für DS (Daten-Pin) des 74HC595
 
-    // Data array representing the 'X' shape on an 8x8 LED matrix
+    // Datenarray für das 'X'-Muster auf einer 8x8-LED-Matrix
     byte datArray[] = {0x7E, 0xBD, 0xDB, 0xE7, 0xE7, 0xDB, 0xBD, 0x7E};
 
     void setup() {
@@ -180,39 +175,37 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
       }
     }
 
+Nach dem Hochladen des Codes sollte die LED-Matrix ein 'X'-Muster anzeigen, indem die entsprechenden LEDs aufleuchten.
+Falls das Muster nicht sichtbar ist, überprüfe die Verdrahtung oder passe die Timing-Werte an.
 
+**Verständnis des Codes**
 
-After uploading the code, the LED matrix should display an 'X' pattern by lighting up the appropriate LEDs.
-If the pattern is not visible, try adjusting the timing or check the wiring connections.
+#. Definition der Pins:
 
-**Understanding the Code**
-
-#. Pin Definitions:
-
-   * ``STcp (ST_CP)``: Used to latch the shifted data into the output register on a rising edge.
-   * ``SHcp (SH_CP)``: Shifts data into the register on each rising edge.
-   * ``DS``: Serial data input for the shift register.
+   * ``STcp (ST_CP)``: Speichert die übertragenen Daten in den Ausgangsregistern bei steigender Flanke.
+   * ``SHcp (SH_CP)``: Verschiebt Daten bei jeder steigenden Taktflanke in das Register.
+   * ``DS``: Serieller Dateneingang für das Schieberegister.
 
    .. code-block:: arduino
 
-      const int STcp = 19;  // Latch pin (ST_CP) of 74HC595
-      const int SHcp = 20;  // Clock pin (SH_CP) of 74HC595
-      const int DS = 18;    // Data pin (DS) of 74HC595
+      const int STcp = 19;  // Latch-Pin (ST_CP) des 74HC595
+      const int SHcp = 20;  // Takt-Pin (SH_CP) des 74HC595
+      const int DS = 18;    // Daten-Pin (DS) des 74HC595
 
-#. Data Array (``datArray``):
+#. Datenarray (``datArray``):
 
-   * Each element represents a row in the LED matrix.
-   * The hex values correspond to the LEDs that should be lit (0) or off (1) in each row.
-   * This pattern forms a symmetrical 'X' shape across the matrix.
+   * Jedes Element entspricht einer Reihe der LED-Matrix.
+   * Die hexadezimalen Werte geben an, welche LEDs leuchten (0) oder ausgeschaltet bleiben (1).
+   * Dieses Muster bildet ein symmetrisches 'X' über die Matrix.
 
    .. code-block:: arduino
 
       byte datArray[] = {0x7E, 0xBD, 0xDB, 0xE7, 0xE7, 0xDB, 0xBD, 0x7E};
-  
 
-#. Setup Function:
 
-   Initializes the control pins as outputs to communicate with the shift registers.
+#. Setup-Funktion:
+
+   Initialisiert die Steuerpins als Ausgänge zur Kommunikation mit den Schieberegistern.
 
    .. code-block:: arduino
 
@@ -223,12 +216,12 @@ If the pattern is not visible, try adjusting the timing or check the wiring conn
         pinMode(DS, OUTPUT);
       }
 
-#. Loop Function:
+#. Loop-Funktion:
 
-   * ``num`` ranges from 0 to 7, representing each row of the LED matrix.
-   * ``0x80>>num`` activates one row at a time.
-   * ``shiftOut()`` sends the column and row data to the shift registers, starting with the most significant bit (``MSBFIRST``).
-   * Latches the data to the output pins by toggling the ``STcp``.
+   * ``num`` läuft von 0 bis 7 und steht für jede Reihe der LED-Matrix.
+   * ``0x80>>num`` aktiviert jeweils eine Reihe.
+   * ``shiftOut()`` sendet Spalten- und Reihendaten an die Schieberegister, beginnend mit dem höchstwertigen Bit (``MSBFIRST``).
+   * Durch das Umschalten des ``STcp`` wird das Signal an die LEDs übertragen.
 
    .. code-block:: arduino
 
@@ -245,33 +238,33 @@ If the pattern is not visible, try adjusting the timing or check the wiring conn
         }
       }
 
-**Troubleshooting**
+**Fehlersuche**
 
-* No Dots Lighting Up:
+* Keine LEDs leuchten auf:
 
-  * Verify all power connections.
-  * Ensure that the shift registers are properly connected to the Pico.
+  * Überprüfe die Stromversorgung.
+  * Stelle sicher, dass die Schieberegister korrekt mit dem Pico verbunden sind.
   
-* Incorrect Patterns:
+* Falsche Muster:
 
-  * Double-check the pattern array.
-  * Ensure that the rows and columns are correctly wired to the shift registers.
+  * Kontrolliere das Datenarray.
+  * Stelle sicher, dass Reihen und Spalten richtig mit den Schieberegistern verbunden sind.
 
-* Flickering or Unstable Display:
+* Flackern oder instabile Anzeige:
 
-  * Adjust the delay value in the loop to find a balance between performance and visual stability.
-  * Ensure that power supply is stable and sufficient for the number of LEDs being used.
+  * Passe den Verzögerungswert in der Schleife an, um eine gute Balance zwischen Leistung und Stabilität zu finden.
+  * Stelle sicher, dass die Stromversorgung stabil und ausreichend für die Anzahl der verwendeten LEDs ist.
 
 
-**Experimenting Further**
+**Weitere Experimente** 
 
-* Changing the Pattern
+* Muster ändern
 
-  Try replacing the pattern list with the following arrays to display different graphics. Replace pattern in your code with ``pattern_heart`` or ``pattern_smile`` to see different images.
+  Versuche, die Musterliste mit den folgenden Arrays zu ersetzen, um verschiedene Grafiken anzuzeigen. Ersetze das Muster in deinem Code mit ``pattern_heart`` oder ``pattern_smile``, um unterschiedliche Bilder zu sehen.
 
   .. code-block:: arduino
 
-      // Heart shape pattern
+      // Herzmuster
       byte pattern_heart[] = {
         0xFF, // 11111111
         0x99, // 10011001
@@ -283,7 +276,7 @@ If the pattern is not visible, try adjusting the timing or check the wiring conn
         0xE7  // 11100111
       };
 
-      // Smile face pattern
+      // Lachgesicht-Muster
       byte pattern_smile[] = {
         0xC3, // 11000011
         0xBD, // 10111101
@@ -295,62 +288,62 @@ If the pattern is not visible, try adjusting the timing or check the wiring conn
         0xC3  // 11000011
       };
 
-* Animating the Display
+* Animation der Anzeige
 
-  Create multiple patterns and cycle through them to create animations:
+  Erstelle mehrere Muster und wechsle sie zyklisch, um Animationen zu erzeugen:
 
   .. code-block:: arduino
         
-      const int STcp = 19;  // Pin connected to ST_CP (latch pin) of 74HC595
-      const int SHcp = 20;  // Pin connected to SH_CP (clock pin) of 74HC595
-      const int DS = 18;    // Pin connected to DS (data pin) of 74HC595
+      const int STcp = 19;  // Pin für ST_CP (Latch-Pin) des 74HC595
+      const int SHcp = 20;  // Pin für SH_CP (Takt-Pin) des 74HC595
+      const int DS = 18;    // Pin für DS (Daten-Pin) des 74HC595
 
-      // Heart shape pattern
+      // Herzmuster
       byte pattern_heart[] = { 0xFF, 0x99, 0x00, 0x00, 0x00, 0x81, 0xC3, 0xE7 };
 
-      // Smile face pattern
+      // Lachgesicht-Muster
       byte pattern_smile[] = { 0xC3, 0xBD, 0x5A, 0x7E, 0x5A, 0x66, 0xBD, 0xC3 };
 
       void setup() {
-        // Set pins as outputs
+        // Setze Pins als Ausgänge
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
       }
 
       void latchData() {
-        // Latch the shifted data to the output pins of the 74HC595
-        digitalWrite(STcp, HIGH);  // Latch data
-        digitalWrite(STcp, LOW);   // Prepare for the next data transmission
+        // Speichert die übertragenen Daten in den Ausgängen des 74HC595
+        digitalWrite(STcp, HIGH);  // Daten speichern
+        digitalWrite(STcp, LOW);   // Vorbereitung für die nächste Übertragung
       }
 
       void displayPattern(byte pattern[]) {
-        for (int repeat = 0; repeat < 500; repeat++) {  // Display the pattern for a certain duration
+        for (int repeat = 0; repeat < 500; repeat++) {  // Muster für eine bestimmte Zeit anzeigen
           for (int row = 0; row < 8; row++) {
-            // Begin data transmission
-            digitalWrite(STcp, LOW);  // Prepare to shift data
+            // Beginne die Datenübertragung
+            digitalWrite(STcp, LOW);  // Vorbereitung zur Datenübertragung
 
-            // Shift out column data (pattern for the current row)
+            // Übertrage die Spaltendaten (Muster für die aktuelle Zeile)
             shiftOut(DS, SHcp, MSBFIRST, pattern[row]);
 
-            // Shift out row data (activating one row at a time)
+            // Übertrage die Zeilendaten (aktiviert jeweils eine Zeile)
             shiftOut(DS, SHcp, MSBFIRST, 1 << row);
 
-            // Latch the data to display
+            // Daten zur Anzeige speichern
             latchData();
 
-            // Short delay for persistence of vision
+            // Kurze Verzögerung für das Nachbild auf der Netzhaut
             delay(1);
           }
         }
       }
 
       void loop() {
-        // Continuously display patterns: heart and smiley face
-        displayPattern(pattern_heart);  // Display the heart shape
-        displayPattern(pattern_smile);  // Display the smiley face
+        // Zeigt fortlaufend die Muster "Herz" und "Lachgesicht" an
+        displayPattern(pattern_heart);  // Herzform anzeigen
+        displayPattern(pattern_smile);  // Lachgesicht anzeigen
       }
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control an 8x8 LED matrix using the Raspberry Pi Pico and two 74HC595 shift registers. By leveraging shift registers, you can efficiently manage multiple LEDs with minimal GPIO usage, allowing for more complex and interactive projects. Understanding how to send serial data and latch it into parallel outputs enables you to create dynamic patterns and graphics on the LED matrix.
+In dieser Lektion hast du gelernt, wie du eine 8x8-LED-Matrix mit dem Raspberry Pi Pico und zwei 74HC595-Schieberegistern steuerst. Durch den Einsatz von Schieberegistern kannst du mehrere LEDs effizient mit minimalem GPIO-Aufwand verwalten, was komplexere und interaktive Projekte ermöglicht. Das Verständnis der seriellen Datenübertragung und des Latch-Prozesses erlaubt dir, dynamische Muster und Grafiken auf der LED-Matrix zu erzeugen.

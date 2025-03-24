@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-Lesson 65:  Create a Servo Class and Method in MicroPython
+Lektion 65: Erstellung einer Servo-Klasse und -Methode in MicroPython
 ===================================================================================
 
-This tutorial covers creating a Servo class using object-oriented programming (OOP) with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Erstellung einer Servo-Klasse unter Verwendung der objektorientierten Programmierung (OOP) mit dem Raspberry Pi Pico W:
 
-* **Concept Overview**: Control a servo using a custom ``Servo`` class.
-* **Example Implementation**: Connect the servo to the Raspberry Pi Pico W, define the ``Servo`` class with ``__init__`` and ``pos`` methods to control position, and instantiate a servo object to move it.
-* **Homework Assignment**: Create a ``Servo`` class to set angles and control movement based on user input. Review Lesson 36 for servo details.
-* **Key Takeaways**: Learn to implement classes for hardware control, use methods to manage servo position.
+* **Konzeptüberblick**: Steuere einen Servo mit einer benutzerdefinierten ``Servo`` Klasse.
+* **Beispielimplementierung**: Verbinde den Servo mit dem Raspberry Pi Pico W, definiere die ``Servo`` Klasse mit den Methoden ``__init__`` und ``pos`` zur Positionssteuerung und instanziiere ein Servo-Objekt, um es zu bewegen.
+* **Hausaufgabe**: Erstelle eine ``Servo`` Klasse, um Winkel einzustellen und die Bewegung basierend auf Benutzereingaben zu steuern. Siehe Lektion 36 für Details zu Servos.
+* **Wichtigste Erkenntnisse**: Lerne, Klassen zur Hardwaresteuerung zu implementieren, verwende Methoden zur Verwaltung der Servoposition.
 
 
 

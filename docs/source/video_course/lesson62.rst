@@ -1,25 +1,24 @@
-.. note::
+.. note:: 
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+Lektion 62: Funktionen zum Mitteln und Sortieren von Noten in MicroPython erstellen
+=======================================================================================
 
-Lesson 62: Create Functions to Average and Sort Grades in Micropythons
-=============================================================================
+Dieses Tutorial behandelt die Verwendung von Funktionen in MicroPython auf dem Raspberry Pi Pico W:
 
-This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:
-
-* **Task Overview**: Input grades, print them, calculate average, find highest/lowest, and sort them.
-* **Key Steps**: Define functions, pass variables, and implement sorting algorithm.
-* **Homework Assignment**: Write a program to handle grades using functions without libraries.
+* **Aufgabenüberblick**: Noten eingeben, ausdrucken, Durchschnitt berechnen, höchste/niedrigste finden und sortieren.
+* **Wichtige Schritte**: Funktionen definieren, Variablen übergeben und Sortieralgorithmus implementieren.
+* **Hausaufgabe**: Schreibe ein Programm zur Verwaltung von Noten mithilfe von Funktionen ohne Bibliotheken.
 
 
 

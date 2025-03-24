@@ -1,54 +1,54 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nimm an Giveaways und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_servo:
 
-3.7 Swinging Servo
-===================
+3.7 Schwingender Servo
+==============================
 
-In this lesson, we'll learn how to control a **servo motor** using the Raspberry Pi Pico 2 W. A servo motor is a device that can rotate to a specific angle between 0° and 180°. It's widely used in remote control toys, robots, and other applications that require precise position control.
+In dieser Lektion lernen wir, wie man einen **Servomotor** mit dem Raspberry Pi Pico 2 W steuert. Ein Servomotor ist ein Gerät, das sich auf einen spezifischen Winkel zwischen 0° und 180° drehen kann. Er wird häufig in ferngesteuerten Spielzeugen, Robotern und anderen Anwendungen eingesetzt, die präzise Positionssteuerung erfordern.
 
-Let's get started and make the servo swing back and forth!
+Lass uns starten und den Servo hin und her schwingen lassen!
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -56,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB-Kabel
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -73,40 +73,39 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_servo|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* Das orangefarbene Kabel ist das Signalkabel und ist mit GP15 verbunden.
+* Das rote Kabel ist VCC und mit VBUS(5V) verbunden.
+* Das braune Kabel ist GND und mit GND verbunden.
 
-Servos can draw significant current, especially under load. Since we're using a small servo and not putting it under heavy load, powering it from the Pico's VBUS pin is acceptable for this simple experiment. For larger servos or multiple servos, use an external power supply.
+Servos können, besonders unter Last, erheblichen Strom ziehen. Da wir einen kleinen Servo verwenden und ihn nicht stark belasten, ist es akzeptabel, ihn für dieses einfache Experiment über den VBUS-Pin des Pico zu versorgen. Für größere Servos oder mehrere Servos sollte eine externe Stromversorgung verwendet werden.
 
-**Setting Up the Servo Arm**
+**Einrichten des Servoarms**
 
-* Attach the servo arm (also called a horn) to the servo's output shaft.
-* Secure it with the small screw provided with the servo if necessary.
+* Befestige den Servoarm (auch Horn genannt) auf der Ausgangswelle des Servos.
+* Sichere ihn bei Bedarf mit der kleinen Schraube, die mit dem Servo geliefert wurde.
 
+.. 1. Drücke den Servoarm auf die Ausgangswelle des Servos. Falls notwendig, fixiere ihn mit Schrauben.
+.. #. Verbinde **VBUS** (nicht 3V3) und GND des Pico 2 W mit der Stromschiene des Breadboards.
+.. #. Verbinde das rote Kabel des Servos mit der positiven Stromschiene mit einem Jumper.
+.. #. Verbinde das gelbe Kabel des Servos mit dem GP15-Pin mit einem Jumperkabel.
+.. #. Verbinde das braune Kabel des Servos mit der negativen Stromschiene mit einem Jumperkabel.
 
-.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Connect the red lead of the servo to the positive power bus with a jumper.
-.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
+**Programmierung**
 
-**Writing the Code**
-
-We'll write a MicroPython program to make the servo sweep back and forth between 0° and 180°.
+Wir schreiben ein MicroPython-Programm, um den Servo zwischen 0° und 180° hin und her schwingen zu lassen.
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Öffne die ``3.7_swinging_servo.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
     
 
 .. code-block:: python
@@ -114,66 +113,65 @@ We'll write a MicroPython program to make the servo sweep back and forth between
     import machine
     import utime
 
-    # Initialize PWM on pin GP15
+    # Initialisiere PWM auf Pin GP15
     servo = machine.PWM(machine.Pin(15))
-    servo.freq(50)  # Set the frequency to 50Hz
+    servo.freq(50)  # Setze die Frequenz auf 50Hz
 
-    # Function to map angle to duty cycle
+    # Funktion, um Winkel in Tastverhältnis umzurechnen
     def angle_to_duty(angle):
-        min_duty = 1638  # Corresponds to 0.5ms pulse (0°)
-        max_duty = 8192  # Corresponds to 2.5ms pulse (180°)
+        min_duty = 1638  # Entsprechend einem 0,5ms Impuls (0°)
+        max_duty = 8192  # Entsprechend einem 2,5ms Impuls (180°)
         duty = int(min_duty + (angle / 180) * (max_duty - min_duty))
         return duty
 
     while True:
-        # Move servo from 0° to 180°
+        # Bewege den Servo von 0° zu 180°
         for angle in range(0, 181, 1):
             servo.duty_u16(angle_to_duty(angle))
             utime.sleep_ms(20)
-        # Move servo from 180° back to 0°
+        # Bewege den Servo von 180° zurück zu 0°
         for angle in range(180, -1, -1):
             servo.duty_u16(angle_to_duty(angle))
             utime.sleep_ms(20)
 
-When the code is running, the servo should smoothly sweep back and forth between 0° and 180°.
+Wenn das Programm läuft, sollte der Servo reibungslos zwischen 0° und 180° hin und her schwingen.
 
+**Verständnis des Codes**
 
-**Understanding the Code**
+#. Importiere Module:
 
-#. Import Modules:
+   * ``machine``: Bietet Zugang zu hardwarebezogenen Funktionen.
+   * ``utime``: Enthält zeitbezogene Funktionen für Verzögerungen.
 
-   * ``machine``: Provides access to hardware-related functions.
-   * ``utime``: Contains time-related functions for delays.
+#. Initialisiere PWM:
 
-#. Initialize PWM:
-
-   We set up PWM on GP15.
-   The frequency is set to 50Hz, which is standard for servos.
+   Wir richten PWM auf GP15 ein.
+   Die Frequenz ist auf 50Hz eingestellt, was für Servos üblich ist.
 
    .. code-block:: python
 
       servo = machine.PWM(machine.Pin(15))
       servo.freq(50)
 
-#. Define the ``angle_to_duty`` Function:
+#. Definiere die Funktion ``angle_to_duty``:
 
-   * This function maps an angle (0° to 180°) to the corresponding duty cycle value for the servo.
-   * The ``min_duty`` and ``max_duty`` correspond to the minimum and maximum pulse widths for the servo control signal.
-   * The calculation scales the angle to the appropriate duty cycle.
+   * Diese Funktion bildet einen Winkel (0° bis 180°) auf den entsprechenden Tastverhältniswert für den Servo ab.
+   * Die ``min_duty`` und ``max_duty`` entsprechen den minimalen und maximalen Impulsbreiten für das Servo-Steuersignal.
+   * Die Berechnung skaliert den Winkel auf das entsprechende Tastverhältnis.
 
    .. code-block:: python
 
       def angle_to_duty(angle):
-          min_duty = 1638  # 0.5ms pulse width
-          max_duty = 8192  # 2.5ms pulse width
+          min_duty = 1638  # 0,5ms Impulsbreite
+          max_duty = 8192  # 2,5ms Impulsbreite
           duty = int(min_duty + (angle / 180) * (max_duty - min_duty))
           return duty
     
-#. Main Loop to Move the Servo:
+#. Hauptschleife zur Bewegung des Servos:
 
-   * The servo moves from 0° to 180°, increasing the angle by 1° each time.
-   * Then it moves back from 180° to 0°.
-   * ``utime.sleep_ms(20)`` adds a small delay to smooth the movement.
+   * Der Servo bewegt sich von 0° bis 180°, wobei der Winkel jedes Mal um 1° erhöht wird.
+   * Anschließend bewegt er sich von 180° zurück auf 0°.
+   * ``utime.sleep_ms(20)`` fügt eine kleine Verzögerung hinzu, um die Bewegung zu glätten.
 
    .. code-block:: python
 
@@ -185,48 +183,48 @@ When the code is running, the servo should smoothly sweep back and forth between
               servo.duty_u16(angle_to_duty(angle))
               utime.sleep_ms(20)
 
-**More about the Code**
+**Mehr über den Code**
 
-Servos are controlled by sending a PWM signal with a specific pulse width.
-A 50Hz PWM signal (period of 20ms) is standard for servos.
-The pulse width within each period determines the servo's angle:
+Servos werden durch das Senden eines PWM-Signals mit einer bestimmten Impulsbreite gesteuert.
+Ein 50Hz PWM-Signal (Periodendauer von 20ms) ist Standard für Servos.
+Die Impulsbreite innerhalb jeder Periode bestimmt den Winkel des Servos:
 
-* 0.5ms pulse width corresponds to 0°.
-* 1.5ms pulse width corresponds to 90°.
-* 2.5ms pulse width corresponds to 180°.
+* 0,5ms Impulsbreite entspricht 0°.
+* 1,5ms Impulsbreite entspricht 90°.
+* 2,5ms Impulsbreite entspricht 180°.
 
-By adjusting the duty cycle of the PWM signal, we change the pulse width.
+Durch Anpassen des Tastverhältnisses des PWM-Signals ändern wir die Impulsbreite.
 
-The ``duty_u16()`` function accepts values from 0 to 65535.
-To calculate the duty cycle corresponding to a pulse width:
+Die Funktion ``duty_u16()`` akzeptiert Werte von 0 bis 65535.
+Um das Tastverhältnis für eine gegebene Impulsbreite zu berechnen:
 
 .. code-block::
 
   Duty cycle = (Pulse Width / Period) * 65535
 
-For example, for a 0.5ms pulse width:
+Beispielsweise für eine Impulsbreite von 0,5ms:
 
 .. code-block::
 
   Duty cycle = (0.5ms / 20ms) * 65535 ≈ 1638
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* **Change the Speed**: Adjust the ``utime.sleep_ms(20)`` delay to make the servo move faster or slower.
-* **Set Specific Angles**: Modify the code to move the servo to specific angles.
+* **Geschwindigkeit ändern**: Passe die Verzögerung ``utime.sleep_ms(20)`` an, um den Servo schneller oder langsamer zu bewegen.
+* **Spezifische Winkel einstellen**: Modifiziere den Code, um den Servo auf spezifische Winkel zu bewegen.
 
   .. code-block:: python
 
-    servo.duty_u16(angle_to_duty(90))  # Move to 90°
+    servo.duty_u16(angle_to_duty(90))  # Bewege auf 90°
 
-* **Control with Input**: Connect a potentiometer or buttons to control the servo's angle interactively.
+* **Steuerung mit Eingabe**: Verbinde ein Potentiometer oder Tasten, um den Winkel des Servos interaktiv zu steuern.
 
-**Important Notes**
+**Wichtige Hinweise**
 
-* **Power Supply**: Ensure the servo is powered adequately. If you notice jitter or erratic movement, consider using an external 5V power supply for the servo.
-* **Avoid Overloading**: Do not force the servo beyond its physical limits (usually 0° to 180°) to prevent damage.
+* **Stromversorgung**: Stelle sicher, dass der Servo ausreichend mit Strom versorgt wird. Wenn du Zittern oder unregelmäßige Bewegungen bemerkst, erwäge die Verwendung einer externen 5V-Stromversorgung für den Servo.
+* **Überlastung vermeiden**: Zwinge den Servo nicht über seine physischen Grenzen hinaus (üblicherweise 0° bis 180°), um Schäden zu vermeiden.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to control a servo motor using the Raspberry Pi Pico 2 W. You now understand how to generate PWM signals to set the servo's angle and make it move smoothly. This skill is fundamental for robotics and automation projects where precise movement is required.
+In dieser Lektion hast du gelernt, wie man einen Servomotor mit dem Raspberry Pi Pico 2 W steuert. Du verstehst jetzt, wie man PWM-Signale erzeugt, um den Winkel des Servos einzustellen und ihn sanft zu bewegen. Diese Fähigkeit ist grundlegend für Projekte in der Robotik und Automatisierung, bei denen präzise Bewegungen erforderlich sind.
 

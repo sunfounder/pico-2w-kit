@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_mpu6050:
 
@@ -21,87 +21,81 @@ MPU6050 Module
 
 |img_mpu6050|
 
-The MPU-6050 is a 6-axis motion tracking device that integrates a 3-axis gyroscope and a 3-axis accelerometer.
+Der MPU-6050 ist ein 6-Achsen-Bewegungssensor, der ein 3-Achsen-Gyroskop und einen 3-Achsen-Beschleunigungssensor integriert.
 
-The coordinate system of the MPU-6050 is defined as follows:
+Das Koordinatensystem des MPU-6050 ist wie folgt definiert:
 
-Place the MPU-6050 flat on a table with the labeled surface facing upward, ensuring the dot on this surface is in the top-left corner. In this orientation:
-- The upward vertical direction is the Z-axis.
-- The left-to-right direction is the X-axis.
-- The back-to-front direction is the Y-axis.
+Lege den MPU-6050 flach auf einen Tisch, mit der beschrifteten Oberfläche nach oben, sodass der Punkt in der oberen linken Ecke liegt. In dieser Ausrichtung:
+- Die vertikale Aufwärtsrichtung ist die Z-Achse.
+- Die Links-nach-Rechts-Richtung ist die X-Achse.
+- Die Vorwärts-nach-Rückwärts-Richtung ist die Y-Achse.
 
 |img_mpu6050_a| 
 
 
 **3-axis Accelerometer**
 
-The accelerometer works on the principle of piezo electric effect, the
-ability of certain materials to generate an electric charge in response
-to applied mechanical stress.
+Der Beschleunigungssensor basiert auf dem piezoelektrischen Effekt – der Fähigkeit 
+bestimmter Materialien, unter mechanischer Belastung elektrische Ladung zu erzeugen.
 
-Here, imagine a cuboidal box, having a small ball inside it, like in the
-picture above. The walls of this box are made with piezo electric
-crystals. Whenever you tilt the box, the ball is forced to move in the
-direction of the inclination, due to gravity. The wall with which the
-ball collides, creates tiny piezo electric currents. There are totally,
-three pairs of opposite walls in a cuboid. Each pair corresponds to an
-axis in 3D space: X, Y and Z axes. Depending on the current produced
-from the piezo electric walls, we can determine the direction of
-inclination and its magnitude.
+Stelle dir eine rechteckige Box mit einer kleinen Kugel im Inneren vor, ähnlich wie 
+in der obigen Abbildung. Die Wände dieser Box bestehen aus piezoelektrischen 
+Kristallen. Wenn die Box geneigt wird, bewegt sich die Kugel aufgrund der 
+Schwerkraft in die Richtung der Neigung. Die Wand, mit der die Kugel kollidiert, 
+erzeugt dabei winzige piezoelektrische Ströme. Da die Box drei Paare gegenüberliegender 
+Wände besitzt, entspricht jedes Paar einer Achse im 3D-Raum: X-, Y- und Z-Achse. 
+Durch die Messung der erzeugten Ströme kann die Richtung und Stärke der Neigung 
+bestimmt werden.
 
 |img_mpu6050_a2|
 
 
-We can use the MPU6050 to detect its acceleration on each coordinate
-axis (in the stationary desktop state, the Z-axis acceleration is 1
-gravity unit, and the X and Y axes are 0). If it is tilted or in a
-weightless/overweight condition, the corresponding reading will change.
+Mit dem MPU6050 kann die Beschleunigung entlang jeder Koordinatenachse erfasst werden. 
+Im stationären Zustand auf einem Tisch beträgt die Z-Achsen-Beschleunigung 1 Gravitationskraft (g), 
+während die X- und Y-Achsen 0 g anzeigen. Bei einer Neigung oder einer Schwerelosigkeit-/Überlastungsbedingung 
+ändern sich die entsprechenden Werte.
 
-There are four kinds of measuring ranges that can be selected
-programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (2g by default)
-corresponding to each precision. Values range from -32768 to 32767.
+Es gibt vier programmierbare Messbereiche: ±2g, ±4g, ±8g und ±16g (Standard: ±2g). 
+Die Messwerte liegen im Bereich von -32768 bis 32767.
 
-The reading of accelerometer is converted to an acceleration value by
-mapping the reading from the reading range to the measuring range.
+Die Umrechnung eines Rohwertes des Beschleunigungssensors in eine tatsächliche 
+Beschleunigung erfolgt nach folgender Formel:
 
-Acceleration = (Accelerometer axis raw data / 65536 \* full scale
-Acceleration range) g
+Acceleration = (Beschleunigungssensor-Rohwert / 65536 \* voller Messbereich) g
 
-Take the X-axis as an example, when Accelerometer X axis raw data is
-16384 and the range is selected as +/-2g:
+Beispiel für die X-Achse: Wenn der Rohwert der X-Achse 16384 beträgt und der 
+Messbereich auf ±2g eingestellt ist:
 
-**Acceleration along the X axis = (16384 / 65536 \* 4) g**  **=1g**
+**Acceleration entlang der X-Achse = (16384 / 65536 \* 4) g**  **=1g**
 
 **3-axis Gyroscope**
 
-Gyroscopes work on the principle of Coriolis acceleration. Imagine that
-there is a fork like structure, that is in constant back and forth
-motion. It is held in place using piezo electric crystals. Whenever, you
-try to tilt this arrangement, the crystals experience a force in the
-direction of inclination. This is caused as a result of the inertia of
-the moving fork. The crystals thus produce a current in consensus with
-the piezo electric effect, and this current is amplified.
+Gyroskope basieren auf dem Prinzip der Coriolis-Kraft. Stell dir eine gabelartige 
+Struktur vor, die sich kontinuierlich vor- und zurückbewegt. Diese ist durch 
+piezoelektrische Kristalle fixiert. Wenn du diese Anordnung kippst, erfahren die 
+Kristalle eine Kraft in Richtung der Neigung. Dies geschieht aufgrund der Trägheit 
+der beweglichen Gabel. Die Kristalle erzeugen dabei elektrische Ladung gemäß dem 
+piezoelektrischen Effekt, welche anschließend verstärkt wird.
 
 |img_mpu6050_g|
 
-The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500,
-+/- 1000, +/- 2000. The calculation method and Acceleration are
-basically consistent.
+Das Gyroskop verfügt über vier programmierbare Messbereiche: ±250, ±500, ±1000 
+und ±2000. Die Berechnungsmethode entspricht im Wesentlichen der für die 
+Beschleunigung.
 
-The formula for converting the reading into angular velocity is as
-follows:
+Die Umrechnung eines Rohwertes des Gyroskops in eine Winkelgeschwindigkeit 
+erfolgt nach folgender Formel:
 
-Angular velocity = (Gyroscope axis raw data / 65536 \* full scale
-Gyroscope range) °/s
+Angular velocity = (Gyroskop-Rohwert / 65536 \* voller Messbereich) °/s
 
-The X axis, for example, the Accelerometer X axis raw data is 16384 and
-ranges + / - 250°/ s:
+Beispiel für die X-Achse: Wenn der Rohwert der X-Achse 16384 beträgt und der 
+Messbereich auf ±250°/s eingestellt ist:
 
-**Angular velocity along the X axis = (16384 / 65536 \* 500)°/s** **=125°/s**
+**Angular velocity entlang der X-Achse = (16384 / 65536 \* 500)°/s** **=125°/s**
 
 **Example**
 
-* :ref:`py_mpu6050` (For MicroPython User)
-* :ref:`py_somato_controller` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_mpu6050` (For Arduino User)
+* :ref:`py_mpu6050` (Für MicroPython-Nutzer)
+* :ref:`py_somato_controller` (Für MicroPython-Nutzer)
+* :ref:`py_bubble_level` (Für MicroPython-Nutzer)
+* :ref:`ar_mpu6050` (Für Arduino-Nutzer)

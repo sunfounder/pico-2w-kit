@@ -1,57 +1,59 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_ta6586:
 
-TA6586 - Motor Driver Chip
+TA6586 - Motortreiber-Chip
 =================================
 
 |img_ta6586|
 
-TA6586 is a monolithic IC designed for driving bi-directional DC motor. It has
-two pins of logic inputs for controlling the direction, forward and backward.
-The circuit feature good anti-interference performance, small standby current and
-low output saturation pressure drop. It has a built-in clamp diode to reverse the impact
-of the release of inductive load current, making it in the drive relays, DC motors,
-stepper motors or control the use of switching power safe and reliable.
-TA6586 is suitable for toy vehicles, remote-controlled aircraft motor drive, automatic
-valve motor, electromagnetic lock drive, precision instruments and other circuits.
+Der TA6586 ist ein monolithischer IC zur Steuerung von bidirektionalen Gleichstrommotoren.  
+Er verfügt über zwei Logikeingänge zur Steuerung der Bewegungsrichtung – vorwärts und rückwärts.  
+Die Schaltung zeichnet sich durch eine gute Störfestigkeit, einen geringen Ruhestrom und einen 
+niedrigen Ausgangssättigungsspannungsabfall aus.  
+Eine integrierte Schutzdiode kompensiert die Induktionsströme beim Abschalten der Last, 
+wodurch sich der Chip sicher und zuverlässig für den Betrieb von Relais, Gleichstrommotoren, 
+Schrittmotoren oder für Schaltsteuerungen eignet.  
+Der TA6586 wird häufig in Modellfahrzeugen, ferngesteuerten Flugzeugmotoren, automatischen 
+Ventilsteuerungen, elektromagnetischen Schlössern sowie in Präzisionsinstrumenten und anderen 
+Steuerungsschaltungen eingesetzt.
 
-**Features**
+**Eigenschaften**
 
-* Low stand-by current: ≦2uA
-* Wide supply voltage range
-* Built-in Brake Function
-* Thermal Shutdown protection
-* Over Current Limit and Short Circuit Protect Function
-* DIP8 Pb-Free package.
+* Niedriger Ruhestrom: ≦2μA
+* Weiter Versorgungsspannungsbereich
+* Integrierte Bremsfunktion
+* Überhitzungsschutz
+* Überstrombegrenzung und Kurzschlussschutz
+* DIP8 Pb-freies Gehäuse
 
-**Pin Function**
+**Pin-Funktion**
 
 |img_ta6586_pin|
 
 
-**Input Truth Table**
+**Wahrheitstabelle der Eingänge**
 
 |img_ta6586_priciple|
 
 
 **Example**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
-* :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
-.. * :ref:`per_smart_fan` (For Piper Make User)
+* :ref:`py_motor` (Für MicroPython-Nutzer)
+* :ref:`ar_motor` (Für Arduino-Nutzer)
+* :ref:`py_pump` (Für MicroPython-Nutzer)
+* :ref:`ar_pump` (Für Arduino-Nutzer)
+* :ref:`py_iot_sunfounder_controller_plant` (Für MicroPython-Nutzer)
+.. * :ref:`per_smart_fan` (Für Piper Make-Nutzer)

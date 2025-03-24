@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie gemeinsam mit anderen begeisterten Mitgliedern Ihre Kenntnisse rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Problemen und Fragen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Teilen Sie Tipps und Tutorials, um Ihre Fähigkeiten weiter auszubauen.
+    - **Exclusive Previews**: Bekommen Sie frühzeitig Zugang zu Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_i2c_lcd:
 
@@ -19,42 +19,41 @@ I2C LCD1602
 
 |i2c_lcd1602|
 
-* **GND**: Ground
-* **VCC**: Voltage supply, 5V.
-* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
-* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+* **GND**: Masseanschluss.
+* **VCC**: Versorgungsspannung, 5 V.
+* **SDA**: Serielle Datenleitung; wird über einen Pull-up-Widerstand mit VCC verbunden.
+* **SCL**: Serielle Taktleitung; wird über einen Pull-up-Widerstand mit VCC verbunden.
 
-As we know, LCDs and other displays greatly enhance human-machine interaction. However, they share a common drawback: connecting them to a controller requires multiple I/O pins, which can quickly consume the available ports and limit the controller's ability to perform other functions.
+LCD-Displays verbessern die Interaktion zwischen Mensch und Maschine erheblich. Ein gemeinsamer Nachteil ist jedoch, dass diese Displays meist viele I/O-Pins des Controllers beanspruchen. Dies schränkt die verfügbare Anzahl der Pins für andere Anwendungen deutlich ein.
 
-To address this issue, the LCD1602 with an I2C module was developed. The I2C module features a built-in PCF8574 chip that converts I2C serial data into parallel data, allowing the LCD to operate while significantly reducing the number of I/O pins required.
+Zur Lösung dieses Problems wurde das LCD1602 mit einem I2C-Modul entwickelt. Das integrierte PCF8574-Modul wandelt I2C-Seriendaten in parallele Daten um. Dadurch wird der Anschluss des LCDs stark vereinfacht und die Anzahl der benötigten I/O-Pins reduziert.
 
 * `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 
 **I2C Address**
 
-The default address is basically 0x27, in a few cases it may be 0x3F.
+Die Standardadresse lautet meistens 0x27; in wenigen Fällen wird 0x3F verwendet.
 
-Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+Anhand der Standardadresse 0x27 als Beispiel erklärt, lässt sich die Geräteadresse durch Kurzschließen der Lötpads A0/A1/A2 ändern. Standardmäßig sind A0/A1/A2 auf „1“ gesetzt; durch Kurzschließen des jeweiligen Pads wird der Wert auf „0“ gesetzt.
 
 |i2c_address|
 
 **Backlight/Contrast**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
-
+Die Hintergrundbeleuchtung kann mithilfe einer Steckbrücke aktiviert werden; entfernen Sie diese Brücke, um die Beleuchtung zu deaktivieren. Das blaue Potentiometer auf der Rückseite dient zur Einstellung des Kontrasts (Helligkeitsverhältnis zwischen hellstem Weiß und dunkelstem Schwarz).
 
 |back_lcd1602|
 
-* **Shorting Cap**: Backlight can be enabled by this cap, unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **Shorting Cap**: Aktiviert oder deaktiviert die Hintergrundbeleuchtung durch Aufstecken oder Entfernen.
+* **Potentiometer**: Dient zur Anpassung des Kontrasts (Klarheit der dargestellten Zeichen); im Uhrzeigersinn wird der Kontrast erhöht, gegen den Uhrzeigersinn verringert.
 
 
 
 
 **Example**
 
-* :ref:`py_lcd` (For MicroPython User)
-* :ref:`py_room_temp` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`py_iot_openweather` (For MicroPython User)
-* :ref:`ar_lcd` (For Arduino User)
+* :ref:`py_lcd` (Für MicroPython-Nutzer)
+* :ref:`py_room_temp` (Für MicroPython-Nutzer)
+* :ref:`py_guess_number` (Für MicroPython-Nutzer)
+* :ref:`py_iot_openweather` (Für MicroPython-Nutzer)
+* :ref:`ar_lcd` (Für Arduino-Nutzer)

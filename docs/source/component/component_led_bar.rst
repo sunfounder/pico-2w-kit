@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Entdecken Sie gemeinsam mit anderen begeisterten Mitgliedern tiefgehendes Wissen rund um Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Fragen und Problemen nach dem Kauf durch unsere Community und unser Team.
+    - **Learn & Share**: Teilen Sie wertvolle Tipps und Tutorials und erweitern Sie Ihre Fähigkeiten.
+    - **Exclusive Previews**: Bekommen Sie frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_led_bar:
 
@@ -19,9 +19,9 @@ LED Bar Graph
 
 |img_led_bar|
 
-An LED bar graph is an array of LEDs designed to interface with electronic circuits or microcontrollers. Connecting an LED bar graph to a circuit is as straightforward as connecting 10 individual LEDs to 10 output pins. LED bar graphs are commonly used in applications such as battery level indicators, audio equipment, and industrial control panels, among others.
+Ein LED-Bargraph (auch LED-Balkenanzeige genannt) ist eine Reihe von LEDs, die speziell für die Verwendung in elektronischen Schaltungen oder Mikrocontroller-Systemen konzipiert sind. Der Anschluss eines LED-Bargraphs an eine Schaltung ist ebenso einfach wie das Verbinden von 10 einzelnen LEDs mit jeweils einem Ausgangspin. Solche LED-Balkenanzeigen werden häufig eingesetzt, beispielsweise zur Visualisierung des Akkuladestands, in Audio-Geräten oder in industriellen Steueranlagen.
 
-The diagram below illustrates the internal schematic of an LED bar graph. Typically, the side marked with a label represents the anode, while the opposite side corresponds to the cathode.
+Die folgende Abbildung zeigt den inneren Aufbau eines LED-Bargraphs. Üblicherweise befindet sich auf der Seite mit dem Etikett die gemeinsame Anode, während sich die Kathoden auf der gegenüberliegenden Seite befinden.
 
 |img_led_bar_pin|
 
@@ -30,6 +30,6 @@ The diagram below illustrates the internal schematic of an LED bar graph. Typica
 
 **Example**
 
-* :ref:`py_led_bar` (For MicroPython User)
-* :ref:`ar_led_bar` (For Arduino User)
-.. * :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_led_bar` (Für MicroPython-Nutzer)
+* :ref:`ar_led_bar` (Für Arduino-Nutzer)
+.. * :ref:`per_light_display` (Für Piper Make-Nutzer)

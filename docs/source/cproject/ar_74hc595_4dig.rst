@@ -1,60 +1,60 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Erhalte Hilfe bei technischen Herausforderungen und Problemen nach dem Kauf – direkt von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Feiertagsaktionen und Gewinnspiele**: Nimm an Sonderaktionen und Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
 .. _ar_74hc_4dig:
 
-5.3 Creating a Time Counter with a 4-Digit 7-Segment Display
-==============================================================
+5.3 Erstellen eines Zeitzählers mit einer 4-stelligen 7-Segment-Anzeige
+==========================================================================
 
-In this lesson, we'll learn how to use a **4-digit 7-segment display** with the Raspberry Pi Pico 2 W to create a simple time counter. The display will count up every second, showing the elapsed time in seconds.
+In dieser Lektion lernen wir, wie man eine **4-stellige 7-Segment-Anzeige** mit dem Raspberry Pi Pico 2 W verwendet, um einen einfachen Zeitmesser zu erstellen. Die Anzeige zählt jede Sekunde hoch und zeigt die verstrichene Zeit in Sekunden an.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden folgende Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist praktisch, ein komplettes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE IM KIT
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
 
+Alternativ kannst du die Komponenten einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -63,11 +63,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -79,27 +79,27 @@ You can also buy them separately from the links below.
         - |link_74hc595_buy|
 
 
-**Understanding the 4-Digit 7-Segment Display**
+**Funktionsweise der 4-stelligen 7-Segment-Anzeige**
 
-A 4-digit 7-segment display consists of four individual 7-segment displays combined into a single module. Each digit shares the same segment control lines (**a** to **g** and **dp**), but each digit has its own **common cathode** control. This configuration allows us to control which digit is active at any given time.
+Eine 4-stellige 7-Segment-Anzeige besteht aus vier einzelnen 7-Segment-Anzeigen, die zu einem Modul zusammengefasst sind. Alle Ziffern teilen sich die Steuerleitungen für die Segmente (**a** bis **g** und **dp**), aber jede Ziffer hat eine eigene **gemeinsame Kathode** zur Steuerung.
 
-To display different numbers on each digit using shared segment lines, we use a technique called **multiplexing**. We rapidly switch between digits, updating one digit at a time, but so quickly that it appears as if all digits are displayed simultaneously due to the persistence of vision.
+Um unterschiedliche Zahlen auf jeder Ziffer anzuzeigen, wird die Technik des **Multiplexing** verwendet. Dabei werden die Ziffern so schnell nacheinander aktualisiert, dass es für das menschliche Auge so aussieht, als ob alle Ziffern gleichzeitig leuchten.
 
 |4digit_control_pins|
 
-**Schematic**
+**Schaltplan**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`ar_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+Das Verdrahtungsprinzip ist weitgehend identisch mit :ref:`ar_74hc_led`, der einzige Unterschied besteht darin, dass die Pins Q0-Q7 mit den a ~ g Pins der 4-stelligen 7-Segment-Anzeige verbunden sind.
 
-Then G10 ~ G13 will select which 7-segment display to work.
+Die Pins G10 ~ G13 bestimmen, welche Ziffer aktiv ist.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_4dig|
 
-* **Segment Connections (through 220 Ω resistors):**
+* **Segmentverbindungen (über 220 Ω Widerstände):**
 
   * **Q0** → Segment **a**
   * **Q1** → Segment **b**
@@ -108,35 +108,34 @@ Then G10 ~ G13 will select which 7-segment display to work.
   * **Q4** → Segment **e**
   * **Q5** → Segment **f**
   * **Q6** → Segment **g**
-  * **Q7** → Segment **dp** (decimal point)
+  * **Q7** → Segment **dp** (Dezimalpunkt)
 
-* **Common Cathode Connections (Digit Select Pins):**
+* **Gemeinsame Kathodenverbindungen (Ziffernauswahl-Pins):**
 
-  * **Digit 1 (Leftmost Digit):** Connect to **GP10** on the Pico
-  * **Digit 2:** Connect to **GP11**
-  * **Digit 3:** Connect to **GP12**
-  * **Digit 4 (Rightmost Digit):** Connect to **GP13**
+  * **Ziffer 1 (linke Ziffer):** Verbindung mit **GP10** am Pico
+  * **Ziffer 2:** Verbindung mit **GP11**
+  * **Ziffer 3:** Verbindung mit **GP12**
+  * **Ziffer 4 (rechte Ziffer):** Verbindung mit **GP13**
 
-**Writing the Code**
+**Code schreiben**
 
 .. note::
 
-    * You can open the file ``5.3_time_counter.ino`` under the path of ``pico-2w-kit-main/arduino/5.3_time_counter``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Die Datei ``5.3_time_counter.ino`` kann unter ``pico-2w-kit-main/arduino/5.3_time_counter`` geöffnet werden.
+    * Alternativ kannst du den Code in die **Arduino IDE** kopieren.
+    * Vor dem Hochladen nicht vergessen, das richtige Board (Raspberry Pi Pico) und den **korrekten Port** auszuwählen.
 
 .. code-block:: arduino
 
-    // Define the connection pins for the shift register
-    #define DATA_PIN 18   // DS (Serial Data Input)
-    #define LATCH_PIN 19  // STCP (Storage Register Clock)
-    #define CLOCK_PIN 20  // SHCP (Shift Register Clock)
+    // Verbindungspins für das Schieberegister definieren
+    #define DATA_PIN 18   // DS (Serielle Dateneingabe)
+    #define LATCH_PIN 19  // STCP (Speicherregister-Takt)
+    #define CLOCK_PIN 20  // SHCP (Schieberegister-Takt)
 
-    // Define the digit control pins for the 4-digit 7-segment display
+    // Steuerpins für die 4-stellige 7-Segment-Anzeige
     const int digitPins[4] = { 10, 11, 12, 13 };  // DIG1, DIG2, DIG3, DIG4
 
-    // Segment byte maps for numbers 0-9
+    // Segmentmuster für Zahlen 0-9
     const byte digitCodes[10] = {
       // Pgfedcba
       0b00111111,  // 0
@@ -207,36 +206,36 @@ Then G10 ~ G13 will select which 7-segment display to work.
       digitalWrite(LATCH_PIN, HIGH);
     }
 
-After uploading the code, the 4-digit 7-segment display should start counting up from 0000, incrementing by 1 every second.
-The count should progress as follows: 0000, 0001, 0002, ..., 9999, then reset to 0000.
+Nach dem Hochladen des Codes beginnt die 4-stellige 7-Segment-Anzeige bei 0000 zu zählen und erhöht sich jede Sekunde um 1. 
+Die Zählung verläuft wie folgt: 0000, 0001, 0002, ..., 9999, danach wird sie auf 0000 zurückgesetzt.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Defining Control Pins:
+#. Definition der Steuerpins:
 
-   * ``DATA_PIN (DS)``: Receives serial data to be shifted into the 74HC595.
-   * ``LATCH_PIN (STCP)``: Controls the latching of data from the shift register to the output pins.
-   * ``CLOCK_PIN (SHCP)``: Controls the shifting of data into the shift register.
+   * ``DATA_PIN (DS)``: Empfängt serielle Daten, die in das 74HC595-Schieberegister übertragen werden.
+   * ``LATCH_PIN (STCP)``: Steuert das Speichern der Daten im Schieberegister, um sie an die Ausgangspins weiterzugeben.
+   * ``CLOCK_PIN (SHCP)``: Taktet die Datenübertragung in das Schieberegister.
 
    .. code-block:: arduino
 
-      #define DATA_PIN   18  // DS (Serial Data Input)
-      #define LATCH_PIN  19  // STCP (Storage Register Clock)
-      #define CLOCK_PIN  20  // SHCP (Shift Register Clock)
+      #define DATA_PIN   18  // DS (Serielle Dateneingabe)
+      #define LATCH_PIN  19  // STCP (Speicherregister-Takt)
+      #define CLOCK_PIN  20  // SHCP (Schieberegister-Takt)
   
-#. Defining Digit Control Pins:
+#. Definition der Ziffernsteuerungs-Pins:
 
-   * Each digit's common cathode is connected to a separate GPIO pin.
-   * Setting a digit pin LOW activates that digit, while HIGH deactivates it.
+   * Die gemeinsame Kathode jeder Ziffer ist mit einem separaten GPIO-Pin verbunden.
+   * Ein LOW-Signal aktiviert die jeweilige Ziffer, während ein HIGH-Signal sie deaktiviert.
 
    .. code-block:: arduino
 
       const int digitPins[4] = {10, 11, 12, 13}; // DIG1, DIG2, DIG3, DIG4
   
-#. Creating Segment Byte Maps:
+#. Erstellung der Segment-Byte-Zuordnungen:
 
-   * Each byte represents the segments that need to be lit to display numbers 0 to 9 on a common cathode 7-segment display.
-   * The bits correspond to segments a to g and dp:
+   * Jedes Byte repräsentiert die Segmente, die zur Darstellung der Zahlen 0 bis 9 auf einer gemeinsamen Kathoden-7-Segment-Anzeige leuchten müssen.
+   * Die Bits entsprechen den Segmenten a bis g und dp:
 
    .. code-block:: arduino
 
@@ -253,106 +252,106 @@ The count should progress as follows: 0000, 0001, 0002, ..., 9999, then reset to
         0b01101111  // 9
       };
 
-#. Setup Function:
+#. Setup-Funktion:
 
-   * Sets the ``DATA_PIN``, ``LATCH_PIN``, and ``CLOCK_PIN`` as outputs.
-   * Sets all digit control pins to ``HIGH`` to deactivate all digits at startup.
+   * Setzt die Pins ``DATA_PIN``, ``LATCH_PIN`` und ``CLOCK_PIN`` als Ausgänge.
+   * Setzt alle Ziffernsteuerungs-Pins auf ``HIGH``, um zu Beginn alle Ziffern zu deaktivieren.
 
    .. code-block:: arduino
 
       void setup() {
-        // Initialize the shift register pins
+        // Initialisierung der Schieberegister-Pins
         pinMode(DATA_PIN, OUTPUT);
         pinMode(LATCH_PIN, OUTPUT);
         pinMode(CLOCK_PIN, OUTPUT);
 
-        // Initialize the digit control pins
+        // Initialisierung der Ziffernsteuerungs-Pins
         for (int i = 0; i < 4; i++) {
           pinMode(digitPins[i], OUTPUT);
-          digitalWrite(digitPins[i], HIGH); // Turn off all digits initially
+          digitalWrite(digitPins[i], HIGH); // Deaktiviert alle Ziffern initial
         }
       }
 
-#. Loop Function:
+#. Loop-Funktion:
 
-   * Uses the ``millis()`` function to track elapsed time without blocking the program.
-   * Increments the ``counter`` every second and resets it after reaching 9999.
+   * Verwendet die ``millis()``-Funktion, um die verstrichene Zeit ohne Blockierung des Programms zu verfolgen.
+   * Erhöht die Variable ``counter`` jede Sekunde und setzt sie nach Erreichen von 9999 zurück.
 
    .. code-block:: arduino
 
       void loop() {
         unsigned long currentMillis = millis();
 
-        // Update the counter every 1000 milliseconds (1 second)
+        // Aktualisiert den Zähler alle 1000 Millisekunden (1 Sekunde)
         if (currentMillis - previousMillis >= 1000) {
           previousMillis = currentMillis;
-          counter++; // Increment the counter
+          counter++; // Erhöht den Zähler
           if (counter > 9999) {
-            counter = 0; // Reset counter after 9999
+            counter = 0; // Setzt den Zähler nach 9999 zurück
           }
         }
 
-        // Display the counter value
+        // Zeigt den aktuellen Zählerwert an
         displayNumber(counter);
       }
 
-#. Displaying the Number:
+#. Darstellung der Zahl:
 
-   * Breaks the ``counter`` value into thousands, hundreds, tens, and units.
-   * Activates each digit one by one, sends the corresponding segment data, and deactivates the digit.
-   * The rapid cycling between digits creates the illusion that all digits are lit simultaneously.
+   * Zerlegt den ``counter``-Wert in Tausender-, Hunderter-, Zehner- und Einerstellen.
+   * Aktiviert jede Ziffer einzeln, sendet die zugehörigen Segmentdaten und deaktiviert die Ziffer anschließend wieder.
+   * Durch das schnelle Umschalten zwischen den Ziffern entsteht der Eindruck, dass alle Ziffern gleichzeitig leuchten.
 
    .. code-block:: arduino
 
       void displayNumber(int num) {
-        // Break the number into individual digits
+        // Zerlegt die Zahl in einzelne Ziffern
         int digits[4];
-        digits[0] = num / 1000;         // Thousands
-        digits[1] = (num / 100) % 10;   // Hundreds
-        digits[2] = (num / 10) % 10;    // Tens
-        digits[3] = num % 10;           // Units
+        digits[0] = num / 1000;        // Tausender
+        digits[1] = (num / 100) % 10;  // Hunderter
+        digits[2] = (num / 10) % 10;   // Zehner
+        digits[3] = num % 10;          // Einer
 
-        // Display each digit one by one
+        // Jede Ziffer wird einzeln dargestellt
         for (int i = 0; i < 4; i++) {
-          digitalWrite(digitPins[i], LOW); // Activate current digit
+          digitalWrite(digitPins[i], LOW); // Aktiviert die aktuelle Ziffer
 
-          // Shift out the segment data for the current digit
+          // Sendet die Segmentdaten für die aktuelle Ziffer
           shiftOutDigit(digitCodes[digits[i]]);
 
-          delay(5);                        // Small delay for multiplexing
-          digitalWrite(digitPins[i], HIGH); // Deactivate current digit
+          delay(5);                        // Kleine Verzögerung für Multiplexing
+          digitalWrite(digitPins[i], HIGH); // Deaktiviert die Ziffer
         }
       }
 
-#. Shifting Out the Segment Data:
+#. Ausgabe der Segmentdaten:
 
-   * Sends the segment data to the 74HC595 shift register.
-   * ``shiftOut()`` sends the data one bit at a time, starting with the most significant bit (``MSBFIRST``).
-   * Latches the data to the output pins by toggling the ``LATCH_PIN``.
+   * Sendet die Segmentdaten an das 74HC595-Schieberegister.
+   * ``shiftOut()`` überträgt die Daten bitweise, beginnend mit dem höchstwertigen Bit (``MSBFIRST``).
+   * Durch Umschalten des ``LATCH_PIN`` werden die Daten an die Ausgangspins weitergegeben.
 
    .. code-block:: arduino
 
       void shiftOutDigit(byte data) {
-        // Send data to the shift register
+        // Überträgt die Daten in das Schieberegister
         digitalWrite(LATCH_PIN, LOW);
         shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, data);
         digitalWrite(LATCH_PIN, HIGH);
       }
   
-**Experimenting Further**
+**Weitere Experimente**
 
-* Add a Reset Button:
+* Reset-Taste hinzufügen: 
 
-  Connect a button to the Pico to reset the counter when pressed.
+  Schließe eine Taste an den Pico an, um den Zähler bei Bedarf zurückzusetzen.
 
-* Display Different Data: 
+* Andere Werte anzeigen: 
 
-  Modify the code to display sensor readings, such as temperature or light levels.
+  Ändere den Code, um Sensordaten anzuzeigen, z. B. Temperatur oder Lichtwerte.
 
-* Create a Stopwatch:
+* Stoppuhr-Funktion umsetzen: 
 
-  Implement start, stop, and reset functionality to use the display as a stopwatch.
+  Implementiere eine Start-, Stopp- und Reset-Funktion, um die Anzeige als Stoppuhr zu nutzen.
 
-**Conclusion**
+**Fazit**
 
-This project demonstrates how to control a 4-digit 7-segment display using a shift register and multiplexing techniques. By efficiently managing timing with ``millis()``, we create a responsive and accurate time counter without hindering the display's performance.
+Dieses Projekt zeigt, wie eine 4-stellige 7-Segment-Anzeige mithilfe eines Schieberegisters und Multiplexing-Techniken gesteuert wird. Durch die effiziente Zeitsteuerung mit ``millis()`` entsteht ein reaktionsschneller und präziser Zeitzähler, ohne die Leistung der Anzeige zu beeinträchtigen.

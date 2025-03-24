@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie Ihr Wissen rund um Raspberry Pi, Arduino und ESP32 gemeinsam mit anderen begeisterten Mitgliedern.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Problemen und After-Sales-Fragen durch unsere Community und unser Team.
+    - **Learn & Share**: Tauschen Sie Ihre Erfahrungen, Tipps und Tutorials aus und verbessern Sie Ihre Fähigkeiten.
+    - **Exclusive Previews**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitieren Sie von speziellen Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_diode:
 
@@ -19,43 +19,56 @@ Diode
 
 |img_diode|
 
-A diode is an electronic component with two electrodes. It allows current to flow in only one direction, which is often called the "Rectifying" function.
-Thus, a diode can be thought of as an electronic version of a check valve.
+Eine Diode ist ein elektronisches Bauteil mit zwei Anschlüssen (Elektroden), 
+das den elektrischen Strom nur in einer Richtung durchlässt. Diese Eigenschaft 
+wird auch als „Gleichrichterfunktion“ bezeichnet. Daher kann man sich eine 
+Diode wie ein elektronisches Rückschlagventil vorstellen.
 
+Die beiden Anschlüsse der Diode sind polarisiert: der positive Anschluss heißt 
+Anode, der negative Kathode. Die Kathode ist üblicherweise mit einem silbernen 
+oder farbigen Ring gekennzeichnet. Der Strom fließt in einer Diode stets von 
+der Anode zur Kathode. Diese Eigenschaft ähnelt der Funktion eines Rückschlagventils. 
+Ein wesentliches Merkmal der Diode ist die nichtlineare Strom-Spannungs-Kennlinie. 
+Liegt die höhere Spannung an der Anode, fließt Strom (Durchlassrichtung bzw. 
+Vorwärtsbetrieb). Liegt die höhere Spannung an der Kathode, sperrt die Diode und 
+lässt keinen Strom durch (Sperrrichtung bzw. Rückwärtsbetrieb).
 
-The two terminals of a diode are polarized, with the positive end called anode and the negative end called cathode. 
-The cathode is usually made of silver or has a color band. 
-Controlling the direction of current flow is one of the key features of diodes — the current in a diode flows from anode to cathode. The behavior of a diode is similar to the behavior of a check valve. One of the most important characteristics of a diode is the non-linear current voltage. If higher voltage is connected to the anode, then current flows from anode to cathode, and the process is known as forward bias. However, if the higher voltage is connected to the cathode, then the diode does not conduct electricity, and the process is called reverse bias.
+Aufgrund dieser einseitigen Leitfähigkeit wird die Diode in fast allen komplexeren elektronischen Schaltungen verwendet. Sie zählt zu den ältesten Halbleiter-Bauelementen und findet zahlreiche Anwendungen.
 
-Because of its unidirectional conductivity, the diode is used in almost all electronic circuits of some complexity. It was one of the first semiconductor devices to be created, and its applications are widespread.
+In der Praxis verhält sich eine Diode jedoch nicht perfekt leitend oder perfekt isolierend, sondern weist eine komplexe, nichtlineare Strom-Spannungs-Charakteristik auf, welche stark vom verwendeten Diodentyp abhängt.
 
-However in reality diodes do not exhibit such perfect on and off directionality, but rather more complex non-linear electronic characteristics - which are determined by the specific type of diode technology.
+Technisch gesehen besteht eine Diode aus einer p-n-Übergangsschicht, die durch das Zusammenfügen eines p-dotierten Halbleiters mit einem n-dotierten Halbleiter entsteht. An deren Grenzfläche bildet sich eine Raumladungszone mit einem internen elektrischen Feld. Ohne angelegte Spannung befinden sich Diffusionsstrom und Driftstrom im Gleichgewicht, und es fließt kein Gesamtstrom.
 
-A diode is a p-n junction formed by a p-type semiconductor and an n-type semiconductor, with a space charge layer formed on both sides at its interface and a self-built electric field, which is in electrical equilibrium when no applied voltage is present because the diffusion current due to the difference in carrier concentration between the two sides of the p-n junction and the drift current due to the self-built electric field are equal. When the forward voltage bias is generated, the mutual suppression of the external electric field and the self-built electric field increases the diffusion current of the carriers causing the forward current (that is, the reason for the conductivity). When the reverse voltage bias is generated, the external electric field and the self-built electric field are further strengthened to form a reverse saturation current I0 in a certain reverse voltage range independent of the value of the reverse bias voltage (which is the reason for non-conductivity).
-When the applied reverse voltage is high to a certain extent, the electric field strength in the p-n junction space charge layer reaches a critical value to produce a multiplication process of carriers, generating a large number of electron-hole pairs, resulting in a large value of the reverse breakdown current, called the diode breakdown phenomenon.
+Wird eine Spannung in Durchlassrichtung angelegt, wird das interne elektrische Feld geschwächt, wodurch Ladungsträger über die Grenzfläche diffundieren können, und die Diode leitend wird. Bei Spannung in Sperrrichtung verstärkt sich das interne elektrische Feld, der Stromfluss wird stark eingeschränkt, und es entsteht lediglich ein kleiner, temperaturabhängiger Sperrstrom (Leckstrom). Wird die Spannung in Sperrrichtung jedoch zu groß, tritt eine elektrische Durchbruchspannung auf, wodurch der Strom plötzlich stark ansteigt und die Diode ihre Sperreigenschaft verliert.
 
-**1. Forward Characteristic**
+**1. Durchlasskennlinie**
 
-When the external forward voltage is applied, in the beginning of the forward characteristic, the forward voltage is very small, not enough to overcome the blocking effect of the electric field in the p-n junction, the forward current is almost zero, this section is called the dead zone.
-This forward voltage that does not allow the diode to conduct is called the deadband voltage. When the forward voltage is greater than the deadband voltage, p-n junction electric field is overcome, the diode forward conduction, the current increases with the voltage and rises rapidly.
-In the normal use of the current range, the terminal voltage of the diode during conduction remains almost constant, this voltage is called the forward voltage of the diode.
+Legt man eine kleine Spannung in Durchlassrichtung an, entsteht zunächst kaum 
+Stromfluss, da die Spannung zu gering ist, um die Sperrwirkung der Diode zu 
+überwinden. Dieser Bereich wird als Totzone bezeichnet, die entsprechende 
+Spannung als Schwellenspannung (auch Schleusenspannung). Wird diese überschritten, 
+steigt der Stromfluss rasch an, wobei die Spannung über die Diode bei üblicher 
+Belastung nahezu konstant bleibt. Diese Spannung bezeichnet man als Durchlassspannung.
 
-**2. Reverse Characteristic**
+**2. Sperrkennlinie**
 
-When the applied reverse voltage, and does not exceed a certain range, the current through the diode is a few carriers drifting movement formed by the reverse current.
-As the reverse current is very small, the diode is in the cutoff state. This reverse current is also known as reverse saturation current or leakage current, and is greatly influenced by temperature.
+Bei einer in Sperrrichtung angelegten Spannung innerhalb eines bestimmten 
+Bereichs fließt nur ein sehr geringer Sperrstrom, der durch wenige bewegliche 
+Ladungsträger verursacht wird. Da dieser Strom äußerst klein ist, gilt die 
+Diode praktisch als gesperrt. Der Sperrstrom wird auch als Rückwärtssättigungsstrom 
+oder Leckstrom bezeichnet und ist stark temperaturabhängig.
 
-**3. Breakdown**
+**3. Durchbruch**
 
-When the applied reverse voltage exceeds a certain value, the reverse current will suddenly increase, a phenomenon known as electrical breakdown.
-The critical voltage that causes electrical breakdown is called the reverse breakdown voltage, the diode will loses its unidirectional conductivity at the time of electrical breakdown.
-Therefore, the use of the diode should be avoided when the applied reverse voltage is too high.
+Wird die Sperrspannung zu hoch, steigt der Strom abrupt an und verursacht den 
+sogenannten elektrischen Durchbruch. Die zugehörige kritische Spannung heißt 
+Durchbruchspannung. Ab diesem Punkt verliert die Diode ihre einseitige Leitfähigkeit. 
+Aus diesem Grund sollte eine zu hohe Sperrspannung vermieden werden.
 
-
-Early diodes consisted of "Cat's Whisker" Crystals and Vacuum tubes (also called "Thermionic Valves"). Most of today's most common diodes use semiconductor materials such as silicon or germanium.
+Die ersten Dioden waren sogenannte Kristalldetektoren („Cat’s Whisker“) sowie Röhrendioden („Thermionic Valves“). Heutzutage bestehen Dioden meist aus Halbleitermaterialien wie Silizium oder Germanium.
 
 * `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
- 
+
 * `Diode - Wikipedia <https://en.wikipedia.org/wiki/Diode>`_
 
 

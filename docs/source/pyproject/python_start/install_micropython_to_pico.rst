@@ -1,39 +1,38 @@
 .. note::
+   Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Begeisterten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+   **Warum beitreten?**
 
-    **Why Join?**
+   - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+   - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+   - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+   - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+   - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+   👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _install_micropython_on_pico:
 
-1.3 Install MicroPython on Your Pico
-==========================================
+1.3 MicroPython auf Ihrem Pico installieren
+================================================
 
 
-Now come to install MicroPython into Raspberry Pi Pico.
+Nun kommen wir zur Installation von MicroPython auf dem Raspberry Pi Pico.
 
-.. Thonny IDE provides a very convenient way for you to install it with one click.
+.. Die Thonny IDE bietet eine sehr praktische Möglichkeit, dies mit einem Klick zu tun.
 
    .. note::
-       you can use the Raspberry Pi official |link_micropython_pi| by dragging and dropping an firmware file into Raspberry Pi Pico.
-         
-#. Open the |link_raspberrypi_documention| and download the firmware file 
+       Sie können auch die offizielle Raspberry Pi |link_micropython_pi| verwenden, indem Sie eine Firmware-Datei auf den Raspberry Pi Pico ziehen und ablegen.
+       
+#. Öffnen Sie die |link_raspberrypi_documention| und laden Sie die Firmware-Datei herunter.
 
    .. image:: img/download_pico2w_file.jpg
 
-#. Press and hold the **BOOTSEL** button and then connect the Pico to computer via a Micro USB cable. Release the **BOOTSEL** button after your Pico is mount as a Mass Storage Device called **RPI-RP2350**.
+#. Halten Sie die **BOOTSEL**-Taste gedrückt und verbinden Sie dann den Pico über ein Micro-USB-Kabel mit dem Computer. Lassen Sie die **BOOTSEL**-Taste los, nachdem Ihr Pico als Massenspeichergerät namens **RPI-RP2350** erkannt wurde.
 
    .. image:: img/bootsel_onboard.png
 
-#. Drag and drop the firmware file into Raspberry Pi Pico 2 W . Afterward, your Pico 2 W will restart.
+#. Ziehen Sie die Firmware-Datei auf den Raspberry Pi Pico 2 W. Anschließend wird Ihr Pico 2 W neu starten.
 
    .. image:: img/drag_and_drop.jpg
 
@@ -61,4 +60,4 @@ Now come to install MicroPython into Raspberry Pi Pico.
 ..    .. image:: img/set_pico4.png
 
 
-Congratulations, now your Raspberry Pi Pico is ready to go.
+Herzlichen Glückwunsch, jetzt ist Ihr Raspberry Pi Pico einsatzbereit.

@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 23:  Temperature and Humidity Sensor with LCD Display
+Lektion 23: Temperatur- und Feuchtigkeitssensor mit LCD-Anzeige
 =============================================================================
 
-This tutorial covers creating a temperature and humidity project using the Raspberry Pi Pico W and DHT-11 sensor with an LCD display:
+Dieses Tutorial behandelt die Erstellung eines Projekts zur Temperatur- und Feuchtigkeitsmessung unter Verwendung des Raspberry Pi Pico W und des DHT-11-Sensors mit einem LCD-Display:
 
-* **Introduction**: Introduces the project to create a temperature and humidity sensor with an LCD display.
-* **Component Setup**: Connects the Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD.
-* **Library Installation**: Installs the LCD 1602 library from toptechboy.com.
-* **Code Explanation**: Sets up DHT-11, toggle for Celsius/Fahrenheit, and displays readings on the LCD.
-* **Practical Demonstration**: Shows readings on the LCD and toggle functionality, addressing text overlap issues.
+* **Einführung**: Einführung in das Projekt zur Erstellung eines Temperatur- und Feuchtigkeitssensors mit einem LCD-Display.
+* **Komponenteneinrichtung**: Verbindung des Raspberry Pi Pico W, DHT-11-Sensors, des Tasters und des LCD.
+* **Bibliotheksinstallation**: Installation der LCD 1602 Bibliothek von toptechboy.com.
+* **Code-Erklärung**: Einrichtung des DHT-11, Umschalter für Celsius/Fahrenheit und Anzeige der Messwerte auf dem LCD.
+* **Praktische Demonstration**: Anzeige der Messwerte auf dem LCD und der Umschaltfunktion, Behebung von Problemen mit Textüberlappungen.
 
 
 **Video**

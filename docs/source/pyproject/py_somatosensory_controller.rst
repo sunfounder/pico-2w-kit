@@ -1,43 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 ein mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung deiner Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Giveaways**: Nimm an Giveaways und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_somato_controller:
 
 
-7.11 Building a Somatosensory Controller
-============================================
+7.11 Aufbau eines somatosensorischen Controllers
+===================================================
 
-In this exciting project, we'll create a **Somatosensory Controller** using the Raspberry Pi Pico 2 W, an MPU6050 accelerometer and gyroscope module, and a servo motor. This device captures human motion—specifically the tilt of your hand—and translates it into movement of the servo motor. This technology is similar to that used in robotics and remote operation systems, such as surgical robots or robotic arms.
+In diesem spannenden Projekt werden wir einen **Somatosensorischen Controller** mit dem Raspberry Pi Pico 2 W, einem MPU6050-Beschleunigungsmesser und Gyroskopmodul sowie einem Servomotor erstellen. Dieses Gerät erfasst menschliche Bewegungen — speziell die Neigung deiner Hand — und übersetzt diese in Bewegungen des Servomotors. Diese Technologie ähnelt der, die in Robotik und Fernbedienungssystemen, wie chirurgischen Robotern oder Roboterarmen, verwendet wird.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -45,8 +45,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
@@ -74,37 +74,37 @@ You can also buy them separately from the links below.
         - 1
         - |link_servo_buy|
 
-**Understanding the Components**
+**Verständnis der Komponenten**
 
-* **MPU6050 Accelerometer and Gyroscope**: A 6-axis motion tracking device that measures acceleration and angular velocity along the X, Y, and Z axes. We'll use it to detect the tilt of your hand.
-* **Servo Motor**: A motor that can be controlled to move to a specific angle. We'll use it to mimic the movement detected by the MPU6050.
+* **MPU6050 Beschleunigungsmesser und Gyroskop**: Ein 6-Achsen-Bewegungssensor, der Beschleunigung und Winkelgeschwindigkeit entlang der X-, Y- und Z-Achsen misst. Wir werden ihn verwenden, um die Neigung deiner Hand zu erkennen.
+* **Servomotor**: Ein Motor, der gesteuert werden kann, um auf einen bestimmten Winkel zu bewegen. Wir werden ihn verwenden, um die Bewegung, die durch den MPU6050 erkannt wurde, nachzuahmen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_somato|
 
-The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
+Der MPU6050 berechnet den Einstellungswinkel basierend auf den Beschleunigungswerten in jeder Richtung.
 
-The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
+Das Programm wird den Servo steuern, um den entsprechenden Ablenkwinkel als Einstellungswinkel zu machen.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_somatosensory_controller| 
 
 
-**Writing the Code**
+**Schreiben des Codes**
 
-We'll write a MicroPython script that:
+Wir werden ein MicroPython-Skript schreiben, das:
 
-* Reads accelerometer data from the MPU6050.
-* Calculates the tilt angle of your hand.
-* Controls the servo motor to mimic the tilt.
+* Beschleunigungsdaten vom MPU6050 liest.
+* Den Neigungswinkel deiner Hand berechnet.
+* Den Servomotor steuert, um die Neigung nachzuahmen.
 
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Öffne die ``7.11_somatosensory_controller.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Hier musst du die ``imu.py`` und ``vector3d.py`` verwenden, bitte überprüfe, ob sie auf den Pico hochgeladen wurden, für ein detailliertes Tutorial siehe :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -113,32 +113,32 @@ We'll write a MicroPython script that:
     import utime
     import math
 
-    # Initialize I2C communication for MPU6050
+    # Initialisiere die I2C-Kommunikation für MPU6050
     i2c = I2C(1, scl=Pin(7), sda=Pin(6))
     mpu = MPU6050(i2c)
 
-    # Initialize PWM for the servo motor on GP15
+    # Initialisiere PWM für den Servomotor auf GP15
     servo = PWM(Pin(15))
-    servo.freq(50)  # Set frequency to 50Hz for servo
+    servo.freq(50)  # Setze Frequenz auf 50Hz für den Servo
 
-    # Function to map angle to PWM duty cycle
+    # Funktion, um den Winkel in PWM-Duty-Zyklus umzuwandeln
     def angle_to_duty(angle):
-        # Convert angle (0-180) to duty cycle (0.5ms - 2.5ms pulse width)
-        # Duty cycle range is from 2% to 12% for 0.5ms to 2.5ms at 50Hz
+        # Wandle Winkel (0-180) in Duty-Zyklus um (0.5ms - 2.5ms Pulsbreite)
+        # Duty-Zyklus-Bereich ist von 2% bis 12% für 0.5ms bis 2.5ms bei 50Hz
         duty_cycle = (angle / 18) + 2
         duty_u16 = int(duty_cycle / 100 * 65535)
         return duty_u16
 
-    # Function to get the tilt angle from accelerometer data
+    # Funktion, um den Neigungswinkel aus Beschleunigungsdaten zu bekommen
     def get_tilt_angle():
         accel = mpu.accel
         x = accel.x
         y = accel.y
         z = accel.z
         angle = math.atan2(y, z) * (180 / math.pi)
-        return angle + 90  # Adjust angle to range from 0 to 180
+        return angle + 90  # Justiere Winkel von 0 bis 180
 
-    # Main loop
+    # Hauptschleife
     try:
         while True:
             angle = get_tilt_angle()
@@ -153,20 +153,20 @@ We'll write a MicroPython script that:
         servo.deinit()
         print("Program stopped.")
 
-After the program starts, tilt your hand up and down.
-The servo motor should mimic the tilt by moving correspondingly.
-Observe how the servo responds to your hand movements.
+Nachdem das Programm gestartet wurde, neige deine Hand auf und ab.
+Der Servomotor sollte die Neigung nachahmen, indem er entsprechend bewegt wird.
+Beobachte, wie der Servo auf deine Handbewegungen reagiert.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Initialization:
+#. Initialisierung:
 
-   * **I2C Communication**: Set up to read data from the MPU6050.
-   * **Servo Motor PWM**: Initialized on GP15 with a frequency of 50Hz.
+   * **I2C-Kommunikation**: Eingerichtet, um Daten vom MPU6050 zu lesen.
+   * **Servomotor PWM**: Initialisiert auf GP15 mit einer Frequenz von 50Hz.
 
-#. Angle Calculation:
+#. Winkelberechnung:
 
-   * ``get_tilt_angle()``: Calculates the tilt angle based on accelerometer readings. The angle is adjusted to be between 0 and 180 degrees.
+   * ``get_tilt_angle()``: Berechnet den Neigungswinkel basierend auf den Beschleunigungsmessungen. Der Winkel wird angepasst, um zwischen 0 und 180 Grad zu liegen.
 
    .. code-block:: python
 
@@ -176,29 +176,29 @@ Observe how the servo responds to your hand movements.
             y = accel.y
             z = accel.z
             angle = math.atan2(y, z) * (180 / math.pi)
-            return angle + 90  # Adjust angle to range from 0 to 180
+            return angle + 90  # Justiere Winkel von 0 bis 180
 
-#. Servo Control:
+#. Servosteuerung:
 
-   * ``angle_to_duty(angle)``: Converts the angle to the appropriate PWM duty cycle for the servo motor.
-   * Duty Cycle Calculation: The servo expects pulses between 0.5ms (0 degrees) and 2.5ms (180 degrees) at 50Hz.
+   * ``angle_to_duty(angle)``: Wandelt den Winkel in den entsprechenden PWM-Duty-Zyklus für den Servomotor um.
+   * Duty-Zyklus-Berechnung: Der Servo erwartet Impulse zwischen 0.5ms (0 Grad) und 2.5ms (180 Grad) bei 50Hz.
 
    .. code-block:: python
 
         def angle_to_duty(angle):
-            # Convert angle (0-180) to duty cycle (0.5ms - 2.5ms pulse width)
-            # Duty cycle range is from 2% to 12% for 0.5ms to 2.5ms at 50Hz
+            # Wandle Winkel (0-180) in Duty-Zyklus um (0.5ms - 2.5ms Pulsbreite)
+            # Duty-Zyklus-Bereich ist von 2% bis 12% für 0.5ms bis 2.5ms bei 50Hz
             duty_cycle = (angle / 18) + 2
             duty_u16 = int(duty_cycle / 100 * 65535)
             return duty_u16
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * Reads the tilt angle.
-   * Adjusts the angle to ensure it's within 0 to 180 degrees.
-   * Sets the servo position accordingly.
-   * Includes a short delay to prevent jitter.
-   * Captures a keyboard interrupt to deinitialize the servo safely.
+   * Liest den Neigungswinkel.
+   * Justiert den Winkel, um sicherzustellen, dass er zwischen 0 und 180 Grad liegt.
+   * Stellt die Servoposition entsprechend ein.
+   * Beinhaltet eine kurze Verzögerung, um Zittern zu vermeiden.
+   * Erfasst eine Tastaturunterbrechung, um den Servo sicher zu deinitialisieren.
 
    .. code-block:: python
 
@@ -216,45 +216,45 @@ Observe how the servo responds to your hand movements.
             servo.deinit()
             print("Program stopped.")
 
-**Troubleshooting**
+**Fehlerbehebung**
 
-* Servo Not Moving:
+* Servo bewegt sich nicht:
 
-  * Check that the servo is powered correctly.
-  * Ensure the signal wire is connected to GP15.
-  * Verify that the grounds are connected between the Pico and the servo.
+  * Überprüfe, ob der Servo korrekt mit Strom versorgt wird.
+  * Stelle sicher, dass das Signalkabel an GP15 angeschlossen ist.
+  * Überprüfe, ob die Masseverbindungen zwischen dem Pico und dem Servo verbunden sind.
 
-* Inaccurate Movements:
+* Ungenaue Bewegungen:
 
-  * Make sure the MPU6050 is securely attached and not shaking excessively.
-  * Adjust the angle calculations if needed.
+  * Stelle sicher, dass der MPU6050 sicher befestigt ist und nicht übermäßig wackelt.
+  * Justiere die Winkelberechnungen bei Bedarf.
 
-* Program Errors:
+* Programmfehler:
 
-  * Ensure that imu.py and vector3d.py are correctly uploaded.
-  * Check for typos or indentation errors in the code.
+  * Stelle sicher, dass imu.py und vector3d.py korrekt hochgeladen wurden.
+  * Überprüfe auf Tippfehler oder Einrückungsfehler im Code.
 
-**Extensions and Enhancements**
+**Erweiterungen und Verbesserungen**
 
-* Control Multiple Servos:
+* Steuerung mehrerer Servos:
 
-  * Add more servos to control additional axes of movement.
-  * Expand the code to handle rotation around other axes.
+  * Füge weitere Servos hinzu, um zusätzliche Bewegungsachsen zu steuern.
+  * Erweitere den Code, um die Rotation um andere Achsen zu handhaben.
 
-* Wireless Communication:
+* Drahtlose Kommunikation:
 
-  Use Bluetooth or Wi-Fi modules to transmit sensor data to another device controlling the servos.
+  Verwende Bluetooth- oder WLAN-Module, um Sensordaten an ein anderes Gerät zu übertragen, das die Servos steuert.
 
-* Data Smoothing:
+* Daten Glättung:
 
-  Implement filters (e.g., Kalman filter) to smooth out sensor readings.
+  Implementiere Filter (z. B. Kalman-Filter), um die Sensordaten zu glätten.
 
-* Visual Feedback:
+* Visuelles Feedback:
 
-  Add an OLED or LCD display to show real-time angle data.
+  Füge ein OLED- oder LCD-Display hinzu, um Echtzeit-Winkeldaten anzuzeigen.
 
-**Conclusion**
+**Fazit**
 
-You've successfully built a Somatosensory Controller that captures human motion and translates it into mechanical movement. This project demonstrates how sensors and actuators can work together to create interactive systems, similar to those used in robotics and remote operations.
+Du hast erfolgreich einen Somatosensorischen Controller gebaut, der menschliche Bewegungen erfasst und in mechanische Bewegungen übersetzt. Dieses Projekt zeigt, wie Sensoren und Aktoren zusammenarbeiten können, um interaktive Systeme zu erstellen, ähnlich wie sie in der Robotik und bei Fernbedienungen verwendet werden.
 
-Feel free to enhance this project by adding more features or integrating it into larger systems.
+Fühle dich frei, dieses Projekt durch Hinzufügen weiterer Funktionen oder die Integration in größere Systeme zu erweitern.

@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie gemeinsam mit anderen begeisterten Mitgliedern Ihr Wissen über Raspberry Pi, Arduino und ESP32.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalten Sie Unterstützung bei technischen Problemen und After-Sales-Fragen durch unsere Community und unser Team.
+    - **Learn & Share**: Tauschen Sie wertvolle Tipps und Tutorials aus, um Ihre Kenntnisse zu erweitern.
+    - **Exclusive Previews**: Sichern Sie sich frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nehmen Sie an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns Neues zu entdecken und kreativ zu werden? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _cpn_joystick:
 
@@ -19,13 +19,11 @@ Joystick Module
 
 |img_joystick_pic|
 
-A joystick works by converting the movement of its stick into electronic signals that a computer can interpret.
+Ein Joystick wandelt die Bewegungen seines Steuerknüppels in elektrische Signale um, die von einem Computer oder Mikrocontroller interpretiert werden können.
 
-To convey the full range of motion, the joystick measures the stick's position along two axes: the X-axis (left to right) and the Y-axis (up to down). These X-Y coordinates precisely define the stick's position, much like in geometry.
+Zur Erfassung der vollständigen Bewegungsfreiheit misst der Joystick die Position des Steuerknüppels entlang zweier Achsen: der X-Achse (horizontal, links–rechts) und der Y-Achse (vertikal, oben–unten). Diese XY-Koordinaten definieren die Position des Steuerknüppels exakt, ähnlich wie im kartesischen Koordinatensystem.
 
-The joystick determines the stick's position by tracking the movement of its shafts. In a traditional analog joystick, this is achieved using two potentiometers (variable resistors), which adjust resistance based on the stick's position.
-
-Additionally, the joystick includes a digital input that is triggered when the stick is pressed down.
+Die Positionserkennung erfolgt über zwei Potentiometer (veränderbare Widerstände), die ihre Widerstandswerte je nach Position des Steuerknüppels variieren. Zusätzlich verfügt der Joystick über einen digitalen Eingang, der ausgelöst wird, sobald der Steuerknüppel heruntergedrückt wird.
 
 |img_joystick|
 
@@ -35,5 +33,5 @@ Additionally, the joystick includes a digital input that is triggered when the s
 
 **Example**
 
-* :ref:`py_joystick` (For MicroPython User)
-* :ref:`ar_joystick` (For Arduino User)
+* :ref:`py_joystick` (Für MicroPython-Nutzer)
+* :ref:`ar_joystick` (Für Arduino-Nutzer)

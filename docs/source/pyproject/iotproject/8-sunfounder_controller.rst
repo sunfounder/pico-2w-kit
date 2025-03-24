@@ -1,53 +1,54 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauche tiefer in die Welt des Raspberry Pi, Arduino und ESP32 ein mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Austausch von Tipps und Tutorials zur Verbesserung deiner Fähigkeiten.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und Einblicke.
+    - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bist du bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
 .. _py_iot_sunfounder_controller:
 
-8.8 Play in @SunFounder Controller
-====================================
+8.8 Spielen mit @SunFounder Controller
+==========================================
 
-In this project, you will learn how to build a remote project using Sunfounder Controller APP.
-In a LAN environment, you can control your Pico 2 W circuit with your phone/tablet.
-You will find this app very useful if you want to build a simple robot with Pico 2 W.
+In diesem Projekt lernst du, wie du ein Fernprojekt mit der Sunfounder Controller-App 
+aufbaust. In einem LAN-Umfeld kannst du deine Pico 2 W-Schaltung mit deinem Smartphone/Tablet 
+steuern. Diese App ist besonders nützlich, wenn du einen einfachen Roboter mit Pico 2 W bauen möchtest.
 
-Here, we will use the slider bar on the APP to control the servo angle and the gauge on the APP to show the distance detected by ultrasonic.
+Hier verwenden wir die Schieberegler in der App, um den Winkel des Servos zu steuern, und das Messgerät 
+in der App zeigt die durch Ultraschall erfasste Entfernung an.
 
-**1. Required Components**
+**1. Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
+    *   - Name
         - ITEMS IN THIS KIT
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT
         - QUANTITY
         - LINK
 
@@ -65,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -84,112 +85,112 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Den Schaltkreis aufbauen**
 
 .. warning:: 
         
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    Stelle sicher, dass dein Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist. Andernfalls könnte ein Kurzschluss deine Batterie und die Schaltung beschädigen.
 
 .. image:: img/wiring/9.sc_bb.png
     :width: 800
 
 
-**3. Setup SunFounder Controller**
+**3. SunFounder Controller einrichten**
 
-1. Install `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+1. Installiere die `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ aus dem **APP Store(iOS)** oder **Google Play(Android)**.
 
-2. Open the APP and click the **+** button on the home page to create a controller.
+2. Öffne die APP und klicke auf das **+** Symbol auf der Startseite, um einen Controller zu erstellen.
 
     .. image:: img/sc-a-2.jpg
         :width: 800
 
-3. Here we choose **Blank** and **Dual Stick**.
+3. Hier wählen wir **Blank** und **Dual Stick**.
 
     .. image:: img/sc-a-3.jpg
         :width: 800
 
-4. Now we get an empty controller.
+4. Jetzt erhalten wir einen leeren Controller.
 
     .. image:: img/sc-a-4.jpg
         :width: 800
 
-5. Click on the **H** area and add a **Slider** widget.
+5. Klicke auf das **H**-Feld und füge ein **Slider**-Widget hinzu.
 
     .. image:: img/sc-a-5.jpg
         :width: 800
 
-6. Click the gear on the control to open the settings window.
+6. Klicke auf das Zahnrad am Steuergerät, um das Einstellungsfenster zu öffnen.
 
     .. image:: img/sc-a-6.png
         :width: 300
 
-7. Set Maximum to 180 and Minimum to 0, then click to **Confirm**.
+7. Stelle das Maximum auf 180 und das Minimum auf 0 ein, dann klicke auf **Bestätigen**.
 
     .. image:: img/sc-a-7.jpg
         :width: 800
 
-8. Click on the L area and add a Gauge widget.
+8. Klicke auf das L-Feld und füge ein Messgerät-Widget hinzu.
 
     .. image:: img/sc-a-8.jpg
         :width: 800
 
-9. Click the gear of the Gauge, open the settings window, set Maximum to 100, Minimum to 0, and unit to cm.
+9. Klicke auf das Zahnrad des Messgeräts, öffne das Einstellungsfenster, stelle das Maximum auf 100, das Minimum auf 0 und die Einheit auf cm ein.
 
     .. image:: img/sc-a-9.jpg
         :width: 800
 
-10. After finishing the widget settings, click Save.
+10. Nachdem du die Widget-Einstellungen abgeschlossen hast, klicke auf Speichern.
 
     .. image:: img/sc-a-10.png
         :width: 300
 
 
 
-**4. Run the Code**
+**4. Führe den Code aus**
 
 .. note:: 
-    If your Pico 2 W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
+    Wenn dein Pico 2 W derzeit die Anvil-Firmware verwendet, musst du :ref:`install_micropython_on_pico`.
 
 
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``pico-2w-kit-main/micropython/libs`` to the Raspberry Pi Pico 2 W.
+1. Lade die Dateien ``ws.py`` und ``websocket_helper.py`` aus dem Pfad ``pico-2w-kit-main/micropython/libs`` auf den Raspberry Pi Pico 2 W hoch.
 
     .. image:: img/9_sc3.png
 
-2. Double click the ``ws.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+2. Doppelklicke auf das Skript „ws.py“ und trage dein WiFi ``SSID`` und ``PASSWORD`` ein.
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``pico-2w-kit-main/micropython/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico 2 W.
+3. Öffne die Datei ``9_sunfounder_controller.py`` unter dem Pfad ``pico-2w-kit-main/micropython/iot``. Klicke auf den Knopf **Run current script** oder drücke F5, um es auszuführen. Nach erfolgreicher Verbindung siehst du die IP des Pico 2 W.
 
     .. image:: img/9_sc2.png
 
     .. note::
-        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico 2 W as ``main.py``.
+        Wenn du möchtest, dass dieses Skript beim Booten ausgeführt wird, kannst du es als ``main.py`` auf dem Raspberry Pi Pico 2 W speichern.
 
-4. Back to SunFounder Controller APP, click the **Connect** button.
+4. Kehre zur SunFounder Controller APP zurück und klicke auf den **Verbinden**-Knopf.
 
     .. image:: img/sc-c-4.jpg
         :width: 300
 
-5. If PicoW is detected, tap it directly to connect.
+5. Wenn PicoW erkannt wird, tippe direkt darauf, um eine Verbindung herzustellen.
 
     .. image:: img/sc-c-5.jpg
         :width: 300
 
-6. If it doesn't search automatically, you can also manually enter the IP to connect.
+6. Wenn es nicht automatisch sucht, kannst du auch manuell die IP eingeben, um eine Verbindung herzustellen.
 
     .. image:: img/sc-c-6.png
         :width: 800
 
-7. When you slide the slider bar in the H area after clicking the Run button, the servo will adjust its angle. The gauge in the L area will show the distance if your hand is within 100cm of the ultrasonic sensor.
+7. Wenn du nach dem Klicken auf die Ausführen-Taste den Schieberegler im H-Bereich verschiebst, stellt der Servo seinen Winkel ein. Das Messgerät im L-Bereich zeigt die Entfernung an, wenn deine Hand innerhalb von 100 cm vom Ultraschallsensor ist.
 
     .. image:: img/sc-c-8.jpg
         :width: 300
 
-**How it works?**
+**Wie funktioniert es?**
 
 
-The ``WS_Server`` class in the ``ws.py`` library implements communication with the APP. Below is the framework for implementing its basic functionality.
+Die Klasse ``WS_Server`` in der Bibliothek ``ws.py`` implementiert die Kommunikation mit der APP. Unten ist das Framework für die Implementierung der grundlegenden Funktionalität dargestellt.
 
 .. code-block:: python
 
@@ -211,49 +212,49 @@ The ``WS_Server`` class in the ``ws.py`` library implements communication with t
         ws.stop()
 
 
-First, we need to create a ``WS_Server`` object.
+Zuerst müssen wir ein ``WS_Server``-Objekt erstellen.
 
 .. code-block:: python
 
-    ws = WS_Server(8765) 
+    ws = WS_Server(8765)
 
-Star it.
+Starten Sie es.
 
 .. code-block:: python
 
     ws.start()
 
 
-Next, a ``while True`` loop is used to perform the data transfer between Pico 2 W and the SunFounder Controller APP.
+Als Nächstes wird eine ``while True``-Schleife verwendet, um den Datentransfer zwischen Pico 2 W und der SunFounder Controller-App durchzuführen.
 
 .. code-block:: python
 
     while True:
-        #  websocket transfer data
-        status,result = ws.transfer()
+        #  Datenübertragung via WebSocket
+        status, result = ws.transfer()
 
-        # the status of transfer data
+        # Status der Datenübertragung
         print(status)
 
-        # the data you recv
+        # empfangene Daten
         print(result)
 
-        # the data you send
+        # gesendete Daten
         print(ws.send_dict)
 
-        
+
         time.sleep_ms(100)
 
-``status`` is ``False`` if it fails to get data from the SunFounder Controller APP.
+``status`` ist ``False``, falls keine Daten von der SunFounder Controller-App empfangen werden können.
 
-And ``result`` is the data that Pico 2 W fetched from the SunFounder Controller APP.
-Print it out and you will see something like the following. This is the value of all Widget areas.
+Und ``result`` sind die Daten, die Pico 2 W von der SunFounder Controller-App abruft.
+Drucken Sie diese aus, und Sie werden so etwas wie das Folgende sehen. Dies ist der Wert aller Widget-Bereiche.
 
 .. code-block:: 
 
     {'C': None, 'B': None, 'M': None,,,,, 'A': None, 'R': None}
 
-As in this case, we print the values of the H area separately and use them to operate the circuit.
+Wie in diesem Fall drucken wir die Werte des H-Bereichs separat aus und verwenden sie zur Steuerung des Schaltkreises.
 
 .. code-block:: python
 
@@ -263,25 +264,25 @@ As in this case, we print the values of the H area separately and use them to op
             print(result['H'])
 
 
-And the ``ws.send_dict`` dictionary is the data that Pico 2 W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
+Und das ``ws.send_dict`` Wörterbuch ist die Datenmenge, die Pico 2 W an die SunFounder Controller-App sendet. Es wird in der Klasse ``WS_Server`` erstellt und gesendet, wenn ``ws.transfer()`` ausgeführt wird.
 
-Its message is shown below.
+Die Nachricht lautet wie folgt:
 
 .. code-block:: python
 
     {'Check': 'SunFounder Controller', 'Name': 'Pico2W', 'Type': 'Blank'}
 
-This is a blank message, to copy it to the widget on SunFounder Controller APP, we need to assign the value to the corresponding area in the dictionary. For example, assign the value ``50`` to the L area.
+Dies ist eine leere Nachricht, um sie auf das Widget in der SunFounder Controller-App zu kopieren, müssen wir den entsprechenden Bereich im Wörterbuch mit einem Wert belegen. Zum Beispiel den Wert ``50`` dem L-Bereich zuweisen.
 
 .. code-block:: python
 
         ws.send_dict['L'] = 50
 
-The data is shown below:
+Die Daten werden wie folgt angezeigt:
 
 .. code-block:: python
 
     {'L': 50, 'Type': 'Blank', 'Name': 'Pico2W', 'Check': 'SunFounder Controller'}
 
 
-For more details on using SunFounder Controller, please see `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.
+Für weitere Details zur Nutzung der SunFounder Controller, siehe `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.

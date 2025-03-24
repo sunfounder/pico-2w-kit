@@ -1,63 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Erhalte Hilfe bei technischen Herausforderungen und Problemen nach dem Kauf – direkt von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Feiertagsaktionen und Gewinnspiele**: Nimm an Sonderaktionen und Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
 .. _ar_74hc_7seg:
 
-5.2 Displaying Numbers
+5.2 Zahlen anzeigen
 ===========================================================
 
-In this lesson, we'll learn how to use a **7-segment display** to show numbers using the Raspberry Pi Pico 2 W and a **74HC595 shift register**. The 7-segment display is a common electronic component used in devices like digital clocks, calculators, and appliances to display numerical information.
+In dieser Lektion lernen wir, wie man eine **7-Segment-Anzeige** verwendet, um Zahlen mit dem Raspberry Pi Pico 2 W und einem **74HC595-Schieberegister** darzustellen. Die 7-Segment-Anzeige ist eine häufig verwendete elektronische Komponente, die in Geräten wie Digitaluhren, Taschenrechnern und Haushaltsgeräten zur Anzeige numerischer Informationen genutzt wird.
 
-By combining the 74HC595 shift register with the 7-segment display, we can control all the segments using only a few GPIO pins on the Pico, saving valuable I/O resources for other components.
+Durch die Kombination des 74HC595-Schieberegisters mit der 7-Segment-Anzeige können alle Segmente mit nur wenigen GPIO-Pins des Pico gesteuert werden, wodurch wertvolle I/O-Ressourcen für andere Komponenten gespart werden.
 * :ref:`cpn_7_segment`
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist besonders praktisch. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ENTHALTENE TEILE IM KIT
+        - KAUFLINK
     *   - Pico 2 W Starter Kit	
-        - 450+
+        - 450+ Komponenten
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
-
+Alternativ können die Komponenten auch einzeln über die folgenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - MENGE
+        - KAUFLINK
 
     *   - 1
         - :ref:`cpn_pico_2w`
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,11 +65,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_7_segment`
@@ -81,28 +80,28 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Understanding the 7-Segment Display**
+**Funktionsweise der 7-Segment-Anzeige**
 
-A 7-segment display consists of 7 LEDs (segments) arranged in a figure-eight pattern to display digits from 0 to 9. There's also an eighth LED for the decimal point. Each segment is labeled from **a** to **g**, and the decimal point is labeled **dp**.
+Eine 7-Segment-Anzeige besteht aus 7 LEDs (Segmenten), die in einer Acht-Form angeordnet sind, um Ziffern von 0 bis 9 darzustellen. Zusätzlich gibt es eine achte LED für den Dezimalpunkt. Jedes Segment ist mit den Buchstaben **a** bis **g** gekennzeichnet, der Dezimalpunkt mit **dp**.
 
-Here's the segment labeling:
+Hier ist die Segment-Beschriftung:
 
 |img_7seg_cathode|
 
-In a **common cathode** 7-segment display, all the cathodes (negative sides) of the LEDs are connected together to a common ground.
+Bei einer **gemeinsamen Kathode** sind alle Kathoden (negativen Seiten) der LEDs miteinander verbunden und an Masse angeschlossen.
 
-**Schematic**
+**Schaltplan**
 
 |sch_74hc_7seg|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 7 Segment Display.
+Das Verdrahtungsprinzip ist weitgehend identisch mit :ref:`py_74hc_led`, mit dem einzigen Unterschied, dass Q0-Q7 mit den a ~ g-Pins der 7-Segment-Anzeige verbunden sind.
 
 .. list-table:: Wiring
     :widths: 15 25
     :header-rows: 1
 
     *   - 74HC595
-        - LED Segment Display
+        - 7-Segment-Anzeige
     *   - Q0
         - a
     *   - Q1
@@ -120,29 +119,29 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
     *   - Q7
         - dp
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_74hc_7seg|
 
 
-**Writing the Code**
+**Code schreiben**
 
-We'll write a program that controls the 7-segment display by sending serial data to the 74HC595 shift register. The display will cycle through the numbers 0 to 9 in sequence.
+Wir schreiben ein Programm, das die 7-Segment-Anzeige durch serielle Datenübertragung zum 74HC595-Schieberegister steuert. Die Anzeige wird die Zahlen 0 bis 9 in einer Schleife darstellen.
 
 .. note::
 
-    * You can open the file ``5.2_number_display.ino`` under the path of ``pico-2w-kit-main/arduino/5.2_number_display``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Die Datei ``5.2_number_display.ino`` kann unter ``pico-2w-kit-main/arduino/5.2_number_display`` geöffnet werden.
+    * Alternativ kann der Code in die **Arduino IDE** kopiert werden.
+    * Vor dem Hochladen muss das richtige Board (Raspberry Pi Pico) und der korrekte Port ausgewählt werden.
 
 .. code-block:: arduino
 
-    // Define the pins connected to the 74HC595
+    // Definiere die Pins für das 74HC595
     const int DS = 0;    // GPIO 0 -> DS (Pin 14)
     const int SHCP = 1;  // GPIO 1 -> SHCP (Pin 11)
     const int STCP = 2;  // GPIO 2 -> STCP (Pin 12)
 
-    // Array of hexadecimal codes for digits 0-9 on a common cathode 7-segment display
+    // Array der Hexadezimalcodes für die Ziffern 0-9 auf einer gemeinsamen Kathoden-7-Segment-Anzeige
     const byte numArray[] = {
       0x3F, // 0: 00111111
       0x06, // 1: 00000110
@@ -157,44 +156,44 @@ We'll write a program that controls the 7-segment display by sending serial data
     };
 
     void setup() {
-      // Initialize the control pins as outputs
+      // Initialisiere die Steuerpins als Ausgänge
       pinMode(DS, OUTPUT);
       pinMode(SHCP, OUTPUT);
       pinMode(STCP, OUTPUT);
     }
 
     void loop() {
-      // Iterate through each number 0-9
+      // Durchläuft die Zahlen 0-9
       for (int num = 0; num < 10; num++) {
-        // Set STCP to LOW to prepare for data
+        // Bereite das Schieberegister für neue Daten vor
         digitalWrite(STCP, LOW);
 
-        // Shift out the data to the shift register
+        // Übertrage die Daten an das Schieberegister
         shiftOut(DS, SHCP, MSBFIRST, numArray[num]);
 
-        // Set STCP to HIGH to latch the data to the output pins
+        // Latch-Daten an die Ausgangspins
         digitalWrite(STCP, HIGH);
 
-        delay(1000); // Wait for one second before displaying the next number
+        delay(1000); // Warte eine Sekunde, bevor die nächste Zahl angezeigt wird
       }
 
-      // Turn off all segments after displaying 0-9
+      // Schaltet alle Segmente aus, nachdem 0-9 angezeigt wurde
       digitalWrite(STCP, LOW);
       shiftOut(DS, SHCP, MSBFIRST, 0x00);
       digitalWrite(STCP, HIGH);
       delay(1000);
     }
 
-After uploading the code, the display should cycle through the numbers 0 to 9, showing each number for one second.
-After reaching 9, all segments should turn off for one second before starting the sequence again.
+Nach dem Hochladen des Codes sollte die Anzeige die Zahlen 0 bis 9 in einer Schleife anzeigen, wobei jede Zahl eine Sekunde lang sichtbar bleibt.
+Nach der Zahl 9 werden alle Segmente für eine Sekunde ausgeschaltet, bevor die Sequenz erneut beginnt.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Defining Control Pins:
+#. Definition der Steuerpins:
 
-   * ``DS (Data Serial Input)``: Receives serial data to be shifted into the register.
-   * ``SHCP (Shift Register Clock Input)``: Controls the shifting of data into the register.
-   * ``STCP (Storage Register Clock Input)``: Controls the latching of data from the shift register to the output pins.
+   * ``DS (Data Serial Input)``: Empfängt serielle Daten, die in das Register verschoben werden.
+   * ``SHCP (Shift Register Clock Input)``: Steuert das Verschieben der Daten in das Register.
+   * ``STCP (Storage Register Clock Input)``: Steuert das Speichern der Daten aus dem Schieberegister in die Ausgangspins.
 
    .. code-block:: arduino
 
@@ -202,10 +201,10 @@ After reaching 9, all segments should turn off for one second before starting th
         const int SHCP = 2;  // GPIO 2 -> SHCP (Pin 11)
         const int STCP = 1;  // GPIO 1 -> STCP (Pin 12)
 
-#. Creating Data Patterns:
+#. Erstellen von Datenmustern:
 
-   * ``numArray``: An array holding the hexadecimal codes for displaying numbers 0-9 on a common cathode 7-segment display.
-   * Each hexadecimal value corresponds to the segments that need to be lit to display a particular number.
+   * ``numArray``: Ein Array mit Hexadezimalcodes zur Darstellung der Zahlen 0-9 auf einer gemeinsamen Kathoden-7-Segment-Anzeige.
+   * Jeder Hexadezimalwert gibt an, welche Segmente für die jeweilige Zahl aktiviert werden müssen.
 
    .. code-block:: arduino
 
@@ -222,40 +221,40 @@ After reaching 9, all segments should turn off for one second before starting th
           0x6F  // 9: 01101111
         };
 
-   Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+   Soll die 7-Segment-Anzeige die Zahl "1" darstellen, müssen die Segmente b und c eingeschaltet werden, während a, d, e, f, g und dp ausgeschaltet bleiben.
 
    |img_1_segment|
 
-   That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
+   Das bedeutet, dass das Binärmuster 00000110 geschrieben werden muss. Zur besseren Lesbarkeit wird dies in hexadezimaler Schreibweise als 0x06 dargestellt.
 
-#. Setup Function:
+#. Setup-Funktion:
 
-   Sets the ``DS``, ``SHCP``, and ``STCP`` pins as outputs to send data to the shift register.
+   Setzt die Pins ``DS``, ``SHCP`` und ``STCP`` als Ausgänge, um Daten an das Schieberegister zu senden.
 
    .. code-block:: arduino
 
         void setup() {
-          // Initialize the control pins as outputs
+          // Initialisiert die Steuerpins als Ausgänge
           pinMode(DS, OUTPUT);
           pinMode(SHCP, OUTPUT);
           pinMode(STCP, OUTPUT);
         }
 
-#. Loop Function: The ``for`` loop cycles through each pattern in the ``numArray`` array.
+#. Loop-Funktion: Die ``for``-Schleife durchläuft jedes Muster im ``numArray`` -Array.
 
-   * Shifting Out Data:
+   * Verschieben der Daten:
 
-     * ``shiftOut`` sends the byte of data one bit at a time.
-     * ``MSBFIRST`` indicates that the most significant bit is sent first.
+     * ``shiftOut`` sendet das Byte der Daten Bit für Bit.
+     * ``MSBFIRST`` gibt an, dass das höchstwertige Bit zuerst gesendet wird.
 
      .. code-block:: arduino
 
         shiftOut(DS, SHCP, MSBFIRST, numArray[num]);
 
-   * Latching Data:
+   * Speichern der Daten:
 
-     * Setting ``STCP`` ``LOW`` prepares the shift register for new data.
-     * After shifting out the data, setting ``STCP`` ``HIGH`` latches the data to the output pins, updating the 7-segment display.
+     * ``STCP`` auf ``LOW`` setzen, um das Schieberegister für neue Daten vorzubereiten.
+     * Nach dem Übertragen der Daten ``STCP`` auf ``HIGH`` setzen, um die Daten in die Ausgangspins zu übernehmen und die 7-Segment-Anzeige zu aktualisieren.
 
      .. code-block:: arduino
 
@@ -263,9 +262,9 @@ After reaching 9, all segments should turn off for one second before starting th
         // shiftOut(...)
         digitalWrite(STCP, HIGH);
 
-   * ``delay(500);`` adds a half-second pause between each pattern for visibility.
+   * ``delay(500);`` fügt eine halbe Sekunde Pause zwischen jeder Zahl für bessere Sichtbarkeit hinzu.
 
-   * Turning Off All Segments: After displaying numbers 0-9, the code sends 0x00 to turn off all segments. The display remains off for one second before the loop repeats.
+   * Ausschalten aller Segmente: Nachdem die Zahlen 0-9 angezeigt wurden, sendet der Code 0x00, um alle Segmente auszuschalten. Die Anzeige bleibt eine Sekunde lang ausgeschaltet, bevor die Schleife erneut beginnt.
 
      .. code-block:: arduino
 
@@ -274,63 +273,62 @@ After reaching 9, all segments should turn off for one second before starting th
         digitalWrite(STCP, HIGH);
         delay(1000);
 
-**Troubleshooting**
+**Fehlersuche**
 
-* No Numbers Displayed:
+* Keine Zahlen werden angezeigt:
 
-  * Check all wiring connections.
-  * Ensure the 74HC595 is properly powered.
-  * Verify that the GPIO pins on the Pico are correctly connected to the shift register.
-  * Make sure the 7-segment display is connected correctly, with each segment connected through a resistor.
+  * Überprüfe alle Verdrahtungen.
+  * Stelle sicher, dass der 74HC595 ordnungsgemäß mit Strom versorgt wird.
+  * Vergewissere dich, dass die GPIO-Pins des Pico korrekt mit dem Schieberegister verbunden sind.
+  * Prüfe, ob die 7-Segment-Anzeige richtig angeschlossen ist, insbesondere mit Vorwiderständen für jedes Segment.
 
-* Incorrect Numbers Displayed:
+* Falsche Zahlen werden angezeigt:
 
-  * Double-check the hexadecimal codes in numArray.
-  * Ensure that the shift register outputs are correctly connected to the corresponding segments.
+  * Überprüfe die Hexadezimalwerte im numArray.
+  * Stelle sicher, dass die Ausgänge des Schieberegisters korrekt mit den jeweiligen Segmenten verbunden sind.
 
-* Flickering or Unstable Display:
+* Flackern oder instabile Anzeige:
 
-  * Verify that the power connections are stable.
-  * Ensure that the resistors are properly connected to limit the current to each segment.
+  * Kontrolliere die Stromversorgung auf stabile Verbindungen.
+  * Prüfe, ob die Widerstände ordnungsgemäß angeschlossen sind, um den Strom durch die Segmente zu begrenzen.
 
-**Understanding the Segment Codes**
+**Verständnis der Segmentcodes**
 
-Each segment code corresponds to the segments that need to be illuminated to display a specific digit. Here's how the segments map to each digit:
+Jeder Segmentcode bestimmt, welche Segmente aktiviert werden, um eine bestimmte Ziffer darzustellen. Hier ist die Zuordnung der Segmente zu den jeweiligen Ziffern:
 
-* **0**: Segments a, b, c, d, e, f (code 0x3F)
-* **1**: Segments b, c (code 0x06)
-* **2**: Segments a, b, g, e, d (code 0x5B)
-* **3**: Segments a, b, c, d, g (code 0x4F)
-* **4**: Segments b, c, f, g (code 0x66)
-* **5**: Segments a, c, d, f, g (code 0x6D)
-* **6**: Segments a, c, d, e, f, g (code 0x7D)
-* **7**: Segments a, b, c (code 0x07)
-* **8**: Segments a, b, c, d, e, f, g (code 0x7F)
-* **9**: Segments a, b, c, d, f, g (code 0x6F)
+* **0**: Segmente a, b, c, d, e, f (Code 0x3F)
+* **1**: Segmente b, c (Code 0x06)
+* **2**: Segmente a, b, g, e, d (Code 0x5B)
+* **3**: Segmente a, b, c, d, g (Code 0x4F)
+* **4**: Segmente b, c, f, g (Code 0x66)
+* **5**: Segmente a, c, d, f, g (Code 0x6D)
+* **6**: Segmente a, c, d, e, f, g (Code 0x7D)
+* **7**: Segmente a, b, c (Code 0x07)
+* **8**: Segmente a, b, c, d, e, f, g (Code 0x7F)
+* **9**: Segmente a, b, c, d, f, g (Code 0x6F)
 
-**Further Exploration**
+**Weiterführende Experimente**
 
-* Controlling Multiple 7-Segment Displays:
+* Steuerung mehrerer 7-Segment-Anzeigen: 
 
-  Chain multiple 74HC595 shift registers to control additional 7-segment displays, enabling multi-digit displays.
+  Mehrere 74HC595-Schieberegister in Reihe schalten, um zusätzliche Anzeigen zu steuern und mehrstellige Zahlen darzustellen.
 
-* Implementing LED Animations:
+* LED-Animationen implementieren:
 
-  Create dynamic animations or scrolling text by modifying the data patterns sent to the shift register.
+  Durch Anpassen der Datenmuster im Schieberegister können einfache Animationen oder Laufschriften erstellt werden.
 
-* Integrating with Sensors:
+* Integration mit Sensoren:
 
-  Combine the 7-segment display with sensors (e.g., temperature, light) to display real-time data.
+  Die 7-Segment-Anzeige kann mit Sensoren (z. B. Temperatur-, Licht- oder Abstandssensoren) kombiniert werden, um Echtzeitwerte darzustellen.
 
-* Building a Digital Clock:
+* Bau einer digitalen Uhr: 
 
-  Use multiple 7-segment displays and real-time clock modules to create a functional digital clock.
+  Mehrere 7-Segment-Anzeigen zusammen mit Echtzeit-Uhrenmodulen verwenden, um eine funktionale digitale Uhr zu erstellen.
 
-* Adding Decimal Points and Indicators:
+* Hinzufügen von Dezimalpunkten und Indikatoren:
 
-  Utilize the decimal point (dp) and additional indicators (e.g., colons) for more complex displays.
+  Den Dezimalpunkt (dp) oder andere Anzeigen (z. B. Doppelpunkte für eine Uhr) für komplexere Darstellungen nutzen.
 
+**Fazit**
 
-**Conclusion**
-
-In this lesson, you've learned how to use the 74HC595 shift register with the Raspberry Pi Pico to control a 7-segment display. By sending serial data to the shift register, you can efficiently manage multiple outputs using just a few GPIO pins. This technique not only conserves valuable I/O resources but also opens up possibilities for expanding your projects with more LEDs, displays, or other peripherals.
+In dieser Lektion hast du gelernt, wie du mit dem 74HC595-Schieberegister und dem Raspberry Pi Pico eine 7-Segment-Anzeige steuerst. Durch die serielle Datenübertragung an das Schieberegister lassen sich mehrere Ausgänge effizient mit nur wenigen GPIO-Pins verwalten. Diese Technik spart nicht nur wertvolle I/O-Ressourcen, sondern ermöglicht auch die Erweiterung deiner Projekte um weitere LEDs, Displays oder andere Peripheriegeräte.

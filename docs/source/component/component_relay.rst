@@ -1,47 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_relay:
 
-Relay
+Relais
 ==========================================
 
 |img_relay|
 
-A relay is a device that connects two or more points or devices in response to an input signal. Essentially, relays provide isolation between the controller and the device, as the device may operate on either AC or DC power. Relays are necessary because microcontrollers, which typically operate on DC, require a mechanism to interface with and control devices operating on different electrical standards.
+Ein Relais ist ein Bauteil, das zwei oder mehr Punkte oder Geräte in Abhängigkeit von einem Eingangssignal verbindet. Im Wesentlichen dient es als Isolator zwischen dem Steuergerät und dem Verbraucher, da dieser mit Wechselstrom (AC) oder Gleichstrom (DC) betrieben werden kann. Relais sind notwendig, weil Mikrocontroller, die in der Regel mit Gleichstrom arbeiten, eine Schnittstelle benötigen, um Geräte mit unterschiedlichen elektrischen Standards zu steuern.
 
-Relays are particularly useful for controlling large currents or voltages with small electrical signals, making them invaluable in many applications.
+Relais sind besonders nützlich, um große Ströme oder Spannungen mit kleinen elektrischen Signalen zu schalten, was sie für zahlreiche Anwendungen unverzichtbar macht.
 
-Every relay consists of five main components:
+Jedes Relais besteht aus fünf Hauptkomponenten:
 
-**Electromagnet** - It consists of an iron core wrapped with a coil of wire. When electricity flows through the coil, it generates a magnetic field, turning the core into an electromagnet.
+**Elektromagnet** – Ein Eisenkern, der mit einer Drahtspule umwickelt ist. Fließt Strom durch die Spule, entsteht ein Magnetfeld, das den Kern in einen Elektromagneten verwandelt.
 
-**Armature** - The movable magnetic strip, known as the armature, interacts with the coil when current flows through it. The energized coil generates a magnetic field, enabling the armature to make or break connections at the normally open (N/O) or normally closed (N/C) contact points. The armature can operate with both direct current (DC) and alternating current (AC).
+**Anker** – Der bewegliche Metallstreifen, der auf das Magnetfeld der Spule reagiert. Wird der Elektromagnet aktiviert, zieht er den Anker an, wodurch eine Verbindung an den normalerweise offenen (N/O) oder normalerweise geschlossenen (N/C) Kontaktpunkten hergestellt oder unterbrochen wird. Der Anker kann sowohl mit Gleich- als auch mit Wechselstrom betrieben werden.
 
-**Spring** - When no current flows through the electromagnet's coil, the spring pulls the armature away, preventing the circuit from being completed.
+**Feder** – Wenn kein Strom durch die Spule fließt, zieht die Feder den Anker zurück und hält den Stromkreis offen.
 
-Set of electrical **contacts** - There are two contact points:
+**Kontaktpaar** – Bestehend aus zwei Schaltpunkten:
 
--  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+- Normally Open (N/O) – Der Kontakt ist im Ruhezustand offen und schließt sich, wenn das Relais aktiviert wird.
+- Normally Closed (N/C) – Der Kontakt ist im Ruhezustand geschlossen und öffnet sich, wenn das Relais aktiviert wird.
 
--  Normally close - not connected when the relay is activated, and connected when it is inactive.
+**Gehäuse** – Das Relais ist durch ein Kunststoffgehäuse geschützt.
 
-**Molded frame** - Relays are covered with plastic for protection.
+Das Funktionsprinzip eines Relais ist einfach: Wird das Relais mit Strom versorgt, fließt ein Strom durch die Steuerspule und aktiviert den Elektromagneten. Dadurch wird der Anker angezogen und der bewegliche Kontakt schließt den normalerweise offenen (N/O) Kontakt, sodass der Laststromkreis aktiviert wird.
 
-The working principle of a relay is straightforward. When power is supplied to the relay, current flows through the control coil, energizing the electromagnet. This causes the armature to be attracted to the coil, pulling the moving contact down to connect with the normally open (N/O) contact, thereby energizing the load circuit.
-
-To break the circuit, the process is reversed. When the power is removed, the spring pulls the moving contact back to its original position, reconnecting it with the normally closed (N/C) contact. This mechanism enables the relay to control the on/off state of a load circuit efficiently.
+Zum Abschalten wird die Stromversorgung entfernt. Die Feder zieht den beweglichen Kontakt in seine ursprüngliche Position zurück, wodurch sich der normalerweise geschlossene (N/C) Kontakt wieder verbindet und der Stromkreis unterbrochen wird. Diese Umschaltfunktion ermöglicht eine effiziente Steuerung des Laststromkreises.
 
 |img_relay_sche|
 
@@ -50,6 +49,6 @@ To break the circuit, the process is reversed. When the power is removed, the sp
 
 **Example**
 
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`py_iot_ble_relay` (For MicroPython User)
-* :ref:`ar_relay` (For Arduino User)
+* :ref:`py_relay` (Für MicroPython User)
+* :ref:`py_iot_ble_relay` (Für MicroPython User)
+* :ref:`ar_relay` (Für Arduino User)

@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 31: Sensorless Remote Weather Station Project
+Lektion 31: Projekt einer sensorlosen, ferngesteuerten Wetterstation
 =============================================================================
 
-This tutorial covers creating a sensorless weather station using the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Erstellung einer sensorlosen Wetterstation mit dem Raspberry Pi Pico W:
 
-* **Connecting to WiFi**: Import libraries and connect to WiFi using a WLAN object.
-* **Fetching Weather Data**: Use OpenWeatherMap API to get real-time weather data, requiring an API key.
-* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
-* **Code Explanation**: Use ``urequests.get()`` to fetch data, convert Unix time, and adjust pressure units.
-* **Displaying Weather Data**: Print temperature, humidity, pressure, conditions, and wind speed.
-* **Homework Assignment**: Add a display and create a portable, battery-powered weather station.
+* **Verbindung zu WiFi**: Importieren von Bibliotheken und Herstellen einer Verbindung zu WiFi über ein WLAN-Objekt.
+* **Wetterdaten abrufen**: Verwendung der OpenWeatherMap API, um Echtzeit-Wetterdaten zu erhalten, benötigt einen API-Schlüssel.
+* **JSON-Daten parsen**: Extraktion von Temperatur, Luftfeuchtigkeit, Druck, Sonnenauf- und Sonnenuntergangszeiten aus der JSON-Antwort.
+* **Code-Erklärung**: Verwenden von ``urequests.get()`` zum Abrufen von Daten, Umwandeln von Unix-Zeit und Anpassen der Druckeinheiten.
+* **Anzeige der Wetterdaten**: Ausgabe von Temperatur, Luftfeuchtigkeit, Druck, Wetterbedingungen und Windgeschwindigkeit.
+* **Hausaufgabe**: Hinzufügen eines Displays und Erstellen einer tragbaren, batteriebetriebenen Wetterstation.
 
 
 

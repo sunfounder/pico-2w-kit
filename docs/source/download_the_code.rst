@@ -1,12 +1,10 @@
-Download the Code
+Code herunterladen
 ===========================
 
-Here is the complete code package for this Kit. You can click on the following link to download it:
+Hier findest du das komplette Code-Paket für dieses Kit. Klicke auf den folgenden Link, um es herunterzuladen:
 
    * :download:`SunFounder Pico 2 W Starter Kit <https://github.com/sunfounder/pico-2w-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Pico 2 W Starter Kit - GitHub <https://github.com/sunfounder/pico-2w-kit>`_
+* Oder sieh dir den Code direkt auf `Pico 2 W Starter Kit – GitHub <https://github.com/sunfounder/pico-2w-kit>`_ an.
 
-Once the download is complete, unzip the file and open the relevant example code or project files in the corresponding software. This will allow you to browse and utilize all the code and resources provided by the kit.
-
-
+Nach dem Abschluss des Downloads entpacke die Datei und öffne die relevanten Beispielcodes oder Projektdateien in der entsprechenden Software. So kannst du den gesamten bereitgestellten Code und alle Ressourcen des Kits durchsuchen und nutzen.

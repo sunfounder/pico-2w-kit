@@ -1,16 +1,15 @@
-.. note::
+.. note:: 
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dein Wissen über Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Warum beitreten?**
 
-    **Why Join?**
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühen Zugang zu neuen Produktankündigungen und Einblicke.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Giveaways**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
 .. _py_temp:
 
@@ -18,29 +17,29 @@
 2.13 Thermometer
 ===========================
 
-In this lesson, we'll learn how to use a **thermistor** with the Raspberry Pi Pico 2 W to measure temperature. A thermistor is a type of resistor whose resistance varies significantly with temperature. Specifically, we'll use a Negative Temperature Coefficient (NTC) thermistor, which decreases its resistance as the temperature increases.
+In dieser Lektion lernen wir, wie man einen **Thermistor** mit dem Raspberry Pi Pico 2 W zur Temperaturmessung verwendet. Ein Thermistor ist ein Widerstand, dessen Widerstandswert sich mit der Temperatur erheblich ändert. Wir verwenden speziell einen NTC-Thermistor, dessen Widerstand mit steigender Temperatur abnimmt.
 
 
 * :ref:`cpn_thermistor`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -48,8 +47,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -66,11 +65,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_thermistor`
@@ -78,42 +77,42 @@ You can also buy them separately from the links below.
         - |link_thermistor_buy|
 
 
-**Understanding the Thermistor**
+**Verständnis des Thermistors**
 
-An NTC thermistor is a temperature-sensitive resistor. Its resistance decreases as the temperature rises. By incorporating it into a voltage divider circuit, we can measure the voltage across it, which changes with temperature. Using the Raspberry Pi Pico 2 W's analog-to-digital converter (ADC), we can read this voltage and calculate the corresponding temperature.
+Ein NTC-Thermistor ist ein temperaturabhängiger Widerstand. Sein Widerstand verringert sich mit steigender Temperatur. Indem wir ihn in einen Spannungsteiler-Schaltkreis einbauen, können wir die Spannung über ihm messen, die sich mit der Temperatur ändert. Mit dem Analog-Digital-Wandler (ADC) des Raspberry Pi Pico 2 W können wir diese Spannung messen und die entsprechende Temperatur berechnen.
 
-**Circuit Diagram**
+**Schaltbild**
 
 |sch_temp|
 
-In this circuit, a 10K resistor and an NTC thermistor form a voltage divider, with GP28 reading the voltage across the thermistor. The 10K resistor also provides protection by limiting current.
+In diesem Schaltkreis bilden ein 10K-Widerstand und ein NTC-Thermistor einen Spannungsteiler, wobei GP28 die Spannung über dem Thermistor liest. Der 10K-Widerstand bietet auch Schutz, indem er den Strom begrenzt.
 
-* **High Temperature**: The thermistor's resistance decreases, lowering its voltage and the GP28 reading. At high enough temperatures, resistance approaches zero, and GP28 reads close to 0.
-* **Low Temperature**: The thermistor's resistance increases, raising its voltage and the GP28 value. In extreme cold, resistance becomes nearly infinite, and GP28 reads close to 65535.
+* **Hohe Temperatur**: Der Widerstand des Thermistors sinkt, was seine Spannung und den GP28-Wert verringert. Bei hohen Temperaturen nähert sich der Widerstand Null und GP28 liest nahezu 0.
+* **Niedrige Temperatur**: Der Widerstand des Thermistors steigt, was seine Spannung und den GP28-Wert erhöht. Bei extremer Kälte wird der Widerstand nahezu unendlich und GP28 liest nahezu 65535.
 
-The 10K resistor ensures 3.3V and GND are not directly connected, preventing a short circuit.
+Der 10K-Widerstand stellt sicher, dass 3.3V und GND nicht direkt verbunden sind, was einen Kurzschluss verhindert.
 
-**Wiring Diagram**
+**Verdrahtungsdiagramm**
 
 |wiring_temp|
- 
-.. #. Connect 3V3 and GND of Pico 2 W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
+
+.. #. Verbinde 3V3 und GND des Pico 2 W mit der Stromschiene des Breadboards.
+.. #. Verbinde ein Ende des Thermistors mit dem GP28-Pin und verbinde dasselbe Ende mit der positiven Stromschiene über einen 10K-Ohm-Widerstand.
+.. #. Verbinde das andere Ende des Thermistors mit der negativen Stromschiene.
 
 .. note::
-    * The thermistor is black and marked 103.
-    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
+    * Der Thermistor ist schwarz und mit 103 gekennzeichnet.
+    * Der Farbring des 10K-Ohm-Widerstands ist rot, schwarz, schwarz, rot und braun.
 
-**Writing the Code**
+**Programmierung**
 
-We'll write a MicroPython program to read the analog value from the thermistor, calculate the temperature in Celsius and Fahrenheit, and display it.
+Wir schreiben ein MicroPython-Programm, um den analogen Wert des Thermistors zu lesen, die Temperatur in Celsius und Fahrenheit zu berechnen und anzuzeigen.
 
 .. note::
 
-    * Open the ``2.13_thermometer.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
+    * Öffne die ``2.13_thermometer.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann klicke auf "Ausführen" oder drücke F5.
 
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
+    * Stelle sicher, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx. 
 
 .. code-block:: python
 
@@ -121,106 +120,103 @@ We'll write a MicroPython program to read the analog value from the thermistor, 
     import utime
     import math
 
-    # Constants
-    BETA = 3950  # Beta coefficient of the thermistor
-    T0 = 298.15  # Reference temperature (25°C in Kelvin)
-    R0 = 10000   # Resistance at T0 (10 kΩ)
+    # Konstanten
+    BETA = 3950  # Beta-Koeffizient des Thermistors
+    T0 = 298.15  # Referenztemperatur (25°C in Kelvin)
+    R0 = 10000   # Widerstand bei T0 (10 kΩ)
 
-    # Initialize ADC on GP28
+    # Initialisiere ADC auf GP28
     thermistor = machine.ADC(28)
 
     while True:
-        # Read the analog value (0-65535)
+        # Lese den analogen Wert (0-65535)
         analog_value = thermistor.read_u16()
 
-        # Convert analog value to voltage
+        # Konvertiere den analogen Wert in Spannung
         voltage = analog_value * 3.3 / 65535
 
-        # Calculate thermistor resistance
+        # Berechne den Widerstand des Thermistors
         Rt = (voltage * R0) / (3.3 - voltage)
 
-        # Calculate temperature in Kelvin using the Beta formula
+        # Berechne die Temperatur in Kelvin mit der Beta-Formel
         tempK = 1 / ( (1 / T0) + (1 / BETA) * math.log(Rt / R0) )
 
-        # Convert Kelvin to Celsius
+        # Konvertiere Kelvin in Celsius
         tempC = tempK - 273.15
 
-        # Convert Celsius to Fahrenheit
+        # Konvertiere Celsius in Fahrenheit
         tempF = tempC * 9 / 5 + 32
 
-        # Print the results
+        # Drucke die Ergebnisse
         print('Temperature: {:.2f}°C  {:.2f}°F'.format(tempC, tempF))
 
-        # Wait before the next reading
+        # Warte vor der nächsten Messung
         utime.sleep(2)
 
-When the code is running, the console will display the temperature in Celsius and Fahrenheit.
+Wenn der Code läuft, zeigt die Konsole die Temperatur in Celsius und Fahrenheit an.
 
-* Try touching the thermistor to see the temperature increase.
-* Use ice or a cold object to observe the temperature decrease.
+* Versuche, den Thermistor zu berühren, um zu sehen, wie die Temperatur steigt.
+* Verwende Eis oder einen kalten Gegenstand, um eine Temperaturabnahme zu beobachten.
 
-**Understanding the Code**
+**Verständnis des Codes**
 
-#. Import Modules:
+#. Importiere Module:
 
-   * ``machine``: Provides access to hardware-related functions.
-   * ``utime``: Allows us to use time-related functions like sleep.
-   * ``math``: Contains mathematical functions like log.
+   * ``machine``: Ermöglicht den Zugriff auf hardwarebezogene Funktionen.
+   * ``utime``: Ermöglicht die Nutzung von zeitbezogenen Funktionen wie sleep.
+   * ``math``: Enthält mathematische Funktionen wie log.
 
-#. Constants:
+#. Konstanten:
 
-   * ``BETA``: The Beta coefficient of the thermistor (provided in the datasheet, commonly around 3950).
-   * ``T0``: Reference temperature in Kelvin (25°C + 273.15).
-   * ``R0``: Resistance of the thermistor at T0 (10 kΩ).
+   * ``BETA``: Der Beta-Koeffizient des Thermistors (im Datenblatt angegeben, häufig um 3950).
+   * ``T0``: Referenztemperatur in Kelvin (25°C + 273.15).
+   * ``R0``: Widerstand des Thermistors bei T0 (10 kΩ).
 
-#. Initialize the ADC Pin:
+#. Initialisiere den ADC-Pin:
 
-   * ``thermistor = machine.ADC(28)``: Sets up GP28 as an analog input.
+   * ``thermistor = machine.ADC(28)``: Richtet GP28 als analogen Eingang ein.
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * ``analog_value = thermistor.read_u16()``: Reads the raw analog value.
-   * ``voltage = analog_value * 3.3 / 65535``: Converts the raw value to a voltage.
-   * ``Rt = (voltage * R0) / (3.3 - voltage)``: Uses the voltage divider formula to find the thermistor's resistance.
-   * ``tempK = 1 / ( (1 / T0) + (1 / BETA) * math.log(Rt / R0) )``: Uses the Steinhart-Hart equation simplified for a single Beta value.
-   * Convert Kelvin to Celsius and Fahrenheit:
+   * ``analog_value = thermistor.read_u16()``: Liest den rohen analogen Wert.
+   * ``voltage = analog_value * 3.3 / 65535``: Konvertiert den rohen Wert in eine Spannung.
+   * ``Rt = (voltage * R0) / (3.3 - voltage)``: Verwendet die Spannungsteilerformel, um den Widerstand des Thermistors zu finden.
+   * ``tempK = 1 / ( (1 / T0) + (1 / BETA) * math.log(Rt / R0) )``: Verwendet die Steinhart-Hart-Gleichung, vereinfacht für einen einzigen Beta-Wert.
+   * Konvertiere Kelvin in Celsius und Fahrenheit:
      
      .. code-block:: python
     
         tempC = tempK - 273.15
         tempF = tempC * 9 / 5 + 32
 
-   * ``print('Temperature: {:.2f}°C {:.2f}°F'.format(tempC, tempF))``: Print the Results
-   * ``utime.sleep(2)``: Waits 2 seconds before taking the next reading.
+   * ``print('Temperatur: {:.2f}°C {:.2f}°F'.format(tempC, tempF))``: Drucke die Ergebnisse
+   * ``utime.sleep(2)``: Wartet 2 Sekunden vor der nächsten Messung.
 
 
-**Understanding the Temperature Calculation**
+**Verständnis der Temperaturberechnung**
 
-* Steinhart-Hart Equation:
+* Steinhart-Hart-Gleichung:
 
-The Steinhart-Hart equation provides a model of the thermistor's resistance as a function of temperature:
+Die Steinhart-Hart-Gleichung liefert ein Modell des Widerstands des Thermistors in Abhängigkeit von der Temperatur:
 
 |temp_format|
 
-* ``T`` is the temperature of the thermistor in Kelvin.
-* ``T0`` is a reference temperature, usually at 25°C (which is 273.15 + 25 in Kelvin).
-* ``B`` is the beta parameter of the material, the beta coefficient of the NTC thermistor used in this kit is 3950.
-* ``R`` is the resistance we measure.
-* ``R0`` is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
+* ``T`` ist die Temperatur des Thermistors in Kelvin.
+* ``T0`` ist eine Referenztemperatur, üblicherweise bei 25°C (was 273.15 + 25 in Kelvin ist).
+* ``B`` ist der Beta-Parameter des Materials, der Beta-Koeffizient des in diesem Kit verwendeten NTC-Thermistors beträgt 3950.
+* ``R`` ist der gemessene Widerstand.
+* ``R0`` ist der Widerstand bei der Referenztemperatur T0, der Widerstand des NTC-Thermistors in diesem Kit bei 25°C beträgt 10 Kilohm.
 
-**Safety Note**
+**Sicherheitshinweis**
 
-Be careful when applying heat to the thermistor. Do not expose it to high temperatures that could damage it or the Raspberry Pi Pico 2.
+Sei vorsichtig beim Erhitzen des Thermistors. Setze ihn keinen hohen Temperaturen aus, die ihn oder den Raspberry Pi Pico 2 beschädigen könnten.
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* **Data Logging**: Modify the code to log temperature readings to a file on the Pico.
-* **Temperature Thresholds**: Add conditions to trigger actions when the temperature exceeds or falls below certain values (e.g., turn on an LED or activate a buzzer).
-* **Display Output**: Connect an LCD or OLED display to show the temperature readings.
+* **Datenprotokollierung**: Modifiziere den Code, um Temperaturmessungen auf dem Pico in einer Datei zu protokollieren.
+* **Temperaturschwellen**: Füge Bedingungen hinzu, um Aktionen auszulösen, wenn die Temperatur bestimmte Werte über- oder unterschreitet (z.B. eine LED einschalten oder einen Summer aktivieren).
+* **Anzeigeausgabe**: Verbinde ein LCD- oder OLED-Display, um die Temperaturmessungen anzuzeigen.
 
-**Conclusion**
+**Fazit**
 
-By using a thermistor with the Raspberry Pi Pico 2 W, you've created a basic thermometer capable of measuring temperature changes. This project demonstrates how to read analog inputs, perform calculations, and interpret sensor data to derive meaningful information.
-
-
-
+Durch den Einsatz eines Thermistors mit dem Raspberry Pi Pico 2 W hast du ein grundlegendes Thermometer erstellt, das Temperaturänderungen messen kann. Dieses Projekt demonstriert, wie man analoge Eingänge liest, Berechnungen durchführt und Sensordaten interpretiert, um aussagekräftige Informationen zu gewinnen.

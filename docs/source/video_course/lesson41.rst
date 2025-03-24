@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lesson 41: Inferring Tilt From a 3 Axis Accelerometer
+Lektion 41: Neigung aus einem 3-Achsen-Beschleunigungssensor ableiten
 =============================================================================
-This tutorial covers measuring acceleration in three axes using the MPU6050 sensor with the Raspberry Pi Pico W:
+Dieses Tutorial behandelt die Messung der Beschleunigung in drei Achsen unter Verwendung des MPU6050-Sensors mit dem Raspberry Pi Pico W:
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes, focusing on Z-axis due to gravity.
-* **Review of Previous Lesson**: Recap of X and Y axes acceleration and homework on Z-axis prediction.
-* **Z-Axis Acceleration**: Explains 1G acceleration in Z-axis when stationary and how tilting affects sensor readings.
-* **Practical Application**: Using the sensor for tilt measurement (pitch and roll) in carpentry, off-roading, and aviation.
-* **Homework Assignment**: Calculate tilt angles (pitch and roll) using sensor data and apply previous math concepts.
+* **Einführung**: Messung der Beschleunigung in den X-, Y- und Z-Achsen, wobei der Schwerpunkt auf der Z-Achse aufgrund der Schwerkraft liegt.
+* **Rückblick auf die vorherige Lektion**: Zusammenfassung der Beschleunigung in den X- und Y-Achsen und Hausaufgaben zur Vorhersage der Z-Achse.
+* **Z-Achsen-Beschleunigung**: Erklärt die 1G-Beschleunigung in der Z-Achse im Ruhezustand und wie Neigungen die Sensorablesungen beeinflussen.
+* **Praktische Anwendung**: Verwendung des Sensors zur Neigungsmessung (Nick- und Rollwinkel) in der Tischlerei, im Geländefahren und in der Luftfahrt.
+* **Hausaufgabe**: Berechnen Sie die Neigungswinkel (Nick- und Rollwinkel) mit den Sensordaten und wenden Sie frühere mathematische Konzepte an.
 
 
 

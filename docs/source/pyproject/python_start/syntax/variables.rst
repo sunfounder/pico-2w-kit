@@ -1,39 +1,38 @@
 .. note::
+   Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Begeisterten.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+   **Warum beitreten?**
 
-    **Why Join?**
+   - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+   - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+   - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+   - **Sonderangebote**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+   - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+   👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt heute bei!
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+Variablen
+==============
 
-Variables
-==========
-Variables are containers used to store data values.
+Variablen sind Behälter, die verwendet werden, um Datenwerte zu speichern.
 
-Creating a variable is very simple. You only need to name it and assign it a value. You don't need to specify the data type of the variable when assigning it, because the variable is a reference, and it accesses objects of different data types through assignment.
+Das Erstellen einer Variablen ist sehr einfach. Du musst ihr lediglich einen Namen geben und einen Wert zuweisen. Es ist nicht nötig, den Datentyp der Variablen bei der Zuweisung anzugeben, da die Variable eine Referenz ist und über die Zuweisung auf Objekte verschiedener Datentypen zugreift.
 
-Naming variables must follow the following rules:
+Beim Benennen von Variablen müssen die folgenden Regeln eingehalten werden:
 
-* Variable names can only contain numbers, letters, and underscores
-* The first character of the variable name must be a letter or underscore
-* Variable names are case sensitive
+* Variablennamen dürfen nur Zahlen, Buchstaben und Unterstriche enthalten.
+* Das erste Zeichen des Variablennamens muss ein Buchstabe oder ein Unterstrich sein.
+* Variablennamen sind groß- und kleinschreibungssensitiv.
 
-Create Variable
-------------------
-There is no command for declaring variables in MicroPython. Variables are created when you assign a value to it for the first time. It does not need to use any specific type declaration, and you can even change the type after setting the variable.
+Variable erstellen
+----------------------
 
-
+In MicroPython gibt es keinen Befehl zum Deklarieren von Variablen. Variablen werden erstellt, indem ihnen zum ersten Mal ein Wert zugewiesen wird. Es ist keine spezifische Typdeklaration notwendig, und du kannst sogar den Typ nach dem Setzen der Variablen ändern.
 
 .. code-block:: python
 
-    x = 8       # x is of type int
-    x = "lily" # x is now of type str
+    x = 8       # x ist vom Typ int
+    x = "lily"  # x ist jetzt vom Typ str
     print(x)
 
 >>> %Run -c $EDITOR_CONTENT
@@ -42,25 +41,23 @@ lily
 
 Casting
 -------------
-If you want to specify the data type for the variable, you can do it by casting.
 
-
+Wenn du den Datentyp für die Variable festlegen möchtest, kannst du dies durch Casting tun.
 
 .. code-block:: python
 
-    x = int(5)    # y will be 5
-    y = str(5)    # x will be '5'
-    z = float(5)  # z will be 5.0
-    print(x,y,z)
+    x = int(5)    # x wird 5 sein
+    y = str(5)    # y wird '5' sein
+    z = float(5)  # z wird 5.0 sein
+    print(x, y, z)
 
 >>> %Run -c $EDITOR_CONTENT
 5 5 5.0
 
-Get the Type
+Typ abfragen
 -------------------
-You can get the data type of a variable with the `type()` function.
 
-
+Du kannst den Datentyp einer Variablen mit der Funktion `type()` abfragen.
 
 .. code-block:: python
 
@@ -72,30 +69,30 @@ You can get the data type of a variable with the `type()` function.
 >>> %Run -c $EDITOR_CONTENT
 <class 'int'> <class 'str'> <class 'float'>
 
-Single or Double Quotes?
----------------------------
+Einzelne oder doppelte Anführungszeichen?
+---------------------------------------------
 
-In MicroPython, single quotes or double quotes can be used to define string variables.
+In MicroPython können sowohl einfache als auch doppelte Anführungszeichen verwendet werden, um Zeichenkettenvariablen zu definieren.
 
 
 
 .. code-block:: python
 
     x = "hello"
-    # is the same as
+    # ist dasselbe wie
     x = 'hello'
 
-Case-Sensitive
----------------------
-Variable names are case-sensitive.
+Groß- und Kleinschreibung
+----------------------------
 
 
+Variablennamen sind groß- und kleinschreibungsempfindlich.
 
 .. code-block:: python
 
     a = 5
     A = "lily"
-    #A will not overwrite a
+    # A wird a nicht überschreiben
     print(a, A)
 
 >>> %Run -c $EDITOR_CONTENT

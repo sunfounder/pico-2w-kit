@@ -1,42 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein – zusammen mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei Problemen nach dem Kauf und technischen Herausforderungen durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und ersten Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu experimentieren und zu entwickeln? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _py_10_second:
 
-7.5 Creating a "10 Second" Game
+7.5 Erstellen eines "10-Sekunden"-Spiels
 ======================================================
 
-In this engaging project, we'll build a fun game called **"10 Second"** using the Raspberry Pi Pico 2 W, a tilt switch, and a 4-digit 7-segment display. The objective of the game is to shake a magic wand (simulated using the tilt switch attached to a stick) to start a timer, and then shake it again to stop the timer as close to **10.00 seconds** as possible. It's a great way to test your timing skills and challenge friends to see who is the true time wizard!
+In diesem spannenden Projekt entwickeln wir ein unterhaltsames Spiel namens **"10 Sekunden"**, bei dem der Raspberry Pi Pico 2 W, ein Kippschalter und eine 4-stellige 7-Segment-Anzeige verwendet werden. Ziel des Spiels ist es, einen Zauberstab (simuliert durch den an einem Stab befestigten Kippschalter) zu schütteln, um einen Timer zu starten, und ihn dann erneut zu schütteln, um den Timer so nah wie möglich an **10,00 Sekunden** zu stoppen. Es ist eine großartige Möglichkeit, dein Timing zu testen und Freunde herauszufordern, um herauszufinden, wer der wahre Zeitmagier ist!
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen. Hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ENTHALTENE TEILE IM KIT
         - LINK
     *   - Pico 2 W Starter Kit	
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die folgenden Links erwerben.
 
 
 .. list-table::
@@ -44,8 +44,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -53,7 +53,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -62,11 +62,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 5(4-220Ω, 1-10KΩ)
+        - 5 (4 × 220Ω, 1 × 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -81,46 +81,44 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Understanding the Components**
+**Verständnis der Komponenten**
 
-* **Tilt Switch**: A sensor that detects orientation or movement. When tilted, it completes or breaks a circuit, allowing us to detect shaking or movement.
-* **4-Digit 7-Segment Display**: Displays numbers from 0000 to 9999. We'll use shift registers to control the display using fewer GPIO pins.
-* **74HC595 Shift Register**: 8-bit serial-in, parallel-out shift register that allow us to control multiple outputs with just a few GPIO pins.
+* **Kippschalter**: Ein Sensor, der die Orientierung oder Bewegung erkennt. Wird er geneigt, wird ein Stromkreis geschlossen oder unterbrochen, sodass Erschütterungen oder Bewegungen erkannt werden können.
+* **4-stellige 7-Segment-Anzeige**: Zeigt Zahlen von 0000 bis 9999 an. Zur Steuerung mit weniger GPIO-Pins nutzen wir Schieberegister.
+* **74HC595-Schieberegister**: Ein 8-Bit-Serial-In, Parallel-Out-Schieberegister, das es ermöglicht, mehrere Ausgänge mit wenigen GPIO-Pins zu steuern.
 
-**Schematic**
-
+**Schaltplan**
 
 |sch_10_second|
 
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
+* Diese Schaltung basiert auf :ref:`py_74hc_4dig`, ergänzt durch einen Kippschalter.
+* GP16 ist "high", wenn der Kippschalter aufrecht steht, und "low", wenn er geneigt wird.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_game_10_second| 
 
+**Code schreiben**
 
-**Writing the Code**
+Wir erstellen ein MicroPython-Skript, das:
 
-We'll write a MicroPython script that:
-
-* Detects shaking using the tilt switch.
-* Starts and stops a timer based on the tilt switch.
-* Displays the elapsed time on the 4-digit 7-segment display.
-* Uses multiplexing and shift registers to control the display.
+* Erschütterungen mithilfe des Kippschalters erkennt.
+* Einen Timer startet und stoppt.
+* Die vergangene Zeit auf der 4-stelligen 7-Segment-Anzeige anzeigt.
+* Multiplexing und Schieberegister verwendet, um die Anzeige effizient zu steuern.
 
 .. code-block:: python
 
     from machine import Pin
     import utime
 
-    # Initialize the control pins for 74HC595
-    SDI = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input (DS)
-    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register Clock (STCP)
-    SRCLK = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock (SHCP)
+    # Steuerpins für das 74HC595 initialisieren
+    SDI = machine.Pin(18, machine.Pin.OUT)   # Serieller Dateneingang (DS)
+    RCLK = machine.Pin(19, machine.Pin.OUT)  # Register-Takt (STCP)
+    SRCLK = machine.Pin(20, machine.Pin.OUT) # Schieberegister-Takt (SHCP)
 
-    # 7-segment display segment codes for digits 0-9 (common cathode)
+    # 7-Segment-Codes für die Ziffern 0-9 (gemeinsame Kathode)
     SEGMENT_CODES = [0x3F,  # 0
                     0x06,  # 1
                     0x5B,  # 2
@@ -132,24 +130,23 @@ We'll write a MicroPython script that:
                     0x7F,  # 8
                     0x6F]  # 9
 
-    # Initialize digit select pins (common cathodes)
+    # Pins zur Auswahl der Ziffern (gemeinsame Kathoden)
     digit_pins = [
-        machine.Pin(10, machine.Pin.OUT),  # Digit 1
-        machine.Pin(11, machine.Pin.OUT),  # Digit 2
-        machine.Pin(12, machine.Pin.OUT),  # Digit 3
-        machine.Pin(13, machine.Pin.OUT)   # Digit 4
+        machine.Pin(10, machine.Pin.OUT),  # Ziffer 1
+        machine.Pin(11, machine.Pin.OUT),  # Ziffer 2
+        machine.Pin(12, machine.Pin.OUT),  # Ziffer 3
+        machine.Pin(13, machine.Pin.OUT)   # Ziffer 4
     ]
 
-
-    # Initialize the tilt switch
+    # Kippschalter initialisieren
     tilt_switch = Pin(16, Pin.IN, Pin.PULL_DOWN)
 
-    # Variables for timing
+    # Variablen für die Zeitmessung
     start_time = 0
     elapsed_time = 0
     counting = False
 
-    # Function to shift out data to the shift registers
+    # Funktion zum Verschieben von Daten in das Schieberegister
     def shift_out(data):
         RCLK.low()
         for bit in range(7, -1, -1):
@@ -159,101 +156,100 @@ We'll write a MicroPython script that:
             SRCLK.high()
         RCLK.high()
 
-    # Function to display a digit at a specific position
+    # Funktion zur Anzeige einer Ziffer an einer bestimmten Position
     def display_digit(position, digit):
-        # Turn off all digits
-        for dp in digit_pins:
-            dp.high()
-        # Send segment data
-        shift_out(SEGMENT_CODES[digit])
-        # Activate the selected digit (common cathode is active low)
-        digit_pins[position].low()
-        # Small delay to allow the digit to be visible
-        utime.sleep_ms(5)
-        # Turn off the digit
-        digit_pins[position].high()
+    # Alle Ziffern ausschalten
+    for dp in digit_pins:
+        dp.high()
+    # Segmentdaten senden
+    shift_out(SEGMENT_CODES[digit])
+    # Die ausgewählte Ziffer aktivieren (gemeinsame Kathode ist aktiv niedrig)
+    digit_pins[position].low()
+    # Kurze Verzögerung, um die Anzeige sichtbar zu machen
+    utime.sleep_ms(5)
+    # Die Ziffer wieder ausschalten
+    digit_pins[position].high()
 
-    # Function to display the elapsed time
+    # Funktion zur Anzeige der verstrichenen Zeit
     def display_time(time_ms):
-        # Convert time to centiseconds (hundredths of a second)
-        centiseconds = int(time_ms / 10)
-        # Limit to 9999 to fit the display
-        if centiseconds > 9999:
-            centiseconds = 9999
+    # Umwandlung der Zeit in Hundertstelsekunden
+    centiseconds = int(time_ms / 10)
+    # Begrenzung auf 9999, um die Anzeigegröße einzuhalten
+    if centiseconds > 9999:
+        centiseconds = 9999
 
-        # Extract individual digits
-        digits = [
-            (centiseconds // 1000) % 10,
-            (centiseconds // 100) % 10,
-            (centiseconds // 10) % 10,
-            centiseconds % 10
-        ]
-        # Display each digit rapidly
-        for i in range(4):
-            display_digit(i, digits[i])
+    # Extrahieren der einzelnen Ziffern
+    digits = [
+        (centiseconds // 1000) % 10,
+        (centiseconds // 100) % 10,
+        (centiseconds // 10) % 10,
+        centiseconds % 10
+    ]
+    # Jede Ziffer nacheinander anzeigen
+    for i in range(4):
+        display_digit(i, digits[i])
 
-    # Interrupt handler for the tilt switch
+    # Interrupt-Handler für den Kippschalter
     def tilt_handler(pin):
-        global counting, start_time, elapsed_time
-        if not counting:
-            # Start counting
-            counting = True
-            start_time = utime.ticks_ms()
-        else:
-            # Stop counting
-            counting = False
-            elapsed_time = utime.ticks_diff(utime.ticks_ms(), start_time)
+    global counting, start_time, elapsed_time
+    if not counting:
+        # Zeitmessung starten
+        counting = True
+        start_time = utime.ticks_ms()
+    else:
+        # Zeitmessung stoppen
+        counting = False
+        elapsed_time = utime.ticks_diff(utime.ticks_ms(), start_time)
 
-    # Set up tilt switch interrupt
+    # Einrichtung des Interrupts für den Kippschalter
     tilt_switch.irq(trigger=Pin.IRQ_RISING, handler=tilt_handler)
 
-    # Main loop
+        # Hauptschleife
     while True:
         if counting:
-            # Calculate elapsed time
-            current_time = utime.ticks_diff(utime.ticks_ms(), start_time)
-            display_time(current_time)
-        else:
-            # Display the final time
-            display_time(elapsed_time)
+            # Verstrichene Zeit berechnen
+        current_time = utime.ticks_diff(utime.ticks_ms(), start_time)
+        display_time(current_time)
+    else:
+        # Endgültige Zeit anzeigen
+        display_time(elapsed_time)
 
 
 
-When the code is running, the 4-digit 7-segment display should initialize and show 00.00.
+Wenn der Code läuft, sollte die 4-stellige 7-Segment-Anzeige initialisiert werden und **00.00** anzeigen. 
 
-* Start the Timer:
+* Timer starten:  
 
-  * Shake the wand or tilt the tilt switch to trigger the interrupt.
-  * The timer will start counting up from 00.00.
+  * Schüttle den Zauberstab oder neige den Kippschalter, um den Interrupt auszulösen.  
+  * Der Timer beginnt, ab 00.00 hochzuzählen.  
 
-* Stop the Timer:
+* Timer stoppen:  
 
-  * Shake the wand or tilt the switch again.
-  * The timer will stop, displaying the final time.
+  * Schüttle den Zauberstab erneut oder neige den Kippschalter.  
+  * Der Timer stoppt und zeigt die endgültige Zeit an.  
 
-* Objective:
+* Ziel des Spiels:  
 
-  * Try to stop the timer as close to 10.00 seconds as possible.
-  * Challenge friends to see who can get the closest!
+  * Versuche, den Timer so nah wie möglich an 10,00 Sekunden zu stoppen.  
+  * Fordere deine Freunde heraus und finde heraus, wer die beste Zeit erreicht!  
 
+**Den Code verstehen**  
 
-**Understanding the Code**
+#. Importe und Pin-Definitionen:  
 
-#. Imports and Pin Definitions:
+   * ``machine.Pin``: Steuert die GPIO-Pins.  
+   * ``utime``: Wird für Zeitfunktionen verwendet.  
+   * SDI, SRCLK und RCLK-Pins zur Steuerung der Schieberegister definieren.  
+   * Den Kippschalter an GP16 mit einem Pull-Down-Widerstand initialisieren.  
 
-   * ``machine.Pin``: For controlling GPIO pins.
-   * ``utime``: For timing functions.
-   * Define SDI, SRCLK, and RCLK pins for controlling the shift registers.
-   * Initialize the tilt switch on GP16 with a pull-down resistor.
+#. Segment- und Zifferncodes:
 
-#. Segment and Digit Codes:
-
-   * ``SEGMENT_CODES``: A list containing the binary codes for displaying digits 0-9 on a 7-segment display.
-   * ``digit_pins``: Codes to select each digit of the display. Active LOW for common cathode displays.
+   * ``SEGMENT_CODES``: Liste mit den Binärcodes zur Darstellung der Ziffern 0–9 auf einer 7-Segment-Anzeige.  
+   * ``digit_pins``: Steuerung der Ziffernanzeige. Die gemeinsame Kathode ist aktiv low.  
 
    .. code-block:: python
 
-        # 7-segment display segment codes for digits 0-9 (common cathode)
+        # 7-Segment-Anzeigecodes für die Ziffern 0–9 (gemeinsame Kathode)
         SEGMENT_CODES = [0x3F,  # 0
                         0x06,  # 1
                         0x5B,  # 2
@@ -265,25 +261,25 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
                         0x7F,  # 8
                         0x6F]  # 9
 
-        # Initialize digit select pins (common cathodes)
+        # Initialisierung der Ziffernpins (gemeinsame Kathoden)
         digit_pins = [
-            machine.Pin(10, machine.Pin.OUT),  # Digit 1
-            machine.Pin(11, machine.Pin.OUT),  # Digit 2
-            machine.Pin(12, machine.Pin.OUT),  # Digit 3
-            machine.Pin(13, machine.Pin.OUT)   # Digit 4
+            machine.Pin(10, machine.Pin.OUT),  # Ziffer 1
+            machine.Pin(11, machine.Pin.OUT),  # Ziffer 2
+            machine.Pin(12, machine.Pin.OUT),  # Ziffer 3
+            machine.Pin(13, machine.Pin.OUT)   # Ziffer 4
         ]
 
-#. Variables for Timing:
+#. Variablen für die Zeitmessung: 
 
-   * ``start_time``: Records the time when the timer starts.
-   * ``elapsed_time``: Stores the total elapsed time when the timer stops.
-   * ``counting``: A boolean flag indicating whether the timer is running.
+   * ``start_time``: Speichert die Startzeit des Timers.  
+   * ``elapsed_time``: Speichert die insgesamt verstrichene Zeit beim Stoppen des Timers.  
+   * ``counting``: Ein boolescher Wert, der anzeigt, ob der Timer aktiv ist.  
 
-#. Define the ``shift_out`` Function:
+#. Definition der Funktion ``shift_out``:  
 
-   * Sends 8 bits of data to the 74HC595.
-   * Shifts out the data starting from the most significant bit (MSB).
-   * Pulses the shift and register clocks appropriately.
+   * Sendet 8-Bit-Daten an das 74HC595-Schieberegister.  
+   * Überträgt die Daten beginnend mit dem höchstwertigen Bit (MSB).  
+   * Steuert die Taktimpulse für das Schieberegister und das Register.  
 
    .. code-block:: python
 
@@ -296,13 +292,13 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
                 SRCLK.high()
             RCLK.high()
 
-#. Define the ``display_digit`` Function:
+#. Definition der Funktion ``display_digit``:  
 
-   * Turns off all digits.
-   * Sends the segment code for the digit.
-   * Activates the specified digit by setting its pin low.
-   * Adds a small delay to make the digit visible.
-   * Turns off the digit after displaying.
+   * Schaltet alle Ziffern aus.  
+   * Sendet den Segmentcode für die Ziffer.  
+   * Aktiviert die angegebene Ziffer durch Setzen ihres Pins auf low.  
+   * Fügt eine kurze Verzögerung hinzu, um die Anzeige sichtbar zu machen.  
+   * Schaltet die Ziffer nach der Anzeige wieder aus.  
 
    .. code-block:: python
 
@@ -314,114 +310,116 @@ When the code is running, the 4-digit 7-segment display should initialize and sh
             utime.sleep_ms(5)
             digit_pins[position].high()
 
-#. ``display_time`` Function:
+#. Funktion ``display_time``:  
 
-   * Converts the elapsed time from milliseconds to centiseconds (hundredths of a second).
-   * Splits the time into individual digits.
-   * Uses multiplexing to display each digit rapidly.
+   * Wandelt die vergangene Zeit von Millisekunden in Hundertstelsekunden um.  
+   * Zerlegt die Zeit in einzelne Ziffern.  
+   * Verwendet Multiplexing, um jede Ziffer schnell nacheinander anzuzeigen.  
 
    .. code-block:: python
 
         def display_time(time_ms):
-            # Convert time to centiseconds (hundredths of a second)
+            # Umrechnung der Zeit in Hundertstelsekunden
             centiseconds = int(time_ms / 10)
-            # Limit to 9999 to fit the display
+            # Begrenzung auf 9999, um in die Anzeige zu passen
             if centiseconds > 9999:
                 centiseconds = 9999
 
-            # Extract individual digits
+            # Extrahieren der einzelnen Ziffern
             digits = [
                 (centiseconds // 1000) % 10,
                 (centiseconds // 100) % 10,
                 (centiseconds // 10) % 10,
                 centiseconds % 10
             ]
-            # Display each digit rapidly
+            # Jede Ziffer schnell hintereinander anzeigen
             for i in range(4):
                 display_digit(i, digits[i])
 
-#. ``tilt_handler`` Function:
+#. Funktion ``tilt_handler``: 
 
-   * Triggered by the tilt switch interrupt.
-   * Toggles the counting state.
-   * Records the ``start_time`` when counting starts.
-   * Calculates the ``elapsed_time`` when counting stops.
+   * Wird durch den Kippschalter-Interrupt ausgelöst.  
+   * Schaltet zwischen Starten und Stoppen des Timers um.  
+   * Speichert die ``start_time``, wenn die Messung beginnt.  
+   * Berechnet die ``elapsed_time``, wenn die Messung stoppt.  
 
    .. code-block:: python
 
         def tilt_handler(pin):
             global counting, start_time, elapsed_time
             if not counting:
-                # Start counting
+                # Zeitmessung starten
                 counting = True
                 start_time = utime.ticks_ms()
             else:
-                # Stop counting
+                # Zeitmessung stoppen
                 counting = False
                 elapsed_time = utime.ticks_diff(utime.ticks_ms(), start_time)
 
-#. Main Loop:
+#. Hauptschleife:  
 
-   * If counting is ``True``, continuously updates the display with the current elapsed time.
-   * If counting is ``False``, displays the final ``elapsed_time``.
+   * Wenn counting ``True`` ist, wird die Anzeige kontinuierlich mit der aktuellen verstrichenen Zeit aktualisiert.  
+   * Wenn counting ``False`` ist, wird die endgültige ``elapsed_time`` angezeigt.  
 
    .. code-block:: python
 
         while True:
             if counting:
-                # Calculate elapsed time
+                # Verstrichene Zeit berechnen
                 current_time = utime.ticks_diff(utime.ticks_ms(), start_time)
                 display_time(current_time)
             else:
-                # Display the final time
+                # Endgültige Zeit anzeigen
                 display_time(elapsed_time)
 
-**Troubleshooting**
+**Fehlersuche**  
 
-* Display Issues:
+* Anzeigeprobleme:  
 
-  * If the display is not showing numbers correctly, verify the segment and digit codes, and check the wiring connections.
-  * Ensure that the shift register is connected properly and that data is being shifted out in the correct order.
+  * Falls die Anzeige nicht korrekt funktioniert, überprüfe die Segment- und Zifferncodes sowie die Verdrahtung.  
+  * Stelle sicher, dass das Schieberegister richtig angeschlossen ist und die Daten in der richtigen Reihenfolge übertragen werden.  
 
-* Tilt Switch Sensitivity:
+* Empfindlichkeit des Kippschalters:  
 
-  * If the tilt switch is too sensitive or not sensitive enough, consider adjusting its orientation or replacing it with a different type.
-  * Ensure that the pull-down resistor is correctly connected to prevent false triggers.
+  * Falls der Kippschalter zu empfindlich oder nicht empfindlich genug reagiert, versuche, seine Ausrichtung anzupassen oder einen anderen Typ zu verwenden.  
+  * Stelle sicher, dass der Pull-Down-Widerstand richtig angeschlossen ist, um Fehltrigger zu vermeiden.  
 
-* Timing Accuracy:
+* Genauigkeit der Zeitmessung:  
 
-  * The timer relies on the system clock, which is reasonably accurate but may have slight variances.
-  * For improved accuracy, use an external real-time clock (RTC) module.
+  * Der Timer basiert auf der Systemuhr, die eine gewisse Genauigkeit bietet, aber leichte Abweichungen haben kann.  
+  * Für höhere Genauigkeit kann ein externes Echtzeitmodul (RTC) verwendet werden.  
 
-**Extensions and Enhancements**
+**Erweiterungen und Verbesserungen**  
 
-* Visual Effects:
+* Visuelle Effekte: 
 
-  * Add LEDs that flash or change color when the timer stops.
-  * Use a buzzer to provide audio feedback when starting and stopping the timer.
+  * Füge LEDs hinzu, die blinken oder die Farbe ändern, wenn der Timer stoppt.  
+  * Verwende einen Summer, um akustisches Feedback beim Starten und Stoppen des Timers zu geben.  
 
-* High Score Tracking:
+* Highscore-Speicherung:  
 
-  * Modify the code to store the best (closest to 10.00) time achieved.
-  * Display a congratulatory message or animation for new high scores.
+  * Speichere die beste Zeit (die am nächsten an 10,00 Sekunden liegt).  
+  * Zeige eine Animation oder Nachricht an, wenn ein neuer Rekord erreicht wird.  
 
-* Multiplayer Mode:
 
-  * Allow multiple players to take turns, storing each player's time.
-  * Display player numbers and their respective times.
+* Multiplayer-Modus: 
 
-* Difficulty Levels:
+  * Mehrere Spieler können nacheinander spielen, wobei die Zeiten gespeichert werden.  
+  * Zeige die Spielerzahlen und ihre jeweiligen Zeiten an.  
 
-  * Introduce different target times (e.g., 5.00 seconds, 15.00 seconds) to increase the challenge.
-  * Randomize the target time and display it at the beginning of each round.
+* Schwierigkeitsstufen: 
 
-* Alternate Input Methods:
+  * Füge verschiedene Zielzeiten ein (z. B. 5,00 Sekunden, 15,00 Sekunden), um den Schwierigkeitsgrad zu erhöhen.  
+  * Wähle die Zielzeit zufällig aus und zeige sie zu Beginn jeder Runde an.  
 
-  * Replace the tilt switch with a button or another sensor for starting and stopping the timer.
-  * Use a motion sensor to detect specific gestures.
+* Alternative Eingabemethoden:  
 
-**Conclusion**
+  * Ersetze den Kippschalter durch einen Taster oder einen anderen Sensor, um den Timer zu starten und zu stoppen.  
+  * Verwende einen Bewegungssensor, um bestimmte Gesten zu erkennen.  
 
-You've successfully built a "10 Second" Game using the Raspberry Pi Pico 2 W! This project combines sensor input, timing functions, and display control to create an interactive and entertaining game. It's an excellent example of how microcontrollers can be used to create fun and engaging experiences.
+**Fazit**  
 
-Feel free to customize and expand upon this project. Whether it's adding new features, improving the design, or integrating additional components, the possibilities are endless.
+Du hast erfolgreich ein "10-Sekunden"-Spiel mit dem Raspberry Pi Pico 2 W entwickelt! Dieses Projekt kombiniert Sensoreingaben, Zeitfunktionen und Anzeigesteuerung und bietet so ein interaktives und unterhaltsames Erlebnis. Es ist ein hervorragendes Beispiel dafür, wie Mikrocontroller für kreative und spielerische Anwendungen genutzt werden können.  
+
+Passe das Projekt gerne an deine Ideen an und erweitere es nach Belieben. Ob neue Funktionen, verbessertes Design oder zusätzliche Komponenten – deiner Kreativität sind keine Grenzen gesetzt.
+

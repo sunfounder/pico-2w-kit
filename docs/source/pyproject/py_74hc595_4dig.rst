@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Tauche mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf – durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitige Informationen über neue Produkte und einen exklusiven Einblick.
+    - **Sonderrabatte**: Profitiere von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Aktionen & Gewinnspiele**: Nimm an festlichen Aktionen und spannenden Verlosungen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und mach noch heute mit!
 
 .. _py_74hc_4dig:
 
-5.3 Time Counter
+5.3 Zeitmesser
 ================================
 
 
-In this lesson, we'll learn how to use a **4-digit 7-segment display** 
-with the Raspberry Pi Pico 2 W to create a simple time counter. The display 
-will count up every second, showing the elapsed time in seconds.
+In dieser Lektion lernst du, wie man ein **4-stelliges 7-Segment-Display** mit 
+dem Raspberry Pi Pico 2 W verwendet, um einen einfachen Zeitmesser zu erstellen. 
+Die Anzeige zählt jede Sekunde hoch und zeigt die vergangene Zeit in Sekunden an.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein vollständiges Kit ist besonders praktisch – hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ENTHALTENE TEILE
         - LINK
-    *   - Pico 2 W Starter Kit	
+    *   - Pico 2 W Starter Kit
         - 450+
         - |link_pico2w_kit|
 
-You can also buy them separately from the links below.
+Alternativ kannst du die Komponenten auch einzeln über die folgenden Links beziehen:
 
 
 .. list-table::
@@ -47,8 +47,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -56,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_pico2w_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -65,11 +65,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -80,27 +80,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Understanding the 4-Digit 7-Segment Display**
+**Funktionsweise des 4-stelligen 7-Segment-Displays**
 
-A 4-digit 7-segment display consists of four individual 7-segment displays combined into a single module. Each digit shares the same segment control lines (**a** to **g** and **dp**), but each digit has its own **common cathode** control. This configuration allows us to control which digit is active at any given time.
+Ein 4-stelliges 7-Segment-Display besteht aus vier einzelnen 7-Segment-Anzeigen, die zu einem Modul zusammengefasst sind. Alle Ziffern teilen sich die gleichen Segmentleitungen (**a** bis **g** und **dp**), aber jede Ziffer hat eine eigene **gemeinsame Kathode** zur Auswahl der aktiven Stelle.
 
-To display different numbers on each digit using shared segment lines, we use a technique called **multiplexing**. We rapidly switch between digits, updating one digit at a time, but so quickly that it appears as if all digits are displayed simultaneously due to the persistence of vision.
+Um unterschiedliche Zahlen gleichzeitig auf den einzelnen Ziffern anzeigen zu können, wird **Multiplexing** eingesetzt. Dabei werden die Ziffern nacheinander sehr schnell aktualisiert, sodass durch die Trägheit des menschlichen Auges der Eindruck entsteht, alle Ziffern seien gleichzeitig sichtbar.
 
 |4digit_control_pins|
 
-**Schematic**
+**Schaltplan**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+Die Verdrahtung folgt im Wesentlichen dem gleichen Prinzip wie bei :ref:`py_74hc_led`, nur dass hier die Ausgänge Q0–Q7 mit den Segmenten a–g und dp des 4-stelligen Displays verbunden werden.
 
-Then G10 ~ G13 will select which 7-segment display to work.
+Die Pins GP10 bis GP13 wählen dabei die aktive Ziffer aus.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_4dig|
 
-* **Segment Connections (through 220 Ω resistors):**
+* **Segmentverbindungen (über 220 Ω Widerstände):**
 
   * **Q0** → Segment **a**
   * **Q1** → Segment **b**
@@ -109,24 +109,26 @@ Then G10 ~ G13 will select which 7-segment display to work.
   * **Q4** → Segment **e**
   * **Q5** → Segment **f**
   * **Q6** → Segment **g**
-  * **Q7** → Segment **dp** (decimal point)
+  * **Q7** → Segment **dp** (Dezimalpunkt)
 
-* **Common Cathode Connections (Digit Select Pins):**
 
-  * **Digit 1 (Leftmost Digit):** Connect to **GP10** on the Pico
-  * **Digit 2:** Connect to **GP11**
-  * **Digit 3:** Connect to **GP12**
-  * **Digit 4 (Rightmost Digit):** Connect to **GP13**
+* **Gemeinsame Kathoden (Ziffernauswahl):**
 
-**Writing the Code**
 
-Let's write a MicroPython program to create a time counter that increments every second and displays the count on the 4-digit 7-segment display.
+  * **Ziffer 1 (linke Stelle):** Verbinde mit **GP10** am Pico
+  * **Ziffer 2:** Verbinde mit **GP11**
+  * **Ziffer 3:** Verbinde mit **GP12**
+  * **Ziffer 4 (rechte Stelle):** Verbinde mit **GP13**
+
+
+**Code schreiben**
+
+Wir schreiben nun ein MicroPython-Programm, das jede Sekunde hochzählt und den aktuellen Zählerstand auf dem 4-stelligen Display anzeigt.
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` from ``pico-2w-kit-main/micropython`` or copy the code into Thonny, then click "Run" or press F5.
-    * Ensure the correct interpreter is selected: MicroPython (Raspberry Pi Pico).COMxx. 
-    
+    * Öffne ``5.3_time_counter.py`` aus ``pico-2w-kit-main/micropython`` oder kopiere den Code in Thonny, dann auf „Run“ klicken oder F5 drücken.
+    * Achte darauf, dass der richtige Interpreter ausgewählt ist: MicroPython (Raspberry Pi Pico).COMxx.
 
 .. code-block:: python
 
@@ -213,22 +215,22 @@ Let's write a MicroPython program to create a time counter that increments every
         # Continuously refresh the display
         display_number(counter)
 
-When you run this code, the 4-digit 7-segment display will function as a counter, incrementing the displayed number by 1 every second, starting from 0 up to 9999, then resetting to 0 and repeating the cycle continuously.
+Beim Ausführen des Codes zeigt das 4-stellige 7-Segment-Display einen Zähler an, der jede Sekunde um eins erhöht wird – von 0 bis 9999. Danach beginnt er wieder bei 0.
 
-**Understanding the Code**
+**Den Code verstehen**
 
-#. Import Modules:
+#. Module importieren:
 
-   * ``machine``: Provides access to GPIO pins and hardware functions.
-   * ``utime``: Contains time-related functions for delays and timing.
+   * ``machine``: Zugriff auf GPIOs und Hardware-Funktionen.
+   * ``utime``: Funktionen für Zeitmessung und Verzögerung.
 
-#. Define Segment Codes:
+#. Segmentcodes definieren:
 
-   Each entry corresponds to the segments that need to be lit to display a digit. The values are in hexadecimal format.
+   Jeder Eintrag entspricht den Segmenten, die leuchten müssen, um eine Ziffer darzustellen. Die Werte sind im Hexadezimalformat angegeben.
 
    .. code-block:: python
 
-        # Define the binary codes for each digit (0-9)
+        # Binärcodes für jede Ziffer (0–9) definieren
         SEGMENT_CODES = [
             0x3F,  # 0
             0x06,  # 1
@@ -242,9 +244,9 @@ When you run this code, the 4-digit 7-segment display will function as a counter
             0x6F   # 9
         ]
 
-#. Initialize Control Pins:
+#. Steuerpins initialisieren:
    
-   Assigns the Pico's GPIO pins to control the 74HC595.
+   Weist die GPIO-Pins des Pico zur Ansteuerung des 74HC595 zu.
 
    .. code-block:: python
 
@@ -253,9 +255,9 @@ When you run this code, the 4-digit 7-segment display will function as a counter
         SRCLK = machine.Pin(20, machine.Pin.OUT)
 
 
-#. Initialize Digit Select Pins:
+#. Ziffernauswahl-Pins initialisieren:
 
-   Controls which digit is active. Active low (common cathode).
+   Steuert, welche Ziffer aktiv ist (aktive Low bei gemeinsamer Kathode).
 
    .. code-block:: python
 
@@ -266,11 +268,11 @@ When you run this code, the 4-digit 7-segment display will function as a counter
             machine.Pin(13, machine.Pin.OUT)
         ]
 
-#. Define the ``shift_out`` Function:
+#. Funktion ``shift_out`` definieren:
 
-   * Sends 8 bits of data to the 74HC595.
-   * Shifts out the data starting from the most significant bit (MSB).
-   * Pulses the shift and register clocks appropriately.
+   * Sendet 8 Bits an den 74HC595.
+   * Beginnt mit dem höchstwertigen Bit (MSB).
+   * Taktet die Daten über die Shift- und Register-Takte ein.
 
    .. code-block:: python
 
@@ -283,13 +285,13 @@ When you run this code, the 4-digit 7-segment display will function as a counter
                 SRCLK.high()
             RCLK.high()
 
-#. Define the ``display_digit`` Function:
+#. Funktion ``display_digit`` definieren:
 
-   * Turns off all digits.
-   * Sends the segment code for the digit.
-   * Activates the specified digit by setting its pin low.
-   * Adds a small delay to make the digit visible.
-   * Turns off the digit after displaying.
+   * Schaltet alle Ziffern aus.
+   * Sendet den Segmentcode für die gewünschte Ziffer.
+   * Aktiviert die entsprechende Ziffer durch Setzen auf Low.
+   * Fügt eine kurze Verzögerung zur Sichtbarkeit hinzu.
+   * Schaltet die Ziffer anschließend wieder aus.
 
    .. code-block:: python
 
@@ -302,30 +304,30 @@ When you run this code, the 4-digit 7-segment display will function as a counter
             digit_pins[position].high()
 
 
-#. Define the ``display_number`` Function:
+#. Funktion ``display_number`` definieren:
 
-   * Extracts each digit from the number.
-   * Calls ``display_digit`` for each digit rapidly to create the multiplexing effect.
+   * Zerlegt die Zahl in ihre Einzelziffern.
+   * Ruft für jede Ziffer schnell nacheinander ``display_digit`` auf, um den Multiplexing-Effekt zu erzeugen.
 
    .. code-block:: python
 
         def display_number(number):
-            # Extract individual digits
+            # Einzelziffern extrahieren
             digits = [
                 (number // 1000) % 10,
                 (number // 100) % 10,
                 (number // 10) % 10,
                 number % 10
             ]
-            # Display each digit rapidly
+            # Jede Ziffer zügig anzeigen
             for i in range(4):
                 display_digit(i, digits[i])
 
-#. Main Loop:
+#. Hauptschleife:
 
-   * Increments the counter every second.
-   * Resets the counter after reaching 9999.
-   * Continuously calls ``display_number`` to refresh the display.
+   * Erhöht den Zähler jede Sekunde.
+   * Setzt den Zähler zurück, wenn 9999 erreicht ist.
+   * Ruft kontinuierlich ``display_number`` auf, um das Display zu aktualisieren.
 
    .. code-block:: python
 
@@ -343,24 +345,24 @@ When you run this code, the 4-digit 7-segment display will function as a counter
             display_number(counter)
 
 
-**Experimenting Further**
+**Weitere Experimente**
 
-* Add a Reset Button:
+* Reset-Taste hinzufügen:
 
-  Connect a button to the Pico to reset the counter when pressed.
+  Verbinde eine Taste mit dem Pico, um den Zähler bei Betätigung zurückzusetzen.
 
-* Display Different Data: 
+* Andere Daten anzeigen:
 
-  Modify the code to display sensor readings, such as temperature or light levels.
+  Ändere den Code, um Sensordaten wie Temperatur oder Helligkeit anzuzeigen.
 
-* Adjust Display Brightness: 
+* Anzeigehelligkeit anpassen:
 
-  Change the ``utime.sleep_ms(5)`` delay in the ``display_digit`` function to adjust how long each digit is displayed, affecting brightness.
+  Passe die Verzögerung ``utime.sleep_ms(5)`` in der Funktion ``display_digit`` an, um die Anzeigezeit jeder Ziffer zu steuern – das beeinflusst die Helligkeit.
 
-* Create a Stopwatch:
+* Stoppuhr erstellen:
 
-  Implement start, stop, and reset functionality to use the display as a stopwatch.
+  Implementiere Start-, Stopp- und Reset-Funktionen, um das Display als Stoppuhr zu verwenden.
 
-**Conclusion**
+**Fazit**
 
-In this lesson, you've learned how to use a 4-digit 7-segment display with a 74HC595 shift register to create a time counter using the Raspberry Pi Pico 2 W. By understanding multiplexing and efficient timing, you can display dynamic information on multi-digit displays using minimal GPIO pins.
+In dieser Lektion hast du gelernt, wie man ein 4-stelliges 7-Segment-Display zusammen mit einem 74HC595-Schieberegister verwendet, um einen Zeitmesser mit dem Raspberry Pi Pico 2 W zu bauen. Durch das Verständnis von Multiplexing und effizientem Timing kannst du mit nur wenigen GPIO-Pins dynamische Mehrstellenanzeigen realisieren.

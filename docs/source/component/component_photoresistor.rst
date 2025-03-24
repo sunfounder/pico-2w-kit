@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Erhalte Unterstützung von unserer Community und unserem Team bei technischen Herausforderungen und Problemen nach dem Kauf.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Vergünstigungen auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _cpn_photoresistor:
 
-Photoresistor
-==============
+Fotowiderstand
+=================
 
 |img_photoresistor|
 
-A photoresistor, also known as a photocell, is a light-sensitive variable resistor. Its resistance decreases as the intensity of incident light increases, a phenomenon known as photoconductivity.
+Ein Fotowiderstand, auch als Fototransistor oder LDR (Light Dependent Resistor) bekannt, ist ein lichtempfindlicher variabler Widerstand. Seine Widerstandswerte nehmen mit zunehmender Lichtintensität ab – ein Phänomen, das als Fotoleitfähigkeit bekannt ist.
 
-Photoresistors are commonly used in light-sensitive detection circuits and light- or dark-activated switching circuits, functioning as semiconductor resistors. In darkness, a photoresistor's resistance can reach several megaohms (MΩ), whereas under bright light, its resistance can drop to just a few hundred ohms.
+Fotowiderstände werden häufig in lichtempfindlichen Schaltungen sowie in licht- oder dunkelgesteuerten Schaltern eingesetzt. Sie funktionieren als halbleitende Widerstände. In völliger Dunkelheit kann der Widerstand eines Fotowiderstands mehrere Megaohm (MΩ) erreichen, während er bei hellem Licht auf wenige hundert Ohm sinken kann.
 
-Below is the electronic symbol for a photoresistor.
+Nachfolgend ist das Schaltzeichen eines Fotowiderstands dargestellt.
 
 |img_photoresistor_symbol|
 
@@ -37,7 +37,7 @@ Below is the electronic symbol for a photoresistor.
 
 **Example**
 
-* :ref:`py_photoresistor` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`ar_photoresistor` (For Arduino User)
-.. * :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_photoresistor` (Für MicroPython-Nutzer)
+* :ref:`py_light_theremin` (Für MicroPython-Nutzer)
+* :ref:`ar_photoresistor` (Für Arduino-Nutzer)
+.. * :ref:`per_light_display` (Für Piper Make-Nutzer)

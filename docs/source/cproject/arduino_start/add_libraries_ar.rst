@@ -1,42 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Learn & Share**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exclusive Previews**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Special Discounts**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festive Promotions and Giveaways**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
+1.4 Installieren von Bibliotheken (Wichtig)
+==============================================
 
-1.4 Install libraries (Important)
-======================================
+Viele Bibliotheken sind direkt über den Arduino **Bibliotheksverwalter** verfügbar.  
+Du kannst den Bibliotheksverwalter folgendermaßen öffnen:
 
-Many libraries are available directly through the Arduino **Library Manager**. You can access the **Library Manager** by following these steps:
-
-In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+Im **Bibliotheksverwalter** kannst du nach der gewünschten Bibliothek suchen oder verschiedene Kategorien durchstöbern.
 
 .. note::
 
-   In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as “The DHT sensor library library is used here, you can install it from the **Library Manager**.” Simply install the recommended libraries as prompted.
+   In Projekten, die eine Installation von Bibliotheken erfordern, gibt es Hinweise darauf, welche Bibliotheken installiert werden müssen.  
+   Folge einfach den Anweisungen, z. B.:  
+   „Die DHT-Sensor-Bibliothek wird hier verwendet. Du kannst sie über den Bibliotheksverwalter installieren.“  
+   Installiere einfach die empfohlenen Bibliotheken gemäß den Anweisungen.
 
 .. image:: img/install_lib3.png
 
-Once you find the library you want to install, click on it and then click the **INSTALL** button.
+Sobald du die gewünschte Bibliothek gefunden hast, klicke darauf und anschließend auf den **INSTALL**-Button.
 
 .. image:: img/install_lib2.png
 
-The Arduino IDE will automatically download and install the library for you.
+Die Arduino-IDE lädt die Bibliothek automatisch herunter und installiert sie für dich.
 
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Die installierten Bibliotheken befinden sich im Standardbibliotheksverzeichnis der Arduino-IDE, das sich normalerweise unter ``C:\Users\xxx\Documents\Arduino\libraries`` befindet.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Falls dein Bibliotheksverzeichnis abweicht, kannst du es überprüfen, indem du auf **Datei** -> **Einstellungen** gehst.
 
       .. image:: img/install_lib1.png
