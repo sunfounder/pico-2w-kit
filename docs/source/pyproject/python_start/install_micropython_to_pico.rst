@@ -14,51 +14,57 @@
 
 .. _install_micropython_on_pico:
 
-1.3 MicroPythonをPicoにインストール
+1.3 MicroPythonをPico 2 Wにインストール
 ==========================================
 
 
-ここでは、Raspberry Pi PicoにMicroPythonをインストールする方法を紹介します。
+ここでは、Raspberry Pi Pico 2 WにMicroPythonをインストールする方法を紹介します。
 
-.. Thonny IDEは、ワンクリックでインストールできる非常に便利な方法を提供します。
+.. .. note:: 
+..     Raspberry Pi公式の |link_micropython_pi| を使って、ファームウェアファイルをRaspberry Pi Picoにドラッグアンドドロップすることでもインストールできます。
+        
+.. #. |link_raspberrypi_documention| を開き、ファームウェアファイルをダウンロードします。
 
-   .. note:: 
-       Raspberry Pi公式の |link_micropython_pi| を使って、ファームウェアファイルをRaspberry Pi Picoにドラッグアンドドロップすることでもインストールできます。
-         
-#. |link_raspberrypi_documention| を開き、ファームウェアファイルをダウンロードします。
+..    .. image:: img/download_pico2w_file.jpg
 
-   .. image:: img/download_pico2w_file.jpg
-
-#. **BOOTSEL** ボタンを押し続け、Micro USBケーブルでPicoをコンピュータに接続します。Picoが **RPI-RP2350** というMass Storage Deviceとしてマウントされたら、 **BOOTSEL** ボタンを放します。
-
-   .. image:: img/bootsel_onboard.png
-
-#. ファームウェアファイルをRaspberry Pi Pico 2 Wにドラッグアンドドロップします。その後、Pico 2 Wが再起動します。
-
-   .. image:: img/drag_and_drop.jpg
-
-.. #. Thonny IDEを開きます。
-
-..    .. image:: img/set_pico1.png
-
-.. #. **BOOTSEL**ボタンを押し続け、Micro USBケーブルでPicoをコンピュータに接続します。Picoが**RPI-RP2350**というMass Storage Deviceとしてマウントされたら、**BOOTSEL**ボタンを放します。
+.. #. **BOOTSEL** ボタンを押し続け、Micro USBケーブルでPicoをコンピュータに接続します。Picoが **RPI-RP2350** というMass Storage Deviceとしてマウントされたら、 **BOOTSEL** ボタンを放します。
 
 ..    .. image:: img/bootsel_onboard.png
 
-.. #. 画面右下のインタープリタ選択ボタンをクリックし、**Install Micropython**を選択します。
+.. #. ファームウェアファイルをRaspberry Pi Pico 2 Wにドラッグアンドドロップします。その後、Pico 2 Wが再起動します。
 
-..    
+..    .. image:: img/drag_and_drop.jpg
+
+
+
+
+
+Thonny IDEは、ワンクリックでインストールできる非常に便利な方法を提供します。
+ 
+#. Thonny IDEを開きます。
+ 
+   .. image:: img/set_pico1.png
+        
+#. **BOOTSEL** ボタンを押し続け、Micro USBケーブルでPico 2 Wをコンピュータに接続します。Pico 2 Wが **RPI-RP2350** というMass Storage Deviceとしてマウントされたら、 **BOOTSEL** ボタンを放します。
+ 
+   .. image:: img/bootsel_onboard.png
+        
+#. 画面右下のインタープリタ選択ボタンをクリックし、 **Install Micropython** を選択します。
+ 
+   
+
     .. note:: 
+
         Thonnyにこのオプションが表示されない場合は、最新バージョンに更新してください。
-
+        
     .. image:: img/set_pico2.png
+        
+#. **Target volume**に、先ほど接続したPico 2 Wのボリュームが自動的に表示され、 **Micropython variant** には、 **Raspberry Pi.Pico 2 W/Pico 2 WH** を選択します。
+ 
+   .. image:: img/set_pico2w3.png
+        
+#. **Install**ボタンをクリックし、インストールが完了するのを待ち、このページを閉じます。
+ 
+   .. image:: img/set_pico2w4.png
 
-.. #. **Target volume**に、先ほど接続したPicoのボリュームが自動的に表示され、**Micropython variant**には、**Raspberry Pi.Pico 2 W/Pico 2 WH**を選択します。
-
-..    .. image:: img/set_pico3.png
-
-.. #. **Install**ボタンをクリックし、インストールが完了するのを待ち、このページを閉じます。
-
-..    .. image:: img/set_pico4.png
-
-おめでとうございます！これで、Raspberry Pi Picoが準備完了です。
+おめでとうございます！これで、Raspberry Pi Pico 2 Wが準備完了です。
