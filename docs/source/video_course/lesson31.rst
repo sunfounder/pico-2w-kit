@@ -22,7 +22,7 @@ This tutorial covers creating a sensorless weather station using the Raspberry P
 * **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
 * **Code Explanation**: Use ``urequests.get()`` to fetch data, convert Unix time, and adjust pressure units.
 * **Displaying Weather Data**: Print temperature, humidity, pressure, conditions, and wind speed.
-* **Homework Assignment**: Add a display and create a portable, battery-powered weather station.
+* **Homework Assignment**: Add a display and create a portable, Power Pack-powered weather station.
 
 
 

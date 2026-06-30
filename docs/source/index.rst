@@ -62,6 +62,7 @@ Here is the email: service@sunfounder.com.
 
     About This Kit <self>
     introduction_to_pico_2w
+    download_the_code
     pyproject/for_micropython_user
     cproject/for_arduino_user
     component/what_is_included_in_this_kit

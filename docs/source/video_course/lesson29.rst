@@ -22,7 +22,7 @@ This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi
 * **Server Side Setup**: Import libraries, initialize GPIO pins, connect to Wi-Fi, create a UDP server, and display the IP on the OLED.
 * **Client Side Setup**: Create a UDP client on the PC to send color commands to the server.
 * **Practical Demonstration**: Show changing RGB LED color via commands sent from the PC, with the OLED displaying the commands and IP.
-* **Final Setup and Testing**: Power the Raspberry Pi Pico W with a battery, save the code as ``main.py``, and demonstrate wireless operation.
+* **Final Setup and Testing**: Power the Raspberry Pi Pico W with a Power Pack, save the code as ``main.py``, and demonstrate wireless operation.
 
 
 **Video**

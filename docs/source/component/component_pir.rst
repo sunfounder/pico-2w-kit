@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -55,4 +55,5 @@ Choosing different modes by using the jumper cap.
 * :ref:`py_pir` (For MicroPython User)
 * :ref:`py_passage_counter` (For MicroPython User)
 * :ref:`ar_pir` (For Arduino User)
+
 .. * :ref:`per_lucky_cat` (For Piper Make User)

@@ -18,7 +18,7 @@ Video Courses
 If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
 A step-by-step video course is here to make your learning journey smoother and more engaging.
 The video course below is designed for the Pico W but is also fully compatible with the Pico 2 W.
-The experiments demonstrated in the videos are entirely compatible with both models, except for the battery section and mainboard.
+The experiments demonstrated in the videos are entirely compatible with both models, except for the Power Pack section and mainboard.
 
 
 **project**

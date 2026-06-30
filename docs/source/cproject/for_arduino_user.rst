@@ -66,6 +66,7 @@ We recommend that you read the chapters in order.
     ar_joystick
     ar_keypad
     ar_mpr121
+    ar_rfid
 
 5. Microchip
 ------------------------

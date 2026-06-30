@@ -20,7 +20,7 @@ This tutorial covers integrating an RGB LED to display temperature data on a wea
 * **HSV to RGB Conversion**: Map temperatures from -20°F (violet) to 120°F (red) to angles on the HSV color wheel.
 * **Circuit Setup**: Connect the OLED display and RGB LED to the Raspberry Pi Pico W, configuring GPIO and PWM.
 * **Coding**: Fetch temperature data, calculate hue, convert to RGB, and control the RGB LED using the HSV to RGB conversion library.
-* **Demonstration**: Display temperature on the OLED and RGB LED, running the setup on battery power.
+* **Demonstration**: Display temperature on the OLED and RGB LED, running the setup on Power Pack power.
 * **Conclusion**: Customize the project with different color mappings and temperature ranges, and encourage interaction with the tutorial.
 
 

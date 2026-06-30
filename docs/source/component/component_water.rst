@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -40,4 +40,5 @@ The sensor processes this varying resistance into an output voltage signal, whic
 * :ref:`py_water` (For MicroPython User)
 * :ref:`py_iot_sunfounder_controller_plant` (For MicroPython User)
 * :ref:`ar_water` (For Arduino User)
+
 .. * :ref:`per_water_tank` (For Piper Make User)

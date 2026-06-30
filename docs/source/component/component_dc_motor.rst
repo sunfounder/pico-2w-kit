@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -35,9 +35,9 @@ The key to generating motion is to position the armature within the magnetic fie
 
 |img_dc_motor_sche|
 
-Current flows from the positive terminal of the battery through the circuit, through the copper brushes to the commutator, and then to the armature.
+Current flows from the positive terminal of the Power Pack through the circuit, through the copper brushes to the commutator, and then to the armature.
 But because of the two gaps in the commutator, this flow reverses halfway through each complete rotation.
-This continuous reversal essentially converts the DC power from the battery to AC, allowing the armature to experience torque in the right direction at the right time to maintain rotation.
+This continuous reversal essentially converts the DC power from the Power Pack to AC, allowing the armature to experience torque in the right direction at the right time to maintain rotation.
 
 * `DC Motor - MagLab <https://nationalmaglab.org/education/magnet-academy/watch-play/interactive/dc-motor>`_
 * `Fleming's left-hand rule for motors - Wikipedia <https://en.wikipedia.org/wiki/Fleming%27s_left-hand_rule_for_motors>`_
@@ -48,4 +48,5 @@ This continuous reversal essentially converts the DC power from the battery to A
 
 * :ref:`py_motor` (For MicroPython User)
 * :ref:`ar_motor` (For Arduino User)
+
 .. * :ref:`per_smart_fan` (For Piper Make User)

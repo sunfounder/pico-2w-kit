@@ -85,7 +85,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Power Pack
         - 1
         -   
 
@@ -102,7 +102,7 @@ You can also buy them separately from the links below.
 .. note::
 
     * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your Power Pack and circuitry.
 
 
 |wiring_motor|

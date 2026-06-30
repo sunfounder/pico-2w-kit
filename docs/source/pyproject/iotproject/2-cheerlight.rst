@@ -76,7 +76,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Power Pack
         - 1
         -  
  
@@ -89,7 +89,7 @@ You can also buy them separately from the links below.
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your Power Pack and circuitry.
 
     .. image:: img/wiring/2.cheerlights_bb.png
         :width: 800

@@ -20,7 +20,7 @@
 
 In this lesson, we'll learn how to use a **passive buzzer** with the Raspberry Pi Pico 2 W to play different tones and even simple melodies! Unlike an active buzzer, a passive buzzer needs a changing electrical signal to produce sound, which means we can control the pitch of the sound by changing the signal's frequency.
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
 **Required Components**
 

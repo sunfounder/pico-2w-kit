@@ -36,6 +36,7 @@ Here is the email: service@sunfounder.com.
     component_capacitor
     component_diode
     component_lipo_charger
+    component_power_module
 
 
 **Chip**

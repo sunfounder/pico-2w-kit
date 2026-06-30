@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -42,4 +42,5 @@ The circuit symbol of the slide switch is shown as below. The pin2 in the figure
 * :ref:`py_slide` (For MicroPython User)
 * :ref:`py_alarm_lamp` (For MicroPython User)
 * :ref:`ar_slide` (For Arduino User)
+
 .. * :ref:`per_drum_kit` (For Piper Make User)

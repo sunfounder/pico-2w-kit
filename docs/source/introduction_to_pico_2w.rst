@@ -31,20 +31,20 @@ Features
 --------------
 * RP2350 microcontroller with 4 MB of flash memory.
 * On-board single-band 2.4GHz wireless interfaces. (802.11n, Bluetooth 5.2)
- - Support for Bluetooth LE Central and Peripheral roles.
- - Support for Bluetooth Classic.
+  - Support for Bluetooth LE Central and Peripheral roles.
+  - Support for Bluetooth Classic.
 * Micro USB B port for power and data. (and for reprogramming the flash)
 * 40-pin 21mm×51mm 'DIP' style 1mm thick PCB with 0.1" through-hole pins also with edge castellations.
- - Exposes 26 multi-function 3.3V general purpose I/O (GPIO)
- - 23 GPIO are digital-only, with three also being ADC capable.
- - Can be surface-mounted as a module.
+  - Exposes 26 multi-function 3.3V general purpose I/O (GPIO)
+  - 23 GPIO are digital-only, with three also being ADC capable.
+  - Can be surface-mounted as a module.
 * 3-pin Arm serial wire debug (SWD) port.
 * Simple yet highly flexible power supply architecture.
- - Various options for easily powering the unit from micro USB, external supplies or batteries.
+  - Various options for easily powering the unit from micro USB, external supplies or a Power Pack.
 * 1 × USB 1.1 controller and PHY, with host and device support.
 * 3 x Programmable I/O (PIO) blocks, 12 state machines in total.
- - Flexible, user-programmable high-speed I/O.
- - Can emulate interfaces such as SD card and VGA.
+  - Flexible, user-programmable high-speed I/O.
+  - Can emulate interfaces such as SD card and VGA.
 * Supported input power 1.8-5.5V DC.
 * Operating temperature -20°C to +85°C.
 * Castellated module allows soldering direct to carrier boards.

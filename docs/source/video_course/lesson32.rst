@@ -21,7 +21,7 @@ This tutorial covers creating a portable weather station using the Raspberry Pi 
 * **Fetching Weather Data**: Use OpenWeatherMap API to retrieve real-time weather data, requiring an API key.
 * **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
 * **Displaying Data on OLED**: Set up and connect an OLED display, use the ``ssd1306`` library, and update weather data on the screen in a loop.
-* **Powering the Device**: Power the Raspberry Pi Pico W with a battery for portability.
+* **Powering the Device**: Power the Raspberry Pi Pico W with a Power Pack for portability.
 * **Code Explanation**: Initialize the OLED, connect to WiFi, fetch and display weather data, and set a loop for periodic updates.
 * **Homework Assignment**: Add an RGB LED to indicate weather conditions based on temperature, humidity, or wind speed.
 

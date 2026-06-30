@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -32,4 +32,5 @@ The diagram below illustrates the internal schematic of an LED bar graph. Typica
 
 * :ref:`py_led_bar` (For MicroPython User)
 * :ref:`ar_led_bar` (For Arduino User)
+
 .. * :ref:`per_light_display` (For Piper Make User)

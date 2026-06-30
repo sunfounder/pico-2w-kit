@@ -21,7 +21,7 @@ This tutorial covers using the Raspberry Pi Pico W and an OLED display for porta
 * **Introducing the OLED Display**: Suggests using a low-power OLED display, connected via I2C to GPIO pins 2 and 3.
 * **Library Installation and Initial Setup**: Installs the SSD1306 library and sets up the I2C and display objects.
 * **Displaying Text and Graphics**: Provides code to display text, draw lines, and create shapes on the OLED.
-* **Power Management**: Explains turning the display on and off to save battery.
+* **Power Management**: Explains turning the display on and off to save power.
 * **Practical Demonstration**: Shows text and graphics on the OLED, highlighting its benefits over LCD.
 * **Homework Assignment**: Task to display "My Circle" and draw a circle on the OLED, encouraging sharing the results online.
 

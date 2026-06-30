@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -16,19 +16,21 @@ Operators
 ============
 Operators are used to perform operations on variables and values.
 
-* :ref:`Arithmetic operators`
+* `Arithmetic Operators`
 
-* :ref:`Assignment operators`
+* `Assignment operators`
 
-* :ref:`Comparison operators`
+* `Comparison Operators`
 
-* :ref:`Logical operators`
+* `Logical Operators`
 
-* :ref:`Identity operators`
+* `Identity Operators`
 
-* :ref:`Membership operators`
+* `Membership Operators`
 
-* :ref:`Bitwise operators`
+* `Bitwise Operators`
+
+
 
 Arithmetic Operators
 ----------------------
@@ -90,6 +92,8 @@ You can use arithmetic operators to do some common mathematical operations.
 2
 15
 >>> 
+
+
 
 Assignment operators
 ---------------------
@@ -156,6 +160,7 @@ Assignment operators can used to assign values to variables.
 36
 >>> 
 
+
 Comparison Operators
 ------------------------
 Comparison operators are used to compare two values.
@@ -195,6 +200,7 @@ False
 
 Return **False**, because the **a** is less than the **b**.
 
+
 Logical Operators
 -----------------------
 
@@ -221,6 +227,7 @@ Logical operators are used to combine conditional statements.
 >>> %Run -c $EDITOR_CONTENT
 True
 >>> 
+
 
 Identity Operators
 ------------------------
@@ -259,6 +266,7 @@ False
 True
 >>> 
 
+
 Membership Operators
 ----------------------
 Membership operators are used to test if a sequence is presented in an object.
@@ -283,6 +291,7 @@ Membership operators are used to test if a sequence is presented in an object.
 >>> %Run -c $EDITOR_CONTENT
 True
 >>> 
+
 
 Bitwise Operators
 ------------------------

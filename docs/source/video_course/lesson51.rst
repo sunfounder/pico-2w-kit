@@ -20,7 +20,7 @@ This tutorial covers creating a precise tilt meter using the MPU6050 sensor and 
 * **Challenges**: Accelerometer data is noisy, and gyroscope data drifts over time.
 * **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with error correction for steady state errors.
 * **Implementation**: Initialize sensors and OLED. Collect and filter data, displaying tilt as both a bubble level and degree readout on the OLED.
-* **Demonstration**: Test for stable pitch and roll readings, with portable battery-powered operation.
+* **Demonstration**: Test for stable pitch and roll readings, with portable Power Pack-powered operation.
 * **Additional Improvements**: Consider wireless monitoring or creating a 3D-printed case for portability.
 
 

@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -69,6 +69,7 @@ Put the label side facing us and the pins facing down. The pins from left to rig
 * :ref:`ar_pa_buz` (For Arduino User)
 * :ref:`ar_transistor` (For Arduino User)
 * :ref:`ar_relay` (For Arduino User)
+
 .. * :ref:`per_service_bell` (For Piper Make User)
 .. * :ref:`per_reversing_system` (For Piper Make User)
 .. * :ref:`per_reaction_game` (For Piper Make User)

@@ -29,10 +29,6 @@ The image below illustrates the internal structure of a breadboard. While the ho
 
 If you want to know more about breadboard, refer to: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Example**
-
-* :ref:`bc_bb`
-
 
 
 

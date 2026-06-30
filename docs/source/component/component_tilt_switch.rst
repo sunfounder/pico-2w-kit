@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -40,4 +40,5 @@ This simple yet effective mechanism makes the tilt switch ideal for detecting ch
 * :ref:`py_tilt` (For MicroPython User)
 * :ref:`py_10_second` (For MicroPython User)
 * :ref:`ar_tilt` (For Arduino User)
+
 .. * :ref:`per_flowing_leds` (For Piper Make User)
