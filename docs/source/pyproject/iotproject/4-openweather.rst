@@ -69,7 +69,7 @@ Du kannst sie auch einzeln über die untenstehenden Links kaufen.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Power Pack
         - 1
         -  
 
