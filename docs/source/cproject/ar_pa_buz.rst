@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit anderen Enthusiasten.
 
@@ -20,7 +20,7 @@
 
 In dieser Lektion lernen wir, wie man einen **passiven Summer** mit dem Raspberry Pi Pico 2 W verwendet, um verschiedene Töne und sogar einfache Melodien zu spielen! Im Gegensatz zu einem aktiven Summer benötigt ein passiver Summer ein sich änderndes elektrisches Signal, um Töne zu erzeugen, was bedeutet, dass wir die Tonhöhe des Sounds durch Ändern der Signalfrequenz steuern können.
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
 **Benötigte Komponenten**
 

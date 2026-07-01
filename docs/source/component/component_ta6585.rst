@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -56,4 +56,5 @@ Steuerungsschaltungen eingesetzt.
 * :ref:`py_pump` (Für MicroPython-Nutzer)
 * :ref:`ar_pump` (Für Arduino-Nutzer)
 * :ref:`py_iot_sunfounder_controller_plant` (Für MicroPython-Nutzer)
+
 .. * :ref:`per_smart_fan` (Für Piper Make-Nutzer)

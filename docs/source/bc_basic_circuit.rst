@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
@@ -19,9 +19,9 @@ Viele alltägliche Geräte, wie die Beleuchtung in deinem Zuhause oder der Compu
 
 Um Elektrizität zu nutzen, muss ein elektrischer Stromkreis erstellt werden. Ein elektrischer Stromkreis besteht aus Metallleitern und elektrischen sowie elektronischen Komponenten.
 
-Stromkreise benötigen eine Stromquelle. In deinem Zuhause werden die meisten Geräte (z.B. Fernseher, Lichter) durch Steckdosen mit Strom versorgt. Viele kleinere, tragbare Schaltkreise (z.B. elektronisches Spielzeug, Handys) werden jedoch durch Batterien betrieben. Eine Batterie hat zwei Pole, wovon einer als positiver Pol bezeichnet und mit einem Pluszeichen (+) markiert ist. Negative Pole werden durch Minuszeichen (-) symbolisiert, sind aber meist nicht auf Batterien gedruckt.
+Stromkreise benötigen eine Stromquelle. In deinem Zuhause werden die meisten Geräte (z.B. Fernseher, Lichter) durch Steckdosen mit Strom versorgt. Viele kleinere, tragbare Schaltkreise (z.B. elektronisches Spielzeug, Handys) werden jedoch durch ein Power Pack betrieben. Ein Power Pack hat zwei Pole, wovon einer als positiver Pol bezeichnet und mit einem Pluszeichen (+) markiert ist. Negative Pole werden durch Minuszeichen (-) symbolisiert, sind aber meist nicht auf dem Power Pack gedruckt.
 
-Damit Strom fließen kann, muss ein leitfähiger Pfad den positiven Pol der Batterie mit dem negativen Pol verbinden, was als geschlossener Stromkreis bezeichnet wird (wird er getrennt, spricht man von einem offenen Stromkreis). Der elektrische Strom fließt dann durch Geräte wie Lampen, um sie zu betreiben (z.B. zum Leuchten zu bringen).
+Damit Strom fließen kann, muss ein leitfähiger Pfad den positiven Pol des Power Pack mit dem negativen Pol verbinden, was als geschlossener Stromkreis bezeichnet wird (wird er getrennt, spricht man von einem offenen Stromkreis). Der elektrische Strom fließt dann durch Geräte wie Lampen, um sie zu betreiben (z.B. zum Leuchten zu bringen).
 
 |bc1|
 

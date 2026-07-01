@@ -8,6 +8,8 @@ In diesem Abschnitt lernst du die Geschichte von MicroPython kennen, wie man Mic
 Wir empfehlen, die Kapitel in der vorgegebenen Reihenfolge zu lesen.
 
 
+.. _micropython_get_started:
+
 1. Erste Schritte
 ------------------------
 

@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -58,4 +58,5 @@ Der Pin links neben dem längsten ist für Rot, die beiden Pins rechts davon ste
 * :ref:`py_fruit_piano` (Für MicroPython-Nutzer)
 * :ref:`py_iot_web_server` (Für MicroPython-Nutzer)
 * :ref:`ar_rgb` (Für Arduino-Nutzer)
+
 .. * :ref:`per_rainbow_light` (Für Piper Make-Nutzer)

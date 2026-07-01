@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Erkunden Sie gemeinsam mit anderen begeisterten Mitgliedern die vielfältigen Möglichkeiten rund um Raspberry Pi, Arduino und ESP32.
 
@@ -39,7 +39,7 @@ Rotor entsteht ein Drehmoment, das den Rotor in Bewegung versetzt.
 
 |img_dc_motor_sche|
 
-Der elektrische Strom fließt vom Pluspol der Batterie durch die 
+Der elektrische Strom fließt vom Pluspol des Power Pack durch die 
 Kupferbürsten und den Kommutator in den Rotor (Anker). 
 Da der Kommutator zwei isolierende Zwischenräume besitzt, kehrt 
 sich der Stromfluss nach jeder halben Umdrehung um. Diese ständige 
@@ -55,4 +55,5 @@ wird und die Drehbewegung kontinuierlich bleibt.
 
 * :ref:`py_motor` (Für MicroPython-Nutzer)
 * :ref:`ar_motor` (Für Arduino-Nutzer)
+
 .. * :ref:`per_smart_fan` (Für Piper Make-Nutzer)

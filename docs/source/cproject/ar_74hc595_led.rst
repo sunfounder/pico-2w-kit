@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Technikbegeisterten.
 
@@ -19,7 +19,7 @@
 
 In dieser Lektion lernen wir, wie man das **74HC595-Schieberegister** verwendet, um mehrere LEDs mit nur wenigen GPIO-Pins des Raspberry Pi Pico 2 W zu steuern. Der 74HC595 ist eine integrierte Schaltung (IC), die es ermöglicht, die Anzahl der digitalen Ausgänge über eine serielle Eingabe zu erweitern. Dies ist besonders nützlich, wenn viele Ausgänge gesteuert werden sollen, aber nur wenige GPIO-Pins verfügbar sind.
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Benötigte Komponenten**
 

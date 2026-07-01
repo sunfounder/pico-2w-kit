@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -50,4 +50,5 @@ Der Mikrocontroller verarbeitet das Signal und bestimmt daraus den exakten Wasse
 * :ref:`py_water` (Für MicroPython-Nutzer)
 * :ref:`py_iot_sunfounder_controller_plant` (Für MicroPython-Nutzer)
 * :ref:`ar_water` (Für Arduino-Nutzer)
+
 .. * :ref:`per_water_tank` (Für Piper Make-Nutzer)

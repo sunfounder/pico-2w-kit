@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein zusammen mit anderen Enthusiasten.
 
@@ -93,7 +93,7 @@ Sie können sie auch einzeln über die untenstehenden Links kaufen.
         - 1
         -
     *   - 7
-        - 18650 Batterie
+        - Power Pack
         - 1
         -
     *   - 8

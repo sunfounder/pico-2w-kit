@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -46,4 +46,5 @@ Das Schaltsymbol eines Schiebeschalters ist in der folgenden Abbildung dargestel
 * :ref:`py_slide` (Für MicroPython-Nutzer)
 * :ref:`py_alarm_lamp` (Für MicroPython-Nutzer)
 * :ref:`ar_slide` (Für Arduino-Nutzer)
+
 .. * :ref:`per_drum_kit` (Für Piper Make-Nutzer)

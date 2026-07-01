@@ -1,4 +1,4 @@
-.. _projects_arduino:
+﻿.. _projects_arduino:
 
 Arduino-Projekte
 ======================
@@ -8,8 +8,8 @@ Dieses Kapitel umfasst die Installation der Arduino IDE, das Hochladen von Code 
 Wir empfehlen, die Kapitel der Reihe nach zu lesen.
 
 
-1. Erste Schritte
-------------------------
+1. Erste Schritte (Arduino)
+---------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -19,8 +19,8 @@ Wir empfehlen, die Kapitel der Reihe nach zu lesen.
     arduino_start/install_pico_2w
     arduino_start/add_libraries_ar 
 
-2. Ausgabe & Eingabe
-------------------------
+2. Ausgabe & Eingabe (Arduino)
+----------------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -42,8 +42,8 @@ Wir empfehlen, die Kapitel der Reihe nach zu lesen.
     ar_transistor
     ar_relay
 
-3. Klang & Anzeige & Bewegung
---------------------------------
+3. Klang & Anzeige & Bewegung (Arduino)
+----------------------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -57,8 +57,8 @@ Wir empfehlen, die Kapitel der Reihe nach zu lesen.
     ar_servo
 
 
-4. Steuerung
-------------------------
+4. Steuerung (Arduino)
+------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -66,9 +66,10 @@ Wir empfehlen, die Kapitel der Reihe nach zu lesen.
     ar_joystick
     ar_keypad
     ar_mpr121
+    ar_rfid
 
-5. Mikrochip
-------------------------
+5. Mikrochip (Arduino)
+-----------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -78,8 +79,8 @@ Wir empfehlen, die Kapitel der Reihe nach zu lesen.
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-6. Fortgeschritten
-------------------------
+6. Fortgeschritten (Arduino)
+-----------------------------------
 
 .. toctree::
     :maxdepth: 1

@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -80,6 +80,7 @@ sind die Pins von links nach rechts wie folgt angeordnet: Emitter (e), Basis (b)
 * :ref:`ar_pa_buz` (Für Arduino-Nutzer)
 * :ref:`ar_transistor` (Für Arduino-Nutzer)
 * :ref:`ar_relay` (Für Arduino-Nutzer)
+
 .. * :ref:`per_service_bell` (Für Piper Make-Nutzer)
 .. * :ref:`per_reversing_system` (Für Piper Make-Nutzer)
 .. * :ref:`per_reaction_game` (Für Piper Make-Nutzer)

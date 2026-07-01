@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -73,4 +73,5 @@ weiter Abstrahlwinkel, gute Farbkonsistenz, geringer Stromverbrauch sowie eine e
 * :ref:`py_music_player` (For MicroPython User)
 * :ref:`py_iot_cheerlights` (For MicroPython User)
 * :ref:`ar_neopixel` (For Arduino User)
+
 .. * :ref:`per_flowing_leds` (For Piper Make User)

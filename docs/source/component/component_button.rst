@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Vertiefen Sie gemeinsam mit anderen begeisterten Mitgliedern Ihr Wissen rund um Raspberry Pi, Arduino und ESP32.
 
@@ -41,6 +41,7 @@ Da Pin 1 mit Pin 2 und Pin 3 mit Pin 4 verbunden ist, werden beim Drücken des T
 * :ref:`py_button` (Für MicroPython-Nutzer)
 * :ref:`py_iot_mqtt_publish` (Für MicroPython-Nutzer)
 * :ref:`ar_button` (Für Arduino-Nutzer)
+
 .. * :ref:`per_button` (Für Piper Make-Nutzer)
 .. * :ref:`per_rainbow_light` (Für Piper Make-Nutzer)
 .. * :ref:`per_drum_kit` (Für Piper Make-Nutzer)

@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
    
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit anderen Enthusiasten.
 
@@ -77,7 +77,7 @@ Sie können sie auch separat über die untenstehenden Links kaufen.
         - 1
         -  
     *   - 7
-        - 18650 Batterie
+        - Power Pack
         - 1
         -  
     *   - 8
@@ -96,7 +96,7 @@ Sie können sie auch separat über die untenstehenden Links kaufen.
 .. note::
 
     * Da die Pumpe einen hohen Strom benötigt, verwenden wir hier aus Sicherheitsgründen ein Li-po-Ladegerät, um den Motor zu betreiben.
-    * Stellen Sie sicher, dass Ihr Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist, da sonst ein Kurzschluss Ihre Batterie und Schaltung beschädigen könnte.
+    * Stellen Sie sicher, dass Ihr Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist, da sonst ein Kurzschluss Ihr Power Pack und die Schaltung beschädigen könnte.
 
 
 |wiring_pump|

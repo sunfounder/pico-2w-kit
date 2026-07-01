@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -55,6 +55,7 @@ Typischerweise liegt die minimale Impulsbreite bei etwa 0,5 ms und die maximale 
 * :ref:`py_iot_sunfounder_controller` (Für MicroPython-Nutzer)
 * :ref:`py_iot_ble_lock` (Für MicroPython-Nutzer)
 * :ref:`ar_servo` (Für Arduino-Nutzer)
+
 .. * :ref:`per_water_tank` (Für Piper Make-Nutzer)
 .. * :ref:`per_swing_servo` (Für Piper Make-Nutzer)
 .. * :ref:`per_lucky_cat` (Für Piper Make-Nutzer)

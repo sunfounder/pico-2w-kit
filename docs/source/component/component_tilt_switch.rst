@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -42,4 +42,5 @@ Dieses einfache, aber effektive Mechanismus macht den Neigungsschalter ideal fü
 * :ref:`py_tilt` (Für MicroPython-Nutzer)
 * :ref:`py_10_second` (Für MicroPython-Nutzer)
 * :ref:`ar_tilt` (Für Arduino-Nutzer)
+
 .. * :ref:`per_flowing_leds` (Für Piper Make-Nutzer)

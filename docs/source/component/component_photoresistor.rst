@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -40,4 +40,5 @@ Nachfolgend ist das Schaltzeichen eines Fotowiderstands dargestellt.
 * :ref:`py_photoresistor` (Für MicroPython-Nutzer)
 * :ref:`py_light_theremin` (Für MicroPython-Nutzer)
 * :ref:`ar_photoresistor` (Für Arduino-Nutzer)
+
 .. * :ref:`per_light_display` (Für Piper Make-Nutzer)

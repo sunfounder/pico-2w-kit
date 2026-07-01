@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefe dein Wissen über Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten.
 
     **Warum beitreten?**
@@ -75,7 +75,7 @@ Du kannst sie auch einzeln über die untenstehenden Links kaufen.
         - 1
         -  
     *   - 7
-        - 18650 Batterie
+        - Power Pack
         - 1
         -  
 
@@ -88,7 +88,7 @@ Du kannst sie auch einzeln über die untenstehenden Links kaufen.
 
     .. warning:: 
         
-        Stelle sicher, dass dein Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist. Andernfalls könnte ein Kurzschluss deinen Akku und die Schaltung beschädigen.
+        Stelle sicher, dass dein Li-po-Ladegerät wie im Diagramm gezeigt angeschlossen ist. Andernfalls könnte ein Kurzschluss dein Power Pack und die Schaltung beschädigen.
 
     .. image:: img/wiring/2.cheerlights_bb.png
         :width: 800

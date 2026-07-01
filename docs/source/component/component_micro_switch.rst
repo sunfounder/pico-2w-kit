@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -51,4 +51,5 @@ Wenn der Betätiger gedrückt oder geschaltet wird:
 
 * :ref:`py_micro` (Für MicroPython-Nutzer)
 * :ref:`ar_micro` (Für Arduino-Nutzer)
+
 .. * :ref:`per_service_bell` (Für Piper Make-Nutzer)

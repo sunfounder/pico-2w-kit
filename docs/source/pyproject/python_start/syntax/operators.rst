@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
    Hallo, willkommen in der Community für SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein mit Gleichgesinnten.
   

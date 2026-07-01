@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -55,4 +55,5 @@ Der gewünschte Modus kann durch Setzen des Jumper-Käppchens ausgewählt werden
 * :ref:`py_pir` (Für MicroPython-Nutzer)
 * :ref:`py_passage_counter` (Für MicroPython-Nutzer)
 * :ref:`ar_pir` (Für Arduino-Nutzer)
+
 .. * :ref:`per_lucky_cat` (Für Piper Make-Nutzer)

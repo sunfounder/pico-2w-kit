@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
@@ -88,7 +88,7 @@ Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Link
         - 1
         -  
     *   - 8
-        - 18650 Batterie
+        - Power Pack
         - 1
         -   
 
@@ -105,7 +105,7 @@ Alternativ kannst du die Komponenten auch einzeln über die unten stehenden Link
 .. note::
 
     * Da Gleichstrommotoren einen hohen Strombedarf haben, verwenden wir hier zur Sicherheit ein Li-po-Lademodul zur Stromversorgung des Motors.
-    * Stelle sicher, dass dein Li-po-Lademodul gemäß dem Schaltplan korrekt angeschlossen ist. Andernfalls kann ein Kurzschluss deine Batterie und Schaltung beschädigen.
+    * Stelle sicher, dass dein Li-po-Lademodul gemäß dem Schaltplan korrekt angeschlossen ist. Andernfalls kann ein Kurzschluss dein Power Pack und die Schaltung beschädigen.
 
 |wiring_motor|
 

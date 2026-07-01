@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie gemeinsam mit anderen begeisterten Mitgliedern tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
@@ -56,6 +56,7 @@ Weitere Informationen: `Buzzer – Wikipedia <https://en.wikipedia.org/wiki/Buzz
 * :ref:`py_iot_ble_piano` (Für MicroPython-Nutzer)
 * :ref:`ar_ac_buz` (Für Arduino-Nutzer)
 * :ref:`ar_pa_buz` (Für Arduino-Nutzer)
+
 .. * :ref:`per_service_bell` (Für Piper Make-Nutzer)
 .. * :ref:`per_reversing_system` (Für Piper Make-Nutzer)
 .. * :ref:`per_reaction_game` (Für Piper Make-Nutzer)

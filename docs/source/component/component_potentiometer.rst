@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -59,4 +59,5 @@ Weitere Informationen über Potentiometer findest du unter: `Potentiometer - Wik
 
 * :ref:`py_pot` (Für MicroPython-Nutzer)
 * :ref:`ar_pot` (Für Arduino-Nutzer)
+
 .. * :ref:`per_swing_servo` (Für Piper Make-Nutzer)

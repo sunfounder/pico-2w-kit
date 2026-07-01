@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
@@ -30,20 +30,20 @@ Eigenschaften
 
 * RP2350-Mikrocontroller mit 4 MB Flash-Speicher.
 * Integrierte 2,4-GHz-Wireless-Schnittstellen. (802.11n, Bluetooth 5.2)
- - Unterstützung für Bluetooth LE Central- und Peripheral-Modi.
- - Unterstützung für Bluetooth Classic.
+  - Unterstützung für Bluetooth LE Central- und Peripheral-Modi.
+  - Unterstützung für Bluetooth Classic.
 * Micro-USB-B-Anschluss für Stromversorgung und Datenübertragung (auch zur Flash-Neuprogrammierung).
 * 40-polige 21 mm × 51 mm "DIP"-Platine mit 1 mm Dicke und 0,1"-Lötkontakten, einschließlich Randverzinnung.
- - 26 multifunktionale 3,3-V-GPIOs.
- - 23 GPIOs sind ausschließlich digital, drei unterstützen zusätzlich analoge Eingänge (ADC).
- - Kann als SMD-Modul direkt auf Platinen gelötet werden.
+  - 26 multifunktionale 3,3-V-GPIOs.
+  - 23 GPIOs sind ausschließlich digital, drei unterstützen zusätzlich analoge Eingänge (ADC).
+  - Kann als SMD-Modul direkt auf Platinen gelötet werden.
 * 3-poliger Arm Serial Wire Debug (SWD)-Port.
 * Einfache, aber flexible Stromversorgungsarchitektur.
- - Verschiedene Optionen zur einfachen Stromversorgung über Micro-USB, externe Spannungsquellen oder Batterien.
+  - Verschiedene Optionen zur einfachen Stromversorgung über Micro-USB, externe Spannungsquellen oder ein Power Pack.
 * 1 × USB 1.1-Controller und PHY mit Host- und Geräteunterstützung.
 * 3 x Programmierbare I/O (PIO)-Blöcke mit insgesamt 12 Zustandsautomaten.
- - Flexible, benutzerprogrammierbare Hochgeschwindigkeitsschnittstellen.
- - Kann Schnittstellen wie SD-Karten und VGA emulieren.
+  - Flexible, benutzerprogrammierbare Hochgeschwindigkeitsschnittstellen.
+  - Kann Schnittstellen wie SD-Karten und VGA emulieren.
 * Unterstützte Eingangsspannung: 1,8–5,5 V DC.
 * Betriebstemperaturbereich: -20 °C bis +85 °C.
 * Randverzinnung ermöglicht direktes Löten auf Trägerplatinen.

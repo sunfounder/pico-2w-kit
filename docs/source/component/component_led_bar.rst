@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Entdecken Sie gemeinsam mit anderen begeisterten Mitgliedern tiefgehendes Wissen rund um Raspberry Pi, Arduino und ESP32.
 
@@ -32,4 +32,5 @@ Die folgende Abbildung zeigt den inneren Aufbau eines LED-Bargraphs. Üblicherwe
 
 * :ref:`py_led_bar` (Für MicroPython-Nutzer)
 * :ref:`ar_led_bar` (Für Arduino-Nutzer)
+
 .. * :ref:`per_light_display` (Für Piper Make-Nutzer)

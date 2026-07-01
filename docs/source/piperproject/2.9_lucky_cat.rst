@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -48,7 +48,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - :ref:`cpn_pico_w`
+        - :ref:`cpn_pico_2w`
         - 1
         - |link_picow_buy|
     *   - 2

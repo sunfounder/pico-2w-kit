@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein – zusammen mit Gleichgesinnten.
 
@@ -72,4 +72,5 @@ Berechnungsformeln:
 * :ref:`py_reversing_aid` (Für MicroPython-Nutzer)
 * :ref:`py_iot_sunfounder_controller` (Für MicroPython-Nutzer)
 * :ref:`ar_ultrasonic` (Für Arduino-Nutzer)
+
 .. * :ref:`per_reversing_system` (Für Piper Make-Nutzer)

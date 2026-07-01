@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
@@ -54,6 +54,7 @@ Ausführlichere Informationen zur LED finden Sie hier: `LED - Wikipedia <https:/
 * :ref:`py_iot_ble_relay` (For MicroPython User)
 * :ref:`ar_led` (For Arduino User)
 * :ref:`ar_fade` (For Arduino User)
+
 .. * :ref:`per_blink` (For Piper Make User)
 .. * :ref:`per_button` (For Piper Make User)
 .. * :ref:`per_service_bell` (For Piper Make User)
