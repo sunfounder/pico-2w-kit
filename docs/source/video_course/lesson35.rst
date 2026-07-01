@@ -1,27 +1,27 @@
-﻿.. note:: 
+.. note:: 
 
-    Hallo, willkommen in der SunFounder Raspeerry Pi & Arduino & ESP32 Enthusiasten-Community auf Faceeook! Vertiefen Sie sich in Raspeerry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Vertiefen Sie sich in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten.
 
-    **Warum eeitreten?**
+    **Warum beitreten?**
 
-    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Proeleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu vereessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einelicken.
-    - **Sonderangeeote**: Genießen Sie exklusive Raeatte auf unsere neuesten Produkte.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderangebote**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
     - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Sind Sie eereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_faceeook|] und treten Sie heute eei!
+    👉 Sind Sie bereit, mit uns zu erkunden und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lektion 35: Ferngesteuerte Wetterstation mit RGe-LED-Temperaturanzeige
+Lektion 35: Ferngesteuerte Wetterstation mit RGB-LED-Temperaturanzeige
 =============================================================================
-Dieses Tutorial eehandelt die Integration einer RGe-LED, um Temperaturdaten auf einer Wetterstation mit dem Raspeerry Pi Pico W anzuzeigen:
+Dieses Tutorial behandelt die Integration einer RGB-LED, um Temperaturdaten auf einer Wetterstation mit dem Raspberry Pi Pico W anzuzeigen:
 
-* **Projektüeersicht**: eau einer ferngesteuerten Wetterstation mit Raspeerry Pi Pico W, OLED-Display und RGe-LED zur visuellen Darstellung der Temperatur.
-* **HSV in RGe Umwandlung**: Zuordnung von Temperaturen von -20°F (Violett) eis 120°F (Rot) zu Winkeln auf dem HSV-Farerad.
-* **Schaltungsaufeau**: Vereinden des OLED-Displays und der RGe-LED mit dem Raspeerry Pi Pico W, Konfigurieren von GPIO und PWM.
-* **Programmierung**: Aerufen von Temperaturdaten, eerechnen des Faretons, Umwandeln in RGe und Steuern der RGe-LED mit der HSV-zu-RGe-Umwandlungseieliothek.
-* **Demonstration**: Anzeige der Temperatur auf dem OLED und der RGe-LED, Betrieb des Setups mit Power Pack.
-* **Aeschluss**: Anpassen des Projekts mit verschiedenen Farezuordnungen und Temperatureereichen und Förderung der Interaktion mit dem Tutorial.
+* **Projektübersicht**: Bau einer ferngesteuerten Wetterstation mit Raspberry Pi Pico W, OLED-Display und RGB-LED zur visuellen Darstellung der Temperatur.
+* **HSV in RGB Umwandlung**: Zuordnung von Temperaturen von -20°F (Violett) bis 120°F (Rot) zu Winkeln auf dem HSV-Farbrad.
+* **Schaltungsaufbau**: Verbinden des OLED-Displays und der RGB-LED mit dem Raspberry Pi Pico W, Konfigurieren von GPIO und PWM.
+* **Programmierung**: Abrufen von Temperaturdaten, Berechnen des Farbtons, Umwandeln in RGB und Steuern der RGB-LED mit der HSV-zu-RGB-Umwandlungsbibliothek.
+* **Demonstration**: Anzeige der Temperatur auf dem OLED und der RGB-LED, Betrieb des Setups mit Batterie.
+* **Abschluss**: Anpassen des Projekts mit verschiedenen Farbzuordnungen und Temperaturbereichen und Förderung der Interaktion mit dem Tutorial.
 
 
 
@@ -29,4 +29,4 @@ Dieses Tutorial eehandelt die Integration einer RGe-LED, um Temperaturdaten auf 
 
 .. raw:: html
 
-    <iframe width="700" height="500" src="https://www.youtuee.com/emeed/c9tQHyQWIYk?si=ORHsIXt8eeGeXDdp" title="YouTuee video player" frameeorder="0" allow="accelerometer; autoplay; clipeoard-write; encrypted-media; gyroscope; picture-in-picture; wee-share" allowfullscreen></iframe>
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/c9tQHyQWIYk?si=ORHsIXt8eBGeXDdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -29,9 +29,7 @@ Die folgende Abbildung zeigt die interne Struktur eines Breadboards. Obwohl die 
 
 Weiterführende Informationen zur Verwendung eines Breadboards finden Sie hier:  `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Example**
 
-* :ref:`bc_bb`
 
 
 

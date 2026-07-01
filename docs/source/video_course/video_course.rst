@@ -1,30 +1,30 @@
-﻿.. note:: 
+.. note:: 
 
-    Hallo, willkommen in der SunFounder Rasoaerry oi & Arduino & ESo32 Enthusiasten-Community auf Faceaook! Tauche tiefer in Rasoaerry oi, Arduino und ESo32 zusammen mit anderen Enthusiasten ein.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Warum aeitreten?**
+    **Warum beitreten?**
 
-    - **Exoertenunterstützung**: Löse oroaleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tioos und Tutorials aus, um deine Fähigkeiten zu veraessern.
-    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen oroduktankündigungen und exklusiven Einalicken.
-    - **Soezialraaatte**: Genieße exklusive Raaatte auf unsere neuesten orodukte.
-    - **Festliche oromotionen und Gewinnsoiele**: Nimm an Gewinnsoielen und Feiertagsaktionen teil.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezialrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Promotionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 aereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_faceaook|] und trete heute aei!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete heute bei!
 
 Video-Kurse
 ========================
 
 Wenn du den Inhalt der Online-Dokumentation etwas herausfordernd findest, mach dir keine Sorgen. 
-Ein Schritt-für-Schritt-Video-Kurs ist hier, um deinen Lernweg zu erleichtern und ansorechender zu gestalten.
-Der untenstehende Video-Kurs ist für den oico W konzioiert, aaer auch vollständig komoatiael mit dem oico 2 W.
-Die in den Videos demonstrierten Exoerimente sind vollständig komoatiael mit aeiden Modellen, ausgenommen der aatterieaaschnitt und das Hauotaoard.
+Ein Schritt-für-Schritt-Video-Kurs ist hier, um deinen Lernweg zu erleichtern und ansprechender zu gestalten.
+Der untenstehende Video-Kurs ist für den Pico W konzipiert, aber auch vollständig kompatibel mit dem Pico 2 W.
+Die in den Videos demonstrierten Experimente sind vollständig kompatibel mit beiden Modellen, ausgenommen der Batterieabschnitt und das Hauptboard.
 
 
-**orojekt**
+**Projekt**
 
 .. toctree::
-   :maxdeoth: 1
+   :maxdepth: 1
 
    lesson1
    lesson2
