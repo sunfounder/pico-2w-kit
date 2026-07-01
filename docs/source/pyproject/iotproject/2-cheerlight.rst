@@ -76,7 +76,7 @@ Twitterで@cheerlightsをつぶやき、色の名前を含めることで、世�
         - 1
         -  
     *   - 7
-        - 18650バッテリー
+        - Power Pack
         - 1
         -  
 

@@ -90,7 +90,7 @@ Raspberry Pi Pico 2 WでのBLE通信やIoTアプリケーションを探求し�
         - 1
         -  
     *   - 10
-        - 18650バッテリー
+        - Power Pack
         - 1
         - 
 
