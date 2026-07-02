@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -67,6 +67,7 @@
 * :ref:`ar_pa_buz` (Arduinoユーザー向け)
 * :ref:`ar_transistor` (Arduinoユーザー向け)
 * :ref:`ar_relay` (Arduinoユーザー向け)
+
 .. * :ref:`per_service_bell` (Piper Makeユーザー向け)
 .. * :ref:`per_reversing_system` (Piper Makeユーザー向け)
 .. * :ref:`per_reaction_game` (Piper Makeユーザー向け)

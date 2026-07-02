@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒に深く学びましょう。
 
@@ -58,4 +58,5 @@ LEDには、低駆動電圧、エネルギー効率、環境に優しい、高�
 * :ref:`py_music_player` (MicroPythonユーザー向け)
 * :ref:`py_iot_cheerlights` (MicroPythonユーザー向け)
 * :ref:`ar_neopixel` (Arduinoユーザー向け)
+
 .. * :ref:`per_flowing_leds` (Piper Makeユーザー向け)

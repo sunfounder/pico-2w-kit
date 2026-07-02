@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -72,4 +72,5 @@ HC-SR04超音波距離センサーは、2 cmから400 cmまでの非接触距離
 * :ref:`py_reversing_aid` (MicroPythonユーザー向け)
 * :ref:`py_iot_sunfounder_controller` (MicroPythonユーザー向け)
 * :ref:`ar_ultrasonic` (Arduinoユーザー向け)
+
 .. * :ref:`per_reversing_system` (Piper Makeユーザー向け)

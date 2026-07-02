@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -40,4 +40,5 @@
 * :ref:`py_water` (MicroPythonユーザー向け)
 * :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
 * :ref:`ar_water` (Arduinoユーザー向け)
+
 .. * :ref:`per_water_tank` (Piper Makeユーザー向け)

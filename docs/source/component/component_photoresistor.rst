@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -40,4 +40,5 @@
 * :ref:`py_photoresistor` (MicroPythonユーザー向け)
 * :ref:`py_light_theremin` (MicroPythonユーザー向け)
 * :ref:`ar_photoresistor` (Arduinoユーザー向け)
+
 .. * :ref:`per_light_display` (Piper Makeユーザー向け)

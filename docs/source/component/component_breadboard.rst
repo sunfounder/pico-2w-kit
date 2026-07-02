@@ -29,9 +29,7 @@
 
 ブレッドボードの使い方についてさらに知りたい場合は、以下を参照してください: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**例**
 
-* :ref:`bc_bb`
 
 
 

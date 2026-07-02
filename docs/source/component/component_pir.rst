@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -55,4 +55,5 @@ PIRセンサーは赤外線を検出し、熱を発する生物の存在を感�
 * :ref:`py_pir` (MicroPythonユーザー向け)
 * :ref:`py_passage_counter` (MicroPythonユーザー向け)
 * :ref:`ar_pir` (Arduinoユーザー向け)
+
 .. * :ref:`per_lucky_cat` (Piper Makeユーザー向け)

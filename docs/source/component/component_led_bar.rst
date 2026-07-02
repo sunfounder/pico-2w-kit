@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
@@ -32,4 +32,5 @@ LEDバーグラフは、電子回路やマイクロコントローラと接続�
 
 * :ref:`py_led_bar` (MicroPythonユーザー向け)
 * :ref:`ar_led_bar` (Arduinoユーザー向け)
+
 .. * :ref:`per_light_display` (Piper Makeユーザー向け)

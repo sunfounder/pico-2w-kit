@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -53,6 +53,7 @@ LEDについての詳細はこちらを参照してください: `LED - Wikipedi
 * :ref:`py_iot_ble_relay` (MicroPythonユーザー向け)
 * :ref:`ar_led` (Arduinoユーザー向け)
 * :ref:`ar_fade` (Arduinoユーザー向け)
+
 .. * :ref:`per_blink` (Piper Makeユーザー向け)
 .. * :ref:`per_button` (Piper Makeユーザー向け)
 .. * :ref:`per_service_bell` (Piper Makeユーザー向け)

@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
@@ -48,4 +48,5 @@ DCモーターは、固定部分である **ステーター** と、回転して
 
 * :ref:`py_motor` (MicroPythonユーザー向け)
 * :ref:`ar_motor` (Arduinoユーザー向け)
+
 .. * :ref:`per_smart_fan` (Piper Makeユーザー向け)

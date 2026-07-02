@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -41,4 +41,5 @@
 * :ref:`py_tilt` (MicroPythonユーザー向け)
 * :ref:`py_10_second` (MicroPythonユーザー向け)
 * :ref:`ar_tilt` (Arduinoユーザー向け)
+
 .. * :ref:`per_flowing_leds` (Piper Makeユーザー向け)

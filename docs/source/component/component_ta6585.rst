@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -53,4 +53,5 @@ TA6586はおもちゃの車両、リモートコントロール航空機のモ�
 * :ref:`py_pump` (MicroPythonユーザー向け)
 * :ref:`ar_pump` (Arduinoユーザー向け)
 * :ref:`py_iot_sunfounder_controller_plant` (MicroPythonユーザー向け)
+
 .. * :ref:`per_smart_fan` (Piper Makeユーザー向け)

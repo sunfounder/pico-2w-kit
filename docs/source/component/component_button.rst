@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
@@ -41,6 +41,7 @@
 * :ref:`py_button` (MicroPythonユーザー向け)
 * :ref:`py_iot_mqtt_publish` (MicroPythonユーザー向け)
 * :ref:`ar_button` (Arduinoユーザー向け)
+
 .. * :ref:`per_button` (Piper Makeユーザー向け)
 .. * :ref:`per_rainbow_light` (Piper Makeユーザー向け)
 .. * :ref:`per_drum_kit` (Piper Makeユーザー向け)

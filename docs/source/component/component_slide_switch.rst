@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -42,4 +42,5 @@
 * :ref:`py_slide` (MicroPythonユーザー向け)
 * :ref:`py_alarm_lamp` (MicroPythonユーザー向け)
 * :ref:`ar_slide` (Arduinoユーザー向け)
+
 .. * :ref:`per_drum_kit` (Piper Makeユーザー向け)

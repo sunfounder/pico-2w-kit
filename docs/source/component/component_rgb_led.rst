@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -55,4 +55,5 @@ RGB LEDには4つのピンがあります：最も長いピンは共通カソー
 * :ref:`py_fruit_piano` (MicroPythonユーザー向け)
 * :ref:`py_iot_web_server` (MicroPythonユーザー向け)
 * :ref:`ar_rgb` (Arduinoユーザー向け)
+
 .. * :ref:`per_rainbow_light` (Piper Makeユーザー向け)

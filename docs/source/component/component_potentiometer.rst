@@ -1,4 +1,4 @@
-.. note:: 
+﻿.. note:: 
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間たちと一緒にさらに深く学びましょう。
 
@@ -59,4 +59,5 @@
 
 * :ref:`py_pot` (MicroPythonユーザー向け)
 * :ref:`ar_pot` (Arduinoユーザー向け)
+
 .. * :ref:`per_swing_servo` (Piper Makeユーザー向け)
